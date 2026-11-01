@@ -372,10 +372,7 @@
   name: Array languages
   research_status: stub
   backlog:
-    - { name: "J", year: 1990 }
-    - { name: "K", year: 1993 }
-    - { name: "Q / kdb+", year: 2003 }
-    - { name: "BQN", year: 2020 }
+    - { name: "BQN", year: 2020, hint: "No English Wikipedia article (BQN_(programming_language) is 404) and no List of programming languages entry; use Marshall Lochbaum's mlochbaum.github.io/BQN documentation as the source." }
     - { name: "NumPy (library, as concept carrier)", year: 2006 }
 - id: stack
   name: Stack and concatenative languages
@@ -632,33 +629,13 @@
   name: Data, query and statistics languages
   research_status: draft
   backlog:
-    - { name: "Datalog", year: 1977 }
-    - { name: "SPSS", year: 1968, hint: "Nie, Bent and Hull; researched 2026-11-01 (wiki-spss) but no command-syntax example found (IBM docs unreachable from the sandbox)." }
-    - { name: "XQuery", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "LINQ", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Cypher Query Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: ".QL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "DAX (Data Analysis Expressions)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Apache Pig latin", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Sawzall", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "YQL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SQR", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "DATATRIEVE", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "EASYTRIEVE PLUS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "MARK-IV", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "TXL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "OmniMark", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "TMG (TransMoGrifier)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "EASYTRIEVE PLUS", hint: "Wikipedia's Easytrieve title redirects to the Computer Associates article, which does not mention it; needs a CA/Broadcom manual or another source for year and designers." }
 - id: joss
   name: JOSS and its descendants
   summary: "RAND's conversational JOSS and the interactive languages that followed it: TELCOMP, CAL, FOCAL, AID, MUMPS."
   research_status: stub
   backlog:
-    - { name: "TELCOMP", year: 1964, hint: "BBN; JOSS-derived; MUMPS lineage runs through it and STRINGCOMP (Wikipedia: MUMPS)." }
-    - { name: "FOCAL", year: 1968, hint: "DEC PDP-8; JOSS descendant (Wikipedia: JOSS)." }
-    - { name: "CAL", year: 1967, hint: "Berkeley SDS 940; JOSS descendant." }
-    - { name: "AID (Algebraic Interpretive Dialogue)", year: 1968, hint: "PDP-10 JOSS descendant." }
-    - { name: "Caché ObjectScript", year: 1997, hint: "InterSystems MUMPS dialect; GT.M as an implementation note." }
+    - { name: "AID (Algebraic Interpretive Dialogue)", year: 1968, hint: "Only named in the JOSS article (\"Algebraic Interpretive Dialogue (AID, on PDP-10)\", infobox Influenced list); no article, year or designer. Needs a DEC PDP-10 AID manual." }
 - id: basic
   name: BASIC family
   summary: "Dartmouth BASIC and its descendants: the home-computer interpreters, Microsoft's DOS and Windows line, and machine-specific extensions."
@@ -810,14 +787,7 @@
   summary: "Programs drawn as diagrams or patched dataflow graphs: LabVIEW, Prograph, Max and Pure Data."
   research_status: stub
   backlog:
-    - { name: "Prograph", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "DRAKON", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Agilent VEE", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "NXT-G", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Simulink", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Stateflow", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Grasshopper", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Xod", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Stateflow", hint: "MathWorks control-logic tool using \"a variant of the finite-state machine notation established by David Harel\" inside Simulink (Wikipedia). No first-release year on the page; find the MathWorks release history." }
 - id: audio
   name: Audio and music languages
   summary: "Languages for sound synthesis and music, from MUSIC-N's unit generators through Csound, SuperCollider and ChucK to live-coding pattern languages such as TidalCycles and Strudel."
@@ -884,12 +854,7 @@
   summary: "Languages built into games and game engines: QuakeC, UnrealScript, LPC and MOO for MUDs, GML, Luau, Verse."
   research_status: stub
   backlog:
-    - { name: "NWScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "LSL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Game Oriented Assembly Lisp", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "AngelScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "JASS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "DinkC", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "JASS", hint: "JASS redirects to the Warcraft III: Reign of Chaos article (released July 3, 2002), whose text does not mention it; needs another source (e.g. the World Editor documentation) for a year and a description." }
 - id: business/4gl
   name: xBase and 4GL languages
   parent: business

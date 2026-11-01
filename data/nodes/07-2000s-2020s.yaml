@@ -5027,3 +5027,503 @@
       add2(x=2, y=3) // 5
       add2(y=2, 5)   // 7
     sources: [wiki-bosque]
+
+- id: goal
+  name: GOAL
+  aliases: [Game Oriented Assembly Lisp, Game Object Assembly Lisp, OpenGOAL]
+  kind: language
+  category: domain-specific
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 2001, precision: exact, note: "Infobox \"First appeared: 3 December 2001\"; first used for Jak and Daxter: The Precursor Legacy." }
+    places: [{ institution: Naughty Dog, country: US }]
+  creators:
+    - { name: Andy Gavin, role: designer }
+  status: legacy
+  tags:
+    paradigm: [functional, object-oriented]
+    typing: [dynamic-typing, strong-typing]
+    features: [compiler, classes, inheritance]
+    domain: [game-scripting]
+  milestones:
+    - { version: OpenGOAL, year: 2020, summary: "Community project porting GOAL and the Jak games to x86-64 by decompiling them." }
+  summary: >
+    "a dialect of the language Lisp, made for video games developed by Andy Gavin and the Jak and Daxter team at the
+    company Naughty Dog". Its syntax "resembles the Lisp dialect Scheme", with classes, inheritance and virtual functions,
+    and it is "compiled directly into PlayStation 2 machine code" by a compiler written in Allegro Common Lisp. Its
+    predecessor GOOL scripted Crash Bandicoot; Naughty Dog later dropped Lisp for engines but used GOAL for scripting on PS3
+    games including The Last of Us.
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-goal], note: "\"a dialect of the language Lisp\"." }
+    - { type: influenced_by, to: scheme, weight: strong, confidence: high, sources: [wiki-goal], note: "\"GOAL's syntax resembles the Lisp dialect Scheme\"." }
+    - { type: implemented_in, to: common-lisp, weight: moderate, confidence: high, sources: [wiki-goal], note: "\"The GOAL compiler is implemented in Allegro Common Lisp.\"" }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Game_Oriented_Assembly_Lisp" }
+  sources: [wiki-goal]
+
+- id: nwscript
+  name: NWScript
+  kind: language
+  category: domain-specific
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 2002, precision: year, note: "Shipped with Neverwinter Nights, released for Windows on June 18, 2002; the page gives no separate date for the language." }
+    places: [{ institution: BioWare, city: "Edmonton, Alberta", country: CA }]
+  creators:
+    - { name: BioWare, role: developer }
+  status: legacy
+  tags:
+    paradigm: [imperative, scripting]
+    domain: [game-scripting]
+  summary: >
+    "the built-in scripting language NWScript, which is based on the C programming language", which Neverwinter Nights
+    builders use "to run cut scenes, quests, mini-games and conversations" in their own modules.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [wiki-neverwinter-nights], note: "\"based on the C programming language\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Neverwinter_Nights_(2002_video_game)" }
+  sources: [wiki-neverwinter-nights]
+
+- id: sawzall
+  name: Sawzall
+  aliases: [szl]
+  kind: language
+  category: domain-specific
+  cluster: data
+  origin:
+    first_appeared: { year: 2003, precision: year, note: "\"Sawzall was first described in 2003\"; the szl runtime was open-sourced in August 2010." }
+    places: [{ institution: Google, country: US }]
+  creators:
+    - { name: Rob Pike, role: designer }
+  status: legacy
+  tags:
+    paradigm: [procedural]
+    typing: [static-typing]
+    concurrency: [data-parallelism]
+    domain: [data-science]
+  summary: >
+    "a procedural domain-specific programming language, used by Google to process large numbers of individual log
+    records": each script runs on one record and emits into aggregating tables, so MapReduce can run it over logs spread
+    across GFS. It is statically typed and compiled to x86. Google replaced it with Lingo ("logs in Go").
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Sawzall_(programming_language)" }
+  sources: [wiki-sawzall]
+  example:
+    title: Count, sum and sum of squares
+    language: Sawzall
+    note: "From Wikipedia."
+    code: |
+      count: table sum of int;
+      total: table sum of float;
+      sum_of_squares: table sum of float;
+      x: float = input;
+      emit count <- 1;
+      emit total <- x;
+      emit sum_of_squares <- x * x;
+    sources: [wiki-sawzall]
+
+- id: angelscript
+  name: AngelScript
+  kind: language
+  category: scripting
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 2003, precision: year, note: "Infobox \"First appeared: 2003\"." }
+    places: [{ institution: AngelCode }]
+  creators:
+    - { name: Andreas Jönsson, role: developer }
+  status: active
+  tags:
+    paradigm: [scripting, imperative, object-oriented]
+    typing: [static-typing, strong-typing]
+    memory: [reference-counting]
+    features: [embeddable, operator-overloading, interfaces]
+    domain: [game-scripting]
+  milestones:
+    - { version: "2.38.0", year: 2025 }
+  summary: >
+    "an open-source game-oriented compiled scripting language" whose "class syntax closely follows C++ classes by
+    design", so it embeds in C++ without proxy functions. It has static typing, garbage-collected object handles, single
+    inheritance plus interfaces, and all methods virtual. Amnesia: The Dark Descent, SuperTuxKart and It Takes Two use it.
+  relations:
+    - { type: influenced_by, to: cpp, weight: strong, confidence: high, sources: [wiki-angelscript], note: "\"AngelScript's class syntax closely follows C++ classes by design\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/AngelScript", homepage: "https://www.angelcode.com/angelscript/" }
+  sources: [wiki-angelscript]
+
+- id: lsl
+  name: LSL
+  aliases: [Linden Scripting Language]
+  kind: language
+  category: scripting
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 2003, precision: year, note: "Part of Second Life, which \"publicly launched on June 23, 2003\"; the page gives no separate date for the language." }
+    places: [{ institution: Linden Lab, city: San Francisco, country: US }]
+  creators:
+    - { name: Linden Lab, role: developer }
+  status: active
+  tags:
+    paradigm: [procedural, scripting, event-driven]
+    domain: [game-scripting]
+  summary: >
+    Second Life's "procedural scripting language, Linden Scripting Language (LSL), which can be used to add
+    interactivity to objects" that residents build in the virtual world.
+  notes: >
+    The LSO bytecode and Mono (CIL) compilers come only from a summarised reference list; unverified.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Second_Life" }
+  sources: [wiki-second-life]
+
+- id: q-kx
+  name: Q
+  aliases: [q, kdb+/q]
+  kind: language
+  category: query
+  cluster: array
+  origin:
+    first_appeared: { year: 2003, precision: year, note: "Infobox \"First appeared: 2003\"." }
+    places: [{ institution: KX Systems }]
+  creators:
+    - { name: Arthur Whitney, role: designer }
+  status: active
+  tags:
+    paradigm: [array-programming, functional, query]
+    typing: [dynamic-typing, strong-typing]
+    domain: [databases]
+  milestones:
+    - { version: "4.1", year: 2024 }
+  summary: >
+    "the query language for kdb+, a disk based and in-memory, column-based database", developed by Arthur Whitney and
+    sold by KX Systems. "Q is a thin wrapper library around k, providing a more readable, English-like interface"; its
+    built-in functions are defined as K macros.
+  relations:
+    - { type: superset_of, to: k, weight: strong, confidence: high, sources: [wiki-q-kx], note: "\"a thin wrapper library around k\"; kdb+ \"included Q, a language that merged the functions of the underlying K language and ksql\" (wiki-k)." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Q_(programming_language_from_Kx_Systems)" }
+  sources: [wiki-q-kx, wiki-k]
+  example:
+    title: Factorial
+    language: q
+    note: "From Wikipedia."
+    code: |
+      {prd 1+til x}
+    sources: [wiki-q-kx]
+
+- id: nxt-g
+  name: NXT-G
+  kind: language
+  category: educational
+  cluster: visual
+  origin:
+    first_appeared: { year: 2006, precision: exact, note: "Bundled with Lego Mindstorms NXT, \"released by Lego on August 2, 2006\"." }
+    places: [{ institution: Lego }]
+  creators:
+    - { name: Lego, role: publisher }
+  status: legacy
+  tags:
+    paradigm: [visual-programming]
+    domain: [education, embedded]
+  milestones:
+    - { version: "2.0", year: 2009, summary: "Bundled with Mindstorms NXT 2.0; colour sensor support." }
+  summary: >
+    The graphical environment bundled with Lego Mindstorms NXT. "The software, based on National Instruments LabVIEW,
+    provides a visual programming language" in which "instead of requiring users to write lines of code, they can use
+    flowchart-like blocks to design their program".
+  relations:
+    - { type: influenced_by, to: labview, weight: strong, confidence: high, sources: [wiki-lego-mindstorms-nxt], note: "\"based on National Instruments LabVIEW\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lego_Mindstorms_NXT" }
+  sources: [wiki-lego-mindstorms-nxt]
+
+- id: xquery
+  name: XQuery
+  aliases: [XML Query]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    first_appeared: { year: 2007, precision: exact, note: "\"XQuery 1.0 became a W3C Recommendation on January 23, 2007.\"" }
+  creators:
+    - { name: W3C, role: XML Query working group }
+  status: active
+  tags:
+    paradigm: [declarative, functional, query, modular]
+    typing: [strong-typing]
+    features: [standardization]
+  milestones:
+    - { version: "3.0", year: 2014 }
+    - { version: "3.1", year: 2017 }
+  summary: >
+    "a query language and functional programming language designed to query and transform collections of structured
+    and unstructured data, primarily in the form of XML". It "extends XPath with features like FLWOR (For, Let, Where,
+    Order by, Return) expressions, making it semantically similar to SQL but optimized for hierarchical rather than
+    relational data", and was developed alongside XSLT. JSONiq is a superset of XQuery 3.0.
+  relations:
+    - { type: influenced_by, to: sql, weight: strong, confidence: high, sources: [wiki-xquery], note: "\"primarily conceived as a database query language in the tradition of SQL\"." }
+    - { type: influenced_by, to: xslt, weight: moderate, confidence: high, sources: [wiki-xquery], note: "Infobox \"Influenced by: XPath, SQL, XSLT\"; \"closely coordinated with the development of XSLT\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/XQuery" }
+  sources: [wiki-xquery]
+  example:
+    title: Speakers per act of Hamlet
+    language: XQuery 1.0
+    note: "From Wikipedia."
+    code: |
+      <html>
+      <body>
+      {
+        for $act in doc("hamlet.xml")//ACT
+        let $speakers := distinct-values($act//SPEAKER)
+        return
+          <div>
+            <h1>{ string($act/TITLE) }</h1>
+            <ul>
+            {
+              for $speaker in $speakers
+              return <li>{ $speaker }</li>
+            }
+            </ul>
+          </div>
+      }
+      </body>
+      </html>
+    sources: [wiki-xquery]
+
+- id: linq
+  name: LINQ
+  aliases: [Language Integrated Query, PLINQ]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    first_appeared: { year: 2007, precision: year, note: "\"originally released as a major part of .NET Framework 3.5 in 2007\"; its ideas were tested in Cω from 2004." }
+    places: [{ institution: Microsoft, country: US }]
+  creators:
+    - { name: Microsoft, role: developer }
+  status: active
+  tags:
+    paradigm: [query, declarative, functional]
+    typing: [static-typing, strong-typing]
+    features: [query-expressions, lambdas]
+  summary: >
+    "a Microsoft .NET framework component that adds native data querying abilities to .NET languages": query
+    expressions "akin to SQL statements" over collections, XML, databases and other sources, which the compiler
+    translates into calls to standard query operators with lambdas. It shipped in C# 3.0, VB 9.0, F# and Oxygene; its ideas
+    were first tried in Microsoft Research's Cω.
+  relations:
+    - { type: influenced_by, to: sql, weight: strong, confidence: high, sources: [wiki-linq], note: "Infobox \"Influenced by: SQL, Haskell\"." }
+    - { type: influenced_by, to: haskell, weight: moderate, confidence: medium, sources: [wiki-linq], note: "Infobox \"Influenced by: SQL, Haskell\"; which Haskell features is not said." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Language_Integrated_Query" }
+  sources: [wiki-linq]
+  example:
+    title: A query expression
+    language: C# 3.0 with LINQ
+    note: "From Wikipedia."
+    code: |
+      IEnumerable<MyObject> results = from c in SomeCollection
+                                      where c.SomeProperty < 10
+                                      select new {c.SomeProperty, c.OtherProperty};
+
+      foreach (MyObject result in results)
+      {
+          Console.WriteLine(result);
+      }
+    sources: [wiki-linq]
+
+- id: dot-ql
+  name: .QL
+  aliases: [QL, SemmleCode]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    first_appeared: { year: 2007, precision: year, note: "Infobox \"First appeared: 2007\"." }
+    places: [{ institution: Semmle }]
+  creators:
+    - { name: Semmle, role: developer }
+  status: maintained
+  tags:
+    paradigm: [logic, object-oriented, query]
+    typing: [static-typing, strong-typing]
+  summary: >
+    "an object-oriented query language used to retrieve data from relational database management systems", "an
+    object-oriented variant of a logical query language called Datalog" that is "reminiscent of the standard query
+    language SQL and the object-oriented programming language Java". Queries compile to SQL; Semmle used it to query
+    source code.
+  relations:
+    - { type: dialect_of, to: datalog, weight: strong, confidence: high, sources: [wiki-dot-ql], note: "\"an object-oriented variant of a logical query language called Datalog\"." }
+    - { type: influenced_by, to: java, weight: weak, confidence: medium, sources: [wiki-dot-ql], note: "Only \"reminiscent of\" Java." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/.QL" }
+  sources: [wiki-dot-ql]
+  example:
+    title: Classes with more than ten public methods
+    language: .QL
+    note: "From Wikipedia; the page's leading space dropped."
+    code: |
+      from Class c, int numOfMethods
+      where numOfMethods = count(Method m| m.getDeclaringType()=c
+                           and m.hasModifier("public"))
+            and numOfMethods > 10
+      select c.getPackage(), c, numOfMethods
+    sources: [wiki-dot-ql]
+
+- id: grasshopper
+  name: Grasshopper
+  aliases: [Grasshopper 3D, Explicit History]
+  kind: language
+  category: domain-specific
+  cluster: visual
+  origin:
+    first_appeared: { year: 2007, precision: exact, note: "\"The first version of Grasshopper, then named Explicit History, was released in September 2007.\"" }
+    places: [{ institution: Robert McNeel & Associates }]
+  creators:
+    - { name: David Rutten, role: designer }
+  status: active
+  tags:
+    paradigm: [visual-programming, dataflow-programming]
+    domain: [computer-graphics]
+  summary: >
+    "a visual programming language and environment that runs within the Rhinoceros 3D computer-aided design (CAD)
+    application", in which "programs are created by dragging components onto a canvas". It was made part of the
+    standard Rhino toolset in Rhino 6.0.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Grasshopper_3D" }
+  sources: [wiki-grasshopper]
+
+- id: pig-latin
+  name: Pig Latin
+  aliases: [Apache Pig]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    began: { year: 2006, precision: circa, note: "\"originally developed at Yahoo Research around 2006\"; moved to Apache in 2007." }
+    first_appeared: { year: 2008, precision: exact, note: "Version 0.1, September 11, 2008." }
+    places: [{ institution: Yahoo Research, country: US }]
+  creators:
+    - { name: Yahoo Research, role: developer }
+  status: legacy
+  tags:
+    paradigm: [procedural, dataflow-programming, query]
+    domain: [data-science, distributed-systems]
+  milestones:
+    - { version: "0.17.0", year: 2017 }
+    - { version: "0.18.0", year: 2025 }
+  summary: >
+    The language of Apache Pig, "a high-level platform for creating programs that run on Apache Hadoop". It "abstracts
+    the programming from the Java MapReduce idiom into a notation which makes MapReduce programming high level, similar to
+    that of SQL", but "is procedural and fits very naturally in the pipeline paradigm while SQL is instead declarative".
+  relations:
+    - { type: influenced_by, to: sql, weight: moderate, confidence: medium, sources: [wiki-pig], note: "Described as \"similar to that of SQL\", while procedural rather than declarative." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Apache_Pig", homepage: "https://pig.apache.org" }
+  sources: [wiki-pig]
+  example:
+    title: Word count (shortened)
+    language: Pig Latin
+    note: "Wikipedia's word count with its comments left out."
+    code: |
+      input_lines = LOAD '/tmp/my-copy-of-all-pages-on-internet' AS (line:chararray);
+      words = FOREACH input_lines GENERATE FLATTEN(TOKENIZE(line)) AS word;
+      filtered_words = FILTER words BY word MATCHES '\\w+';
+      word_groups = GROUP filtered_words BY word;
+      word_count = FOREACH word_groups GENERATE COUNT(filtered_words) AS count, group AS word;
+      ordered_word_count = ORDER word_count BY count DESC;
+      STORE ordered_word_count INTO '/tmp/number-of-words-on-internet';
+    sources: [wiki-pig]
+
+- id: yql
+  name: YQL
+  aliases: [Yahoo! Query Language]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    first_appeared: { year: 2008, precision: exact, note: "\"Initially launched in October 2008 with access to Yahoo APIs\"." }
+    places: [{ institution: Yahoo!, country: US }]
+  creators:
+    - { name: Yahoo!, role: developer }
+  status: extinct
+  tags:
+    paradigm: [query, declarative]
+    domain: [web]
+  summary: >
+    "an SQL-like query language created by Yahoo! as part of their Developer Network", "designed to retrieve and
+    manipulate data from APIs through a single Web interface" for mashups. Third-party open data tables followed in 2009;
+    Yahoo retired the service on January 3, 2019.
+  relations:
+    - { type: influenced_by, to: sql, weight: strong, confidence: medium, sources: [wiki-yql], note: "\"an SQL-like query language\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Yahoo_Query_Language" }
+  sources: [wiki-yql]
+  example:
+    title: Filter an RSS feed
+    language: YQL
+    note: "From Wikipedia."
+    code: |
+      select title, link from rss where url = 'https://www.engadget.com/rss.xml'
+    sources: [wiki-yql]
+
+- id: dax
+  name: DAX
+  aliases: [Data Analysis Expressions]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    first_appeared: { year: 2009, precision: year, note: "\"released in 2009 with the first version of the PowerPivot for Excel 2010 Add-in\"." }
+    places: [{ institution: Microsoft, country: US }]
+  creators:
+    - { name: Microsoft, role: SQL Server Analysis Services team }
+  status: active
+  tags:
+    paradigm: [functional, query]
+    domain: [databases, business-data-processing]
+  summary: >
+    "the native formula and query language for Microsoft PowerPivot, Power BI Desktop and SQL Server Analysis Services
+    (SSAS) Tabular models", "in part, an evolution of the Multidimensional Expression (MDX) language ... combined with
+    Excel formula functions". Since 2015 it has gained calculated tables, variables and some 340 functions.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Data_Analysis_Expressions" }
+  sources: [wiki-dax]
+
+- id: xod
+  name: XOD
+  kind: language
+  category: domain-specific
+  cluster: visual
+  origin:
+    first_appeared: { year: 2016, precision: year, note: "\"a visual programming language for microcontrollers, started in 2016\"." }
+    places: [{ institution: XOD Inc }]
+  creators:
+    - { name: XOD Inc, role: developer }
+  status: legacy
+  tags:
+    paradigm: [visual-programming, dataflow-programming, functional-reactive-programming, declarative]
+    domain: [embedded]
+  milestones:
+    - { version: "0.38.0", year: 2021 }
+  summary: >
+    "a visual programming language for microcontrollers", first for Arduino and Raspberry Pi, "based on functional
+    reactive programming principles". Wikipedia names Node-RED and NoFlo as its closest analogues. It is AGPL-licensed.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/XOD_(programming_language)" }
+  sources: [wiki-xod]

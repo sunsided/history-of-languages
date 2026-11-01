@@ -3554,3 +3554,184 @@
         mercury.top = mouse.location.y;
       end while;
     sources: [wiki-kaleidoscope]
+
+- id: j
+  name: J
+  kind: language
+  category: general
+  cluster: array
+  origin:
+    first_appeared: { year: 1990, precision: year, note: "Infobox \"First appeared: 1990\"; \"developed in the early 1990s by Kenneth E. Iverson and Roger Hui\"." }
+  creators:
+    - { name: Kenneth E. Iverson, role: co-designer }
+    - { name: Roger Hui, role: co-designer }
+  status: active
+  tags:
+    paradigm: [array-programming, functional, tacit-programming]
+    typing: [dynamic-typing]
+  milestones:
+    - { version: GPL, year: 2011, summary: "Free and open-source under GPLv3 since March 2011." }
+  summary: >
+    "an array programming language based primarily on APL (also by Iverson)", "very terse" and "most suited to
+    mathematical and statistical programming". "To avoid repeating the APL special-character problem, J uses only the
+    basic ASCII character set". The infobox lists NumPy among the languages it influenced.
+  relations:
+    - { type: dialect_of, to: apl, weight: strong, confidence: high, sources: [wiki-j], note: "\"based primarily on APL\"; listed under APL dialects." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/J_(programming_language)", homepage: "https://www.jsoftware.com" }
+  sources: [wiki-j]
+
+- id: keysight-vee
+  name: Keysight VEE
+  aliases: [HP VEE, Agilent VEE, Visual Engineering Environment]
+  kind: language
+  category: domain-specific
+  cluster: visual
+  origin:
+    first_appeared: { year: 1991, precision: exact, note: "Release A.00.00, 9 May 1991, for HP-UX Series 300." }
+    places: [{ institution: Hewlett-Packard, country: US }]
+  creators:
+    - { name: Hewlett-Packard, role: original developer }
+  status: legacy
+  tags:
+    paradigm: [visual-programming, dataflow-programming]
+    domain: [industrial-automation]
+  milestones:
+    - { version: "4.0", year: 1997, summary: "Completely rewritten interface, MDI, program explorer, debugging." }
+    - { version: "9.0", year: 2008, summary: "Multithreading and multicore, database support, conditional breakpoints." }
+    - { version: "9.33", year: 2018 }
+  summary: >
+    "a graphical dataflow programming software development environment from Keysight Technologies for automated test,
+    measurement, data analysis and reporting". It began at HP as HP VEE (Visual Engineering Environment) and has since been renamed
+    Keysight VEE.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Keysight_VEE" }
+  sources: [wiki-keysight-vee]
+
+- id: k
+  name: K
+  kind: language
+  category: general
+  cluster: array
+  origin:
+    first_appeared: { year: 1993, precision: year, note: "\"In 1993, Whitney left Morgan Stanley and developed the first version of the K language.\"" }
+  creators:
+    - { name: Arthur Whitney, role: designer }
+  status: active
+  tags:
+    paradigm: [array-programming, functional]
+    typing: [dynamic-typing, strong-typing]
+    domain: [databases]
+  milestones:
+    - { version: kdb+, year: 1998, summary: "KX Systems releases kdb+, a database built on K." }
+    - { version: Shakti, year: 2018, summary: "Whitney's derivative of K." }
+  summary: >
+    "a proprietary array processing programming language developed by Arthur Whitney and commercialized by KX Systems",
+    "a variant of APL" that "contains elements of Scheme" and restricts itself to ASCII. It is the foundation of kdb+, an
+    in-memory column database used in finance.
+  relations:
+    - { type: successor_of, to: a-plus, weight: strong, confidence: high, sources: [wiki-k, wiki-a-plus], note: "Infobox \"Influenced by: A+, APL, Scheme\"; Whitney went from A+ at Morgan Stanley to K." }
+    - { type: influenced_by, to: apl, aspects: [array-programming], weight: strong, confidence: high, sources: [wiki-k], note: "\"K shares key features with APL.\"" }
+    - { type: influenced_by, to: scheme, weight: moderate, confidence: medium, sources: [wiki-k], note: "\"contains elements of Scheme\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/K_(programming_language)" }
+  sources: [wiki-k]
+  example:
+    title: Sort strings by length
+    language: K
+    note: "From Wikipedia."
+    code: |
+      x@>#:'x
+    sources: [wiki-k]
+
+- id: drakon
+  name: DRAKON
+  kind: language
+  category: domain-specific
+  cluster: visual
+  origin:
+    began: { year: 1986, precision: year, note: "\"The development of DRAKON started in 1986\" for the Buran programme." }
+    first_appeared: { year: 1996, precision: year, note: "Infobox \"First appeared: 1996\"; the GRAFIT-FLOKS implementation is dated 1996." }
+    places:
+      - { institution: Academician Pilyugin Center, city: Moscow, country: RU }
+      - { institution: Keldysh Institute of Applied Mathematics, city: Moscow, country: RU }
+  creators:
+    - { name: Vladimir Parondzhanov, role: director }
+  status: maintained
+  tags:
+    paradigm: [visual-programming]
+    domain: [safety-critical]
+  summary: >
+    "a free and open source algorithmic visual programming and modeling language" made for the Soviet Buran space
+    programme, meant "to replace specialized languages used in the Buran project with one universal programming
+    language". Its charts formalise the ISO 5807 flowcharts, and hybrid forms (DRAKON-C, DRAKON-Java, DRAKON-JavaScript)
+    generate code in a host language.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/DRAKON", homepage: "https://drakon.su/start" }
+  sources: [wiki-drakon]
+
+- id: cache-objectscript
+  name: Caché ObjectScript
+  aliases: [ObjectScript]
+  kind: language
+  category: general
+  cluster: joss
+  origin:
+    first_appeared: { year: 1997, precision: year, note: "Infobox \"First appeared: 1997\"." }
+    places: [{ institution: InterSystems, country: US }]
+  creators:
+    - { name: InterSystems, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, object-oriented]
+    domain: [databases]
+  summary: >
+    The language of InterSystems' Caché database, "a functional superset of the ANSI-standard MUMPS programming
+    language" with object-oriented programming; "Since Caché is at its core a MUMPS implementation, it can run ANSI MUMPS
+    routines with no change."
+  relations:
+    - { type: superset_of, to: mumps, weight: strong, confidence: high, sources: [wiki-cache-objectscript], note: "\"a functional superset of the ANSI-standard MUMPS programming language\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Cach%C3%A9_ObjectScript" }
+  sources: [wiki-cache-objectscript]
+  example:
+    title: Hello world routine
+    language: Caché ObjectScript
+    note: "From Wikipedia."
+    code: |
+      hello // hello world routine
+          write "hello world"
+      end quit  // end
+    sources: [wiki-cache-objectscript]
+
+- id: dinkc
+  name: DinkC
+  kind: language
+  category: domain-specific
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 1998, precision: disputed, note: "Dink Smallwood: infobox and lead 1998, but the Development section says \"initially released in 1997\"." }
+    places: [{ institution: Robinson Technologies }]
+  creators:
+    - { name: Seth Robinson, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, scripting]
+    domain: [game-scripting]
+  summary: >
+    The scripting language of the game Dink Smallwood, with "a C-like syntax". "Variables are prefixed with an
+    ampersand", and each sprite can carry a script that decides its behaviour and appearance. The game went freeware in 1999
+    and its source was released in 2003.
+  notes: >
+    The DinkC section of the page cites no sources.
+  relations:
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-dink-smallwood], note: "\"The DinkC scripting language has a C-like syntax.\"" }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Dink_Smallwood#DinkC" }
+  sources: [wiki-dink-smallwood]

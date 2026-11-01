@@ -4624,3 +4624,163 @@
   primary: false
   title: "Wikipedia: ORCA/Modula-2"
   url: https://en.wikipedia.org/wiki/ORCA/Modula-2
+- id: wiki-tmg
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TMG (language)"
+  url: https://en.wikipedia.org/wiki/TMG_(language)
+- id: wiki-telcomp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TELCOMP"
+  url: https://en.wikipedia.org/wiki/TELCOMP
+- id: wiki-cal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CAL (programming language)"
+  url: https://en.wikipedia.org/wiki/CAL_(programming_language)
+- id: wiki-mark-iv
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MARK IV (software)"
+  url: https://en.wikipedia.org/wiki/MARK_IV_(software)
+- id: wiki-focal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: FOCAL (programming language)"
+  url: https://en.wikipedia.org/wiki/FOCAL_(programming_language)
+- id: wiki-datatrieve
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: DATATRIEVE"
+  url: https://en.wikipedia.org/wiki/DATATRIEVE
+- id: wiki-omnimark
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: OmniMark"
+  url: https://en.wikipedia.org/wiki/OmniMark
+- id: wiki-prograph
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Prograph"
+  url: https://en.wikipedia.org/wiki/Prograph
+- id: wiki-simulink
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Simulink"
+  url: https://en.wikipedia.org/wiki/Simulink
+- id: wiki-txl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TXL (programming language)"
+  url: https://en.wikipedia.org/wiki/TXL_(programming_language)
+- id: wiki-sqr
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SQR"
+  url: https://en.wikipedia.org/wiki/SQR
+- id: wiki-j
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: J (programming language)"
+  url: https://en.wikipedia.org/wiki/J_(programming_language)
+- id: wiki-keysight-vee
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Keysight VEE"
+  url: https://en.wikipedia.org/wiki/Keysight_VEE
+- id: wiki-k
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: K (programming language)"
+  url: https://en.wikipedia.org/wiki/K_(programming_language)
+- id: wiki-drakon
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: DRAKON"
+  url: https://en.wikipedia.org/wiki/DRAKON
+- id: wiki-cache-objectscript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Caché ObjectScript"
+  url: https://en.wikipedia.org/wiki/Cach%C3%A9_ObjectScript
+- id: wiki-dink-smallwood
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Dink Smallwood"
+  url: https://en.wikipedia.org/wiki/Dink_Smallwood
+- id: wiki-goal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Game Oriented Assembly Lisp"
+  url: https://en.wikipedia.org/wiki/Game_Oriented_Assembly_Lisp
+- id: wiki-neverwinter-nights
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Neverwinter Nights (2002 video game)"
+  url: https://en.wikipedia.org/wiki/Neverwinter_Nights_(2002_video_game)
+- id: wiki-sawzall
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Sawzall (programming language)"
+  url: https://en.wikipedia.org/wiki/Sawzall_(programming_language)
+- id: wiki-angelscript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: AngelScript"
+  url: https://en.wikipedia.org/wiki/AngelScript
+- id: wiki-second-life
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Second Life"
+  url: https://en.wikipedia.org/wiki/Second_Life
+- id: wiki-q-kx
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Q (programming language from Kx Systems)"
+  url: https://en.wikipedia.org/wiki/Q_(programming_language_from_Kx_Systems)
+- id: wiki-lego-mindstorms-nxt
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lego Mindstorms NXT"
+  url: https://en.wikipedia.org/wiki/Lego_Mindstorms_NXT
+- id: wiki-xquery
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: XQuery"
+  url: https://en.wikipedia.org/wiki/XQuery
+- id: wiki-linq
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Language Integrated Query"
+  url: https://en.wikipedia.org/wiki/Language_Integrated_Query
+- id: wiki-dot-ql
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: .QL"
+  url: https://en.wikipedia.org/wiki/.QL
+- id: wiki-grasshopper
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Grasshopper 3D"
+  url: https://en.wikipedia.org/wiki/Grasshopper_3D
+- id: wiki-pig
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Apache Pig"
+  url: https://en.wikipedia.org/wiki/Apache_Pig
+- id: wiki-yql
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Yahoo Query Language"
+  url: https://en.wikipedia.org/wiki/Yahoo_Query_Language
+- id: wiki-dax
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Data Analysis Expressions"
+  url: https://en.wikipedia.org/wiki/Data_Analysis_Expressions
+- id: wiki-xod
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: XOD (programming language)"
+  url: https://en.wikipedia.org/wiki/XOD_(programming_language)

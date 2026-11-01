@@ -1589,6 +1589,8 @@
     modifiers. "Microsoft BASIC was patterned very closely on BASIC-PLUS", which makes it the template of the
     home-computer BASICs. BASIC-PLUS-2 compiled to threaded code and led to VAX BASIC.
   relations:
+    - { type: influenced_by, to: cal, weight: weak, confidence: medium, sources: [wiki-cal], note: "CAL features copied by Tymshare SUPER BASIC \"in turn, appeared in BASIC-PLUS\"." }
+    - { type: influenced_by, to: focal, weight: moderate, confidence: medium, sources: [wiki-focal], note: "FOCAL infobox \"Influenced: BASIC-PLUS\"." }
     - { type: dialect_of, to: basic, weight: strong, confidence: high, sources: [wiki-basic-plus], note: "\"based on BASIC-8 for the TSS/8, itself based very closely on the original Dartmouth BASIC\"; the infobox also names Tymshare SUPER BASIC." }
   research_status: draft
   confidence: medium
@@ -3008,3 +3010,38 @@
   confidence: low
   links: { wikipedia: "https://en.wikipedia.org/wiki/LIS_(programming_language)" }
   sources: [wiki-lis]
+
+- id: datatrieve
+  name: DATATRIEVE
+  kind: language
+  category: query
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1977, precision: year, note: "\"Version 1 for the PDP-11 was released in 1977\"." }
+    places: [{ institution: DEC Central Commercial Engineering, city: "Merrimack and Nashua, New Hampshire", country: US }]
+  creators:
+    - { name: Jim Starkey, role: database architect }
+  status: maintained
+  tags:
+    paradigm: [query, declarative]
+    features: [english-like-syntax]
+    domain: [databases]
+  milestones:
+    - { version: VAX DATATRIEVE, year: 1981, summary: "Part of the VAX Information Architecture." }
+    - { version: 7.4-1, year: 2017 }
+  summary: >
+    "a database query and report writer tool originally from Digital Equipment Corporation" whose "command structure is
+    nearly plain English", "an early example of a Fourth Generation Language (4GL)". It runs on OpenVMS and several PDP-11
+    systems and is now maintained by VMS Software Inc.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/DATATRIEVE" }
+  sources: [wiki-datatrieve]
+  example:
+    title: A nested query
+    language: DATATRIEVE
+    note: "From Wikipedia; DTR> and CON> are prompts."
+    code: |
+      DTR> FOR FAMILIES WITH NUMBER_KIDS = 2
+      CON> PRINT KID_NAME, AGE OF KIDS WITH AGE GT 20
+    sources: [wiki-datatrieve]

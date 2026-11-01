@@ -261,6 +261,7 @@
   person: Butler Lampson
   wiki: Butler Lampson
   nodes:
+  - cal
   - mesa
 - id: person-carl-hewitt
   kind: person
@@ -646,6 +647,7 @@
   person: Kenneth E. Iverson
   wiki: Kenneth E. Iverson
   nodes:
+  - j
   - apl
 - id: person-konrad-zuse
   kind: person
@@ -835,6 +837,7 @@
   person: Rob Pike
   wiki: Rob Pike
   nodes:
+  - sawzall
   - newsqueak
   - limbo
   - go
@@ -1561,6 +1564,8 @@
   person: Arthur Whitney
   wiki: Arthur Whitney (computer scientist)
   nodes:
+  - q-kx
+  - k
   - a-plus
 - id: person-khaled-mardam-bey
   kind: person
@@ -1604,3 +1609,45 @@
   wiki: John Barnes (computer scientist)
   nodes:
   - rtl-2
+- id: person-andy-gavin
+  kind: person
+  person: Andy Gavin
+  wiki: Andy Gavin
+  nodes:
+  - goal
+- id: person-douglas-mcilroy
+  kind: person
+  person: Douglas McIlroy
+  wiki: Douglas McIlroy
+  nodes:
+  - tmg
+- id: person-richard-merrill
+  kind: person
+  person: Richard Merrill
+  wiki: Richard Merrill (computer scientist)
+  nodes:
+  - focal
+- id: person-norman-h-nie
+  kind: person
+  person: Norman H. Nie
+  wiki: Norman H. Nie
+  nodes:
+  - spss
+- id: person-jim-starkey
+  kind: person
+  person: Jim Starkey
+  wiki: Jim Starkey
+  nodes:
+  - datatrieve
+- id: person-james-cordy
+  kind: person
+  person: James Cordy
+  wiki: James Cordy
+  nodes:
+  - txl
+- id: person-roger-hui
+  kind: person
+  person: Roger Hui
+  wiki: Roger Hui
+  nodes:
+  - j

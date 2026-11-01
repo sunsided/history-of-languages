@@ -440,6 +440,7 @@
     domain: [education]
   summary: "Lisp without parentheses for children; turtle graphics came a little later. Influenced Smalltalk's educational goals and, much later, Scratch."
   relations:
+    - { type: influenced_by, to: telcomp, weight: weak, confidence: medium, sources: [wiki-telcomp], note: "\"The initial research for LOGO was carried out in TELCOMP, but only the JOSS-style errors and interaction made it through\"." }
     - { type: influenced_by, to: lisp, weight: strong, confidence: high }
   research_status: draft
   confidence: high
@@ -524,6 +525,7 @@
     `=` for assignment. Its typelessness failed on the byte-addressed PDP-11, which is why Ritchie
     added types and created C. Kernighan's 1972 B tutorial has the first known "hello, world".
   relations:
+    - { type: influenced_by, to: tmg, weight: weak, confidence: medium, sources: [wiki-tmg], note: "\"Thompson used TMG in 1970 as a tool to offer Fortran, but ... ended up creating the B programming language\"; Unix TMG infobox \"Influenced: B, Yacc\"." }
     - { type: successor_of, to: bcpl, weight: strong, confidence: high, note: "Ritchie: 'BCPL squeezed into 8K bytes of memory and filtered through Thompson's brain'." }
   research_status: draft
   confidence: high
@@ -785,6 +787,7 @@
     sparse, string-keyed trees on disk. Standardised by ANSI in 1977 and still running large hospital and
     banking systems; InterSystems' Caché grew out of it.
   relations:
+    - { type: influenced_by, to: telcomp, weight: moderate, confidence: high, sources: [wiki-telcomp, wiki-mumps], note: "TELCOMP's infobox \"Influenced: MUMPS\"; FILECOMP's implicit file handling \"was influential on the MUMPS global database system\"." }
     - { type: influenced_by, to: joss, weight: strong, confidence: high, sources: [wiki-mumps], note: "\"Some aspects of MUMPS can be traced from RAND Corporation's JOSS through BBN's TELCOMP and STRINGCOMP.\"" }
   research_status: draft
   confidence: medium
@@ -1729,3 +1732,197 @@
          RETURN(tmp);
         END "upper";
     sources: [wiki-sail]
+
+- id: tmg
+  name: TMG
+  aliases: [Transmogrifier, Unix TMG]
+  kind: language
+  category: systems
+  cluster: data
+  origin:
+    first_appeared: { year: 1963, precision: disputed, note: "Infobox \"First appeared: 1963\"; the lead says \"presented in 1965\"." }
+  creators:
+    - { name: Robert M. McClure, role: designer }
+    - { name: Douglas McIlroy, role: Unix port }
+  status: extinct
+  tags:
+    paradigm: [declarative]
+    features: [compiler, bnf]
+  milestones:
+    - { version: Unix TMG, year: 1969, summary: "Douglas McIlroy's port to early Unix (PDP-7, later PDP-11)." }
+  summary: >
+    "a recursive descent compiler-compiler developed by Robert M. McClure", which ran on OS/360 and early Unix. Its
+    Unix version matters for C's prehistory: "Thompson used TMG in 1970 as a tool to offer Fortran, but due to memory
+    limitations of PDP-7 ended up creating the B programming language". The infobox also credits it with influencing
+    Knuth's TROL and Yacc.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TMG_(language)" }
+  sources: [wiki-tmg]
+
+- id: telcomp
+  name: TELCOMP
+  aliases: [STRINGCOMP, FILECOMP]
+  kind: language
+  category: general
+  cluster: joss
+  origin:
+    first_appeared: { year: 1964, precision: circa, note: "\"developed at Bolt, Beranek and Newman (BBN) in about 1964\"; infobox 1965, \"with first revenue in October 1965\"." }
+    places: [{ institution: "Bolt, Beranek and Newman", country: US }]
+  creators:
+    - { name: BBN, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [interpreter, interactive-time-sharing, line-numbers]
+  summary: >
+    "an interactive, conversational language based on JOSS, developed by BBN after Cliff Shaw from RAND visited the labs
+    in 1964", first on the PDP-1 (TELCOMP II ran on the PDP-7, III on the PDP-10) and sold as a commercial time-sharing service in Boston and, through Time Sharing Ltd.,
+    in the UK. Its derivative STRINGCOMP handled strings, and FILECOMP's implicit file handling "was influential on the
+    MUMPS global database system". Early LOGO research was done in TELCOMP.
+  relations:
+    - { type: dialect_of, to: joss, weight: strong, confidence: high, sources: [wiki-telcomp], note: "\"an interactive, conversational language based on JOSS\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TELCOMP" }
+  sources: [wiki-telcomp]
+  example:
+    title: Menu dispatch
+    language: TELCOMP
+    note: "First lines of Wikipedia's sample program; the one-space indent of the page is dropped."
+    code: |
+      1.04 TYPE #,"ENTER ONE OF THE FOLLOWING:-";MENU
+      1.05 TYPE FORM X FOR X=1:1:4 FOR END=10^15
+      1.06 READ GRNO IN FORM 15
+      1.065 DONE IF GRNO=END
+      1.07 TO STEP 1.06 IF GRNO>4
+      1.08 TO PART GRNO+1
+    sources: [wiki-telcomp]
+
+- id: cal
+  name: CAL
+  aliases: [Conversational Algebraic Language]
+  kind: language
+  category: general
+  cluster: joss
+  origin:
+    first_appeared: { year: 1967, precision: year, note: "\"designed and developed by Butler Lampson at Berkeley in 1967\"; CAL Reference Manual June 1967." }
+    places: [{ institution: "University of California, Berkeley", country: US }]
+  creators:
+    - { name: Butler Lampson, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [interpreter, interactive-time-sharing]
+  milestones:
+    - { version: Tymshare CAL, year: 1969, summary: "Improved version offered to Tymshare's customers." }
+  summary: >
+    "a version of the seminal JOSS language with several cleanups and new features to take advantage of the SDS
+    platform", written for the SDS 940 at Berkeley. It added BY and TO to JOSS's loop syntax. CAL saw "almost no use",
+    but Tymshare SUPER BASIC copied a number of its features, some of which reached BASIC-PLUS, "the direct ancestor of
+    Microsoft BASIC".
+  relations:
+    - { type: dialect_of, to: joss, weight: strong, confidence: high, sources: [wiki-cal], note: "\"a version of the seminal JOSS language\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CAL_(programming_language)" }
+  sources: [wiki-cal]
+
+- id: mark-iv
+  name: MARK IV
+  aliases: [Mark IV, VISION:BUILDER, CA VISION:BUILDER]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1967, precision: exact, note: "\"Mark IV, was announced in November 1967\"; its predecessor GIRLS was revealed in December 1962." }
+    places: [{ institution: "Informatics, Inc.", country: US }]
+  creators:
+    - { name: John Postley, role: developer }
+  status: legacy
+  tags:
+    paradigm: [declarative]
+    domain: [business-data-processing]
+  summary: >
+    "a fourth-generation programming language that was created by Informatics, Inc. in the 1960s", which "automated the
+    reading of input files and conversion of the data inside to produce one or more reports and updated output files".
+    It descends from Postley's GIRLS and Marks I to III, and is "historically important as one of the first examples of
+    commercial software that was sold by an independent vendor". Computer Associates sold it as VISION:BUILDER.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MARK_IV_(software)" }
+  sources: [wiki-mark-iv]
+
+- id: focal
+  name: FOCAL
+  aliases: [FOCAL-69, FOCAL-71, FOCAL-8, FOCAL-11]
+  kind: language
+  category: general
+  cluster: joss
+  origin:
+    first_appeared: { year: 1968, precision: year, note: "\"The first version of FOCAL was released in 1968 for the PDP-8.\"" }
+    places: [{ institution: Digital Equipment Corporation, country: US }]
+  creators:
+    - { name: Richard Merrill, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [interpreter, line-numbers]
+  milestones:
+    - { version: FOCAL-69, year: 1969 }
+    - { version: FOCAL-71, year: 1971, summary: "A very slightly modified FOCAL-69." }
+  summary: >
+    "an interactive interpreted programming language based on JOSS and mostly used on Digital Equipment Corporation
+    (DEC) PDP series machines". Merrill removed JOSS features such as ranges and user-defined functions to fit in less
+    memory. The original Hamurabi and Lunar Lander were written in it; BASIC displaced it on DEC machines by the mid-1970s,
+    though PDP-11 clones revived it in the Soviet Union.
+  notes: >
+    Merrill's Wikipedia article is "Richard Merrill (computer scientist)"; the parenthesis is dropped because build.py
+    rejects it.
+  relations:
+    - { type: dialect_of, to: joss, weight: strong, confidence: high, sources: [wiki-focal], note: "\"very similar to JOSS in the commands it supports and the general syntax\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FOCAL_(programming_language)" }
+  sources: [wiki-focal]
+  example:
+    title: Interest table
+    language: FOCAL
+    note: "Wikipedia's sample FOR loop."
+    code: |
+      01.10 ASK "HOW MUCH MONEY DO YOU WANT TO BORROW ?",PRINCIPAL
+      01.20 ASK "FOR HOW MANY YEARS ?",TERM
+      01.30 FOR RATE=4.0,.5,10;DO 2.0
+      01.40 QUIT
+      02.10 SET INTEREST=PRINCIPAL*(RATE/100)*TERM
+      02.20 TYPE "RATE",RATE,"   ","INTEREST",INTEREST,!
+    sources: [wiki-focal]
+
+- id: spss
+  name: SPSS
+  aliases: [Statistical Package for the Social Sciences, IBM SPSS Statistics, PASW]
+  kind: language
+  category: scientific
+  cluster: data
+  origin:
+    first_appeared: { year: 1968, precision: year, note: "\"released in its first version in 1968 as the Statistical Package for the Social Sciences\"." }
+  creators:
+    - { name: Norman H. Nie, role: co-developer }
+    - { name: Dale H. Bent, role: co-developer }
+    - { name: C. Hadlai Hull, role: co-developer }
+  status: active
+  tags:
+    paradigm: [imperative]
+    domain: [statistics]
+  milestones:
+    - { version: "2", year: 1983 }
+    - { version: "16", year: 2007, summary: "Java graphical user interface." }
+    - { version: "31", year: 2025 }
+  summary: >
+    A statistics package that "can be programmed with a proprietary 4GL command syntax language", released in 1968 for
+    the social sciences by Nie, Bent and Hull, who incorporated as SPSS Inc. in 1975. Early versions were written in
+    Fortran. IBM bought it in 2009 and sells it as IBM SPSS Statistics.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SPSS" }
+  sources: [wiki-spss]

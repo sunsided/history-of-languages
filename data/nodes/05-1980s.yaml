@@ -3744,3 +3744,170 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Hermes_(programming_language)" }
   sources: [wiki-hermes]
+
+- id: omnimark
+  name: OmniMark
+  aliases: [XTRAN]
+  kind: language
+  category: domain-specific
+  cluster: data
+  origin:
+    first_appeared: { year: 1980, precision: decade, note: "\"originally created in the 1980s by Exoterica, a Canadian software company, as a SGML processing program called XTRAN\"; no exact year." }
+    places: [{ institution: Exoterica, country: CA }]
+  creators:
+    - { name: Exoterica, role: developer }
+  status: maintained
+  tags:
+    paradigm: [declarative]
+    features: [string-processing, pattern-matching]
+  milestones:
+    - { version: "5", year: 1999, summary: "Made available free of charge \"to better compete with Perl\"." }
+  summary: >
+    "a fourth-generation programming language used mostly in the publishing industry", begun as the SGML processor
+    XTRAN. It "treats input as a flow that can be scanned once, rather than as a static collection of data that supports
+    random access". Stilo International now sells it; release 11.0 was current in July 2022.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/OmniMark" }
+  sources: [wiki-omnimark]
+  example:
+    title: Hello, World!
+    language: OmniMark
+    note: "From Wikipedia."
+    code: |
+      process
+         output "Hello World!"
+    sources: [wiki-omnimark]
+
+- id: prograph
+  name: Prograph
+  aliases: [Prograph CPX, Marten]
+  kind: language
+  category: general
+  cluster: visual
+  origin:
+    began: { year: 1982, precision: year, note: "\"Research on Prograph started at Acadia University in 1982\"." }
+    first_appeared: { year: 1983, precision: year, note: "Infobox \"First appeared: 1983\"; first commercial release v1.2 at OOPSLA, October 1989." }
+    places: [{ institution: Acadia University, country: CA }]
+  creators:
+    - { name: Tomasz Pietrzykowski, role: research lead }
+    - { name: Philip Cox, role: developer }
+    - { name: Mark Szpakowski, role: "object-orientation + dataflow" }
+  status: legacy
+  tags:
+    paradigm: [visual-programming, dataflow-programming, object-oriented]
+  milestones:
+    - { version: "1.2", year: 1989, summary: "First commercial release, at OOPSLA in New Orleans." }
+    - { version: "2.0", year: 1990, summary: "Added a compiler." }
+    - { version: Prograph CPX, year: 1993 }
+  summary: >
+    "a visual, object-oriented, dataflow, multiparadigm programming language that uses iconic symbols to represent
+    actions to be taken on data", from Acadia University in Nova Scotia; Mark Szpakowski "suggested the merger of
+    object-orientation with visual dataflow". The commercial Mac products were withdrawn in the late 1990s, and Andescotia's
+    Marten IDE supports the language today.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Prograph" }
+  sources: [wiki-prograph]
+
+- id: simulink
+  name: Simulink
+  aliases: [Simulab]
+  kind: language
+  category: scientific
+  cluster: visual
+  origin:
+    first_appeared: { year: 1984, precision: year, note: "Infobox \"Release: 1984\"." }
+    places: [{ institution: MathWorks, country: US }]
+  creators:
+    - { name: MathWorks, role: developer }
+  status: active
+  tags:
+    paradigm: [visual-programming, dataflow-programming]
+    domain: [simulation]
+  milestones:
+    - { version: "4", year: 1992, summary: "Renamed from Simulab to SIMULINK." }
+  summary: >
+    "a MATLAB-based graphical programming environment for modeling, simulating and analyzing multidomain dynamical
+    systems", built from block diagrams and block libraries and "widely used in automatic control and digital signal
+    processing for multidomain simulation and model-based design". It can drive MATLAB or be scripted from it.
+  relations:
+    - { type: influenced_by, to: matlab, weight: strong, confidence: high, sources: [wiki-simulink], note: "\"a MATLAB-based graphical programming environment\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Simulink" }
+  sources: [wiki-simulink]
+
+- id: txl
+  name: TXL
+  aliases: [Turing eXtender Language]
+  kind: language
+  category: domain-specific
+  cluster: data
+  origin:
+    first_appeared: { year: 1985, precision: year, note: "\"originally designed by Charles Halpern-Hamu and James Cordy at the University of Toronto in 1985\"." }
+    places: [{ institution: University of Toronto, country: CA }]
+  creators:
+    - { name: Charles Halpern-Hamu, role: co-designer }
+    - { name: James Cordy, role: co-designer }
+  status: maintained
+  tags:
+    paradigm: [functional, declarative]
+    features: [pattern-matching]
+  summary: >
+    A source-transformation language, "a hybrid functional / rule-based language using first order functional
+    programming at the higher level and term rewriting at the lower level". The name first meant "Turing eXtender
+    Language", for prototyping extensions of Turing; it is now used for software analysis, reengineering and prototyping
+    language dialects.
+  relations:
+    - { type: influenced_by, to: turing, weight: weak, confidence: medium, sources: [wiki-txl], note: "Built for \"the specification and rapid prototyping of variants and extensions of the Turing programming language\"; a purpose, not a design influence." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TXL_(programming_language)" }
+  sources: [wiki-txl]
+  example:
+    title: Bubble sort as a rewrite rule
+    language: TXL
+    note: "From Wikipedia."
+    code: |
+      %Syntax specification
+      define program
+          [repeat number]
+      end define
+
+      %Transformation rules
+      rule main
+          replace $ [repeat number]
+              N1 [number] N2 [number] Rest [repeat number]
+          where
+              N1 [> N2]
+          by
+              N2 N1 Rest
+      end rule
+    sources: [wiki-txl]
+
+- id: sqr
+  name: SQR
+  aliases: [Structured Query Reporter, Hyperion SQR Production Reporting]
+  kind: language
+  category: query
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1985, precision: circa, note: "\"written by Israel Stern in Cleveland, Ohio, probably around 1984 or 1985\"; \"SQ Software created SQR in the mid 1980s.\"" }
+    places: [{ institution: SQ Software, city: "Cleveland, Ohio", country: US }]
+  creators:
+    - { name: Israel Stern, role: author }
+  status: legacy
+  tags:
+    paradigm: [imperative, query]
+    domain: [databases, business-data-processing]
+  summary: >
+    "a programming language designed for generating reports from database management systems"; "Any SQL statement can be
+    embedded in an SQR program", and it is "notable for its database and printing functions". It passed through Sybase,
+    MITI/SQRiBE, Brio and Hyperion to Oracle, where it lives on in PeopleSoft PeopleTools.
+  relations:
+    - { type: influenced_by, to: sql, weight: moderate, confidence: medium, sources: [wiki-sqr], note: "Its name \"suggests its relationship to SQL\"; SQL is embedded in its programs." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SQR" }
+  sources: [wiki-sqr]
