@@ -17,10 +17,13 @@ python3 tools/report.py find "<name>"      # also try aliases and spellings: "Mo
 
 - Already a node: you are deepening it. Read the node and its cluster first.
 - In a cluster `backlog`: that cluster is where it goes. Remove the backlog line when the node exists.
-- A version of an existing language (Python 3, Fortran 90, C++11) is a **milestone**, not a node. A dialect
-  that people name and use separately (MACLISP, Turbo Pascal, Objective-C) is a node with `dialect_of` or
-  `superset_of`. An implementation (CPython, PyPy, GCC) is not a node unless it is the language's
-  defining moment.
+- We map **every language variant**. A version of a language (Python 3, Fortran 90, C++11) is a
+  **milestone** on its node. A named dialect, including one defined by a particular compiler or product
+  (MACLISP, Turbo Pascal, Borland Pascal, QuickBASIC, GNU C, C++/CLI), is a **node** with `dialect_of`,
+  `superset_of` or `successor_of`. A re-implementation on another platform (Jython, JRuby, IronPython) is a
+  node with `dialect_of` plus `implemented_in`.
+- A compiler or port that accepts the language unchanged (DJGPP is GCC for DOS) is not a node of its own:
+  mention it in the dialect's `notes` or as a milestone. If it added its own extensions, it is a dialect.
 - Unsure whether it belongs at all: use the inclusion test in the `find-missing-languages` skill.
 
 ## 2. Find sources, best first

@@ -49,13 +49,14 @@ A candidate belongs if at least one is true. Note which one in the backlog `hint
 2. **A missing link:** a documented ancestor or descendant of a node already here, without which an edge
    would be wrong or unexplained.
 3. **Widely used** in its time (a major ranking, a large installed base, or a standard).
-4. **A family member** that a reader would expect to find in an unfolded cluster (Modula-3 in the Wirth
-   line, the main BASIC dialects).
+4. **A variant of a language already here.** Every named dialect counts, including compiler- and
+   product-specific ones (Turbo Pascal, Borland C++, Simons' BASIC), as long as it changed the language
+   (extensions, removals, a distinct standard library or runtime model).
 5. **Esoterics:** only if it demonstrates a computational idea (a Turing tarpit, two-dimensional control
    flow, self-modification, natural-language syntax) or is a well-known cultural reference.
 
-Not a node: a version (make it a milestone), an implementation or compiler (unless it defines the
-language), a library or framework, a configuration or markup format with no computation (JSON, YAML),
+Not a node: a version (make it a milestone), a compiler or port that accepts the language unchanged
+(note it on the dialect instead), a library or framework, a configuration or markup format with no computation (JSON, YAML),
 and toy or one-off languages that fail all five tests.
 
 ## 4. Record the result
