@@ -832,10 +832,12 @@
     The institution is not stated on the page read; the Keldysh Institute is the commonly given home and needs
     a source (refal.net and ru.wikipedia were unreachable). Versions Refal-2, Refal-5, Refal-6 and Refal+ have
     no dates here.
+  relations:
+    - { type: influenced_by, to: markov-algorithm, weight: strong, confidence: high, sources: [wiki-markov-algorithm], note: "\"Refal is a programming language based on Markov algorithms.\"" }
   research_status: draft
   confidence: low
   links: { wikipedia: "https://en.wikipedia.org/wiki/Refal" }
-  sources: [wiki-refal]
+  sources: [wiki-refal, wiki-markov-algorithm]
   example:
     title: Hello world
     language: Refal-5

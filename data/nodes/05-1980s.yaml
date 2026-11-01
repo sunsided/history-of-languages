@@ -2366,12 +2366,13 @@
   notes: >
     Concurrent Euclid and SP/k (also Toronto) are not nodes yet; SP/k is in the education backlog.
   relations:
+    - { type: implemented_in, to: s-sl, weight: weak, confidence: high, sources: [wiki-s-sl], note: "S/SL \"has been used to implement production commercial compilers for languages such as PL/I, Euclid, Turing, Ada, and COBOL\"." }
     - { type: influenced_by, to: euclid, weight: strong, confidence: high, sources: [wiki-euclid], note: "\"Descendants of Euclid include the Concurrent Euclid programming language and the Turing programming language.\"" }
     - { type: influenced_by, to: pascal, weight: strong, confidence: high, sources: [wiki-turing-language], note: "\"a descendant of Pascal, Euclid, and SP/k\"" }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Turing_(programming_language)" }
-  sources: [wiki-turing-language, wiki-euclid]
+  sources: [wiki-turing-language, wiki-euclid, wiki-s-sl]
   example:
     title: Factorial with input checking
     language: Turing

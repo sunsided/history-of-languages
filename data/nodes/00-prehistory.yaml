@@ -78,11 +78,14 @@
     The first widely used machine driven by an exchangeable, stored sequence of instructions.
     Babbage adopted its cards for the Analytical Engine.
   relations:
+    - { type: influenced_by, to: vaucanson-automata, weight: moderate, confidence: medium, sources: [wiki-jacques-de-vaucanson], note: "Through Vaucanson's 1745 automated loom, not his automata: his proposals \"were later perfected and implemented by Joseph Marie Jacquard\"." }
+    - { type: influenced_by, to: falcon-loom, weight: strong, confidence: high, sources: [wiki-jacquard], note: "Jacquard \"made use of Jean-Baptiste Falcon's individual pasteboard cards and his square prism\"." }
+    - { type: influenced_by, to: bouchon-loom, weight: strong, confidence: high, sources: [wiki-jacquard], note: "\"based on earlier inventions by the Frenchmen Basile Bouchon (1725), Jean Baptiste Falcon (1728), and Jacques Vaucanson (1740)\"." }
     - { type: influenced_by, to: banu-musa-flute-player, weight: weak, confidence: low, note: "Shared idea (exchangeable stored pattern), not a documented line of transmission. Earlier looms by Basile Bouchon (1725) and Jacques de Vaucanson (1745) are the direct ancestors; add them when the subgraph is unfolded." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Jacquard_machine" }
-  sources: [wiki-jacquard]
+  sources: [wiki-jacquard, wiki-jacques-de-vaucanson]
   example:
     title: One card, one row of the pattern
     language: punched card (illustrative)
@@ -110,11 +113,12 @@
     and mill (processor), conditional branching and loops, programmed by punched cards borrowed
     from the Jacquard loom. Turing-complete in principle; never built.
   relations:
+    - { type: successor_of, to: difference-engine, weight: strong, confidence: high, sources: [wiki-difference-engine], note: "\"By improving the concept as an analytical engine, Babbage had made the difference engine concept obsolete.\"" }
     - { type: influenced_by, to: jacquard-loom, aspects: [punched-card-program], weight: strong, confidence: high, note: "Babbage explicitly adopted Jacquard's cards for operation and variable cards." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Analytical_engine" }
-  sources: [menabrea-lovelace-1843, wiki-analytical-engine]
+  sources: [menabrea-lovelace-1843, wiki-analytical-engine, wiki-difference-engine]
   example:
     title: Operation cards and variable cards
     language: Analytical Engine card notation (illustrative)
@@ -286,3 +290,348 @@
       inc    0     1      –     halt
       inc    _     1      –     halt
     sources: [turing-1936]
+
+- id: al-jazari-automata
+  name: Al-Jazari's musical automata
+  kind: mechanism
+  category: domain-specific
+  cluster: prehistory/mechanisms
+  origin:
+    first_appeared: { year: 1206, precision: year, note: "Described in The Book of Knowledge of Ingenious Mechanical Devices, \"in 1206, where he described 50 mechanical devices\"." }
+  creators:
+    - { name: Ismail al-Jazari, role: inventor }
+  summary: >
+    Automata in al-Jazari's 1206 book. The castle clock had "five automata musicians who automatically
+    play music when moved by levers operated by a hidden camshaft attached to a water wheel". For his
+    musical boat, Noel Sharkey "has argued that it is quite likely that it was an early programmable
+    automata": "a programmable drum machine with pegs (cams)", where "different rhythms and different drum
+    patterns" came from moving the pegs. The camshaft itself "was described in 1206 by al-Jazari".
+  notes: >
+    The programmability is Sharkey's reading, not the article's own claim; a 14th-century copy shows the
+    castle clock. Al-Jazari credits the Banū Mūsā brothers for his fountains and Hibatullah ibn al-Husayn
+    for musical automata.
+  relations:
+    - { type: influenced_by, to: banu-musa-flute-player, weight: weak, confidence: low, sources: [wiki-al-jazari], note: "He cites \"the Banū Mūsā brothers for his fountains\" and Hibatullah ibn al-Husayn \"for musical automata\"; no direct link to the flute player is stated." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ismail_al-Jazari" }
+  sources: [wiki-al-jazari]
+
+- id: schickard-calculating-clock
+  name: Schickard's calculating clock
+  aliases: [Rechenuhr]
+  kind: mechanism
+  category: scientific
+  cluster: prehistory/mechanisms
+  origin:
+    first_appeared: { year: 1623, precision: year, note: "Reported \"In 1623 and 1624, in two letters that he sent to Kepler\"." }
+  creators:
+    - { name: Wilhelm Schickard, role: inventor }
+  status: extinct
+  summary: >
+    "an adding machine, operated by rotating knobs for input". It "could add and subtract six-digit
+    numbers, and indicated an overflow of this capacity by ringing a bell", with Napier's bones for
+    multiplication. The machine "was destroyed in a fire either whilst still incomplete, or in any case
+    before delivery"; Bruno von Freytag-Löringhoff built a replica in 1960.
+  notes: >
+    "Taton has argued that Schickard's work had no impact on the development of mechanical calculators",
+    and Pascal's invention "was almost certainly independent".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Wilhelm_Schickard" }
+  sources: [wiki-wilhelm-schickard]
+
+- id: pascaline
+  name: Pascaline
+  aliases: [Pascal's calculator, arithmetic machine]
+  kind: mechanism
+  category: scientific
+  cluster: prehistory/mechanisms
+  origin:
+    first_appeared: { year: 1642, precision: year, note: "\"Pascal designed the machine in 1642\"; presented to the public in 1645 after 50 prototypes." }
+    places: [{ city: Rouen, country: FR }]
+  creators:
+    - { name: Blaise Pascal, role: inventor }
+  status: historical
+  summary: >
+    "a mechanical calculator invented by Blaise Pascal in 1642", "the first operational mechanical
+    calculator with better tens-carry", built to help with his father's tax work in Rouen. A direct adding
+    machine with a stylus; subtraction worked by nine's complement. "Only 20 Pascalines were produced",
+    and "Nine Pascal calculators presently exist."
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pascaline" }
+  sources: [wiki-pascaline]
+
+- id: stepped-reckoner
+  name: Stepped reckoner
+  aliases: [Leibniz calculator]
+  kind: mechanism
+  category: scientific
+  cluster: prehistory/mechanisms
+  origin:
+    began: { year: 1673, precision: year, note: "\"started in 1673, when he presented a wooden model to the Royal Society of London\"." }
+    first_appeared: { year: 1694, precision: year, note: "\"completed in 1694\"; the surviving machine was built from 1690 to 1720." }
+  creators:
+    - { name: Gottfried Wilhelm Leibniz, role: inventor }
+  status: historical
+  summary: >
+    Leibniz's mechanical calculator, named after its "Staffelwalze, meaning 'stepped drum'". "It was the
+    first calculator that could perform all four basic arithmetic operations", multiplying by repeated
+    addition, though a flaw in the carry mechanism kept it from working reliably. The Leibniz wheel "was
+    used in many calculating machines for 200 years, and into the 1970s with the Curta hand calculator."
+    One of two prototypes survives in Hanover.
+  relations:
+    - { type: influenced_by, to: pascaline, weight: moderate, confidence: high, sources: [wiki-pascaline], note: "\"Gottfried Leibniz invented his Leibniz wheels after 1671, after trying to add an automatic multiplication feature to the Pascaline.\"" }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Stepped_reckoner" }
+  sources: [wiki-stepped-reckoner, wiki-pascaline]
+
+- id: bouchon-loom
+  name: Bouchon's perforated-paper loom
+  kind: mechanism
+  category: domain-specific
+  cluster: prehistory/punched-cards
+  origin:
+    first_appeared: { year: 1725, precision: year, note: "\"invented a way to control a loom with a perforated paper roll in 1725\"." }
+    places: [{ city: Lyon }]
+  creators:
+    - { name: Basile Bouchon, role: inventor }
+  tags:
+    features: [punched-card-program]
+  summary: >
+    A Lyon textile worker's control for the drawloom: warp cords passed through needles that "were either
+    raised or not depending on whether there was not or was a hole in the roll at that point." It
+    "partially automated the tedious setting up process of the drawloom" and "is considered to be the first
+    industrial application of a semi-automated machine." The 1725 loom is shown at the Musée des Arts et
+    Métiers, Paris.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Basile_Bouchon" }
+  sources: [wiki-basile-bouchon]
+
+- id: falcon-loom
+  name: Falcon's punched-card loom
+  kind: mechanism
+  category: domain-specific
+  cluster: prehistory/punched-cards
+  origin:
+    first_appeared: { year: 1728, precision: year, note: "\"Three years later\" than Bouchon's 1725 loom; the Jacquard machine article gives \"Jean Baptiste Falcon (1728)\"." }
+  creators:
+    - { name: Jean-Baptiste Falcon, role: inventor }
+  tags:
+    features: [punched-card-program]
+  summary: >
+    Bouchon's assistant "expanded the number of cords that could be handled by arranging the holes in rows
+    and using rectangular cards that were joined together in an endless loop." "Though this eliminated
+    mistakes in the lifting of threads, it still needed an extra operator to control it." Jacquard later
+    "made use of Jean-Baptiste Falcon's individual pasteboard cards and his square prism (or card
+    'cylinder')."
+  notes: >
+    Falcon has no English Wikipedia article; facts come from the Bouchon and Jacquard machine articles.
+  relations:
+    - { type: influenced_by, to: bouchon-loom, weight: strong, confidence: high, sources: [wiki-basile-bouchon], note: "His assistant extended Bouchon's paper roll to rows of holes on linked cards." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Basile_Bouchon" }
+  sources: [wiki-basile-bouchon, wiki-jacquard]
+
+- id: vaucanson-automata
+  name: Vaucanson's automata
+  aliases: [The Flute Player, The Digesting Duck]
+  kind: mechanism
+  category: domain-specific
+  cluster: prehistory/mechanisms
+  origin:
+    first_appeared: { year: 1737, precision: year, note: "\"In 1737, Vaucanson built The Flute Player\"; the Tambourine Player and Digesting Duck followed that year, shown to the Académie des Sciences in early 1738." }
+  creators:
+    - { name: Jacques de Vaucanson, role: inventor }
+  status: extinct
+  summary: >
+    Jacques de Vaucanson's automata: "a life-size figure of a shepherd that played the flute and had a
+    repertoire of twelve songs", and a duck that "could flap its wings, drink water, seemingly digest grain,
+    and seemingly defecate". "His original automata have all been lost."
+  notes: >
+    "In 1745, he created the world's first completely automated loom, drawing on the work of Basile Bouchon
+    and Jean-Baptiste Falcon"; his weaving proposals "were later perfected and implemented by Joseph Marie
+    Jacquard". The loom is not a separate node; the edge from Jacquard's loom stands for it.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Jacques_de_Vaucanson" }
+  sources: [wiki-jacques-de-vaucanson]
+
+- id: difference-engine
+  name: Difference Engine
+  kind: mechanism
+  category: scientific
+  cluster: prehistory/babbage
+  origin:
+    began: { year: 1819, precision: circa, note: "\"began to construct a small difference engine in c. 1819\"." }
+    first_appeared: { year: 1822, date: "1822-06-14", precision: exact, note: "Difference Engine 0 completed by 1822; \"He announced his invention on 14 June 1822.\" The 1830 design for No. 1 was never finished; a one-seventh working model followed in 1832." }
+  creators:
+    - { name: Charles Babbage, role: inventor }
+  status: historical
+  summary: >
+    "an automatic mechanical calculator designed to tabulate polynomial functions." It holds numbers in
+    columns, and "The engine is programmed by setting initial values to the columns." The 1830 design for
+    No. 1 "would have about 25,000 parts, weigh 4 tons, and operate on 20-digit numbers by sixth-order
+    differences"; with government money from 1823, Babbage and Joseph Clement built "a small working model
+    (one-seventh of the plan)" in 1832. "By improving the concept as an analytical engine, Babbage had made
+    the difference engine concept obsolete."
+  notes: >
+    The incomplete No. 1 was shown at the 1862 International Exhibition in South Kensington. Scheutz's
+    engine was "Inspired by Babbage's difference engine in 1834".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Difference_engine" }
+  sources: [wiki-difference-engine]
+
+- id: korsakov-homeoscope
+  name: Korsakov's homeoscopes
+  aliases: [ideoscope]
+  kind: mechanism
+  category: domain-specific
+  cluster: prehistory/punched-cards
+  origin:
+    first_appeared: { year: 1832, date: "1832-09", precision: exact, note: "\"Korsakov announced his new method in September 1832.\"" }
+    places: [{ city: St. Petersburg }]
+  creators:
+    - { name: Semyon Korsakov, role: inventor }
+  summary: >
+    "machines for the comparison of ideas" (linear and flat homeoscopes, the ideoscope, a simple
+    comparator) meant "to facilitate the search for information, stored in the form of punched cards or
+    similar media". Punched cards had until then "been used solely in the textile industry to control
+    looms"; "Korsakov was reputedly the first to use the cards for information storage." The academy
+    rejected his application, and the machines "were largely forgotten until after the Second World War".
+  relations:
+    - { type: influenced_by, to: jacquard-loom, weight: weak, confidence: low, sources: [wiki-semyon-korsakov], note: "The page sets his cards against the loom's (\"introduced in 1805\") but states no direct influence." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Semyon_Korsakov" }
+  sources: [wiki-semyon-korsakov]
+
+- id: ludgate-analytical-machine
+  name: Ludgate's analytical machine
+  kind: machine
+  category: scientific
+  cluster: prehistory/babbage
+  origin:
+    first_appeared: { year: 1909, date: "1909-04", precision: exact, note: "Paper \"On a proposed analytical machine\" (April 1909)." }
+  creators:
+    - { name: Percy Ludgate, role: designer }
+  status: historical
+  summary: >
+    A design for "a general-purpose Turing-complete computer, and the second of its kind", by the Irish
+    amateur Percy Ludgate. It was to store "192 numbers, each containing 20 digits" in "concentric
+    cylinders", with "program control (e.g., preemption and subroutines – or microcode, depending on one's
+    viewpoint)". "The design is so dissimilar from Babbage's that it can be considered a second, unique type
+    of analytical engine". It "incorporated the first multiplier-accumulator". The drawings he mentioned in
+    1914 "have never been found".
+  notes: >
+    In 1960 a patent lawyer working for IBM used Ludgate's paper to defeat a 1941 patent application by
+    Konrad Zuse.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Percy_Ludgate" }
+  sources: [wiki-percy-ludgate]
+
+- id: begriffsschrift
+  name: Begriffsschrift
+  kind: formalism
+  category: research
+  cluster: prehistory/formalisms
+  origin:
+    first_appeared: { year: 1879, precision: year, note: "\"published in 1879\" (Halle an der Saale)." }
+  creators:
+    - { name: Gottlob Frege, role: author }
+  summary: >
+    Frege's book and "the formal system set out in that book", "a formula language, modeled on that of
+    arithmetic, for pure thought." "All work in formal logic subsequent to the Begriffsschrift is indebted
+    to it, because its second-order logic was the first formal logic capable of representing a fair bit of
+    mathematics and natural language." The turnstile symbol survives from its notation.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Begriffsschrift" }
+  sources: [wiki-begriffsschrift]
+  example:
+    title: "Proposition 59"
+    language: "Modern notation"
+    note: "Wikipedia's rendering of Frege's Proposition 59 in modern notation, not his two-dimensional script."
+    code: |
+      ⊢ g ( b ) → ( ¬ f ( b ) → ¬ ( ∀ a ) ( g ( a ) → f ( a ) ) )
+
+- id: mcculloch-pitts-neuron
+  name: McCulloch–Pitts neuron
+  kind: formalism
+  category: research
+  cluster: prehistory/formalisms
+  origin:
+    first_appeared: { year: 1943, precision: year, note: "\"first proposed by Warren McCulloch and Walter Pitts in their 1943 paper\"." }
+  creators:
+    - { name: Warren McCulloch, role: co-author }
+    - { name: Walter Pitts, role: co-author }
+  summary: >
+    The artificial neuron of "A Logical Calculus of the Ideas Immanent in Nervous Activity", a threshold
+    unit. "Any finite state machine can be simulated by a MCP neural network", and "Furnished with an
+    infinite tape, MCP neural networks can simulate any Turing machine." A single unit can represent AND,
+    OR and NOR "but not, for example, XOR."
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Artificial_neuron" }
+  sources: [wiki-artificial-neuron]
+
+- id: post-canonical-system
+  name: Post canonical system
+  aliases: [Post production system]
+  kind: formalism
+  category: research
+  cluster: prehistory/formalisms
+  origin:
+    first_appeared: { year: 1943, precision: circa, note: "The page dates only the normal-form theorem (\"Post 1943\"); when Post introduced the system is not stated. The old backlog's 1936 is unsourced." }
+  creators:
+    - { name: Emil Post, role: creator }
+  summary: >
+    "a string-manipulation system that starts with finitely many strings and repeatedly transforms them by
+    applying a finite set of specified rules", thus generating a formal language. It is Turing complete;
+    "Today they are mainly of historical relevance because every Post canonical system can be reduced to a
+    string rewriting system". Tag systems are Post normal-form systems, and the reduction leads to the
+    type-0 grammars of the Chomsky hierarchy.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Post_canonical_system" }
+  sources: [wiki-post-canonical-system]
+  example:
+    title: "Well-formed bracket expressions"
+    language: "Post canonical system"
+    note: "From Wikipedia's Post canonical system article: alphabet {[, ]}, initial word [], and three productions."
+    code: |
+      $ → [$]
+      $ → $$
+      $1$2 → $1[]$2
+
+- id: markov-algorithm
+  name: Markov algorithm
+  kind: formalism
+  category: research
+  cluster: prehistory/formalisms
+  origin:
+    first_appeared: { year: 1951, precision: year, note: "Markov's \"The Theory of Algorithms\", Trudy Instituta im. Steklova 38 (1951); English translation 1960. The article prose gives no year; the old backlog's 1954 is unsourced." }
+  creators:
+    - { name: Andrey Markov Jr., role: creator }
+  summary: >
+    "a string rewriting system that uses grammar-like rules to operate on strings of symbols", shown to be
+    Turing-complete. "Any normal algorithm is equivalent to some Turing machine, and vice versa", and the
+    μ-recursive functions are equivalent to the functions computable by Markov algorithms.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Markov_algorithm" }
+  sources: [wiki-markov-algorithm, wiki-general-recursive-function]
+  example:
+    title: "Binary to unary"
+    language: "Markov algorithm"
+    note: "Rules from Wikipedia's Markov algorithm article, applied to the string 101."
+    code: |
+      "|0" -> "0||"
+      "1" -> "0|"
+      "0" -> ""

@@ -279,6 +279,7 @@
   wiki: Charles Babbage
   nodes:
   - analytical-engine
+  - difference-engine
 - id: person-charles-h-moore
   kind: person
   person: Charles H. Moore
@@ -351,6 +352,7 @@
   wiki: David Patterson (computer scientist)
   nodes:
   - risc-v
+  - berkeley-risc
 - id: person-david-turner
   kind: person
   person: David Turner
@@ -422,6 +424,9 @@
   wiki: Federico Faggin
   nodes:
   - zilog-z80
+  - intel-4004
+  - intel-8008
+  - intel-8080
 - id: person-frances-spence
   kind: person
   person: Frances Spence
@@ -643,6 +648,7 @@
   wiki: Kathleen Booth
   nodes:
   - booth-contracted-notation
+  - booth-arc
 - id: person-ken-thompson
   kind: person
   person: Ken Thompson
@@ -667,6 +673,7 @@
   nodes:
   - zuse-z3
   - plankalkul
+  - zuse-z4
 - id: person-kristen-nygaard
   kind: person
   person: Kristen Nygaard
@@ -742,6 +749,8 @@
   wiki: Masatoshi Shima
   nodes:
   - zilog-z80
+  - intel-4004
+  - intel-8080
 - id: person-maurice-wilkes
   kind: person
   person: Maurice Wilkes
@@ -1403,6 +1412,7 @@
   wiki: Kenneth Bowles
   nodes:
   - ucsd-pascal
+  - ucsd-p-code
 - id: person-dennis-allison
   kind: person
   person: Dennis Allison
@@ -1647,6 +1657,7 @@
   wiki: Douglas McIlroy
   nodes:
   - tmg
+  - darwin-game
 - id: person-richard-merrill
   kind: person
   person: Richard Merrill
@@ -1672,6 +1683,7 @@
   nodes:
   - txl
   - euclid
+  - s-sl
 - id: person-roger-hui
   kind: person
   person: Roger Hui
@@ -2109,6 +2121,7 @@
   wiki: Ric Holt
   nodes:
   - euclid
+  - s-sl
 - id: person-frank-ostrowski
   kind: person
   person: Frank Ostrowski
@@ -2127,3 +2140,353 @@
   wiki: Ken Kennedy (computer scientist)
   nodes:
   - hpf
+- id: schickard-calculating-clock
+  kind: machine
+  wiki: Wilhelm Schickard
+  nodes:
+  - schickard-calculating-clock
+- id: pascaline
+  kind: machine
+  wiki: Pascaline
+  nodes:
+  - pascaline
+- id: stepped-reckoner
+  kind: machine
+  wiki: Stepped reckoner
+  nodes:
+  - stepped-reckoner
+- id: bouchon-loom
+  kind: machine
+  wiki: Basile Bouchon
+  nodes:
+  - bouchon-loom
+- id: difference-engine
+  kind: machine
+  wiki: Difference engine
+  nodes:
+  - difference-engine
+- id: vaucanson-automata
+  kind: machine
+  wiki: Jacques de Vaucanson
+  nodes:
+  - vaucanson-automata
+- id: al-jazari-automata
+  kind: machine
+  wiki: Ismail al-Jazari
+  nodes:
+  - al-jazari-automata
+- id: korsakov-homeoscope
+  kind: machine
+  wiki: Semyon Korsakov
+  nodes:
+  - korsakov-homeoscope
+- id: atanasoff-berry-computer
+  kind: machine
+  wiki: Atanasoff–Berry computer
+  nodes:
+  - atanasoff-berry-computer
+- id: colossus
+  kind: machine
+  wiki: Colossus computer
+  nodes:
+  - colossus
+- id: booth-arc
+  kind: machine
+  wiki: Automatic Relay Calculator
+  nodes:
+  - booth-arc
+- id: zuse-z4
+  kind: machine
+  wiki: Z4 (computer)
+  nodes:
+  - zuse-z4
+- id: dyseac
+  kind: machine
+  wiki: DYSEAC
+  nodes:
+  - dyseac
+- id: univac-1103
+  kind: machine
+  wiki: UNIVAC 1103
+  nodes:
+  - univac-1103
+- id: ibm-701
+  kind: machine
+  wiki: IBM 701
+  nodes:
+  - ibm-701
+- id: ibm-709
+  kind: machine
+  wiki: IBM 709
+  nodes:
+  - ibm-709
+- id: ibm-7090
+  kind: machine
+  wiki: IBM 7090
+  nodes:
+  - ibm-7090
+- id: ibm-1401
+  kind: machine
+  wiki: IBM 1401
+  nodes:
+  - ibm-1401
+- id: z-architecture
+  kind: machine
+  wiki: Z/Architecture
+  nodes:
+  - z-architecture
+- id: pdp-1
+  kind: machine
+  wiki: PDP-1
+  nodes:
+  - pdp-1
+- id: pdp-7
+  kind: machine
+  wiki: PDP-7
+  nodes:
+  - pdp-7
+- id: pdp-10
+  kind: machine
+  wiki: PDP-10
+  nodes:
+  - pdp-10
+- id: vax
+  kind: machine
+  wiki: VAX
+  nodes:
+  - vax
+- id: intel-4004
+  kind: machine
+  wiki: Intel 4004
+  nodes:
+  - intel-4004
+- id: intel-8008
+  kind: machine
+  wiki: Intel 8008
+  nodes:
+  - intel-8008
+- id: intel-8080
+  kind: machine
+  wiki: Intel 8080
+  nodes:
+  - intel-8080
+- id: motorola-6800
+  kind: machine
+  wiki: Motorola 6800
+  nodes:
+  - motorola-6800
+- id: motorola-6809
+  kind: machine
+  wiki: Motorola 6809
+  nodes:
+  - motorola-6809
+- id: mpf-1
+  kind: machine
+  wiki: Micro-Professor MPF-I
+  nodes:
+  - mpf-1
+- id: ibm-801
+  kind: machine
+  wiki: IBM 801
+  nodes:
+  - ibm-801
+- id: berkeley-risc
+  kind: machine
+  wiki: Berkeley RISC
+  nodes:
+  - berkeley-risc
+- id: sparc
+  kind: machine
+  wiki: SPARC
+  nodes:
+  - sparc
+- id: powerpc
+  kind: machine
+  wiki: PowerPC
+  nodes:
+  - powerpc
+- id: person-ismail-al-jazari
+  kind: person
+  person: Ismail al-Jazari
+  wiki: Ismail al-Jazari
+  nodes:
+  - al-jazari-automata
+- id: person-wilhelm-schickard
+  kind: person
+  person: Wilhelm Schickard
+  wiki: Wilhelm Schickard
+  nodes:
+  - schickard-calculating-clock
+- id: person-blaise-pascal
+  kind: person
+  person: Blaise Pascal
+  wiki: Blaise Pascal
+  nodes:
+  - pascaline
+- id: person-gottfried-wilhelm-leibniz
+  kind: person
+  person: Gottfried Wilhelm Leibniz
+  wiki: Gottfried Wilhelm Leibniz
+  nodes:
+  - stepped-reckoner
+- id: person-basile-bouchon
+  kind: person
+  person: Basile Bouchon
+  wiki: Basile Bouchon
+  nodes:
+  - bouchon-loom
+- id: person-jacques-de-vaucanson
+  kind: person
+  person: Jacques de Vaucanson
+  wiki: Jacques de Vaucanson
+  nodes:
+  - vaucanson-automata
+- id: person-semyon-korsakov
+  kind: person
+  person: Semyon Korsakov
+  wiki: Semyon Korsakov
+  nodes:
+  - korsakov-homeoscope
+- id: person-percy-ludgate
+  kind: person
+  person: Percy Ludgate
+  wiki: Percy Ludgate
+  nodes:
+  - ludgate-analytical-machine
+- id: person-gottlob-frege
+  kind: person
+  person: Gottlob Frege
+  wiki: Gottlob Frege
+  nodes:
+  - begriffsschrift
+- id: person-warren-mcculloch
+  kind: person
+  person: Warren McCulloch
+  wiki: Warren McCulloch
+  nodes:
+  - mcculloch-pitts-neuron
+- id: person-walter-pitts
+  kind: person
+  person: Walter Pitts
+  wiki: Walter Pitts
+  nodes:
+  - mcculloch-pitts-neuron
+- id: person-emil-post
+  kind: person
+  person: Emil Post
+  wiki: Emil Post
+  nodes:
+  - post-canonical-system
+- id: person-andrey-markov-jr
+  kind: person
+  person: Andrey Markov Jr.
+  wiki: Andrey Markov Jr.
+  nodes:
+  - markov-algorithm
+- id: person-john-vincent-atanasoff
+  kind: person
+  person: John Vincent Atanasoff
+  wiki: John Vincent Atanasoff
+  nodes:
+  - atanasoff-berry-computer
+- id: person-clifford-berry
+  kind: person
+  person: Clifford Berry
+  wiki: Clifford Berry
+  nodes:
+  - atanasoff-berry-computer
+- id: person-tommy-flowers
+  kind: person
+  person: Tommy Flowers
+  wiki: Tommy Flowers
+  nodes:
+  - colossus
+- id: person-allen-coombs
+  kind: person
+  person: Allen Coombs
+  wiki: Allen Coombs
+  nodes:
+  - colossus
+- id: person-andrew-donald-booth
+  kind: person
+  person: Andrew Donald Booth
+  wiki: Andrew Donald Booth
+  nodes:
+  - booth-arc
+- id: person-seymour-cray
+  kind: person
+  person: Seymour Cray
+  wiki: Seymour Cray
+  nodes:
+  - univac-1103
+- id: person-jerrier-a-haddad
+  kind: person
+  person: Jerrier A. Haddad
+  wiki: Jerrier A. Haddad
+  nodes:
+  - ibm-701
+- id: person-nathaniel-rochester
+  kind: person
+  person: Nathaniel Rochester
+  wiki: Nathaniel Rochester (computer scientist)
+  nodes:
+  - ibm-701
+  - rochester-assembler
+- id: person-ben-gurley
+  kind: person
+  person: Ben Gurley
+  wiki: Ben Gurley
+  nodes:
+  - pdp-1
+- id: person-marcian-hoff
+  kind: person
+  person: Marcian Hoff
+  wiki: Marcian Hoff
+  nodes:
+  - intel-4004
+  - intel-8008
+- id: person-stanley-mazor
+  kind: person
+  person: Stanley Mazor
+  wiki: Stanley Mazor
+  nodes:
+  - intel-4004
+  - intel-8008
+  - intel-8080
+- id: person-victor-poor
+  kind: person
+  person: Victor Poor
+  wiki: Victor Poor
+  nodes:
+  - intel-8008
+- id: person-john-cocke
+  kind: person
+  person: John Cocke
+  wiki: John Cocke (computer scientist)
+  nodes:
+  - ibm-801
+- id: person-yale-patt
+  kind: person
+  person: Yale Patt
+  wiki: Yale Patt
+  nodes:
+  - lc-3
+- id: person-victor-a-vyssotsky
+  kind: person
+  person: Victor A. Vyssotsky
+  wiki: Victor A. Vyssotsky
+  nodes:
+  - darwin-game
+- id: person-robert-morris
+  kind: person
+  person: Robert Morris
+  wiki: Robert Morris (cryptographer)
+  nodes:
+  - darwin-game
+- id: person-douglas-hofstadter
+  kind: person
+  person: Douglas Hofstadter
+  wiki: Douglas Hofstadter
+  nodes:
+  - bloop
+  - floop

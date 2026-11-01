@@ -18,12 +18,7 @@
   parent: prehistory
   research_status: draft
   backlog:
-    - { name: "Hero of Alexandria's programmable cart", year: 60, hint: "Rope-and-peg 'program' for a moving automaton; often cited as earliest programmable device. Confidence check needed." }
-    - { name: "Al-Jazari's castle clock and musical automata", year: 1206, hint: "Book of Knowledge of Ingenious Mechanical Devices; pegged drums." }
-    - { name: "Schickard calculating clock", year: 1623 }
-    - { name: "Pascaline (Blaise Pascal)", year: 1642 }
-    - { name: "Leibniz stepped reckoner", year: 1673, hint: "Also Leibniz's binary arithmetic (1703)." }
-    - { name: "Vaucanson's automata", year: 1738 }
+    - { name: "Hero of Alexandria's programmable cart", year: 60, hint: "Wikipedia (Hero of Alexandria): \"A cart that was powered by a falling weight and strings wrapped around the drive axle\"; no date for it, Hero dated 150 BC to 250 AD, and \"programmable\" appears only in a cited New Scientist title. Needs Sharkey 2007 or a translation of Automata." }
   research_questions:
     - "Where does 'computing' end and 'programming' begin? Proposed rule: a node is programmable if its behaviour can be changed without rebuilding it."
 - id: prehistory/punched-cards
@@ -31,19 +26,14 @@
   parent: prehistory
   research_status: draft
   backlog:
-    - { name: "Basile Bouchon's perforated-paper loom", year: 1725 }
-    - { name: "Jean-Baptiste Falcon's punched-card loom", year: 1728 }
-    - { name: "Semen Korsakov's punched-card information machines", year: 1832 }
-    - { name: "IBM 80-column card", year: 1928 }
-    - { name: "Plugboard programming (IBM 402 and unit-record equipment)", year: 1940 }
+    - { name: "IBM 80-column card", year: 1928, hint: "Punched card article: \"In 1927, Thomas J. Watson Sr. ... asked ... Clair D. Lake and J. Royden Pierce\"; the 1928 introduction was only in a tool summary, not verbatim. A format, so probably a note on hollerith-tabulator." }
+    - { name: "Plugboard programming (IBM 402 and unit-record equipment)", year: 1940, hint: "Plugboard article: Otto Schäffler invented it \"to easily reprogram tabulators\"; no year in the prose (only a 1906 category). Calculator panels \"were described as being programs\"." }
 - id: prehistory/babbage
   name: Babbage and Lovelace
   parent: prehistory
   research_status: draft
   backlog:
-    - { name: "Difference Engine No. 1", year: 1822 }
     - { name: "Babbage's own Analytical Engine 'programs' (1837 notebooks)", year: 1837, hint: "Predate Note G; relevant to the attribution debate." }
-    - { name: "Percy Ludgate's analytical machine", year: 1909 }
   research_questions:
     - "Attribution of Note G: summarise the historiography (Stein, Fuegi & Francis 2003, Hollings/Martin/Rice 2018) neutrally for the side sheet."
 - id: prehistory/formalisms
@@ -51,11 +41,7 @@
   parent: prehistory
   research_status: draft
   backlog:
-    - { name: "Frege's Begriffsschrift", year: 1879 }
-    - { name: "Gödel's recursive functions", year: 1931 }
-    - { name: "Post's production systems", year: 1936 }
-    - { name: "Markov algorithms", year: 1954 }
-    - { name: "McCulloch-Pitts neurons / finite automata", year: 1943 }
+    - { name: "Gödel's recursive functions", year: 1931, hint: "General recursive function article gives no year for Gödel (1931/1934) or Herbrand; only Kleene 1936 in references (tool summary). Needs Kleene 1936 or Gödel 1934 lectures." }
 
 # ===================== Machines and assembly =====================
 - id: machines
@@ -67,39 +53,18 @@
   name: First electronic and electromechanical computers
   parent: machines
   research_status: draft
-  backlog:
-    - { name: "Atanasoff-Berry Computer", year: 1942 }
-    - { name: "Colossus", year: 1944 }
-    - { name: "ARC2 (Booth)", year: 1948 }
-    - { name: "Zuse Z4", year: 1945 }
-    - { name: "DYSEAC / UNIVAC 1103A (first hardware interrupts)", year: 1954, hint: "Root of the concurrency lineage." }
 - id: machines/ibm
   name: IBM mainframes
   parent: machines
   research_status: stub
-  backlog:
-    - { name: "IBM 701", year: 1952 }
-    - { name: "IBM 709 / 7090", year: 1958 }
-    - { name: "IBM 1401", year: 1959 }
-    - { name: "z/Architecture", year: 2000 }
 - id: machines/dec
   name: DEC minicomputers
   parent: machines
   research_status: stub
-  backlog:
-    - { name: "PDP-1", year: 1959 }
-    - { name: "PDP-7", year: 1965, hint: "First Unix and B." }
-    - { name: "PDP-10", year: 1966, hint: "MACRO-10, MacLisp, early hacker culture." }
-    - { name: "VAX", year: 1977 }
 - id: machines/microprocessors
   name: Microprocessors
   parent: machines
   research_status: stub
-  backlog:
-    - { name: "Intel 4004", year: 1971 }
-    - { name: "Intel 8008 / 8080", year: 1974 }
-    - { name: "Motorola 6800", year: 1974 }
-    - { name: "Multitech Micro-Professor MPF-1", year: 1981, hint: "Z80 single-board trainer from Taiwan. German Wikipedia says the LC 80's monitor is essentially the MPF-1's, apart from entry addresses: add it, then link lc80 to it once a source confirms the derivation." }
 - id: machines/fantasy
   name: Fictional and fantasy computers
   parent: machines
@@ -134,10 +99,6 @@
   parent: machines
   research_status: stub
   backlog:
-    - { name: "IBM 801", year: 1980 }
-    - { name: "Berkeley RISC I", year: 1981 }
-    - { name: "SPARC", year: 1987 }
-    - { name: "PowerPC", year: 1992 }
     - { name: "WebAssembly (virtual ISA)", year: 2017, hint: "The text format is node webassembly (kind assembly). Add the ISA as a machine node if the graph needs a targets edge." }
 
 - id: assembly
@@ -146,59 +107,42 @@
   summary: "Symbolic forms of machine code, from hand-assembled notation (1947) to macro assemblers and syntax dialects."
   research_status: stub
   backlog:
-    - { name: "COMPASS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "LC-3", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "LLL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "S/SL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "COMPASS", hint: "No article (COMPASS_(programming_language) is 404). CDC 6600 assembler; needs a CDC manual." }
+    - { name: "LLL", hint: "Only a List of programming languages entry linking to Ethereum#Contract_source_code, which does not mention it. Needs the Ethereum docs." }
   research_questions:
     - "Model choice: one node per ISA's assembly language, plus dialect nodes for distinct syntaxes/assemblers (Intel vs AT&T, MASM vs NASM). Is that the right granularity for the site?"
 - id: assembly/early
   name: First assemblers
   parent: assembly
   research_status: draft
-  backlog:
-    - { name: "Wilkes/Wheeler subroutine library and Wheeler jump", year: 1949 }
-    - { name: "Whirlwind symbolic assembler (Comprehensive System)", year: 1953 }
-    - { name: "Nathaniel Rochester's IBM 701 assembler", year: 1954 }
 - id: assembly/ibm
   name: IBM assemblers
   parent: assembly
   research_status: stub
   backlog:
-    - { name: "Autocoder (IBM 702/705/1401)", year: 1955 }
-    - { name: "FAP / MAP (IBM 709/7090)", year: 1959 }
-    - { name: "IBM Basic assembly language and successors", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "FAP / MAP (IBM 709/7090)", year: 1959, hint: "IBM 709 article: \"The FORTRAN Assembly Program was introduced for the 709\" (no year, no author; its own article is 404). IBM 7090: IBSYS included \"the MAP assembler\". Needs an IBM manual on bitsavers." }
 - id: assembly/dec
   name: DEC assemblers
   parent: assembly
   research_status: stub
-  backlog:
-    - { name: "MACRO-10", year: 1966 }
-    - { name: "VAX MACRO-32", year: 1977 }
 - id: assembly/x86
   name: x86 assemblers and syntaxes
   parent: assembly
   research_status: stub
   backlog:
-    - { name: "FASM (flat assembler)", year: 2000, hint: "Tomasz Grysztar; public March 2000, self-hosting since 0.90 (May 1999); addressing \"similar to TASM's ideal mode and NASM\". Needs a code example (flatassembler.net is robots-blocked)." }
-    - { name: "A86", year: 1986, hint: "Eric Isaacson, shareware June 1986; no ASSUME/SEGMENT/PROC needed; own macro syntax. Needs a code example." }
-    - { name: "HLA (High Level Assembly)", hint: "Randall Hyde; Pascal/Ada/C-like syntax; 1.x emitted MASM/TASM/FASM/NASM/GAS source. Needs a first-release year and a full example." }
+    - { name: "HLA (High Level Assembly)", hint: "Wikipedia: Randall Hyde, for teaching assembly; syntax \"loosely based on\" Pascal, Ada, Modula-2 and C++; v1.x emitted MASM/TASM/FASM/NASM/Gas source; stable 2.16 (6 July 2011). No first-release year." }
   research_questions:
     - "AT&T syntax on x86: Wikipedia's comparison says Interactive Systems Corporation wrote the System V x86 assembler in 1986 (table says 1985). Find a primary source (ISC or AT&T System V/386 manuals)."
 - id: assembly/8-bit
   name: 8- and 16-bit microprocessor assembly
   parent: assembly
   research_status: stub
-  backlog:
-    - { name: "8080 assembly (Intel mnemonics)", year: 1974 }
-    - { name: "6809 assembly", year: 1978 }
 - id: assembly/risc
   name: RISC assembly
   parent: assembly
   research_status: stub
   backlog:
-    - { name: "SPARC assembly", year: 1987 }
-    - { name: "PowerPC assembly", year: 1992 }
+    - { name: "PowerPC assembly", year: 1992, hint: "The PowerPC article has no assembly section or example. Needs IBM or Motorola programming environments manual." }
 
 - id: assembly/virtual
   name: Virtual machine instruction sets
@@ -206,8 +150,6 @@
   summary: "Instruction sets for virtual machines, written by compilers rather than people: p-code, JVM bytecode, CIL, WebAssembly."
   research_status: stub
   key_sources: [wiki-webassembly]
-  backlog:
-    - { name: "UCSD p-code", year: 1977 }
 
 # ===================== Early languages =====================
 - id: early
@@ -544,9 +486,6 @@
   parent: esoteric
   research_status: draft
   backlog:
-    - { name: "BlooP", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "FlooP", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Mouse", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "JEAN", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "SMALL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
 - id: esoteric/2d
@@ -582,7 +521,6 @@
     - { name: "Shenzhen I/O", year: 2016, hint: "Zachtronics, 17 November 2016; \"similar to assembly language\" for MCxxxx microcontrollers; \"a spiritual successor to their previous title TIS-100\" (Wikipedia). Needs a sourced code example (the in-game manual)." }
     - { name: "EXAPUNKS", year: 2018, hint: "Zachtronics, 22 October 2018; EXA agents with \"a few simple opcodes for movement, data processing, network messaging, and interfacing with files and registers\". Needs instruction list and example." }
     - { name: "7 Billion Humans", year: 2018, hint: "Tomorrow Corporation's sequel to Human Resource Machine (23 August 2018): many workers at once, language \"similar to assembly language\" (Wikipedia). Needs a real program text." }
-    - { name: "Darwin", year: 1961, hint: "Vyssotsky, Morris and McIlroy's Bell Labs game of competing programs, cited by Dewdney's 1984 Core War article. Find the original description." }
 - id: education
   name: Educational languages
   summary: "Languages designed for teaching programming, from PILOT and TUTOR to block-based Scratch and Snap!."

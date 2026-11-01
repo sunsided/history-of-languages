@@ -5776,3 +5776,321 @@
   primary: false
   title: "Wikipedia: ECMAScript version history"
   url: https://en.wikipedia.org/wiki/ECMAScript_version_history
+
+- id: wiki-al-jazari
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Ismail al-Jazari"
+  url: https://en.wikipedia.org/wiki/Ismail_al-Jazari
+
+- id: wiki-wilhelm-schickard
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Wilhelm Schickard"
+  url: https://en.wikipedia.org/wiki/Wilhelm_Schickard
+
+- id: wiki-pascaline
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Pascaline"
+  url: https://en.wikipedia.org/wiki/Pascaline
+
+- id: wiki-stepped-reckoner
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Stepped reckoner"
+  url: https://en.wikipedia.org/wiki/Stepped_reckoner
+
+- id: wiki-basile-bouchon
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Basile Bouchon"
+  url: https://en.wikipedia.org/wiki/Basile_Bouchon
+
+- id: wiki-jacques-de-vaucanson
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Jacques de Vaucanson"
+  url: https://en.wikipedia.org/wiki/Jacques_de_Vaucanson
+
+- id: wiki-difference-engine
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Difference engine"
+  url: https://en.wikipedia.org/wiki/Difference_engine
+
+- id: wiki-semyon-korsakov
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Semyon Korsakov"
+  url: https://en.wikipedia.org/wiki/Semyon_Korsakov
+
+- id: wiki-percy-ludgate
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Percy Ludgate"
+  url: https://en.wikipedia.org/wiki/Percy_Ludgate
+
+- id: wiki-begriffsschrift
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Begriffsschrift"
+  url: https://en.wikipedia.org/wiki/Begriffsschrift
+
+- id: wiki-artificial-neuron
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Artificial neuron"
+  url: https://en.wikipedia.org/wiki/Artificial_neuron
+
+- id: wiki-post-canonical-system
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Post canonical system"
+  url: https://en.wikipedia.org/wiki/Post_canonical_system
+
+- id: wiki-markov-algorithm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Markov algorithm"
+  url: https://en.wikipedia.org/wiki/Markov_algorithm
+
+- id: wiki-general-recursive-function
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: General recursive function"
+  url: https://en.wikipedia.org/wiki/General_recursive_function
+
+- id: wiki-atanasoff-berry-computer
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Atanasoff–Berry computer"
+  url: https://en.wikipedia.org/wiki/Atanasoff%E2%80%93Berry_computer
+
+- id: wiki-colossus
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Colossus computer"
+  url: https://en.wikipedia.org/wiki/Colossus_computer
+
+- id: wiki-automatic-relay-calculator
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Automatic Relay Calculator"
+  url: https://en.wikipedia.org/wiki/Automatic_Relay_Calculator
+
+- id: wiki-zuse-z4
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Z4 (computer)"
+  url: https://en.wikipedia.org/wiki/Z4_(computer)
+
+- id: wiki-dyseac
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: DYSEAC"
+  url: https://en.wikipedia.org/wiki/DYSEAC
+
+- id: wiki-univac-1103
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: UNIVAC 1103"
+  url: https://en.wikipedia.org/wiki/UNIVAC_1103
+
+- id: wiki-ibm-701
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IBM 701"
+  url: https://en.wikipedia.org/wiki/IBM_701
+
+- id: wiki-ibm-709
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IBM 709"
+  url: https://en.wikipedia.org/wiki/IBM_709
+
+- id: wiki-ibm-7090
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IBM 7090"
+  url: https://en.wikipedia.org/wiki/IBM_7090
+
+- id: wiki-ibm-1401
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IBM 1401"
+  url: https://en.wikipedia.org/wiki/IBM_1401
+
+- id: wiki-z-architecture
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: z/Architecture"
+  url: https://en.wikipedia.org/wiki/Z/Architecture
+
+- id: wiki-pdp-1
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PDP-1"
+  url: https://en.wikipedia.org/wiki/PDP-1
+
+- id: wiki-pdp-7
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PDP-7"
+  url: https://en.wikipedia.org/wiki/PDP-7
+
+- id: wiki-pdp-10
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PDP-10"
+  url: https://en.wikipedia.org/wiki/PDP-10
+
+- id: wiki-vax
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: VAX"
+  url: https://en.wikipedia.org/wiki/VAX
+
+- id: wiki-intel-4004
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Intel 4004"
+  url: https://en.wikipedia.org/wiki/Intel_4004
+
+- id: wiki-intel-8008
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Intel 8008"
+  url: https://en.wikipedia.org/wiki/Intel_8008
+
+- id: wiki-intel-8080
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Intel 8080"
+  url: https://en.wikipedia.org/wiki/Intel_8080
+
+- id: wiki-motorola-6800
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Motorola 6800"
+  url: https://en.wikipedia.org/wiki/Motorola_6800
+
+- id: wiki-motorola-6809
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Motorola 6809"
+  url: https://en.wikipedia.org/wiki/Motorola_6809
+
+- id: wiki-mpf-1
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Micro-Professor MPF-I"
+  url: https://en.wikipedia.org/wiki/Micro-Professor_MPF-I
+
+- id: wiki-ibm-801
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IBM 801"
+  url: https://en.wikipedia.org/wiki/IBM_801
+
+- id: wiki-berkeley-risc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Berkeley RISC"
+  url: https://en.wikipedia.org/wiki/Berkeley_RISC
+
+- id: wiki-sparc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SPARC"
+  url: https://en.wikipedia.org/wiki/SPARC
+
+- id: wiki-powerpc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PowerPC"
+  url: https://en.wikipedia.org/wiki/PowerPC
+
+- id: wiki-nathaniel-rochester
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Nathaniel Rochester (computer scientist)"
+  url: https://en.wikipedia.org/wiki/Nathaniel_Rochester_(computer_scientist)
+
+- id: wiki-autocoder
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Autocoder"
+  url: https://en.wikipedia.org/wiki/Autocoder
+
+- id: wiki-lc-3
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Little Computer 3"
+  url: https://en.wikipedia.org/wiki/Little_Computer_3
+
+- id: wiki-macro-10
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MACRO-10"
+  url: https://en.wikipedia.org/wiki/MACRO-10
+
+- id: wiki-vax-macro
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: VAX MACRO"
+  url: https://en.wikipedia.org/wiki/VAX_MACRO
+
+- id: wiki-fasm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: FASM"
+  url: https://en.wikipedia.org/wiki/FASM
+
+- id: wiki-a86
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: A86 (software)"
+  url: https://en.wikipedia.org/wiki/A86_(software)
+
+- id: wiki-p-code-machine
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: P-code machine"
+  url: https://en.wikipedia.org/wiki/P-code_machine
+
+- id: wiki-s-sl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: S/SL programming language"
+  url: https://en.wikipedia.org/wiki/S/SL_programming_language
+
+- id: wiki-darwin-game
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Darwin (video game)"
+  url: https://en.wikipedia.org/wiki/Darwin_(video_game)
+
+- id: wiki-bloop-floop
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: BlooP and FlooP"
+  url: https://en.wikipedia.org/wiki/BlooP_and_FlooP
+
+- id: wiki-mouse
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Mouse (programming language)"
+  url: https://en.wikipedia.org/wiki/Mouse_(programming_language)
+
+- id: wiki-ibm-basic-assembly
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IBM Basic assembly language and successors"
+  url: https://en.wikipedia.org/wiki/IBM_Basic_assembly_language_and_successors
+
+- id: wiki-wheeler-jump
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Wheeler Jump"
+  url: https://en.wikipedia.org/wiki/Wheeler_Jump

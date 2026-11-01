@@ -229,9 +229,11 @@
   origin: { first_appeared: { year: 1954, precision: year }, places: [{ institution: IBM, country: US }] }
   status: extinct
   summary: "First mass-produced computer with floating-point hardware and index registers. Home of SAP, FORTRAN and the first Lisp; Lisp's CAR and CDR are named after 704 register fields."
+  relations:
+    - { type: successor_of, to: ibm-701, weight: strong, confidence: high, sources: [wiki-ibm-701], note: "\"The successor of the 701 was the index register-equipped IBM 704\"; not compatible, as instructions grew from 18 to 36 bits." }
   research_status: stub
   confidence: high
-  sources: [wiki-ibm-704, mccarthy-1978-history-lisp]
+  sources: [wiki-ibm-704, mccarthy-1978-history-lisp, wiki-ibm-701]
   example:
     title: Single-address accumulator machine
     language: IBM 704 machine instructions
@@ -302,9 +304,11 @@
   milestones:
     - { version: "80386 (IA-32)", year: 1985 }
     - { version: "AMD64 / x86-64", year: 2003 }
+  relations:
+    - { type: influenced_by, to: intel-8080, weight: strong, confidence: high, sources: [wiki-intel-8080], note: "\"It directly influenced the later x86 architecture\"." }
   research_status: stub
   confidence: high
-  sources: [wiki-x86]
+  sources: [wiki-x86, wiki-intel-8080]
   example:
     title: 5 + 3 in bytes
     language: 8086 machine code
@@ -324,9 +328,11 @@
   creators: [{ name: Chuck Peddle, role: designer }, { name: Bill Mensch, role: designer }]
   status: legacy
   summary: "Cheap 8-bit CPU behind the Apple II, Commodore 64, Atari 2600 and NES. Its assembly language was the first programming language of a generation of hobbyists."
+  relations:
+    - { type: influenced_by, to: motorola-6800, weight: moderate, confidence: medium, sources: [wiki-motorola-6800], note: "The 6800 infobox lists the MOS 6502 among its successors; Orgill later designed the 6501, socket compatible with the 6800." }
   research_status: stub
   confidence: high
-  sources: [wiki-6502]
+  sources: [wiki-6502, wiki-motorola-6800]
   example:
     title: 5 + 3 in bytes
     language: 6502 machine code
@@ -348,9 +354,11 @@
   creators: [{ name: Federico Faggin, role: designer }, { name: Masatoshi Shima, role: designer }]
   status: legacy
   summary: "8-bit CPU binary-compatible with the Intel 8080; ran CP/M, the ZX Spectrum and MSX."
+  relations:
+    - { type: influenced_by, to: intel-8080, weight: strong, confidence: medium, sources: [wiki-intel-8080], note: "The 8080 infobox lists the Zilog Z80 among its successors." }
   research_status: stub
   confidence: high
-  sources: [wiki-z80]
+  sources: [wiki-z80, wiki-intel-8080]
   example:
     title: 5 + 3 in bytes
     language: Z80 machine code
@@ -522,9 +530,11 @@
   summary: "RISC instruction set from Acorn, now the dominant architecture in phones and increasingly in laptops and servers."
   milestones:
     - { version: "AArch64 (ARMv8-A)", year: 2011 }
+  relations:
+    - { type: influenced_by, to: berkeley-risc, weight: moderate, confidence: high, sources: [wiki-berkeley-risc], note: "Berkeley RISC \"inspired the ARM architecture\"." }
   research_status: stub
   confidence: high
-  sources: [wiki-arm]
+  sources: [wiki-arm, wiki-berkeley-risc]
   example:
     title: Every instruction is conditional
     language: ARM (A32) machine code
@@ -605,9 +615,11 @@
   tags:
     features: [assembly-language]
   summary: "Symbolic notation for the ARC2 computer's instructions, often credited as the first assembly language. Translation to machine code was still done by hand."
+  relations:
+    - { type: targets, to: booth-arc, weight: strong, confidence: high, sources: [wiki-automatic-relay-calculator], note: "\"the platform for the first assembly language, developed by Kathleen Booth\"." }
   research_status: draft
   confidence: medium
-  sources: [booth-1947-coding-arc, wiki-assembly-language]
+  sources: [booth-1947-coding-arc, wiki-assembly-language, wiki-automatic-relay-calculator]
   example:
     title: Symbols instead of bits (illustrative)
     language: pseudocode in the spirit of contracted notation
@@ -634,9 +646,13 @@
   summary: "Bootstrap program wired into EDSAC that read mnemonic, single-letter instructions with decimal addresses from paper tape and assembled them into memory. The first assembler in practical use; Initial Orders 2 (1949) added relocation for subroutines."
   relations:
     - { type: targets, to: edsac, weight: strong, confidence: high }
+  notes: >
+    Subroutines were called with the Wheeler Jump, "jumping to the start of the subroutine with the return
+    address ... in the accumulator"; it "is not capable of expressing recursion". By 1951, 87 library
+    subroutines were available (Wikipedia: EDSAC, Wheeler Jump).
   research_status: draft
   confidence: high
-  sources: [wilkes-wheeler-gill-1951, wiki-edsac]
+  sources: [wilkes-wheeler-gill-1951, wiki-edsac, wiki-wheeler-jump]
   example:
     title: Add two numbers
     language: EDSAC orders read by Initial Orders 2
@@ -725,12 +741,14 @@
     features: [assembly-language]
   summary: "Assembler family for System/360 and successors, with a powerful macro language. HLASM (1992) is still used for z/OS."
   milestones:
-    - { version: HLASM, year: 1992 }
+    - { version: "Assembler D/E/F", year: 1966, summary: "Infobox: Assembler D/E/F/G/H/XF first appeared 1966, with macros and fuller features than BAL." }
+    - { version: "Assembler H Version 2", year: 1981, summary: "Announced 1981, with XA support (AMODE, RMODE); withdrawn 1994." }
+    - { version: HLASM, year: 1992, summary: "June 1992, replacing Assembler H Version 2; John Robert Ehrman led it." }
   relations:
     - { type: targets, to: ibm-system-360, weight: strong, confidence: high }
   research_status: stub
   confidence: medium
-  sources: [wiki-ibm-assembler]
+  sources: [wiki-ibm-assembler, wiki-ibm-basic-assembly]
   example:
     title: C = A + B
     language: IBM Basic Assembly Language
@@ -788,10 +806,11 @@
     features: [assembly-language]
   summary: "Intel's own mnemonic syntax for the 8086 family: destination operand first, e.g. `mov eax, 1`. Used by MASM, NASM, FASM and most Intel/AMD documentation."
   relations:
+    - { type: influenced_by, to: asm-8080, weight: strong, confidence: high, sources: [wiki-intel-8080], note: "x86 \"was designed so that its assembly language closely resembled that of the 8080\"." }
     - { type: targets, to: intel-8086, weight: strong, confidence: high }
   research_status: stub
   confidence: high
-  sources: [wiki-x86-assembly]
+  sources: [wiki-x86-assembly, wiki-intel-8080]
   example:
     title: Destination first
     language: x86 assembly, Intel syntax
@@ -1922,3 +1941,997 @@
       RETURN(RESULT)
       END
     sources: [wiki-gec-4000]
+
+- id: atanasoff-berry-computer
+  name: Atanasoff–Berry Computer
+  aliases: [ABC]
+  kind: mechanism
+  category: scientific
+  cluster: machines/early
+  origin:
+    began: { year: 1939, date: "1939-10", precision: exact, note: "\"the 11-tube prototype was first demonstrated in October 1939\"." }
+    first_appeared: { year: 1942, precision: year, note: "\"was successfully tested in 1942\"." }
+    places: [{ institution: Iowa State College }]
+  creators:
+    - { name: John Vincent Atanasoff, role: designer }
+    - { name: Clifford Berry, role: co-designer }
+  status: historical
+  summary: >
+    "the first automatic electronic digital computer", though "its priority is debated" "because it was
+    neither programmable, nor Turing-complete": an operator set its functions with front-panel switches.
+    It worked on 50-bit binary fixed-point numbers, read decimal input from IBM 80-column punched cards and
+    was the first to use vacuum tubes for arithmetic and capacitors for memory. Dismantled in 1948; a working
+    replica was finished in 1997.
+  notes: >
+    Goldstine on Mauchly's visit: "The discussion greatly influenced Mauchly and through him the entire
+    history of electronic computers"; a court found "the ENIAC patent was a derivative of John Atanasoff's
+    invention". Not stored as an edge on ENIAC until the influence is sourced from an ENIAC history.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Atanasoff%E2%80%93Berry_computer" }
+  sources: [wiki-atanasoff-berry-computer]
+
+- id: colossus
+  name: Colossus
+  kind: machine
+  category: domain-specific
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1943, date: "1943-12-08", precision: exact, note: "Mark 1 \"performed satisfactorily at Dollis Hill on 8 December 1943\"; Mark 2 first ran on 1 June 1944." }
+    places: [{ institution: Post Office Research Station }, { institution: Bletchley Park }]
+  creators:
+    - { name: Tommy Flowers, role: designer }
+    - { name: Allen Coombs, role: developer }
+  status: historical
+  milestones:
+    - { version: "Mark 2", year: 1944, summary: "First ran successfully on 1 June 1944." }
+  summary: >
+    "a set of computers developed by British codebreakers in the years 1943–1945 to help in the
+    cryptanalysis of the Lorenz cipher", "regarded as the world's first programmable, electronic, digital
+    computer". It was "Programmed using switches and plug panels" and had no RAM; ciphertext was read at
+    high speed from a looped paper tape. Twelve were built; the last two were dismantled in the 1960s, and
+    Tony Sale's team completed a working Mark 2 reconstruction in 2008.
+  notes: >
+    The infobox also names Sidney Broadhurst and William Chandler; Max Newman's section at Bletchley Park
+    planned its use. It grew out of the counting machine "Heath Robinson".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Colossus_computer" }
+  sources: [wiki-colossus]
+
+- id: booth-arc
+  name: ARC
+  aliases: [Automatic Relay Calculator, ARC2]
+  kind: machine
+  category: research
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1947, precision: circa, note: "\"developed ... in the mid-1940s\"; Kathleen Booth's article: \"From 1947 to 1953, they produced three machines: ARC\"... No completion date." }
+    places: [{ institution: Birkbeck College }, { city: Welwyn Garden City, country: GB }]
+  creators:
+    - { name: Andrew Donald Booth, role: designer }
+    - { name: Kathleen Booth, role: builder }
+  status: historical
+  summary: >
+    "an early electromechanical computer developed at Birkbeck College, University of London", relay-based
+    with paper-tape input, built at the British Rubber Producers' Research Association in Welwyn Garden City.
+    "Influenced by von Neumann's ideas, Booth redesigned the ARC to incorporate stored-program architecture";
+    this version is "sometimes referred to as ARC2". It "became historically significant as the platform
+    for the first assembly language, developed by Kathleen Booth".
+  notes: >
+    The SEC was an electronic redesign of the ARC2; the APE(X)C became the basis for the British Tabulating
+    Machine Company's HEC series. Xenia Sweeting helped build it.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Automatic_Relay_Calculator" }
+  sources: [wiki-automatic-relay-calculator]
+
+- id: zuse-z4
+  name: Z4
+  kind: machine
+  category: scientific
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1945, date: "1945-04", precision: exact, note: "\"completed in Göttingen ... in April 1945\"; delivered to ETH Zurich in 1950." }
+    places: [{ institution: Zuse Apparatebau, city: Göttingen }]
+  creators:
+    - { name: Konrad Zuse, role: designer }
+  status: historical
+  summary: >
+    "arguably the world's first commercial digital computer, and is the oldest surviving programmable
+    computer". It was programmed with "holes in 35 mm film stock", with a second tape for a subroutine; its
+    Planfertigungsteil punched program tapes "by the use of symbolic operations and memory cells". Words
+    were 32-bit floating point, and the instructions included square root, MAX, MIN and sine. Used at ETH
+    Zurich from 1950 to 1955, it inspired ETH's own ERMETH; it is now in the Deutsches Museum.
+  relations:
+    - { type: successor_of, to: zuse-z3, weight: strong, confidence: high, sources: [wiki-zuse-z4], note: "Infobox predecessor Z3." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Z4_(computer)" }
+  sources: [wiki-zuse-z4]
+
+- id: dyseac
+  name: DYSEAC
+  kind: machine
+  category: general
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1954, date: "1954-04", precision: exact, note: "\"It went into operation in April 1954.\"" }
+    places: [{ institution: National Bureau of Standards }]
+  status: historical
+  tags:
+    concurrency: [interrupts]
+  summary: >
+    "the second Standards Electronic Automatic Computer", built by the National Bureau of Standards for the
+    U.S. Army Signal Corps and "housed in a truck, making it one of the first movable computers". It had 512
+    words of 45 bits in mercury delay-line memory. "DYSEAC may have been the first computer to implement
+    interrupts for I/O."
+  notes: >
+    Predecessor SEAC is not a node. The UNIVAC 1103A has a competing hedged claim to the first hardware
+    interrupt.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/DYSEAC" }
+  sources: [wiki-dyseac]
+
+- id: univac-1103
+  name: UNIVAC 1103
+  aliases: [ERA 1103, UNIVAC 1103A, Univac Scientific]
+  kind: machine
+  category: scientific
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1953, date: "1953-10", precision: exact, note: "\"built by the Remington Rand corporation in October 1953\"; announced February 1953." }
+    places: [{ institution: Engineering Research Associates }, { institution: Remington Rand }]
+  creators:
+    - { name: Seymour Cray, role: designer }
+  status: historical
+  tags:
+    concurrency: [interrupts]
+  milestones:
+    - { version: "1103A", year: 1956, introduces: [interrupts], summary: "Introduced March 1956: magnetic-core memory, hardware floating point and \"perhaps the earliest occurrence of a hardware interrupt feature\"." }
+  summary: >
+    "a successor to the UNIVAC 1101", designed by Engineering Research Associates and "the first computer
+    for which Seymour Cray was credited with design work". 1024 words of 36 bits in Williams tubes;
+    "Instructions had a 6-bit operation code and two 15-bit operand addresses." Programming systems
+    included Remington Rand's RECO assembler and Ramo-Wooldridge's RAWOOP assembler and SNAP interpretive
+    system.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/UNIVAC_1103" }
+  sources: [wiki-univac-1103]
+
+- id: ibm-701
+  name: IBM 701
+  aliases: [Defense Calculator]
+  kind: machine
+  category: scientific
+  cluster: machines/ibm
+  origin:
+    first_appeared: { year: 1952, date: "1952-05-21", precision: exact, note: "\"announced to the public on May 21, 1952\"." }
+    places: [{ institution: IBM }]
+  creators:
+    - { name: Jerrier A. Haddad, role: co-designer }
+    - { name: Nathaniel Rochester, role: co-designer }
+  status: historical
+  summary: >
+    "IBM's first commercial scientific computer and its first series production mainframe computer", "based
+    on the IAS machine at Princeton". "Instructions were 18 bits long, single address" (5-bit opcode, 12-bit
+    half-word address), over 2048 words of 36 bits; only the accumulator and the multiplier/quotient
+    register were visible to the programmer. Speedcode, "the first high-level programming language created
+    for an IBM computer", was written for it by John Backus in 1953.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IBM_701" }
+  sources: [wiki-ibm-701]
+
+- id: ibm-709
+  name: IBM 709
+  kind: machine
+  category: scientific
+  cluster: machines/ibm
+  origin:
+    began: { year: 1957, date: "1957-01", precision: exact, note: "Announced January 1957." }
+    first_appeared: { year: 1958, date: "1958-08", precision: exact, note: "\"first installed during August 1958\"." }
+    places: [{ institution: IBM }]
+  status: historical
+  summary: >
+    "an improved version of its predecessor, the IBM 704", with 32,768 words of 36-bit core memory, three
+    15-bit index registers "whose contents are subtracted from the base address", overlapped I/O,
+    indirect addressing and five instruction formats. An optional hardware emulator ran 704 programs: "the
+    first commercially available emulator." "The FORTRAN Assembly Program was introduced for the 709."
+  relations:
+    - { type: successor_of, to: ibm-704, weight: strong, confidence: high, sources: [wiki-ibm-709], note: "\"an improved version of its predecessor, the IBM 704\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IBM_709" }
+  sources: [wiki-ibm-709]
+
+- id: ibm-7090
+  name: IBM 7090
+  aliases: [IBM 7094]
+  kind: machine
+  category: scientific
+  cluster: machines/ibm
+  origin:
+    first_appeared: { year: 1959, date: "1959-12", precision: exact, note: "\"The first 7090 installation was in December 1959.\"" }
+    places: [{ institution: IBM }]
+  status: historical
+  summary: >
+    "a second-generation transistorized version of the earlier IBM 709", 36-bit words with 15-bit
+    addresses; the 7094 added double-precision floating point and seven index registers. Its IBSYS system
+    supported FORTRAN, COBOL and "the MAP assembler". CTSS, "the first general purpose time-sharing operating
+    system", ran on a 709, 7090 and 7094 at MIT, and a 7090 sang "Daisy Bell" in 1961. Withdrawn from sale
+    on 14 July 1969.
+  relations:
+    - { type: successor_of, to: ibm-709, weight: strong, confidence: high, sources: [wiki-ibm-7090], note: "\"a second-generation transistorized version of the earlier IBM 709\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IBM_7090" }
+  sources: [wiki-ibm-7090, wiki-ibm-709]
+
+- id: ibm-1401
+  name: IBM 1401
+  kind: machine
+  category: business
+  cluster: machines/ibm
+  origin:
+    first_appeared: { year: 1959, date: "1959-10-05", precision: exact, note: "\"announced by IBM on October 5, 1959\"." }
+    places: [{ institution: IBM }]
+  status: extinct
+  tags:
+    domain: [business-data-processing]
+  summary: >
+    "a variable-wordlength decimal computer", "aimed at replacing unit record equipment for processing data
+    stored on punched cards". Characters are six bits plus a word mark; "Opcodes are one character" and
+    instructions are 1 to 8 characters long, with optional index registers held in memory. IBM called it
+    "the Ford Model-T of the computer industry". Its software included the Symbolic Programming System,
+    Autocoder, COBOL, FORTRAN II and IV, FARGO and RPG; some System/360 models ran 1401 programs through
+    microcode emulation. Withdrawn on 8 February 1971.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IBM_1401" }
+  sources: [wiki-ibm-1401]
+  example:
+    title: "Hello, world on one card"
+    language: "IBM 1401 machine code"
+    note: "From Wikipedia's IBM 1401 article: a one-card program that prints HELLO, WORLD!."
+    code: |
+      ,036008,040015,044022,051029,052053/299/332L0652132.HELLO, WORLD!
+
+- id: z-architecture
+  name: z/Architecture
+  aliases: [ESAME]
+  kind: machine
+  category: general
+  cluster: machines/ibm
+  origin:
+    first_appeared: { year: 2000, precision: year, note: "\"IBM introduced its first z/Architecture-based system, the z900, in late 2000.\"" }
+    places: [{ institution: IBM }]
+  status: active
+  summary: >
+    "IBM's 64-bit complex instruction set computer (CISC) instruction set architecture", with 16 64-bit
+    general registers and trimodal 24/31/64-bit addressing. It "retains backward compatibility with previous
+    32-bit-data/31-bit-addressing architecture ESA/390 and its predecessors back to the
+    32-bit-data/24-bit-addressing System/360."
+  relations:
+    - { type: successor_of, to: ibm-system-360, weight: strong, confidence: high, sources: [wiki-z-architecture], note: "Predecessor ESA/390 (not a node); backward compatible back to System/360." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Z/Architecture" }
+  sources: [wiki-z-architecture]
+
+- id: pdp-1
+  name: PDP-1
+  kind: machine
+  category: general
+  cluster: machines/dec
+  origin:
+    first_appeared: { year: 1959, precision: year, note: "\"first produced in 1959\"; prototype shown December 1959, first delivery to BBN November 1960." }
+    places: [{ institution: Digital Equipment Corporation }]
+  creators:
+    - { name: Ben Gurley, role: lead }
+  status: historical
+  summary: >
+    "the first computer in Digital Equipment Corporation's PDP series", an 18-bit machine "based on the
+    pioneering TX-0 and TX-2 computers" of MIT Lincoln Laboratory. It is "the most important computer in the
+    creation of hacker culture" at MIT and BBN, the original hardware for Spacewar! (1962), and the home of
+    the first text editor, word processor and interactive debugger and of the BBN Time-Sharing System.
+    53 were delivered until 1969.
+  relations:
+    - { type: influenced_by, to: whirlwind, weight: moderate, confidence: medium, sources: [wiki-whirlwind-i], note: "The Whirlwind I infobox lists \"TX-0, TX-2, DEC PDP-1\" as successors." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PDP-1" }
+  sources: [wiki-pdp-1, wiki-whirlwind-i]
+
+- id: pdp-7
+  name: PDP-7
+  kind: machine
+  category: general
+  cluster: machines/dec
+  origin:
+    first_appeared: { year: 1965, precision: year, note: "\"Introduced in 1964, shipped starting in 1965\"; a DEC publication says first units shipped in November 1964." }
+    places: [{ institution: Digital Equipment Corporation }]
+  status: historical
+  summary: >
+    An 18-bit minicomputer, "the third of Digital's 18-bit machines", with "essentially the same instruction
+    set architecture as the PDP-4 and the PDP-9". "In 1969, Ken Thompson wrote the first UNIX system ... in
+    assembly language on a PDP-7"; a restored machine "has been demonstrated running Unix version 0 and
+    compiling a B program". MUMPS was developed on one at MGH.
+  relations:
+    - { type: influenced_by, to: pdp-1, weight: moderate, confidence: medium, sources: [wiki-pdp-7], note: "Infobox: \"Backward compatibility PDP-1\"; predecessor PDP-4 is not a node." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PDP-7" }
+  sources: [wiki-pdp-7]
+
+- id: pdp-10
+  name: PDP-10
+  aliases: [DECsystem-10]
+  kind: machine
+  category: general
+  cluster: machines/dec
+  origin:
+    first_appeared: { year: 1966, precision: year, note: "\"manufactured from 1966, delivered from December 1967\"; the KA10 processor came in 1968." }
+    places: [{ institution: Digital Equipment Corporation }]
+  status: historical
+  summary: >
+    A 36-bit mainframe family whose "architecture is almost identical to that of DEC's earlier PDP-6": 36-bit
+    words and instructions, 18-bit addresses, 16 general registers usable for indexing and byte
+    instructions for fields of 1 to 36 bits. "The 36-bit words were especially well suited to Lisp at the
+    time"; TOPS-10, TENEX and ITS ran on it, and it helped build out the early ARPANET. Cancelled in 1983,
+    eclipsed by the VAX.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PDP-10" }
+  sources: [wiki-pdp-10]
+
+- id: vax
+  name: VAX
+  kind: machine
+  category: general
+  cluster: machines/dec
+  origin:
+    began: { year: 1975, precision: year, note: "\"VAX design began in 1975\"." }
+    first_appeared: { year: 1977, date: "1977-10-25", precision: exact, note: "The VAX-11/780 was \"introduced on October 25, 1977 at DEC's annual shareholder meeting\"." }
+    places: [{ institution: Digital Equipment Corporation }]
+  creators:
+    - { name: Bill Strecker, role: architect }
+  status: historical
+  summary: >
+    A 32-bit architecture with virtual memory, "designed by Digital Equipment Corporation (DEC) as a
+    successor to the 16-bit PDP-11", early models with a PDP-11 compatibility mode. "The VAX instruction set
+    was designed to be powerful, orthogonal, and 'compiler-friendly'", with very many addressing modes and
+    register masks at the start of each subprogram. VMS was its native system; BSD Unix up to 4.3BSD also
+    ran on it. Succeeded by the DEC Alpha; Compaq ended the line in 2000.
+  relations:
+    - { type: successor_of, to: pdp-11, weight: strong, confidence: high, sources: [wiki-vax], note: "\"a successor to the 16-bit PDP-11\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/VAX" }
+  sources: [wiki-vax]
+
+- id: intel-4004
+  name: Intel 4004
+  kind: machine
+  category: general
+  cluster: machines/microprocessors
+  origin:
+    first_appeared: { year: 1971, date: "1971-11-15", precision: exact, note: "\"released by the Intel Corporation on November 15, 1971\"." }
+    places: [{ institution: Intel }]
+  creators:
+    - { name: Marcian Hoff, role: developer }
+    - { name: Federico Faggin, role: developer }
+    - { name: Masatoshi Shima, role: developer }
+    - { name: Stanley Mazor, role: developer }
+  status: extinct
+  summary: >
+    "the first in a long line of Intel central processing units", a 4-bit, BCD-oriented CPU and "the first
+    significant commercial example of large-scale integration". It began in 1969 when Busicom commissioned a
+    chip family for calculators. Its architecture "laid the foundation for subsequent Intel processors,
+    including the improved Intel 4040 ... and the 8-bit Intel 8008 and 8080."
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Intel_4004" }
+  sources: [wiki-intel-4004]
+
+- id: intel-8008
+  name: Intel 8008
+  kind: machine
+  category: general
+  cluster: machines/microprocessors
+  origin:
+    first_appeared: { year: 1972, date: "1972-04", precision: exact, note: "\"introduced in April 1972\"." }
+    places: [{ institution: Computer Terminal Corporation }, { institution: Intel }]
+  creators:
+    - { name: Victor Poor, role: designer }
+    - { name: Harry Pyle, role: designer }
+    - { name: Marcian Hoff, role: implementer }
+    - { name: Stanley Mazor, role: implementer }
+    - { name: Federico Faggin, role: implementer }
+    - { name: Hal Feeney, role: implementer }
+  status: extinct
+  summary: >
+    "an early 8-bit microprocessor capable of addressing 16 KB of memory". Its architecture "was designed by
+    Computer Terminal Corporation (CTC)" for the Datapoint 2200 terminal and implemented by Intel, which
+    was allowed to sell it to others. 48 instructions, an accumulator, six 8-bit registers and a
+    seven-level call stack; "the 8008 is not based on the 4004".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Intel_8008" }
+  sources: [wiki-intel-8008]
+  example:
+    title: "MEMCPY2"
+    language: "Intel 8008 assembly"
+    note: "From Wikipedia's Intel 8008 article (\"a simplified subroutine named MEMCPY2\"); the octal byte listing is omitted."
+    code: |
+      ; MEMCPY2 --
+      ; Copy a block of memory from one location to another
+      ;
+      ; Entry parameters in registers
+      ;       HL: 14-bit address of source data block
+      ;       DE: 14-bit address of target data block
+      ;       C: 8-bit count of bytes to copy. (1 to 256 bytes)
+
+                  ORG     2000Q       ;Code at 002000q
+      MEMCPY2     LAM                 ;Read source byte into A
+                  CAL     XCHGI       ;Exchange HL<->DE and increment DE
+                  LMA                 ;Save A to target byte
+                  CAL     XCHGI       ;Exchange HL<->DE and increment DE
+                  DCC                 ;Decrement byte counter
+                  JFZ     MEMCPY2     ;Continue for all bytes
+                  RET
+
+      ;Exchange DE and HL register pairs then increment DE as 16 bits
+      XCHGI       LBL                 ;Exchange L and E
+                  LLE
+                  LEB
+                  LBH                 ;Exchange H and D
+                  LHD
+                  LDB
+                  INE                 ;Inc E, low byte of DE
+                  RFZ                 ;Return if no carry
+                  IND                 ;Otherwise inc high byte D
+                  RET
+                  END
+
+- id: intel-8080
+  name: Intel 8080
+  kind: machine
+  category: general
+  cluster: machines/microprocessors
+  origin:
+    first_appeared: { year: 1974, date: "1974-04", precision: exact, note: "Infobox and lead: April 1974; the prose also says \"Intel introduced the product in March 1974\"." }
+    places: [{ institution: Intel }]
+  creators:
+    - { name: Federico Faggin, role: designer }
+    - { name: Masatoshi Shima, role: designer }
+    - { name: Stanley Mazor, role: designer }
+  status: extinct
+  summary: >
+    An 8-bit microprocessor that "served as the successor to the 8008, despite not being binary compatible
+    with it": same register model, seven 8-bit registers, a 16-bit stack pointer and 72 instructions, with
+    8008 sources convertible by a transpiler. It "contributed to the rise of the microcomputer industry",
+    was the original target of CP/M, and "directly influenced the later x86 architecture".
+  relations:
+    - { type: successor_of, to: intel-8008, weight: strong, confidence: high, sources: [wiki-intel-8080], note: "\"The Intel 8080 is the successor to the 8008.\"" }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Intel_8080" }
+  sources: [wiki-intel-8080]
+
+- id: motorola-6800
+  name: Motorola 6800
+  kind: machine
+  category: general
+  cluster: machines/microprocessors
+  origin:
+    first_appeared: { year: 1974, date: "1974-03", precision: exact, note: "\"The M6800 Microcomputer System was announced in March 1974\"." }
+    places: [{ institution: Motorola, city: "Mesa, Arizona" }]
+  creators:
+    - { name: Tom Bennett, role: designer }
+  status: extinct
+  summary: >
+    An 8-bit microprocessor with "two 8-bit accumulators, a 16-bit index register, and a 16-bit stack
+    pointer", 72 instructions and seven addressing modes, needing only a single five-volt supply. "The 6800
+    architecture was a TTL-compatible LSI design modeled after the DEC PDP-11 processor." Its infobox lists
+    the 6809, 68000 and MOS 6502 as successors.
+  relations:
+    - { type: influenced_by, to: pdp-11, weight: moderate, confidence: high, sources: [wiki-motorola-6800], note: "\"modeled after the DEC PDP-11 processor\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Motorola_6800" }
+  sources: [wiki-motorola-6800]
+
+- id: motorola-6809
+  name: Motorola 6809
+  kind: machine
+  category: general
+  cluster: machines/microprocessors
+  origin:
+    first_appeared: { year: 1978, precision: year, note: "\"introduced in 1978\"." }
+    places: [{ institution: Motorola }]
+  creators:
+    - { name: Terry Ritter, role: co-designer }
+    - { name: Joel Boney, role: co-designer }
+  summary: >
+    "an 8-bit microprocessor with some 16-bit features". "Although source compatible with the earlier
+    Motorola 6800", it added a hardware multiply, 16-bit arithmetic, separate system and user stacks for
+    re-entrant code, position-independent code and "an orthogonal instruction set architecture with a
+    comprehensive set of addressing modes". "the 6809 marks the end of the evolution of Motorola's 8-bit
+    processors"; Hitachi's 6309 extended it.
+  relations:
+    - { type: successor_of, to: motorola-6800, weight: strong, confidence: high, sources: [wiki-motorola-6809], note: "\"source compatible with the earlier Motorola 6800\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Motorola_6809" }
+  sources: [wiki-motorola-6809]
+
+- id: mpf-1
+  name: Micro-Professor MPF-I
+  kind: machine
+  category: educational
+  cluster: machines/microprocessors
+  origin:
+    first_appeared: { year: 1981, precision: year, note: "\"In 1981, Multitech released the Micro-Professor MPF-I\"." }
+    places: [{ institution: Multitech }]
+  status: maintained
+  tags:
+    domain: [education]
+  summary: >
+    A Z80 development board in a plastic book case, Multitech's (later Acer's) first branded product, "a
+    training system for learning machine code and assembly language for the Zilog Z80". "Users enter
+    programs on the MPF-I by typing Z80 instructions in machine code as hexadecimal numbers", with a
+    seven-segment monitor display. Acer sold the line to Flite Electronics in 1993, which still made small
+    batches of the MPF1B as of 2021.
+  relations:
+    - { type: targets, to: zilog-z80, weight: strong, confidence: high, sources: [wiki-mpf-1] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Micro-Professor_MPF-I" }
+  sources: [wiki-mpf-1]
+
+- id: ibm-801
+  name: IBM 801
+  kind: machine
+  category: research
+  cluster: machines/risc
+  origin:
+    first_appeared: { year: 1980, precision: year, note: "\"The resulting CPU was operational by the summer of 1980\"; designed during the 1970s." }
+    places: [{ institution: Thomas J. Watson Research Center }]
+  creators:
+    - { name: John Cocke, role: designer }
+  status: historical
+  summary: >
+    "an experimental central processing unit (CPU) design developed by IBM during the 1970s", "considered to
+    be the first modern RISC design, relying on processor registers for all computations and eliminating the
+    many variant addressing modes found in CISC designs." Begun for a telephone switch, it became the basis
+    of the ROMP in the IBM RT PC, and "The result was the IBM POWER instruction set architecture and the
+    PowerPC offshoot."
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IBM_801" }
+  sources: [wiki-ibm-801]
+
+- id: berkeley-risc
+  name: Berkeley RISC
+  aliases: [RISC I, RISC II]
+  kind: machine
+  category: research
+  cluster: machines/risc
+  origin:
+    first_appeared: { year: 1981, precision: year, note: "RISC I \"was published in ... ISCA in 1981\" and sent for fabrication on 22 June 1981." }
+    places: [{ institution: "University of California, Berkeley" }]
+  creators:
+    - { name: David Patterson, role: lead }
+  status: historical
+  summary: >
+    One of two seminal RISC research projects of the DARPA VLSI Project, "led by David Patterson (who coined
+    the term RISC)". RISC I had 31 instructions and 78 32-bit registers in six overlapping register windows;
+    RISC II followed. "The Berkeley RISC design was later commercialized by Sun Microsystems as the SPARC
+    architecture, and inspired the ARM architecture."
+  relations:
+    - { type: influenced_by, to: ibm-801, weight: weak, confidence: medium, sources: [wiki-berkeley-risc], note: "\"The RISC concept, as developed in the Berkeley RISC, Stanford MIPS, and IBM 801 projects\"; no direct influence stated." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Berkeley_RISC" }
+  sources: [wiki-berkeley-risc]
+
+- id: sparc
+  name: SPARC
+  kind: machine
+  category: general
+  cluster: machines/risc
+  origin:
+    first_appeared: { year: 1987, precision: year, note: "\"First developed in 1986 and released in 1987\"; SPARC V7 published 1986." }
+    places: [{ institution: Sun Microsystems }]
+  status: legacy
+  milestones:
+    - { version: "V8", year: 1990 }
+    - { version: "V9", year: 1993, summary: "64-bit architecture, released by SPARC International." }
+  summary: >
+    A RISC load–store architecture whose "design was strongly influenced by the experimental Berkeley RISC
+    system". Fixed 32-bit instructions and register windows (32 visible of up to 160 registers), with binary
+    compatibility from V7 in 1987 onward. Oracle "terminated SPARC design after completing the M8" in 2017;
+    Fujitsu kept shipping SPARC servers into the 2020s.
+  relations:
+    - { type: successor_of, to: berkeley-risc, weight: strong, confidence: high, sources: [wiki-berkeley-risc], note: "\"later commercialized by Sun Microsystems as the SPARC architecture\"." }
+    - { type: influenced_by, to: ibm-801, weight: moderate, confidence: high, sources: [wiki-sparc], note: "\"heavily influenced by the earlier RISC designs, including the Berkeley RISC I and II ... and the IBM 801\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SPARC" }
+  sources: [wiki-sparc, wiki-berkeley-risc]
+
+- id: powerpc
+  name: PowerPC
+  kind: machine
+  category: general
+  cluster: machines/risc
+  origin:
+    first_appeared: { year: 1992, date: "1992-10", precision: exact, note: "Infobox: introduced October 1992." }
+    places: [{ institution: AIM alliance, city: "Austin, Texas" }]
+  status: maintained
+  summary: >
+    A RISC architecture "created by the 1991 Apple–IBM–Motorola alliance, known as AIM", "largely based on
+    the earlier IBM POWER architecture" and compatible enough that care lets programs run on both. 32-bit and
+    64-bit, with 32 general and 32 floating-point registers. Used in Apple's computers from 1994 to 2006 and
+    in game consoles; "named Power ISA since 2006".
+  relations:
+    - { type: influenced_by, to: ibm-801, weight: strong, confidence: high, sources: [wiki-ibm-801], note: "\"The result was the IBM POWER instruction set architecture and the PowerPC offshoot.\"" }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PowerPC" }
+  sources: [wiki-powerpc, wiki-ibm-801]
+
+- id: whirlwind-assembler
+  name: Whirlwind assembler
+  kind: assembly
+  category: research
+  cluster: assembly/early
+  origin:
+    first_appeared: { year: 1951, precision: year, note: "Only from the EDSAC article's table: \"1951 | Whirlwind assembler | Charles Adams and Jack Gilmore at MIT\". The Whirlwind I article does not mention it." }
+    places: [{ institution: MIT }]
+  creators:
+    - { name: Charles Adams, role: co-author }
+    - { name: Jack Gilmore, role: co-author }
+  tags:
+    features: [assembly-language]
+  summary: >
+    One of the assemblers that Wikipedia's EDSAC article lists after "The first assembly language appeared
+    for the EDSAC, and inspired several other assembly languages". Nothing else about it is on the pages
+    read.
+  notes: >
+    Need an MIT source (Whirlwind's "Comprehensive System") for its design and date.
+  relations:
+    - { type: targets, to: whirlwind, weight: strong, confidence: medium, sources: [wiki-edsac] }
+    - { type: influenced_by, to: edsac-initial-orders, weight: moderate, confidence: medium, sources: [wiki-edsac], note: "Listed among the assembly languages the EDSAC's \"inspired\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/EDSAC" }
+  sources: [wiki-edsac]
+
+- id: rochester-assembler
+  name: Rochester assembler
+  kind: assembly
+  category: scientific
+  cluster: assembly/early
+  origin:
+    first_appeared: { year: 1951, precision: circa, note: "EDSAC article table: \"1951 | Rochester assembler | Nat Rochester\"; the Rochester article gives no year. The IBM 701 it targets was announced in 1952." }
+    places: [{ institution: IBM }]
+  creators:
+    - { name: Nathaniel Rochester, role: author }
+  tags:
+    features: [assembly-language]
+  summary: >
+    Nathaniel Rochester "wrote an early symbolic assembler, which allowed programs to be written in short,
+    readable commands rather than pure numbers or punch codes", in the period when he co-designed the IBM
+    701. The EDSAC article lists it among the assembly languages that EDSAC's inspired.
+  relations:
+    - { type: influenced_by, to: edsac-initial-orders, weight: moderate, confidence: medium, sources: [wiki-edsac], note: "Listed among the assembly languages the EDSAC's \"inspired\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Nathaniel_Rochester_(computer_scientist)" }
+  sources: [wiki-nathaniel-rochester, wiki-edsac]
+
+- id: autocoder
+  name: Autocoder
+  kind: assembly
+  category: business
+  cluster: assembly/ibm
+  origin:
+    first_appeared: { year: 1955, precision: year, note: "\"The first Autocoders were released in 1955 for the IBM 702, and in 1956 for the almost compatible IBM 705.\"" }
+    places: [{ institution: IBM }]
+  creators:
+    - { name: Roy Goldfinger, role: designer }
+  tags:
+    features: [assembly-language, macros]
+  summary: >
+    "any of a group of assemblers for a number of IBM computers of the 1950s and 1960s", designed by Roy
+    Goldfinger, who had worked on NYU's NYAP assembler. "The first Autocoders appear to have been the
+    earliest assemblers to provide a macro facility." Versions followed for the 1401, 1410, 7010, 7030,
+    7070 and 7080. "The popularity of Autocoder inspired other assemblers", such as Honeywell's Easycoder and
+    NCR's NEAT.
+  notes: >
+    On the 1401, Autocoder on Tape replaced the card-only Symbolic Programming System, which had different
+    mnemonics. Bell Labs' PEST cross-assembled a subset of 1401 Autocoder on the 709x.
+  relations:
+    - { type: targets, to: ibm-1401, year: 1959, weight: strong, confidence: high, sources: [wiki-autocoder, wiki-ibm-1401], note: "\"Autocoder on Tape, a more advanced assembler\" for the 1401." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Autocoder" }
+  sources: [wiki-autocoder]
+
+- id: lc-3
+  name: LC-3
+  aliases: [Little Computer 3]
+  kind: assembly
+  category: educational
+  cluster: assembly
+  origin:
+    first_appeared: { year: 2003, precision: circa, note: "No year on the page; the earliest dated reference is Patt and Patel's textbook (2003)." }
+    places: [{ institution: University of Texas at Austin }, { institution: University of Illinois at Urbana–Champaign }]
+  creators:
+    - { name: Yale Patt, role: co-designer }
+    - { name: Sanjay J. Patel, role: co-designer }
+  status: active
+  tags:
+    domain: [education]
+    features: [assembly-language]
+  summary: >
+    "a type of computer educational programming language, an assembly language", with a simple instruction
+    set that "is a viable target for a C compiler", used "to teach fundamentals of programming and computer
+    architecture". It "has not been implemented on a physical chip" and runs in simulators. LC-3b is a
+    modified version.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Little_Computer_3" }
+  sources: [wiki-lc-3]
+
+- id: macro-10
+  name: MACRO-10
+  kind: assembly
+  category: systems
+  cluster: assembly/dec
+  origin:
+    first_appeared: { year: 1977, precision: disputed, note: "Only the page category \"Programming languages created in 1977\"; the reference manual linked is from April 1978. The PDP-10 itself dates from 1966, so an earlier date is likely; find a DEC manual." }
+    places: [{ institution: Digital Equipment Corporation }]
+  tags:
+    features: [assembly-language, macros]
+  summary: >
+    "an assembly language with extensive macro facilities for DEC's PDP-10-based Mainframe computer systems,
+    the DECsystem-10 and the DECSYSTEM-20", "implemented as a two-pass assembler."
+  relations:
+    - { type: targets, to: pdp-10, weight: strong, confidence: high, sources: [wiki-macro-10] }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MACRO-10" }
+  sources: [wiki-macro-10]
+  example:
+    title: "Hello, world under TOPS-10"
+    language: "MACRO-10"
+    note: "From Wikipedia's MACRO-10 article; the string's closing slash sits on the next line, so the CRLF is part of it."
+    code: |2
+              TITLE   HELLO WORLD
+              ; 'Hello world' in MACRO-10 for TOPS-10
+              SEARCH  UUOSYM          ; Make UUO symbol names available
+
+      LAB:    ASCIZ   /Hello, world!
+      /                               ; NUL-terminated ASCII string with CRLF
+
+      START:  RESET                   ; Initialise job to clean runtime state
+      OUTPUT: OUTSTR  LAB             ; Output string starting at LAB:
+              MONRT.                  ; Return to monitor
+              JRST    OUTPUT          ; Restart at OUTPUT: if user CONTINUEs job
+              END     START           ; End assembly, set program start address
+
+- id: vax-macro
+  name: VAX MACRO
+  aliases: [MACRO-32]
+  kind: assembly
+  category: systems
+  cluster: assembly/dec
+  origin:
+    first_appeared: { year: 1977, precision: year, note: "\"originally released by Digital Equipment Corporation (DEC) in 1977\"." }
+    places: [{ institution: Digital Equipment Corporation }]
+  status: maintained
+  tags:
+    features: [assembly-language, macros]
+  summary: >
+    "the computer assembly language implementing the VAX instruction set architecture for the OpenVMS
+    operating system". "A significant amount of VMS is written in VAX MACRO", and a MACRO-32 compiler
+    translates it for Alpha, Itanium and x86-64. "The syntax, directives, macro language, and lexical
+    substitution operators of VAX MACRO formerly appeared in MACRO-11".
+  notes: >
+    MACRO-64, the Alpha assembler, shares the macro syntax but "is otherwise unrelated to MACRO-32".
+  relations:
+    - { type: targets, to: vax, weight: strong, confidence: high, sources: [wiki-vax-macro] }
+    - { type: influenced_by, to: macro-11, weight: strong, confidence: high, sources: [wiki-vax-macro], note: "Syntax, directives and macro language \"formerly appeared in MACRO-11\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/VAX_MACRO" }
+  sources: [wiki-vax-macro]
+
+- id: fasm
+  name: FASM
+  aliases: [flat assembler]
+  kind: assembly
+  category: systems
+  cluster: assembly/x86
+  origin:
+    began: { year: 1999, precision: year, note: "\"The project was started in 1999 by Tomasz Grysztar\"; self-hosting since 0.90 (4 May 1999)." }
+    first_appeared: { year: 2000, date: "2000-03", precision: exact, note: "\"It was released publicly in March 2000.\"" }
+  creators:
+    - { name: Tomasz Grysztar, role: creator }
+  status: active
+  tags:
+    features: [assembly-language, macros, self-hosting]
+  milestones:
+    - { version: "1.73.35", year: 2026, summary: "Stable release, 24 February 2026." }
+  summary: >
+    "an assembler for x86 processors" for Intel-style assembly on IA-32 and x86-64, claiming "high speed,
+    size optimizations, operating system (OS) portability, and macro abilities". "FASM is completely written
+    in assembly language and comes with full source"; PureBasic, HLA and BlitzMax use it as a backend, and
+    MenuetOS and KolibriOS are written with it.
+  relations:
+    - { type: dialect_of, to: x86-intel-syntax, weight: strong, confidence: high, sources: [wiki-fasm], note: "\"It supports Intel-style assembly language on the IA-32 and x86-64\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FASM" }
+  sources: [wiki-fasm]
+
+- id: a86
+  name: A86
+  kind: assembly
+  category: systems
+  cluster: assembly/x86
+  origin:
+    first_appeared: { year: 1986, date: "1986-06", precision: exact, note: "\"distributed as shareware in June 1986\"." }
+  creators:
+    - { name: Eric Isaacson, role: creator }
+  status: extinct
+  tags:
+    features: [assembly-language]
+  milestones:
+    - { version: "4.05", year: 2000, summary: "Last release, 14 January 2000." }
+  summary: >
+    "an assembler for MS-DOS which generates 16-bit code for the Intel x86 family", written by Eric Isaacson,
+    "one of two people who implemented Intel's official ASM86 assembler released in 1982". 32-bit support
+    came "in the mid 1990s in the form of A386 and D386"; it was never ported to Windows.
+  relations:
+    - { type: targets, to: intel-8086, weight: strong, confidence: high, sources: [wiki-a86] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/A86_(software)" }
+  sources: [wiki-a86]
+
+- id: asm-8080
+  name: Intel 8080 assembly language
+  kind: assembly
+  category: systems
+  cluster: assembly/8-bit
+  origin:
+    first_appeared: { year: 1974, precision: circa, note: "The page gives no separate date for the assembly language; dated by the chip (April 1974)." }
+    places: [{ institution: Intel }]
+  status: legacy
+  tags:
+    features: [assembly-language]
+  summary: >
+    Intel's mnemonics for the 8080 (MOV, MVI, LXI, LDAX, STAX, INX, DAD, JMP, CALL, RET and others). Its
+    successor line copied it: "the x86 architecture ... was designed so that its assembly language closely
+    resembled that of the 8080, permitting many instructions to map directly from one to the other."
+  relations:
+    - { type: targets, to: intel-8080, weight: strong, confidence: high, sources: [wiki-intel-8080] }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Intel_8080" }
+  sources: [wiki-intel-8080]
+
+- id: asm-6809
+  name: Motorola 6809 assembly language
+  kind: assembly
+  category: systems
+  cluster: assembly/8-bit
+  origin:
+    first_appeared: { year: 1978, precision: circa, note: "Dated by the chip; the page gives no separate date for its assembler." }
+    places: [{ institution: Motorola }]
+  status: legacy
+  tags:
+    features: [assembly-language]
+  summary: >
+    The assembly language of the 6809, whose "orthogonal instruction set architecture with a comprehensive
+    set of addressing modes" stays source compatible with the 6800.
+  relations:
+    - { type: targets, to: motorola-6809, weight: strong, confidence: high, sources: [wiki-motorola-6809] }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Motorola_6809" }
+  sources: [wiki-motorola-6809]
+
+- id: asm-sparc
+  name: SPARC assembly language
+  kind: assembly
+  category: systems
+  cluster: assembly/risc
+  origin:
+    first_appeared: { year: 1987, precision: circa, note: "Dated by the architecture's release; no separate date stated." }
+    places: [{ institution: Sun Microsystems }]
+  status: legacy
+  tags:
+    features: [assembly-language]
+  summary: >
+    The assembly language of SPARC, in which "the assembler language indicates address operands using square
+    brackets with a plus sign separating the operands, instead of using a comma-separated list."
+  relations:
+    - { type: targets, to: sparc, weight: strong, confidence: high, sources: [wiki-sparc] }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SPARC" }
+  sources: [wiki-sparc]
+  example:
+    title: "Loads and stores"
+    language: "SPARC assembly"
+    note: "From the Loads and stores section of Wikipedia's SPARC article."
+    code: |
+      ld [%L1+%L2],%L3  !load the 32-bit value at address %L1+%L2 and put the value into %L3
+      ld [%L1+8],%L2    !load the value at %L1+8 into %L2
+      ld [%L1],%L2      !as above, but no offset, which is the same as +%G0
+      st %L1,[%I2]      !store the value in %L1 into the location stored in %I2
+      st %G0,[%I1+8]    !clear the memory at %I1+8
+
+- id: ucsd-p-code
+  name: UCSD p-code
+  aliases: [UCSD p-Machine]
+  kind: assembly
+  category: general
+  cluster: assembly/virtual
+  origin:
+    first_appeared: { year: 1977, date: "1977-08", precision: exact, note: "UCSD Pascal and its p-System were first released in August 1977." }
+    places: [{ institution: "University of California, San Diego" }]
+  creators:
+    - { name: Kenneth Bowles, role: initiator }
+  status: historical
+  tags:
+    paradigm: [stack-oriented]
+    features: [bytecode-vm, intermediate-code]
+  summary: >
+    The instruction set of the UCSD p-Machine, a stack machine "optimized for the new small microcomputers
+    with addressing restricted to 16-bit (only 64 KB of memory)", which ran the p-System on the Apple II,
+    8080, Z80, 6502, 68000, x86 and others. Bowles "based UCSD Pascal on the Pascal-P2 release of the
+    portable compiler from Zurich"; four versions of the engine followed, IV sold by SofTech. "James Gosling
+    cites UCSD Pascal as a key influence (along with the Smalltalk virtual machine) on the design of the
+    Java virtual machine."
+  notes: >
+    P-code as a concept predates it: "first implemented circa 1966 as O-code for ... BCPL and P code for the
+    language Euler"; Pascal-P (1973, Nori, Ammann, Jensen, Nägeli, Jacobi at ETH) is not a node.
+  relations:
+    - { type: influenced_by, to: bcpl, weight: weak, confidence: medium, sources: [wiki-p-code-machine], note: "\"first implemented circa 1966 as O-code for ... BCPL\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/P-code_machine" }
+  sources: [wiki-p-code-machine, wiki-ucsd-pascal]
+
+- id: s-sl
+  name: S/SL
+  aliases: [Syntax/Semantic Language]
+  kind: language
+  category: domain-specific
+  cluster: assembly
+  origin:
+    first_appeared: { year: 1980, date: "1980-09", precision: exact, note: "Technical report CSRG-118, Sept. 1980." }
+    places: [{ institution: University of Toronto }]
+  creators:
+    - { name: James Cordy, role: co-designer }
+    - { name: Ric Holt, role: co-designer }
+    - { name: David Wortman, role: co-designer }
+  tags:
+    features: [compiler, bytecode-vm]
+  summary: >
+    "an executable high level specification language for recursive descent parsers, semantic analyzers and
+    code generators". "The S/SL processor compiles this pseudocode into a table (byte-codes) that is
+    interpreted by the S/SL table-walker". "It is more powerful and transparent than Yacc but can be
+    slower", and it has been used for production compilers for PL/I, Euclid, Turing, Ada and COBOL.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/S/SL_programming_language" }
+  sources: [wiki-s-sl]

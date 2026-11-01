@@ -113,6 +113,7 @@
   facet: concurrency
   summary: 'Hardware signals that suspend the current instruction stream to run a handler: the first form of asynchronous
     control flow.'
+  first_seen: { node: dyseac, year: 1954, note: "Hedged on both sides: \"DYSEAC may have been the first computer to implement interrupts for I/O\" (1954); the UNIVAC 1103A (1956) has \"perhaps the earliest occurrence of a hardware interrupt feature\"." }
 - id: isolates
   name: Isolates
   facet: concurrency
@@ -666,6 +667,7 @@
   broader:
   - metaprogramming
   summary: Code that generates code at compile time.
+  first_seen: { node: autocoder, year: 1955, note: "\"The first Autocoders appear to have been the earliest assemblers to provide a macro facility\" (Wikipedia: Autocoder)." }
 - id: metaclasses
   name: Metaclasses
   facet: features
@@ -792,9 +794,7 @@
   name: Punched card program
   facet: features
   summary: Instructions stored as holes in exchangeable cards.
-  first_seen:
-    node: jacquard-loom
-    year: 1804
+  first_seen: { node: bouchon-loom, year: 1725, note: "Bouchon controlled a drawloom with a perforated paper roll (1725); Falcon moved the holes to linked cards (1728); Jacquard's loom (1804) made it practical (Wikipedia: Basile Bouchon, Jacquard machine)." }
 - id: query-expressions
   name: Query expressions
   facet: features

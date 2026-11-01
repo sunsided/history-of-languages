@@ -1036,3 +1036,123 @@
           COPYFROM 3
           OUTBOX
     sources: [hrm-solutions]
+
+- id: darwin-game
+  name: Darwin
+  kind: language
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    first_appeared: { year: 1961, date: "1961-08", precision: exact, note: "Infobox release August 1961." }
+    places: [{ institution: Bell Labs }]
+  creators:
+    - { name: Victor A. Vyssotsky, role: co-creator }
+    - { name: Robert Morris, role: co-creator }
+    - { name: Douglas McIlroy, role: co-creator }
+  status: historical
+  summary: >
+    "a 1961 programming game", played on Bell Labs' IBM 7090, in which programs "written in 7090 machine
+    code" competed to reproduce and kill each other. "It was the first programming game." It ended after a
+    few weeks when Morris wrote an "ultimate" program nobody could beat. Dennis Ritchie "is sometimes
+    incorrectly cited as a co-author but was not involved."
+  notes: >
+    Core War is listed under See also as "a similar 1984 programming game"; it is not a node yet.
+  relations:
+    - { type: targets, to: ibm-7090, weight: strong, confidence: high, sources: [wiki-darwin-game] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Darwin_(video_game)" }
+  sources: [wiki-darwin-game]
+
+- id: bloop
+  name: BlooP
+  aliases: [Bounded loop]
+  kind: language
+  category: esoteric
+  cluster: esoteric/minimal
+  origin:
+    first_appeared: { year: 1979, precision: year, note: "Gödel, Escher, Bach (1979), chapter XIII; the page gives no other date." }
+  creators:
+    - { name: Douglas Hofstadter, role: designer }
+  status: historical
+  tags:
+    paradigm: [imperative]
+  summary: >
+    A language "designed by Douglas Hofstadter to illustrate a point in his book Gödel, Escher, Bach". "BlooP
+    is a Turing-incomplete programming language whose main control flow structure is a bounded loop;
+    recursion is not permitted", so it "can only express primitive recursive functions". BlooP and FlooP
+    "have sometimes been used in teaching computability."
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/BlooP_and_FlooP" }
+  sources: [wiki-bloop-floop]
+  example:
+    title: "Factorial"
+    language: "BlooP"
+    note: "From Wikipedia's BlooP and FlooP article."
+    code: |
+      DEFINE PROCEDURE FACTORIAL [N]:
+      BLOCK 0: BEGIN
+              OUTPUT ⇐ 1;
+              CELL(0) ⇐ 1;
+              LOOP AT MOST N TIMES:
+              BLOCK 1: BEGIN
+                      OUTPUT ⇐ OUTPUT × CELL(0);
+                      CELL(0) ⇐ CELL(0) + 1;
+              BLOCK 1: END;
+      BLOCK 0: END.
+
+- id: floop
+  name: FlooP
+  aliases: [Free loop]
+  kind: language
+  category: esoteric
+  cluster: esoteric/minimal
+  origin:
+    first_appeared: { year: 1979, precision: year, note: "Gödel, Escher, Bach (1979), chapter XIII." }
+  creators:
+    - { name: Douglas Hofstadter, role: designer }
+  status: historical
+  tags:
+    paradigm: [imperative]
+  summary: >
+    "FlooP is identical to BlooP except that it supports unbounded loops; it is a Turing-complete language
+    and can express all computable functions." The chapter also names GlooP.
+  relations:
+    - { type: superset_of, to: bloop, weight: strong, confidence: high, sources: [wiki-bloop-floop], note: "\"identical to BlooP except that it supports unbounded loops\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/BlooP_and_FlooP" }
+  sources: [wiki-bloop-floop]
+
+- id: mouse
+  name: Mouse
+  kind: language
+  category: general
+  cluster: esoteric/minimal
+  origin:
+    first_appeared: { year: 1979, date: "1979-07", precision: exact, note: "Grogono, \"Mouse / A Language for Microcomputers\", BYTE, July 1979; \"developed ... in the late 1970s and early 1980s\"." }
+  creators:
+    - { name: Peter Grogono, role: creator }
+  tags:
+    paradigm: [stack-oriented]
+    features: [interpreter]
+  summary: >
+    "a small computer programming language developed by Dr. Peter Grogono", "an interpreted, stack-based
+    language" using Reverse Polish notation, "originally intended as a small, efficient language for
+    microcomputers with limited memory". It "was developed as an extension of an earlier language called
+    MUSYS, which was used to control digital and analog devices in an electronic music studio", and its
+    design suits teaching how to write a simple interpreter.
+  notes: >
+    Book: Mouse: A Language for Microcomputers (Petrocelli, 1983). MUSYS is not a node.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Mouse_(programming_language)" }
+  sources: [wiki-mouse]
+  example:
+    title: "Hello world"
+    language: "Mouse"
+    note: "From Wikipedia's Mouse article; $ ends the program."
+    code: |
+      "Hello world."
+      $
