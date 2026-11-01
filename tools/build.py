@@ -68,6 +68,7 @@ def main():
     eras = load("eras.yaml", "era")
     sources = load("sources.yaml", "source")
     claims = load("claims.yaml", "claim")
+    media = load("media.yaml", "media")
     lineages = []
     for p in sorted((DATA / "lineages").glob("*.yaml")):
         items = load_list(p)
@@ -152,6 +153,16 @@ def main():
         for x in cl.get("nodes", []):
             need("node", N, x, f"claim {cl['id']}")
 
+    MD = index(media, "media")
+    for m in media:
+        for x in m.get("nodes", []):
+            need("node", N, x, f"media {m['id']}")
+        if not m["file"].startswith("assets/media/"):
+            errors.append(f"media {m['id']}: file must live under assets/media/")
+    missing_files = [m["id"] for m in media if not (ROOT / m["file"]).exists()]
+    if missing_files:
+        warnings.append(f"{len(missing_files)} media files not downloaded yet (run tools/fetch_media.py)")
+
     # Every cluster referenced by an id prefix must exist too (a/b requires a).
     for k in list(K):
         parts = k.split("/")
@@ -198,9 +209,10 @@ def main():
     out = {
         "generated_from": "data/",
         "counts": {"nodes": len(nodes), "edges": len(edges), "concepts": len(concepts), "clusters": len(clusters),
-                   "sources": len(sources), "lineages": len(lineages), "claims": len(claims)},
+                   "sources": len(sources), "lineages": len(lineages), "claims": len(claims),
+                   "media": len(media)},
         "eras": eras, "clusters": clusters, "concepts": concepts, "nodes": nodes, "edges": edges,
-        "lineages": lineages, "claims": claims, "sources": sources,
+        "lineages": lineages, "claims": claims, "sources": sources, "media": media,
     }
     (ROOT / "dist").mkdir(exist_ok=True)
     (ROOT / "dist" / "graph.json").write_text(json.dumps(out, ensure_ascii=False, indent=1))

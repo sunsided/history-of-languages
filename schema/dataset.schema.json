@@ -708,6 +708,75 @@
         }
       },
       "additionalProperties": false
+    },
+    "media": {
+      "type": "object",
+      "description": "A photo or scan of a machine, document or person, with the credit and license needed to publish it. Downloaded into assets/media/ by tools/fetch_media.py.",
+      "required": [
+        "id",
+        "file",
+        "kind",
+        "caption",
+        "license",
+        "credit",
+        "source_url"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "file": {
+          "type": "string",
+          "description": "local path, under assets/media/"
+        },
+        "kind": {
+          "enum": [
+            "machine",
+            "person",
+            "document",
+            "artifact"
+          ],
+          "description": "what the image shows"
+        },
+        "person": {
+          "type": "string",
+          "description": "for kind: person, the name as used in nodes' creators"
+        },
+        "nodes": {
+          "$ref": "#/$defs/ids",
+          "description": "nodes this image belongs to; for people, the nodes they created"
+        },
+        "caption": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "credit": {
+          "type": "string",
+          "description": "author / photographer as the license requires them to be credited"
+        },
+        "license": {
+          "type": "string",
+          "description": "short license name, e.g. 'CC BY-SA 3.0', 'Public domain'"
+        },
+        "license_url": {
+          "type": "string"
+        },
+        "source_url": {
+          "type": "string",
+          "description": "Wikimedia Commons file page (or other origin)"
+        },
+        "commons_file": {
+          "type": "string",
+          "description": "exact Commons title, 'File:...'; used by fetch_media.py"
+        },
+        "checked": {
+          "type": "string",
+          "description": "date the license and credit were read on the source page"
+        }
+      },
+      "additionalProperties": false
     }
   }
 }

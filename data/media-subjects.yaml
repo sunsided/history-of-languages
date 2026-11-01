@@ -1,0 +1,967 @@
+# Input for tools/fetch_media.py: what we want a picture of, and where to look.
+# The script takes the lead image of the English Wikipedia article `wiki`, unless `commons_file` names
+# a specific Commons file. It keeps only freely licensed files hosted on Wikimedia Commons, writes the
+# credit and license into data/media.yaml, and downloads an 800px version into assets/media/.
+# Optional per entry: commons_file ("File:..."), caption (overrides the generated one), skip: true.
+- id: antikythera-mechanism
+  kind: machine
+  wiki: Antikythera mechanism
+  nodes:
+  - antikythera-mechanism
+- id: jacquard-loom
+  kind: machine
+  wiki: Jacquard machine
+  nodes:
+  - jacquard-loom
+- id: analytical-engine
+  kind: machine
+  wiki: Analytical engine
+  nodes:
+  - analytical-engine
+- id: lovelace-note-g
+  kind: document
+  wiki: Note G
+  nodes:
+  - lovelace-note-g
+- id: hollerith-tabulator
+  kind: machine
+  wiki: Tabulating machine
+  nodes:
+  - hollerith-tabulator
+- id: zuse-z3
+  kind: machine
+  wiki: Z3 (computer)
+  nodes:
+  - zuse-z3
+- id: harvard-mark-i
+  kind: machine
+  wiki: Harvard Mark I
+  nodes:
+  - harvard-mark-i
+- id: eniac
+  kind: machine
+  wiki: ENIAC
+  nodes:
+  - eniac
+- id: manchester-baby
+  kind: machine
+  wiki: Manchester Baby
+  nodes:
+  - manchester-baby
+- id: edsac
+  kind: machine
+  wiki: EDSAC
+  nodes:
+  - edsac
+- id: ibm-650
+  kind: machine
+  wiki: IBM 650
+  nodes:
+  - ibm-650
+- id: ibm-704
+  kind: machine
+  wiki: IBM 704
+  nodes:
+  - ibm-704
+- id: ibm-system-360
+  kind: machine
+  wiki: IBM System/360
+  nodes:
+  - ibm-system-360
+- id: pdp-11
+  kind: machine
+  wiki: PDP-11
+  nodes:
+  - pdp-11
+- id: intel-8086
+  kind: machine
+  wiki: Intel 8086
+  nodes:
+  - intel-8086
+- id: mos-6502
+  kind: machine
+  wiki: MOS Technology 6502
+  nodes:
+  - mos-6502
+- id: zilog-z80
+  kind: machine
+  wiki: Zilog Z80
+  nodes:
+  - zilog-z80
+- id: motorola-68000
+  kind: machine
+  wiki: Motorola 68000
+  nodes:
+  - motorola-68000
+- id: arm
+  kind: machine
+  wiki: ARM architecture family
+  nodes:
+  - arm
+- id: mips
+  kind: machine
+  wiki: MIPS architecture
+  nodes:
+  - mips
+- id: risc-v
+  kind: machine
+  wiki: RISC-V
+  nodes:
+  - risc-v
+- id: sketchpad
+  kind: machine
+  wiki: Sketchpad
+  nodes:
+  - sketchpad
+- id: banu-musa-flute-player
+  kind: document
+  wiki: Banu Musa
+  nodes:
+  - banu-musa-flute-player
+- id: person-ada-lovelace
+  kind: person
+  person: Ada Lovelace
+  wiki: Ada Lovelace
+  nodes:
+  - lovelace-note-g
+- id: person-adele-goldberg
+  kind: person
+  person: Adele Goldberg
+  wiki: Adele Goldberg (computer scientist)
+  nodes:
+  - smalltalk
+- id: person-alain-colmerauer
+  kind: person
+  person: Alain Colmerauer
+  wiki: Alain Colmerauer
+  nodes:
+  - prolog
+- id: person-alan-edelman
+  kind: person
+  person: Alan Edelman
+  wiki: Alan Edelman
+  nodes:
+  - julia
+- id: person-alan-kay
+  kind: person
+  person: Alan Kay
+  wiki: Alan Kay
+  nodes:
+  - smalltalk
+- id: person-alan-turing
+  kind: person
+  person: Alan Turing
+  wiki: Alan Turing
+  nodes:
+  - turing-machine
+- id: person-alfred-aho
+  kind: person
+  person: Alfred Aho
+  wiki: Alfred Aho
+  nodes:
+  - awk
+- id: person-alick-glennie
+  kind: person
+  person: Alick Glennie
+  wiki: Alick Glennie
+  nodes:
+  - glennie-autocode
+- id: person-allen-newell
+  kind: person
+  person: Allen Newell
+  wiki: Allen Newell
+  nodes:
+  - ipl
+- id: person-alonzo-church
+  kind: person
+  person: Alonzo Church
+  wiki: Alonzo Church
+  nodes:
+  - lambda-calculus
+- id: person-anders-hejlsberg
+  kind: person
+  person: Anders Hejlsberg
+  wiki: Anders Hejlsberg
+  nodes:
+  - csharp
+  - typescript
+- id: person-andrei-alexandrescu
+  kind: person
+  person: Andrei Alexandrescu
+  wiki: Andrei Alexandrescu
+  nodes:
+  - d
+- id: person-andrew-kelley
+  kind: person
+  person: Andrew Kelley
+  wiki: Andrew Kelley (programmer)
+  nodes:
+  - zig
+- id: person-andrey-breslav
+  kind: person
+  person: Andrey Breslav
+  wiki: Andrey Breslav
+  nodes:
+  - kotlin
+- id: person-barbara-liskov
+  kind: person
+  person: Barbara Liskov
+  wiki: Barbara Liskov
+  nodes:
+  - clu
+- id: person-bertrand-meyer
+  kind: person
+  person: Bertrand Meyer
+  wiki: Bertrand Meyer
+  nodes:
+  - eiffel
+- id: person-betty-holberton
+  kind: person
+  person: Betty Holberton
+  wiki: Betty Holberton
+  nodes:
+  - eniac
+- id: person-bill-mensch
+  kind: person
+  person: Bill Mensch
+  wiki: Bill Mensch
+  nodes:
+  - mos-6502
+- id: person-bjarne-stroustrup
+  kind: person
+  person: Bjarne Stroustrup
+  wiki: Bjarne Stroustrup
+  nodes:
+  - cpp
+- id: person-brad-cox
+  kind: person
+  person: Brad Cox
+  wiki: Brad Cox
+  nodes:
+  - objective-c
+- id: person-brendan-eich
+  kind: person
+  person: Brendan Eich
+  wiki: Brendan Eich
+  nodes:
+  - javascript
+- id: person-brian-kernighan
+  kind: person
+  person: Brian Kernighan
+  wiki: Brian Kernighan
+  nodes:
+  - awk
+- id: person-butler-lampson
+  kind: person
+  person: Butler Lampson
+  wiki: Butler Lampson
+  nodes:
+  - mesa
+- id: person-carl-hewitt
+  kind: person
+  person: Carl Hewitt
+  wiki: Carl Hewitt
+  nodes:
+  - actor-model
+- id: person-charles-babbage
+  kind: person
+  person: Charles Babbage
+  wiki: Charles Babbage
+  nodes:
+  - analytical-engine
+- id: person-charles-h-moore
+  kind: person
+  person: Charles H. Moore
+  wiki: Charles H. Moore
+  nodes:
+  - forth
+- id: person-chris-lattner
+  kind: person
+  person: Chris Lattner
+  wiki: Chris Lattner
+  nodes:
+  - swift
+- id: person-chris-pressey
+  kind: person
+  person: Chris Pressey
+  wiki: Chris Pressey
+  nodes:
+  - befunge
+- id: person-christopher-strachey
+  kind: person
+  person: Christopher Strachey
+  wiki: Christopher Strachey
+  nodes:
+  - cpl
+- id: person-chuck-peddle
+  kind: person
+  person: Chuck Peddle
+  wiki: Chuck Peddle
+  nodes:
+  - mos-6502
+- id: person-cliff-shaw
+  kind: person
+  person: Cliff Shaw
+  wiki: Cliff Shaw
+  nodes:
+  - ipl
+- id: person-cynthia-solomon
+  kind: person
+  person: Cynthia Solomon
+  wiki: Cynthia Solomon
+  nodes:
+  - logo
+- id: person-dan-ingalls
+  kind: person
+  person: Dan Ingalls
+  wiki: Dan Ingalls
+  nodes:
+  - smalltalk
+- id: person-david-macqueen
+  kind: person
+  person: David MacQueen
+  wiki: David MacQueen
+  nodes:
+  - standard-ml
+- id: person-david-madore
+  kind: person
+  person: David Madore
+  wiki: David Madore
+  nodes:
+  - unlambda
+- id: person-david-patterson
+  kind: person
+  person: David Patterson
+  wiki: David Patterson (computer scientist)
+  nodes:
+  - risc-v
+- id: person-david-turner
+  kind: person
+  person: David Turner
+  wiki: David Turner (computer scientist)
+  nodes:
+  - miranda
+- id: person-david-ungar
+  kind: person
+  person: David Ungar
+  wiki: David Ungar
+  nodes:
+  - self
+- id: person-david-wheeler
+  kind: person
+  person: David Wheeler
+  wiki: David Wheeler (computer scientist)
+  nodes:
+  - edsac-initial-orders
+- id: person-dennis-ritchie
+  kind: person
+  person: Dennis Ritchie
+  wiki: Dennis Ritchie
+  nodes:
+  - b
+  - c
+- id: person-don-syme
+  kind: person
+  person: Don Syme
+  wiki: Don Syme
+  nodes:
+  - fsharp
+- id: person-don-woods
+  kind: person
+  person: Don Woods
+  wiki: Don Woods (programmer)
+  nodes:
+  - intercal
+- id: person-donald-d-chamberlin
+  kind: person
+  person: Donald D. Chamberlin
+  wiki: Donald D. Chamberlin
+  nodes:
+  - sql
+- id: person-edgar-f-codd
+  kind: person
+  person: Edgar F. Codd
+  wiki: Edgar F. Codd
+  nodes:
+  - codd-relational-model
+- id: person-edsger-w-dijkstra
+  kind: person
+  person: Edsger W. Dijkstra
+  wiki: Edsger W. Dijkstra
+  nodes:
+  - dijkstra-guarded-commands
+- id: person-edwin-brady
+  kind: person
+  person: Edwin Brady
+  wiki: Edwin Brady
+  nodes:
+  - whitespace
+- id: person-federico-faggin
+  kind: person
+  person: Federico Faggin
+  wiki: Federico Faggin
+  nodes:
+  - zilog-z80
+- id: person-frances-spence
+  kind: person
+  person: Frances Spence
+  wiki: Frances Spence
+  nodes:
+  - eniac
+- id: person-fred-brooks
+  kind: person
+  person: Fred Brooks
+  wiki: Fred Brooks
+  nodes:
+  - ibm-system-360
+- id: person-frederic-calland-williams
+  kind: person
+  person: Frederic Calland Williams
+  wiki: Frederic Calland Williams
+  nodes:
+  - manchester-baby
+- id: person-friedrich-l-bauer
+  kind: person
+  person: Friedrich L. Bauer
+  wiki: Friedrich L. Bauer
+  nodes:
+  - algol-58
+  - algol-60
+- id: person-gene-amdahl
+  kind: person
+  person: Gene Amdahl
+  wiki: Gene Amdahl
+  nodes:
+  - ibm-system-360
+- id: person-gerald-jay-sussman
+  kind: person
+  person: Gerald Jay Sussman
+  wiki: Gerald Jay Sussman
+  nodes:
+  - scheme
+- id: person-grace-hopper
+  kind: person
+  person: Grace Hopper
+  wiki: Grace Hopper
+  nodes:
+  - harvard-mark-i
+  - a-0
+  - flow-matic
+  - cobol
+- id: person-graydon-hoare
+  kind: person
+  person: Graydon Hoare
+  wiki: Graydon Hoare
+  nodes:
+  - rust
+- id: person-guido-van-rossum
+  kind: person
+  person: Guido van Rossum
+  wiki: Guido van Rossum
+  nodes:
+  - python
+- id: person-guy-l-steele-jr
+  kind: person
+  person: Guy L. Steele Jr.
+  wiki: Guy L. Steele Jr.
+  nodes:
+  - scheme
+  - common-lisp
+- id: person-heinz-rutishauser
+  kind: person
+  person: Heinz Rutishauser
+  wiki: Heinz Rutishauser
+  nodes:
+  - algol-58
+  - algol-60
+- id: person-herbert-a-simon
+  kind: person
+  person: Herbert A. Simon
+  wiki: Herbert A. Simon
+  nodes:
+  - ipl
+- id: person-herman-hollerith
+  kind: person
+  person: Herman Hollerith
+  wiki: Herman Hollerith
+  nodes:
+  - hollerith-tabulator
+- id: person-howard-aiken
+  kind: person
+  person: Howard Aiken
+  wiki: Howard Aiken
+  nodes:
+  - harvard-mark-i
+- id: person-ivan-sutherland
+  kind: person
+  person: Ivan Sutherland
+  wiki: Ivan Sutherland
+  nodes:
+  - sketchpad
+- id: person-j-presper-eckert
+  kind: person
+  person: J. Presper Eckert
+  wiki: J. Presper Eckert
+  nodes:
+  - eniac
+- id: person-james-gosling
+  kind: person
+  person: James Gosling
+  wiki: James Gosling
+  nodes:
+  - java
+- id: person-jean-bartik
+  kind: person
+  person: Jean Bartik
+  wiki: Jean Bartik
+  nodes:
+  - eniac
+- id: person-jean-ichbiah
+  kind: person
+  person: Jean Ichbiah
+  wiki: Jean Ichbiah
+  nodes:
+  - ada
+- id: person-jeff-bezanson
+  kind: person
+  person: Jeff Bezanson
+  wiki: Jeff Bezanson
+  nodes:
+  - julia
+- id: person-joe-armstrong
+  kind: person
+  person: Joe Armstrong
+  wiki: Joe Armstrong (programmer)
+  nodes:
+  - erlang
+- id: person-john-backus
+  kind: person
+  person: John Backus
+  wiki: John Backus
+  nodes:
+  - fortran
+  - algol-58
+  - algol-60
+- id: person-john-chambers
+  kind: person
+  person: John Chambers
+  wiki: John Chambers (statistician)
+  nodes:
+  - s
+- id: person-john-g-kemeny
+  kind: person
+  person: John G. Kemeny
+  wiki: John G. Kemeny
+  nodes:
+  - basic
+- id: person-john-l-hennessy
+  kind: person
+  person: John L. Hennessy
+  wiki: John L. Hennessy
+  nodes:
+  - mips
+- id: person-john-mauchly
+  kind: person
+  person: John Mauchly
+  wiki: John Mauchly
+  nodes:
+  - eniac
+  - short-code
+- id: person-john-mccarthy
+  kind: person
+  person: John McCarthy
+  wiki: John McCarthy (computer scientist)
+  nodes:
+  - lisp
+  - algol-60
+- id: person-joseph-marie-jacquard
+  kind: person
+  person: Joseph Marie Jacquard
+  wiki: Joseph Marie Jacquard
+  nodes:
+  - jacquard-loom
+- id: person-jose-valim
+  kind: person
+  person: José Valim
+  wiki: José Valim
+  nodes:
+  - elixir
+- id: person-jurg-gutknecht
+  kind: person
+  person: Jürg Gutknecht
+  wiki: Jürg Gutknecht
+  nodes:
+  - oberon
+- id: person-kathleen-antonelli
+  kind: person
+  person: Kathleen Antonelli
+  wiki: Kathleen Antonelli
+  nodes:
+  - eniac
+- id: person-kathleen-booth
+  kind: person
+  person: Kathleen Booth
+  wiki: Kathleen Booth
+  nodes:
+  - booth-contracted-notation
+- id: person-ken-thompson
+  kind: person
+  person: Ken Thompson
+  wiki: Ken Thompson
+  nodes:
+  - b
+  - c
+  - go
+- id: person-kenneth-e-iverson
+  kind: person
+  person: Kenneth E. Iverson
+  wiki: Kenneth E. Iverson
+  nodes:
+  - apl
+- id: person-konrad-zuse
+  kind: person
+  person: Konrad Zuse
+  wiki: Konrad Zuse
+  nodes:
+  - zuse-z3
+  - plankalkul
+- id: person-kristen-nygaard
+  kind: person
+  person: Kristen Nygaard
+  wiki: Kristen Nygaard
+  nodes:
+  - simula
+- id: person-krste-asanovic
+  kind: person
+  person: Krste Asanović
+  wiki: Krste Asanović
+  nodes:
+  - risc-v
+- id: person-lambert-meertens
+  kind: person
+  person: Lambert Meertens
+  wiki: Lambert Meertens
+  nodes:
+  - abc
+- id: person-larry-wall
+  kind: person
+  person: Larry Wall
+  wiki: Larry Wall
+  nodes:
+  - perl
+- id: person-lars-bak
+  kind: person
+  person: Lars Bak
+  wiki: Lars Bak (computer programmer)
+  nodes:
+  - dart
+- id: person-leo-geurts
+  kind: person
+  person: Leo Geurts
+  wiki: Leo Geurts
+  nodes:
+  - abc
+- id: person-mads-tofte
+  kind: person
+  person: Mads Tofte
+  wiki: Mads Tofte
+  nodes:
+  - standard-ml
+- id: person-marlyn-meltzer
+  kind: person
+  person: Marlyn Meltzer
+  wiki: Marlyn Meltzer
+  nodes:
+  - eniac
+- id: person-martin-odersky
+  kind: person
+  person: Martin Odersky
+  wiki: Martin Odersky
+  nodes:
+  - scala
+- id: person-martin-richards
+  kind: person
+  person: Martin Richards
+  wiki: Martin Richards (computer scientist)
+  nodes:
+  - bcpl
+- id: person-masatoshi-shima
+  kind: person
+  person: Masatoshi Shima
+  wiki: Masatoshi Shima
+  nodes:
+  - zilog-z80
+- id: person-maurice-wilkes
+  kind: person
+  person: Maurice Wilkes
+  wiki: Maurice Wilkes
+  nodes:
+  - edsac
+- id: person-mike-williams
+  kind: person
+  person: Mike Williams
+  wiki: Mike Williams
+  nodes:
+  - erlang
+- id: person-niklaus-wirth
+  kind: person
+  person: Niklaus Wirth
+  wiki: Niklaus Wirth
+  nodes:
+  - algol-w
+  - pascal
+  - modula-2
+  - oberon
+- id: person-ole-johan-dahl
+  kind: person
+  person: Ole-Johan Dahl
+  wiki: Ole-Johan Dahl
+  nodes:
+  - simula
+- id: person-paul-hudak
+  kind: person
+  person: Paul Hudak
+  wiki: Paul Hudak
+  nodes:
+  - haskell
+- id: person-per-brinch-hansen
+  kind: person
+  person: Per Brinch Hansen
+  wiki: Per Brinch Hansen
+  nodes:
+  - concurrent-pascal
+- id: person-peter-landin
+  kind: person
+  person: Peter Landin
+  wiki: Peter Landin
+  nodes:
+  - iswim
+- id: person-peter-naur
+  kind: person
+  person: Peter Naur
+  wiki: Peter Naur
+  nodes:
+  - algol-60
+- id: person-phil-winterbottom
+  kind: person
+  person: Phil Winterbottom
+  wiki: Phil Winterbottom
+  nodes:
+  - alef
+  - limbo
+- id: person-philip-wadler
+  kind: person
+  person: Philip Wadler
+  wiki: Philip Wadler
+  nodes:
+  - haskell
+- id: person-randall-smith
+  kind: person
+  person: Randall Smith
+  wiki: Randall Smith
+  nodes:
+  - self
+- id: person-rasmus-lerdorf
+  kind: person
+  person: Rasmus Lerdorf
+  wiki: Rasmus Lerdorf
+  nodes:
+  - php
+- id: person-raymond-f-boyce
+  kind: person
+  person: Raymond F. Boyce
+  wiki: Raymond F. Boyce
+  nodes:
+  - sql
+- id: person-rich-hickey
+  kind: person
+  person: Rich Hickey
+  wiki: Rich Hickey
+  nodes:
+  - clojure
+- id: person-rob-pike
+  kind: person
+  person: Rob Pike
+  wiki: Rob Pike
+  nodes:
+  - newsqueak
+  - limbo
+  - go
+- id: person-robert-gentleman
+  kind: person
+  person: Robert Gentleman
+  wiki: Robert Gentleman (statistician)
+  nodes:
+  - r
+- id: person-robert-griesemer
+  kind: person
+  person: Robert Griesemer
+  wiki: Robert Griesemer
+  nodes:
+  - go
+- id: person-robert-harper
+  kind: person
+  person: Robert Harper
+  wiki: Robert Harper
+  nodes:
+  - standard-ml
+- id: person-robert-kowalski
+  kind: person
+  person: Robert Kowalski
+  wiki: Robert Kowalski
+  nodes:
+  - prolog
+- id: person-robert-virding
+  kind: person
+  person: Robert Virding
+  wiki: Robert Virding
+  nodes:
+  - erlang
+- id: person-roberto-ierusalimschy
+  kind: person
+  person: Roberto Ierusalimschy
+  wiki: Roberto Ierusalimschy
+  nodes:
+  - lua
+- id: person-robin-milner
+  kind: person
+  person: Robin Milner
+  wiki: Robin Milner
+  nodes:
+  - ml
+  - standard-ml
+- id: person-ross-ihaka
+  kind: person
+  person: Ross Ihaka
+  wiki: Ross Ihaka
+  nodes:
+  - r
+- id: person-roy-nutt
+  kind: person
+  person: Roy Nutt
+  wiki: Roy Nutt
+  nodes:
+  - sap-704
+  - fortran
+- id: person-ruth-teitelbaum
+  kind: person
+  person: Ruth Teitelbaum
+  wiki: Ruth Teitelbaum
+  nodes:
+  - eniac
+- id: person-seymour-papert
+  kind: person
+  person: Seymour Papert
+  wiki: Seymour Papert
+  nodes:
+  - logo
+- id: person-simon-peyton-jones
+  kind: person
+  person: Simon Peyton Jones
+  wiki: Simon Peyton Jones
+  nodes:
+  - haskell
+- id: person-sophie-wilson
+  kind: person
+  person: Sophie Wilson
+  wiki: Sophie Wilson
+  nodes:
+  - arm
+- id: person-stan-poley
+  kind: person
+  person: Stan Poley
+  wiki: Stan Poley
+  nodes:
+  - soap
+- id: person-stefan-karpinski
+  kind: person
+  person: Stefan Karpinski
+  wiki: Stefan Karpinski
+  nodes:
+  - julia
+- id: person-stephen-morse
+  kind: person
+  person: Stephen Morse
+  wiki: Stephen Morse
+  nodes:
+  - intel-8086
+- id: person-stephen-r-bourne
+  kind: person
+  person: Stephen R. Bourne
+  wiki: Stephen R. Bourne
+  nodes:
+  - bourne-shell
+- id: person-steve-furber
+  kind: person
+  person: Steve Furber
+  wiki: Steve Furber
+  nodes:
+  - arm
+- id: person-steven-pemberton
+  kind: person
+  person: Steven Pemberton
+  wiki: Steven Pemberton
+  nodes:
+  - abc
+- id: person-thomas-e-kurtz
+  kind: person
+  person: Thomas E. Kurtz
+  wiki: Thomas E. Kurtz
+  nodes:
+  - basic
+- id: person-tom-kilburn
+  kind: person
+  person: Tom Kilburn
+  wiki: Tom Kilburn
+  nodes:
+  - manchester-baby
+- id: person-tony-hoare
+  kind: person
+  person: Tony Hoare
+  wiki: Tony Hoare
+  nodes:
+  - algol-w
+  - hoare-record-classes
+  - csp
+- id: person-urban-muller
+  kind: person
+  person: Urban Müller
+  wiki: Urban Müller
+  nodes:
+  - brainfuck
+- id: person-viral-b-shah
+  kind: person
+  person: Viral B. Shah
+  wiki: Viral B. Shah
+  nodes:
+  - julia
+- id: person-wally-feurzeig
+  kind: person
+  person: Wally Feurzeig
+  wiki: Wally Feurzeig
+  nodes:
+  - logo
+- id: person-walter-bright
+  kind: person
+  person: Walter Bright
+  wiki: Walter Bright
+  nodes:
+  - d
+- id: person-wouter-van-oortmerssen
+  kind: person
+  person: Wouter van Oortmerssen
+  wiki: Wouter van Oortmerssen
+  nodes:
+  - false-lang
+- id: person-xavier-leroy
+  kind: person
+  person: Xavier Leroy
+  wiki: Xavier Leroy
+  nodes:
+  - ocaml
+- id: person-yukihiro-matsumoto
+  kind: person
+  person: Yukihiro Matsumoto
+  wiki: Yukihiro Matsumoto
+  nodes:
+  - ruby

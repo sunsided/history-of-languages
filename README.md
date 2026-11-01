@@ -53,6 +53,20 @@ pointer to the earliest node in the dataset credited with them.
 
 **Claims** are fact-checks with verdicts and quoted, located evidence.
 
+## Photos and portraits
+
+`data/media-subjects.yaml` lists what we want a picture of: every machine node and every named creator,
+each pointing at an English Wikipedia article (or a specific Commons file). `tools/fetch_media.py` asks the
+Wikipedia and Commons APIs for the lead image, keeps only files hosted on Wikimedia Commons under a free
+license (public domain, CC0, CC BY, CC BY-SA, GFDL), writes `data/media.yaml` with credit, license,
+caption and source, and downloads 800px copies into `assets/media/`. Non-free images (common for living
+people) are skipped and listed. The site must display each image's `credit` and `license`.
+
+```
+python3 tools/fetch_media.py --dry-run   # see what would be used
+python3 tools/fetch_media.py             # write data/media.yaml + assets/media/
+```
+
 ## Unfolding subgraphs (the research workflow)
 
 Clusters are both the UI's collapsible groups and the unit of research. A cluster id is a path
