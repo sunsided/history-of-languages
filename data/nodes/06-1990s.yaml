@@ -1073,3 +1073,102 @@
         end tell
       end tell
     sources: [wiki-applescript]
+
+- id: dylan
+  name: Dylan
+  aliases: [Prefix Dylan, Open Dylan]
+  kind: language
+  category: general
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1992, precision: year, note: "Created in the early 1990s by a group led by Apple Computer; Wikipedia gives 1992." }
+    places: [{ institution: Apple Computer, country: US }]
+  creators:
+    - { name: Apple Computer, role: lead developer }
+  status: maintained
+  tags:
+    paradigm: [object-oriented, functional, multi-paradigm]
+    typing: [dynamic-typing, gradual-typing]
+    memory: [garbage-collection]
+    features: [multiple-dispatch, macros, generics]
+  milestones:
+    - { version: "infix syntax", year: 1994, summary: "CMU and Apple switch from Lisp prefix syntax to an ALGOL-like infix syntax (\"late 1993 or 1994\", Open Dylan history)." }
+    - { version: "Apple Dylan TR1", year: 1995, summary: "Apple ends its Dylan effort with a technology release." }
+    - { version: "Open Dylan", year: 2004, summary: "Harlequin's implementation open-sourced by Functional Objects." }
+  summary: >
+    Apple's "DYnamic LANguage": Scheme and CLOS semantics (generic functions, multiple dispatch, macros)
+    with an ALGOL-like syntax adopted in 1993–94 in place of the original prefix syntax, meant for the
+    Newton. Apple dropped it in 1995; Harlequin's implementation lives on as Open Dylan.
+  relations:
+    - { type: influenced_by, to: scheme, weight: strong, confidence: high, sources: [wiki-dylan], note: "\"Dylan derives from Scheme and Common Lisp and adds an integrated object system\"." }
+    - { type: influenced_by, to: common-lisp, aspects: [multiple-dispatch], weight: strong, confidence: high, sources: [wiki-dylan] }
+    - { type: influenced_by, to: algol-60, weight: weak, confidence: medium, sources: [wiki-dylan], note: "The infobox lists ALGOL; the link is the infix syntax." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Dylan_(programming_language)", homepage: "https://opendylan.org" }
+  sources: [wiki-dylan, opendylan-history]
+  example:
+    title: Infix Dylan
+    language: Dylan
+    note: "From the Wikipedia Dylan article (indentation restored). Types such as <integer> are optional annotations; case is a multi-way conditional."
+    code: |
+      define function factorial (n :: <integer>) => (n! :: <integer>)
+        case
+          n < 0     => error("Can't take factorial of negative integer: %d\n", n);
+          n = 0     => 1;
+          otherwise => n * factorial(n - 1);
+        end
+      end;
+    sources: [wiki-dylan]
+
+- id: racket
+  name: Racket
+  aliases: [PLT Scheme, DrScheme]
+  kind: language
+  category: general
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1995, date: "1995-01-28", precision: exact, note: "In January 1995 the PLT group decided to build a pedagogic programming environment based on Scheme (PLT Scheme); renamed Racket on 7 June 2010." }
+  creators:
+    - { name: Matthias Felleisen, role: founder of PLT }
+    - { name: Matthew Flatt, role: "implementer (MrEd, the original virtual machine)" }
+    - { name: Robert Bruce Findler, role: developer }
+    - { name: Shriram Krishnamurthi, role: developer }
+  status: active
+  tags:
+    paradigm: [functional, multi-paradigm, object-oriented]
+    typing: [dynamic-typing, gradual-typing]
+    memory: [garbage-collection]
+    features: [hygienic-macros, contracts, module-system, first-class-continuations, ide]
+    domain: [education]
+  milestones:
+    - { version: "4.0", year: 2008, summary: "#lang selects the language of a module." }
+    - { version: "5.0", year: 2010, summary: "PLT Scheme renamed Racket (7 June 2010)." }
+    - { version: "8.0", year: 2021, summary: "Racket on Chez Scheme (Racket CS) becomes the default implementation (13 February 2021)." }
+  summary: >
+    "A language for making languages": a descendant of Scheme whose #lang line selects the language a module
+    is written in, from Typed Racket to teaching languages to Scribble, all built with hygienic macros. It
+    began as PLT Scheme and DrScheme, an environment for teaching programming, and adds contracts and a
+    large standard library.
+  relations:
+    - { type: dialect_of, to: scheme, weight: strong, confidence: high, sources: [wiki-racket], note: "\"a modern dialect of Lisp and a descendant of Scheme\"." }
+    - { type: influenced_by, to: eiffel, aspects: [contracts], weight: moderate, confidence: medium, sources: [wiki-racket], note: "Eiffel is in the infobox; the contracts link is our reading." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Racket_(programming_language)", homepage: "https://racket-lang.org" }
+  sources: [wiki-racket, racket-org, racket-2010-rename]
+  example:
+    title: Occurrence typing in Typed Racket
+    language: Typed Racket
+    note: "From racket-lang.org. #lang typed/racket switches the module's language; after filter string?, the type checker knows the list holds only strings. Run with Racket 8: returns \"hello world\"."
+    code: |
+      #lang typed/racket
+      ;; Using higher-order occurrence typing
+      (define-type SrN (U String Number))
+      (: tog ((Listof SrN) -> String))
+      (define (tog l)
+        (apply string-append
+               (filter string? l)))
+      (tog (list 5 "hello "
+                 1/2 "world" (sqrt -1)))
+    sources: [racket-org]

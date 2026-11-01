@@ -189,6 +189,9 @@
   relations:
     - { type: dialect_of, to: lisp, weight: strong, confidence: high }
     - { type: influenced_by, to: scheme, aspects: [lexical-scoping], weight: moderate, confidence: high }
+    - { type: successor_of, to: maclisp, weight: strong, confidence: high, sources: [wiki-lisp], note: "\"a consolidation of several divergent attempts (ZetaLisp, Spice Lisp, NIL, and S-1 Lisp) to create successor dialects to Maclisp\"." }
+    - { type: influenced_by, to: lisp-machine-lisp, weight: strong, confidence: high, sources: [wiki-lisp-machine-lisp], note: "\"the Lisp dialect with the most influence on the design of Common Lisp\"." }
+    - { type: influenced_by, to: interlisp, weight: weak, confidence: medium, sources: [wiki-interlisp], note: "LOOPS (Interlisp-D) and Flavors were the basis for CLOS." }
     - { type: influenced_by, to: smalltalk, weight: weak, confidence: medium, note: "Via Flavors/LOOPS object systems." }
   research_status: draft
   confidence: high
@@ -1425,3 +1428,131 @@
       for(i in a b c)
       	echo $i
     sources: [wiki-rc]
+
+- id: franz-lisp
+  name: Franz Lisp
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    began: { year: 1978, precision: year, note: "Began at the end of 1978, soon after UC Berkeley received its first VAX-11/780." }
+    first_appeared: { year: 1980, precision: year, note: "Wikipedia infobox; distributed with BSD for the VAX." }
+    places: [{ institution: "University of California, Berkeley", country: US }]
+  creators:
+    - { name: Richard Fateman, role: "professor, project lead" }
+    - { name: John Foderaro, role: designer }
+    - { name: Keith Sklower, role: designer }
+    - { name: Kevin Layer, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional, procedural]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [c-interop]
+  summary: >
+    A MacLisp-like Lisp for Unix, written at Berkeley "specifically to be a host for running the Macsyma
+    computer algebra system on VAX" and distributed with BSD, which made it the Lisp most Unix users met.
+    Its authors founded Franz Inc., whose Allegro Common Lisp followed.
+  relations:
+    - { type: dialect_of, to: maclisp, weight: strong, confidence: high, sources: [wiki-franz-lisp], note: "\"based largely on Maclisp\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Franz_Lisp" }
+  sources: [wiki-franz-lisp]
+  example:
+    title: MacLisp on Unix
+    language: Franz Lisp
+    note: "Illustrative, written for this dataset: Franz Lisp accepted MacLisp-style defun; the second definition uses its own def/lambda form. Not run; check against the Franz Lisp manual."
+    code: |
+      (defun fact (n)
+        (cond ((zerop n) 1)
+              (t (times n (fact (sub1 n))))))
+
+      (def square (lambda (x) (times x x)))
+    sources: [wiki-franz-lisp]
+
+- id: emacs-lisp
+  name: Emacs Lisp
+  aliases: [Elisp]
+  kind: language
+  category: scripting
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1985, precision: year, note: "With GNU Emacs, which Richard Stallman forked from Gosling Emacs, choosing Lisp as the extension language." }
+  creators:
+    - { name: Richard Stallman, role: designer }
+    - { name: Guy L. Steele Jr., role: designer }
+  status: active
+  tags:
+    paradigm: [functional, procedural]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [macros, dynamic-scoping, embeddable, bytecode-vm]
+  milestones:
+    - { version: "24", year: 2012, introduces: [lexical-scoping], summary: "Lexical binding as an option alongside MacLisp-style dynamic scope (year from the 24.1 release announcement cited by Wikipedia)." }
+  summary: >
+    The extension language of GNU Emacs, in which most of the editor itself is written. It is "most closely
+    related to Maclisp, with some later influence from Common Lisp", and kept MacLisp's dynamic scope until
+    Emacs 24 made lexical binding available. Stallman rejected Scheme for its performance on the
+    workstations of 1985.
+  notes: >
+    Stefan Monnier and Michael Sperber's HOPL IV paper "Evolution of Emacs Lisp" (2020) is the primary
+    history; not reachable for this pass. It covers Mocklisp in Gosling Emacs, the predecessor.
+  relations:
+    - { type: influenced_by, to: maclisp, weight: strong, confidence: high, sources: [wiki-emacs-lisp], note: "\"most closely related to Maclisp\"." }
+    - { type: influenced_by, to: common-lisp, weight: moderate, confidence: high, sources: [wiki-emacs-lisp], note: "\"some later influence from Common Lisp\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Emacs_Lisp" }
+  sources: [wiki-emacs-lisp]
+  example:
+    title: Extending the editor
+    language: Emacs Lisp
+    note: "From the Wikipedia Emacs Lisp article. (interactive) makes the function a command; global-set-key rebinds C-x 2 to it."
+    code: |
+      (defun my-split-window-func ()
+        (interactive)
+        (split-window-below)
+        (set-window-buffer (next-window) (other-buffer)))
+
+      (global-set-key (kbd "C-x 2") #'my-split-window-func)
+    sources: [wiki-emacs-lisp]
+
+- id: autolisp
+  name: AutoLISP
+  aliases: [Visual LISP, Vital-LISP]
+  kind: language
+  category: domain-specific
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1986, date: "1986-01", precision: exact, note: "Introduced in AutoCAD Version 2.18." }
+    places: [{ institution: Autodesk }]
+  creators:
+    - { name: David Betz, role: designer (XLISP) }
+  status: maintained
+  tags:
+    paradigm: [functional, procedural, scripting]
+    typing: [dynamic-typing]
+    features: [dynamic-scoping, embeddable]
+  milestones:
+    - { version: "13", year: 1995, summary: "Last AutoLISP release (February 1995)." }
+    - { version: "Visual LISP", year: 1999, summary: "Basis Software's Vital-LISP (IDE, compiler, ActiveX), bought by Autodesk, replaced AutoLISP in AutoCAD 2000." }
+  summary: >
+    The Lisp built into AutoCAD, "derived from an early version of XLISP" by David Betz, and for many
+    draftsmen and engineers the only Lisp they ever wrote. It made AutoCAD scriptable by its users and
+    created one of the largest Lisp user bases outside academia.
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-autolisp], note: "Via XLISP (not yet a node)." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/AutoLISP" }
+  sources: [wiki-autolisp]
+  example:
+    title: Hello world
+    language: AutoLISP
+    note: "From the Wikipedia AutoLISP article. The final (princ) with no argument suppresses the echo of the return value at the AutoCAD command line."
+    code: |
+      (defun hello ( )
+        (princ "\nHello World!")
+        (princ))
+    sources: [wiki-autolisp]

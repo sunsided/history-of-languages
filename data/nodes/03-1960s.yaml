@@ -568,3 +568,98 @@
     code: |
       : SQUARE  ( n -- n*n )  DUP * ;
       5 SQUARE .
+
+- id: maclisp
+  name: MacLisp
+  aliases: [Maclisp, MACLISP]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1966, date: "1966-07", precision: exact, note: "Wikipedia infobox; the name came into use in the early 1970s to tell it apart from other PDP-6 Lisp forks such as BBN Lisp." }
+    places: [{ institution: MIT Project MAC, country: US }]
+  creators:
+    - { name: Richard Greenblatt, role: main developer of the original PDP-6 code }
+    - { name: Jon L. White, role: later maintenance and development }
+  status: historical
+  tags:
+    paradigm: [functional, procedural]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [macros, homoiconicity, dynamic-scoping, optimizing-compiler, repl]
+    domain: [artificial-intelligence]
+  summary: >
+    The Lisp of MIT's Project MAC on the PDP-6 and PDP-10 under ITS: a descendant of LISP 1.5 with value
+    cells for fast dynamic variables, the 'x quote syntax and a compiler fast enough for numeric work,
+    which made it the host of the Macsyma computer algebra system. Lisp Machine Lisp, Franz Lisp, Emacs
+    Lisp and, through them, Common Lisp descend from it.
+  notes: >
+    Wikipedia's article for the first creator is titled "Richard Greenblatt (programmer)". Its Ncomplr compiler
+    (mid-1970s) "introduced fast numeric support to Lisp languages".
+  relations:
+    - { type: dialect_of, to: lisp, from_version: "LISP 1.5", weight: strong, confidence: high, sources: [wiki-maclisp], note: "\"Maclisp is a descendant of Lisp 1.5.\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Maclisp" }
+  sources: [wiki-maclisp, steele-gabriel-1993-evolution-lisp]
+  example:
+    title: Recursion in upper case
+    language: MacLisp
+    note: "Illustrative, written for this dataset in MacLisp style (DEFUN rather than LISP 1.5's DEFINE, as Wikipedia notes; 'X for (QUOTE X)). Not run on a MacLisp system; check against the MacLisp manual (Pitman)."
+    code: |
+      (DEFUN FACT (N)
+             (COND ((ZEROP N) 1)
+                   (T (TIMES N (FACT (SUB1 N))))))
+
+      (FACT 10.)          ; the trailing point marks a decimal number
+      (SETQ L '(A B C))   ; 'X reads as (QUOTE X)
+    sources: [wiki-maclisp]
+
+- id: interlisp
+  name: Interlisp
+  aliases: [BBN Lisp, Interlisp-D]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    began: { year: 1966, precision: year, note: "BBN Lisp for the PDP-1 by Danny Bobrow and D. L. Murphy at Bolt, Beranek and Newman, Cambridge, Massachusetts." }
+    first_appeared: { year: 1968, precision: year, note: "Wikipedia infobox. Renamed Interlisp in 1973 when Bobrow, Warren Teitelman and Ronald Kaplan moved to Xerox PARC." }
+    places: [{ institution: "Bolt, Beranek and Newman", city: Cambridge MA, country: US }, { institution: Xerox PARC, city: Palo Alto, country: US }]
+  creators:
+    - { name: Daniel G. Bobrow, role: co-author of BBN Lisp }
+    - { name: Warren Teitelman, role: "developer (DWIM, programming environment)" }
+    - { name: Alice K. Hartley, role: implemented BBN LISP on the PDP-10 (1970) }
+    - { name: Ronald Kaplan, role: developer at Xerox PARC }
+    - { name: L. Peter Deutsch, role: designed the byte-coded instruction set }
+  status: historical
+  tags:
+    paradigm: [functional, procedural]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [ide, repl, bytecode-vm, homoiconicity]
+    domain: [artificial-intelligence]
+  milestones:
+    - { version: Interlisp, year: 1973, summary: "BBN Lisp renamed Interlisp at Xerox PARC." }
+  summary: >
+    The other great Lisp of the 1970s, from BBN and then Xerox PARC, notable for "integrating interactive
+    development tools into an integrated development environment": a debugger, analysis tools and DWIM
+    ("do what I mean") automatic error correction. Its object system LOOPS, with Symbolics' Flavors,
+    became the basis of CLOS.
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-interlisp] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Interlisp" }
+  sources: [wiki-interlisp, steele-gabriel-1993-evolution-lisp]
+  example:
+    title: DEFINEQ and DWIM
+    language: Interlisp
+    note: "Illustrative, written for this dataset: DEFINEQ defines functions in Interlisp style. The misspelled call shows what DWIM did (offer a spelling correction) and is not a transcript. Check against the Interlisp Reference Manual."
+    code: |
+      (DEFINEQ
+        (FACT (LAMBDA (N)
+          (COND ((ZEROP N) 1)
+                (T (ITIMES N (FACT (SUB1 N))))))))
+
+      (FATC 5)     ; DWIM: FATC → FACT ?  answered yes, evaluates (FACT 5) = 120
+    sources: [wiki-interlisp]

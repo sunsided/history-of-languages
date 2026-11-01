@@ -1130,3 +1130,51 @@
       end
     sources: [wiki-c-shell]
 
+
+- id: lisp-machine-lisp
+  name: Lisp Machine Lisp
+  aliases: [ZetaLisp, Zetalisp]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1976, precision: year, note: "Wikipedia infobox; developed in the mid to late 1970s as the system language of the MIT Lisp machines." }
+    places: [{ institution: MIT AI Lab, country: US }]
+  creators:
+    - { name: David A. Moon, role: designer }
+    - { name: Richard Stallman, role: designer }
+    - { name: Daniel Weinreb, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional, object-oriented, procedural]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [macros, closures, multiple-inheritance, dynamic-scoping]
+    domain: [artificial-intelligence, operating-systems]
+  summary: >
+    The system programming language of the MIT Lisp machines and their commercial descendants (Symbolics'
+    ZetaLisp, LMI, Texas Instruments): a direct descendant of MacLisp, with the Flavors object system, in
+    which the whole operating system was written. It was "the Lisp dialect with the most influence on the
+    design of Common Lisp".
+  relations:
+    - { type: successor_of, to: maclisp, weight: strong, confidence: high, sources: [wiki-lisp-machine-lisp], note: "\"A direct descendant of Maclisp\"." }
+    - { type: influenced_by, to: interlisp, weight: moderate, confidence: medium, sources: [wiki-lisp-machine-lisp] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lisp_Machine_Lisp" }
+  sources: [wiki-lisp-machine-lisp]
+  example:
+    title: Flavors
+    language: Lisp Machine Lisp
+    note: "Illustrative, written for this dataset in the style of the Lisp Machine Manual: defflavor declares a flavor (class) with instance variables, defmethod a method, send a message. Not run; check against the Lisp Machine Manual."
+    code: |
+      (defflavor ship (x y x-velocity y-velocity) ()
+        :settable-instance-variables)
+
+      (defmethod (ship :speed) ()
+        (sqrt (+ (* x-velocity x-velocity)
+                 (* y-velocity y-velocity))))
+
+      (setq s (make-instance 'ship ':x-velocity 3 ':y-velocity 4))
+      (send s ':speed)          ; => 5.0
+    sources: [wiki-lisp-machine-lisp]

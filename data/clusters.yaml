@@ -335,13 +335,17 @@
   name: Lisp family
   research_status: draft
   backlog:
-    - { name: "MacLisp", year: 1966 }
-    - { name: "Interlisp", year: 1966 }
-    - { name: "Lisp Machine Lisp", year: 1979 }
-    - { name: "Emacs Lisp", year: 1985 }
-    - { name: "Racket (PLT Scheme)", year: 1995 }
-    - { name: "Dylan", year: 1992 }
-    - { name: "Fennel / Janet / Hy", year: 2016 }
+    - { name: "Stanford LISP 1.6", year: 1966 }
+    - { name: "MDL (Muddle)", year: 1971, hint: "MIT; Zork was written in it." }
+    - { name: "NIL / Spice Lisp / S-1 Lisp", year: 1980, hint: "MacLisp successors consolidated into Common Lisp." }
+    - { name: "Portable Standard Lisp", year: 1980 }
+    - { name: "XLISP", year: 1983, hint: "David Betz; parent of AutoLISP." }
+    - { name: "T", year: 1982, hint: "Yale Scheme dialect." }
+    - { name: "EuLisp", year: 1990, hint: "Influenced Dylan." }
+    - { name: "ISLISP", year: 1997 }
+    - { name: "GNU Guile", year: 1993 }
+    - { name: "newLISP / PicoLisp", year: 1991 }
+    - { name: "Mocklisp", year: 1981, hint: "Gosling Emacs's extension language, before Emacs Lisp." }
 - id: array
   name: Array languages
   research_status: stub
@@ -413,8 +417,6 @@
   name: Apple platform languages
   parent: oop
   research_status: stub
-  backlog:
-    - { name: "Dylan", year: 1992 }
 - id: managed
   name: Managed-runtime languages (JVM and .NET)
   research_status: draft
@@ -583,8 +585,6 @@
   name: Erlang VM (BEAM) languages
   parent: concurrency
   research_status: draft
-  backlog:
-    - { name: "LFE (Lisp Flavoured Erlang)", year: 2008 }
 
 # ===================== Esoteric =====================
 - id: esoteric

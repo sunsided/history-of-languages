@@ -1979,3 +1979,135 @@
   title: "The Nushell Book"
   url: https://www.nushell.sh/book/
   checked: '2026-11-01'
+- id: wiki-maclisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Maclisp"
+  url: https://en.wikipedia.org/wiki/Maclisp
+  checked: '2026-11-01'
+- id: wiki-interlisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Interlisp"
+  url: https://en.wikipedia.org/wiki/Interlisp
+  checked: '2026-11-01'
+- id: wiki-lisp-machine-lisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lisp Machine Lisp"
+  url: https://en.wikipedia.org/wiki/Lisp_Machine_Lisp
+  checked: '2026-11-01'
+- id: wiki-franz-lisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Franz Lisp"
+  url: https://en.wikipedia.org/wiki/Franz_Lisp
+  checked: '2026-11-01'
+- id: wiki-lisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lisp (programming language)"
+  url: https://en.wikipedia.org/wiki/Lisp_(programming_language)
+  checked: '2026-11-01'
+- id: wiki-emacs-lisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Emacs Lisp"
+  url: https://en.wikipedia.org/wiki/Emacs_Lisp
+  checked: '2026-11-01'
+- id: wiki-autolisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: AutoLISP"
+  url: https://en.wikipedia.org/wiki/AutoLISP
+  checked: '2026-11-01'
+- id: wiki-dylan
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Dylan (programming language)"
+  url: https://en.wikipedia.org/wiki/Dylan_(programming_language)
+  checked: '2026-11-01'
+- id: opendylan-history
+  type: web
+  primary: true
+  title: "Open Dylan: History"
+  url: https://opendylan.org/history/index.html
+  checked: '2026-11-01'
+- id: wiki-racket
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Racket (programming language)"
+  url: https://en.wikipedia.org/wiki/Racket_(programming_language)
+  checked: '2026-11-01'
+- id: racket-org
+  type: manual
+  primary: true
+  title: "Racket (official site)"
+  url: https://racket-lang.org/
+  checked: '2026-11-01'
+- id: racket-2010-rename
+  type: web
+  primary: true
+  title: "Racket blog: Racket (PLT Scheme is now Racket, 7 June 2010)"
+  url: https://blog.racket-lang.org/2010/06/racket.html
+  checked: '2026-11-01'
+- id: wiki-arc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Arc (programming language)"
+  url: https://en.wikipedia.org/wiki/Arc_(programming_language)
+  checked: '2026-11-01'
+- id: graham-2008-arcs-out
+  type: web
+  primary: true
+  title: "Paul Graham: Arc's Out (29 January 2008)"
+  url: http://www.paulgraham.com/arc0.html
+  checked: '2026-11-01'
+- id: wiki-lfe
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: LFE (programming language)"
+  url: https://en.wikipedia.org/wiki/LFE_(programming_language)
+  checked: '2026-11-01'
+- id: lfe-io
+  type: manual
+  primary: true
+  title: "LFE (official site)"
+  url: https://lfe.io/
+  checked: '2026-11-01'
+- id: wiki-hy
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Hy (programming language)"
+  url: https://en.wikipedia.org/wiki/Hy_(programming_language)
+  checked: '2026-11-01'
+- id: hylang-org
+  type: manual
+  primary: true
+  title: "Hy (official site)"
+  url: https://hylang.org/
+  checked: '2026-11-01'
+- id: fennel-lang-org
+  type: manual
+  primary: true
+  title: "Fennel (official site)"
+  url: https://fennel-lang.org/
+  checked: '2026-11-01'
+- id: fennel-rationale
+  type: manual
+  primary: true
+  title: "Fennel: Rationale"
+  url: https://fennel-lang.org/rationale
+  checked: '2026-11-01'
+- id: janet-lang-org
+  type: manual
+  primary: true
+  title: "Janet (official site)"
+  url: https://janet-lang.org/
+  checked: '2026-11-01'
+- id: janet-readme
+  type: manual
+  primary: true
+  title: "Janet README (GitHub)"
+  url: https://github.com/janet-lang/janet
+  checked: '2026-11-01'

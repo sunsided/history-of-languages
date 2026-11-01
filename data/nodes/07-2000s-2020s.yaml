@@ -2250,3 +2250,219 @@
 
       1..10 | each {$in * 2}
     sources: [nushell-book]
+
+- id: arc
+  name: Arc
+  kind: language
+  category: general
+  cluster: lisp
+  origin:
+    first_appeared: { year: 2008, date: "2008-01-29", precision: exact, note: "First public release (\"Arc's Out\"), implemented on PLT Scheme." }
+  creators:
+    - { name: Paul Graham, role: designer }
+    - { name: Robert Tappan Morris, role: developer }
+  status: legacy
+  tags:
+    paradigm: [functional]
+    typing: [dynamic-typing]
+    features: [macros, minimalism]
+    domain: [web]
+  summary: >
+    Paul Graham's terse Lisp, designed for short programs with short names (fn, =, pr, aform) and used to
+    write Hacker News. It was implemented on PLT Scheme/Racket; by 2024 Y Combinator had largely moved to
+    Clarc, a version on SBCL Common Lisp.
+  notes: >
+    Wikipedia's article for the designer is titled "Paul Graham (programmer)".
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-arc] }
+    - { type: influenced_by, to: scheme, weight: moderate, confidence: high, sources: [wiki-arc, graham-2008-arcs-out] }
+    - { type: implemented_in, to: racket, weight: strong, confidence: high, sources: [wiki-arc] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Arc_(programming_language)", homepage: "http://arclanguage.org" }
+  sources: [wiki-arc, graham-2008-arcs-out]
+  example:
+    title: The Arc challenge
+    language: Arc
+    note: "From the Wikipedia Arc article (Graham's \"Arc challenge\", indentation restored): a web page with a form whose answer is shown on a second page after clicking a link. [... _ ...] is shorthand for a one-argument function."
+    code: |
+      (defop said req
+        (aform [onlink "click here" (pr "you said: " (arg _ "foo"))]
+          (input "foo")
+          (submit)))
+    sources: [wiki-arc]
+
+- id: lfe
+  name: LFE
+  aliases: [Lisp Flavoured Erlang, Lisp Flavored Erlang]
+  kind: language
+  category: general
+  cluster: concurrency/beam
+  origin:
+    began: { year: 2007, precision: year, note: "Robert Virding began a prototype of Lisp running on Erlang." }
+    first_appeared: { year: 2008, date: "2008-03", precision: exact, note: "First release announced on the erlang-questions mailing list." }
+  creators:
+    - { name: Robert Virding, role: designer }
+  status: active
+  tags:
+    paradigm: [functional, concurrent]
+    typing: [dynamic-typing]
+    concurrency: [actors, message-passing]
+    features: [macros, pattern-matching, homoiconicity]
+  summary: >
+    A Lisp on Core Erlang and the BEAM by one of Erlang's creators, who had long wanted "a Lisp which was
+    specifically designed to run on the BEAM". It keeps Erlang's semantics (processes, pattern matching,
+    OTP) with Lisp syntax and macros.
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-lfe] }
+    - { type: influenced_by, to: erlang, aspects: [actors, pattern-matching], weight: strong, confidence: high, sources: [wiki-lfe] }
+    - { type: influenced_by, to: common-lisp, weight: moderate, confidence: medium, sources: [wiki-lfe] }
+    - { type: implemented_in, to: erlang, weight: strong, confidence: high, sources: [wiki-lfe] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LFE_(programming_language)", homepage: "https://lfe.io" }
+  sources: [wiki-lfe, lfe-io]
+  example:
+    title: Pattern-matching clauses
+    language: LFE
+    note: "From lfe.io. A defun with several clauses matches its arguments like an Erlang function head."
+    code: |
+      ;; A recursive function with pattern matching:
+      (defun ackermann
+        ((0 n) (+ n 1))
+        ((m 0) (ackermann (- m 1) 1))
+        ((m n) (ackermann (- m 1)
+                          (ackermann m (- n 1)))))
+    sources: [lfe-io]
+
+- id: hy
+  name: Hy
+  aliases: [Hylang]
+  kind: language
+  category: general
+  cluster: lisp
+  origin:
+    first_appeared: { year: 2013, date: "2013-04", precision: exact, note: "Introduced at PyCon 2013 by Paul Tagliamonte (lightning talk, Santa Clara)." }
+  creators:
+    - { name: Paul Tagliamonte, role: designer }
+  status: active
+  tags:
+    paradigm: [functional, multi-paradigm]
+    typing: [dynamic-typing]
+    features: [macros, homoiconicity, host-interop]
+  summary: >
+    "A Lisp dialect that's embedded in Python": Hy reads S-expressions and translates them into Python's
+    abstract syntax tree, so Hy code and Python libraries call each other freely. It adds Lisp macros to
+    the Python ecosystem.
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [hylang-org] }
+    - { type: influenced_by, to: clojure, weight: moderate, confidence: medium, sources: [wiki-hy] }
+    - { type: influenced_by, to: common-lisp, weight: weak, confidence: medium, sources: [wiki-hy] }
+    - { type: implemented_in, to: python, aspects: [host-interop], weight: strong, confidence: high, sources: [wiki-hy] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hy_(programming_language)", homepage: "https://hylang.org" }
+  sources: [wiki-hy, hylang-org]
+  example:
+    title: Python underneath
+    language: Hy 1.x
+    note: "From hylang.org (the Python equivalent of the first line is sorted(\"abcBC\", key = lambda x: x.lower())) and the Wikipedia Hy article. Not run here."
+    code: |
+      (sorted "abcBC" :key (fn [x] (.lower x)))
+
+      (defn salutationsnm [name] (print (+ "Hy " name "!")))
+      (salutationsnm "YourName")
+
+      (defmacro do-while [test #* body]
+        `(do ~@body (while ~test ~@body)))
+    sources: [hylang-org, wiki-hy]
+
+- id: fennel
+  name: Fennel
+  kind: language
+  category: scripting
+  cluster: lisp
+  origin:
+    first_appeared: { year: 2016, precision: circa, note: "The project's copyright notice starts in 2016; a first-release date has not been found." }
+  creators:
+    - { name: Calvin Rose, role: original author }
+  status: active
+  tags:
+    paradigm: [functional, scripting]
+    typing: [dynamic-typing]
+    features: [macros, homoiconicity, embeddable]
+    domain: [game-scripting]
+  summary: >
+    A Lisp that compiles to Lua: "Anywhere you can run Lua code, you can run Fennel code", with runtime
+    semantics that are a subset of Lua's, plus macros and destructuring. Used for game scripting
+    (LÖVE, TIC-80) and other embedded-Lua settings.
+  notes: >
+    Phil Hagelberg is widely known as its later maintainer, but no page read for this entry says so.
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [fennel-rationale], note: "\"Fennel belongs to the Lisp family of programming languages.\"" }
+    - { type: influenced_by, to: lua, weight: strong, confidence: high, sources: [fennel-rationale], note: "\"the runtime semantics of Fennel are a subset of Lua's\"." }
+  research_status: draft
+  confidence: low
+  links: { homepage: "https://fennel-lang.org" }
+  sources: [fennel-lang-org, fennel-rationale]
+  example:
+    title: Moving a player in LÖVE
+    language: Fennel
+    note: "From fennel-lang.org. Tables use {:key value}, destructuring works in each and let, and (world:move ...) is Lua's method call."
+    code: |
+      ;; Sample: read the state of the keyboard and move the player accordingly
+      (local dirs {:up [0 -1] :down [0 1] :left [-1 0] :right [1 0]})
+
+      (each [key [dx dy] (pairs dirs)]
+        (when (love.keyboard.isDown key)
+          (let [[px py] player
+                x (+ px (* dx player.speed dt))
+                y (+ py (* dy player.speed dt))]
+            (world:move player x y))))
+    sources: [fennel-lang-org]
+
+- id: janet
+  name: Janet
+  kind: language
+  category: scripting
+  cluster: lisp
+  origin:
+    first_appeared: { year: 2017, precision: circa, note: "Copyright notices start in 2017; a first-release date has not been found." }
+  creators:
+    - { name: Calvin Rose, role: author }
+  status: active
+  tags:
+    paradigm: [functional, imperative, scripting]
+    typing: [dynamic-typing]
+    features: [macros, embeddable, bytecode-vm]
+  summary: >
+    A small Lisp for "system scripting, expressive automation, and extending programs written in C or C++",
+    embeddable as a single C file and header. It has a built-in PEG engine in place of regular expressions,
+    and the whole language is under 1 MB.
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: medium, sources: [janet-readme] }
+    - { type: influenced_by, to: lua, aspects: [embeddable], weight: moderate, confidence: medium, sources: [janet-readme], note: "\"It's like Lua and GNU Guile in that regard\" (embedding)." }
+  research_status: draft
+  confidence: low
+  links: { homepage: "https://janet-lang.org" }
+  sources: [janet-lang-org, janet-readme]
+  example:
+    title: 3SUM with tables
+    language: Janet
+    note: "From janet-lang.org. @{} is a mutable table; a struct literal {...} (immutable) serves as a set of indices."
+    code: |
+      (defn sum3
+        "Solve the 3SUM problem in O(n^2) time."
+        [s]
+        (def tab @{})
+        (def solutions @{})
+        (def len (length s))
+        (for k 0 len
+          (put tab (s k) k))
+        (for i 0 len
+          (for j 0 len
+            (def k (get tab (- 0 (s i) (s j))))
+            (when (and k (not= k i) (not= k j) (not= i j))
+              (put solutions {i true j true k true} true))))
+        (map keys (keys solutions)))
+    sources: [janet-lang-org]

@@ -388,6 +388,14 @@
   first_seen:
     node: eiffel
     year: 1986
+- id: dynamic-scoping
+  name: Dynamic scoping
+  facet: features
+  summary: A free variable refers to the most recent active binding at run time, not the one visible in the source text.
+  first_seen:
+    node: lisp
+    year: 1960
+    note: "LISP 1.5's association-list binding; MacLisp, Interlisp and Emacs Lisp kept it."
 - id: dynamic-allocation
   name: Dynamic allocation
   facet: features

@@ -468,6 +468,7 @@
   person: Guy L. Steele Jr.
   wiki: Guy L. Steele Jr.
   nodes:
+  - emacs-lisp
   - scheme
   - common-lisp
 - id: person-heinz-rutishauser
@@ -1036,6 +1037,8 @@
   person: Richard Stallman
   wiki: Richard Stallman
   nodes:
+  - lisp-machine-lisp
+  - emacs-lisp
   - gnu-c
 - id: person-jeremy-ashkenas
   kind: person
@@ -1110,3 +1113,45 @@
   wiki: Lee E. McMahon
   nodes:
   - sed
+- id: person-richard-greenblatt
+  kind: person
+  person: Richard Greenblatt
+  wiki: Richard Greenblatt (programmer)
+  nodes:
+  - maclisp
+- id: person-daniel-g-bobrow
+  kind: person
+  person: Daniel G. Bobrow
+  wiki: Daniel G. Bobrow
+  nodes:
+  - interlisp
+- id: person-warren-teitelman
+  kind: person
+  person: Warren Teitelman
+  wiki: Warren Teitelman
+  nodes:
+  - interlisp
+- id: person-richard-fateman
+  kind: person
+  person: Richard Fateman
+  wiki: Richard Fateman
+  nodes:
+  - franz-lisp
+- id: person-matthias-felleisen
+  kind: person
+  person: Matthias Felleisen
+  wiki: Matthias Felleisen
+  nodes:
+  - racket
+- id: person-paul-graham
+  kind: person
+  person: Paul Graham
+  wiki: Paul Graham (programmer)
+  nodes:
+  - arc
+- id: person-robert-tappan-morris
+  kind: person
+  person: Robert Tappan Morris
+  wiki: Robert Tappan Morris
+  nodes:
+  - arc
