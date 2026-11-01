@@ -849,6 +849,7 @@
   person: Rob Pike
   wiki: Rob Pike
   nodes:
+  - squeak-cardelli
   - sawzall
   - newsqueak
   - limbo
@@ -1190,6 +1191,7 @@
   person: Daniel G. Bobrow
   wiki: Daniel G. Bobrow
   nodes:
+  - krl
   - interlisp
 - id: person-warren-teitelman
   kind: person
@@ -1876,3 +1878,165 @@
   wiki: Sepandar Kamvar
   nodes:
   - dog-lang
+- id: person-calvin-mooers
+  kind: person
+  person: Calvin Mooers
+  wiki: Calvin Mooers
+  nodes:
+  - trac
+- id: person-l-peter-deutsch
+  kind: person
+  person: L. Peter Deutsch
+  wiki: L. Peter Deutsch
+  nodes:
+  - trac
+- id: person-terry-winograd
+  kind: person
+  person: Terry Winograd
+  wiki: Terry Winograd
+  nodes:
+  - krl
+- id: person-charles-forgy
+  kind: person
+  person: Charles Forgy
+  wiki: Charles Forgy
+  nodes:
+  - ops5
+- id: person-andrzej-trybulec
+  kind: person
+  person: Andrzej Trybulec
+  wiki: Andrzej Trybulec
+  nodes:
+  - mizar
+- id: person-donald-knuth
+  kind: person
+  person: Donald Knuth
+  wiki: Donald Knuth
+  nodes:
+  - metafont
+- id: person-john-warnock
+  kind: person
+  person: John Warnock
+  wiki: John Warnock
+  nodes:
+  - postscript
+- id: person-charles-geschke
+  kind: person
+  person: Charles Geschke
+  wiki: Charles Geschke
+  nodes:
+  - postscript
+- id: person-gerard-berry
+  kind: person
+  person: Gérard Berry
+  wiki: Gérard Berry
+  nodes:
+  - esterel
+- id: person-luca-cardelli
+  kind: person
+  person: Luca Cardelli
+  wiki: Luca Cardelli
+  nodes:
+  - squeak-cardelli
+- id: person-ron-gilbert
+  kind: person
+  person: Ron Gilbert
+  wiki: Ron Gilbert
+  nodes:
+  - scumm
+- id: person-chip-morningstar
+  kind: person
+  person: Chip Morningstar
+  wiki: Chip Morningstar
+  nodes:
+  - scumm
+- id: person-k-mani-chandy
+  kind: person
+  person: K. Mani Chandy
+  wiki: K. Mani Chandy
+  nodes:
+  - unity-cm
+- id: person-jayadev-misra
+  kind: person
+  person: Jayadev Misra
+  wiki: Jayadev Misra
+  nodes:
+  - unity-cm
+- id: person-laxmikant-kale
+  kind: person
+  person: Laxmikant Kale
+  wiki: Laxmikant Kale
+  nodes:
+  - charm-plus-plus
+- id: person-ian-foster
+  kind: person
+  person: Ian Foster
+  wiki: Ian Foster (computer scientist)
+  nodes:
+  - strand
+- id: person-robert-s-boyer
+  kind: person
+  person: Robert S. Boyer
+  wiki: Robert S. Boyer
+  nodes:
+  - acl2
+- id: person-j-strother-moore
+  kind: person
+  person: J Strother Moore
+  wiki: J Strother Moore
+  nodes:
+  - acl2
+- id: person-matt-kaufmann
+  kind: person
+  person: Matt Kaufmann
+  wiki: Matt Kaufmann
+  nodes:
+  - acl2
+- id: person-krzysztof-r-apt
+  kind: person
+  person: Krzysztof R. Apt
+  wiki: Krzysztof R. Apt
+  nodes:
+  - alma-0
+- id: person-han-wen-nienhuys
+  kind: person
+  person: Han-Wen Nienhuys
+  wiki: Han-Wen Nienhuys
+  nodes:
+  - lilypond
+- id: person-jan-nieuwenhuizen
+  kind: person
+  person: Jan Nieuwenhuizen
+  wiki: Jan Nieuwenhuizen
+  nodes:
+  - lilypond
+- id: person-keith-clark
+  kind: person
+  person: Keith Clark
+  wiki: Keith Clark (computer scientist)
+  nodes:
+  - go-bang
+- id: person-daniel-p-friedman
+  kind: person
+  person: Daniel P. Friedman
+  wiki: Daniel P. Friedman
+  nodes:
+  - minikanren
+- id: person-gavin-wood
+  kind: person
+  person: Gavin Wood
+  wiki: Gavin Wood
+  nodes:
+  - solidity
+- id: person-krysta-svore
+  kind: person
+  person: Krysta Svore
+  wiki: Krysta Svore
+  nodes:
+  - q-sharp
+- id: person-bill-paxton
+  kind: person
+  person: Bill Paxton
+  wiki: Bill Paxton (computer scientist)
+  nodes:
+  - postscript

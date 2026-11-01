@@ -4529,3 +4529,312 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/CobolScript" }
   sources: [wiki-cobolscript]
+
+- id: acl2
+  name: ACL2
+  aliases: [A Computational Logic for Applicative Common Lisp]
+  kind: language
+  category: research
+  cluster: verification
+  origin:
+    first_appeared: { year: 1990, precision: year, note: "Infobox \"1990 (limited distribution), 1996 (public distribution)\"." }
+  creators:
+    - { name: Robert S. Boyer, role: co-designer }
+    - { name: J Strother Moore, role: co-designer }
+    - { name: Matt Kaufmann, role: co-designer }
+  status: active
+  tags:
+    paradigm: [functional]
+    typing: [dynamic-typing]
+    domain: [theorem-proving]
+  milestones:
+    - { version: public, year: 1996, summary: "Public distribution." }
+  summary: >
+    "a software system consisting of a programming language, an extensible theory in a first-order logic, and an
+    automated theorem prover"; the language "is an applicative (side-effect free) variant of Common Lisp", and the system
+    "an industrial strength version of the Boyer–Moore theorem prover, NQTHM". It verified the AMD K5's floating-point
+    division in 1995.
+  relations:
+    - { type: dialect_of, to: common-lisp, weight: strong, confidence: high, sources: [wiki-acl2], note: "\"an applicative (side-effect free) variant of Common Lisp\"." }
+    - { type: successor_of, to: nqthm, weight: strong, confidence: high, sources: [wiki-acl2], note: "\"an industrial strength version of the Boyer–Moore theorem prover, NQTHM\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ACL2" }
+  sources: [wiki-acl2]
+
+- id: janus-ccp
+  name: Janus (concurrent constraint)
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1990, precision: year, note: "\"partially described by K. Kahn and Vijay A. Saraswat in the paper Actors as a special case of concurrent constraint (logic) programming in 1990\"." }
+  creators:
+    - { name: Ken Kahn, role: co-designer }
+    - { name: Vijay A. Saraswat, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [logic, concurrent]
+    concurrency: [actors]
+  summary: >
+    "a concurrent constraint language without backtracking" whose bag channels share the actor model's unordered message
+    arrival; mailboxes can be passed around, an ability "inherited in computer programming language ToonTalk, which is
+    influenced by Janus".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Janus_(concurrent_constraint_programming_language)" }
+  sources: [wiki-janus-ccp]
+
+- id: chr
+  name: Constraint Handling Rules
+  aliases: [CHR]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1991, precision: year, note: "\"introduced in 1991 by Thom Frühwirth\"." }
+    places: [{ institution: European Computer-Industry Research Centre, city: Munich, country: DE }]
+  creators:
+    - { name: Thom Frühwirth, role: designer }
+  status: active
+  tags:
+    paradigm: [logic, declarative]
+    features: [constraints]
+  summary: >
+    "a declarative, rule-based programming language" whose rules, unlike Prolog's, "are multi-headed and are executed in
+    a committed-choice manner using a forward chaining algorithm". Turing complete but used mainly "to extend a host
+    language with constraints", above all Prolog (SICStus, SWI-Prolog).
+  relations:
+    - { type: influenced_by, to: prolog, weight: strong, confidence: high, sources: [wiki-chr], note: "Infobox \"Influenced by: Prolog\"; Prolog is \"by far the most popular host language\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Constraint_Handling_Rules" }
+  sources: [wiki-chr]
+  example:
+    title: A less-or-equal solver
+    language: CHR (Prolog syntax)
+    note: "From Wikipedia; the page's one-space indent dropped."
+    code: |
+      % X leq Y means variable X is less-or-equal to variable Y
+      reflexivity  @ X leq X <=> true.
+      antisymmetry @ X leq Y, Y leq X <=> X = Y.
+      transitivity @ X leq Y, Y leq Z ==> X leq Z.
+      idempotence  @ X leq Y \ X leq Y <=> true.
+    sources: [wiki-chr]
+
+- id: ease
+  name: Ease
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1991, precision: year, note: "Infobox \"First appeared: 1991\"." }
+  creators:
+    - { name: Steven Ericsson-Zenith, role: designer }
+  status: extinct
+  tags:
+    paradigm: [concurrent]
+    typing: [strong-typing]
+  summary: >
+    "a general purpose parallel programming language" that "combines the process constructs of communicating sequential
+    processes (CSP) with logically shared data structures called contexts"; its specification is the book Process
+    Interaction Models.
+  relations:
+    - { type: influenced_by, to: occam, weight: strong, confidence: high, sources: [wiki-ease], note: "Infobox \"Influenced by: occam\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ease_(programming_language)" }
+  sources: [wiki-ease]
+
+- id: claire
+  name: Claire
+  aliases: [CLAIRE4]
+  kind: language
+  category: research
+  cluster: oop
+  origin:
+    first_appeared: { year: 1994, precision: year, note: "Infobox \"First appeared: 1994\"; \"received its final definition in 2004\"." }
+    places: [{ institution: Bouygues e-Lab }]
+  creators:
+    - { name: Yves Caseau, role: designer }
+  status: maintained
+  tags:
+    paradigm: [functional, object-oriented, reflective]
+    typing: [static-typing, dynamic-typing, strong-typing]
+  milestones:
+    - { version: "3.3.46", year: 2009, summary: "Fully open-sourced." }
+    - { version: CLAIRE4, year: 2022, summary: "New reference version written in Go." }
+  summary: >
+    "a high-level functional and object-oriented programming language with rule processing abilities", "created as a
+    successor to LAURE", Caseau's 1980s multi-paradigm language, but "closer to C in spirit and syntax". Its infobox lists
+    Smalltalk, SETL, OPS5, Lisp, ML and C among its influences.
+  relations:
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: medium, sources: [wiki-claire] }
+    - { type: influenced_by, to: setl, weight: moderate, confidence: medium, sources: [wiki-claire] }
+    - { type: influenced_by, to: ops5, weight: moderate, confidence: medium, sources: [wiki-claire], note: "Infobox; the rule-processing part." }
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-claire], note: "\"closer to C in spirit and syntax\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Claire_(programming_language)" }
+  sources: [wiki-claire]
+
+- id: escher-lang
+  name: Escher
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1995, precision: circa, note: "\"developed by J.W. Lloyd in the mid-1990s\"; references cite a 1995 Bristol report." }
+  creators:
+    - { name: J. W. Lloyd, role: designer }
+  status: extinct
+  tags:
+    paradigm: [functional, logic, declarative]
+    typing: [static-typing]
+    features: [metaprogramming]
+  summary: >
+    "a declarative programming language that supports both functional programming and logic programming models",
+    "designed mostly as a research and teaching vehicle" on Church's simple theory of types, with strong metaprogramming
+    support and I/O "through a monadic type ... in the style of Haskell". Named after M. C. Escher.
+  relations:
+    - { type: influenced_by, to: haskell, weight: weak, confidence: medium, sources: [wiki-escher], note: "I/O \"in the style of Haskell\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Escher_(programming_language)" }
+  sources: [wiki-escher]
+
+- id: context-tex
+  name: ConTeXt
+  aliases: [pragmatex, ConTeXt MkIV, ConTeXt LMTX]
+  kind: language
+  category: domain-specific
+  cluster: typesetting
+  origin:
+    first_appeared: { year: 1991, precision: circa, note: "\"created by Hans Hagen and Ton Otten of Pragma ADE in the Netherlands, around 1991\"; named ConTeXt around 1996." }
+    places: [{ institution: Pragma ADE, country: NL }]
+  creators:
+    - { name: Hans Hagen, role: co-creator }
+    - { name: Ton Otten, role: co-creator }
+  status: active
+  tags:
+    paradigm: [declarative]
+    features: [macros]
+  milestones:
+    - { version: MkIV, year: 2007, summary: "Presented August 2007, on LuaTeX." }
+    - { version: LMTX, year: 2019, summary: "Successor to MkIV." }
+  summary: >
+    "a general-purpose document processor" that, "like LaTeX, ... is derived from the TeX typesetting system", "especially
+    suited for structured documents, automated document production, very fine typography, and multilingual typesetting".
+  relations:
+    - { type: dialect_of, to: tex, weight: strong, confidence: high, sources: [wiki-context], note: "\"derived from the TeX typesetting system\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ConTeXt" }
+  sources: [wiki-context]
+
+- id: alma-0
+  name: Alma-0
+  kind: language
+  category: research
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 1997, precision: year, note: "Infobox \"First appeared: 1997\"." }
+    places: [{ institution: Centrum Wiskunde & Informatica, country: NL }]
+  creators:
+    - { name: Krzysztof R. Apt, role: co-designer }
+    - { name: Marc Bezem, role: co-designer }
+    - { name: Jacob Brunekreef, role: co-designer }
+    - { name: Vincent Partington, role: co-designer }
+    - { name: Andrea Schaerf, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, logic]
+    typing: [static-typing, strong-typing]
+    features: [backtracking, constraints]
+  summary: >
+    "an augmented version of the imperative Modula-2 language with logic-programming features and convenient
+    backtracking ability", whose designers claim search programs in it are "substantially simpler" than purely imperative
+    or logic ones.
+  relations:
+    - { type: superset_of, to: modula-2, weight: strong, confidence: high, sources: [wiki-alma-0], note: "\"an augmented version of the imperative Modula-2 language\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Alma-0" }
+  sources: [wiki-alma-0]
+
+- id: lilypond
+  name: LilyPond
+  kind: language
+  category: domain-specific
+  cluster: audio
+  origin:
+    began: { year: 1996, precision: year, note: "\"The LilyPond project was started in 1996 by Han-Wen Nienhuys and Jan Nieuwenhuizen\"." }
+    first_appeared: { year: 1997, precision: exact, note: "Infobox \"Release: 1 August 1997\"." }
+  creators:
+    - { name: Han-Wen Nienhuys, role: co-creator }
+    - { name: Jan Nieuwenhuizen, role: co-creator }
+  status: active
+  tags:
+    paradigm: [declarative]
+    domain: [music-audio]
+  milestones:
+    - { version: "1.0", year: 1998 }
+    - { version: "2.0", year: 2003, summary: "Simplified syntax model." }
+  summary: >
+    "a computer program and file format for music engraving" whose text input "is similar to that of TeX", following the
+    WYSIWYM paradigm "similar to that of preparing documents with LaTeX". It is part of the GNU Project; extensions are
+    written in Scheme.
+  relations:
+    - { type: influenced_by, to: tex, weight: moderate, confidence: medium, sources: [wiki-lilypond], note: "Input syntax \"similar to that of TeX\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LilyPond", homepage: "https://lilypond.org" }
+  sources: [wiki-lilypond]
+
+- id: asp
+  name: Answer set programming
+  aliases: [ASP, AnsProlog, ASP-Core-2]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1999, precision: year, note: "\"In 1999, the term answer set programming appeared for the first time\"; an early example (Dimopoulos, Nebel and Köhler) is from 1997." }
+  status: active
+  tags:
+    paradigm: [logic, declarative]
+    domain: [artificial-intelligence]
+  summary: >
+    "a form of declarative programming oriented towards difficult (primarily NP-hard) search problems", "based on the
+    stable model (answer set) semantics of logic programming", in which solvers compute stable models; unlike Prolog
+    evaluation it "always terminates". Lparse's input language AnsProlog and the ASP-Core-2 standard define it.
+  relations:
+    - { type: influenced_by, to: prolog, weight: moderate, confidence: medium, sources: [wiki-asp], note: "Contrasted with Prolog throughout; the input language is called AnsProlog." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Answer_set_programming" }
+  sources: [wiki-asp]
+
+- id: alf-lang
+  name: ALF
+  aliases: [Algebraic Logic Functional programming language]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1990, precision: decade, note: "Only the category \"Programming languages created in the 1990s\"; the ALF User's Manual is dated 1995-02-13." }
+    places: [{ institution: Christian-Albrechts-Universität zu Kiel, country: DE }]
+  creators:
+    - { name: Michael Hanus, role: manual co-author }
+  status: extinct
+  tags:
+    paradigm: [logic, functional]
+  summary: >
+    A language that "combines functional and logic programming techniques" on "Horn clause logic with equality", "designed
+    to be genuine integration of both programming paradigms". Programs compile to a WAM-based abstract machine extended for
+    narrowing and rewriting.
+  relations:
+    - { type: influenced_by, to: prolog, weight: strong, confidence: medium, sources: [wiki-alf], note: "Infobox \"Influenced by: Prolog\"; built on the Warren Abstract Machine." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Algebraic_Logic_Functional_programming_language" }
+  sources: [wiki-alf]

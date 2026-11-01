@@ -281,7 +281,6 @@
   research_status: draft
   backlog:
     - { name: "Euler", year: 1965 }
-    - { name: "PL360", year: 1968 }
     - { name: "Modula", year: 1975, hint: "Researched 2026-11-01 (wiki-modula): Wirth, ETH, report 1976-03; no code example found. Need the ETH report text." }
     - { name: "Cedar", year: 1983 }
     - { name: "Component Pascal", year: 1997, hint: "Oberon microsystems; \"a minor variant and refinement of Oberon-2\" (wiki-component-pascal). No code found; oberon.ch report unreachable." }
@@ -342,33 +341,21 @@
 - id: stack
   name: Stack and concatenative languages
   research_status: stub
-  backlog:
-    - { name: "PostScript", year: 1982, hint: "Adobe (Warnock, Geschke); Turing-complete stack language for page description. PDF (1993) is its non-programmable descendant: a note here, not a node." }
-    - { name: "Joy", year: 2001 }
-    - { name: "Factor", year: 2003 }
 - id: string-processing
   name: String-processing languages
   research_status: draft
-  backlog:
-    - { name: "COMIT", year: 1957 }
-    - { name: "TRAC", year: 1964 }
 - id: verification
   name: Proof checkers and specification languages
   summary: "Languages for machine-checked mathematics and verified programs outside the ML/LCF line: Automath, the Boyer-Moore provers, Metamath, TLA+ and Dafny."
   research_status: stub
   key_sources: [wiki-automath, wiki-nqthm, wiki-tla-plus, wiki-dafny]
-  backlog:
-    - { name: "Mizar", year: 1973, hint: "Andrzej Trybulec; Mizar Mathematical Library; influenced by Automath, and Isabelle's Isar is \"inspired by the Mizar system\". Needs a real proof text (mizar.uwb.edu.pl pages fetched had none)." }
-    - { name: "ACL2", year: 1990, hint: "Boyer, Moore, Kaufmann; \"an 'industrial strength' version of the Boyer-Moore theorem prover, NQTHM\", in Common Lisp; public 1996. ACL2 manual is robots-blocked; needs an example." }
 - id: adventure-games
   name: Adventure game languages
   summary: "Languages for writing text and graphical adventures: MDL-derived ZIL at Infocom, the Z-machine it compiled to, Inform, which revived the Z-machine for hobbyists, and Inform 7's English-prose rewrite."
   research_status: stub
   key_sources: [wiki-z-machine, z-machine-standard-1-1, wiki-inform]
   backlog:
-    - { name: "SCUMM", year: 1987, hint: "Lucasfilm Games, Maniac Mansion; Aric Wilmunder, Chip Morningstar, Ron Gilbert, Brad P. Taylor (wiki-scumm). \"Somewhere between a game engine and a programming language.\" Needs a real script excerpt. ScummVM is a reimplementation of the engine, so it is a note on SCUMM, not a node (its 2001 date and founder are unverified)." }
-    - { name: "TADS", hint: "Text Adventure Development System, Michael J. Roberts. Needs year and a sourced example." }
-    - { name: "ZAP (Z-machine Assembler Program)", hint: "Infocom's assembler between ZILCH and the story file; never released. Would need a .zap listing (historicalsource repos may hold one under COMPILED/)." }
+    - { name: "ZAP (Z-machine Assembler Program)", hint: "Only named in the Z-machine article: Infocom's tools were \"a compiler (ZILCH, short for ZIL Compiler Hack) and an assembler (ZAP, the Z-machine Assembler Program)\"; never released. No year." }
   research_questions:
     - "Who besides Blank and Berez built ZILCH and ZAP, and when? \"Learning ZIL\" (1989) may say."
 - id: typesetting
@@ -377,27 +364,15 @@
   research_status: stub
   key_sources: [wiki-tex, wiki-latex]
   backlog:
-    - { name: "METAFONT", year: 1977, hint: "Knuth's companion language for describing fonts; same TeX project." }
-    - { name: "troff / nroff", hint: "Unix typesetter with a macro language (ms, me, man packages). Needs year and creator sources (Joe Ossanna)." }
-    - { name: "ConTeXt", hint: "TeX macro package, Hans Hagen and Ton Otten (PRAGMA ADE). Needs year." }
-    - { name: "expl3 / LaTeX3 programming layer", hint: "Wikipedia: since 2018 \"a programming layer within LaTeX2e\"; a node or a LaTeX milestone?" }
+    - { name: "troff / nroff", hint: "Joe Ossanna, Bell Labs, for the Graphic Systems CAT (introduced 1972), developed from roff (Wikipedia: troff). No release year on the page; read Ossanna's Troff User's Manual (CSTR 54, 1976)." }
+    - { name: "expl3 / LaTeX3 programming layer", hint: "LaTeX article: \"LaTeX3 has been discontinued as a separate format; since 2018, it has been a programming layer within LaTeX2e\"; LaTeX3 in development since 1989 (Mittelbach, Rowley, Schöpf). expl3 is not named on the page." }
 - id: logic
   name: Logic programming
   research_status: stub
   backlog:
-    - { name: "miniKanren", year: 2005, hint: "Relational programming, \"first developed by Will Byrd\" (thesis, Indiana University, 2009); canonical implementation embedded in Scheme; microKanren in under 40 lines; inspired Clojure core.logic (wiki-minikanren). The 2005 year needs a source (The Reasoned Schemer?)." }
-    - { name: "Answer set programming", year: 1999 }
-    - { name: "OPS5", hint: "Charles Forgy, Carnegie Mellon, \"developed in the late 1970s\"; forward-chaining production system; first implemented in Lisp, later BLISS; OPS4 before, OPS83 after (wiki-ops5). Needs a year; then clips influenced_by ops5." }
-    - { name: "KRL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Escher", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Constraint Handling Rules", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Alma-0", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Algebraic Logic Functional programming language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Go!", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Maude system", hint: "SRI International; implementation of rewriting logic, \"similar in its general approach to Joseph Goguen's OBJ3\" (wiki-maude). Needs a year; then influenced_by obj." }
-    - { name: "Claire", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Agora", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Tom", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "Maude system", hint: "SRI International implementation of rewriting logic, \"similar in its general approach to Joseph Goguen's OBJ3\" (Wikipedia). No year on the page." }
+    - { name: "Agora", hint: "Reflective prototype-based language based only on message passing; Agora98 in Java; papers ECOOP 1993/1995 (Wikipedia). No year or designers in the text." }
+    - { name: "Tom", hint: "INRIA's pattern-matching extension of C and Java with rewrite rules and strategies; 2.10 in 2013 (Wikipedia). No first year." }
 - id: ml-family
   name: ML and typed functional languages
   research_status: draft
@@ -443,7 +418,6 @@
   research_status: draft
   backlog:
     - { name: "IronRuby", year: 2007, hint: "Ruby on the DLR; dropped by Microsoft in 2010 with IronPython." }
-    - { name: "Groovy", year: 2003 }
     - { name: "Rhino / Nashorn (JavaScript on the JVM)", year: 1997 }
   research_questions:
     - "Did JRuby's team shape JSR 292 (invokedynamic), or only adopt it early? Find JSR 292 expert-group records or John Rose's posts."
@@ -578,24 +552,13 @@
   summary: "Formalisms and languages that made concurrency a first-class concern. See the concurrency lineage for the narrative thread."
   research_status: draft
   backlog:
-    - { name: "E language", year: 1997, hint: "Promise pipelining; ancestor of JS promises. Pony names E's programming model as its inspiration." }
-    - { name: "Join Java", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SR", hint: "Synchronizing Resources, for concurrent programming; book by Gregory R. Andrews and Ronald A. Olsson, The SR Programming Language (wiki-sr). Needs a year and designers." }
-    - { name: "Axum", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Strand", hint: "Ian Foster and Stephen Taylor; parallel symbolic language \"similar in syntax to Prolog\"; Strand88 won the BCS Award for Technical Innovation 1989 (wiki-strand). Needs a first year." }
-    - { name: "Charm++", hint: "Laxmikant Kale, Parallel Programming Laboratory, UIUC; message-driven parallel objects \"based on C++\"; first appeared \"late 1980s\" (wiki-charm). Needs a year." }
-    - { name: "MPD", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Janus (concurrent constraint programming language)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "UNITY", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Averest", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Ease", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SIMPOL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "SR", hint: "Synchronizing Resources; Andrews and Olsson's book; version 2.2 ports listed (Wikipedia stub). No year." }
+    - { name: "MPD", hint: "\"implemented as a variant of the SR programming language\" for Andrews's book Foundations of Multithreaded, Parallel, and Distributed Programming (Wikipedia). No year." }
+    - { name: "Averest", hint: "Synchronous language and toolbox from the Kaiserslautern Embedded Systems Group (Wikipedia). No year." }
 - id: concurrency/plan9
   name: Bell Labs CSP line (Newsqueak to Go)
   parent: concurrency
   research_status: draft
-  backlog:
-    - { name: "Squeak (Cardelli & Pike, 1985; not the Smalltalk)", year: 1985 }
 - id: concurrency/beam
   name: Erlang VM (BEAM) languages
   parent: concurrency
@@ -678,9 +641,6 @@
   summary: "Languages for sound synthesis and music, from MUSIC-N's unit generators through Csound, SuperCollider and ChucK to live-coding pattern languages such as TidalCycles and Strudel."
   research_status: stub
   key_sources: [wiki-music-n]
-  backlog:
-    - { name: "FAUST", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "LilyPond", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
 - id: scientific
   name: Mathematical and scientific languages
   summary: "Computer algebra, numerical, statistical, optimisation and simulation languages outside the Fortran and array families."
@@ -695,45 +655,27 @@
   summary: "Languages for programming graphics processors and accelerators: GLSL, HLSL, WGSL, OpenCL, SYCL."
   research_status: stub
   backlog:
-    - { name: "High Level Shader Language", hint: "HLSL; Microsoft, for Direct3D 9; \"developed alongside the Cg ... shading language from Nvidia\", early versions \"considered identical\"; influenced by C and RenderMan Shading Language (wiki-hlsl). Needs year and a verbatim example." }
-    - { name: "WebGPU Shading Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SYCL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Halide (programming language)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "C*", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "High Level Shader Language", hint: "Microsoft's shading language for Direct3D 9, developed alongside Nvidia's Cg; influenced GLSL (Wikipedia). No year on the page; use the Direct3D 9 release date from another source." }
 - id: industrial
   name: Industrial, real-time and synchronous languages
   summary: "PLC languages of IEC 61131-3, robot and machine-tool languages, telecom switching languages and synchronous languages such as Esterel and Lustre."
   research_status: stub
   backlog:
-    - { name: "Ladder", hint: "Originally a way to document relay racks; a graphical language based on relay circuit diagrams, standardized in IEC 61131-3 (1993) (wiki-ladder-logic). Needs the year it became a PLC programming language (Modicon 084, 1968?)." }
-    - { name: "KUKA Robot Language", hint: "KRL, KUKA; proprietary, \"similar to Pascal\"; .dat and .src files (wiki-krl). Needs a year." }
-    - { name: "PLEX", hint: "Göran Hemdahl, Ericsson, 1970s, for the AXE switch; variants Plex-C and Plex-M; Joe Armstrong: \"Erlang was heavily influenced by PLEX and the AXE design\" (wiki-plex). Needs a year; then erlang influenced_by plex." }
-    - { name: "PROTEL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Esterel", hint: "Gérard Berry, École des Mines de Paris and INRIA, early 1980s; imperative synchronous; example ABRO in the article (wiki-esterel). Needs a first year (the first Esterel report?)." }
-    - { name: "Lustre", hint: "Synchronous dataflow, research project from the early 1980s (Halbwachs et al.); core of SCADE from 1993 (wiki-lustre). Needs a year; Lucid lists Lustre among the languages it influenced." }
-    - { name: "Promela", hint: "Process or Protocol Meta Language, Gerard J. Holzmann; input language of the SPIN model checker (wiki-promela). Needs a year." }
-    - { name: "PLEXIL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SPIN", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Nord Programming Language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "RSL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "S2", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "S3", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "Ladder", hint: "Graphical PLC language from relay-rack documentation, standardised in IEC 61131-3 (Wikipedia: Ladder logic). No year." }
+    - { name: "KUKA Robot Language", hint: "KUKA's proprietary Pascal-like robot language, .dat/.src files (Wikipedia). No year." }
+    - { name: "Promela", hint: "Gerard J. Holzmann's verification modelling language for the SPIN model checker (Wikipedia). No year on the page." }
+    - { name: "RSL", hint: "The list's RSL link points to a Robot Battle section that no longer exists (redirects to GarageGames). Unresolved." }
+    - { name: "S2", hint: "S2 redirects to LiveJournal, where it is the journal-template language; no year or authors." }
 - id: quantum
   name: Quantum programming languages
   summary: "Languages for quantum circuits and algorithms."
   research_status: stub
-  backlog:
-    - { name: "Q#", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "OpenQASM", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Quantum Computation Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "QPL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
 - id: smart-contracts
   name: Smart-contract languages
   summary: "Languages for programs that run on blockchains."
   research_status: stub
   backlog:
-    - { name: "Solidity", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Viper (Ethereum/Ether (ETH))", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Viper (Ethereum/Ether (ETH))", hint: "Vyper has no Wikipedia article (404) and the Ethereum article does not mention it. Use docs.vyperlang.org." }
 - id: game-scripting
   name: Game scripting languages
   summary: "Languages built into games and game engines: QuakeC, UnrealScript, LPC and MOO for MUDs, GML, Luau, Verse."

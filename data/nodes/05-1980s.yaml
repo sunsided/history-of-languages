@@ -327,6 +327,7 @@
     asynchronous message passing, "let it crash" with supervisors, hot code reloading. Its
     preemptively scheduled lightweight processes are the road async/await did not take.
   relations:
+    - { type: influenced_by, to: plex-ericsson, weight: strong, confidence: high, sources: [wiki-plex], note: "Joe Armstrong: \"Erlang was heavily influenced by PLEX and the AXE design.\"" }
     - { type: influenced_by, to: prolog, aspects: [pattern-matching], weight: strong, confidence: high, note: "Started as a Prolog meta-interpreter; syntax is Prolog-derived." }
     - { type: influenced_by, to: csp, aspects: [message-passing], weight: weak, confidence: medium }
     - { type: influenced_by, to: actor-model, aspects: [actors], weight: weak, confidence: medium, note: "Armstrong said the actor model was not a conscious influence; the similarity is convergent. Keep weight weak." }
@@ -640,6 +641,7 @@
     features: [first-class-channels]
   summary: "Pike's language for concurrent window systems, with first-class channels and processes. First of the Pike/Bell Labs line that leads through Alef and Limbo to Go."
   relations:
+    - { type: successor_of, to: squeak-cardelli, weight: strong, confidence: high, sources: [wiki-newsqueak], note: "\"Newsqueak was developed from an earlier, smaller, language, called Squeak\"." }
     - { type: influenced_by, to: csp, aspects: [channels], weight: strong, confidence: high }
     - { type: influenced_by, to: c, weight: moderate, confidence: high }
   research_status: draft
@@ -4914,3 +4916,321 @@
     code: |
       SELECT @NoteId = "NT0050D26"
     sources: [wiki-formula-language]
+
+- id: postscript
+  name: PostScript
+  aliases: [PS, PostScript Level 2, PostScript 3]
+  kind: language
+  category: domain-specific
+  cluster: stack
+  origin:
+    began: { year: 1982, precision: year, note: "\"created at Adobe Systems ... from 1982 to 1984\"." }
+    first_appeared: { year: 1984, precision: year, note: "\"The first version of the PostScript language was released to the market in 1984.\"" }
+    places: [{ institution: Adobe Systems, country: US }]
+  creators:
+    - { name: John Warnock, role: co-designer }
+    - { name: Charles Geschke, role: co-designer }
+    - { name: Doug Brotz, role: co-designer }
+    - { name: Ed Taft, role: co-designer }
+    - { name: Bill Paxton, role: co-designer }
+  status: legacy
+  tags:
+    paradigm: [concatenative, stack-oriented, procedural]
+    typing: [dynamic-typing, weak-typing]
+    features: [interpreter]
+    domain: [computer-graphics]
+  milestones:
+    - { version: Level 2, year: 1991 }
+    - { version: "3", year: 1997, summary: "Most recent version." }
+  summary: >
+    "a page description language and dynamically typed, stack-based programming language", "an interpreted, stack-based
+    language similar to Forth, with dynamic typing, data structures inspired by those found in Lisp". It "went beyond the
+    typical printer control language and was a complete programming language", and became the language of graphical
+    output for printing; its descendant PDF has largely replaced it for documents.
+  notes: >
+    Bill Paxton's Wikipedia article is "Bill Paxton (computer scientist)"; the parenthesis is dropped because build.py
+    rejects it.
+  relations:
+    - { type: influenced_by, to: forth, aspects: [stack-oriented], weight: strong, confidence: high, sources: [wiki-postscript], note: "\"similar to Forth\"; infobox \"Influenced by: Mesa, Interpress, Lisp, FORTH\"." }
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: high, sources: [wiki-postscript], note: "\"data structures inspired by those found in Lisp\"." }
+    - { type: influenced_by, to: mesa, weight: weak, confidence: medium, sources: [wiki-postscript], note: "Infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PostScript" }
+  sources: [wiki-postscript]
+  example:
+    title: Hello world
+    language: PostScript Level 2
+    note: "From Wikipedia; the page's one-space indent dropped."
+    code: |
+      %!PS
+      /Courier             % name the desired font
+      20 selectfont        % choose the size in points and establish
+                           % the font as the current one
+      72 500 moveto        % position the current point at
+                           % coordinates 72, 500
+      (Hello world!) show  % paint the text in parentheses
+      showpage             % print all on the page
+    sources: [wiki-postscript]
+
+- id: esterel
+  name: Esterel
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1980, precision: decade, note: "Infobox 1980s; \"The development of the language started in the early 1980s\"." }
+    places:
+      - { institution: École des Mines de Paris, country: FR }
+      - { institution: INRIA, country: FR }
+  creators:
+    - { name: Gérard Berry, role: designer }
+  status: maintained
+  tags:
+    paradigm: [imperative, synchronous-programming]
+    domain: [embedded, safety-critical]
+  summary: >
+    "a synchronous programming language for the development of complex reactive systems" whose "imperative programming
+    style ... allows the simple expression of parallelism and preemption"; compilers emit C or hardware (VHDL, Verilog).
+    Lustre is its "cousin"; an IEEE standardisation effort ran 2007–2011.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Esterel" }
+  sources: [wiki-esterel]
+  example:
+    title: ABRO
+    language: Esterel
+    note: "From Wikipedia: emit O once both A and B arrived; restart on R."
+    code: |
+      module ABRO:
+      input A, B, R;
+      output O;
+
+      loop
+        [ await A || await B ];
+        emit O
+      each R
+
+      end module
+    sources: [wiki-esterel]
+
+- id: lustre
+  name: Lustre
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1980, precision: decade, note: "\"It began as a research project in the early 1980s\"; formal presentation 1991; SCADE 1993." }
+  creators:
+    - { name: N. Halbwachs, role: co-author of the LUSTRE paper }
+  status: active
+  tags:
+    paradigm: [dataflow-programming, declarative, synchronous-programming]
+    domain: [embedded, safety-critical]
+  milestones:
+    - { version: SCADE, year: 1993, summary: "Core language of Esterel Technologies' SCADE." }
+  summary: >
+    "a formally defined, declarative, and synchronous dataflow programming language for programming reactive systems",
+    the core of SCADE since 1993 and "now used for critical control software in aircraft, helicopters, and nuclear power
+    plants".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lustre_(programming_language)" }
+  sources: [wiki-lustre]
+  example:
+    title: A node
+    language: Lustre
+    note: "From Wikipedia."
+    code: |
+      node foo(a : bool) returns (b : bool);
+      let
+        b = not a;
+      tel
+    sources: [wiki-lustre]
+
+- id: squeak-cardelli
+  name: Squeak (Cardelli and Pike)
+  kind: language
+  category: research
+  cluster: concurrency/plan9
+  origin:
+    first_appeared: { year: 1985, precision: year, note: "Cardelli and Pike, \"Squeak: a language for communicating with mice\", ACM SIGGRAPH 1985." }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: Luca Cardelli, role: co-designer }
+    - { name: Rob Pike, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [concurrent]
+    concurrency: [channels]
+  summary: >
+    "an earlier, smaller, language" than Newsqueak, presented as "a language for communicating with mice", whose "main
+    aim was to model the concurrent nature of programs interacting with multiple input devices". Not the Smalltalk Squeak.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Newsqueak" }
+  sources: [wiki-newsqueak]
+
+- id: scumm
+  name: SCUMM
+  aliases: [Script Creation Utility for Maniac Mansion, ScummC]
+  kind: language
+  category: domain-specific
+  cluster: adventure-games
+  origin:
+    first_appeared: { year: 1987, precision: year, note: "\"The original version was coded by Ron Gilbert ... in 1987\" for Maniac Mansion." }
+    places: [{ institution: Lucasfilm Games, country: US }]
+  creators:
+    - { name: Ron Gilbert, role: original author }
+    - { name: Chip Morningstar, role: initial help }
+    - { name: Aric Wilmunder, role: later versions }
+    - { name: Brad P. Taylor, role: later versions }
+  status: extinct
+  tags:
+    paradigm: [imperative, scripting]
+    features: [bytecode-vm]
+    domain: [game-scripting]
+  milestones:
+    - { version: "8", year: 1998, summary: "Final version; LucasArts moved to GrimE with Lua." }
+  summary: >
+    A game engine and scripting language for Lucasfilm Games' graphic adventures that "falls somewhere between a game
+    engine and a programming language", letting designers create rooms, items and dialogue; commands such as walk dr-fred
+    to laboratory-door compile to compact bytecode. Humongous Entertainment used it into 2003; ScummVM runs its games today.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SCUMM" }
+  sources: [wiki-scumm]
+
+- id: tads
+  name: TADS
+  aliases: [Text Adventure Development System, TADS 2, TADS 3]
+  kind: language
+  category: domain-specific
+  cluster: adventure-games
+  origin:
+    first_appeared: { year: 1988, precision: year, note: "\"The original TADS 1 was released by High Energy Software as shareware in 1988\"." }
+  creators:
+    - { name: Michael J. Roberts, role: designer }
+  status: maintained
+  tags:
+    paradigm: [prototype-based, object-oriented]
+    typing: [strong-typing, type-inference]
+    domain: [game-scripting]
+  milestones:
+    - { version: Multimedia TADS, year: 1998, summary: "Graphics, animation and sound." }
+    - { version: TADS 3, year: 2006, summary: "Complete rewrite; C++/Java-like syntax." }
+  summary: >
+    "a prototype-based domain-specific programming language and set of standard libraries for creating interactive
+    fiction", "a top development tool for interactive fiction" in the mid-1990s. "TADS 2 syntax is based on C, with bits
+    of Pascal"; like Infocom's Z-machine, it compiles to portable bytecode.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [wiki-tads], note: "\"TADS 2 syntax is based on C, with bits of Pascal.\"" }
+    - { type: influenced_by, to: pascal, weight: weak, confidence: high, sources: [wiki-tads] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Text_Adventure_Development_System" }
+  sources: [wiki-tads]
+
+- id: unity-cm
+  name: UNITY
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1988, precision: year, note: "Chandy and Misra, Parallel Program Design: A Foundation (1988); the hatnote calls it \"the 1988 theoretical language\"." }
+  creators:
+    - { name: K. Mani Chandy, role: co-designer }
+    - { name: Jayadev Misra, role: co-designer }
+  status: historical
+  tags:
+    paradigm: [declarative, concurrent]
+    features: [nondeterminism]
+  summary: >
+    A theoretical language "which focuses on what, instead of where, when or how": it "contains no method of flow
+    control, and program statements run in a nondeterministic way until statements cease to cause changes".
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/UNITY_(programming_language)" }
+  sources: [wiki-unity-cm]
+
+- id: charm-plus-plus
+  name: Charm++
+  kind: language
+  category: scientific
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1980, precision: decade, note: "Infobox \"First appeared: late 1980s\"." }
+    places: [{ institution: University of Illinois at Urbana–Champaign, country: US }]
+  creators:
+    - { name: Laxmikant Kale, role: designer }
+  status: active
+  tags:
+    paradigm: [object-oriented, concurrent]
+    concurrency: [message-passing, tasks]
+    domain: [hpc]
+  milestones:
+    - { version: "7.0.0", year: 2021 }
+  summary: >
+    "a parallel object-oriented programming paradigm based on C++" in which programs are "decomposed into a number of
+    cooperating message-driven objects called chares", migratable between processors. NAMD and other large simulations use
+    it.
+  relations:
+    - { type: superset_of, to: cpp, weight: strong, confidence: high, sources: [wiki-charm-plus-plus], note: "\"based on C++\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Charm%2B%2B" }
+  sources: [wiki-charm-plus-plus]
+
+- id: strand
+  name: Strand
+  aliases: [Strand88]
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1988, precision: circa, note: "No year given; Artificial Intelligence Ltd won the BCS Award for Technical Innovation 1989 for Strand88." }
+  creators:
+    - { name: Ian Foster, role: co-designer }
+    - { name: Stephen Taylor, role: co-designer }
+  status: legacy
+  tags:
+    paradigm: [logic, concurrent]
+  summary: >
+    "a high-level symbolic language for parallel computing, similar in syntax to Prolog", by Ian Foster and Stephen Taylor;
+    Strand88 won a British Computer Society award in 1989.
+  notes: >
+    Foster's Wikipedia article is "Ian Foster (computer scientist)"; the parenthesis is dropped because build.py rejects it.
+  relations:
+    - { type: influenced_by, to: prolog, weight: moderate, confidence: medium, sources: [wiki-strand], note: "\"similar in syntax to Prolog\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Strand_(programming_language)" }
+  sources: [wiki-strand]
+
+- id: c-star
+  name: C*
+  aliases: [C-star]
+  kind: language
+  category: scientific
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1987, precision: year, note: "\"developed in 1987 as an alternative language to *Lisp and CM-Fortran for the Connection Machine CM-2\"." }
+    places: [{ institution: Thinking Machines Corporation, country: US }]
+  creators:
+    - { name: Thinking Machines Corporation, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    concurrency: [data-parallelism]
+    domain: [hpc, parallel-hardware]
+  milestones:
+    - { version: "6.x", year: 1993 }
+  summary: >
+    "a data-parallel superset of ANSI C with synchronous semantics" for the Connection Machine, adding "a domain data type
+    and a selection statement for parallel execution in domains". Dataparallel-C was based on it.
+  relations:
+    - { type: superset_of, to: c, weight: strong, confidence: high, sources: [wiki-c-star], note: "\"a data-parallel superset of ANSI C\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/C*" }
+  sources: [wiki-c-star]

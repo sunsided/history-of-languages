@@ -2361,3 +2361,44 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Polymorphic_Programming_Language" }
   sources: [wiki-ppl]
+
+- id: trac
+  name: TRAC
+  aliases: [Text Reckoning And Compiling, TRAC T64, TRAC T84]
+  kind: language
+  category: research
+  cluster: string-processing
+  origin:
+    began: { year: 1959, precision: year, note: "\"developed between 1959 and 1964 by Calvin Mooers\"." }
+    first_appeared: { year: 1964, precision: year, note: "\"first implemented on the PDP-1 in 1964 by L. Peter Deutsch\"." }
+  creators:
+    - { name: Calvin Mooers, role: designer }
+    - { name: L. Peter Deutsch, role: first implementation }
+  status: legacy
+  tags:
+    paradigm: [functional]
+    features: [macros, string-processing, interpreter]
+  milestones:
+    - { version: T84, year: 1984, summary: "Mooers updates TRAC T64 to T84, with different primitive names." }
+  summary: >
+    "a purely text-based language — a kind of macro language", "In most respects, it is a case of pure functional
+    programming" over strings, and "one of three first languages recommended by Ted Nelson in Computer Lib". Its
+    "main inspiration ... came from three papers by Douglas McIlroy". Mooers trademarked the name to control the
+    definition, "an unusual and pioneering action at the time".
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TRAC_(programming_language)" }
+  sources: [wiki-trac]
+  example:
+    title: Ask for a name
+    language: TRAC T64
+    note: "From Wikipedia."
+    code: |
+      #(DS,PROG.A,(
+      #(PS,(WHAT IS YOUR NAME?
+      ))
+      #(DS,NAME,##(RS))
+      #(PS,(
+      GOODBYE))
+      ))'
+    sources: [wiki-trac]

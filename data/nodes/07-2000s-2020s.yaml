@@ -6715,3 +6715,576 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/ArkTS" }
   sources: [wiki-arkts]
+
+- id: join-java
+  name: Join Java
+  aliases: [JoinJava]
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 2000, precision: year, note: "Section heading \"JoCaml, Funnel and Join Java – 2000\" in the Join-pattern article." }
+  creators:
+    - { name: von Itzstein, role: co-designer }
+    - { name: Kearney, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented, concurrent]
+    concurrency: [message-passing]
+  summary: >
+    "a language based on the Java programming language allowing the use of the join calculus", with join patterns that
+    fire a method body when all its fragments have been called; "the closest related language is the Polyphonic C#".
+  notes: >
+    The page names the proposers only as "von Itzstein and Kearney"; add first names from their paper.
+  relations:
+    - { type: superset_of, to: java, weight: strong, confidence: high, sources: [wiki-join-pattern], note: "\"a language based on the Java programming language\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Join-pattern" }
+  sources: [wiki-join-pattern]
+  example:
+    title: A join pattern
+    language: Join Java
+    note: "From Wikipedia."
+    code: |
+      class JoinExample {
+          int fragment1() & fragment2(int x) {
+              // Will return value of x to caller of fragment1
+              return x;
+          }
+      }
+    sources: [wiki-join-pattern]
+
+- id: qcl
+  name: QCL
+  aliases: [Quantum Computation Language]
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2000, precision: circa, note: "No year in the text; the earliest cited source is Ömer's thesis \"Quantum Programming in QCL\" (2000-01-20, TU Wien)." }
+    places: [{ institution: Vienna University of Technology, city: Vienna, country: AT }]
+  creators:
+    - { name: Bernhard Ömer, role: author }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+  summary: >
+    "one of the first implemented quantum programming languages", "created to explore programming concepts for quantum
+    computers" before multi-qubit machines existed; its syntax "resembles the syntax of the C programming language", and
+    its only implementation simulates the quantum computer classically.
+  relations:
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-qcl], note: "\"Its syntax resembles the syntax of the C programming language\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Quantum_Computation_Language" }
+  sources: [wiki-qcl]
+  example:
+    title: Quantum registers
+    language: QCL
+    note: "From Wikipedia."
+    code: |
+      qureg x1[2]; // 2-qubit quantum register x1
+      qureg x2[2]; // 2-qubit quantum register x2
+      H(x1); // Hadamard operation on x1
+      H(x2[1]); // Hadamard operation on the first qubit of the register x2
+    sources: [wiki-qcl]
+
+- id: joy
+  name: Joy
+  kind: language
+  category: research
+  cluster: stack
+  origin:
+    first_appeared: { year: 2001, precision: year, note: "Infobox \"First appeared: 2001\"." }
+    places: [{ institution: La Trobe University, city: Melbourne, country: AU }]
+  creators:
+    - { name: Manfred von Thun, role: designer }
+  status: legacy
+  tags:
+    paradigm: [purely-functional, concatenative, stack-oriented]
+    typing: [strong-typing, dynamic-typing]
+  summary: >
+    "a purely functional programming language" "based on composition of functions rather than the lambda calculus",
+    "inspired by the function-level programming style of John Backus's FP". "Functions in Joy lack formal parameters,
+    instead functions implicitly operate on a stack." Factor and Cat followed it.
+  relations:
+    - { type: influenced_by, to: fp, weight: strong, confidence: high, sources: [wiki-joy], note: "\"inspired by the function-level programming style of John Backus's FP\"." }
+    - { type: influenced_by, to: scheme, weight: weak, confidence: medium, sources: [wiki-joy], note: "Infobox \"Influenced by: Scheme, FP, Forth\"." }
+    - { type: influenced_by, to: forth, weight: moderate, confidence: low, sources: [wiki-joy], note: "Infobox, tagged citation needed on the page." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Joy_(programming_language)" }
+  sources: [wiki-joy]
+  example:
+    title: Quicksort
+    language: Joy
+    note: "From Wikipedia."
+    code: |
+      DEFINE qsort ==
+        [small]
+        []
+        [uncons [>] split]
+        [swapd cons concat]
+        binrec.
+    sources: [wiki-joy]
+
+- id: faust
+  name: FAUST
+  aliases: [Functional AUdio STream]
+  kind: language
+  category: domain-specific
+  cluster: audio
+  origin:
+    first_appeared: { year: 2002, precision: year, note: "Infobox \"First appeared: 2002\"." }
+    places: [{ institution: GRAME }]
+  creators:
+    - { name: Yann Orlarey, role: co-designer }
+    - { name: Dominique Fober, role: co-designer }
+    - { name: Stéphane Letz, role: co-designer }
+  status: active
+  tags:
+    paradigm: [purely-functional, visual-programming]
+    domain: [music-audio]
+  summary: >
+    "a domain-specific purely functional, text-based visual programming language for implementing signal processing
+    algorithms", where "a FAUST program denotes a signal processor"; it "combines ... functional programming and algebraic
+    block diagrams" and compiles to C++, Rust, WebAssembly and other targets.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FAUST_(programming_language)" }
+  sources: [wiki-faust]
+  example:
+    title: Silence
+    language: FAUST
+    note: "From Wikipedia."
+    code: |
+      process = 0;
+    sources: [wiki-faust]
+
+- id: go-bang
+  name: Go!
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 2003, precision: year, note: "\"introduced in a 2003 paper by Francis McCabe and Keith Clark\"." }
+  creators:
+    - { name: Francis McCabe, role: co-designer }
+    - { name: Keith Clark, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [logic, functional, imperative, concurrent]
+    typing: [strong-typing]
+    domain: [artificial-intelligence]
+  summary: >
+    "an agent-based programming language in the tradition of logic-based programming languages like Prolog", for
+    "secure, production quality and agent-based applications". Google's 2009 Go clashed with its name.
+  notes: >
+    Clark's Wikipedia article is "Keith Clark (computer scientist)"; the parenthesis is dropped because build.py rejects it.
+  relations:
+    - { type: influenced_by, to: prolog, weight: strong, confidence: high, sources: [wiki-go-bang], note: "\"in the tradition of logic-based programming languages like Prolog\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Go!_(programming_language)" }
+  sources: [wiki-go-bang]
+
+- id: factor
+  name: Factor
+  aliases: [JFactor]
+  kind: language
+  category: general
+  cluster: stack
+  origin:
+    first_appeared: { year: 2003, precision: year, note: "\"Slava Pestov created Factor in 2003 as a scripting language for a video game.\"" }
+  creators:
+    - { name: Slava Pestov, role: designer }
+  status: active
+  tags:
+    paradigm: [concatenative, stack-oriented, functional, object-oriented]
+    typing: [dynamic-typing, strong-typing]
+    features: [metaprogramming, optimizing-compiler, self-hosting]
+  milestones:
+    - { version: "0.101", year: 2025 }
+  summary: >
+    "a stack-oriented programming language" that "is dynamically typed, with automatic memory management, and powerful
+    metaprogramming features", with "a self-hosted optimizing compiler and an interactive integrated development
+    environment". It began on the JVM (JFactor) and is now written in Factor and C++.
+  relations:
+    - { type: influenced_by, to: joy, weight: strong, confidence: high, sources: [wiki-factor], note: "Infobox \"Influenced by: Joy, Forth, Lisp, Self\"." }
+    - { type: influenced_by, to: forth, weight: strong, confidence: high, sources: [wiki-factor], note: "\"The stack in Factor is used in a similar way to the stack in Forth\"." }
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: medium, sources: [wiki-factor] }
+    - { type: influenced_by, to: self, weight: weak, confidence: medium, sources: [wiki-factor] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Factor_(programming_language)", homepage: "https://factorcode.org" }
+  sources: [wiki-factor]
+  example:
+    title: Factorial
+    language: Factor
+    note: "From Wikipedia."
+    code: |
+      : factorial ( n -- n! ) dup 1 > [ [1..b] product ] [ drop 1 ] if ;
+    sources: [wiki-factor]
+
+- id: qpl
+  name: QPL
+  aliases: [QFC]
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2004, precision: year, note: "Selinger, \"Towards a quantum programming language\", Mathematical Structures in Computer Science 14(4), 2004." }
+  creators:
+    - { name: Peter Selinger, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional]
+    features: [formal-semantics]
+  summary: >
+    One of "two closely related quantum programming languages defined by Peter Selinger" (with the flow-chart QFC) that
+    "have classical control flow but can operate on quantum or classical data", with "a denotational semantics ... in a
+    category of superoperators".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Quantum_programming" }
+  sources: [wiki-quantum-programming]
+
+- id: minikanren
+  name: miniKanren
+  aliases: [microKanren]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 2005, precision: circa, note: "No year in the text; the earliest cited source is The Reasoned Schemer (Friedman, Byrd, Kiselyov, 2005); Byrd's thesis is 2009." }
+  creators:
+    - { name: Will Byrd, role: designer }
+    - { name: Daniel P. Friedman, role: co-author }
+  status: active
+  tags:
+    paradigm: [logic]
+    features: [embeddable]
+  summary: >
+    "a family of programming languages for relational programming", canonically "an embedded language in Scheme". As
+    "relations do not distinguish between input and output", programs can run "backward", and its interleaved search
+    finds any existing solution. Clojure's core.logic was inspired by it.
+  relations:
+    - { type: implemented_in, to: scheme, weight: strong, confidence: high, sources: [wiki-minikanren], note: "\"The canonical implementation is an embedded language in Scheme.\"" }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MiniKanren", homepage: "https://minikanren.org" }
+  sources: [wiki-minikanren]
+
+- id: plexil
+  name: PLEXIL
+  aliases: [Plan Execution Interchange Language]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 2005, precision: year, note: "Infobox \"First appeared: 2005\"." }
+    places: [{ institution: NASA, country: US }]
+  creators:
+    - { name: NASA, role: designer }
+  status: maintained
+  tags:
+    paradigm: [declarative]
+    typing: [static-typing]
+    domain: [embedded]
+  summary: >
+    "a programming language for representing plans for automation", created by NASA, with the PLEXIL Executive engine
+    controlling external systems; open source on GitHub.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PLEXIL" }
+  sources: [wiki-plexil]
+
+- id: spin-parallax
+  name: Spin
+  aliases: [SPIN]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 2006, precision: circa, note: "Not dated itself; the Propeller microcontroller it runs on was \"Introduced in 2006\"." }
+    places: [{ institution: "Parallax, Inc." }]
+  creators:
+    - { name: Chip Gracey, role: designer }
+    - { name: Jeff Martin, role: co-designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, concurrent]
+    features: [offside-rule, bytecode-vm]
+    domain: [embedded]
+  summary: >
+    "a multitasking high-level computer programming language created by Parallax's Chip Gracey" for the Propeller
+    microcontrollers, run by a bytecode interpreter in the chip; "like Python, Spin uses indentation whitespace" to
+    delimit blocks. It was open-sourced with the Propeller 1 in 2014.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Parallax_Propeller" }
+  sources: [wiki-parallax-propeller]
+
+- id: simpol
+  name: SIMPOL
+  aliases: [Superbase Next Generation]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    began: { year: 1999, precision: range, year_end: 2000, note: "The rewrite with \"a new object-oriented programming language called SIMPOL was begun in 1999–2000\"." }
+    first_appeared: { year: 2009, precision: year, note: "\"In April 2009 this company launched SIMPOL Professional\" (1.0)." }
+  status: legacy
+  tags:
+    paradigm: [object-oriented]
+    domain: [databases]
+  milestones:
+    - { version: "1.8", year: 2014 }
+  summary: >
+    The object-oriented language of the next-generation rewrite of the Superbase desktop database, sold as SIMPOL
+    Professional, "a cross-platform language and database tool set".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Superbase_(database)" }
+  sources: [wiki-superbase]
+
+- id: axum
+  name: Axum
+  aliases: [Maestro]
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 2009, precision: exact, note: "Community Technology Preview, May 8, 2009." }
+    places: [{ institution: Microsoft, country: US }]
+  creators:
+    - { name: Microsoft, role: developer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented, concurrent]
+    concurrency: [actors, message-passing]
+  summary: >
+    "a domain-specific concurrent programming language, based on the Actor model", developed by Microsoft 2009–2011 on
+    the CLR with C-like syntax; agents "do not share resources like memory". It never became a product, but "some of the
+    ideas behind Axum are used in TPL Dataflow in .Net 4.5".
+  relations:
+    - { type: targets, to: cil, weight: strong, confidence: high, sources: [wiki-axum] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Axum_(programming_language)" }
+  sources: [wiki-axum]
+
+- id: halide
+  name: Halide
+  kind: language
+  category: domain-specific
+  cluster: gpu
+  origin:
+    first_appeared: { year: 2012, precision: year, note: "\"announced by MIT in 2012 and released in 2013\"." }
+    places: [{ institution: MIT CSAIL, country: US }]
+  creators:
+    - { name: Jonathan Ragan-Kelley, role: co-designer }
+    - { name: Andrew Adams, role: co-designer }
+  status: active
+  tags:
+    paradigm: [functional]
+    typing: [static-typing]
+    concurrency: [data-parallelism]
+    domain: [computer-graphics, hpc]
+  summary: >
+    "a computer programming language designed for writing digital image processing code" that exploits locality,
+    vectorisation, multi-core CPUs and GPUs; "the main innovation Halide brings is the separation of the algorithm being
+    implemented from its execution schedule". It is an internal DSL in C++.
+  relations:
+    - { type: implemented_in, to: cpp, weight: strong, confidence: high, sources: [wiki-halide], note: "\"implemented as an internal domain-specific language (DSL) in C++\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Halide_(programming_language)", homepage: "https://halide-lang.org" }
+  sources: [wiki-halide]
+  example:
+    title: A scheduled 3×3 blur
+    language: Halide (C++)
+    note: "From Wikipedia; the page's Markdown escapes removed."
+    code: |
+      Func blur_3x3(Func input) {
+        Func blur_x, blur_y;
+        Var x, y, xi, yi;
+
+        // The algorithm - no storage or order
+        blur_x(x, y) = (input(x-1, y) + input(x, y) + input(x+1, y))/3;
+        blur_y(x, y) = (blur_x(x, y-1) + blur_x(x, y) + blur_x(x, y+1))/3;
+
+        // The schedule - defines order, locality; implies storage
+        blur_y.tile(x, y, xi, yi, 256, 32)
+              .vectorize(xi, 8).parallel(y);
+        blur_x.compute_at(blur_y, x).vectorize(x, 8);
+
+        return blur_y;
+      }
+    sources: [wiki-halide]
+
+- id: sycl
+  name: SYCL
+  kind: language
+  category: scientific
+  cluster: gpu
+  origin:
+    first_appeared: { year: 2014, precision: exact, note: "\"introduced at GDC in March 2014 with provisional version 1.2\"." }
+    places: [{ institution: Khronos Group }]
+  creators:
+    - { name: Khronos Group, role: developer }
+  status: active
+  tags:
+    paradigm: [generic-programming]
+    concurrency: [data-parallelism]
+    domain: [hpc, parallel-hardware]
+  milestones:
+    - { version: "1.2", year: 2015, summary: "Final 1.2 at IWOCL, May 2015." }
+    - { version: "2020", year: 2022, summary: "SYCL 2020 revision 6, November 2022." }
+  summary: >
+    "a higher-level programming model to improve programming productivity on various hardware accelerators", "a
+    single-source embedded domain-specific language (eDSL) based on pure C++17" from the Khronos Group; it "extends the
+    C++ AMP features" with buffers and accessors.
+  relations:
+    - { type: implemented_in, to: cpp, weight: strong, confidence: high, sources: [wiki-sycl], note: "\"an eDSL based on pure C++17\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SYCL" }
+  sources: [wiki-sycl]
+
+- id: solidity
+  name: Solidity
+  kind: language
+  category: domain-specific
+  cluster: smart-contracts
+  origin:
+    first_appeared: { year: 2014, precision: exact, note: "\"Solidity was proposed in August 2014 by Gavin Wood\"." }
+  creators:
+    - { name: Gavin Wood, role: designer }
+    - { name: Christian Reitwiessner, role: developer }
+    - { name: Alex Beregszaszi, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, object-oriented]
+    typing: [static-typing]
+  milestones:
+    - { version: "0.8.38", year: 2026 }
+  summary: >
+    "a programming language for implementing smart contracts on various blockchain platforms, most notably Ethereum",
+    running on the Ethereum Virtual Machine. It "uses ECMAScript-like syntax ... however unlike ECMAScript it has static
+    typing and variadic return types".
+  relations:
+    - { type: influenced_by, to: javascript, weight: strong, confidence: high, sources: [wiki-solidity], note: "Infobox \"Influenced by: JavaScript, C++, Python\"." }
+    - { type: influenced_by, to: cpp, weight: moderate, confidence: high, sources: [wiki-solidity] }
+    - { type: influenced_by, to: python, weight: weak, confidence: high, sources: [wiki-solidity] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Solidity" }
+  sources: [wiki-solidity]
+  example:
+    title: A minimal coin
+    language: Solidity 0.8
+    note: "Shortened from Wikipedia's example (the send function and comments left out)."
+    code: |
+      // SPDX-License-Identifier: GPL-3.0
+      pragma solidity ^0.8.4;
+
+      contract Coin {
+          address public minter;
+          mapping(address => uint) public balances;
+
+          constructor() {
+              minter = msg.sender;
+          }
+
+          function mint(address receiver, uint amount) public {
+              require(msg.sender == minter);
+              balances[receiver] += amount;
+          }
+      }
+    sources: [wiki-solidity]
+
+- id: q-sharp
+  name: Q#
+  aliases: [Q Sharp]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2017, precision: exact, note: "\"On December 11, 2017, Microsoft released Q# as a part of the Quantum Development Kit.\"" }
+    places: [{ institution: Microsoft Research QuArC, city: "Redmond, Washington", country: US }]
+  creators:
+    - { name: Krysta Svore, role: team director }
+  status: active
+  tags:
+    paradigm: [functional, imperative]
+    typing: [static-typing, strong-typing]
+  milestones:
+    - { version: open source, year: 2019, summary: "QDK and Q# compilers open-sourced (Build 2019)." }
+  summary: >
+    "a domain-specific programming language used for expressing quantum algorithms", released with Microsoft's Quantum
+    Development Kit and working "in conjunction with classical languages such as C#, Python and F#".
+  relations:
+    - { type: influenced_by, to: csharp, weight: moderate, confidence: high, sources: [wiki-q-sharp], note: "Infobox \"Influenced by: C#, F#, Python\"." }
+    - { type: influenced_by, to: fsharp, weight: moderate, confidence: high, sources: [wiki-q-sharp] }
+    - { type: influenced_by, to: python, weight: weak, confidence: high, sources: [wiki-q-sharp] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Q_Sharp" }
+  sources: [wiki-q-sharp]
+
+- id: openqasm
+  name: OpenQASM
+  aliases: [Open Quantum Assembly Language]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2017, precision: exact, note: "\"first described in a paper published in July 2017\" (Cross, Bishop, Smolin, Gambetta)." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: Andrew W. Cross, role: co-author }
+    - { name: Lev S. Bishop, role: co-author }
+    - { name: John A. Smolin, role: co-author }
+    - { name: Jay M. Gambetta, role: co-author }
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [intermediate-code]
+  milestones:
+    - { version: "3.1.0", year: 2024, summary: "Infobox stable release (May 15, 2024)." }
+  summary: >
+    "a programming language designed for describing quantum circuits and algorithms for execution on quantum
+    computers", meant as "an intermediate representation that can be used by higher-level compilers to communicate with
+    quantum hardware", with "similar qualities to traditional hardware description languages such as Verilog"; IBM's Qiskit
+    shipped its reference implementation.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/OpenQASM" }
+  sources: [wiki-openqasm]
+
+- id: wgsl
+  name: WGSL
+  aliases: [WebGPU Shading Language]
+  kind: language
+  category: domain-specific
+  cluster: gpu
+  origin:
+    first_appeared: { year: 2020, precision: circa, note: "\"On February 13, 2020, Google unveiled Tint ... and the language eventually became the standardized WebGPU Shading Language\" (tagged citation needed)." }
+    places: [{ institution: W3C }]
+  creators:
+    - { name: W3C, role: standards body }
+  status: active
+  tags:
+    paradigm: [imperative]
+    domain: [computer-graphics]
+  summary: >
+    The shading language of WebGPU, "specified separately by the W3C", grown from Google's Tint proposal; "the syntax is
+    similar to Rust". Browsers shipped WebGPU from 2023.
+  relations:
+    - { type: influenced_by, to: rust, weight: weak, confidence: low, sources: [wiki-webgpu], note: "Only \"The syntax is similar to Rust\"; the WGSL article itself would confirm." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/WebGPU" }
+  sources: [wiki-webgpu]

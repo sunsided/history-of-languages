@@ -5409,3 +5409,208 @@
   primary: false
   title: "Wikipedia: ArkTS"
   url: https://en.wikipedia.org/wiki/ArkTS
+- id: wiki-trac
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TRAC (programming language)"
+  url: https://en.wikipedia.org/wiki/TRAC_(programming_language)
+- id: wiki-npl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Nord Programming Language"
+  url: https://en.wikipedia.org/wiki/Nord_Programming_Language
+- id: wiki-protel
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Protel"
+  url: https://en.wikipedia.org/wiki/Protel
+- id: wiki-s3
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: S3 (programming language)"
+  url: https://en.wikipedia.org/wiki/S3_(programming_language)
+- id: wiki-mizar
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Mizar system"
+  url: https://en.wikipedia.org/wiki/Mizar_system
+- id: wiki-metafont
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Metafont"
+  url: https://en.wikipedia.org/wiki/Metafont
+- id: wiki-postscript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PostScript"
+  url: https://en.wikipedia.org/wiki/PostScript
+- id: wiki-newsqueak
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Newsqueak"
+  url: https://en.wikipedia.org/wiki/Newsqueak
+- id: wiki-tads
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Text Adventure Development System"
+  url: https://en.wikipedia.org/wiki/Text_Adventure_Development_System
+- id: wiki-unity-cm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: UNITY (programming language)"
+  url: https://en.wikipedia.org/wiki/UNITY_(programming_language)
+- id: wiki-charm-plus-plus
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Charm++"
+  url: https://en.wikipedia.org/wiki/Charm%2B%2B
+- id: wiki-c-star
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: C*"
+  url: https://en.wikipedia.org/wiki/C*
+- id: wiki-acl2
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ACL2"
+  url: https://en.wikipedia.org/wiki/ACL2
+- id: wiki-janus-ccp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Janus (concurrent constraint programming language)"
+  url: https://en.wikipedia.org/wiki/Janus_(concurrent_constraint_programming_language)
+- id: wiki-chr
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Constraint Handling Rules"
+  url: https://en.wikipedia.org/wiki/Constraint_Handling_Rules
+- id: wiki-ease
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Ease (programming language)"
+  url: https://en.wikipedia.org/wiki/Ease_(programming_language)
+- id: wiki-claire
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Claire (programming language)"
+  url: https://en.wikipedia.org/wiki/Claire_(programming_language)
+- id: wiki-escher
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Escher (programming language)"
+  url: https://en.wikipedia.org/wiki/Escher_(programming_language)
+- id: wiki-context
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ConTeXt"
+  url: https://en.wikipedia.org/wiki/ConTeXt
+- id: wiki-alma-0
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Alma-0"
+  url: https://en.wikipedia.org/wiki/Alma-0
+- id: wiki-lilypond
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: LilyPond"
+  url: https://en.wikipedia.org/wiki/LilyPond
+- id: wiki-asp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Answer set programming"
+  url: https://en.wikipedia.org/wiki/Answer_set_programming
+- id: wiki-alf
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Algebraic Logic Functional programming language"
+  url: https://en.wikipedia.org/wiki/Algebraic_Logic_Functional_programming_language
+- id: wiki-join-pattern
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Join-pattern"
+  url: https://en.wikipedia.org/wiki/Join-pattern
+- id: wiki-qcl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Quantum Computation Language"
+  url: https://en.wikipedia.org/wiki/Quantum_Computation_Language
+- id: wiki-joy
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Joy (programming language)"
+  url: https://en.wikipedia.org/wiki/Joy_(programming_language)
+- id: wiki-faust
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: FAUST (programming language)"
+  url: https://en.wikipedia.org/wiki/FAUST_(programming_language)
+- id: wiki-go-bang
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Go! (programming language)"
+  url: https://en.wikipedia.org/wiki/Go!_(programming_language)
+- id: wiki-factor
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Factor (programming language)"
+  url: https://en.wikipedia.org/wiki/Factor_(programming_language)
+- id: wiki-quantum-programming
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Quantum programming"
+  url: https://en.wikipedia.org/wiki/Quantum_programming
+- id: wiki-plexil
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PLEXIL"
+  url: https://en.wikipedia.org/wiki/PLEXIL
+- id: wiki-parallax-propeller
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Parallax Propeller"
+  url: https://en.wikipedia.org/wiki/Parallax_Propeller
+- id: wiki-superbase
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Superbase (database)"
+  url: https://en.wikipedia.org/wiki/Superbase_(database)
+- id: wiki-axum
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Axum (programming language)"
+  url: https://en.wikipedia.org/wiki/Axum_(programming_language)
+- id: wiki-halide
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Halide (programming language)"
+  url: https://en.wikipedia.org/wiki/Halide_(programming_language)
+- id: wiki-sycl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SYCL"
+  url: https://en.wikipedia.org/wiki/SYCL
+- id: wiki-solidity
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Solidity"
+  url: https://en.wikipedia.org/wiki/Solidity
+- id: wiki-q-sharp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Q Sharp"
+  url: https://en.wikipedia.org/wiki/Q_Sharp
+- id: wiki-openqasm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: OpenQASM"
+  url: https://en.wikipedia.org/wiki/OpenQASM
+- id: wiki-webgpu
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: WebGPU"
+  url: https://en.wikipedia.org/wiki/WebGPU
+- id: wiki-krl-bobrow
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: KRL (programming language)"
+  url: https://en.wikipedia.org/wiki/KRL_(programming_language)
