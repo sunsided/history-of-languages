@@ -40,6 +40,12 @@ tasks:
       - corepack yarn svelte-kit sync
       - corepack yarn check
 
+  verify:
+    desc: Everything that must pass before a commit (data validation and viewer type-check)
+    cmds:
+      - task: data:build
+      - task: check
+
   data:build:
     desc: Validate data/ against the schema and emit dist/graph.json
     cmds:
@@ -49,3 +55,31 @@ tasks:
     desc: List referenced-but-undefined ids
     cmds:
       - python3 tools/build.py --missing
+
+  data:report:
+    desc: 'Research to-do list; pass sections after --, e.g. task data:report -- clusters orphans'
+    summary: |
+      Sections: clusters, orphans, edges, concepts, sources, decades, people (all when none are given).
+    cmds:
+      - python3 tools/report.py {{.CLI_ARGS}}
+
+  data:find:
+    desc: 'Is it already a node, alias, backlog item or concept? e.g. task data:find -- Turbo Pascal'
+    preconditions:
+      - sh: '{{if .CLI_ARGS}}true{{else}}false{{end}}'
+        msg: 'Name what to look for: task data:find -- <name>'
+    cmds:
+      - python3 tools/report.py find {{.CLI_ARGS}}
+
+  media:fetch:
+    desc: Download portraits and machine photos from Wikimedia Commons into assets/media/ and data/media.yaml
+    summary: |
+      Reads data/media-subjects.yaml. Pass -- --refresh to re-download existing files.
+      Needs network access to Wikimedia, so it runs on a local machine, not in the cloud sandbox.
+    cmds:
+      - python3 tools/fetch_media.py {{.CLI_ARGS}}
+
+  media:dry-run:
+    desc: Show which photos media:fetch would download, without writing anything
+    cmds:
+      - python3 tools/fetch_media.py --dry-run
