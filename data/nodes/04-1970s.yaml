@@ -1741,7 +1741,7 @@
     paradigm: [functional]
     domain: [theorem-proving]
   summary: >
-    The Boyer-Moore theorem prover: an automatic prover whose logic is \"a variant of Pure LISP\", built on
+    The Boyer-Moore theorem prover: an automatic prover whose logic is "a variant of Pure LISP", built on
     top of Lisp, proving theorems about recursive functions largely by induction and rewriting. Started in
     Edinburgh in 1971 and continued at the University of Texas at Austin; the precursor of ACL2.
   relations:

@@ -1599,7 +1599,7 @@
     began: { year: 2014, date: "2014-05-09", precision: exact, note: "Shown as PICO-BASIC v0.0 at Pico Pico Cafe on 9 May 2014; Joseph White then switched from BASIC to Lua syntax and renamed it." }
     first_appeared: { year: 2015, precision: year, note: "\"PICO-8 was released in 2015\"; the copyright line reads 2014-15. Exact release day not found." }
     places: [{ institution: Lexaloffle Games }]
-  creators: [{ name: Joseph White, role: designer (\"zep\") }]
+  creators: [{ name: Joseph White, role: 'designer ("zep")' }]
   status: active
   tags:
     paradigm: [imperative]

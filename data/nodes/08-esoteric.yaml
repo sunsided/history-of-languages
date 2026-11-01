@@ -865,7 +865,7 @@
   milestones:
     - { version: "day 23", year: 2017, summary: "Coprocessor Conflagration: \"a variant of the kind you saw recently on that tablet\" with set, sub, mul, jnz and registers a to h." }
   summary: >
-    "Strange assembly code labeled simply \"Duet\"" from Advent of Code 2017: registers named by letters,
+    "Strange assembly code labeled simply 'Duet'" from Advent of Code 2017: registers named by letters,
     set/add/mul/mod, jgz, and snd/rcv, which part one reads as playing and recovering sounds. Day 23 reused a
     variant (set, sub, mul, jnz) on a coprocessor.
   research_status: draft

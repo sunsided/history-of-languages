@@ -1435,8 +1435,8 @@
     paradigm: [declarative]
     domain: [theorem-proving]
   summary: >
-    \"A formal language and an associated computer program (a proof assistant) for archiving and verifying
-    mathematical proofs\", with almost no built-in logic: axioms and inference rules are declared in the
+    "A formal language and an associated computer program (a proof assistant) for archiving and verifying
+    mathematical proofs", with almost no built-in logic: axioms and inference rules are declared in the
     database (set.mm builds set theory this way) and the checker only substitutes symbols, so independent
     verifiers can be very small.
   research_status: draft
@@ -1502,8 +1502,8 @@
     paradigm: [declarative]
     domain: [theorem-proving]
   summary: >
-    Leslie Lamport's \"formal specification language ... used for designing, modelling, documentation, and
-    verification of programs\", especially concurrent and distributed systems. Built on TLA, the Temporal Logic
+    Leslie Lamport's "formal specification language ... used for designing, modelling, documentation, and
+    verification of programs", especially concurrent and distributed systems. Built on TLA, the Temporal Logic
     of Actions: a system is an initial-state predicate plus a next-state relation.
   research_status: draft
   confidence: high

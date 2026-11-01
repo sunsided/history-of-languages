@@ -856,8 +856,8 @@
     domain: [theorem-proving]
   summary: >
     "A formal language ... for expressing complete mathematical theories in such a way that an included
-    automated proof checker can verify their correctness", and \"the first practical system that exploited the
-    Curry-Howard correspondence\": propositions are types and proofs are terms. It shaped later logical frameworks
+    automated proof checker can verify their correctness", and "the first practical system that exploited the
+    Curry-Howard correspondence": propositions are types and proofs are terms. It shaped later logical frameworks
     and proof assistants; Mizar was influenced by it.
   research_status: draft
   confidence: high
