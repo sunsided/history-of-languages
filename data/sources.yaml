@@ -3078,3 +3078,32 @@
   title: "Joseph White: PICO-8 User Manual (v0.2.7, Lexaloffle Games)"
   url: https://www.lexaloffle.com/dl/docs/pico-8_manual.html
   checked: '2026-11-01'
+- id: wiki-core-war
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Core War"
+  url: https://en.wikipedia.org/wiki/Core_War
+  checked: '2026-11-01'
+- id: wiki-tis-100
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TIS-100"
+  url: https://en.wikipedia.org/wiki/TIS-100
+  checked: '2026-11-01'
+- id: tis-100-manual
+  type: manual
+  primary: true
+  title: "Zachtronics: TIS-100 Reference Manual (PDF)"
+  url: https://www.zachtronics.com/images/TIS-100P%20Reference%20Manual.pdf
+- id: tis-100-hackers-guide
+  type: web
+  primary: false
+  title: "Alan De Smet: TIS-100 Hacker's Guide, Assembly"
+  url: https://alandesmet.github.io/TIS-100-Hackers-Guide/assembly.html
+  checked: '2026-11-01'
+- id: phlarx-tis
+  type: web
+  primary: false
+  title: "Phlarx/tis: a TIS-100 emulator (README)"
+  url: https://github.com/Phlarx/tis
+  checked: '2026-11-01'

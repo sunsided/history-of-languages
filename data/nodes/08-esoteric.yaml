@@ -917,3 +917,75 @@
     code: |
       109,1,204,-1,1001,100,1,100,1008,100,16,101,1006,101,0,99
     sources: [aoc-2019-09]
+
+- id: redcode
+  name: Redcode
+  aliases: [Core War]
+  kind: assembly
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    first_appeared: { year: 1984, date: "1984-03", precision: exact, note: "\"The first description of the Redcode language was published in March 1984, in Core War Guidelines by D. G. Jones and A. K. Dewdney\"; Dewdney's Scientific American article followed in May 1984." }
+  creators:
+    - { name: D. G. Jones, role: co-creator of Core War }
+    - { name: A. K. Dewdney, role: co-creator of Core War }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    features: [self-modifying-code]
+  milestones:
+    - { version: ICWS-86, year: 1986, summary: "First standard of the International Core War Society; ten instructions." }
+    - { version: ICWS-88, year: 1988, summary: "Eleven instructions." }
+    - { version: 1994 draft, year: 1994, summary: "Proposed standard with sixteen instructions and instruction modifiers (MOV.F, ADD.AB); never formally adopted but widely used." }
+  summary: >
+    The assembly language of Core War, a 1984 programming game in which two programs ("warriors") share the
+    memory of a virtual machine, the Memory Array Redcode Simulator (MARS), and fight for control of it. The first published warrior, Dewdney's Imp, is a single instruction that
+    copies itself one cell ahead forever. Dewdney's article cites Bell Labs' 1961 game Darwin as a forerunner.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Core_War" }
+  sources: [wiki-core-war]
+  example:
+    title: A bomber in ICWS-94 Redcode
+    language: Redcode (assembled, 1994 draft)
+    note: "The listing Wikipedia shows as \"Assembled ICWS-94 style Redcode\": a loop that adds 4 to a pointer and copies the DAT \"bomb\" to where it points, stepping through memory. Not run in a MARS here."
+    code: |
+      0000: ADD.AB # 4, $ 3
+      0001: MOV.F $ 2, @ 2
+      0002: JMP.B $ -2, $ 0
+      0003: DAT.F # 0, # 0
+    sources: [wiki-core-war]
+
+- id: tis-100
+  name: TIS-100
+  aliases: [TIS-100 assembly, Tessellated Intelligence System]
+  kind: assembly
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    first_appeared: { year: 2015, date: "2015-06-01", precision: exact, note: "Steam Early Access on 1 June 2015; full release 20 July 2015." }
+    places: [{ institution: Zachtronics, country: US }]
+  creators: [{ name: Zach Barth, role: designer }]
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    concurrency: [message-passing]
+  summary: >
+    The assembly of a fictional 1980s "Tessellated Intelligence System", programmed in Zachtronics' puzzle game.
+    The machine is a grid of tiny compute nodes (T21 Basic Execution Nodes), each with an accumulator ACC, a
+    backup register BAK that only SWP and SAV touch, and ports UP, DOWN, LEFT, RIGHT, ANY and LAST through which
+    values pass to neighbouring nodes. 13 documented instructions plus the undocumented HCF, explained in a
+    printable manual styled as a vintage computer manual.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TIS-100", homepage: "https://www.zachtronics.com/tis-100/" }
+  sources: [wiki-tis-100, tis-100-hackers-guide, phlarx-tis, tis-100-manual]
+  example:
+    title: Double every input
+    language: TIS-100 assembly
+    note: "Illustrative: written for this dataset from the Hacker's Guide's instruction descriptions, not taken from the game or its manual and not run in it. One node reads a value from the node above, adds ACC to itself, and passes the result down; the program then loops back to the first line."
+    code: |
+      MOV UP ACC
+      ADD ACC
+      MOV ACC DOWN
+    sources: [tis-100-hackers-guide]
