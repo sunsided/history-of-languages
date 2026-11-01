@@ -32,7 +32,7 @@
   relations:
     - { type: influenced_by, to: java, weight: strong, confidence: high }
     - { type: influenced_by, to: cpp, weight: strong, confidence: high }
-    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, note: "Via Delphi (Hejlsberg): properties, events. Add a Delphi node." }
+    - { type: influenced_by, to: delphi, aspects: [properties], weight: moderate, confidence: medium, sources: [wiki-object-pascal], note: "The Object Pascal infobox lists C# among the languages it influenced; Anders Hejlsberg designed both Delphi and C#. A primary source for the influence (Hejlsberg interview) is still to be found." }
     - { type: influenced_by, to: haskell, aspects: [query-expressions, monads], weight: moderate, confidence: high }
     - { type: influenced_by, to: fsharp, year: 2012, aspects: [async-await], weight: strong, confidence: high, note: "Syme, HOPL IV: C# async was based on F# async workflows." }
     - { type: influenced_by, to: clu, aspects: [iterators], weight: weak, confidence: medium }
@@ -776,3 +776,259 @@
           std.debug.print("{d}\n", .{s.items[0]});
       }
     sources: [wiki-zig]
+
+- id: jruby
+  name: JRuby
+  kind: language
+  category: general
+  cluster: managed/dynamic
+  origin:
+    first_appeared: { year: 2001, precision: year }
+  creators:
+    - { name: Jan Arne Petersen, role: original author }
+    - { name: Charles Oliver Nutter, role: lead developer }
+    - { name: Thomas Enebo, role: lead developer }
+  status: active
+  tags:
+    paradigm: [object-oriented, multi-paradigm, functional, imperative]
+    typing: [dynamic-typing, strong-typing]
+    memory: [garbage-collection]
+    concurrency: [threads]
+    features: [host-interop, jit-compilation]
+  milestones:
+    - { version: "0.9", year: 2006, summary: "Runs Ruby on Rails. Sun hired Nutter and Enebo to work on JRuby full-time in September 2006." }
+    - { version: "1.1.5", year: 2008, summary: "First, primitive use of the JVM's new invokedynamic (JSR 292)." }
+    - { version: "1.7.0", year: 2012, summary: "Ruby 1.9.3 by default; invokedynamic on by default for Java 8." }
+    - { version: "9.0.0.0", year: 2015, summary: "Ruby 2.2." }
+    - { version: "9.4.0.0", year: 2022, summary: "Ruby 3.1." }
+  summary: >
+    Ruby on the Java virtual machine, with Java libraries callable from Ruby. It runs Ruby threads as
+    real JVM threads with no global interpreter lock, and it was an early user of the JVM's
+    invokedynamic instruction for dynamic languages. Developed at Sun, Engine Yard and Red Hat.
+  relations:
+    - { type: dialect_of, to: ruby, weight: strong, confidence: high, note: "An implementation of Ruby on the JVM, tracking MRI versions.", sources: [wiki-jruby] }
+    - { type: implemented_in, to: java, weight: strong, confidence: high, sources: [wiki-jruby] }
+    - { type: influenced_by, to: jython, weight: weak, confidence: low, note: "Wikipedia calls it 'similar to Jython for the Python language'; no source yet says Jython inspired it." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/JRuby", homepage: "https://www.jruby.org" }
+  sources: [wiki-jruby]
+  example:
+    title: "A Swing window from Ruby"
+    language: "JRuby"
+    note: "From Wikipedia's JRuby article. require 'java' opens the Java class library; Java's constructors become .new and Ruby's snake_case set_visible maps to setVisible."
+    code: |
+      require 'java'
+
+      frame = javax.swing.JFrame.new
+      frame.getContentPane.add javax.swing.JLabel.new('Hello, World!')
+      frame.setDefaultCloseOperation javax.swing.JFrame::EXIT_ON_CLOSE
+      frame.pack
+      frame.set_visible true
+    sources: [wiki-jruby]
+
+- id: ironpython
+  name: IronPython
+  kind: language
+  category: general
+  cluster: managed/dynamic
+  origin:
+    first_appeared: { year: 2006, date: "2006-09-05", precision: exact, note: "Version 1.0. Hugunin worked at Microsoft on it from 2004." }
+    places: [{ institution: Microsoft, country: US }]
+  creators:
+    - { name: Jim Hugunin, role: creator }
+    - { name: Dino Viehland, role: developer }
+  status: maintained
+  tags:
+    paradigm: [multi-paradigm, object-oriented, imperative]
+    typing: [dynamic-typing, strong-typing]
+    memory: [garbage-collection]
+    concurrency: [threads]
+    features: [host-interop, jit-compilation]
+  milestones:
+    - { version: "1.0", year: 2006 }
+    - { version: "2.0", year: 2008, summary: "Python 2.5; built on the Dynamic Language Runtime." }
+    - { version: "2.7", year: 2011, summary: "Python 2.7. Microsoft dropped IronPython and IronRuby in late 2010; volunteers continued it." }
+    - { version: "3.4.0", year: 2022, summary: "First release supporting Python 3." }
+  summary: >
+    Python for .NET, written in C#, with .NET assemblies importable from Python and no global
+    interpreter lock. Jim Hugunin built it after Jython, and the work at Microsoft grew into the
+    Dynamic Language Runtime (announced 2007, part of .NET 4 in 2010), the layer that also carried
+    IronRuby.
+  notes: >
+    The DLR is not a node; it belongs in a lineage about dynamic languages on managed runtimes, beside
+    the JVM's invokedynamic (JSR 292).
+  relations:
+    - { type: dialect_of, to: python, weight: strong, confidence: high, note: "An implementation of Python on .NET.", sources: [wiki-ironpython] }
+    - { type: implemented_in, to: csharp, weight: strong, confidence: high, sources: [wiki-ironpython] }
+    - { type: influenced_by, to: jython, weight: moderate, confidence: medium, note: "Same creator, same idea on another runtime (Jim Hugunin, per Wikipedia).", sources: [wiki-jim-hugunin] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IronPython", homepage: "https://ironpython.net" }
+  sources: [wiki-ironpython, wiki-dlr, wiki-jim-hugunin]
+  example:
+    title: "A Windows Forms message box from Python"
+    language: "IronPython"
+    note: "From Wikipedia's IronPython article. clr.AddReference loads a .NET assembly, whose namespaces then import like Python modules."
+    code: |
+      import clr
+      clr.AddReference("System.Windows.Forms")
+      from System.Windows.Forms import MessageBox
+      MessageBox.Show("Hello World")
+    sources: [wiki-ironpython]
+
+- id: vb-net
+  name: Visual Basic .NET
+  aliases: [VB.NET, Visual Basic 2005, Visual Basic (.NET)]
+  kind: language
+  category: general
+  cluster: basic/microsoft
+  origin:
+    first_appeared: { year: 2002, precision: year, note: "Launched in 2002 with .NET Framework 1.0 (Wikipedia's infobox says 2001)." }
+    places: [{ institution: Microsoft, country: US }]
+  status: maintained
+  tags:
+    paradigm: [object-oriented, imperative, structured, event-driven, multi-paradigm]
+    typing: [static-typing, strong-typing, type-inference]
+    memory: [garbage-collection]
+    concurrency: [threads, async-await]
+    features: [classes, inheritance, interfaces, generics, lambdas, query-expressions, operator-overloading, iterators, properties]
+  milestones:
+    - { version: "VB.NET 2002", year: 2002, summary: "Managed code on .NET 1.0: a fully object-oriented language instead of COM-based, reference-counted classic VB." }
+    - { version: "Visual Basic 2005 (8.0)", year: 2005, introduces: [generics, operator-overloading], summary: "'.NET' dropped from the name; generics, partial classes, nullable types, the My namespace." }
+    - { version: "Visual Basic 9.0", year: 2007, introduces: [query-expressions, lambdas, type-inference], summary: "LINQ, lambdas, XML literals, local type inference, anonymous types, extension methods." }
+    - { version: "Visual Basic 2010", year: 2010, summary: "Microsoft drops its plan to base VB on the DLR and announces co-evolution with C#." }
+    - { version: "Visual Basic 2012 (11.0)", year: 2012, introduces: [async-await, iterators], summary: "Async/await and iterators, in step with C# 5." }
+    - { version: "Visual Basic 2015 (14.0)", year: 2015, summary: "?. null-conditional operator, string interpolation; the compiler, written in VB, is open source in Roslyn." }
+    - { version: "Visual Basic 2019 (16.0)", year: 2019, summary: "First version focused on .NET Core." }
+    - { version: "Strategy update", year: 2023, summary: "6 February 2023: VB is 'a stable language'; maintained, but no support for new workloads." }
+  summary: >
+    Classic Visual Basic rebuilt on .NET: the familiar keywords and event handlers, but a fully
+    object-oriented language with inheritance, structured exceptions and garbage collection instead of
+    COM reference counting. It broke compatibility with VB6 (Integer became 32-bit, most projects needed
+    rework), which split the VB community. From 2010 Microsoft developed it in lockstep with C# on the
+    same runtime, until it was declared stable in 2023.
+  notes: >
+    Whether VB.NET is a new version of Visual Basic or a different language is, as Wikipedia puts it,
+    a topic of debate. No individual designers are named in the source read.
+  relations:
+    - { type: successor_of, to: visual-basic, weight: strong, confidence: high, note: "'Microsoft launched VB.NET in 2002 as the successor to its original Visual Basic language' — but not backward compatible.", sources: [wiki-vb-net] }
+    - { type: influenced_by, to: csharp, aspects: [async-await], weight: strong, confidence: high, year: 2010, note: "Same team, same CIL and runtime; co-evolution with C# from 2010 brought the two to near parity.", sources: [wiki-vb-net] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Visual_Basic_(.NET)" }
+  sources: [wiki-vb-net]
+  example:
+    title: "The same button, before and after .NET"
+    language: "Visual Basic 6 → VB.NET"
+    note: "Both handlers are from Wikipedia's Visual Basic (.NET) article. In VB6 the event is bound by the procedure's name; in VB.NET the handler receives sender and event arguments and binds with Handles, as in any .NET language, and MsgBox becomes an ordinary function call."
+    code: |
+      ' Visual Basic 6
+      Private Sub Command1_Click()
+          MsgBox "Hello, World"
+      End Sub
+
+      ' VB.NET
+      Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+          MsgBox("Hello, World")
+      End Sub
+    sources: [wiki-vb-net]
+
+- id: managed-cpp
+  name: Managed Extensions for C++
+  aliases: [Managed C++, MC++]
+  kind: language
+  category: systems
+  cluster: managed
+  origin:
+    first_appeared: { year: 2002, precision: year, note: "Introduced in Microsoft Visual C++ 2002 (Visual Studio .NET)." }
+    places: [{ institution: Microsoft, country: US }]
+  status: extinct
+  tags:
+    paradigm: [object-oriented, imperative, generic-programming, multi-paradigm]
+    typing: [static-typing]
+    memory: [garbage-collection, manual-memory]
+    features: [c-interop, host-interop, templates]
+  summary: >
+    Microsoft's first attempt to put C++ on .NET: ISO C++ plus double-underscore keywords (__gc,
+    __value, __nogc) that marked classes and pointers as garbage-collected or native. It was the only
+    .NET language that could mix unmanaged code freely with managed code, but the extra keywords made
+    code hard to read and it had templates but no .NET generics. Deprecated in 2004 in favour of
+    C++/CLI.
+  relations:
+    - { type: superset_of, to: cpp, weight: strong, confidence: high, note: "A 'C++ superset-oriented' extension with non-standard keywords (Wikipedia: C++/CLI).", sources: [wiki-cpp-cli, wiki-managed-cpp] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Managed_Extensions_for_C%2B%2B" }
+  sources: [wiki-managed-cpp, wiki-cpp-cli]
+  example:
+    title: "Hello, world on the CLR"
+    language: "Managed Extensions for C++"
+    year: 2002
+    note: "From Wikipedia's Managed Extensions for C++ article. #using imports a .NET assembly (here mscorlib.dll) the way #include imports a header; Console::WriteLine is a .NET method called with C++'s scope operator."
+    code: |
+      // Gello.cpp
+      // new using directive
+      #using <mscorlib.dll>
+      // another using namespace directive.
+      using namespace System;
+      int main() {
+          Console::WriteLine("Hello, world!");
+          return 0;
+      }
+    sources: [wiki-managed-cpp]
+
+- id: cpp-cli
+  name: C++/CLI
+  kind: language
+  category: systems
+  cluster: managed
+  origin:
+    first_appeared: { year: 2005, precision: year, note: "Shipped with Visual Studio 2005; standardised as ECMA-372 in December 2005. Designed in 2004 as a revision of Managed C++." }
+    places: [{ institution: Microsoft, country: US }]
+  status: maintained
+  tags:
+    paradigm: [object-oriented, imperative, generic-programming, multi-paradigm]
+    typing: [static-typing]
+    memory: [garbage-collection, manual-memory, raii]
+    features: [c-interop, host-interop, templates, generics, operator-overloading]
+  milestones:
+    - { version: "ECMA-372", year: 2005 }
+    - { version: "C++20 support", year: 2023, summary: "Microsoft announced C++20 support for C++/CLI (blog, May 2023)." }
+  summary: >
+    C++ for .NET redesigned as, in Wikipedia's words, a language of its own: handles (T^) to
+    garbage-collected objects created with gcnew, tracking references (%), ref and value classes, .NET
+    generics beside C++ templates, and both a deterministic destructor (~X, mapped to Dispose) and a
+    finalizer (!X). Its main use is the bridge between native C++ code and C# and other .NET languages.
+    C++/CX for Windows Runtime later borrowed its ref and ^ syntax.
+  notes: >
+    Herb Sutter ('A Design Rationale for C++/CLI', 2006) and Stanley Lippman wrote its design
+    explanations; the source read does not credit individual designers, so none are listed yet.
+  relations:
+    - { type: successor_of, to: managed-cpp, weight: strong, confidence: high, note: "'In 2004, Managed Extensions for C++ was deprecated in favor of C++/CLI' (Wikipedia).", sources: [wiki-managed-cpp] }
+    - { type: influenced_by, to: cpp, weight: strong, confidence: high, sources: [wiki-cpp-cli] }
+    - { type: influenced_by, to: csharp, aspects: [generics, garbage-collection], weight: moderate, confidence: medium, note: "Shares the CLI type system with C#: managed arrays (array<T> for C#'s T[]), generics, Dispose.", sources: [wiki-cpp-cli] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/C%2B%2B/CLI" }
+  sources: [wiki-cpp-cli, wiki-managed-cpp]
+  example:
+    title: "Two kinds of destruction"
+    language: "C++/CLI"
+    year: 2005
+    note: "From Wikipedia's C++/CLI article. A ref class lives on the garbage-collected heap: gcnew returns a handle (^), the finalizer !MyClass runs whenever the GC collects it, while the destructor ~MyClass runs deterministically on delete or at scope exit, as in ordinary C++."
+    code: |
+      ref class MyClass {
+      protected:
+          !MyClass(); // finalizer (non-deterministic destructor) (implemented as Finalize())
+      public:
+          MyClass();  // constructor
+          ~MyClass(); // (deterministic) destructor (implemented as IDisposable.Dispose())
+          static void Test() {
+              MyClass automatic; // Not a handle, no initialization: compiler calls constructor here
+              MyClass^ user = gcnew MyClass();
+              delete user;
+              // Compiler calls automatic's destructor when automatic goes out of scope
+          }
+      };
+    sources: [wiki-cpp-cli]

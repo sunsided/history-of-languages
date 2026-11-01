@@ -452,6 +452,13 @@
 - id: high-level-collections
   name: High level collections
   facet: features
+- id: host-interop
+  name: Host-platform interop
+  facet: features
+  summary: Classes and libraries of the host runtime (JVM, .NET) can be imported and called directly, as if native.
+  first_seen:
+    node: jython
+    year: 1997
 - id: higher-kinded-types
   name: Higher kinded types
   facet: features

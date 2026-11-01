@@ -266,9 +266,18 @@
     - { name: "PL360", year: 1968 }
     - { name: "Modula", year: 1975 }
     - { name: "Cedar", year: 1983 }
-    - { name: "Object Pascal", year: 1986 }
-    - { name: "Delphi", year: 1995, hint: "Hejlsberg link to C# and TypeScript." }
     - { name: "Oberon-2 / Component Pascal", year: 1991 }
+- id: algol/pascal-dialects
+  name: Pascal dialects
+  parent: algol/wirth
+  summary: Commercial and portable dialects of Pascal, from the Borland and Apple lines to the open-source compilers that keep them alive.
+  research_status: stub
+  key_sources: [wiki-turbo-pascal, wiki-object-pascal, wiki-delphi]
+  backlog:
+    - { name: "UCSD Pascal", year: 1977, hint: "p-code machine; ancestor of Apple Pascal and Java-style VMs." }
+    - { name: "Clascal", year: 1983, hint: "Apple Lisa; direct ancestor of Object Pascal." }
+    - { name: "Free Pascal", year: 1993, hint: "Open-source Turbo Pascal / Delphi compatible dialect modes." }
+    - { name: "Oxygene", year: 2005, hint: "Object Pascal for .NET/JVM (RemObjects)." }
 - id: algol/adt
   name: Abstract data type languages
   parent: algol
@@ -298,6 +307,16 @@
     - { name: "Nim", year: 2008 }
     - { name: "V", year: 2019 }
     - { name: "Hare", year: 2022 }
+- id: c-family/compilers
+  name: Compiler-defined C and C++ dialects
+  parent: c-family
+  summary: C and C++ as extended by particular compilers and products (Borland, GNU, Microsoft), whose extensions shaped real-world code and sometimes later standards.
+  research_status: stub
+  key_sources: [wiki-turbo-c, wiki-borland-cpp, gcc-manual-c-extensions]
+  backlog:
+    - { name: "Microsoft C/C++ (MSVC dialect)", year: 1983, hint: "__declspec, SEH, near/far pointers." }
+    - { name: "Watcom C", year: 1988, hint: "DOS extender era; Open Watcom." }
+    - { name: "Plan 9 C", year: 1992, hint: "Ken Thompson's dialect; anonymous struct members later in C11." }
 - id: c-family/safe
   name: Safe systems languages
   parent: c-family
@@ -400,9 +419,21 @@
   research_status: draft
   backlog:
     - { name: "Pizza / GJ", year: 1996, hint: "Odersky & Wadler; Java generics." }
-    - { name: "Visual Basic / VB.NET", year: 1991 }
     - { name: "Ceylon", year: 2011 }
-    - { name: "Jython / JRuby", year: 1997 }
+    - { name: "C++/CX", year: 2012, hint: "C++ for the Windows Runtime; borrows ref and ^ from C++/CLI (Wikipedia: C++/CLI)." }
+- id: managed/dynamic
+  name: Dynamic languages on the JVM and .NET
+  parent: managed
+  summary: "Python and Ruby re-implemented on managed runtimes, which pushed those runtimes to support dynamic dispatch (invokedynamic, the DLR)."
+  research_status: draft
+  backlog:
+    - { name: "IronRuby", year: 2007, hint: "Ruby on the DLR; dropped by Microsoft in 2010 with IronPython." }
+    - { name: "Groovy", year: 2003 }
+    - { name: "Rhino / Nashorn (JavaScript on the JVM)", year: 1997 }
+  research_questions:
+    - "Did JRuby's team shape JSR 292 (invokedynamic), or only adopt it early? Find JSR 292 expert-group records or John Rose's posts."
+    - "Hugunin's account of why he built IronPython and how it became the DLR (his 2004 PyCon talk and 2007 MIX posts)."
+  key_sources: [wiki-dlr]
 - id: scripting
   name: Scripting languages
   research_status: draft
@@ -460,12 +491,52 @@
     - { name: "Wolfram Language (Mathematica)", year: 1988 }
 - id: basic
   name: BASIC family
-  research_status: stub
+  summary: "Dartmouth BASIC and its descendants: the home-computer interpreters, Microsoft's DOS and Windows line, and machine-specific extensions."
+  research_status: draft
   backlog:
-    - { name: "Tiny BASIC", year: 1976 }
-    - { name: "Microsoft BASIC / GW-BASIC / QBasic", year: 1975 }
+    - { name: "BASIC-PLUS (DEC)", year: 1970, hint: "RSTS/E BASIC on the PDP-11; Microsoft BASIC was patterned on it (Wikipedia: Microsoft BASIC)." }
+    - { name: "Tiny BASIC", year: 1976, hint: "Li-Chen Wang's version became TRS-80 Level I BASIC." }
     - { name: "BBC BASIC", year: 1981 }
-    - { name: "Visual Basic", year: 1991 }
+    - { name: "Sinclair BASIC (ZX81, ZX Spectrum)", year: 1980 }
+    - { name: "FreeBASIC / QB64", year: 2004, hint: "Open-source QuickBASIC descendants (QuickBASIC infobox: influenced)." }
+- id: basic/microsoft
+  name: Microsoft BASIC line
+  parent: basic
+  summary: "From Altair BASIC (1975) through BASICA and GW-BASIC to QuickBASIC, QBasic and Visual Basic."
+  research_status: draft
+  backlog:
+    - { name: "Applesoft BASIC", year: 1977, hint: "Microsoft 6502 BASIC for the Apple II." }
+    - { name: "TRS-80 Level II BASIC / Color BASIC", year: 1978, hint: "Port of BASIC-80; Color BASIC from BASIC-69." }
+    - { name: "MSX BASIC", year: 1983 }
+    - { name: "Amiga BASIC", year: 1985 }
+    - { name: "VBA (Visual Basic for Applications)", year: 1993, hint: "Split from Visual Basic 4; in Office 95. Check the first-release year." }
+  research_questions:
+    - "Which features did BASIC-PLUS give Microsoft BASIC? Gates's and Allen's own accounts (Allen's 'Idea Man', 2011) are the primary sources."
+- id: basic/atari
+  name: Atari BASICs
+  parent: basic
+  summary: "Atari 8-bit BASIC, the rare non-Microsoft home-computer BASIC, and its faster replacements."
+  research_status: draft
+  backlog:
+    - { name: "Atari Microsoft BASIC", year: 1981, hint: "Atari's licensed 6502 Microsoft BASIC, sold later as a separate product." }
+    - { name: "BASIC XL / BASIC XE (OSS)", hint: "Faster, extended Atari BASICs; date from sources." }
+    - { name: "GFA BASIC", year: 1986, hint: "Frank Ostrowski's Atari ST BASIC, adapted from Turbo-BASIC XL. Check the year." }
+    - { name: "Data General Business Basic", hint: "Atari BASIC's stated model." }
+- id: basic/pc-compilers
+  name: Third-party BASIC compilers for the PC
+  parent: basic
+  summary: "Native-code BASIC compilers outside Microsoft: Bob Zale's BASIC/Z, Borland Turbo Basic and PowerBASIC."
+  research_status: draft
+  backlog:
+    - { name: "True BASIC", year: 1985 }
+- id: basic/commodore
+  name: Commodore BASIC and extensions
+  parent: basic
+  summary: "Microsoft 6502 BASIC on Commodore machines, and the cartridges that added what it lacked."
+  research_status: draft
+  backlog:
+    - { name: "Commodore BASIC 3.5 / 7.0 as nodes or milestones", hint: "Currently notes on commodore-basic; date 3.5 and 4.0 from sources." }
+    - { name: "Super Expander (VIC-20 / C64)", hint: "Commodore's own graphics and sound extension cartridges." }
 - id: concurrency
   name: Concurrency models and languages
   summary: "Formalisms and languages that made concurrency a first-class concern. See the concurrency lineage for the narrative thread."

@@ -1307,3 +1307,195 @@
   title: 'Technik und Anwendung des Poly-Computers 880'
   venue: radio fernsehen elektronik 5/1984, pp. 282-287
   year: 1984
+- id: wiki-altair-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Altair BASIC"
+  url: https://en.wikipedia.org/wiki/Altair_BASIC
+  checked: '2026-11-01'
+- id: wiki-microsoft-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Microsoft BASIC"
+  url: https://en.wikipedia.org/wiki/Microsoft_BASIC
+  checked: '2026-11-01'
+- id: wiki-ibm-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IBM BASIC"
+  url: https://en.wikipedia.org/wiki/IBM_BASIC
+  checked: '2026-11-01'
+- id: wiki-gw-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GW-BASIC"
+  url: https://en.wikipedia.org/wiki/GW-BASIC
+  checked: '2026-11-01'
+- id: wiki-quickbasic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: QuickBASIC"
+  url: https://en.wikipedia.org/wiki/QuickBASIC
+  checked: '2026-11-01'
+- id: wiki-qbasic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: QBasic"
+  url: https://en.wikipedia.org/wiki/QBasic
+  checked: '2026-11-01'
+- id: wiki-visual-basic-classic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Visual Basic (classic)"
+  url: https://en.wikipedia.org/wiki/Visual_Basic_(classic)
+  checked: '2026-11-01'
+- id: wiki-commodore-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Commodore BASIC"
+  url: https://en.wikipedia.org/wiki/Commodore_BASIC
+  checked: '2026-11-01'
+- id: wiki-commodore-64
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Commodore 64"
+  url: https://en.wikipedia.org/wiki/Commodore_64
+  checked: '2026-11-01'
+- id: wiki-simons-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Simons' BASIC"
+  url: https://en.wikipedia.org/wiki/Simons%27_BASIC
+  checked: '2026-11-01'
+- id: wiki-jruby
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: JRuby"
+  url: https://en.wikipedia.org/wiki/JRuby
+  checked: '2026-11-01'
+- id: wiki-jython
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Jython"
+  url: https://en.wikipedia.org/wiki/Jython
+  checked: '2026-11-01'
+- id: wiki-ironpython
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IronPython"
+  url: https://en.wikipedia.org/wiki/IronPython
+  checked: '2026-11-01'
+- id: wiki-dlr
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Dynamic Language Runtime"
+  url: https://en.wikipedia.org/wiki/Dynamic_Language_Runtime
+  checked: '2026-11-01'
+- id: wiki-jim-hugunin
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Jim Hugunin"
+  url: https://en.wikipedia.org/wiki/Jim_Hugunin
+  checked: '2026-11-01'
+- id: wiki-vb-net
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Visual Basic (.NET)"
+  url: https://en.wikipedia.org/wiki/Visual_Basic_(.NET)
+  checked: '2026-11-01'
+- id: wiki-atari-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Atari BASIC"
+  url: https://en.wikipedia.org/wiki/Atari_BASIC
+  checked: '2026-11-01'
+- id: wiki-turbo-basic-xl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Turbo-Basic XL"
+  url: https://en.wikipedia.org/wiki/Turbo-Basic_XL
+  checked: '2026-11-01'
+- id: wiki-powerbasic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PowerBASIC (covers Turbo Basic and BASIC/Z)"
+  url: https://en.wikipedia.org/wiki/PowerBASIC
+  checked: '2026-11-01'
+- id: wiki-cpp-cli
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: C++/CLI"
+  url: https://en.wikipedia.org/wiki/C%2B%2B/CLI
+  checked: '2026-11-01'
+- id: wiki-managed-cpp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Managed Extensions for C++"
+  url: https://en.wikipedia.org/wiki/Managed_Extensions_for_C%2B%2B
+  checked: '2026-11-01'
+- id: wiki-turbo-pascal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Turbo Pascal (covers Borland Pascal)"
+  url: https://en.wikipedia.org/wiki/Turbo_Pascal
+  checked: '2026-11-01'
+- id: wiki-object-pascal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Object Pascal"
+  url: https://en.wikipedia.org/wiki/Object_Pascal
+  checked: '2026-11-01'
+- id: wiki-delphi
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Delphi (software)"
+  url: https://en.wikipedia.org/wiki/Delphi_(software)
+  checked: '2026-11-01'
+- id: wiki-turbo-c
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Borland Turbo C"
+  url: https://en.wikipedia.org/wiki/Borland_Turbo_C
+  checked: '2026-11-01'
+- id: wiki-borland-cpp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Borland C++ (covers Turbo C++)"
+  url: https://en.wikipedia.org/wiki/Borland_C%2B%2B
+  checked: '2026-11-01'
+- id: wiki-cpp-builder
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: C++Builder"
+  url: https://en.wikipedia.org/wiki/C%2B%2BBuilder
+  checked: '2026-11-01'
+- id: wiki-djgpp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: DJGPP"
+  url: https://en.wikipedia.org/wiki/DJGPP
+  checked: '2026-11-01'
+- id: wiki-gcc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GNU Compiler Collection"
+  url: https://en.wikipedia.org/wiki/GNU_Compiler_Collection
+  checked: '2026-11-01'
+- id: gcc-manual-c-extensions
+  type: manual
+  primary: true
+  title: "GCC manual: Extensions to the C Language Family"
+  url: https://gcc.gnu.org/onlinedocs/gcc/C-Extensions.html
+  checked: '2026-11-01'
+- id: embarcadero-closure
+  type: manual
+  primary: true
+  title: "RAD Studio docs: __closure"
+  url: https://docwiki.embarcadero.com/RADStudio/Athens/en/Closure
+  checked: '2026-11-01'
+- id: embarcadero-property
+  type: manual
+  primary: true
+  title: "RAD Studio docs: __property"
+  url: https://docwiki.embarcadero.com/RADStudio/Athens/en/Property
+  checked: '2026-11-01'

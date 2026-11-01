@@ -648,3 +648,472 @@
       begin counter(100, c);
       print(<-c, "\n");
     sources: [pike-go-history-talk]
+
+- id: simons-basic
+  name: Simons' BASIC
+  aliases: [Simon's BASIC]
+  kind: language
+  category: general
+  cluster: basic/commodore
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "Cartridge published by Commodore." }
+    places: [{ country: GB }]
+  creators:
+    - { name: David Simons, role: "author, aged 16" }
+  status: historical
+  tags:
+    paradigm: [imperative, structured, procedural]
+    typing: [dynamic-typing]
+    features: [line-numbers, interpreter]
+  summary: >
+    A cartridge that added 114 keywords to the C64's BASIC 2.0: high-resolution and multicolour graphics
+    (HIRES, PLOT, LINE, CIRCLE, PAINT), sprites (MOB SET, MMOB, DETECT), sound (MUSIC, PLAY, ENVELOPE),
+    structured programming (PROC/END PROC, REPEAT/UNTIL, LOOP/EXIT IF, LOCAL, GLOBAL) and editing
+    aids (AUTO, RENUMBER, TRACE). Written by a 16-year-old British programmer and sold by Commodore
+    itself, it shows what the stock BASIC lacked.
+  relations:
+    - { type: superset_of, to: commodore-basic, aspects: [structured], weight: strong, confidence: high, note: "An extension: every BASIC 2.0 program still runs.", sources: [wiki-simons-basic] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Simons%27_BASIC" }
+  sources: [wiki-simons-basic]
+  example:
+    title: "Graphics and procedures in BASIC"
+    language: "Simons' BASIC (illustrative)"
+    note: "Illustrative: the keywords are from Wikipedia's Simons' BASIC article, but the argument lists have not been checked against the Simons' BASIC manual. Replace with a listing from the manual."
+    code: |
+      10 HIRES 0,1
+      20 CIRCLE 160,100,50,50,1
+      30 CALL WAIT
+      40 END
+      50 PROC WAIT
+      60 REPEAT
+      70 GET K$
+      80 UNTIL K$<>""
+      90 END PROC
+    sources: [wiki-simons-basic]
+
+- id: gw-basic
+  name: GW-BASIC
+  aliases: [BASICA, IBM Advanced BASIC]
+  kind: language
+  category: general
+  cluster: basic/microsoft
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "Shipped with Compaq DOS 1.13 on the Compaq Portable. Its twin, IBM BASICA, came with the IBM PC in 1981." }
+    places: [{ institution: Microsoft, country: US }]
+  status: historical
+  tags:
+    paradigm: [imperative]
+    typing: [dynamic-typing]
+    features: [line-numbers, interpreter, repl]
+  milestones:
+    - { version: "1.0", year: 1983 }
+    - { version: "3.20", year: 1986, summary: "EGA graphics; the last major version before QBasic replaced it." }
+    - { version: "1.0 source released", year: 2020, summary: "Microsoft published the 8088 assembler source under the MIT licence." }
+  summary: >
+    Microsoft's BASIC for MS-DOS PC compatibles: functionally identical to IBM's BASICA but
+    self-contained, so it ran without the Cassette BASIC ROM of real IBM PCs. Both are largely ports of
+    BASIC-80 5.x with PC sound and graphics (PLAY, SOUND, LINE, CIRCLE) and event trapping. Shipped with
+    MS-DOS until version 5.0 (1991).
+  notes: >
+    The source of the name is unclear; Greg Whitten, who set the standards for Microsoft's BASIC
+    compilers, says Bill Gates picked it.
+  relations:
+    - { type: dialect_of, to: microsoft-basic, weight: strong, confidence: high, note: "'IBM BASICA and GW-BASIC are largely ports of MBASIC version 5.x' (Wikipedia).", sources: [wiki-gw-basic, wiki-ibm-basic] }
+    - { type: targets, to: intel-8086, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GW-BASIC" }
+  sources: [wiki-gw-basic, wiki-ibm-basic]
+  example:
+    title: "A user-defined function and a tune"
+    language: "GW-BASIC"
+    note: "Line 10 and the PLAY string are as printed in Wikipedia's GW-BASIC article; the line numbers and line 30 are added here. DEF FN defines a one-line function; PLAY takes a music macro language string (notes, L2 = half notes) for the PC speaker."
+    code: |
+      10 DEF FNLOG(base,number)=LOG(number)/LOG(base)
+      20 PRINT FNLOG(2,1024)
+      30 PLAY "edcdeeL2edfedL4c"
+    sources: [wiki-gw-basic]
+
+- id: quickbasic
+  name: QuickBASIC
+  aliases: [QB, QuickBASIC 4.5]
+  kind: language
+  category: general
+  cluster: basic/microsoft
+  origin:
+    first_appeared: { year: 1985, date: "1985-08-18", precision: exact, note: "Version 1.0, on one 360 KB floppy." }
+    places: [{ institution: Microsoft, country: US }]
+  status: historical
+  tags:
+    paradigm: [imperative, structured, procedural]
+    typing: [dynamic-typing, static-typing]
+    features: [compiler, interpreter, ide, records]
+  milestones:
+    - { version: "1.0", year: 1985, summary: "Compiles to DOS executables. Version 2.0 added the IDE and 4.0 an interpreter inside the editor (years not stated in the source read)." }
+    - { version: "4.5", year: 1988, summary: "The last version; QBasic is a subset of it." }
+    - { version: "BASIC PDS 7.1", year: 1990, summary: "Professional Development System, the big sibling (QBX IDE)." }
+  summary: >
+    Microsoft's structured BASIC compiler and IDE for DOS: loosely based on GW-BASIC, it made line
+    numbers optional and added SUB and FUNCTION procedures, block IF, SELECT CASE, DO/LOOP and
+    user-defined record types. Microsoft sold it as the entry level to its BASIC Professional Development
+    System. Visual Basic succeeded it.
+  relations:
+    - { type: successor_of, to: gw-basic, aspects: [line-numbers], weight: strong, confidence: high, note: "'Loosely based on GW-BASIC' (Wikipedia infobox: influenced by BASCOM, GW-BASIC).", sources: [wiki-quickbasic] }
+    - { type: targets, to: intel-8086, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/QuickBASIC" }
+  sources: [wiki-quickbasic]
+  example:
+    title: "Bubble sort without line numbers"
+    language: "QuickBASIC 4.5"
+    note: "From Wikipedia's QuickBASIC article. No line numbers, a typed array with explicit bounds (DIM A(1 TO N) AS INTEGER), and SWAP."
+    code: |
+      REM sample of bubble sort
+      N = 10
+      DIM A(1 TO N) AS INTEGER
+      FOR L = 1 TO N
+      A(L) = INT(RND * 10 + 1)
+      NEXT
+      FOR X = 1 TO N - 1
+      FOR Y = X + 1 TO N
+      IF A(X) < A(Y) THEN SWAP A(X), A(Y)
+      NEXT
+      NEXT
+      FOR L = 1 TO N
+      PRINT A(L)
+      NEXT
+      END
+    sources: [wiki-quickbasic]
+
+- id: turbo-basic-xl
+  name: Turbo-BASIC XL
+  aliases: [Turbo-Basic XL, Frost Basic]
+  kind: language
+  category: general
+  cluster: basic/atari
+  origin:
+    first_appeared: { year: 1985, date: "1985-12", precision: exact, note: "Published as a type-in listing in the German magazine Happy Computer, December 1985." }
+    places: [{ country: DE }]
+  creators:
+    - { name: Frank Ostrowski, role: author }
+  status: historical
+  tags:
+    paradigm: [imperative, structured, procedural]
+    typing: [dynamic-typing]
+    features: [line-numbers, interpreter, compiler]
+  summary: >
+    A free replacement for Atari BASIC, typed in from a magazine, that ran unchanged Atari BASIC
+    programs three to five times faster and, with its compiler, about ten times faster (41.6 s against
+    405 s on the Ahl benchmark). It added its own floating-point library, hashed line-number lookup,
+    structured blocks and named procedures, and used the extra memory of the XL and XE machines.
+    Ostrowski then turned it into GFA BASIC for the Atari ST.
+  notes: >
+    A version for the older 400/800 followed as Frost Basic 1.4. The 'compatible superset' claim carries
+    a citation-needed tag on Wikipedia.
+  relations:
+    - { type: superset_of, to: atari-basic, aspects: [structured], weight: strong, confidence: medium, note: "'A compatible superset of the Atari BASIC that shipped with the computers' (Wikipedia, citation needed).", sources: [wiki-turbo-basic-xl] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Turbo-Basic_XL" }
+  sources: [wiki-turbo-basic-xl, wiki-atari-basic]
+  example:
+    title: "Procedures and block loops on an 8-bit Atari"
+    language: "Turbo-BASIC XL (illustrative)"
+    note: "Illustrative: the Wikipedia article prints no code and the keyword spellings (PROC/ENDPROC, EXEC, REPEAT/UNTIL) have not been checked against the Happy Computer listing or manual. Replace with code from the original documentation."
+    code: |
+      10 EXEC COUNTDOWN
+      20 END
+      30 PROC COUNTDOWN
+      40   I=10
+      50   REPEAT
+      60     PRINT I
+      70     I=I-1
+      80   UNTIL I=0
+      90 ENDPROC
+    sources: [wiki-turbo-basic-xl]
+
+- id: turbo-basic
+  name: Turbo Basic
+  aliases: [Borland Turbo Basic, BASIC/Z]
+  kind: language
+  category: general
+  cluster: basic/pc-compilers
+  origin:
+    began: { year: 1986, precision: year, note: "Bob Zale's BASIC/Z (1.11 in 1986), the first interactive compiler for CP/M and Micropolis DOS, later ported to MS-DOS." }
+    first_appeared: { year: 1987, precision: year, note: "Borland bought BASIC/Z in 1987 and sold it as Turbo Basic 1.0; 1.1 followed in late 1987." }
+    places: [{ institution: Borland, country: US }]
+  creators:
+    - { name: Bob Zale, role: author }
+  status: extinct
+  tags:
+    paradigm: [imperative, structured, procedural]
+    typing: [dynamic-typing, static-typing]
+    features: [compiler, ide, line-numbers]
+  summary: >
+    Borland's BASIC for DOS, sold beside Turbo Pascal and Turbo C: unlike most BASICs of its time a
+    full native-code compiler, with an IDE that could also run programs for debugging. It accepted
+    QuickBASIC 3.0, GW-BASIC and BASICA programs and offered structured blocks without line numbers.
+    Borland dropped it in 1988-89 when QuickBASIC 4 and 4.5 won the market, and its author bought it back
+    as PowerBASIC.
+  relations:
+    - { type: influenced_by, to: gw-basic, weight: moderate, confidence: high, note: "Compatible with QuickBASIC 3.0, GW-BASIC 3.2 and BASICA 3.3 (Wikipedia: PowerBASIC).", sources: [wiki-powerbasic] }
+    - { type: influenced_by, to: quickbasic, weight: moderate, confidence: medium, note: "Its direct competitor; compatibility target.", sources: [wiki-powerbasic] }
+    - { type: targets, to: intel-8086, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PowerBASIC" }
+  sources: [wiki-powerbasic]
+  example:
+    title: "Nested DO loops, no line numbers"
+    language: "Turbo Basic"
+    note: "The Turbo Basic sample from Wikipedia's PowerBASIC article. Compiled to a DOS executable; DO … LOOP WHILE and string concatenation with +."
+    code: |
+      INPUT "What is your name?: ", n$
+      PRINT "Hello "; n$
+      DO
+      s$ = ""
+      INPUT "How many stars do you want to print"; s
+      FOR i = 1 TO s
+      s$ = s$ + "*"
+      NEXT i
+      PRINT s$
+      DO
+      INPUT "Do you want to print more stars"; q$
+      LOOP WHILE LEN(q$) = 0
+      q$ = LCASE$(LEFT$(q$, 1))
+      LOOP WHILE q$ = "y"
+      PRINT "Goodbye "; n$
+    sources: [wiki-powerbasic]
+
+- id: turbo-pascal
+  name: Turbo Pascal
+  aliases: [Borland Pascal, Compas Pascal, PolyPascal, Blue Label Pascal]
+  kind: language
+  category: general
+  cluster: algol/pascal-dialects
+  origin:
+    began: { year: 1981, precision: year, note: "Anders Hejlsberg's Blue Label Pascal for the Nascom (1981), then Compas Pascal / PolyPascal for CP/M from his Danish company Poly Data; Borland licensed the compiler core." }
+    first_appeared: { year: 1983, date: "1983-11-20", precision: exact, note: "Turbo Pascal 1.0 for CP/M and MS-DOS, by mail order for about US$50." }
+    places: [{ institution: Borland, city: Scotts Valley CA, country: US }]
+  creators:
+    - { name: Anders Hejlsberg, role: author and compiler architect }
+  status: legacy
+  tags:
+    paradigm: [imperative, structured, procedural, object-oriented]
+    typing: [static-typing, strong-typing]
+    memory: [manual-memory]
+    features: [compiler, ide, modules, objects, inheritance]
+  milestones:
+    - { version: "1.0", year: 1983, introduces: [ide], summary: "Editor, compiler and run in one 39 KB program; compiled to .COM files in memory." }
+    - { version: "2.0", year: 1984, summary: "Overlays, Dispose, 8087 support." }
+    - { version: "3.0", year: 1986, summary: "Turtle graphics, BCD arithmetic version." }
+    - { version: "4.0", year: 1987, introduces: [modules], summary: "Rewrite: .EXE output, full-screen menu IDE, units (adopted from UCSD Pascal)." }
+    - { version: "5.5", year: 1989, introduces: [objects, inheritance], summary: "Object-oriented extensions (object types, constructors, destructors, inheritance), as in Apple's Object Pascal." }
+    - { version: "6.0", year: 1990, summary: "Inline assembler, Turbo Vision text-UI framework, mouse support." }
+    - { version: "7.0 / Borland Pascal 7.0", year: 1992, summary: "DOS and Windows executables and DLLs, syntax highlighting. Borland Pascal is the professional edition of the same language." }
+  summary: >
+    The Pascal that most people actually used: a fast, cheap, integrated compiler and editor by Anders
+    Hejlsberg that turned Wirth's teaching language into a practical tool for CP/M and the IBM PC. Over
+    seven versions it grew units, an inline assembler and objects, far beyond ISO Pascal, so 'Pascal' on
+    the PC came to mean Turbo Pascal's dialect. Borland replaced it with Delphi in 1995.
+  notes: >
+    Borland Pascal 7.0 (1992) is kept as an alias and milestone: it was the professional edition of
+    Turbo Pascal 7 with Windows targets, not a different language. Free Pascal is a compatible
+    open-source implementation (backlog). Versions 1.0, 3.02 and 5.5 were later released as freeware.
+  relations:
+    - { type: dialect_of, to: pascal, weight: strong, confidence: high, note: "A 1984 review praised its 'close adherence to the Jensen and Wirth language standard'; later versions added units, objects and inline assembly.", sources: [wiki-turbo-pascal] }
+    - { type: influenced_by, to: object-pascal, aspects: [objects, inheritance], year: 1989, weight: strong, confidence: high, note: "Borland introduced similar extensions, also named Object Pascal, in Turbo Pascal for the Macintosh (1986) and Turbo Pascal 5.5 for DOS (1989).", sources: [wiki-object-pascal] }
+    - { type: targets, to: intel-8086, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Turbo_Pascal" }
+  sources: [wiki-turbo-pascal, wiki-object-pascal]
+  example:
+    title: "A unit: interface and implementation"
+    language: "Turbo Pascal 4.0 or later"
+    year: 1987
+    note: "Written for this dataset to show units, the separately compiled modules Turbo Pascal 4.0 adopted from UCSD Pascal: the interface part is public, the implementation part private. A program imports it with 'uses Greeting;'."
+    code: |
+      unit Greeting;
+
+      interface
+      procedure Hello(Name: string);
+
+      implementation
+      procedure Hello(Name: string);
+      begin
+        WriteLn('Hello, ', Name, '!');
+      end;
+
+      end.
+    sources: [wiki-turbo-pascal]
+
+- id: object-pascal
+  name: Object Pascal
+  aliases: [Apple Object Pascal]
+  kind: language
+  category: general
+  cluster: algol/pascal-dialects
+  origin:
+    began: { year: 1985, precision: year, note: "Project began very early in 1985 at Apple; descended from Clascal on the Lisa." }
+    first_appeared: { year: 1986, precision: year, note: "Shipped in 1986 to support the MacApp application framework." }
+    places: [{ institution: Apple Computer, city: Cupertino CA, country: US }]
+  creators:
+    - { name: Larry Tesler, role: team lead }
+    - { name: Niklaus Wirth, role: consultant }
+  status: historical
+  tags:
+    paradigm: [object-oriented, imperative, structured]
+    typing: [static-typing, strong-typing]
+    features: [objects, inheritance, virtual-dispatch]
+  summary: >
+    Pascal with object types and methods, designed at Apple by Larry Tesler's team in consultation with
+    Niklaus Wirth so that the Macintosh's MacApp framework could be written in it. Borland adopted the
+    same extensions and name for Turbo Pascal (Mac 1986, DOS 1989), and Delphi carried the language on;
+    Wikipedia lists C#, Java and Nim among the languages it influenced.
+  relations:
+    - { type: dialect_of, to: pascal, weight: strong, confidence: high, sources: [wiki-object-pascal] }
+    - { type: influenced_by, to: smalltalk, aspects: [objects, inheritance], weight: moderate, confidence: low, note: "Tesler came from Xerox PARC and Smalltalk; the article read does not state a Smalltalk influence. Check Tesler's own accounts." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Object_Pascal" }
+  sources: [wiki-object-pascal]
+  example:
+    title: "An object type with a method"
+    language: "Object Pascal (Turbo Pascal 5.5 style)"
+    note: "Illustrative: written for this dataset in the 'object' syntax that Apple's Object Pascal and Turbo Pascal 5.5 shared (Delphi later used 'class'). Not checked against Apple's MacApp-era manual, whose details (such as the override keyword) differ."
+    code: |
+      type
+        PHello = ^THello;
+        THello = object
+          procedure Put;
+        end;
+
+      procedure THello.Put;
+      begin
+        WriteLn('Hello, World!');
+      end;
+
+      var H: PHello;
+      begin
+        New(H);
+        H^.Put;
+        Dispose(H);
+      end.
+    sources: [wiki-object-pascal]
+
+- id: turbo-c
+  name: Turbo C
+  aliases: [Wizard C]
+  kind: language
+  category: systems
+  cluster: c-family/compilers
+  origin:
+    first_appeared: { year: 1987, date: "1987-05-13", precision: exact, note: "Version 1.0; bought from Bob Jervis's Wizard C compiler and rebranded." }
+    places: [{ institution: Borland, city: Scotts Valley CA, country: US }]
+  creators:
+    - { name: Bob Jervis, role: author of Wizard C }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing, weak-typing]
+    memory: [manual-memory, pointers]
+    features: [compiler, ide, preprocessor]
+  milestones:
+    - { version: "1.0", year: 1987, summary: "The first integrated development environment for C on the IBM PC; inline assembly with access to C names; all x86 memory models." }
+    - { version: "1.5", year: 1988, summary: "<conio.h> console routines." }
+    - { version: "2.0", year: 1988, summary: "The blue-screen IDE and <graphics.h> (BGI graphics)." }
+  summary: >
+    Borland's C for DOS: an integrated editor and compiler in the Turbo Pascal mould. Its dialect was C
+    plus DOS-specific libraries (conio.h for text screens, graphics.h for BGI graphics) and inline
+    assembler, and those headers became what 'C' meant to a generation of DOS programmers. Replaced by
+    Turbo C++ in 1990.
+  notes: >
+    The near/far/huge pointer qualifiers and the interrupt keyword of DOS C compilers are not described in
+    the source read; check the Turbo C Reference Guide (bitsavers) before adding them as tags.
+  relations:
+    - { type: dialect_of, to: c, weight: strong, confidence: high, sources: [wiki-turbo-c] }
+    - { type: influenced_by, to: turbo-pascal, aspects: [ide], weight: moderate, confidence: medium, note: "Same Turbo branding and integrated editor-compiler model ('like many Borland products of the time').", sources: [wiki-turbo-c] }
+    - { type: targets, to: intel-8086, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Borland_Turbo_C" }
+  sources: [wiki-turbo-c]
+  example:
+    title: "A DOS text screen with conio.h"
+    language: "Turbo C 2.0"
+    note: "Written for this dataset using conio.h, which Turbo C 1.5 introduced. clrscr, gotoxy, textcolor and cprintf drive the text screen directly; none of them are standard C."
+    code: |
+      #include <conio.h>
+
+      int main(void)
+      {
+          clrscr();
+          gotoxy(30, 12);
+          textcolor(YELLOW);
+          cprintf("Hello from Turbo C");
+          getch();
+          return 0;
+      }
+    sources: [wiki-turbo-c]
+
+- id: gnu-c
+  name: GNU C
+  aliases: [GCC C dialect, gnu89, gnu99, gnu11, gnu17, gnu23]
+  kind: language
+  category: systems
+  cluster: c-family/compilers
+  origin:
+    first_appeared: { year: 1987, date: "1987-03-22", precision: exact, note: "GCC 1.0, then the GNU C Compiler, released by Richard Stallman." }
+    places: [{ institution: Free Software Foundation, city: Cambridge MA, country: US }]
+  creators:
+    - { name: Richard Stallman, role: author of GCC }
+  status: active
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing, weak-typing]
+    memory: [manual-memory, pointers]
+    features: [nested-functions, expression-oriented, preprocessor, compiler]
+  milestones:
+    - { version: "GCC 15 default gnu23", year: 2025, summary: "The default C dialect is gnu23, a superset of C23." }
+  summary: >
+    The C accepted by GCC by default: ISO C plus GNU extensions such as statement expressions, typeof,
+    nested functions, labels as values (computed goto), zero-length arrays, __attribute__ and an inline
+    assembly syntax. The Linux kernel and much free software are written in it rather than in strict ISO
+    C, and some of its ideas later entered the standard.
+  notes: >
+    DJGPP (DJ Delorie, 1989) is a port of GCC to DOS with 32-bit protected-mode output; it adds no
+    language of its own, so it is a note here, not a node. Whether typeof itself is standard in C23 is
+    not confirmed by the GCC pages read (they mention C23's typeof_unqual).
+  relations:
+    - { type: superset_of, to: c, weight: strong, confidence: high, note: "'GNU C provides several language features not found in ISO standard C' (GCC manual).", sources: [gcc-manual-c-extensions] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GNU_Compiler_Collection", homepage: "https://gcc.gnu.org" }
+  sources: [gcc-manual-c-extensions, wiki-gcc, wiki-djgpp]
+  example:
+    title: "Three things ISO C cannot do"
+    language: "GNU C"
+    note: "The three fragments are from the GCC manual: a statement expression (a block whose last expression is its value), a nested function, and labels as values for a computed goto (common in interpreter dispatch loops)."
+    code: |
+      /* statement expression: the block's value is z */
+      ({ int y = foo (); int z;
+         if (y > 0) z = y;
+         else z = - y;
+         z; })
+
+      /* nested function */
+      foo (double a, double b)
+      {
+        double square (double z) { return z * z; }
+
+        return square (a) + square (b);
+      }
+
+      /* labels as values */
+      static void *array[] = { &&foo, &&bar, &&hack };
+      goto *array[i];
+    sources: [gcc-manual-c-extensions]

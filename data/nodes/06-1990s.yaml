@@ -596,3 +596,342 @@
 
       let () = Printf.printf "%d\n" (eval (Add (Num 2, Mul (Num 3, Num 4))))  (* 14 *)
     sources: [wiki-ocaml]
+
+- id: qbasic
+  name: QBasic
+  kind: language
+  category: educational
+  cluster: basic/microsoft
+  origin:
+    first_appeared: { year: 1991, precision: year, note: "Shipped with MS-DOS 5.0, replacing GW-BASIC. 1.1 (1993) came with MS-DOS 6 and Windows 95/98/Me; dropped from Windows 2000 on." }
+    places: [{ institution: Microsoft, country: US }]
+  status: historical
+  tags:
+    paradigm: [imperative, structured, procedural]
+    typing: [dynamic-typing, static-typing]
+    features: [interpreter, ide, records]
+  milestones:
+    - { version: "1.0", year: 1991 }
+    - { version: "1.1", year: 1993 }
+  summary: >
+    The free interpreter-only subset of QuickBASIC 4.5 that came with every copy of MS-DOS 5 and 6
+    and Windows 95: a full-screen IDE with a debugger, SUBs and FUNCTIONs, and line numbers kept only
+    for compatibility. With its sample games Nibbles and Gorillas it was the first programming
+    environment for many PC users.
+  relations:
+    - { type: subset_of, to: quickbasic, weight: strong, confidence: high, note: "QBasic 1.0 (1991) ← QuickBASIC Interpreter 1.0 (1989) ← QuickBASIC 4.5 (1988), without the compiler (Wikipedia).", sources: [wiki-qbasic] }
+    - { type: successor_of, to: gw-basic, weight: strong, confidence: high, note: "Replaced GW-BASIC in MS-DOS 5.0.", sources: [wiki-gw-basic] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/QBasic" }
+  sources: [wiki-qbasic, wiki-quickbasic, wiki-gw-basic]
+  example:
+    title: "Hello, World, structured"
+    language: "QuickBASIC / QBasic"
+    note: "The 'extended Hello World' from Wikipedia's QuickBASIC article; QBasic runs it unchanged. The QBasic article prints no code. No line numbers: QBasic kept them only for old programs."
+    code: |
+      CLS
+      PRINT "Hello, World"
+      END
+    sources: [wiki-quickbasic]
+
+- id: visual-basic
+  name: Visual Basic
+  aliases: [VB, VB6, Visual Basic (classic)]
+  kind: language
+  category: general
+  cluster: basic/microsoft
+  origin:
+    began: { year: 1990, precision: year, note: "Project 'Thunder'; Alan Cooper's Tripod form designer, contracted by Microsoft as 'Ruby', was joined to the 'EB' Embedded BASIC engine." }
+    first_appeared: { year: 1991, date: "1991-05", precision: exact, note: "Visual Basic 1.0 for Windows, launched at Comdex/Windows World, Atlanta." }
+    places: [{ institution: Microsoft, country: US }]
+  creators:
+    - { name: Alan Cooper, role: "designer of Tripod/Ruby, the visual form designer" }
+  status: legacy
+  tags:
+    paradigm: [event-driven, imperative, structured, object-oriented]
+    typing: [static-typing, dynamic-typing]
+    memory: [reference-counting]
+    features: [ide, compiler, classes, properties]
+  milestones:
+    - { version: "1.0", year: 1991, introduces: [event-driven], summary: "Drag-and-drop forms, event procedures, custom controls (later VBX)." }
+    - { version: "2.0", year: 1992, summary: "Forms become instantiable objects." }
+    - { version: "3.0", year: 1993, summary: "Jet database engine." }
+    - { version: "4.0", year: 1995, introduces: [classes], summary: "32-bit, class modules, OCX (later ActiveX) controls; the language split out as VBA for Office." }
+    - { version: "5.0", year: 1997, summary: "Native-code compiler, user controls." }
+    - { version: "6.0", year: 1998, summary: "The last classic version. IDE support ended in 2008; the runtime lives on in Windows." }
+  summary: >
+    The language that made Windows programming accessible: draw a form, double-click a button, write
+    the event procedure. Alan Cooper's Tripod form designer supplied the 'visual' half, Microsoft's
+    BASIC the rest. With COM and ActiveX components it became a mainstay of 1990s business software,
+    and as VBA it still runs inside Microsoft Office. VB.NET replaced it but is not
+    compatible with it.
+  relations:
+    - { type: successor_of, to: quickbasic, weight: strong, confidence: high, note: "'Microsoft's Visual Basic was the successor of QuickBASIC' (Wikipedia).", sources: [wiki-quickbasic, wiki-visual-basic-classic] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Visual_Basic_(classic)" }
+  sources: [wiki-visual-basic-classic]
+  example:
+    title: "An event-driven counter"
+    language: "Visual Basic 6"
+    note: "From Wikipedia's Visual Basic (classic) article. There is no main program: the form and a Timer control are drawn in the designer, and the code is just the handlers the runtime calls (Form_Load, Timer1_Timer)."
+    code: |
+      Option Explicit
+      Dim Count As Integer
+      Private Sub Form_Load()
+      Count = 0
+      Timer1.Interval = 1000 ' units of milliseconds
+      End Sub
+      Private Sub Timer1_Timer()
+      Count = Count + 1
+      Label1.Caption = Count
+      End Sub
+    sources: [wiki-visual-basic-classic]
+
+- id: jython
+  name: Jython
+  aliases: [JPython]
+  kind: language
+  category: general
+  cluster: managed/dynamic
+  origin:
+    first_appeared: { year: 1997, precision: year, note: "Created in late 1997 as JPython; renamed Jython in 1999. Wikipedia's infobox gives 17 January 2001 as first appearance under the new name." }
+  creators:
+    - { name: Jim Hugunin, role: creator }
+  status: maintained
+  tags:
+    paradigm: [multi-paradigm, object-oriented, imperative]
+    typing: [dynamic-typing, strong-typing]
+    memory: [garbage-collection]
+    concurrency: [threads]
+    features: [host-interop, bytecode-vm]
+  milestones:
+    - { version: "2.5", year: 2009 }
+    - { version: "2.7.4", year: 2024, summary: "Still Python 2.7; Python 3 is only on a roadmap." }
+  summary: >
+    Python compiled to Java bytecode, with Java classes importable like Python modules. Because Python
+    threads map onto Java threads there is no global interpreter lock. Its creator, Jim Hugunin, later
+    wrote IronPython for .NET, so Jython is the start of the 'dynamic languages on managed runtimes' line.
+  relations:
+    - { type: dialect_of, to: python, weight: strong, confidence: high, note: "An implementation of Python 2 on the JVM.", sources: [wiki-jython] }
+    - { type: implemented_in, to: java, weight: strong, confidence: high, sources: [wiki-jython] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Jython", homepage: "https://www.jython.org" }
+  sources: [wiki-jython, wiki-jim-hugunin]
+  example:
+    title: "Java classes as Python modules"
+    language: "Jython 2.7"
+    note: "Written for this dataset (Python 2 syntax, as Jython is still 2.7); the import style follows Wikipedia's Jython example. java.util and java.lang are imported like Python packages and called directly."
+    code: |
+      from java.util import Date
+      from java.lang import System
+
+      print "Today is", Date()
+      System.out.println("printed by java.lang.System")
+    sources: [wiki-jython]
+
+- id: powerbasic
+  name: PowerBASIC
+  aliases: [PB/DOS, PBWin, PB/CC]
+  kind: language
+  category: general
+  cluster: basic/pc-compilers
+  origin:
+    first_appeared: { year: 1990, date: "1990-05", precision: exact, note: "PowerBASIC 2.0, published by Spectra Publishing. Bob Zale had bought Turbo Basic back from Borland in 1989." }
+    places: [{ institution: PowerBASIC Inc., country: US }]
+  creators:
+    - { name: Bob Zale, role: author }
+  status: legacy
+  tags:
+    paradigm: [imperative, structured, procedural]
+    typing: [static-typing, dynamic-typing]
+    features: [compiler, ide, classes]
+  milestones:
+    - { version: "2.0", year: 1990 }
+    - { version: "3.0", year: 1993 }
+    - { version: "3.5 (PB/DOS)", year: 1997, summary: "Last DOS version; a superset of most of QuickBASIC 4.5, PDS 7.1 and GW-BASIC, though not a drop-in replacement." }
+    - { version: "PBWin 10", year: 2011, summary: "Windows compiler with COM classes, inline assembler and GRAPHIC statements; the last release." }
+  summary: >
+    Turbo Basic continued by its author after Borland gave up on it: a native-code BASIC compiler for
+    DOS and then Windows (PBWin) and the console (PB/CC), known for small, fast executables and a much
+    lower price than Microsoft's professional BASICs. Development stopped with Bob Zale's death in
+    2012; Drake Software bought the source code in 2017, and no new version has appeared since 2011.
+  relations:
+    - { type: successor_of, to: turbo-basic, weight: strong, confidence: high, note: "Zale bought back the Turbo Basic source in 1989 and renamed it PowerBASIC.", sources: [wiki-powerbasic] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PowerBASIC" }
+  sources: [wiki-powerbasic]
+  example:
+    title: "Hello World, console and Windows"
+    language: "PowerBASIC (PB/CC and PBWin)"
+    note: "Both from Wikipedia's PowerBASIC article. Programs start at FUNCTION PBMAIN rather than at the first line; the console compiler prints, the Windows compiler shows a message box."
+    code: |
+      ' PB/CC
+      Function PBMain
+      Print "Hello, World!"
+      Waitkey$
+      End Function
+
+      ' PBWin
+      Function PBMain
+      MsgBox "Hello, World!"
+      End Function
+    sources: [wiki-powerbasic]
+
+- id: borland-cpp
+  name: Borland C++
+  aliases: [Turbo C++]
+  kind: language
+  category: systems
+  cluster: c-family/compilers
+  origin:
+    first_appeared: { year: 1990, date: "1990-05", precision: exact, note: "Turbo C++ 1.0 replaced Turbo C in May 1990; Borland C++ 2.0 followed in 1991." }
+    places: [{ institution: Borland, city: Scotts Valley CA, country: US }]
+  status: extinct
+  tags:
+    paradigm: [object-oriented, imperative, generic-programming, multi-paradigm]
+    typing: [static-typing]
+    memory: [manual-memory, pointers]
+    features: [compiler, ide, classes, templates]
+  milestones:
+    - { version: "Turbo C++ 1.0", year: 1990 }
+    - { version: "Borland C++ 3.0", year: 1991, summary: "Builds Windows applications." }
+    - { version: "3.1", year: 1992, summary: "Windows-hosted IDE; OWL 1.0 and Turbo Vision 1.0 class libraries." }
+    - { version: "4.52", year: 1995, summary: "Windows 95, OWL 2.5." }
+    - { version: "5.02", year: 1997, summary: "Last independent release of the IDE." }
+    - { version: "5.5", year: 2000, summary: "Free command-line compiler with the ANSI/ISO Standard Template Library." }
+  summary: >
+    Borland's C++ for DOS and Windows, the successor to Turbo C, popular with students and DOS game and
+    application programmers for its fast compiler and its OWL and Turbo Vision frameworks. As
+    pre-standard C++ it shipped its own libraries (iostream.h, conio.h, graphics.h). C++Builder replaced
+    it in 1997.
+  relations:
+    - { type: successor_of, to: turbo-c, weight: strong, confidence: high, note: "'In May 1990, Borland replaced Turbo C with Turbo C++.'", sources: [wiki-turbo-c, wiki-borland-cpp] }
+    - { type: dialect_of, to: cpp, weight: strong, confidence: high, sources: [wiki-borland-cpp] }
+    - { type: targets, to: intel-8086, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Borland_C%2B%2B" }
+  sources: [wiki-borland-cpp, wiki-turbo-c]
+  example:
+    title: "Pre-standard C++ on DOS"
+    language: "Turbo C++ 1.0 / Borland C++ 3.x"
+    note: "Illustrative: written for this dataset in the pre-standard style of the time (iostream.h, no std namespace), mixed with Borland's conio.h. Not checked against a Borland manual."
+    code: |
+      #include <iostream.h>
+      #include <conio.h>
+
+      class Greeter {
+      public:
+          void hello(const char* name) { cout << "Hello, " << name << endl; }
+      };
+
+      int main()
+      {
+          clrscr();
+          Greeter g;
+          g.hello("Borland");
+          getch();
+          return 0;
+      }
+    sources: [wiki-borland-cpp]
+
+- id: delphi
+  name: Delphi
+  aliases: [Delphi language, Object Pascal (Delphi)]
+  kind: language
+  category: general
+  cluster: algol/pascal-dialects
+  origin:
+    began: { year: 1993, precision: year }
+    first_appeared: { year: 1995, date: "1995-02-14", precision: exact, note: "Delphi 1.0, for 16-bit Windows." }
+    places: [{ institution: Borland, city: Scotts Valley CA, country: US }]
+  creators:
+    - { name: Anders Hejlsberg, role: chief architect (first three versions) }
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative, structured, event-driven]
+    typing: [static-typing, strong-typing]
+    memory: [manual-memory, reference-counting]
+    features: [classes, inheritance, properties, metaclasses, generics, closures, ide, compiler]
+  milestones:
+    - { version: "1.0", year: 1995, introduces: [classes, properties, metaclasses], summary: "class instead of object, Create/Destroy, properties, method pointers; the VCL and a visual form designer." }
+    - { version: "8", year: 2003, summary: ".NET support (Delphi 8 to 2007), later replaced by RemObjects' Oxygene." }
+    - { version: "XE2", year: 2011, summary: "FireMonkey cross-platform framework." }
+  summary: >
+    Borland's successor to Turbo Pascal: Object Pascal with classes, properties and method pointers,
+    wrapped in a rapid-application-development IDE whose Visual Component Library let Windows programs be
+    drawn and then filled in with event handlers, in direct competition with Visual Basic but compiling to
+    native code. Later Borland, CodeGear and Embarcadero versions added generics, anonymous methods and
+    cross-platform targets.
+  relations:
+    - { type: successor_of, to: turbo-pascal, weight: strong, confidence: high, note: "'When Borland refocused from DOS to Windows in 1994, they created a successor to Turbo Pascal, named Delphi.'", sources: [wiki-object-pascal] }
+    - { type: dialect_of, to: object-pascal, weight: strong, confidence: high, sources: [wiki-object-pascal] }
+    - { type: influenced_by, to: visual-basic, aspects: [event-driven], weight: moderate, confidence: low, note: "Same RAD model four years later; no source read states the influence." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Delphi_(software)" }
+  sources: [wiki-delphi, wiki-object-pascal, wiki-turbo-pascal]
+  example:
+    title: "A class, created and freed"
+    language: "Delphi"
+    note: "From Wikipedia's Object Pascal and Delphi articles. Class variables are implicit pointers: Create allocates, Free releases; there is no garbage collector for classes."
+    code: |
+      program ObjectPascalExample;
+      type
+        THelloWorld = class
+          procedure Put;
+        end;
+      procedure THelloWorld.Put;
+      begin
+        Writeln('Hello, World!');
+      end;
+      var
+        HelloWorld: THelloWorld; { this is an implicit pointer }
+      begin
+        HelloWorld := THelloWorld.Create;
+        HelloWorld.Put;
+        HelloWorld.Free;
+      end.
+    sources: [wiki-object-pascal]
+
+- id: cpp-builder
+  name: C++Builder
+  aliases: [Borland C++Builder, Embarcadero C++Builder]
+  kind: language
+  category: general
+  cluster: c-family/compilers
+  origin:
+    first_appeared: { year: 1997, date: "1997-02-26", precision: exact, note: "Retail release; a preview appeared on 7 January 1997." }
+    places: [{ institution: Borland, city: Scotts Valley CA, country: US }]
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative, event-driven, generic-programming]
+    typing: [static-typing]
+    memory: [manual-memory]
+    features: [classes, templates, properties, ide]
+  summary: >
+    Delphi's sibling for C++: the same VCL component library and visual designer, driven from C++. To
+    make Delphi's component model fit, Borland extended C++ with __property (fields backed by
+    getter/setter methods), __closure (method pointers bound to an object, used for every VCL event) and
+    __published (members shown in the Object Inspector). It replaced Borland C++ and OWL.
+  relations:
+    - { type: successor_of, to: borland-cpp, weight: strong, confidence: high, sources: [wiki-cpp-builder] }
+    - { type: superset_of, to: cpp, weight: strong, confidence: high, note: "Keyword extensions __property, __closure, __published (Embarcadero docwiki).", sources: [embarcadero-closure, embarcadero-property] }
+    - { type: influenced_by, to: delphi, aspects: [properties, event-driven], weight: strong, confidence: high, note: "Uses Delphi's VCL; C++ projects can include Delphi code.", sources: [wiki-cpp-builder] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/C%2B%2BBuilder" }
+  sources: [wiki-cpp-builder, embarcadero-closure, embarcadero-property]
+  example:
+    title: "Delphi's component model in C++"
+    language: "C++Builder"
+    note: "Both lines are from Embarcadero's documentation: the VCL's TNotifyEvent declared as a __closure (a method pointer that carries its object), and a __property backed by a field and a setter."
+    code: |
+      typedef void __fastcall (__closure *TNotifyEvent)(System::TObject* Sender);
+
+      __property int X = {read = mX, write = setX};
+    sources: [embarcadero-closure, embarcadero-property]

@@ -185,6 +185,8 @@
   nodes:
   - csharp
   - typescript
+  - turbo-pascal
+  - delphi
 - id: person-andrei-alexandrescu
   kind: person
   person: Andrei Alexandrescu
@@ -982,3 +984,52 @@
   caption: Poly-Computer 880 in its case, with the manual
   nodes:
   - poly880
+- id: person-bill-gates
+  kind: person
+  person: Bill Gates
+  wiki: Bill Gates
+  nodes:
+  - microsoft-basic
+- id: person-paul-allen
+  kind: person
+  person: Paul Allen
+  wiki: Paul Allen
+  nodes:
+  - microsoft-basic
+- id: person-alan-cooper
+  kind: person
+  person: Alan Cooper
+  wiki: Alan Cooper
+  nodes:
+  - visual-basic
+- id: person-jim-hugunin
+  kind: person
+  person: Jim Hugunin
+  wiki: Jim Hugunin
+  nodes:
+  - jython
+  - ironpython
+- id: person-charles-oliver-nutter
+  kind: person
+  person: Charles Oliver Nutter
+  wiki: Charles Oliver Nutter
+  nodes:
+  - jruby
+- id: person-carol-shaw
+  kind: person
+  person: Carol Shaw
+  wiki: Carol Shaw
+  nodes:
+  - atari-basic
+- id: person-larry-tesler
+  kind: person
+  person: Larry Tesler
+  wiki: Larry Tesler
+  nodes:
+  - object-pascal
+- id: person-richard-stallman
+  kind: person
+  person: Richard Stallman
+  wiki: Richard Stallman
+  nodes:
+  - gnu-c

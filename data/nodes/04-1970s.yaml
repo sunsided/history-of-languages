@@ -853,3 +853,157 @@
          Greeter.Greet ("world");
       end Main;
     sources: [whitaker-1993-ada]
+
+- id: microsoft-basic
+  name: Microsoft BASIC
+  aliases: [Altair BASIC, BASIC-80, MBASIC, 6502 BASIC]
+  kind: language
+  category: general
+  cluster: basic/microsoft
+  origin:
+    began: { year: 1975, precision: year, note: "Written on Harvard's PDP-10 with Paul Allen's 8080 emulator; demonstrated to MITS in Albuquerque in March 1975." }
+    first_appeared: { year: 1975, date: "1975-07-01", precision: exact, note: "Altair BASIC 2.0 (4K and 8K editions), distributed by MITS: Micro-Soft's first product." }
+    places: [{ institution: Micro-Soft, city: Albuquerque NM, country: US }]
+  creators:
+    - { name: Bill Gates, role: designer and programmer }
+    - { name: Paul Allen, role: "programmer (8080 emulator, bootstrap loader)" }
+    - { name: Monte Davidoff, role: floating-point library }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    typing: [dynamic-typing]
+    features: [line-numbers, interpreter, repl]
+  milestones:
+    - { version: 4K BASIC, year: 1975, summary: "No string variables; single-precision floating point only; one-letter (or letter+digit) variable names." }
+    - { version: 8K BASIC, year: 1975, summary: "String variables, RND, Boolean operators, PEEK and POKE. The basis for most home-computer BASICs." }
+    - { version: Extended BASIC, year: 1975, summary: "Double precision, IF … THEN … ELSE, user-defined functions, PRINT USING." }
+    - { version: 6502 BASIC, year: 1977, summary: "Ported to the 6502 in summer 1976; first shipped on the Ohio Scientific Model 500 and KIM-1. Basis of Commodore and Applesoft BASIC." }
+    - { version: BASIC-80 5.x, year: 1981, summary: "WHILE … WEND, 40-character variable names. Basis of IBM BASICA and GW-BASIC." }
+  summary: >
+    The interpreter that made BASIC the language of the home-computer era. Written by Bill Gates and Paul
+    Allen for the Altair 8800 and patterned on DEC's BASIC-PLUS, it was ported to the 6800, 6502, 6809,
+    Z80 and 8086 and licensed to nearly every microcomputer maker. Commodore BASIC, Applesoft, TRS-80
+    Level II, MSX BASIC, BASICA and GW-BASIC all share its core command set.
+  notes: >
+    Microsoft released the original Altair BASIC source in April 2025 and open-sourced 6502 BASIC in
+    September 2025: a primary source for a sourced example still to be taken.
+  relations:
+    - { type: dialect_of, to: basic, weight: strong, confidence: high, note: "A Dartmouth BASIC descendant by way of DEC BASIC-PLUS, which Gates had used in school.", sources: [wiki-microsoft-basic] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Microsoft_BASIC" }
+  sources: [wiki-altair-basic, wiki-microsoft-basic]
+  example:
+    title: "What 8K BASIC added: strings, RND, PEEK and POKE"
+    language: "Microsoft 8K BASIC"
+    note: "Illustrative: written for this dataset using only features the Altair BASIC article lists for 8K BASIC (string variables, RND, PEEK/POKE). Replace with a listing from the MITS Altair BASIC manual or Microsoft's released source."
+    code: |
+      10 A$ = "HELLO, ALTAIR"
+      20 PRINT A$; LEN(A$)
+      30 X = INT(RND(1) * 6) + 1
+      40 PRINT "DIE ROLL:"; X
+      50 IF X <> 6 THEN 30
+      60 PRINT PEEK(0)
+    sources: [wiki-altair-basic]
+
+- id: commodore-basic
+  name: Commodore BASIC
+  aliases: [CBM BASIC, PET BASIC, BASIC V2, C64 BASIC]
+  kind: language
+  category: general
+  cluster: basic/commodore
+  origin:
+    first_appeared: { year: 1977, precision: year, note: "V1.0 on the PET 2001. Licensed from Microsoft in 1977 for a one-time fee: Jack Tramiel refused $3 per unit and paid a flat sum (at most $25,000)." }
+    places: [{ institution: Commodore, country: US }]
+  status: historical
+  tags:
+    paradigm: [imperative]
+    typing: [dynamic-typing]
+    features: [line-numbers, interpreter, repl]
+  milestones:
+    - { version: "1.0", year: 1977, summary: "PET 2001." }
+    - { version: "2.0 (VIC-20, C64)", year: 1982, summary: "The C64's BASIC: no commands for its graphics or sound chips, so everything was PEEK and POKE." }
+    - { version: "7.0", year: 1985, summary: "C128: sprite commands, BEGIN/BEND blocks, FAST/SLOW." }
+  summary: >
+    Microsoft's 6502 BASIC as adapted by Commodore for the PET, VIC-20, C64, C16, Plus/4 and C128.
+    Keywords were stored as one-byte tokens and could be typed as abbreviations (a letter and a shifted
+    letter). Version 2 on the best-selling Commodore 64 had no commands for the machine's sprites, colours
+    or SID sound chip, so a generation learned to program hardware directly with POKE, and extensions
+    such as Simons' BASIC filled the gap.
+  notes: >
+    Easter egg: WAIT 6502,1 on a PET with BASIC 2 prints MICROSOFT!. Microsoft's copyright notice appeared
+    on screen only from V7.0 (C128). Not yet dated from a source, so not milestones: 4.0 (PET/CBM
+    4000/8000, 15 disk commands such as DLOAD and SCRATCH) and 3.5 (C16 and Plus/4: graphics and sound
+    commands, DO/LOOP/WHILE/UNTIL/EXIT, MONITOR).
+  relations:
+    - { type: dialect_of, to: microsoft-basic, weight: strong, confidence: high, note: "Licensed 6502 Microsoft BASIC, developed further by Commodore.", sources: [wiki-commodore-basic] }
+    - { type: targets, to: mos-6502, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Commodore_BASIC" }
+  sources: [wiki-commodore-basic, wiki-commodore-64]
+  example:
+    title: "BASIC V2 as people really typed it"
+    language: "Commodore BASIC V2 (C64)"
+    year: 1982
+    note: "From Wikipedia's Commodore BASIC article (its V2 example, shortened). Spaces are optional, so they were left out to save memory; POKE 646 sets the cursor colour; THEN can be dropped before GOTO; the closing quote at the end of a line may be omitted."
+    code: |
+      10 rem cbm basic v2 example
+      30 dim a$(20)
+      40 fort=0to15:poke646,t:printchr$(18)" ";:next:rem 18=revers on
+      50 geta$:ifa$=""goto40:rem no ":" allowed before the goto
+      60 printchr$(23):print"bye...
+    sources: [wiki-commodore-basic]
+
+- id: atari-basic
+  name: Atari BASIC
+  kind: language
+  category: general
+  cluster: basic/atari
+  origin:
+    began: { year: 1978, date: "1978-09", precision: exact, note: "Shepardson Microsystems won the contract in September 1978, after Atari struggled to fit its licensed 6502 Microsoft BASIC into 8 KB." }
+    first_appeared: { year: 1979, precision: year, note: "8 KB ROM cartridge for the Atari 400 and 800; shown at the January 1979 CES." }
+    places: [{ institution: Shepardson Microsystems, country: US }]
+  creators:
+    - { name: Paul Laughton, role: designer }
+    - { name: Kathleen O'Brien, role: designer }
+    - { name: Carol Shaw, role: reference manual }
+    - { name: Keith Brewster, role: reference manual }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    typing: [dynamic-typing]
+    features: [line-numbers, interpreter, repl]
+  milestones:
+    - { version: Revision A, year: 1979, summary: "The cartridge; locks up after deleting a line exactly 256 bytes long." }
+    - { version: Revision B, year: 1983, summary: "Built into the 600XL and 800XL; grows a program by 16 bytes on every SAVE and LOAD." }
+    - { version: Revision C, year: 1983, summary: "Fixes B's memory leaks; built into later 800XLs and all XE models." }
+  summary: >
+    The BASIC of the Atari 8-bit computers, and one of the few home-computer BASICs not derived from
+    Microsoft's. Shepardson took Data General Business Basic as the model and HP BASIC's strings
+    (character arrays that must be DIMensioned; no string arrays). It checked syntax as each line was
+    typed and stored programs as a pre-parsed token tree, but its slow floating point and line-number
+    searches made it one of the slowest BASICs of its day, which invited faster replacements such as
+    Turbo-BASIC XL.
+  notes: >
+    Its annotated source code was published as The Atari BASIC Source Book (1983). Turbo-BASIC XL's
+    Wikipedia article credits Optimized Systems Software instead of Shepardson Microsystems; the
+    relation between the two firms is not yet checked.
+  relations:
+    - { type: influenced_by, to: basic, weight: strong, confidence: high }
+    - { type: targets, to: mos-6502, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Atari_BASIC" }
+  sources: [wiki-atari-basic]
+  example:
+    title: "Strings are dimensioned character arrays"
+    language: "Atari BASIC"
+    year: 1979
+    note: "From Wikipedia's Atari BASIC article. There is no string concatenation operator: line 30 writes B$ into the slice of A$ just after its current end, HP BASIC style."
+    code: |
+      10 DIM A$(12),B$(6)
+      20 A$="Hello ":B$="there!"
+      30 A$(LEN(A$)+1)=B$
+      40 PRINT A$
+    sources: [wiki-atari-basic]

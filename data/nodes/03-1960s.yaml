@@ -181,9 +181,6 @@
     typing: [static-typing]
     features: [line-numbers, interactive-time-sharing]
     domain: [education]
-  milestones:
-    - { version: Altair BASIC (Microsoft), year: 1975, summary: "Microsoft's first product; interpreted BASICs became the default language of 8-bit home computers." }
-    - { version: Visual Basic, year: 1991, summary: "Event-driven, GUI-designer language; see its own node later." }
   summary: >
     Designed so that non-science students could program on the Dartmouth Time-Sharing System.
     The original was compiled; the interpreted, line-numbered microcomputer BASICs of the 1970s
