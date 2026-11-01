@@ -3269,3 +3269,21 @@
   title: "Wikipedia: TLA+"
   url: https://en.wikipedia.org/wiki/TLA%2B
   checked: '2026-11-01'
+- id: rfc-1211-mir
+  type: report
+  primary: true
+  title: "Rust RFC 1211: MIR (start date 2015-07-14)"
+  url: https://rust-lang.github.io/rfcs/1211-mir.html
+  checked: '2026-11-01'
+- id: rustc-dev-guide-mir
+  type: manual
+  primary: true
+  title: "Rust Compiler Development Guide: The MIR (Mid-level IR)"
+  url: https://rustc-dev-guide.rust-lang.org/mir/index.html
+  checked: '2026-11-01'
+- id: rustc-dev-guide-overview
+  type: manual
+  primary: true
+  title: "Rust Compiler Development Guide: Overview of the compiler"
+  url: https://rustc-dev-guide.rust-lang.org/overview.html
+  checked: '2026-11-01'

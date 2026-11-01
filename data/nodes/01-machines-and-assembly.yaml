@@ -1677,3 +1677,64 @@
         t=t+1
       end
     sources: [tic-80-wiki-hello-world]
+
+- id: rust-mir
+  name: MIR (Rust)
+  aliases: [MIR, Mid-level Intermediate Representation]
+  kind: assembly
+  category: systems
+  cluster: assembly/virtual
+  origin:
+    first_appeared: { year: 2015, date: "2015-07-14", precision: exact, note: "Start date of RFC 1211. When rustc began using MIR by default was not confirmed (the Rust blog posts could not be fetched)." }
+  creators:
+    - { name: Rust project, role: "RFC 1211 and the rustc compiler team" }
+  status: active
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing]
+    features: [intermediate-code]
+  summary: >
+    rustc's Mid-level Intermediate Representation, "a radically simplified form of Rust that is used for certain
+    flow-sensitive safety checks - notably the borrow checker! - and also for optimization and code generation".
+    It sits between the desugared syntax trees (HIR, THIR) and LLVM IR: a control-flow graph of basic blocks made
+    of statements and a terminator, over numbered locals (_0 holds the return value). RFC 1211 introduced it
+    because the compiler had used "a single AST from the initial parse all the way to the final generation of
+    bitcode".
+  relations:
+    - { type: influenced_by, to: rust, weight: strong, confidence: high, sources: [rustc-dev-guide-mir], note: "Built from rustc's HIR: \"a radically simplified form of Rust\"." }
+    - { type: targets, to: llvm-ir, weight: moderate, confidence: high, sources: [rustc-dev-guide-overview], note: "\"Since rustc uses LLVM for code generation, the first step is to convert the MIR to LLVM-IR.\"" }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://rustc-dev-guide.rust-lang.org/mir/index.html" }
+  sources: [rfc-1211-mir, rustc-dev-guide-mir, rustc-dev-guide-overview]
+  example:
+    title: max as a control-flow graph
+    language: Rust MIR (rustc --emit=mir)
+    note: "Real output of rustc 1.97 (--crate-type=lib --emit=mir) for pub fn max(a: i32, b: i32) -> i32 { if a > b { a } else { b } }; the three header comment lines rustc prints are omitted. _1 and _2 are the arguments, _0 the return place; bb0 ends in a switchInt terminator that branches to bb1 or bb2, which join in bb3. rustc warns the format is for humans and may change."
+    code: |
+      fn max(_1: i32, _2: i32) -> i32 {
+          debug a => _1;
+          debug b => _2;
+          let mut _0: i32;
+          let mut _3: bool;
+
+          bb0: {
+              _3 = Gt(copy _1, copy _2);
+              switchInt(move _3) -> [0: bb2, otherwise: bb1];
+          }
+
+          bb1: {
+              _0 = copy _1;
+              goto -> bb3;
+          }
+
+          bb2: {
+              _0 = copy _2;
+              goto -> bb3;
+          }
+
+          bb3: {
+              return;
+          }
+      }
+    sources: [rustc-dev-guide-mir]
