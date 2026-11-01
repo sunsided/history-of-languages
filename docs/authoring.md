@@ -56,8 +56,8 @@ or about which file a node is in, but people reading the files do.
 ## Node
 
 The viewer needs `id`, `name`, `kind`, `cluster`, `origin.first_appeared.year` (an integer), `summary` and
-`research_status`. A node missing `first_appeared.year` is dropped from the timeline. `build.py`
-additionally requires an `example` on every node.
+`research_status`. A node missing `first_appeared.year` is dropped from the timeline. An `example` is
+optional: add one when a sourced sample exists, but a node without one is better than a backlog entry.
 
 A complete node, annotated (based on `zig`, with fields it does not have yet added for illustration):
 
@@ -128,7 +128,7 @@ A complete node, annotated (based on `zig`, with fields it does not have yet add
   those sources marked `checked`. Do not raise to `reviewed` without re-reading.
 - **links.wikipedia**: full URL. The viewer shows it as a link.
 
-### Examples (every node has one)
+### Examples (wanted, not required)
 
 - Prefer real, sourced code: the language's own report or manual, the designer's paper, HOPL papers, a
   period listing, or Wikipedia's sample when it cites one. Name the source in `example.sources`.

@@ -6,7 +6,7 @@ Usage:  python3 tools/build.py            # validate + build
 
 Checks: JSON Schema per record, unique ids, every referenced node/concept/cluster/source/claim exists,
 no relation points forward in time by more than a tolerance (likely reversed edge), cluster parents exist,
-every node has an example, one person per creator entry, photos match creator names exactly.
+one person per creator entry, photos match creator names exactly.
 Derives inverse edges (influenced, superseded_by, has_dialect, ...) and each node's era.
 """
 import json, re, sys, pathlib, collections
@@ -107,8 +107,6 @@ def main():
                 need("source", S, s, w)
         for s in (n.get("example") or {}).get("sources", []):
             need("source", S, s, f"{w} example")
-        if not n.get("example"):
-            errors.append(f"{w}: no example (every node needs one; pseudocode only when nothing real exists)")
         for c in n.get("creators", []):
             # one person per entry, named as in their Wikipedia article: the viewer matches photos by exact name
             if re.search(r", | and |\(|\)", c["name"]):

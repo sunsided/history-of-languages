@@ -40,8 +40,10 @@ Needs `pyyaml` and `jsonschema`.
 3. **Status says how much was checked.** `stub` / `draft` / `reviewed` on nodes and clusters; `checked:
    <date>` on a source only after actually reading it against what cites it. Never raise to `reviewed`
    from memory.
-4. **Examples are real where possible.** Every node has one. Pseudocode only where nothing executable
-   exists, and then `note` starts with "Illustrative" or "Reconstruction" and says what is unverified.
+4. **Examples are real where possible.** Add one when a sourced sample exists; a node without an example
+   is fine, so never leave a language in the backlog just for lack of one. Pseudocode only where nothing
+   executable exists, and then `note` starts with "Illustrative" or "Reconstruction" and says what is
+   unverified.
 5. **Tags, not labels.** Paradigms are concept tags; `milestones[].introduces` records when a language
    gained a concept. Convergence (Java gaining lambdas, C# gaining async) must stay visible.
 6. **Edges point back in time,** stored once on the newer node. Inverses are derived; never store them.
@@ -60,7 +62,7 @@ The full contract, with templates, is in **`docs/authoring.md`**. Read it before
 The rules people most often get wrong:
 
 - Required on every node: `id`, `name`, `kind`, `cluster`, `origin.first_appeared.year` (integer),
-  `summary`, `research_status`, `example`. `kind` and `category` are closed lists.
+  `summary`, `research_status`. `example` is optional but wanted. `kind` and `category` are closed lists.
 - One person per `creators` entry, spelled as their English Wikipedia article title, identically in every
   node: the viewer matches portraits by exact name.
 - Every tag, `aspects` and `introduces` value is a concept id in `data/concepts.yaml`; every cluster path
