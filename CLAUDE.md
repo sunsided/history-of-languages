@@ -48,6 +48,12 @@ Needs `pyyaml` and `jsonschema`.
 7. **Claims get verdicts with quotes.** Popular stories (such as "C++ got OOP by accident") go into
    `data/claims.yaml` with located, verbatim evidence.
 
+## Scope
+
+Every language variant gets mapped: named dialects, including those defined by one compiler or product
+(Turbo Pascal, Borland C++, QuickBASIC, GNU C, C++/CLI), are nodes. Versions are milestones. A compiler or
+port that accepts a language unchanged is a note on that language, not a node.
+
 ## Format: the short version
 
 The full contract, with templates, is in **`docs/authoring.md`**. Read it before adding or changing records.
