@@ -1089,3 +1089,31 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Planner_(programming_language)" }
   sources: [wiki-planner]
+
+- id: g-code
+  name: G-code
+  aliases: [RS-274, ISO 6983, DIN 66025]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1963, precision: year, note: "RS-274, published by the Electronic Industries Association in 1963; numerical-control programming began at the MIT Servomechanisms Laboratory in the 1950s (Wikipedia)." }
+    places: [{ institution: MIT Servomechanisms Laboratory, country: US }]
+  status: active
+  tags:
+    paradigm: [procedural, imperative]
+    domain: [industrial-automation]
+  milestones:
+    - { version: RS-274-C, year: 1974, summary: "Merged RS-273 and RS-274-B." }
+    - { version: RS-274-D, year: 1979, summary: "Final revision of RS-274." }
+    - { version: ISO 6983, year: 1982, introduces: [standardization], summary: "International standard; Germany uses DIN 66025." }
+  summary: >
+    The programming language of numerically controlled machine tools. "The first implementation of a numerical control programming language
+    was developed at the MIT Servomechanisms Laboratory in the 1950s"; RS-274, "the first standardized version of G-code
+    used in the United States", followed in 1963.
+  notes: >
+    No example in the fetched article text. BCL (Binary Cutter Language), also from MIT, is a separate standardized form.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/G-code" }
+  sources: [wiki-g-code]

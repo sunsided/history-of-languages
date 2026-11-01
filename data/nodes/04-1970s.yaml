@@ -2257,3 +2257,44 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Programming_Computable_Functions" }
   sources: [wiki-pcf]
+
+- id: pearl
+  name: PEARL
+  aliases: [Process and experiment automation realtime language, PEARL-90]
+  kind: language
+  category: systems
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1977, precision: circa, note: "Wikipedia: \"Since 1977, the language has undergone several standardization iterations by the Deutsches Institut für Normung\"; the language itself is older, date unconfirmed." }
+    places: [{ institution: DIN, country: DE }]
+  status: legacy
+  tags:
+    paradigm: [procedural, imperative, concurrent]
+    domain: [industrial-automation]
+  milestones:
+    - { version: PEARL-90, year: 1998, introduces: [standardization], summary: "Standardized as DIN 66253-2." }
+  summary: >
+    "A computer programming language designed for multitasking and real-time programming", standardized in Germany by
+    DIN from 1977; the current version, PEARL-90, became DIN 66253-2 in 1998. Programs separate a SYSTEM part, which
+    names the hardware devices, from a PROBLEM part with the tasks.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PEARL_(programming_language)" }
+  sources: [wiki-pearl]
+  example:
+    title: Hello World
+    language: PEARL
+    note: "From Wikipedia's PEARL article; the fetched copy had no indentation, and none is added here."
+    sources: [wiki-pearl]
+    code: |
+      MODULE (HELLOWORLD);
+      SYSTEM;
+      TERMINAL:DIS<->SDVLS(2);
+      PROBLEM;
+      SPC TERMINAL DATION INOUT ALPHIC DIM(,) TFU MAX FORWARD CONTROL (ALL);
+      MAIN:TASK;
+      OPEN TERMINAL;
+      PUT 'Hello World!' TO TERMINAL;
+      CLOSE TERMINAL;
+      END;
+      MODEND;

@@ -3654,3 +3654,187 @@
       fib n = fibs (0,1) n with
         fibs (a,b) n = if n<=0 then a else fibs (b,a+b) (n-1);
       end;
+
+- id: x10
+  name: X10
+  kind: language
+  category: scientific
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 2004, precision: year }
+    places: [{ institution: Thomas J. Watson Research Center, country: US }]
+  creators:
+    - { name: Kemal Ebcioğlu, role: designer }
+    - { name: Vijay Saraswat, role: designer }
+    - { name: Vivek Sarkar, role: designer }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, concurrent]
+    typing: [static-typing, strong-typing, dependent-types]
+  milestones:
+    - { version: "2.6.2", year: 2019, date: "2019-01-08", summary: "Last stable release." }
+  summary: >
+    IBM's parallel language from the PERCS project in DARPA's High Productivity Computing Systems (HPCS) program. It
+    "has a constrained type system for object-oriented programming, a form of dependent types". Wikipedia lists C++
+    and Java as influences.
+  relations:
+    - { type: influenced_by, to: java, weight: strong, confidence: high, sources: [wiki-x10] }
+    - { type: influenced_by, to: cpp, weight: moderate, confidence: high, sources: [wiki-x10] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/X10_(programming_language)" }
+  sources: [wiki-x10]
+  example:
+    title: Hello, World
+    language: X10
+    note: "From Wikipedia's X10 article; indentation restored, as the fetched copy had none."
+    sources: [wiki-x10]
+    code: |
+      /** Example file for the X10 programming language (http://x10-lang.org).
+       */
+      class Example {
+          public static def main(Rail[String]) {
+              Console.OUT.println("Hello, World!"); // say hello.
+          }
+      }
+
+- id: chapel
+  name: Chapel
+  aliases: [Cascade High Productivity Language, CHPL]
+  kind: language
+  category: scientific
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 2009, precision: year }
+    places: [{ institution: Cray, country: US }]
+  creators:
+    - { name: David Callahan, role: designer }
+    - { name: Hans Zima, role: designer }
+    - { name: Brad Chamberlain, role: designer }
+    - { name: John Plevyak, role: designer }
+  status: active
+  tags:
+    paradigm: [object-oriented, concurrent]
+    typing: [static-typing, type-inference]
+    domain: [hpc]
+  summary: >
+    The Cascade High Productivity Language, "created by Cray as part of the Cray Cascade project" in DARPA's HPCS
+    program and now developed by Hewlett Packard Enterprise. "Its parallel concepts are most closely based on ideas from
+    High Performance Fortran (HPF), ZPL, and the Cray MTA's extensions to Fortran and C"; it uses a partitioned global
+    address space.
+  relations:
+    - { type: influenced_by, to: fortran, weight: moderate, confidence: high, sources: [wiki-chapel], note: "Via High Performance Fortran and Cray MTA Fortran extensions." }
+    - { type: influenced_by, to: ada, weight: weak, confidence: medium, sources: [wiki-chapel] }
+    - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-chapel] }
+    - { type: influenced_by, to: java, weight: weak, confidence: medium, sources: [wiki-chapel] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Chapel_(programming_language)", homepage: "https://chapel-lang.org/" }
+  sources: [wiki-chapel]
+
+- id: orc
+  name: Orc
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 2004, precision: year }
+    places: [{ institution: University of Texas at Austin, country: US }]
+  creators:
+    - { name: Jayadev Misra, role: designer }
+    - { name: William R. Cook, role: developer }
+  tags:
+    paradigm: [concurrent]
+    features: [nondeterminism]
+  summary: >
+    "A concurrent, nondeterministic computer programming language created by Jayadev Misra at the University of Texas at
+    Austin". Wikipedia lists Haskell, ML, Oz, Smalltalk and Pict as influences.
+  relations:
+    - { type: influenced_by, to: pict, weight: moderate, confidence: high, sources: [wiki-orc, wiki-pict] }
+    - { type: influenced_by, to: haskell, weight: weak, confidence: medium, sources: [wiki-orc] }
+    - { type: influenced_by, to: ml, weight: weak, confidence: medium, sources: [wiki-orc] }
+    - { type: influenced_by, to: oz, weight: weak, confidence: medium, sources: [wiki-orc] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Orc_(programming_language)" }
+  sources: [wiki-orc]
+
+- id: hop
+  name: Hop
+  kind: language
+  category: scripting
+  cluster: web
+  origin:
+    first_appeared: { year: 2006, precision: year }
+    places: [{ institution: INRIA, country: FR }]
+  creators:
+    - { name: Manuel Serrano, role: designer }
+  status: maintained
+  tags:
+    paradigm: [functional, multi-paradigm]
+    typing: [dynamic-typing, strong-typing]
+    domain: [web]
+  summary: >
+    "A Lisp-like programming language by Manuel Serrano for web 2.0", funded by INRIA and "based on Scheme".
+  relations:
+    - { type: influenced_by, to: scheme, weight: strong, confidence: high, sources: [wiki-hop], note: "\"Hop is based on Scheme.\"" }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hop_(software)", homepage: "https://hop.inria.fr/" }
+  sources: [wiki-hop]
+
+- id: ceu
+  name: Céu
+  kind: language
+  category: systems
+  cluster: industrial
+  origin:
+    first_appeared: { year: 2014, date: "2014-04-03", precision: exact, note: "Early versions from 2011 at PUC-Rio (Wikipedia)." }
+    places: [{ institution: Pontifical Catholic University of Rio de Janeiro, country: BR }]
+  creators:
+    - { name: Francisco Sant'Anna, role: developer }
+  tags:
+    paradigm: [imperative, synchronous-programming]
+  summary: >
+    "A synchronous reactive language intended for front-end applications that aims to be a safer alternative to C and
+    C++", begun by Francisco Sant'Anna at PUC-Rio in 2011. Programs await events and time, as in the example below.
+  relations:
+    - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [wiki-ceu] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/C%C3%A9u_(programming_language)" }
+  sources: [wiki-ceu]
+  example:
+    title: Hello every 250 ms
+    language: Céu
+    note: "From Wikipedia's Céu article; the loop body's indentation is restored. _printf calls C's printf."
+    sources: [wiki-ceu]
+    code: |
+      loop do
+          await 250ms;
+          _printf("Hello World!\n");
+      end
+
+- id: p4
+  name: P4
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 2013, precision: year, note: "Wikipedia infobox 2013; the defining paper, \"Programming Protocol-Independent Packet Processors\", appeared in SIGCOMM CCR in 2014." }
+    places: [{ institution: Open Networking Foundation }]
+  status: active
+  tags:
+    paradigm: [imperative]
+    domain: [telecommunications]
+  milestones:
+    - { version: P4-16, year: 2016, summary: "Released 2016-2017, replacing the original P4-14." }
+  summary: >
+    A domain-specific language for programming how network devices process packets, "maintained by the P4 Project
+    (formerly the P4 Language Consortium), a not-for-profit organization hosted by the Open Networking Foundation".
+  notes: >
+    No code in the article.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/P4_(programming_language)" }
+  sources: [wiki-p4]

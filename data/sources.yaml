@@ -3924,3 +3924,153 @@
   primary: false
   title: "Wikipedia: miniKanren"
   url: https://en.wikipedia.org/wiki/MiniKanren
+- id: wiki-multilisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Multilisp"
+  url: https://en.wikipedia.org/wiki/Multilisp
+- id: wiki-argus
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Argus (programming language)"
+  url: https://en.wikipedia.org/wiki/Argus_(programming_language)
+- id: wiki-cilk
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Cilk"
+  url: https://en.wikipedia.org/wiki/Cilk
+- id: wiki-chapel
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Chapel (programming language)"
+  url: https://en.wikipedia.org/wiki/Chapel_(programming_language)
+- id: wiki-x10
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: X10 (programming language)"
+  url: https://en.wikipedia.org/wiki/X10_(programming_language)
+- id: wiki-joule
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Joule (programming language)"
+  url: https://en.wikipedia.org/wiki/Joule_(programming_language)
+- id: wiki-sr
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SR (programming language)"
+  url: https://en.wikipedia.org/wiki/SR_(programming_language)
+- id: wiki-orc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Orc (programming language)"
+  url: https://en.wikipedia.org/wiki/Orc_(programming_language)
+- id: wiki-strand
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Strand (programming language)"
+  url: https://en.wikipedia.org/wiki/Strand_(programming_language)
+- id: wiki-charm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Charm++"
+  url: https://en.wikipedia.org/wiki/Charm%2B%2B
+- id: wiki-nesl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: NESL"
+  url: https://en.wikipedia.org/wiki/NESL
+- id: wiki-pict
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Pict (programming language)"
+  url: https://en.wikipedia.org/wiki/Pict_(programming_language)
+- id: wiki-obliq
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Obliq"
+  url: https://en.wikipedia.org/wiki/Obliq
+- id: wiki-ceu
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Céu (programming language)"
+  url: https://en.wikipedia.org/wiki/C%C3%A9u_(programming_language)
+- id: wiki-hop
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Hop (software)"
+  url: https://en.wikipedia.org/wiki/Hop_(software)
+- id: wiki-ladder-logic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Ladder logic"
+  url: https://en.wikipedia.org/wiki/Ladder_logic
+- id: wiki-structured-text
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Structured text"
+  url: https://en.wikipedia.org/wiki/Structured_text
+- id: wiki-instruction-list
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Instruction list"
+  url: https://en.wikipedia.org/wiki/Instruction_list
+- id: wiki-iec-61131-3
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IEC 61131-3"
+  url: https://en.wikipedia.org/wiki/IEC_61131-3
+- id: wiki-rapid
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: RAPID"
+  url: https://en.wikipedia.org/wiki/RAPID
+- id: wiki-krl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: KUKA Robot Language"
+  url: https://en.wikipedia.org/wiki/KUKA_Robot_Language
+- id: wiki-g-code
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: G-code"
+  url: https://en.wikipedia.org/wiki/G-code
+- id: wiki-pearl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PEARL (programming language)"
+  url: https://en.wikipedia.org/wiki/PEARL_(programming_language)
+- id: wiki-plex
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PLEX (programming language)"
+  url: https://en.wikipedia.org/wiki/PLEX_(programming_language)
+- id: wiki-esterel
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Esterel"
+  url: https://en.wikipedia.org/wiki/Esterel
+- id: wiki-lustre
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lustre (programming language)"
+  url: https://en.wikipedia.org/wiki/Lustre_(programming_language)
+- id: wiki-signal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SIGNAL (programming language)"
+  url: https://en.wikipedia.org/wiki/SIGNAL_(programming_language)
+- id: wiki-promela
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Promela"
+  url: https://en.wikipedia.org/wiki/Promela
+- id: wiki-ttcn
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TTCN"
+  url: https://en.wikipedia.org/wiki/TTCN
+- id: wiki-p4
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: P4 (programming language)"
+  url: https://en.wikipedia.org/wiki/P4_(programming_language)

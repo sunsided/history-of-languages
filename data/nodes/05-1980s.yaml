@@ -2979,3 +2979,83 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/FL_(programming_language)" }
   sources: [wiki-fl]
+
+- id: argus
+  name: Argus
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    began: { year: 1982, precision: year }
+    first_appeared: { year: 1982, precision: range, note: "\"created at MIT by Barbara Liskov between 1982 and 1988\" (Wikipedia); no release year is given." }
+    places: [{ institution: MIT, country: US }]
+  creators:
+    - { name: Barbara Liskov, role: designer }
+    - { name: Maurice Herlihy, role: collaborator }
+    - { name: William Weihl, role: collaborator }
+  status: historical
+  tags:
+    paradigm: [object-oriented, concurrent]
+  summary: >
+    A language for distributed programs, "created at MIT by Barbara Liskov between 1982 and 1988" with Maurice
+    Herlihy, Paul Johnson, Robert Scheifler and William Weihl. "It is an extension of the CLU language, and utilizes
+    most of the same syntax and semantics."
+  notes: >
+    The concurrency backlog credits Argus with promises; confirm against Liskov and Shrira, "Promises:
+    Linguistic Support for Efficient Asynchronous Procedure Calls" (PLDI 1988). No code in the article.
+  relations:
+    - { type: superset_of, to: clu, weight: strong, confidence: high, sources: [wiki-argus], note: "\"an extension of the CLU language\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Argus_(programming_language)" }
+  sources: [wiki-argus]
+
+- id: multilisp
+  name: Multilisp
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1985, precision: year, note: "Wikipedia says only \"designed ... in the early 1980s\"; 1985 is Halstead's TOPLAS paper, to be confirmed." }
+    places: [{ institution: MIT, country: US }]
+  creators:
+    - { name: Robert H. Halstead Jr., role: designer }
+  status: historical
+  tags:
+    paradigm: [functional, concurrent]
+  summary: >
+    "A dialect of the language Lisp, and of its dialect Scheme, extended with constructs for parallel computing
+    execution and shared memory", designed by Robert H. Halstead Jr. for MIT's 32-processor Concert multiprocessor and
+    implemented in Interlisp. It "influenced the development of the Scheme dialects
+    Gambit, and Interlisp-VAX".
+  notes: >
+    The concurrency backlog credits Multilisp with futures, but the fetched article text shows only pcall. Confirm
+    against Halstead (1985) before tagging futures-promises.
+  relations:
+    - { type: dialect_of, to: scheme, weight: strong, confidence: high, sources: [wiki-multilisp] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Multilisp" }
+  sources: [wiki-multilisp]
+
+- id: signal
+  name: SIGNAL
+  kind: language
+  category: research
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1982, precision: year, note: "\"The first paper on SIGNAL was published in 1982\" (Wikipedia)." }
+    places: [{ institution: INRIA, country: FR }]
+  tags:
+    paradigm: [dataflow-programming, declarative, synchronous-programming]
+  summary: >
+    A synchronous dataflow language, "first designed for signal processing applications in the beginning of the 1980s"
+    and developed mainly in INRIA's Espresso team, "at the same time as similar programming languages, Esterel and
+    Lustre". "P. Le Guernic, A. Benveniste, and T. Gautier have been in charge of the language definition." Its toolset
+    today is Polychrony.
+  notes: >
+    Creators are not listed until their full names are confirmed from the first paper (1982). No example in the article.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SIGNAL_(programming_language)" }
+  sources: [wiki-signal]

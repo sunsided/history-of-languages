@@ -231,6 +231,9 @@
 - id: music-audio
   name: Music and audio
   facet: domain
+- id: industrial-automation
+  name: Industrial automation
+  facet: domain
 - id: hpc
   name: High-performance computing
   facet: domain
@@ -1032,6 +1035,10 @@
   name: Dataflow programming
   facet: paradigm
   summary: Programs as graphs of operations that run when their inputs arrive, with data flowing along the edges.
+- id: synchronous-programming
+  name: Synchronous programming
+  facet: paradigm
+  summary: Programs react to inputs in discrete logical instants, with computation assumed to take no time within an instant; used for real-time control.
 - id: logic
   name: Logic
   facet: paradigm

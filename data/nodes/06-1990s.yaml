@@ -2537,3 +2537,283 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/ISLISP" }
   sources: [wiki-islisp]
+
+- id: cilk
+  name: Cilk
+  aliases: [Cilk++, Cilk Plus, OpenCilk]
+  kind: language
+  category: systems
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1994, date: "1994-04", precision: exact, note: "\"In April 1994 the three projects were combined and christened Cilk\"; the Cilk-1 compiler followed in September 1994." }
+    places: [{ institution: MIT Laboratory for Computer Science, country: US }]
+  creators:
+    - { name: Charles E. Leiserson, role: group leader }
+  status: maintained
+  tags:
+    paradigm: [imperative, procedural, structured, concurrent]
+    typing: [static-typing]
+  milestones:
+    - { version: Cilk++ 1.0, year: 2008, summary: "Cilk Arts' C++ version, December 2008." }
+    - { version: Cilk Plus 1.2, year: 2013, summary: "Intel's version." }
+    - { version: OpenCilk, year: 2021, summary: "First stable version, March 2021." }
+  summary: >
+    A fork-join extension of C from Charles E. Leiserson's group at MIT: spawn starts a call in parallel and sync waits
+    for the spawned calls. The Cilk languages "are based on the C and C++ programming languages, which they extend with
+    constructs to express parallel loops and the fork–join idiom". Intel later developed Cilk Plus; Wikipedia lists
+    OpenMP 3.0 and Rust's Rayon among what it influenced.
+  relations:
+    - { type: superset_of, to: c, weight: strong, confidence: high, sources: [wiki-cilk], note: "\"The original Cilk language was based on ANSI C\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Cilk", homepage: "https://www.opencilk.org/" }
+  sources: [wiki-cilk]
+  example:
+    title: Parallel Fibonacci
+    language: Cilk-5
+    note: "From Wikipedia's Cilk article; the fetched copy had lost its indentation, which is restored here. The two recursive calls run in parallel and sync waits for both."
+    sources: [wiki-cilk]
+    code: |
+      cilk int fib(int n) {
+          if (n < 2) {
+              return n;
+          }
+          else {
+              int x, y;
+              x = spawn fib(n - 1);
+              y = spawn fib(n - 2);
+              sync;
+              return x + y;
+          }
+      }
+
+- id: joule
+  name: Joule
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    began: { year: 1994, precision: year }
+    first_appeared: { year: 1996, precision: year, note: "Infobox 1996; development started in 1994 at Agorics in Palo Alto (Wikipedia)." }
+    places: [{ institution: Agorics, city: Palo Alto, country: US }]
+  creators:
+    - { name: E. Dean Tribble, role: designer }
+  status: historical
+  tags:
+    paradigm: [object-oriented, dataflow-programming, concurrent]
+  summary: >
+    "A capability-secure massively-concurrent dataflow programming language" from Agorics, designed by Dean Tribble
+    with Norm Hardy and colleagues. Wikipedia lists concurrent logic programming and actors as influences, and it "is
+    considered the precursor to the E programming language", whose authors wrote that "E's debt to Joule cannot be
+    overstated".
+  relations:
+    - { type: influenced_by, to: actor-model, weight: moderate, confidence: high, sources: [wiki-joule] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Joule_(programming_language)" }
+  sources: [wiki-joule]
+
+- id: pict
+  name: Pict
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1992, precision: circa, note: "\"Work on the language began at the University of Edinburgh in 1992\"; dormant since 1998 (Wikipedia)." }
+    places: [{ institution: University of Edinburgh, country: GB }]
+  creators:
+    - { name: Benjamin C. Pierce, role: developer }
+    - { name: David N. Turner, role: developer }
+  status: historical
+  tags:
+    paradigm: [concurrent]
+    typing: [static-typing]
+  summary: >
+    "A statically typed programming language, one of the very few based on the π-calculus", by Benjamin Pierce and David
+    Turner. Wikipedia lists ML as its influence and Orc and Nomadic Pict among the languages it influenced.
+  relations:
+    - { type: influenced_by, to: ml, weight: moderate, confidence: high, sources: [wiki-pict] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pict_(programming_language)" }
+  sources: [wiki-pict]
+
+- id: nesl
+  name: NESL
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1993, precision: year }
+    places: [{ institution: Carnegie Mellon University, country: US }]
+  status: historical
+  tags:
+    paradigm: [functional, array-programming, concurrent]
+    concurrency: [data-parallelism]
+  milestones:
+    - { version: "3.1", year: 1995, summary: "November 1995." }
+  summary: >
+    A parallel language "developed at Carnegie Mellon by the SCandAL project and released in 1993", which "integrates
+    various ideas from parallel algorithms, functional programming, and array programming languages".
+  notes: >
+    Guy Blelloch led SCandAL, but the fetched article does not name him; confirm before adding as creator. No code in the article.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/NESL" }
+  sources: [wiki-nesl]
+
+- id: obliq
+  name: Obliq
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1993, precision: year }
+  creators:
+    - { name: Luca Cardelli, role: designer }
+    - { name: Krishna Bharat, role: designer }
+    - { name: Marc H. Brown, role: designer }
+  tags:
+    paradigm: [object-oriented, prototype-based, imperative, concurrent]
+    typing: [dynamic-typing, strong-typing]
+  summary: >
+    A prototype-based, parallel language whose "syntax is very similar to Modula-3, the biggest difference
+    being that Obliq has no need of explicit typed variables". Its objects "are simply collections of named fields
+    (similar to slots in Self and Smalltalk), and support inheritance by delegation (like Self)". It shipped with DEC's
+    Modula-3 distribution.
+  relations:
+    - { type: influenced_by, to: modula-3, weight: strong, confidence: high, sources: [wiki-obliq] }
+    - { type: influenced_by, to: self, aspects: [prototype-based], weight: strong, confidence: high, sources: [wiki-obliq] }
+    - { type: influenced_by, to: oberon, weight: weak, confidence: medium, sources: [wiki-obliq] }
+    - { type: implemented_in, to: modula-3, weight: moderate, confidence: high, sources: [wiki-obliq] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Obliq" }
+  sources: [wiki-obliq]
+
+- id: iec-structured-text
+  name: Structured Text
+  aliases: [ST, IEC 61131-3 ST]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1993, date: "1993-12", precision: exact, note: "IEC 61131-3, \"first published in December 1993 by the IEC\"." }
+    places: [{ institution: International Electrotechnical Commission }]
+  status: active
+  tags:
+    paradigm: [imperative, structured]
+    domain: [industrial-automation]
+  milestones:
+    - { version: 3rd edition, year: 2013, introduces: [object-oriented], summary: "IEC 61131-3 third edition, with object-oriented programming." }
+    - { version: 4th edition, year: 2025, summary: "May 2025." }
+  summary: >
+    The textual language of IEC 61131-3 for programmable logic controllers, "a high level language that is block
+    structured and syntactically resembles Pascal, on which it is based". It sits beside the standard's graphical
+    languages (ladder diagram, function block diagram, sequential function chart).
+  relations:
+    - { type: influenced_by, to: pascal, weight: strong, confidence: high, sources: [wiki-structured-text], note: "\"syntactically resembles Pascal, on which it is based\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Structured_text" }
+  sources: [wiki-structured-text, wiki-iec-61131-3]
+  example:
+    title: A state machine
+    language: IEC 61131-3 Structured Text
+    note: "From Wikipedia's Structured text article; the CASE branches' indentation is restored, as the fetched copy had none."
+    sources: [wiki-structured-text]
+    code: |
+      (* simple state machine *)
+      TxtState := STATES[StateMachine];
+      CASE StateMachine OF
+         1: ClosingValve();
+            StateMachine := 2;
+         2: OpeningValve();
+      ELSE
+          BadCase();
+      END_CASE;
+
+- id: iec-instruction-list
+  name: Instruction List
+  aliases: [IL, Statement List, STL, AWL]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1993, date: "1993-12", precision: exact, note: "One of the five languages of the first IEC 61131-3, December 1993." }
+    places: [{ institution: International Electrotechnical Commission }]
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    domain: [industrial-automation]
+  milestones:
+    - { version: deprecated, year: 2013, summary: "Deprecated in IEC 61131-3's third edition; removed in the fourth (2025)." }
+  summary: >
+    The low-level language of IEC 61131-3: "a low level language and resembles assembly", working on an accumulator
+    with load, compare, jump and store. Siemens's version is known as Statement List (STL) or Anweisungsliste (AWL).
+    It was deprecated in 2013 and removed from the standard in 2025.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Instruction_list" }
+  sources: [wiki-instruction-list, wiki-iec-61131-3]
+  example:
+    title: Check a speed and set an output
+    language: IEC 61131-3 Instruction List
+    note: "Verbatim from Wikipedia's Instruction list article; VOLTS_OK is a label."
+    sources: [wiki-instruction-list]
+    code: |
+      LD Speed
+      GT 2000
+      JMPCN VOLTS_OK
+      LD Volts
+      VOLTS_OK LD 1
+      ST %Q75
+
+- id: rapid
+  name: RAPID
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1994, precision: year, note: "Introduced with ABB's S4 controller in 1994 (Wikipedia)." }
+    places: [{ institution: ABB }]
+  status: active
+  tags:
+    paradigm: [imperative]
+    domain: [industrial-automation]
+  summary: >
+    "A high-level programming language used to control ABB industrial robots", "introduced along with the S4 Control
+    System in 1994 by ABB, superseding the ARLA programming language". Wikipedia lists ARLA and C as influences.
+  notes: >
+    No example in the article. ARLA is not a node.
+  relations:
+    - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-rapid] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/RAPID" }
+  sources: [wiki-rapid]
+
+- id: ttcn
+  name: TTCN
+  aliases: [TTCN-3, Tree and Tabular Combined Notation, Testing and Test Control Notation]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1992, precision: year, note: "TTCN-1, ISO/IEC 9646-3 and CCITT X.292 (Wikipedia)." }
+    places: [{ institution: ISO }, { institution: CCITT }]
+  status: active
+  tags:
+    paradigm: [imperative]
+    domain: [telecommunications]
+  milestones:
+    - { version: TTCN-2, year: 1998, summary: "Concurrency and multiple modules." }
+    - { version: TTCN-3, year: 2000, summary: "Written by ETSI, ITU Z.140; renamed Testing and Test Control Notation; no longer tabular." }
+  summary: >
+    The standard language for conformance tests of communication protocols. "Until version 2 the language was written in
+    tables and called Tree and Tabular Combined Notation"; TTCN-3, written by ETSI and standardized by the ITU in 2000,
+    became a textual language, Testing and Test Control Notation.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TTCN" }
+  sources: [wiki-ttcn]

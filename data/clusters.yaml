@@ -361,7 +361,6 @@
   backlog:
     - { name: "Alphard", year: 1974 }
     - { name: "Euclid", year: 1977 }
-    - { name: "Argus", year: 1983, hint: "Liskov; promises (1988)." }
     - { name: "Sather", year: 1990, hint: "Iterators link CLU to C#." }
 - id: algol/ada
   name: Ada and safety-critical languages
@@ -758,25 +757,14 @@
   summary: "Formalisms and languages that made concurrency a first-class concern. See the concurrency lineage for the narrative thread."
   research_status: draft
   backlog:
-    - { name: "Multilisp", year: 1985, hint: "Futures in a language." }
-    - { name: "Argus", year: 1983, hint: "Promises (Liskov & Shrira 1988)." }
     - { name: "E language", year: 1997, hint: "Promise pipelining; ancestor of JS promises. Pony names E's programming model as its inspiration." }
-    - { name: "Cilk", year: 1994 }
-    - { name: "Chapel / X10", year: 2004 }
-    - { name: "Joule", year: 1994 }
     - { name: "Join Java", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SR", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "SR", hint: "Synchronizing Resources, for concurrent programming; book by Gregory R. Andrews and Ronald A. Olsson, The SR Programming Language (wiki-sr). Needs a year and designers." }
     - { name: "Axum", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Orc", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Strand", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Charm", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "NESL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Strand", hint: "Ian Foster and Stephen Taylor; parallel symbolic language \"similar in syntax to Prolog\"; Strand88 won the BCS Award for Technical Innovation 1989 (wiki-strand). Needs a first year." }
+    - { name: "Charm++", hint: "Laxmikant Kale, Parallel Programming Laboratory, UIUC; message-driven parallel objects \"based on C++\"; first appeared \"late 1980s\" (wiki-charm). Needs a year." }
     - { name: "MPD", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Janus (concurrent constraint programming language)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Pict", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Obliq", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Céu", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Hop", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "UNITY", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Averest", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Ease", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
@@ -968,23 +956,15 @@
   summary: "PLC languages of IEC 61131-3, robot and machine-tool languages, telecom switching languages and synchronous languages such as Esterel and Lustre."
   research_status: stub
   backlog:
-    - { name: "Ladder", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Structured Text", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Instruction List", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "RAPID", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "KUKA Robot Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "G-code", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PEARL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PLEX", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Ladder", hint: "Originally a way to document relay racks; a graphical language based on relay circuit diagrams, standardized in IEC 61131-3 (1993) (wiki-ladder-logic). Needs the year it became a PLC programming language (Modicon 084, 1968?)." }
+    - { name: "KUKA Robot Language", hint: "KRL, KUKA; proprietary, \"similar to Pascal\"; .dat and .src files (wiki-krl). Needs a year." }
+    - { name: "PLEX", hint: "Göran Hemdahl, Ericsson, 1970s, for the AXE switch; variants Plex-C and Plex-M; Joe Armstrong: \"Erlang was heavily influenced by PLEX and the AXE design\" (wiki-plex). Needs a year; then erlang influenced_by plex." }
     - { name: "PROTEL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Esterel", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Lustre", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SIGNAL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Promela", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Esterel", hint: "Gérard Berry, École des Mines de Paris and INRIA, early 1980s; imperative synchronous; example ABRO in the article (wiki-esterel). Needs a first year (the first Esterel report?)." }
+    - { name: "Lustre", hint: "Synchronous dataflow, research project from the early 1980s (Halbwachs et al.); core of SCADE from 1993 (wiki-lustre). Needs a year; Lucid lists Lustre among the languages it influenced." }
+    - { name: "Promela", hint: "Process or Protocol Meta Language, Gerard J. Holzmann; input language of the SPIN model checker (wiki-promela). Needs a year." }
     - { name: "PLEXIL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "SPIN", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "P4", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "TTCN", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Nord Programming Language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "RSL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "S2", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
