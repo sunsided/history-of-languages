@@ -2122,3 +2122,131 @@
           fmt.println(nums)
       }
     sources: [odin-lang-org]
+
+- id: fish
+  name: fish
+  aliases: [friendly interactive shell]
+  kind: language
+  category: shell
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 2005, date: "2005-02-13", precision: exact, note: "Initial release." }
+  creators:
+    - { name: Axel Liljencrantz, role: original author }
+  status: active
+  tags:
+    paradigm: [imperative, scripting]
+    features: [interpreter]
+  milestones:
+    - { version: "4.0", year: 2025, summary: "Rewritten in Rust (released 27 February 2025); earlier C++ and, before 1.8, C." }
+  summary: >
+    A shell that deliberately breaks POSIX compatibility for a simpler, more uniform syntax: set instead of
+    =, no then or fi, functions instead of aliases, and no subshells for language features. Known for
+    autosuggestions and syntax highlighting out of the box.
+  relations:
+    - { type: influenced_by, to: bash, weight: moderate, confidence: medium, sources: [wiki-fish], note: "\"The syntax resembles a POSIX compatible shell (such as Bash), but deviates in many ways\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Fish_(Unix_shell)", homepage: "https://fishshell.com" }
+  sources: [wiki-fish, fish-language-docs]
+  example:
+    title: No =, no then, no fi
+    language: fish 4
+    note: "The three pieces are from the Wikipedia fish article and the fish language documentation. Run with fish: prints bar, then I like penguins on Linux."
+    code: |
+      set foo bar
+      echo $foo
+
+      if test "$(uname)" = Linux
+          echo I like penguins
+      end
+
+      function ll
+          ls -l $argv
+      end
+    sources: [wiki-fish, fish-language-docs]
+
+- id: powershell
+  name: PowerShell
+  aliases: [Monad, Windows PowerShell, pwsh]
+  kind: language
+  category: shell
+  cluster: scripting/structured-shells
+  origin:
+    began: { year: 2002, date: "2002-08-08", precision: exact, note: "Jeffrey Snover's \"Monad Manifesto\" white paper; Monad shown publicly at PDC in October 2003." }
+    first_appeared: { year: 2006, date: "2006-11-14", precision: exact, note: "Windows PowerShell 1.0; Monad renamed PowerShell on 25 April 2006." }
+    places: [{ institution: Microsoft, country: US }]
+  creators:
+    - { name: Jeffrey Snover, role: chief architect }
+    - { name: Bruce Payette, role: designer }
+    - { name: James Truher, role: designer }
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative, functional, scripting]
+    typing: [dynamic-typing]
+    features: [pipes, reflection]
+  milestones:
+    - { version: "2.0", year: 2009 }
+    - { version: "Core 6.0", year: 2016, summary: "Open source and cross-platform on .NET Core (announced 18 August 2016)." }
+  summary: >
+    Microsoft's shell built on .NET: "Instead of piping unstructured text, we pipe .Net objects", so
+    commands (cmdlets) pass typed objects whose properties later stages can filter, sort and format. Its
+    grammar was based on the POSIX KornShell, with influences from Perl, C# and others.
+  relations:
+    - { type: influenced_by, to: kornshell, weight: strong, confidence: high, sources: [wiki-powershell], note: "\"PowerShell's developers based the core grammar of the tool on that of the POSIX 1003.2 KornShell.\"" }
+    - { type: influenced_by, to: perl, weight: moderate, confidence: medium, sources: [wiki-powershell] }
+    - { type: influenced_by, to: csharp, weight: moderate, confidence: medium, sources: [wiki-powershell] }
+    - { type: influenced_by, to: tcl, weight: weak, confidence: medium, sources: [wiki-powershell, wiki-tcl] }
+    - { type: implemented_in, to: csharp, weight: moderate, confidence: high, sources: [wiki-powershell] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PowerShell", homepage: "https://learn.microsoft.com/powershell/" }
+  sources: [wiki-powershell, snover-2002-monad-manifesto]
+  example:
+    title: An object pipeline
+    language: PowerShell (Monad, 2002 design)
+    year: 2002
+    note: "From the Monad Manifesto, section 5.1. Get-EventLog emits event objects, Group groups them by their source property, Select takes the first five groups and Format-Table renders them. Not run here."
+    code: |
+      $ Get-EventLog application |Group source |Select –first 5 |Format-Table
+    sources: [snover-2002-monad-manifesto]
+
+- id: nushell
+  name: Nushell
+  aliases: [nu]
+  kind: language
+  category: shell
+  cluster: scripting/structured-shells
+  origin:
+    first_appeared: { year: 2019, date: "2019-08-23", precision: exact, note: "First public preview (0.2.0; introductory blog post 23 August 2019)." }
+  creators:
+    - { name: Sophia Turner, role: co-creator }
+    - { name: Yehuda Katz, role: co-creator }
+  status: active
+  tags:
+    paradigm: [functional, scripting]
+    features: [pipes, tables]
+  summary: >
+    A cross-platform shell whose pipelines carry structured data (tables, records, lists) rather than text,
+    "inspired by the structured, functional approach of PowerShell". Commands such as open parse JSON, TOML
+    or CSV into tables that later stages query and update. Written in Rust.
+  relations:
+    - { type: influenced_by, to: powershell, aspects: [pipes], weight: strong, confidence: high, sources: [wiki-nushell] }
+    - { type: implemented_in, to: rust, weight: moderate, confidence: high, sources: [nushell-book] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Nushell", homepage: "https://www.nushell.sh" }
+  sources: [wiki-nushell, nushell-book]
+  example:
+    title: Pipelines of structured data
+    language: Nushell
+    note: "From the Nushell book (Pipelines). open parses Cargo.toml into a record that update edits in place; ls produces a table whose name column get extracts. Not run here."
+    code: |
+      open Cargo.toml | update workspace.dependencies.base64 0.24.2 | save Cargo_new.toml
+
+      ls | get name | let files
+      # Equivalent to:
+      let files = ls | get name
+
+      1..10 | each {$in * 2}
+    sources: [nushell-book]

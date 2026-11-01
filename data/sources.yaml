@@ -1877,3 +1877,105 @@
   title: "Odin (official site)"
   url: https://odin-lang.org/
   checked: '2026-11-01'
+- id: wiki-thompson-shell
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Thompson shell"
+  url: https://en.wikipedia.org/wiki/Thompson_shell
+  checked: '2026-11-01'
+- id: wiki-sed
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: sed"
+  url: https://en.wikipedia.org/wiki/Sed
+  checked: '2026-11-01'
+- id: wiki-c-shell
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: C shell"
+  url: https://en.wikipedia.org/wiki/C_shell
+  checked: '2026-11-01'
+- id: wiki-rexx
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Rexx"
+  url: https://en.wikipedia.org/wiki/Rexx
+  checked: '2026-11-01'
+- id: wiki-kornshell
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: KornShell"
+  url: https://en.wikipedia.org/wiki/KornShell
+  checked: '2026-11-01'
+- id: wiki-tcl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Tcl"
+  url: https://en.wikipedia.org/wiki/Tcl_(programming_language)
+  checked: '2026-11-01'
+- id: ousterhout-tcl-history
+  type: web
+  primary: true
+  title: "John Ousterhout: History of Tcl"
+  url: https://web.stanford.edu/~ouster/cgi-bin/tclHistory.php
+  checked: '2026-11-01'
+- id: wiki-bash
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Bash (Unix shell)"
+  url: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+  checked: '2026-11-01'
+- id: wiki-rc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: rc (Unix shell)"
+  url: https://en.wikipedia.org/wiki/Rc_(Unix_shell)
+  checked: '2026-11-01'
+- id: wiki-zsh
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Z shell"
+  url: https://en.wikipedia.org/wiki/Z_shell
+  checked: '2026-11-01'
+- id: wiki-applescript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: AppleScript"
+  url: https://en.wikipedia.org/wiki/AppleScript
+  checked: '2026-11-01'
+- id: wiki-fish
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: fish (Unix shell)"
+  url: https://en.wikipedia.org/wiki/Fish_(Unix_shell)
+  checked: '2026-11-01'
+- id: fish-language-docs
+  type: manual
+  primary: true
+  title: "fish documentation: The fish language"
+  url: https://fishshell.com/docs/current/language.html
+  checked: '2026-11-01'
+- id: wiki-powershell
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PowerShell"
+  url: https://en.wikipedia.org/wiki/PowerShell
+  checked: '2026-11-01'
+- id: snover-2002-monad-manifesto
+  type: paper
+  primary: true
+  title: "Jeffrey P. Snover: Monad Manifesto (8 August 2002)"
+  url: https://www.jsnover.com/Docs/MonadManifesto.pdf
+  checked: '2026-11-01'
+- id: wiki-nushell
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Nushell"
+  url: https://en.wikipedia.org/wiki/Nushell
+  checked: '2026-11-01'
+- id: nushell-book
+  type: manual
+  primary: true
+  title: "The Nushell Book"
+  url: https://www.nushell.sh/book/
+  checked: '2026-11-01'

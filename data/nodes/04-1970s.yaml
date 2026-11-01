@@ -645,6 +645,7 @@
     features: [associative-arrays, regular-expressions]
   summary: "Pattern-action language for text records with associative arrays as a built-in type. A direct ancestor of Perl."
   relations:
+    - { type: influenced_by, to: sed, aspects: [regular-expressions], weight: moderate, confidence: medium, sources: [wiki-sed], note: "Wikipedia's sed infobox lists AWK as influenced." }
     - { type: influenced_by, to: c, weight: strong, confidence: high }
     - { type: influenced_by, to: snobol, aspects: [string-processing], weight: weak, confidence: medium }
   research_status: draft
@@ -774,6 +775,7 @@
   summary: "Unix's scripting shell with control structures. Bourne used ALGOL 68C keywords (if/fi, case/esac) and even C macros to make the C source look like ALGOL. Ancestor of ksh, bash and POSIX sh."
   relations:
     - { type: influenced_by, to: algol-68, weight: moderate, confidence: high }
+    - { type: successor_of, to: thompson-shell, weight: strong, confidence: high, sources: [wiki-thompson-shell], note: "\"the Thompson shell was replaced as the main Unix shell by the Bourne shell in Version 7 Unix\"." }
   research_status: draft
   confidence: high
   sources: [wiki-bourne-shell]
@@ -1007,3 +1009,124 @@
       30 A$(LEN(A$)+1)=B$
       40 PRINT A$
     sources: [wiki-atari-basic]
+
+- id: thompson-shell
+  name: Thompson shell
+  aliases: [V6 shell]
+  kind: language
+  category: shell
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1971, date: "1971-11-03", precision: exact, note: "In the first version of Unix." }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: Ken Thompson, role: author }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    features: [pipes, interpreter]
+  milestones:
+    - { version: "Version 4 Unix", year: 1973, introduces: [pipes], summary: "Pipes written with | (Version 3 had an ambiguous > form); added at Douglas McIlroy's suggestion." }
+  summary: >
+    The first Unix shell: a command interpreter with < and > redirection and, from 1973, the | pipe, notation
+    that "has proven durable and has been adopted by most other Unix shells". It had no variables; if and
+    goto were separate programs. Replaced in 1979 by the Bourne shell (Version 7) and the C shell (2BSD).
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Thompson_shell" }
+  sources: [wiki-thompson-shell]
+  example:
+    title: Redirection and pipes
+    language: Thompson shell (Version 6 Unix)
+    note: "Illustrative, written for this dataset from the features the Wikipedia article describes: : is a do-nothing command used for comments, < and > redirect, | pipes. Not run on a Version 6 system."
+    code: |
+      : list the directory into a file, then sort it
+      ls >listing
+      sort <listing | uniq
+    sources: [wiki-thompson-shell]
+
+- id: sed
+  name: sed
+  aliases: [stream editor]
+  kind: language
+  category: domain-specific
+  cluster: scripting/unix
+  origin:
+    began: { year: 1973, precision: year, note: "Developed 1973–1974." }
+    first_appeared: { year: 1974, precision: year, note: "Wikipedia gives 1974; it first appeared in a Unix release with Version 7." }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: Lee E. McMahon, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [regular-expressions, string-processing]
+  summary: >
+    The stream editor: ed's editing commands (s/re/replacement/, /pattern/ addresses) applied in one pass to
+    a stream of lines, so editing could be done in pipelines and scripts. Designed as "the natural
+    successor" to grep. Its s/// syntax and line-oriented model passed into AWK and Perl.
+  notes: >
+    Its documented ancestor is the ed editor (1971), not yet a node: "The syntax for sed, notably the use
+    of / for pattern matching, and s/// for substitution, originated with ed".
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Sed" }
+  sources: [wiki-sed]
+  example:
+    title: tac in three commands
+    language: sed (POSIX)
+    note: "Written for this dataset (the classic one-liner 1!G;h;$!d as a script file; the #! line is from the Wikipedia article). G appends the hold space, h copies the line into it, $!d deletes all but the last cycle's output. Tested with GNU sed."
+    code: |
+      #!/bin/sed -f
+      # print the file in reverse line order
+      1!G
+      h
+      $!d
+    sources: [wiki-sed]
+
+- id: c-shell
+  name: C shell
+  aliases: [csh, tcsh]
+  kind: language
+  category: shell
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1978, precision: disputed, note: "Wikipedia's C shell article: first distributed with 2BSD in 1978; its Thompson shell article dates 2BSD to 1979." }
+    places: [{ institution: "University of California, Berkeley", country: US }]
+  creators:
+    - { name: Bill Joy, role: creator (graduate student) }
+  status: maintained
+  tags:
+    paradigm: [imperative, scripting]
+    features: [interpreter]
+  summary: >
+    Bill Joy's shell for BSD, with a syntax modelled on C (parentheses, keywords, an expression grammar and
+    arrays) and the interactive features later shells copied: history, aliases, directory stacks, ~
+    notation and job control. Its scripting was criticised, but its interactive ideas went into ksh, Bash
+    and Zsh.
+  notes: >
+    Successor: tcsh, which added filename and command completion and command-line editing borrowed from
+    TENEX. Its release year is not yet sourced, so it is not a milestone here. Early contributors named by
+    Wikipedia: Michael Ubell, Eric Allman, Mike O'Brien, Jim Kulp.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [wiki-c-shell], note: "\"The keywords, the use of parentheses, and the C shell's built-in expression grammar and support for arrays were all strongly influenced by C.\"" }
+    - { type: influenced_by, to: thompson-shell, aspects: [pipes], weight: moderate, confidence: medium, sources: [wiki-thompson-shell] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/C_shell" }
+  sources: [wiki-c-shell]
+  example:
+    title: Powers of two
+    language: C shell
+    note: "From the Wikipedia C shell article's Bourne/C shell comparison. @ evaluates C-like expressions (*=, ++). Run with tcsh."
+    code: |
+      #!/bin/csh
+      set i = 2
+      set j = 1
+      while ( $j <= 10 )
+        echo '2 **' $j = $i
+        @ i *= 2
+        @ j++
+      end
+    sources: [wiki-c-shell]
+

@@ -365,7 +365,6 @@
   backlog:
     - { name: "COMIT", year: 1957 }
     - { name: "TRAC", year: 1964 }
-    - { name: "sed", year: 1974 }
 - id: logic
   name: Logic programming
   research_status: stub
@@ -415,7 +414,6 @@
   parent: oop
   research_status: stub
   backlog:
-    - { name: "AppleScript", year: 1993 }
     - { name: "Dylan", year: 1992 }
 - id: managed
   name: Managed-runtime languages (JVM and .NET)
@@ -444,12 +442,11 @@
   parent: scripting
   research_status: draft
   backlog:
-    - { name: "Thompson shell", year: 1971 }
-    - { name: "C shell", year: 1978 }
-    - { name: "KornShell", year: 1983 }
-    - { name: "Bash", year: 1989 }
-    - { name: "Zsh / fish / PowerShell / Nushell", year: 1990 }
-    - { name: "sed", year: 1974 }
+    - { name: "ed", year: 1971, hint: "Thompson's line editor; the source of sed's s/// and /re/ syntax. Inclusion test 2 (missing link)." }
+    - { name: "PWB (Mashey) shell", year: 1975, hint: "Between the Thompson and Bourne shells (Wikipedia, Thompson shell)." }
+    - { name: "tcsh", year: 1983, hint: "C shell successor with completion and line editing from TENEX; date unsourced." }
+    - { name: "Almquist shell (ash, dash)", year: 1989 }
+    - { name: "es (extensible shell)", year: 1993, hint: "Influenced by rc (Wikipedia, rc)." }
 - id: scripting/python
   name: Python and its lineage
   parent: scripting
@@ -460,12 +457,20 @@
   name: Ruby
   parent: scripting
   research_status: stub
+- id: scripting/structured-shells
+  name: Structured-data shells
+  parent: scripting
+  summary: "Shells whose pipelines pass objects or tables instead of text: PowerShell on .NET, Nushell."
+  research_status: draft
+  key_sources: [snover-2002-monad-manifesto]
+  backlog:
+    - { name: "Elvish", year: 2016 }
+    - { name: "Oil / Oils (YSH)", year: 2016 }
 - id: scripting/embedded
   name: Embeddable scripting languages
   parent: scripting
   research_status: stub
   backlog:
-    - { name: "Tcl", year: 1988 }
     - { name: "Squirrel", year: 2003 }
     - { name: "GDScript", year: 2014 }
 - id: web

@@ -612,6 +612,7 @@
   person: Ken Thompson
   wiki: Ken Thompson
   nodes:
+  - thompson-shell
   - b
   - c
   - go
@@ -1067,3 +1068,45 @@
   wiki: Jeremy Allaire
   nodes:
   - cfml
+- id: person-bill-joy
+  kind: person
+  person: Bill Joy
+  wiki: Bill Joy
+  nodes:
+  - c-shell
+- id: person-david-korn
+  kind: person
+  person: David Korn
+  wiki: David Korn (computer scientist)
+  nodes:
+  - kornshell
+- id: person-john-ousterhout
+  kind: person
+  person: John Ousterhout
+  wiki: John Ousterhout
+  nodes:
+  - tcl
+- id: person-mike-cowlishaw
+  kind: person
+  person: Mike Cowlishaw
+  wiki: Mike Cowlishaw
+  nodes:
+  - rexx
+- id: person-tom-duff
+  kind: person
+  person: Tom Duff
+  wiki: Tom Duff
+  nodes:
+  - rc-shell
+- id: person-jeffrey-snover
+  kind: person
+  person: Jeffrey Snover
+  wiki: Jeffrey Snover
+  nodes:
+  - powershell
+- id: person-lee-e-mcmahon
+  kind: person
+  person: Lee E. McMahon
+  wiki: Lee E. McMahon
+  nodes:
+  - sed

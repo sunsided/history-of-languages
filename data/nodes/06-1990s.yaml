@@ -986,3 +986,90 @@
       #value# Bob!
       </cfoutput>
     sources: [wiki-cfml]
+
+- id: zsh
+  name: Zsh
+  aliases: [Z shell]
+  kind: language
+  category: shell
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1990, precision: year, note: "Created by Paul Falstad while a student at Princeton; version 1.0 in 1990." }
+    places: [{ institution: Princeton University, country: US }]
+  creators:
+    - { name: Paul Falstad, role: original author }
+  status: active
+  tags:
+    paradigm: [imperative, scripting]
+    features: [associative-arrays, command-substitution, interpreter]
+  summary: >
+    A Bourne-compatible shell that set out to be "a cross between ksh and tcsh", with some rc: programmable
+    completion, recursive globbing with qualifiers, parameter-expansion flags and extensive customisation.
+    The default shell of macOS since 2019.
+  relations:
+    - { type: influenced_by, to: kornshell, weight: strong, confidence: high, sources: [wiki-zsh], note: "\"It combines features from both ksh and tcsh (and rc to a lesser extent)\"." }
+    - { type: influenced_by, to: c-shell, weight: strong, confidence: high, sources: [wiki-zsh], note: "Via tcsh; Zsh first aimed to be a subset of csh for the Amiga." }
+    - { type: influenced_by, to: rc-shell, weight: weak, confidence: high, sources: [wiki-zsh] }
+    - { type: influenced_by, to: bourne-shell, weight: strong, confidence: high, sources: [wiki-zsh], note: "\"Zsh mostly maintains the Bourne shell's syntax and behavior\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Z_shell", homepage: "https://www.zsh.org" }
+  sources: [wiki-zsh]
+  example:
+    title: Glob qualifiers and expansion flags
+    language: Zsh 5
+    note: "Written for this dataset. **/ globs recursively; the (.om[1,2]) qualifier keeps regular files, newest first, the first two. (k) and (U) are parameter-expansion flags. Run with zsh 5.9."
+    code: |
+      print -l **/*.txt(.om[1,2])     # recursive glob, regular files, newest first
+      typeset -A capital
+      capital=(de Berlin fr Paris)
+      print ${(k)capital}             # parameter flag: the keys
+      print ${(U)capital[fr]}         # parameter flag: upper case
+    sources: [wiki-zsh]
+
+- id: applescript
+  name: AppleScript
+  kind: language
+  category: scripting
+  cluster: oop/apple
+  origin:
+    first_appeared: { year: 1993, date: "1993-10", precision: exact, note: "Released with System 7.1.1 (System 7 Pro)." }
+    places: [{ institution: Apple Computer, country: US }]
+  creators:
+    - { name: Apple Computer, role: developer }
+  status: maintained
+  tags:
+    paradigm: [object-oriented, event-driven, scripting]
+    typing: [dynamic-typing]
+    features: [english-like-syntax]
+  milestones:
+    - { version: "Mac OS X 10.10", year: 2014, summary: "Script Editor accepts JavaScript (JavaScript for Automation) as an alternative OSA language." }
+  summary: >
+    Apple's system-wide scripting language for automating applications through Apple Events. It is "based
+    largely on HyperCard's HyperTalk language", extended to address the objects of any scriptable
+    application (documents, pages, text boxes) through tell blocks. A mainstay of desktop-publishing
+    workflows.
+  notes: >
+    William Cook's HOPL III paper "AppleScript" (2007) is the primary history; it was not reachable for this
+    pass. Credit its designers (Cook, Warren Harris and others) once read.
+  relations:
+    - { type: influenced_by, to: hypertalk, aspects: [english-like-syntax], weight: strong, confidence: high, sources: [wiki-applescript, wiki-hypercard], note: "\"The language is based largely on HyperCard's HyperTalk language\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/AppleScript" }
+  sources: [wiki-applescript]
+  example:
+    title: Addressing objects inside another application
+    language: AppleScript
+    note: "From the Wikipedia AppleScript article. Each tell sets the target for the commands inside it, walking QuarkXPress's object hierarchy."
+    code: |
+      tell application "QuarkXPress"
+        tell document 1
+          tell page 2
+            tell text box 1
+              set word 5 to "Apple"
+            end tell
+          end tell
+        end tell
+      end tell
+    sources: [wiki-applescript]
