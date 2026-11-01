@@ -2973,3 +2973,54 @@
         }
       }
     sources: [dafny-guide]
+
+- id: inform-7
+  name: Inform 7
+  aliases: [Natural Inform, I7]
+  kind: language
+  category: domain-specific
+  cluster: adventure-games
+  origin:
+    first_appeared: { year: 2006, date: "2006-04-30", precision: exact, note: "Wikipedia: \"On April 30, 2006, Graham Nelson announced the beta release of Inform 7 to the rec.arts.int-fiction newsgroup.\" The repo README: \"Created in April 2006\"." }
+  creators:
+    - { name: Graham Nelson, role: designer }
+  status: active
+  tags:
+    paradigm: [declarative, object-oriented]
+    features: [english-like-syntax, compiler, ide]
+    domain: [game-scripting]
+  milestones:
+    - { version: "10.1", year: 2022, summary: "Open-sourced in April 2022 under the Artistic License 2.0; 10.1.2 (31 August 2022) is the stable release Wikipedia lists." }
+  summary: >
+    "A programming language for creating interactive fiction, using natural language syntax": the game is
+    written as English sentences about rooms and things, with behaviour as rules ("When play begins ...").
+    Despite the name it is "a completely new language" rather than a version of Inform 6, but it reuses it:
+    "The compiler compiles the Inform 7 source code into Inform 6 source code", which Inform 6 turns into a
+    Glulx or Z-code story file. It was briefly called Natural Inform, which is why its compiler is "NI".
+  relations:
+    - { type: successor_of, to: inform, weight: moderate, confidence: high, sources: [wiki-inform, writing-with-inform], note: "Same author and name; the manual calls Inform 6 its \"20th-century predecessor\", while Wikipedia calls Inform 7 \"a completely new language\"." }
+    - { type: targets, to: inform, weight: strong, confidence: high, sources: [wiki-inform, ganelson-inform-repo], note: "Compiles to Inform 6 source; the repo bundles inform6 \"used by I7 as a code generator\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Inform", homepage: "https://ganelson.github.io/inform-website/" }
+  sources: [wiki-inform, ganelson-inform-repo, writing-with-inform]
+  example:
+    title: "Bic: a room, three things and a check rule"
+    language: Inform 7
+    note: "Verbatim from Writing with Inform §3.1, Example 2 \"Bic\" (tabs shown as 4 spaces). Section 1 is a test-only rule that lists things without a description; section 2 is the story itself."
+    code: |
+      Section 1 - Testing descriptions - Not for release
+
+      When play begins (this is the run property checks at the start of play rule):
+          repeat with item running through things:
+              if description of the item is "":
+                  say "[item] has no description."
+
+      Section 2 - Story
+
+      The Staff Break Room is a room.
+
+      The player carries an orange, a Bic pen, and a napkin. The description of the orange is "It's a small hard pinch-skinned thing from the lunch room, probably with lots of pips and no juice."
+
+      The description of the napkin is "Slightly crumpled."
+    sources: [writing-with-inform]

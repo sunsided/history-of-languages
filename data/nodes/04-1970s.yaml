@@ -1758,3 +1758,54 @@
       (prove-lemma commutativity-of-times (rewrite)
         (equal (times x z) (times z x)))
     sources: [wiki-nqthm]
+
+- id: mdl
+  name: MDL
+  aliases: [Muddle]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1971, precision: year, note: "Wikipedia infobox; final release 105 in 1980." }
+    places: [{ institution: MIT Project MAC, country: US }]
+  creators:
+    - { name: Gerald Jay Sussman, role: designer }
+    - { name: Carl Hewitt, role: designer }
+    - { name: Chris Reeve, role: designer }
+    - { name: Bruce Daniels, role: designer }
+  status: extinct
+  tags:
+    paradigm: [functional, procedural]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [homoiconicity]
+    domain: [artificial-intelligence, game-scripting]
+  summary: >
+    "A descendant of the language Lisp" from MIT Project MAC, written with angle brackets for function calls
+    and #DECL type declarations. "An IF game named Zork, sometimes called Dungeon, was first written in MDL",
+    and in 1980 Marc Blank and Joel Berez cut it down to ZIL for Infocom's home-computer releases.
+  relations:
+    - { type: influenced_by, to: lisp, weight: strong, confidence: high, sources: [wiki-mdl], note: "\"a descendant of the language Lisp\"; the infobox lists its family as Lisp." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MDL_(programming_language)" }
+  sources: [wiki-mdl, mitddc-zork]
+  example:
+    title: The bat room in MIT Zork
+    language: MDL
+    note: "Verbatim from zork/act2.27 in the 1977 MIT Zork source recovered from ITS tapes (MITDDC/zork); tabs expanded to 8 columns. \"GARLI\" is the object's name in the source. <f args> is a call, .X a local and ,X a global value."
+    code: |
+      <DEFINE BATS-ROOM ("AUX" (PRSACT <1 ,PRSVEC>))
+          #DECL ((PRSACT) VERB)
+          <COND (<AND <==? <VNAME .PRSACT> WALK-IN!-WORDS>
+                      <NOT <MEMQ <FIND-OBJ "GARLI"> <AOBJS ,WINNER>>>>
+                 <FLY-ME>)
+                (<==? .PRSACT ,LOOK!-WORDS>
+                 <TELL 
+       "You are in a small room which has only one door, to the east.">
+                 <AND <MEMQ <FIND-OBJ "GARLI"> <AOBJS ,WINNER>>
+                      <TELL 
+      "In the corner of the room on the ceiling is a large vampire bat who
+      is obviously deranged and holding his nose.">>)>>
+    sources: [mitddc-zork]
+

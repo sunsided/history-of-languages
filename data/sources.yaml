@@ -3318,3 +3318,58 @@
   title: "Wikipedia: Open Watcom Assembler (JWasm)"
   url: https://en.wikipedia.org/wiki/Open_Watcom_Assembler
   checked: '2026-11-01'
+- id: wiki-mdl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MDL (programming language)"
+  url: https://en.wikipedia.org/wiki/MDL_(programming_language)
+- id: wiki-z-machine
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Z-machine"
+  url: https://en.wikipedia.org/wiki/Z-machine
+- id: z-machine-standard-1-1
+  type: standard
+  primary: false
+  authors: [Graham Nelson]
+  year: 2014
+  title: "The Z-Machine Standards Document, Version 1.1 (24 February 2014)"
+  url: https://inform-fiction.org/zmachine/standards/z1point1/index.html
+- id: wiki-inform
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Inform"
+  url: https://en.wikipedia.org/wiki/Inform
+- id: wiki-scumm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SCUMM"
+  url: https://en.wikipedia.org/wiki/SCUMM
+- id: learning-zil-1989
+  type: manual
+  primary: true
+  authors: [Steven Eric Meretzky]
+  year: 1989
+  title: "Learning ZIL (Infocom, 1989; converted to Word 1995), archive.org copy"
+  url: https://archive.org/details/Learning_ZIL_Steven_Eric_Meretzky_1995
+- id: historicalsource-zork1
+  type: web
+  primary: true
+  title: "historicalsource/zork1: Infocom's ZIL source for Zork I, a snapshot of the development system at shutdown"
+  url: https://github.com/historicalsource/zork1
+- id: mitddc-zork
+  type: web
+  primary: true
+  title: "MITDDC/zork: the 1977 MIT MDL source of Zork, recovered from ITS backup tapes"
+  url: https://github.com/MITDDC/zork
+- id: ganelson-inform-repo
+  type: web
+  primary: true
+  title: "ganelson/inform: the Inform 7 compiler and tools (README)"
+  url: https://github.com/ganelson/inform
+- id: writing-with-inform
+  type: manual
+  primary: true
+  authors: [Graham Nelson]
+  title: "Writing with Inform (the Inform 7 manual), section 3.1 Descriptions"
+  url: https://ganelson.github.io/inform-website/book/WI_3_1.html

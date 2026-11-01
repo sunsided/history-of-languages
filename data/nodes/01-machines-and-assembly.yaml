@@ -1188,6 +1188,53 @@
           14: return
     sources: [jvms-se21]
 
+- id: z-machine
+  name: Z-machine
+  aliases: [Z-code]
+  kind: machine
+  category: domain-specific
+  cluster: adventure-games
+  origin:
+    first_appeared: { year: 1979, precision: year, note: "Standard 1.1, Appendix D: \"Version 1 (by Joel Berez and Marc Blank, in Autumn 1979)\"." }
+    places: [{ institution: Infocom, country: US }]
+  creators:
+    - { name: Joel Berez, role: designer }
+    - { name: Marc Blank, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [bytecode-vm]
+    domain: [game-scripting]
+  milestones:
+    - { version: "1", year: 1979, summary: "Berez and Blank's first version, \"essentially all of the main architecture\"." }
+  summary: >
+    "A design for an imaginary computer: Z is for 'Zork'", built so Infocom could ship one compiled story file
+    and a small interpreter for each home computer. "Infocom produced six versions"; Graham Nelson later
+    specified versions 7 and 8 and documented the whole machine in the Z-Machine Standards Document, and
+    Inform still writes story files (.z1 to .z8) for it.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Z-machine", homepage: "https://inform-fiction.org/zmachine/standards/z1point1/index.html" }
+  sources: [z-machine-standard-1-1, wiki-z-machine]
+  example:
+    title: Part of a Zork I routine, disassembled
+    language: Z-machine code (disassembly)
+    note: "Verbatim from the Standard 1.1's \"Overview of Z-machine architecture\", which introduces it as \"part of one of the routines in 'Zork I'\". je is jump-if-equal, ~label branches when false, g57 is a global and print_ret prints and returns true."
+    code: |
+      l0006: print_ret       "Suicide is not the answer."
+      l0007: je              g57 #84 ~l0008
+             je              g48 #15 ~rfalse
+             print_ret       "Why don't you just walk like normal people?"
+      l0008: je              g57 #63 ~l0009
+             print_ret       "How romantic!"
+      l0009: je              g57 #3b ~rfalse
+             get_parent      "mirror" local0
+             get_parent      "mirror" sp
+             je              g6b local0 sp ~l0010
+             print_ret       "Your image in the mirror looks tired."
+      l0010: print_ret       "That's difficult unless your eyes are prehensile."
+    sources: [z-machine-standard-1-1]
+
 - id: cil
   name: CIL
   aliases: [Common Intermediate Language, MSIL, Microsoft Intermediate Language, IL]

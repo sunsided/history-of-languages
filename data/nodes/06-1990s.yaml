@@ -1519,3 +1519,40 @@
       Tick == IF clock = 0 THEN clock' = 1 ELSE clock' = 0
       Spec == Init /\ [][Tick]_<<clock>>
     sources: [wiki-tla-plus]
+
+- id: inform
+  name: Inform
+  aliases: [Inform 6]
+  kind: language
+  category: domain-specific
+  cluster: adventure-games
+  origin:
+    first_appeared: { year: 1993, date: "1993-05", precision: exact, note: "Wikipedia (Z-machine): \"In May 1993, Graham Nelson released the first version of his Inform compiler\"." }
+  creators:
+    - { name: Graham Nelson, role: designer }
+  status: maintained
+  tags:
+    paradigm: [object-oriented, procedural]
+    features: [compiler]
+    domain: [game-scripting]
+  milestones:
+    - { version: "6", year: 1996, summary: "Nelson's rewrite \"around 1996\" after versions 1 to 5 (1993-1996); the language now usually meant by Inform." }
+  summary: >
+    Graham Nelson's compiler for interactive fiction, whose output was Z-machine story files, the format of
+    Infocom's games; it now targets Glulx by default. Statements starting with @
+    are passed through as raw Z-machine opcodes. Inform 7 (2006) is a different, natural-language design.
+  relations:
+    - { type: targets, to: z-machine, weight: strong, confidence: high, sources: [wiki-z-machine, wiki-inform], note: "\"also generates Z-machine story files as its output\"; Glulx came later and is now the default." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Inform" }
+  sources: [wiki-inform, wiki-z-machine, z-machine-standard-1-1]
+  example:
+    title: Hello, World in Inform 6
+    language: Inform 6
+    note: "From Wikipedia's Inform article (indentation added); not compiled here. Main is the entry routine and ^ is Inform's newline in strings."
+    code: |
+      [ Main;
+          print "Hello, World!^";
+      ];
+    sources: [wiki-inform]

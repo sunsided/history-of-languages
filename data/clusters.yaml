@@ -343,7 +343,6 @@
   research_status: draft
   backlog:
     - { name: "Stanford LISP 1.6", year: 1966 }
-    - { name: "MDL (Muddle)", year: 1971, hint: "MIT; Zork was written in it." }
     - { name: "NIL / Spice Lisp / S-1 Lisp", year: 1980, hint: "MacLisp successors consolidated into Common Lisp." }
     - { name: "Portable Standard Lisp", year: 1980 }
     - { name: "XLISP", year: 1983, hint: "David Betz; parent of AutoLISP." }
@@ -383,6 +382,17 @@
   backlog:
     - { name: "Mizar", year: 1973, hint: "Andrzej Trybulec; Mizar Mathematical Library; influenced by Automath, and Isabelle's Isar is \"inspired by the Mizar system\". Needs a real proof text (mizar.uwb.edu.pl pages fetched had none)." }
     - { name: "ACL2", year: 1990, hint: "Boyer, Moore, Kaufmann; \"an 'industrial strength' version of the Boyer-Moore theorem prover, NQTHM\", in Common Lisp; public 1996. ACL2 manual is robots-blocked; needs an example." }
+- id: adventure-games
+  name: Adventure game languages
+  summary: "Languages for writing text and graphical adventures: MDL-derived ZIL at Infocom, the Z-machine it compiled to, Inform, which revived the Z-machine for hobbyists, and Inform 7's English-prose rewrite."
+  research_status: stub
+  key_sources: [wiki-z-machine, z-machine-standard-1-1, wiki-inform]
+  backlog:
+    - { name: "SCUMM", year: 1987, hint: "Lucasfilm Games, Maniac Mansion; Aric Wilmunder, Chip Morningstar, Ron Gilbert, Brad P. Taylor (wiki-scumm). \"Somewhere between a game engine and a programming language.\" Needs a real script excerpt. ScummVM is a reimplementation of the engine, so it is a note on SCUMM, not a node (its 2001 date and founder are unverified)." }
+    - { name: "TADS", hint: "Text Adventure Development System, Michael J. Roberts. Needs year and a sourced example." }
+    - { name: "ZAP (Z-machine Assembler Program)", hint: "Infocom's assembler between ZILCH and the story file; never released. Would need a .zap listing (historicalsource repos may hold one under COMPILED/)." }
+  research_questions:
+    - "Who besides Blank and Berez built ZILCH and ZAP, and when? \"Learning ZIL\" (1989) may say."
 - id: logic
   name: Logic programming
   research_status: stub

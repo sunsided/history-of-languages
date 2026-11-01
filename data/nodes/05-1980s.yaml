@@ -2148,3 +2148,44 @@
       # let th1 = REFL `x + 1`;;
       val th1 : thm = |- x + 1 = x + 1
     sources: [hol-light-tutorial]
+
+- id: zil
+  name: ZIL
+  aliases: [Zork Implementation Language]
+  kind: language
+  category: domain-specific
+  cluster: adventure-games
+  origin:
+    first_appeared: { year: 1980, precision: year, note: "Wikipedia (MDL): \"In 1980 Marc Blank and Joel Berez adapted the MDL language to create a subset called ZIL\"." }
+    places: [{ institution: Infocom, country: US }]
+  creators:
+    - { name: Marc Blank, role: co-designer }
+    - { name: Joel Berez, role: co-designer }
+  status: historical
+  tags:
+    paradigm: [procedural]
+    features: [homoiconicity, compiler]
+    domain: [game-scripting]
+  summary: >
+    Infocom's language for its text adventures, made by "streamlining MDL". Games were declared as OBJECT forms with
+    properties plus ROUTINEs, and "Infocom's development tools compiled ZIL into Z-machine
+    instructions in a two-stage process": the compiler ZILCH, then the assembler ZAP. ZILCH was never released,
+    but the 1989 manual "Learning ZIL" and the Zork I source survive.
+  relations:
+    - { type: subset_of, to: mdl, weight: strong, confidence: high, sources: [wiki-mdl, wiki-z-machine], note: "\"adapted the MDL language to create a subset called ZIL\"" }
+    - { type: targets, to: z-machine, weight: strong, confidence: high, sources: [wiki-z-machine] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Z-machine" }
+  sources: [wiki-z-machine, wiki-mdl, learning-zil-1989, historicalsource-zork1]
+  example:
+    title: The emerald in the buoy, from Infocom's Zork I
+    language: ZIL
+    note: "Verbatim from 1dungeon.zil in the Zork I source (historicalsource/zork1); tabs expanded to 8 columns. The BUOY object's (ACTION TREASURE-INSIDE) property names this routine: opening the buoy scores the emerald, and RFALSE lets the default OPEN handling run."
+    code: |
+      <ROUTINE TREASURE-INSIDE ()
+               <COND (<VERB? OPEN>
+                      <SCORE-OBJ ,EMERALD>
+                      <RFALSE>)>>
+    sources: [historicalsource-zork1]
+
