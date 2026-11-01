@@ -3,7 +3,7 @@
 	import { viewer } from '../viewer.svelte.ts';
 	import { querySearch, type SearchHit } from '../search.ts';
 	import { firstYear, FAMILY_OF } from '../graph.ts';
-	import { LINEAGE_FAMILIES, sameRoute, shortestPath, type Hop } from '../path.ts';
+	import { shortestPath, type Hop } from '../path.ts';
 
 	const g = $derived(viewer.graph);
 
@@ -61,10 +61,7 @@
 	}
 
 	const [a, b] = $derived(picks);
-	const lineage = $derived(a && b && a !== b ? shortestPath(g, a, b, LINEAGE_FAMILIES) : null);
-	const any = $derived(a && b && a !== b ? shortestPath(g, a, b) : null);
-	// The any-link route is extra information only when it differs from the lineage route.
-	const showAny = $derived(!!any && !sameRoute(any, lineage));
+	const path = $derived(a && b && a !== b ? shortestPath(g, a, b) : null);
 
 	function goTo(id: string) {
 		viewer.selectNode(id);
@@ -178,22 +175,15 @@
 					<ol><li>{@render nodeRow(a)}</li></ol>
 				</section>
 			{:else if a && b}
-				{#if lineage}
-					{@render route('Lineage', lineage, a)}
-				{/if}
-				{#if showAny && any}
-					{@render route(!lineage ? 'Via any link' : any.length < lineage.length ? 'Shorter via any link' : 'Also via any link', any, a)}
-				{/if}
-				{#if !lineage && !any}
+				{#if path}
+					{@render route('Shortest path', path, a)}
+				{:else}
 					<p class="muted">No connection between {name(a)} and {name(b)} in the dataset yet.</p>
-				{:else if !lineage}
-					<p class="muted note">No lineage route (succession, dialects, forks) connects them.</p>
 				{/if}
 			{:else}
 				<p class="muted">
-					Pick two languages to see the shortest chain between them, preferring lineage links (successors,
-					dialects, forks), and over any link (influence, targets, implementation) when that is shorter or the
-					only way.
+					Pick two languages to see the shortest chain of relations between them (successors, dialects, forks,
+					influence, targets, implementation). Among equally short chains, strong and well-sourced links win.
 				</p>
 			{/if}
 		</div>
@@ -414,10 +404,6 @@
 	}
 	.muted {
 		color: var(--fg-faint);
-	}
-	.note {
-		font-size: 12px;
-		margin-top: 10px;
 	}
 	.kind-dot {
 		width: 8px;

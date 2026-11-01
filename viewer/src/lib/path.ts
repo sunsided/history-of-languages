@@ -4,7 +4,7 @@
 // wins; among equally short paths, strong and well-sourced links win (each hop costs 1 plus a penalty
 // below 0.5, so the penalties never outweigh a hop).
 
-import { BACKWARD_LABEL, FAMILY_OF, FORWARD_LABEL, type EdgeFamily, type Graph } from './graph.ts';
+import { BACKWARD_LABEL, FORWARD_LABEL, type Graph } from './graph.ts';
 import type { Edge } from './types.ts';
 
 export interface Hop {
@@ -15,8 +15,6 @@ export interface Hop {
 	label: string;
 }
 
-export const LINEAGE_FAMILIES: ReadonlySet<EdgeFamily> = new Set(['succession', 'variant']);
-
 const WEIGHT_COST = { strong: 0, moderate: 0.1, weak: 0.2 } as const;
 const CONFIDENCE_COST = { high: 0, medium: 0.05, low: 0.2 } as const;
 
@@ -24,11 +22,10 @@ function cost(e: Edge): number {
 	return 1 + (WEIGHT_COST[e.weight ?? 'moderate'] ?? 0.1) + (CONFIDENCE_COST[e.confidence ?? 'medium'] ?? 0.05);
 }
 
-/** Dijkstra from `a` to `b`, optionally restricted to some edge families. Null when unreachable. */
-export function shortestPath(g: Graph, a: string, b: string, families?: ReadonlySet<EdgeFamily>): Hop[] | null {
+/** Dijkstra from `a` to `b` over all relations. Null when unreachable. */
+export function shortestPath(g: Graph, a: string, b: string): Hop[] | null {
 	if (!g.node.has(a) || !g.node.has(b)) return null;
 	if (a === b) return [];
-	const allowed = (e: Edge) => !families || families.has(FAMILY_OF[e.type]);
 
 	const dist = new Map<string, number>([[a, 0]]);
 	const prev = new Map<string, Hop>();
@@ -54,8 +51,8 @@ export function shortestPath(g: Graph, a: string, b: string, families?: Readonly
 			}
 		};
 		// stored on the newer node: cur -> older is "successor of" etc.; older -> newer reads the other way
-		for (const e of g.outgoing.get(cur) ?? []) if (allowed(e)) relax(e.to, e, BACKWARD_LABEL[e.type]);
-		for (const e of g.incoming.get(cur) ?? []) if (allowed(e)) relax(e.from, e, FORWARD_LABEL[e.type]);
+		for (const e of g.outgoing.get(cur) ?? []) relax(e.to, e, BACKWARD_LABEL[e.type]);
+		for (const e of g.incoming.get(cur) ?? []) relax(e.from, e, FORWARD_LABEL[e.type]);
 	}
 
 	if (!prev.has(b)) return null;
@@ -63,6 +60,3 @@ export function shortestPath(g: Graph, a: string, b: string, families?: Readonly
 	for (let at = b; at !== a; at = prev.get(at)!.from) hops.unshift(prev.get(at)!);
 	return hops;
 }
-
-export const sameRoute = (p: Hop[] | null, q: Hop[] | null) =>
-	!!p && !!q && p.length === q.length && p.every((h, i) => h.to === q[i].to && h.edge === q[i].edge);
