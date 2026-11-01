@@ -2959,3 +2959,21 @@
   title: "AssemblyScript: A TypeScript-like language for WebAssembly"
   url: https://www.assemblyscript.org/
   checked: '2026-11-01'
+- id: yee-2009-nacl
+  type: paper
+  primary: true
+  title: "Yee, Sehr, Dardyk, Chen, Muth, Ormandy, Okasaka, Narula, Fullagar: Native Client: A Sandbox for Portable, Untrusted x86 Native Code (IEEE Symposium on Security and Privacy, 2009)"
+  url: https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/34913.pdf
+  checked: '2026-11-01'
+- id: wiki-nacl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Google Native Client"
+  url: https://en.wikipedia.org/wiki/Google_Native_Client
+  checked: '2026-11-01'
+- id: chrome-nacl-docs
+  type: manual
+  primary: true
+  title: "Chrome for Developers: Native Client"
+  url: https://developer.chrome.com/docs/native-client/
+  checked: '2026-11-01'

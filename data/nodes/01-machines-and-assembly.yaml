@@ -1077,8 +1077,9 @@
     S-expressions, designed as a compilation target for C, C++, Rust and others in browsers and beyond. Its
     initial feature set came from asm.js; it is the web's first new execution format since JavaScript.
   relations:
-    - { type: successor_of, to: asm-js, weight: strong, confidence: high, sources: [wiki-webassembly, wiki-asmjs], note: "\"the initial implementation was based on the feature set of asm.js\"; Google's (P)NaCl was the other precursor." }
+    - { type: successor_of, to: asm-js, weight: strong, confidence: high, sources: [wiki-webassembly, wiki-asmjs], note: "\"the initial implementation was based on the feature set of asm.js\"." }
     - { type: influenced_by, to: lisp, weight: weak, confidence: medium, sources: [wiki-webassembly], note: "In the infobox; the text format uses S-expressions." }
+    - { type: successor_of, to: pnacl, weight: moderate, confidence: high, sources: [wiki-nacl], note: "Native Client's infobox names WebAssembly as its successor; \"On 30 May 2017, Google announced deprecation of PNaCl in favor of WebAssembly.\" Whether NaCl shaped Wasm's design is not stated in the sources read." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/WebAssembly", homepage: "https://webassembly.org" }
@@ -1415,3 +1416,88 @@
       ad 101    add register 101
       ts 102    transfer the sum to storage register 102
     sources: [everett-swain-1947-whirlwind-r127]
+
+- id: nacl
+  name: Native Client
+  aliases: [NaCl, Google Native Client]
+  kind: assembly
+  category: systems
+  cluster: assembly/x86
+  origin:
+    first_appeared: { year: 2008, date: "2008-12-08", precision: exact, note: "Introduced to the public on 8 December 2008; generally available in stable Chrome (version 14) in September 2011." }
+    places: [{ institution: Google, country: US }]
+  creators:
+    - { name: Bennet Yee, role: co-author of the 2009 paper }
+    - { name: David Sehr, role: co-author of the 2009 paper }
+    - { name: Gregory Dardyk, role: co-author of the 2009 paper }
+    - { name: J. Bradley Chen, role: co-author of the 2009 paper }
+    - { name: Robert Muth, role: co-author of the 2009 paper }
+    - { name: Tavis Ormandy, role: co-author of the 2009 paper }
+    - { name: Shiki Okasaka, role: co-author of the 2009 paper }
+    - { name: Neha Narula, role: co-author of the 2009 paper }
+    - { name: Nicholas Fullagar, role: co-author of the 2009 paper }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    domain: [web]
+  milestones:
+    - { version: ARM, year: 2010, summary: "ARM implementation released in March 2010; x86-64 and MIPS were also supported later." }
+  summary: >
+    A sandbox for running compiled C and C++ as native machine code in the browser. Modules were ordinary x86
+    executables restricted by validator rules: no instruction may straddle a 32-byte boundary, and every indirect
+    jump goes through a masking "nacljmp" sequence, so the code can be checked before it runs. Deprecated in favour
+    of WebAssembly; Chrome removed it in 2022 and ChromeOS kept it until 2025.
+  relations:
+    - { type: subset_of, to: intel-8086, weight: strong, confidence: high, sources: [yee-2009-nacl], note: "\"Native Client: A Sandbox for Portable, Untrusted x86 Native Code\"; the 2009 paper's modules are 32-bit x86 executables obeying constraints C1-C7. ARM, x86-64 and MIPS came later." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Google_Native_Client", homepage: "https://developer.chrome.com/docs/native-client/" }
+  sources: [yee-2009-nacl, wiki-nacl, chrome-nacl-docs]
+  example:
+    title: The nacljmp sandboxing sequence
+    language: x86 machine code under NaCl rules
+    note: "From Yee et al. 2009, section 3.1, operands as the paper writes them. Masking the target with 0xffffffe0 forces every indirect jump onto a 32-byte-aligned address; together with the rule that no instruction crosses a 32-byte boundary, the validator can prove all reachable code was disassembled and checked. \"Encoded as a three-byte and and a two-byte jmp\"."
+    code: |
+      and %eax, 0xffffffe0
+      jmp *%eax
+    sources: [yee-2009-nacl]
+
+- id: pnacl
+  name: Portable Native Client
+  aliases: [PNaCl, pexe]
+  kind: assembly
+  category: systems
+  cluster: assembly/virtual
+  origin:
+    first_appeared: { year: 2013, date: "2013-11-12", precision: exact, note: "Released with Chrome 31; Chromium blog post of 12 November 2013 (as cited by Wikipedia)." }
+    places: [{ institution: Google, country: US }]
+  creators:
+    - { name: Google, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing]
+    features: [intermediate-code]
+    domain: [web]
+  summary: >
+    Native Client made portable: programs shipped as .pexe files in "an architecture-agnostic and stable subset of
+    the LLVM intermediate representation bytecode", which Chrome translated ahead of time into NaCl machine code
+    for the local CPU. Google deprecated it on 30 May 2017 in favour of WebAssembly and removed it in June 2022.
+  relations:
+    - { type: successor_of, to: nacl, weight: strong, confidence: high, sources: [wiki-nacl], note: "\"an architecture-independent compiled ahead-of-time version of NaCl\"; .pexe files are translated into architecture-specific NaCl executables." }
+    - { type: subset_of, to: llvm-ir, weight: strong, confidence: high, sources: [wiki-nacl] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Google_Native_Client" }
+  sources: [wiki-nacl, chrome-nacl-docs]
+  example:
+    title: A function as portable bitcode, in text form
+    language: LLVM IR
+    note: "Illustrative: produced by clang 18 from int add(int a, int b) { return a + b; } and trimmed of attributes, not by the PNaCl toolchain. PNaCl froze a subset of an older LLVM bitcode format; its documentation (the PNaCl bitcode ABI page) could not be fetched to confirm the exact form."
+    code: |
+      define i32 @add(i32 %a, i32 %b) {
+      entry:
+        %add = add nsw i32 %b, %a
+        ret i32 %add
+      }
+    sources: [wiki-nacl]

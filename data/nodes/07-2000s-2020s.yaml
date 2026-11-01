@@ -1367,7 +1367,9 @@
   summary: >
     A strictly typed subset of JavaScript, written by compilers such as Emscripten rather than people, in
     which annotations like x|0 tell the engine a value is a 32-bit integer so it can be compiled ahead of
-    time. Experience with it led directly to WebAssembly, which supplanted it; Mozilla deprecated it in 2026.
+    time. Emscripten produced it from LLVM IR, so C and C++ (or "any other languages that can be converted to LLVM
+    IR") reached the browser through it. Experience with it led directly to WebAssembly, which supplanted it;
+    Mozilla deprecated it in 2026.
   relations:
     - { type: subset_of, to: javascript, weight: strong, confidence: high, sources: [wiki-asmjs] }
   research_status: draft
