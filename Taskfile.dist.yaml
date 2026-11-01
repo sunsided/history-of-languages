@@ -40,6 +40,29 @@ tasks:
       - corepack yarn svelte-kit sync
       - corepack yarn check
 
+  build:
+    desc: 'Static build of the viewer into viewer/build (as GitHub Pages does); BASE_PATH sets the URL prefix'
+    summary: |
+      Bundles the dataset and copies the referenced media. For a sub-path deployment:
+        BASE_PATH=/history-of-languages task build
+    dir: '{{.VIEWER}}'
+    deps: [install]
+    cmds:
+      - corepack yarn build
+
+  preview:
+    desc: Serve the static build locally
+    dir: '{{.VIEWER}}'
+    deps: [build]
+    cmds:
+      - corepack yarn preview {{.CLI_ARGS}}
+
+  lint:workflows:
+    desc: Lint GitHub Actions workflows with actionlint and zizmor (as CI does)
+    cmds:
+      - docker run --rm -v "$PWD:/repo" -w /repo rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 -color
+      - zizmor --persona pedantic .
+
   verify:
     desc: Everything that must pass before a commit (data validation and viewer type-check)
     cmds:
