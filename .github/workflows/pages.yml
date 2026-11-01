@@ -43,7 +43,7 @@ jobs:
 
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version-file: viewer/.nvmrc
+          node-version-file: .nvmrc
 
       # Node 25+ no longer ships corepack. Pinned version; yarn itself is then pinned by packageManager
       # in viewer/package.json and its dependencies by yarn.lock.
