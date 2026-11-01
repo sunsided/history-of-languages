@@ -545,12 +545,11 @@
 
 - id: ocaml
   name: OCaml
-  aliases: [Objective Caml, Caml]
+  aliases: [Objective Caml]
   kind: language
   category: general
   cluster: ml-family
   origin:
-    began: { year: 1985, precision: year, note: "Caml (1985), Caml Light (1990)." }
     first_appeared: { year: 1996, precision: year }
     places: [{ institution: INRIA, city: Rocquencourt, country: FR }]
   creators:
@@ -558,9 +557,6 @@
     - { name: Jérôme Vouillon, role: designer }
     - { name: Damien Doligez, role: designer }
     - { name: Didier Rémy, role: designer }
-    - { name: Gérard Huet, role: Caml }
-    - { name: Guy Cousineau, role: Caml }
-    - { name: Ascánder Suárez, role: Caml }
   status: active
   tags:
     paradigm: [functional, imperative, object-oriented]
@@ -569,18 +565,17 @@
     concurrency: [effect-handlers, green-threads]
     features: [algebraic-data-types, pattern-matching, module-system, functors]
   milestones:
-    - { version: Caml, year: 1985 }
-    - { version: Caml Light, year: 1990 }
     - { version: "OCaml 1.0", year: 1996, introduces: [object-oriented] }
     - { version: "OCaml 5.0", year: 2022, introduces: [effect-handlers], summary: "Multicore runtime and effect handlers: direct-style concurrency without async/await colouring." }
   summary: "ML with objects and a fast native compiler; the implementation language of the first Rust compiler, Coq/Rocq and Flow, and the base F# was modelled on."
   relations:
+    - { type: successor_of, to: caml, from_version: Caml Special Light, weight: strong, confidence: high, sources: [ocaml-history], note: "Caml Special Light's native compiler and module system \"led to the release of Objective Caml in 1996\"; the name became OCaml in 2011." }
     - { type: influenced_by, to: ml, weight: strong, confidence: high }
     - { type: influenced_by, to: standard-ml, weight: moderate, confidence: high }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/OCaml", homepage: "https://ocaml.org" }
-  sources: [wiki-ocaml]
+  sources: [wiki-ocaml, ocaml-history]
   example:
     title: Variants and exhaustive matching
     language: OCaml
@@ -1172,3 +1167,50 @@
       (tog (list 5 "hello "
                  1/2 "world" (sqrt -1)))
     sources: [racket-org]
+
+- id: agda
+  name: Agda
+  aliases: [Agda 2]
+  kind: language
+  category: research
+  cluster: ml-family/proof
+  origin:
+    first_appeared: { year: 1999, precision: year, note: "\"The original Agda system was developed at Chalmers by Catarina Coquand in 1999.\" Agda 2 (2007), the language in use today, is \"a full rewrite, which should be considered a new language that shares a name and tradition\"." }
+    places: [{ institution: Chalmers University of Technology, city: Gothenburg, country: SE }]
+  creators:
+    - { name: Catarina Coquand, role: "Agda 1" }
+    - { name: Ulf Norell, role: "Agda 2" }
+  status: active
+  tags:
+    paradigm: [functional, purely-functional]
+    typing: [static-typing, dependent-types]
+    features: [algebraic-data-types, pattern-matching]
+    domain: [theorem-proving]
+  milestones:
+    - { version: "1.0", year: 1999 }
+    - { version: "2", year: 2007, summary: "Ulf Norell's full rewrite, described in his Chalmers PhD thesis; effectively a new language." }
+  summary: >
+    A dependently typed functional language and proof assistant from Chalmers: programs and proofs are the
+    same thing, written with Haskell-like syntax, Unicode and mixfix operators. The name alludes to Coq, named
+    after Thierry Coquand. Compiles to Haskell (MAlonzo) or JavaScript.
+  relations:
+    - { type: influenced_by, to: rocq, aspects: [dependent-types], weight: moderate, confidence: medium, sources: [wiki-agda], note: "Infobox; the article also notes the name's allusion to Coq." }
+    - { type: influenced_by, to: haskell, weight: moderate, confidence: medium, sources: [wiki-agda], note: "Infobox." }
+    - { type: implemented_in, to: haskell, weight: strong, confidence: high, sources: [wiki-agda] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Agda_(programming_language)" }
+  sources: [wiki-agda]
+  example:
+    title: Naturals and the ≤ relation
+    language: Agda
+    note: "From Wikipedia. _≤_ is a mixfix name; its constructors are proofs, so a value of type m ≤ n is a proof of the inequality. Indentation was lost in fetching and has been restored; Agda requires constructors to be indented."
+    code: |
+      data ℕ : Set where
+        zero : ℕ
+        suc  : ℕ → ℕ
+
+      data _≤_ : ℕ → ℕ → Set where
+        z≤n : {n : ℕ} → zero ≤ n
+        s≤s : {n m : ℕ} → n ≤ m → suc n ≤ suc m
+    sources: [wiki-agda]

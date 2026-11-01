@@ -326,6 +326,7 @@
   wiki: David MacQueen
   nodes:
   - standard-ml
+  - hope
 - id: person-david-madore
   kind: person
   person: David Madore
@@ -344,6 +345,8 @@
   wiki: David Turner (computer scientist)
   nodes:
   - miranda
+  - sasl
+  - krc
 - id: person-david-ungar
   kind: person
   person: David Ungar
@@ -399,6 +402,7 @@
   wiki: Edwin Brady
   nodes:
   - whitespace
+  - idris
 - id: person-federico-faggin
   kind: person
   person: Federico Faggin
@@ -966,6 +970,7 @@
   wiki: Xavier Leroy
   nodes:
   - ocaml
+  - caml
 - id: person-yukihiro-matsumoto
   kind: person
   person: Yukihiro Matsumoto
@@ -1155,3 +1160,47 @@
   wiki: Robert Tappan Morris
   nodes:
   - arc
+- id: person-rod-burstall
+  kind: person
+  person: Rod Burstall
+  wiki: Rod Burstall
+  nodes:
+  - hope
+- id: person-lennart-augustsson
+  kind: person
+  person: Lennart Augustsson
+  wiki: Lennart Augustsson
+  nodes:
+  - lazy-ml
+- id: person-damien-doligez
+  kind: person
+  person: Damien Doligez
+  wiki: Damien Doligez
+  nodes:
+  - caml
+  - ocaml
+- id: person-gerard-huet
+  kind: person
+  person: Gérard Huet
+  wiki: Gérard Huet
+  nodes:
+  - caml
+  - rocq
+- id: person-thierry-coquand
+  kind: person
+  person: Thierry Coquand
+  wiki: Thierry Coquand
+  nodes:
+  - rocq
+- id: person-christine-paulin-mohring
+  kind: person
+  person: Christine Paulin-Mohring
+  wiki: Christine Paulin-Mohring
+  nodes:
+  - rocq
+- id: person-leonardo-de-moura
+  kind: person
+  person: Leonardo de Moura
+  wiki: Leonardo de Moura
+  nodes:
+  - lean

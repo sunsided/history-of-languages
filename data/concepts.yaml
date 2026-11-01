@@ -211,6 +211,10 @@
 - id: distributed-systems
   name: Distributed systems
   facet: domain
+- id: theorem-proving
+  name: Theorem proving
+  facet: domain
+  summary: Interactive proof assistants and languages for machine-checked mathematics and program verification.
 - id: education
   name: Education
   facet: domain
@@ -261,9 +265,9 @@
   facet: features
   summary: Sum and product types, usually with pattern matching.
   first_seen:
-    node: standard-ml
-    year: 1990
-    note: From HOPE (1980).
+    node: hope
+    year: 1980
+    note: "Hudak et al. 2007 call Hope \"the language that introduced algebraic data types\"; Wikipedia credits NPL and Hope jointly (NPL is not yet a node)."
 - id: assertions
   name: Assertions
   facet: features
@@ -566,6 +570,10 @@
   name: Lazy evaluation
   facet: features
   summary: Expressions evaluated only when needed.
+  first_seen:
+    node: sasl
+    year: 1976
+    note: "SASL became lazy in 1976 (Hudak et al. 2007). Lazy evaluation as a technique (Wadsworth 1971, Henderson-Morris and Friedman-Wise 1976) predates it; those are papers, not languages."
 - id: let-expressions
   name: Let expressions
   facet: features
@@ -599,6 +607,11 @@
 - id: list-comprehensions
   name: List comprehensions
   facet: features
+  summary: Building a list from generators and filters, written like set-builder notation.
+  first_seen:
+    node: krc
+    year: 1981
+    note: "KRC's \"ZF expressions (now more usually called list comprehensions)\" (Wikipedia: Kent Recursive Calculator)."
 - id: live-programming
   name: Live programming
   facet: features
@@ -1079,6 +1092,30 @@
   first_seen:
     node: apl
     year: 1966
+- id: dependent-types
+  name: Dependent types
+  facet: typing
+  broader:
+  - static-typing
+  summary: Types that depend on values, such as a vector type indexed by its length; with them, propositions are types and programs are proofs.
+- id: refinement-types
+  name: Refinement types
+  facet: typing
+  broader:
+  - static-typing
+  summary: A base type narrowed by a logical predicate, such as x:int{x >= 0}, checked statically, often with an SMT solver.
+- id: uniqueness-types
+  name: Uniqueness types
+  facet: typing
+  broader:
+  - static-typing
+  summary: A value with a unique type has exactly one reference to it, so it can be updated in place while the language stays pure. Clean uses it for state and I/O where Haskell uses monads.
+- id: linear-types
+  name: Linear types
+  facet: typing
+  broader:
+  - static-typing
+  summary: Values that must be used exactly once; quantitative type theory generalises this to counted use (Idris 2).
 - id: affine-types
   name: Affine types
   facet: typing

@@ -228,13 +228,15 @@
     typing: [static-typing, type-inference, parametric-polymorphism]
     memory: [garbage-collection]
     features: [lazy-evaluation, algebraic-data-types, pattern-matching, list-comprehensions, offside-rule]
-  summary: "Commercial lazy, purely functional language, the culmination of Turner's SASL and KRC. Being proprietary, it prompted the Haskell committee to create an open standard."
+  summary: "Commercial lazy, purely functional language, the culmination of Turner's SASL and KRC, adding ML-style polymorphic typing and type inference to them. Being proprietary, it prompted the Haskell committee to create an open standard."
   relations:
     - { type: influenced_by, to: ml, aspects: [type-inference, parametric-polymorphism], weight: strong, confidence: high }
-    - { type: influenced_by, to: iswim, aspects: [offside-rule], weight: strong, confidence: high, note: "Via SASL (1972) and KRC (1981), to be added as nodes." }
+    - { type: influenced_by, to: iswim, aspects: [offside-rule], weight: strong, confidence: high, note: "Via SASL and KRC." }
+    - { type: successor_of, to: krc, weight: strong, confidence: high, sources: [wiki-krc, hudak-2007-history-haskell], note: "\"The direct successor to KRC is Miranda\"; \"Miranda, a successor to SASL and KRC\" (Hudak et al. 2007)." }
+    - { type: influenced_by, to: sasl, aspects: [lazy-evaluation], weight: strong, confidence: high, sources: [hudak-2007-history-haskell, wiki-sasl] }
   research_status: draft
   confidence: high
-  sources: [hudak-2007-history-haskell]
+  sources: [hudak-2007-history-haskell, wiki-krc, wiki-sasl]
   example:
     title: Lazy lists and guards
     language: Miranda
@@ -1556,3 +1558,276 @@
         (princ "\nHello World!")
         (princ))
     sources: [wiki-autolisp]
+
+- id: hope
+  name: Hope
+  aliases: [HOPE]
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 1980, date: "1980-08", precision: exact, note: "Presented by Burstall, MacQueen and Sannella at the first Lisp conference, Stanford, August 1980 (\"Hope: An Experimental Applicative Language\"); developed earlier at Edinburgh." }
+    places: [{ institution: University of Edinburgh, city: Edinburgh, country: GB }]
+  creators:
+    - { name: Rod Burstall, role: designer }
+    - { name: David MacQueen, role: designer }
+    - { name: Don Sannella, role: designer }
+  status: extinct
+  tags:
+    paradigm: [functional, purely-functional]
+    typing: [static-typing, parametric-polymorphism]
+    features: [algebraic-data-types, pattern-matching]
+  summary: >
+    Edinburgh's experimental applicative language, "the language that introduced algebraic data types" (Hudak
+    et al. 2007). Derived from Burstall and Darlington's NPL, it declared types explicitly ("there is no type
+    inference algorithm") and matched patterns most-specific-first, so clause order did not matter. Hope+
+    (Imperial College and ICL) added strictness annotations.
+  notes: >
+    A frequent claim that Hope's data types passed into Standard ML (MacQueen worked on both) is not stated
+    on the pages read; it needs a source before it becomes an edge. NPL (Burstall and Darlington, 1970s) is
+    not yet a node.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hope_(programming_language)" }
+  sources: [wiki-hope, hudak-2007-history-haskell]
+  example:
+    title: Factorial
+    language: Hope
+    note: "From Wikipedia. dec declares the type; each --- introduces an equation, and <= reads \"is defined as\". The fetched text had no line breaks, so the layout is ours."
+    code: |
+      dec fact : num -> num;
+      --- fact 0 <= 1;
+      --- fact n <= n*fact(n-1);
+    sources: [wiki-hope]
+
+- id: krc
+  name: KRC
+  aliases: [Kent Recursive Calculator]
+  kind: language
+  category: educational
+  cluster: ml-family/lazy
+  origin:
+    began: { year: 1979, precision: year, note: "Developed from November 1979 to October 1981 (Wikipedia); \"designed in 1980-81 for teaching\" (Turner 2012)." }
+    first_appeared: { year: 1981, precision: year }
+    places: [{ institution: University of Kent, city: Canterbury, country: GB }]
+  creators: [{ name: David Turner, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [functional, purely-functional]
+    typing: [dynamic-typing]
+    features: [lazy-evaluation, pattern-matching, list-comprehensions]
+    domain: [education]
+  milestones:
+    - { version: "1981", year: 1981, introduces: [list-comprehensions], summary: "\"ZF expressions\" (Turner's name; Wadler later coined \"list comprehension\"), inspired by Darlington's set expressions in NPL." }
+  summary: >
+    "A miniaturised version of SASL" that Turner designed for teaching at Kent: only top-level equations,
+    with pattern matching and guards. It was "the testbed for list comprehensions, from where they made
+    their way into SASL and then Miranda", and was Kent's main teaching language for functional programming
+    from 1982 to 1985.
+  relations:
+    - { type: influenced_by, to: sasl, weight: strong, confidence: high, sources: [wiki-krc, turner-2012-history-fp], note: "\"a miniaturised version of SASL\" (Turner 2012)." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Kent_Recursive_Calculator" }
+  sources: [wiki-krc, turner-2012-history-fp, hudak-2007-history-haskell]
+  example:
+    title: Guards and a ZF expression
+    language: KRC
+    note: "Illustrative. No KRC code was found in the sources read (krc-lang.org blocks automated fetching). Written in the equation style of Turner's SASL examples, with KRC's guards and a ZF expression in braces; the exact guard and ZF syntax is unverified."
+    code: |
+      sign x = 1, x > 0
+             = -1, x < 0
+             = 0
+      squares xs = {x*x | x <- xs; x > 0}
+    sources: [turner-2012-history-fp]
+
+- id: lazy-ml
+  name: Lazy ML
+  aliases: [LML]
+  kind: language
+  category: research
+  cluster: ml-family/lazy
+  origin:
+    first_appeared: { year: 1984, precision: circa, note: "\"developed in the early 1980s, before Miranda and Haskell\"; Augustsson's \"A Compiler for Lazy ML\" is LFP '84." }
+    places: [{ institution: Chalmers University of Technology, city: Gothenburg, country: SE }]
+  creators:
+    - { name: Lennart Augustsson, role: designer }
+    - { name: Thomas Johnsson, role: designer }
+  status: extinct
+  tags:
+    paradigm: [functional]
+    typing: [static-typing, type-inference, parametric-polymorphism]
+    memory: [garbage-collection]
+    features: [lazy-evaluation, algebraic-data-types, pattern-matching, optimizing-compiler]
+  summary: >
+    "A strongly typed, statically scoped implementation of ML, with lazy evaluation." Its compiler showed
+    how to compile a lazy language to native code via the G-machine, where lazy languages had been run by
+    interpreted graph reduction. Taken up at UCL by Simon Peyton Jones; Augustsson's later HBC compiler
+    for Haskell came from the same work.
+  notes: >
+    Hudak et al. 2007 list LML among the lazy languages before Haskell but do not state a direct influence
+    on Haskell's design, so there is no edge to haskell yet.
+  relations:
+    - { type: dialect_of, to: ml, weight: strong, confidence: high, sources: [wiki-lennart-augustsson], note: "\"an implementation of ML, with lazy evaluation\"." }
+  research_status: draft
+  confidence: medium
+  sources: [wiki-lennart-augustsson, hudak-2007-history-haskell]
+  example:
+    title: An infinite list
+    language: Lazy ML
+    note: "Illustrative. No Lazy ML code was found in the sources read. Written in ML's let rec ... in style; LML's exact clause and list syntax is unverified."
+    code: |
+      let rec from n = n . from (n+1)
+      and     take 0 l = []
+           || take n (x.xs) = x . take (n-1) xs
+      in take 5 (from 1)
+    sources: [wiki-lennart-augustsson]
+
+- id: caml
+  name: Caml
+  aliases: [Categorical Abstract Machine Language, Heavy Caml, Caml Light, Caml Special Light]
+  kind: language
+  category: general
+  cluster: ml-family
+  origin:
+    began: { year: 1984, precision: year, note: "Caml V3.1 was designed \"Between 1984 and 1987\" (ocaml.org history)." }
+    first_appeared: { year: 1985, precision: disputed, note: "Wikipedia's infobox says 1985; ocaml.org says Caml V3.1 was distributed to the public from 1987, and Wikipedia's body dates the first implementation (Suárez, in Lisp) to 1987." }
+    places:
+      - { institution: INRIA, country: FR }
+      - { institution: École normale supérieure, city: Paris, country: FR }
+  creators:
+    - { name: Gérard Huet, role: designer }
+    - { name: Guy Cousineau, role: designer }
+    - { name: Ascánder Suárez, role: "first implementation (Le Lisp)" }
+    - { name: Pierre Weis, role: developer }
+    - { name: Michel Mauny, role: developer }
+    - { name: Xavier Leroy, role: "Caml Light, Caml Special Light" }
+    - { name: Damien Doligez, role: "Caml Light memory management" }
+  status: extinct
+  tags:
+    paradigm: [functional, imperative]
+    typing: [static-typing, type-inference, parametric-polymorphism]
+    memory: [garbage-collection]
+    features: [algebraic-data-types, pattern-matching, bytecode-vm, module-system]
+  milestones:
+    - { version: "V3.1", year: 1987, introduces: [bytecode-vm], summary: "\"Heavy Caml\": compiled to code for the Categorical Abstract Machine, written in Le Lisp; modules and functors." }
+    - { version: Caml Light, year: 1990, summary: "A new implementation by Leroy, \"based on a bytecode interpreter written in C\"; replaced Heavy Caml. Mutable data, exceptions and separate compilation added by 1995." }
+    - { version: Caml Special Light, year: 1995, introduces: [optimizing-compiler, module-system], summary: "\"an optimising native-code compiler\" and \"a high-level module system much in the spirit of Standard ML\"." }
+  summary: >
+    The French ML: "a dialect of the ML programming language family" from INRIA and ENS, named as a pun on
+    the Categorical Abstract Machine it first compiled to. Rewritten in C as Caml Light (1990) and again as
+    Caml Special Light (1995), whose module system and native compiler became Objective Caml in 1996.
+  relations:
+    - { type: dialect_of, to: ml, weight: strong, confidence: high, sources: [wiki-caml, ocaml-history], note: "\"a dialect of the ML programming language family\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Caml" }
+  sources: [wiki-caml, ocaml-history]
+  example:
+    title: Factorial by pattern matching
+    language: Caml
+    note: "From Wikipedia's Caml article. function matches its argument directly; ;; ends a top-level phrase. The same text is valid OCaml."
+    code: |
+      let rec fact = function
+      | 0 -> 1
+      | n -> n * fact(n - 1);;
+    sources: [wiki-caml]
+
+- id: clean
+  name: Clean
+  aliases: [Concurrent Clean]
+  kind: language
+  category: research
+  cluster: ml-family/lazy
+  origin:
+    first_appeared: { year: 1987, precision: year, note: "\"developed by a group of researchers from the Radboud University in Nijmegen since 1987\"." }
+    places: [{ institution: Radboud University Nijmegen, city: Nijmegen, country: NL }]
+  status: active
+  tags:
+    paradigm: [functional, purely-functional, generic-programming]
+    typing: [static-typing, type-inference, uniqueness-types, dynamic-typing]
+    memory: [garbage-collection]
+    features: [lazy-evaluation, algebraic-data-types, pattern-matching]
+  milestones:
+    - { version: "0.7", year: 1991 }
+    - { version: "1.0", year: 1995 }
+    - { version: "2.0", year: 2001 }
+    - { version: "3.0", year: 2018 }
+  summary: >
+    A lazy, pure functional language from Nijmegen, "a younger sibling" of Haskell in syntax and properties.
+    It handles mutable state and I/O "through a uniqueness type system, in contrast to Haskell's use of
+    monads", and also has dynamic types and generic functions. Originally called the Concurrent Clean System.
+  notes: >
+    Wikipedia names only the "Software Technology Research Group of Radboud University Nijmegen" as designer;
+    individual designers are not named on the pages read. The infobox's "Lean" among its influences is presumably the Nijmegen graph-rewriting
+    language, not the 2013 proof assistant; unconfirmed. The release table records platform support, not
+    which features arrived when.
+  relations:
+    - { type: influenced_by, to: miranda, weight: moderate, confidence: medium, sources: [wiki-clean], note: "Infobox only; not discussed in the article body." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Clean_(programming_language)", homepage: "https://clean.cs.ru.nl/" }
+  sources: [wiki-clean, clean-cs-ru-nl]
+  example:
+    title: Factorial and Start
+    language: Clean
+    note: "From Wikipedia. Start is the program's entry point; the type signature uses Haskell-like :: notation."
+    code: |
+      fac :: Int -> Int
+      fac 0 = 1
+      fac n = n * fac (n-1)
+      Start = fac 10
+    sources: [wiki-clean]
+
+- id: rocq
+  name: Rocq
+  aliases: [Coq, The Rocq Prover, Gallina, CoC]
+  kind: language
+  category: research
+  cluster: ml-family/proof
+  origin:
+    began: { year: 1984, precision: year, note: "\"It started in 1984 from an implementation of the Calculus of Constructions at INRIA-Rocquencourt\"." }
+    first_appeared: { year: 1989, date: "1989-05-01", precision: exact, note: "First release, version 4.10 (Wikipedia infobox)." }
+    places: [{ institution: INRIA, city: Rocquencourt, country: FR }]
+  creators:
+    - { name: Thierry Coquand, role: designer }
+    - { name: Gérard Huet, role: designer }
+    - { name: Christine Paulin-Mohring, role: "Calculus of Inductive Constructions" }
+  status: active
+  tags:
+    paradigm: [functional, purely-functional]
+    typing: [static-typing, dependent-types, type-inference]
+    features: [algebraic-data-types, pattern-matching]
+    domain: [theorem-proving]
+  milestones:
+    - { version: "4.10", year: 1989, introduces: [dependent-types], summary: "First release, of the Calculus of Constructions (CoC)." }
+    - { version: Coq, year: 1991, summary: "Christine Paulin extends it to the Calculus of Inductive Constructions; the name changes from CoC to Coq." }
+    - { version: "Rocq 9.0", year: 2025, summary: "Official renaming to The Rocq Prover (announced 11 October 2023)." }
+  summary: >
+    The interactive theorem prover of the Calculus of (Inductive) Constructions, whose specification
+    language Gallina is a dependently typed functional language: programs and proofs share one syntax, and
+    certified programs can be extracted. Named Coq for the calculus and for Thierry Coquand, renamed Rocq
+    in 2025.
+  notes: >
+    Written in OCaml ("mainly implemented in OCaml with a bit of C"); there is no implemented_in edge because
+    the date it moved to Caml or OCaml has not been sourced (OCaml dates from 1996). Lean's Wikipedia
+    article says the rename was in 2024; the Rocq article dates it to Rocq 9.0, March 2025.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Rocq", homepage: "https://rocq-prover.org" }
+  sources: [wiki-rocq, rocq-about]
+  example:
+    title: A function and a lemma about it
+    language: Rocq
+    note: "From Wikipedia's Rocq article. Fixpoint defines a recursive function; the lemma is proved by computation (reflexivity). Indentation was lost in fetching and is ours; it is not significant."
+    code: |
+      Fixpoint is_even (n : nat) : bool :=
+        match n with
+        | 0 => true
+        | S n' => negb (is_even n')
+        end.
+
+      Lemma is_even_S n :
+        is_even (S n) = negb (is_even n).
+      Proof. reflexivity. Qed.
+    sources: [wiki-rocq]

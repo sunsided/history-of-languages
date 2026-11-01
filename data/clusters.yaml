@@ -381,23 +381,14 @@
 - id: ml-family
   name: ML and typed functional languages
   research_status: draft
-  backlog:
-    - { name: "HOPE", year: 1980, hint: "Algebraic data types and pattern matching into SML." }
-    - { name: "Caml (separate node from OCaml?)", year: 1985 }
-    - { name: "Coq / Rocq (Gallina)", year: 1989 }
-    - { name: "Agda", year: 2007 }
-    - { name: "Idris", year: 2007 }
-    - { name: "Lean", year: 2013 }
-    - { name: "Koka", year: 2012, hint: "Effect handlers; relevant to async lineage. Daan Leijen (book: koka-lang.github.io). First-appearance date not yet found: check Leijen 2014 'Koka: Programming with Row Polymorphic Effect Types'." }
+- id: ml-family/proof
+  name: Proof assistants and dependently typed languages
+  parent: ml-family
+  research_status: stub
 - id: ml-family/lazy
   name: Lazy functional languages
   parent: ml-family
   research_status: draft
-  backlog:
-    - { name: "SASL", year: 1972 }
-    - { name: "KRC", year: 1981 }
-    - { name: "Lazy ML", year: 1984 }
-    - { name: "Clean", year: 1987 }
 - id: oop
   name: Object-oriented lineage
   research_status: draft

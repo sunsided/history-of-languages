@@ -1178,3 +1178,43 @@
       (setq s (make-instance 'ship ':x-velocity 3 ':y-velocity 4))
       (send s ':speed)          ; => 5.0
     sources: [wiki-lisp-machine-lisp]
+
+- id: sasl
+  name: SASL
+  aliases: [St Andrews Static Language]
+  kind: language
+  category: research
+  cluster: ml-family/lazy
+  origin:
+    first_appeared: { year: 1972, precision: year, note: "Wikipedia and Hudak et al. 2007 give 1972. Turner (2012) says a LISP implementation by Tony Davie ran in autumn 1972 and he wrote a SASL-to-SECD compiler over Easter 1973; his own timeline lists \"SASL (1973-83)\"." }
+    places: [{ institution: University of St Andrews, city: St Andrews, country: GB }]
+  creators: [{ name: David Turner, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [functional, purely-functional]
+    typing: [dynamic-typing]
+    features: [lazy-evaluation, pattern-matching, recursion]
+  milestones:
+    - { version: "1976", year: 1976, introduces: [lazy-evaluation, pattern-matching], summary: "Redesigned and reimplemented as a non-strict (lazy) language, with multi-equation definitions by pattern matching." }
+    - { version: "1983", year: 1983, introduces: [list-comprehensions], summary: "Gained floating point and list comprehensions (from KRC)." }
+  summary: >
+    David Turner's St Andrews Static Language, "based on the applicative subset of ISWIM". Strict at first, it
+    became lazy in 1976 and was the foundation of KRC and Miranda, and so of Haskell's syntax and semantics.
+    Burroughs used it to write a compiler and an operating system.
+  relations:
+    - { type: influenced_by, to: iswim, weight: strong, confidence: high, sources: [wiki-sasl, hudak-2007-history-haskell], note: "\"based on the applicative subset of ISWIM\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SASL_(programming_language)" }
+  sources: [wiki-sasl, hudak-2007-history-haskell, turner-2012-history-fp]
+  example:
+    title: Definitions by pattern matching (1976)
+    language: SASL
+    note: "From Turner 2012, section 6.1, as an example of the multi-equation definitions SASL gained in 1976. () is the empty list and a:x a cons. The extracted text lost indentation; these lines have none."
+    code: |
+      length () = 0
+      length (a:x) = 1 + length x
+      ack 0 n = n+1
+      ack m 0 = ack (m-1) 1
+      ack m n = ack (m-1) (ack m (n-1))
+    sources: [turner-2012-history-fp]

@@ -2466,3 +2466,206 @@
               (put solutions {i true j true k true} true))))
         (map keys (keys solutions)))
     sources: [janet-lang-org]
+
+- id: idris
+  name: Idris
+  aliases: [Idris 2]
+  kind: language
+  category: research
+  cluster: ml-family/proof
+  origin:
+    first_appeared: { year: 2007, precision: year, note: "Wikipedia cites Brady's 2007 darcs repository at St Andrews." }
+    places: [{ institution: University of St Andrews, city: St Andrews, country: GB }]
+  creators: [{ name: Edwin Brady, role: designer }]
+  status: active
+  tags:
+    paradigm: [functional, purely-functional]
+    typing: [static-typing, dependent-types, linear-types]
+    features: [algebraic-data-types, pattern-matching, self-hosting]
+    domain: [theorem-proving]
+  summary: >
+    "A general-purpose programming language similar to Haskell" with dependent types, which can also be used
+    as a proof assistant. Idris 2 is "a new self-hosted version of the language which deeply integrates a
+    linear type system, based on quantitative type theory", compiling via Chez Scheme, Racket, JavaScript or C.
+  notes: >
+    Idris 2's first release date was not found on the pages read, so it is not a milestone yet.
+  relations:
+    - { type: influenced_by, to: agda, aspects: [dependent-types], weight: strong, confidence: medium, sources: [wiki-idris], note: "Infobox, which also lists Clean, Rocq, Epigram, F#, Haskell, ML and Rust." }
+    - { type: influenced_by, to: haskell, weight: strong, confidence: high, sources: [wiki-idris], note: "\"similar to Haskell\"." }
+    - { type: influenced_by, to: rocq, weight: moderate, confidence: medium, sources: [wiki-idris], note: "Infobox." }
+    - { type: influenced_by, to: clean, aspects: [uniqueness-types], weight: weak, confidence: medium, sources: [wiki-idris], note: "Infobox; the aspect is our reading." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Idris_(programming_language)", homepage: "https://www.idris-lang.org" }
+  sources: [wiki-idris, idris-lang-org]
+  example:
+    title: Length-indexed vectors
+    language: Idris
+    note: "From Wikipedia. The type of append says the result's length is the sum of the inputs'; total asks the checker to prove the function covers every case and terminates. Indentation was lost in fetching and has been restored."
+    code: |
+      data Vect : Nat -> Type -> Type where
+        Nil  : Vect 0 a
+        (::) : (x : a) -> (xs : Vect n a) -> Vect (n + 1) a
+
+      total
+      append : Vect n a -> Vect m a -> Vect (n + m) a
+      append Nil       ys = ys
+      append (x :: xs) ys = x :: append xs ys
+    sources: [wiki-idris]
+
+- id: fstar
+  name: F*
+  aliases: [FStar, F star]
+  kind: language
+  category: research
+  cluster: ml-family/proof
+  origin:
+    first_appeared: { year: 2011, precision: year, note: "Swamy et al., \"Secure distributed programming with value-dependent types\", ICFP '11. \"the current version of F* was redesigned and implemented in 2015\"." }
+    places:
+      - { institution: Microsoft Research, country: US }
+      - { institution: Inria, country: FR }
+  creators:
+    - { name: Nikhil Swamy, role: designer }
+    - { name: Juan Chen, role: designer }
+    - { name: Cédric Fournet, role: designer }
+    - { name: Pierre-Yves Strub, role: designer }
+    - { name: Karthikeyan Bhargavan, role: designer }
+    - { name: Jean Yang, role: designer }
+  status: active
+  tags:
+    paradigm: [functional]
+    typing: [static-typing, dependent-types, refinement-types, type-inference]
+    features: [algebraic-data-types, pattern-matching, self-hosting]
+    domain: [theorem-proving]
+  milestones:
+    - { version: "2015", year: 2015, summary: "Redesigned and reimplemented; the basis of the current language." }
+    - { version: "2022.04.02", year: 2022, summary: "No longer written in the common subset of F* and F#; F# support for bootstrapping dropped." }
+  summary: >
+    A proof-oriented ML from Microsoft Research and Inria whose "type system includes dependent types,
+    monadic effects, and refinement types", with SMT-backed automatic proofs. Programs extract to OCaml by
+    default, or (via KaRaMeL) to F#, C and Wasm; Project Everest used it to build verified TLS and crypto code.
+  relations:
+    - { type: influenced_by, to: ocaml, weight: strong, confidence: high, sources: [wiki-fstar], note: "\"inspired by the languages ML, Caml, and OCaml\"." }
+    - { type: influenced_by, to: caml, weight: moderate, confidence: high, sources: [wiki-fstar] }
+    - { type: influenced_by, to: ml, weight: moderate, confidence: high, sources: [wiki-fstar] }
+    - { type: influenced_by, to: rocq, aspects: [dependent-types], weight: moderate, confidence: medium, sources: [wiki-fstar], note: "Infobox, which also lists Dafny, F#, Lean and Standard ML. Lean (2013) postdates F*'s 2011 introduction, so it is not an edge here." }
+    - { type: influenced_by, to: fsharp, weight: moderate, confidence: medium, sources: [wiki-fstar], note: "Infobox." }
+    - { type: implemented_in, to: fsharp, weight: moderate, confidence: high, sources: [wiki-fstar], note: "Until 2022.03.24 F* was \"written entirely in a common subset of F* and F#\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/F*_(programming_language)", homepage: "https://fstar-lang.org" }
+  sources: [wiki-fstar, fstar-lang-org, fstar-tutorial-part1]
+  example:
+    title: Refinement types and a checked factorial
+    language: F*
+    note: "From the F* tutorial, \"Getting off the ground\". Refinements carve subsets out of int (Prims defines nat as x:int{x >= 0}); the factorial's result type nat is proved, and \"the proof of termination is automatic\"."
+    code: |
+      let pos = x:int { x > 0 } //the positive numbers
+      let even = x:int { x % 2 = 0 } //the even numbers
+
+      let rec factorial (n:nat)
+        : nat
+        = if n = 0
+          then 1
+          else n * factorial (n - 1)
+    sources: [fstar-tutorial-part1]
+
+- id: lean
+  name: Lean
+  aliases: [Lean 4, Lean prover]
+  kind: language
+  category: research
+  cluster: ml-family/proof
+  origin:
+    first_appeared: { year: 2013, precision: year, note: "\"Launched in 2013, initial versions of the language, later known as Lean 1 and 2, were experimental\"." }
+    places: [{ institution: Microsoft Research, country: US }]
+  creators:
+    - { name: Leonardo de Moura, role: designer }
+    - { name: Sebastian Ullrich, role: "Lean 4" }
+  status: active
+  tags:
+    paradigm: [functional, purely-functional]
+    typing: [static-typing, dependent-types, type-inference]
+    features: [algebraic-data-types, pattern-matching, macros, self-hosting]
+    domain: [theorem-proving]
+  milestones:
+    - { version: "3", year: 2017, summary: "First moderately stable version (20 January 2017), implemented mainly in C++; mathlib starts the same year." }
+    - { version: "4", year: 2021, introduces: [self-hosting], summary: "Reimplementation largely in Lean itself, compiling to C; a general functional language as well as a prover. Not backwards-compatible with Lean 3." }
+  summary: >
+    "A proof assistant and a functional programming language" by Leonardo de Moura, begun at Microsoft
+    Research and based on the Calculus of Inductive Constructions developed with Coq. Lean 4 is largely
+    written in Lean and compiles to native code; its community library mathlib had formalised over 210,000
+    theorems by May 2025. Maintained since 2023 by the Lean FRO.
+  relations:
+    - { type: influenced_by, to: rocq, aspects: [dependent-types], weight: strong, confidence: high, sources: [wiki-lean], note: "\"based on ... the Calculus of Inductive Constructions, the foundational type theory developed with the Coq theorem prover\"." }
+    - { type: influenced_by, to: haskell, weight: moderate, confidence: medium, sources: [wiki-lean], note: "Infobox." }
+    - { type: influenced_by, to: ml, weight: moderate, confidence: medium, sources: [wiki-lean], note: "Infobox." }
+    - { type: implemented_in, to: cpp, weight: strong, confidence: high, sources: [wiki-lean], note: "Lean 3 \"was implemented primarily in C++\"; Lean 4 is mostly Lean with a C++17 core." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lean_(proof_assistant)", homepage: "https://lean-lang.org" }
+  sources: [wiki-lean, lean-lang-org]
+  example:
+    title: A tactic proof
+    language: Lean
+    note: "From Wikipedia. by enters tactic mode; each · focuses one subgoal. Indentation was lost in fetching and has been restored; Lean's tactic blocks are layout-sensitive."
+    code: |
+      theorem and_swap (p q : Prop) : p ∧ q → q ∧ p := by
+        intro h -- assume p ∧ q with proof h, the goal is q ∧ p
+        apply And.intro -- the goal is split into two subgoals, one is q and the other is p
+        · exact h.right -- the first subgoal is exactly the right part of h : p ∧ q
+        · exact h.left -- the second subgoal is exactly the left part of h : p ∧ q
+    sources: [wiki-lean]
+
+- id: koka
+  name: Koka
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    began: { year: 2012, precision: year, note: "Microsoft Research project page: \"Established: April 13, 2012\"." }
+    first_appeared: { year: 2014, date: "2014-06-09", precision: exact, note: "Leijen, \"Koka: Programming with Row Polymorphic Effect Types\", arXiv 1406.2061 (EPTCS 153)." }
+    places: [{ institution: Microsoft Research, country: US }]
+  creators: [{ name: Daan Leijen, role: designer }]
+  status: active
+  tags:
+    paradigm: [functional]
+    typing: [static-typing, type-inference, parametric-polymorphism]
+    memory: [reference-counting]
+    concurrency: [effect-handlers]
+    features: [algebraic-data-types, pattern-matching]
+  milestones:
+    - { version: "v2.4.0", year: 2022 }
+    - { version: "v3.1.0", year: 2024, summary: "Concurrent build system; named effect typing redesigned to match the formal system." }
+  summary: >
+    "A strongly typed functional-style language with effect types and handlers" from Microsoft Research:
+    every function's possible side effects are "apparent in its type signature", and user-defined effects
+    such as generators or async are written with handlers. Its Perceus reference counting compiles to C
+    without a garbage collector. Still "a research language ... not ready for production use".
+  notes: >
+    When handlers (as opposed to row-polymorphic effect types) arrived in Koka is not sourced, so no milestone
+    introduces effect-handlers yet. Perceus: technical report 2020-11-29.
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://koka-lang.github.io" }
+  sources: [leijen-2014-koka, koka-docs, msr-koka]
+  example:
+    title: A user-defined generator effect
+    language: Koka
+    note: "From the Koka documentation. traverse's type says it may perform yield; main supplies a handler with with fun yield, so the same traverse could be reused with any other handler."
+    code: |
+      // A generator effect with one operation
+      effect yield<a>
+        fun yield( x : a ) : ()
+
+      // Traverse a list and yield the elements
+      fun traverse( xs : list<a> ) : yield<a> ()
+        match xs
+          Cons(x,xx) -> { yield(x); traverse(xx) }
+          Nil        -> ()
+
+      fun main() : console ()
+        with fun yield(i : int)
+          println("yielded " ++ i.show)
+        [1,2,3].traverse
+    sources: [koka-docs]

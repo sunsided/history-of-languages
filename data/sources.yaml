@@ -2111,3 +2111,141 @@
   title: "Janet README (GitHub)"
   url: https://github.com/janet-lang/janet
   checked: '2026-11-01'
+- id: wiki-hope
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Hope (programming language)'
+  url: https://en.wikipedia.org/wiki/Hope_(programming_language)
+  checked: '2026-11-01'
+- id: wiki-sasl
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: SASL (programming language)'
+  url: https://en.wikipedia.org/wiki/SASL_(programming_language)
+  checked: '2026-11-01'
+- id: wiki-krc
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Kent Recursive Calculator'
+  url: https://en.wikipedia.org/wiki/Kent_Recursive_Calculator
+  checked: '2026-11-01'
+- id: wiki-lennart-augustsson
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Lennart Augustsson (section on Lazy ML)'
+  url: https://en.wikipedia.org/wiki/Lennart_Augustsson
+  checked: '2026-11-01'
+- id: wiki-caml
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Caml'
+  url: https://en.wikipedia.org/wiki/Caml
+  checked: '2026-11-01'
+- id: ocaml-history
+  type: web
+  primary: true
+  title: "A History of OCaml (ocaml.org; formerly caml.inria.fr/about/history)"
+  url: https://ocaml.org/history
+  checked: '2026-11-01'
+- id: wiki-clean
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Clean (programming language)'
+  url: https://en.wikipedia.org/wiki/Clean_(programming_language)
+  checked: '2026-11-01'
+- id: clean-cs-ru-nl
+  type: web
+  primary: true
+  title: "Clean (Radboud University Nijmegen project site)"
+  url: https://clean.cs.ru.nl/
+  checked: '2026-11-01'
+- id: wiki-fstar
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: F* (programming language)'
+  url: https://en.wikipedia.org/wiki/F*_(programming_language)
+  checked: '2026-11-01'
+- id: fstar-lang-org
+  type: web
+  primary: true
+  title: "F* (official site)"
+  url: https://fstar-lang.org/
+  checked: '2026-11-01'
+- id: fstar-tutorial-part1
+  type: manual
+  primary: true
+  title: "Proof-Oriented Programming in F*: Getting off the ground"
+  url: https://fstar-lang.org/tutorial/book/part1/part1_getting_off_the_ground.html
+  checked: '2026-11-01'
+- id: wiki-rocq
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Rocq'
+  url: https://en.wikipedia.org/wiki/Rocq
+  checked: '2026-11-01'
+- id: rocq-about
+  type: web
+  primary: true
+  title: "About the Rocq Prover"
+  url: https://rocq-prover.org/about
+  checked: '2026-11-01'
+- id: wiki-agda
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Agda (programming language)'
+  url: https://en.wikipedia.org/wiki/Agda_(programming_language)
+  checked: '2026-11-01'
+- id: wiki-idris
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Idris (programming language)'
+  url: https://en.wikipedia.org/wiki/Idris_(programming_language)
+  checked: '2026-11-01'
+- id: idris-lang-org
+  type: web
+  primary: true
+  title: "Idris (official site)"
+  url: https://www.idris-lang.org/
+  checked: '2026-11-01'
+- id: wiki-lean
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Lean (proof assistant)'
+  url: https://en.wikipedia.org/wiki/Lean_(proof_assistant)
+  checked: '2026-11-01'
+- id: lean-lang-org
+  type: web
+  primary: true
+  title: "Lean (official site)"
+  url: https://lean-lang.org/
+  checked: '2026-11-01'
+- id: leijen-2014-koka
+  type: paper
+  primary: true
+  authors:
+  - Daan Leijen
+  title: "Koka: Programming with Row Polymorphic Effect Types"
+  year: 2014
+  url: https://arxiv.org/abs/1406.2061
+  checked: '2026-11-01'
+- id: koka-docs
+  type: manual
+  primary: true
+  title: "The Koka Programming Language (documentation and news)"
+  url: https://koka-lang.github.io/koka/doc/index.html
+  checked: '2026-11-01'
+- id: msr-koka
+  type: web
+  primary: true
+  title: "Koka (Microsoft Research project page)"
+  url: https://www.microsoft.com/en-us/research/project/koka/
+  checked: '2026-11-01'
+- id: turner-2012-history-fp
+  type: paper
+  primary: true
+  authors:
+  - David Turner
+  title: "Some History of Functional Programming Languages (TFP 2012)"
+  year: 2012
+  url: https://www.cs.kent.ac.uk/people/staff/dat/tfp12/tfp12.pdf
+  checked: '2026-11-01'
