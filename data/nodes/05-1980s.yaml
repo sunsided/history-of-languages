@@ -1069,7 +1069,7 @@
 
 - id: gnu-c
   name: GNU C
-  aliases: [GCC C dialect, gnu89, gnu99, gnu11, gnu17, gnu23]
+  aliases: [GCC C dialect, gnu89, gnu99, gnu11, gnu17, gnu23, DJGPP]
   kind: language
   category: systems
   cluster: c-family/compilers

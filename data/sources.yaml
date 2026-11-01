@@ -1076,6 +1076,7 @@
   primary: false
   title: 'Wikipedia: X86 assembly language'
   url: https://en.wikipedia.org/wiki/X86_assembly_language
+  checked: '2026-11-01'
 - id: wiki-z3
   type: encyclopedia
   primary: false
@@ -3286,4 +3287,34 @@
   primary: true
   title: "Rust Compiler Development Guide: Overview of the compiler"
   url: https://rustc-dev-guide.rust-lang.org/overview.html
+  checked: '2026-11-01'
+- id: wiki-tasm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Turbo Assembler"
+  url: https://en.wikipedia.org/wiki/Turbo_Assembler
+  checked: '2026-11-01'
+- id: wiki-gas
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GNU Assembler"
+  url: https://en.wikipedia.org/wiki/GNU_Assembler
+  checked: '2026-11-01'
+- id: wiki-comparison-of-assemblers
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Comparison of assemblers"
+  url: https://en.wikipedia.org/wiki/Comparison_of_assemblers
+  checked: '2026-11-01'
+- id: wiki-yasm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Yasm"
+  url: https://en.wikipedia.org/wiki/Yasm
+  checked: '2026-11-01'
+- id: wiki-open-watcom-assembler
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Open Watcom Assembler (JWasm)"
+  url: https://en.wikipedia.org/wiki/Open_Watcom_Assembler
   checked: '2026-11-01'

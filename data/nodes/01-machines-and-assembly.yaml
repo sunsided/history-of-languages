@@ -806,14 +806,14 @@
   kind: assembly
   category: systems
   cluster: assembly/x86
-  origin: { first_appeared: { year: 1985, precision: circa, note: "Inherited from Unix assemblers on other ISAs; dating for x86 needs research." } }
+  origin: { first_appeared: { year: 1985, precision: circa, note: "Inherited from Unix assemblers on other ISAs. Wikipedia's assembler comparison dates the AT&T assembler for Unix System V on x86 to 1985 and says it was developed by Interactive Systems Corporation in 1986 when they ported System V." } }
   status: active
   tags:
     features: [assembly-language]
   summary: "Unix-tradition syntax: source first, sigils on registers and immediates, size suffixes (`movl $1, %eax`). Default for GNU as and GCC output."
   relations:
     - { type: dialect_of, to: x86-intel-syntax, weight: strong, confidence: high, note: "Same instruction set, different notation." }
-    - { type: influenced_by, to: macro-11, weight: weak, confidence: low, note: "Hypothesis: source-first order follows PDP-11 convention. Needs a source." }
+    - { type: influenced_by, to: macro-11, weight: moderate, confidence: medium, sources: [wiki-x86-assembly], note: "AT&T syntax \"was originally designed for PDP-11 assembly and was inherited onto Unix-like systems\"." }
     - { type: targets, to: intel-8086, weight: strong, confidence: high }
   research_status: stub
   confidence: medium
@@ -837,11 +837,15 @@
   tags:
     features: [assembly-language]
   summary: "Microsoft's x86 assembler, with high-level macros (.IF, .WHILE, PROC). The DOS and early Windows standard."
+  notes: >
+    MASM-compatible assemblers that add no syntax of their own are noted here rather than as nodes: Watcom's
+    WASM (Open Watcom Assembler) and Japheth's fork JWasm, continued as HJWasm/UASM, which "fully supports
+    Microsoft macro assembler 6 syntax". Borland's TASM has its own Ideal mode and is a node.
   relations:
     - { type: dialect_of, to: x86-intel-syntax, weight: strong, confidence: high }
   research_status: stub
   confidence: high
-  sources: [wiki-masm]
+  sources: [wiki-masm, wiki-open-watcom-assembler]
   example:
     title: Hello, world for MS-DOS
     language: MASM 5+
@@ -873,11 +877,15 @@
   tags:
     features: [assembly-language]
   summary: "Portable, open-source x86 assembler with a simplified Intel syntax."
+  notes: >
+    Yasm is "a full rewrite of Netwide Assembler (NASM)" by Peter Johnson and Michael Urman that "can generally
+    be used interchangeably with NASM" and also accepts AT&T (GAS) syntax; it is an implementation, not a new
+    language, so it is noted here.
   relations:
     - { type: dialect_of, to: x86-intel-syntax, weight: strong, confidence: high }
   research_status: stub
   confidence: high
-  sources: [wiki-nasm]
+  sources: [wiki-nasm, wiki-yasm]
   example:
     title: Hello, world on Linux x86-64
     language: NASM
@@ -1738,3 +1746,92 @@
           }
       }
     sources: [rustc-dev-guide-mir]
+
+- id: tasm
+  name: TASM (Turbo Assembler)
+  aliases: [Turbo Assembler, Turbo Editasm]
+  kind: assembly
+  category: systems
+  cluster: assembly/x86
+  origin:
+    first_appeared: { year: 1988, precision: year, note: "\"published by Borland in 1988\"; developed as Turbo Editasm by Uriah Barnett at Speedware (Sacramento) between 1984 and 1987." }
+    places: [{ institution: Borland, country: US }]
+  creators: [{ name: Uriah Barnett, role: original author (Turbo Editasm) }]
+  status: legacy
+  tags:
+    features: [assembly-language]
+  summary: >
+    Borland's x86 assembler, advertised as two to three times faster than MASM. It "can assemble source in a
+    MASM-compatible mode or an ideal mode with a few enhancements"; FASM's memory addressing is later described
+    as similar to TASM's Ideal mode and NASM.
+  relations:
+    - { type: dialect_of, to: masm, weight: strong, confidence: high, sources: [wiki-tasm], note: "MASM-compatible mode plus its own Ideal mode." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Turbo_Assembler" }
+  sources: [wiki-tasm, wiki-comparison-of-assemblers]
+  example:
+    title: A DOS program in MASM mode
+    language: TASM
+    note: "From Wikipedia's Turbo Assembler article. The simplified segment directives (.model, .data, .code) are MASM's; DOS function 9 of INT 21h prints the $-terminated string, 4Ch exits."
+    code: |
+      .model small
+      .stack 100h
+      .data
+      msg db "Merry christmas!",'$'
+      .code
+      main proc
+      mov ax, SEG msg
+      mov ds, ax
+      mov dx, offset msg
+      mov ah, 9
+      int 21h
+      mov ax, 4c00h
+      int 21h
+      main endp
+      end main
+    sources: [wiki-tasm]
+
+- id: gas
+  name: GNU Assembler (GAS)
+  aliases: [GNU as, as]
+  kind: assembly
+  category: systems
+  cluster: assembly/x86
+  origin:
+    first_appeared: { year: 1986, precision: year, note: "\"The first version of GAS was released in 1986-1987\", for the VAX." }
+  creators: [{ name: Dean Elsner, role: original author }]
+  status: active
+  tags:
+    features: [assembly-language]
+  summary: >
+    The GNU Project's assembler, first written for the VAX. On x86 its
+    default is AT&T syntax, for which the System V AT&T assembler was the reference; since version 2.10 the
+    .intel_syntax directive switches to Intel syntax.
+  relations:
+    - { type: influenced_by, to: x86-att-syntax, weight: strong, confidence: medium, sources: [wiki-gas, wiki-comparison-of-assemblers], note: "\"The default syntax is AT&T syntax\"; the AT&T assembler \"was used as a reference for GAS\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GNU_Assembler" }
+  sources: [wiki-gas, wiki-comparison-of-assemblers]
+  example:
+    title: Hello, world on 32-bit Linux
+    language: GAS (AT&T syntax, i386)
+    note: "From Wikipedia's GNU Assembler article. Registers carry %, immediates $, the l suffix means 32-bit, and the source operand comes first; int $0x80 calls the Linux kernel (4 = write, 1 = exit)."
+    code: |
+      .global _start
+      .text
+      _start:
+      movl $4, %eax # 4 (code for "write" syscall) -> EAX register
+      movl $1, %ebx # 1 (file descriptor for stdout) -> EBX (1st argument to syscall)
+      movl $msg, %ecx # 32-bit address of msg string -> ECX (2nd argument)
+      movl $len, %edx # length of msg string -> EDX (3rd arg)
+      int $0x80 # interrupt with location 0x80 (128), which invokes the kernel's system call procedure
+      movl $1, %eax # 1 ("exit") -> EAX
+      movl $0, %ebx # 0 (with success) -> EBX
+      int $0x80 # see previous
+      .data
+      msg:
+      .ascii "Hello, world!\n" # inline ascii string
+      len = . - msg # assign (current address - address of msg start) to symbol "len"
+    sources: [wiki-gas]

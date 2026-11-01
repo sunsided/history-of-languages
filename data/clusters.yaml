@@ -174,12 +174,11 @@
   parent: assembly
   research_status: stub
   backlog:
-    - { name: "GNU as (GAS)", year: 1986 }
-    - { name: "TASM (Borland)", year: 1989 }
-    - { name: "FASM", year: 1999 }
-    - { name: "YASM", year: 2001 }
+    - { name: "FASM (flat assembler)", year: 2000, hint: "Tomasz Grysztar; public March 2000, self-hosting since 0.90 (May 1999); addressing \"similar to TASM's ideal mode and NASM\". Needs a code example (flatassembler.net is robots-blocked)." }
+    - { name: "A86", year: 1986, hint: "Eric Isaacson, shareware June 1986; no ASSUME/SEGMENT/PROC needed; own macro syntax. Needs a code example." }
+    - { name: "HLA (High Level Assembly)", hint: "Randall Hyde; Pascal/Ada/C-like syntax; 1.x emitted MASM/TASM/FASM/NASM/GAS source. Needs a first-release year and a full example." }
   research_questions:
-    - "When and where did AT&T syntax for x86 first appear (System V/386 assembler?)."
+    - "AT&T syntax on x86: Wikipedia's comparison says Interactive Systems Corporation wrote the System V x86 assembler in 1986 (table says 1985). Find a primary source (ISC or AT&T System V/386 manuals)."
 - id: assembly/8-bit
   name: 8- and 16-bit microprocessor assembly
   parent: assembly
