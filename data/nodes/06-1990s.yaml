@@ -1916,3 +1916,295 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/GameMaker" }
   sources: [wiki-gamemaker]
+
+- id: kixtart
+  name: KiXtart
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1991, precision: year, note: "Development started in 1991 to provide login scripting for Microsoft LAN Manager (Wikipedia)." }
+    places: [{ institution: Microsoft Netherlands, country: NL }]
+  creators:
+    - { name: Ruud van Velsen, role: developer }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+  milestones:
+    - { version: "4.00", year: 2001, date: "2001-11-19" }
+    - { version: "4.70", year: 2022, date: "2022-10-17" }
+  summary: >
+    A free-format scripting language for Windows logon scripts, which Ruud van Velsen of Microsoft Netherlands began in
+    1991 for LAN Manager networks; Wikipedia calls it a "closed source free-format scripting language" and an
+    "enhanced batch scripting language".
+  notes: >
+    No example yet: Wikipedia's registry example lost its line breaks in the fetch.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/KiXtart" }
+  sources: [wiki-kixtart]
+
+- id: s-lang
+  name: S-Lang
+  kind: language
+  category: scripting
+  cluster: scripting/embedded
+  origin:
+    first_appeared: { year: 1992, precision: year, note: "Wikipedia: the S-Lang library \"was started in 1992 by John E. Davis\"." }
+  creators:
+    - { name: John E. Davis, role: developer }
+  status: maintained
+  tags:
+    paradigm: [imperative, procedural]
+    features: [embeddable]
+  milestones:
+    - { version: "2.0", year: 2005, summary: "slsh became an interactive, standalone interpreter." }
+  summary: >
+    An embeddable interpreter library by John E. Davis. The earliest version was "a simple stack-based interpreter with a PostScript-like
+    syntax"; the syntax later became "much more C-like", and the language gained vectorized array operations "similar to
+    MATLAB and IDL".
+  notes: >
+    No example yet; Wikipedia's only listing is long and came through with its indentation lost.
+  relations:
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-s-lang], note: "Syntax evolved to be \"much more C-like\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/S-Lang" }
+  sources: [wiki-s-lang]
+
+- id: euphoria
+  name: Euphoria
+  kind: language
+  category: general
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1993, date: "1993-07", precision: exact, note: "Version 1.0, July 1993, proprietary licence (Wikipedia)." }
+  creators:
+    - { name: Robert Craig, role: original designer }
+  status: maintained
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [dynamic-typing]
+  milestones:
+    - { version: "3.0", year: 2006, summary: "Released by RDS in October 2006." }
+    - { version: "4.0", year: 2010, summary: "First release by the openEuphoria Group, December 2010." }
+  summary: >
+    "A general-purpose high-level imperative-procedural interpreted language" by Robert Craig of Rapid Deployment
+    Software, released in 1993. Wikipedia lists BASIC as an influence and
+    says Craig's thesis "was heavily influenced by the work of John Backus on functional programming (FP) languages".
+    It is developed by the openEuphoria Group since version 4.
+  relations:
+    - { type: influenced_by, to: basic, weight: weak, confidence: medium, sources: [wiki-euphoria], note: "Infobox: influenced by BASIC." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Euphoria_(programming_language)", homepage: "https://openeuphoria.org/" }
+  sources: [wiki-euphoria]
+  example:
+    title: Hello, World
+    language: Euphoria
+    note: "Verbatim from Wikipedia's Euphoria article; 1 is the standard-output file number."
+    sources: [wiki-euphoria]
+    code: |
+      puts(1, "Hello, World!\n")
+
+- id: pike
+  name: Pike
+  aliases: ["μLPC"]
+  kind: language
+  category: general
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1994, precision: year, note: "As μLPC (micro LPC), a new GPL implementation; renamed Pike in 1996 (Wikipedia)." }
+    places: [{ institution: Lysator, city: Linköping, country: SE }]
+  creators:
+    - { name: Fredrik Hübinette, role: designer }
+    - { name: Per Hedbor, role: developer }
+  status: maintained
+  tags:
+    paradigm: [object-oriented, functional, procedural, multi-paradigm]
+    typing: [static-typing, dynamic-typing]
+  milestones:
+    - { version: Pike, year: 1996, summary: "μLPC renamed Pike." }
+  summary: >
+    A general-purpose language that grew out of LPC: programmers at Lysator in Linköping, "most notably Fredrik
+    Hübinette and Per Hedbor, separated the language and virtual machine from the rest of the MUD driver". It keeps
+    LPC's C-like syntax and is, unusually for a dynamic language, "both statically and dynamically typed".
+  relations:
+    - { type: fork_of, to: lpc, weight: strong, confidence: high, sources: [wiki-pike], note: "\"Pike has its roots in LPC\"; μLPC was a new implementation of it." }
+    - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [wiki-pike] }
+    - { type: influenced_by, to: cpp, weight: weak, confidence: medium, sources: [wiki-pike], note: "Infobox: influenced by LPC, C, C++." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pike_(programming_language)", homepage: "https://pike.lysator.liu.se/" }
+  sources: [wiki-pike]
+  example:
+    title: Ask for a name
+    language: Pike
+    note: "From Wikipedia's Pike article; the fetched copy had lost its indentation, which is restored here."
+    sources: [wiki-pike]
+    code: |
+      int main()
+      {
+          write("Hi there! What's your name?\n");
+          string name = Stdio.stdin->gets();
+          write("Nice to meet you, " + name + "!\n");
+          return 0;
+      }
+
+- id: netrexx
+  name: NetRexx
+  kind: language
+  category: general
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1996, precision: year, note: "The 0.50 release, April 1996 (Wikipedia)." }
+  creators:
+    - { name: Mike Cowlishaw, role: designer }
+  status: maintained
+  tags:
+    paradigm: [object-oriented, procedural, structured]
+    typing: [static-typing]
+  milestones:
+    - { version: "1.00", year: 1997, summary: "January 1997." }
+    - { version: "2.00", year: 2000, summary: "August 2000." }
+  summary: >
+    "An open source, originally IBM's, variant of the REXX programming language to run on the Java virtual machine",
+    designed by Mike Cowlishaw. Its Rexx type "handles strings and numbers".
+    Wikipedia lists PL/I, REXX, ooREXX and Java as influences.
+  notes: >
+    RexxLA later released it as NetRexx 3.00 (Wikipedia gives no year). No example
+    in the Wikipedia article.
+  relations:
+    - { type: dialect_of, to: rexx, weight: strong, confidence: high, sources: [wiki-netrexx], note: "\"variant of the REXX programming language\"." }
+    - { type: influenced_by, to: java, weight: strong, confidence: high, sources: [wiki-netrexx] }
+    - { type: influenced_by, to: pl-i, weight: weak, confidence: medium, sources: [wiki-netrexx] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/NetRexx", homepage: "https://netrexx.org/" }
+  sources: [wiki-netrexx]
+
+- id: rebol
+  name: Rebol
+  aliases: [REBOL]
+  kind: language
+  category: general
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1997, precision: year }
+  creators:
+    - { name: Carl Sassenrath, role: designer }
+  tags:
+    paradigm: [functional, prototype-based, imperative, multi-paradigm]
+    typing: [dynamic-typing, strong-typing]
+  milestones:
+    - { version: "2", year: 1999, summary: "REBOL 2 interpreter." }
+    - { version: "3", year: 2012, summary: "Released under the Apache License 2.0 on 12 December 2012; alphas since January 2008." }
+  summary: >
+    A language "designed by Carl Sassenrath for network communications and distributed computing", using "concepts
+    from the programming languages Lisp, Forth, Logo, and Self". Wikipedia lists it as language-oriented: programs build
+    small dialects, such as the GUI layout block below. Douglas Crockford named it one of
+    JSON's influences.
+  relations:
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: high, sources: [wiki-rebol] }
+    - { type: influenced_by, to: forth, weight: moderate, confidence: high, sources: [wiki-rebol] }
+    - { type: influenced_by, to: logo, weight: moderate, confidence: high, sources: [wiki-rebol] }
+    - { type: influenced_by, to: self, weight: moderate, confidence: high, sources: [wiki-rebol] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Rebol" }
+  sources: [wiki-rebol]
+  example:
+    title: A window with a button
+    language: REBOL/View
+    note: "Verbatim from Wikipedia's Rebol article: the block after layout is a dialect describing the GUI."
+    sources: [wiki-rebol]
+    code: |
+      view layout [text "Hello world!" button "Quit" [quit]]
+
+- id: vim-script
+  name: Vim script
+  aliases: [Vimscript, VimL, Vim9 script]
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1998, date: "1998-02-19", precision: exact, note: "Vim 5.0, whose release-table entry lists \"basic scripting (user defined functions, commands, etc.)\"; the ex command language it extends is older." }
+  creators:
+    - { name: Bram Moolenaar, role: author of Vim }
+  status: active
+  tags:
+    paradigm: [imperative]
+  milestones:
+    - { version: "7.0", year: 2006, summary: "Lists, dictionaries and \"a simple form of object-oriented programming\"; Wikipedia says only \"since version 7\"." }
+    - { version: "9.0", year: 2022, date: "2022-06-28", summary: "Vim9 script, \"a new script language closer to commonly used languages\"." }
+    - { version: "9.1", year: 2024, summary: "Classes and objects in Vim9 script." }
+  summary: >
+    "The scripting language built into Vim". "Based on the ex editor language of the original vi editor, early versions
+    of Vim added commands for control flow and function definitions." It is "mostly written in an imperative
+    programming style". Vim 9.0 added Vim9 script, "closer to commonly used languages".
+  notes: >
+    The ex/vi command language is not a node. Neovim's switch to Lua as a second extension language is not covered yet.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Vim_(text_editor)" }
+  sources: [wiki-vim]
+  example:
+    title: Hello and a while loop
+    language: Vim script
+    note: "From Wikipedia's Vim article; the loop body's indentation is restored, as the fetched copy had none."
+    sources: [wiki-vim]
+    code: |
+      " This is the Hello World program in Vim script.
+      echo "Hello, world!"
+      " This is a simple while loop in Vim script.
+      let i = 1
+      while i < 5
+        echo "count is" i
+        let i += 1
+      endwhile
+      unlet i
+
+- id: autoit
+  name: AutoIt
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1999, date: "1999-01", precision: exact, note: "AutoIt 1.0, January 1999 (Wikipedia release table)." }
+  creators:
+    - { name: Jonathan Bennett, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural]
+  milestones:
+    - { version: "v3", year: 2004, summary: "Public beta December 2002, stable February 2004; from version 3 the syntax \"is similar to that found in the BASIC family\"." }
+  summary: >
+    A Windows automation language. Jonathan Bennett
+    released it in 1999; from version 3 it became "a general-purpose, third-generation programming language" with
+    BASIC-like syntax and a variant data type.
+  relations:
+    - { type: influenced_by, to: basic, weight: moderate, confidence: high, sources: [wiki-autoit], note: "Infobox: influenced by BASIC." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/AutoIt", homepage: "https://www.autoitscript.com/" }
+  sources: [wiki-autoit]
+  example:
+    title: Average of an array
+    language: AutoIt v3
+    note: "From Wikipedia's AutoIt article; the fetched copy had lost its indentation, which is restored here."
+    sources: [wiki-autoit]
+    code: |
+      Func _Find_Average($aArray)
+          ; If the input is not of the correct type (an array), then return an error along with the details.
+          If Not IsArray($aArray) Then Return SetError(1, 0, VarGetType($aArray))
+          ; More detailed checks are possible, but for brevity just one is performed here.
+          ; Declare a variable to store the sum of the numbers.
+          Local $iArraySum = 0
+          ; Loop through the array.
+          For $i = 1 To $aArray[0]
+              ; Increment the sum by the number in each array element.
+              $iArraySum += Number($aArray[$i])
+          Next
+          ; Return the average rounded to 2 decimal places.
+          Return Round($iArraySum / $aArray[0], 2)
+      EndFunc ;==>_Find_Average

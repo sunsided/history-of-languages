@@ -954,3 +954,111 @@
       arrow 613
       answer 12
     sources: [wiki-tutor]
+
+- id: teco
+  name: TECO
+  aliases: [Text Editor and Corrector, TECO-6, TECO-8, TECO-11]
+  kind: language
+  category: domain-specific
+  cluster: string-processing
+  origin:
+    first_appeared: { year: 1962, precision: circa, note: "Wikipedia's lead says developed in 1962; its infobox gives 1962/63, and the body says around 1963 for two PDP-1 computers at MIT." }
+    places: [{ institution: MIT, country: US }]
+  creators:
+    - { name: Dan Murphy, role: original author }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+  milestones:
+    - { version: TECO-6, year: 1964, summary: "Implemented on the PDP-6 at MIT." }
+  summary: >
+    A text editor whose commands form a terse programming language, written by Dan Murphy as an MIT student for the
+    PDP-1. Editing commands can be stored and run as macros; the language "was imperative, though some versions had an
+    'or' operator in string search". It was ported across DEC's machines (TECO-8 on the PDP-8, TECO-11 on the PDP-11,
+    TECO32 on the VAX), and it is "a direct ancestor of Emacs, which was originally implemented in TECO macros".
+  notes: >
+    The Emacs link is to the original TECO-based Emacs, not to GNU Emacs Lisp, so no edge to emacs-lisp is stored.
+    The example's $ is how TECO echoes the ESC key.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TECO_(text_editor)" }
+  sources: [wiki-teco]
+  example:
+    title: Open a file, replace a word, save
+    language: TECO
+    note: "Verbatim, the commands column of Wikipedia's TECO session table. * is TECO's prompt and $ the echoed ESC: EB opens hello.c, P reads a page, S searches for Hello, -5D deletes it and I inserts Goodbye, 0TT types the line, EX saves and exits."
+    sources: [wiki-teco]
+    code: |
+      *EBhello.c$$
+      *P$$
+      *SHello$0TT$$
+      *-5DIGoodbye$0TT$$
+      *EX$$
+
+- id: jcl
+  name: Job Control Language
+  aliases: [JCL, OS/360 JCL]
+  kind: language
+  category: shell
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1964, precision: year, note: "Wikipedia: the old-style syntax was \"provided right from the launch of System/360 in 1964\"; OS/360 itself shipped later." }
+    places: [{ institution: IBM, country: US }]
+  status: active
+  tags:
+    paradigm: [declarative]
+  summary: >
+    The language for scripting and launching batch jobs on IBM mainframes, created in the OS/360 project. A job is a
+    deck of // statements naming programs to EXEC and DD statements binding their files. Its syntax "is similar to the
+    syntax of macros in System/360 assembly language". There are two lines: DOS/360 to z/VSE, and OS/360 to z/OS.
+    Fred Brooks, who supervised OS/360, called it "the worst computer programming language ever devised by anybody,
+    anywhere".
+  notes: >
+    The DOS/360 JCL is a separate language; the year it appeared is not stated in Wikipedia. Spacing between fields in
+    the example may have been collapsed by the page fetch; continuation lines must start between columns 4 and 16.
+  relations:
+    - { type: targets, to: ibm-system-360, year: 1964, weight: moderate, confidence: high, sources: [wiki-jcl] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Job_Control_Language" }
+  sources: [wiki-jcl]
+  example:
+    title: Copy a data set with IEBGENER
+    language: OS/360 JCL (old-style syntax)
+    note: "From Wikipedia's Job Control Language article. The job runs the IEBGENER utility, reading OLDFILE and writing a new catalogued NEWFILE with the given space and record format."
+    sources: [wiki-jcl]
+    code: |
+      //IS198CPY JOB (IS198T30500),'COPY JOB',CLASS=L,MSGCLASS=X
+      //COPY01 EXEC PGM=IEBGENER
+      //SYSPRINT DD SYSOUT=*
+      //SYSUT1 DD DSN=OLDFILE,DISP=SHR
+      //SYSUT2 DD DSN=NEWFILE,
+      // DISP=(NEW,CATLG,DELETE),
+      // SPACE=(CYL,(40,5),RLSE),
+      // DCB=(LRECL=115,BLKSIZE=1150)
+      //SYSIN DD DUMMY
+
+- id: cms-exec
+  name: CMS EXEC
+  aliases: [EXEC, COMMAND]
+  kind: language
+  category: shell
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1966, precision: year }
+    places: [{ institution: MIT, country: US }]
+  creators:
+    - { name: Stuart Madnick, role: author }
+  status: historical
+  tags:
+    paradigm: [imperative]
+  summary: >
+    The command-procedure language of IBM's CMS. Stuart Madnick wrote it at MIT in 1966 for the Cambridge Monitor
+    System under CP-67, "on the model of CTSS RUNCOM"; it was first called COMMAND, then EXEC. It "has been superseded
+    by EXEC 2 and REXX".
+  notes: >
+    No example: Wikipedia's PROFILE EXEC came through the fetch with its line breaks lost. RUNCOM (CTSS) is not a node yet.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CMS_EXEC" }
+  sources: [wiki-cms-exec]

@@ -1937,3 +1937,117 @@
       REPLACE ALL salary WITH salary * 1.1 FOR supervisors > 0
       LIST ALL fname, lname, salary TO PRINT
     sources: [wiki-dbase]
+
+- id: dc
+  name: dc
+  aliases: [desk calculator]
+  kind: language
+  category: scripting
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1971, precision: circa, note: "Estimate. Wikipedia gives no year: dc is \"one of the oldest Unix utilities, preceding even the development of the C programming language\" (C: 1972 here). The Unix First Edition manual would confirm." }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: Lorinda Cherry, role: author }
+    - { name: Robert Morris, role: author }
+  status: active
+  tags:
+    paradigm: [stack-oriented]
+  summary: >
+    An arbitrary-precision reverse-Polish calculator from Bell Labs that is also a small stack language with
+    registers, macros and conditionals. Wikipedia calls it "the oldest surviving Unix language program"; it was written
+    in B. bc was built as an infix front end that compiled to dc.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Dc_(computer_program)" }
+  sources: [wiki-dc, wiki-bc]
+  example:
+    title: Multiply two numbers
+    language: dc (shell session)
+    note: "Verbatim from Wikipedia's dc article: the file pushes 4 and 5, multiplies them and prints (p) the top of the stack."
+    sources: [wiki-dc]
+    code: |
+      $ cat << EOF > cal.txt
+      4 5 *
+      p
+      EOF
+      $ dc cal.txt
+      20
+      $
+
+- id: bc
+  name: bc
+  aliases: [basic calculator]
+  kind: language
+  category: scripting
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1975, precision: year, note: "Wikipedia: \"bc first appeared in Version 6 Unix in 1975.\"" }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: Lorinda Cherry, role: author }
+    - { name: Robert Morris, role: co-developer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural]
+  milestones:
+    - { version: POSIX, year: 1991, introduces: [standardization], summary: "POSIX \"rigorously defined and standardized bc\"; GNU bc by Philip A. Nelson the same year." }
+  summary: >
+    An arbitrary-precision calculator language with a C-like syntax. Lorinda Cherry wrote it as a front end to dc:
+    "a simple compiler (a single yacc source file comprising a few hundred lines of code), which converted a C-like
+    syntax into dc notation and piped the results through dc".
+  relations:
+    - { type: influenced_by, to: dc, weight: strong, confidence: high, sources: [wiki-bc], note: "Compiled to dc and piped its output through it." }
+    - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [wiki-bc], note: "\"a C-like syntax\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Bc_(programming_language)" }
+  sources: [wiki-bc]
+  example:
+    title: Divide with two decimal places
+    language: bc (POSIX shell session)
+    note: "Verbatim from Wikipedia's bc article: scale sets the digits after the point."
+    sources: [wiki-bc]
+    code: |
+      $ result=$(echo "scale=2; 5 * 7 /3;" | bc)
+      $ echo $result
+      11.66
+
+- id: m4
+  name: m4
+  aliases: [M4]
+  kind: language
+  category: scripting
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1977, precision: year }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: Brian Kernighan, role: designer }
+    - { name: Dennis Ritchie, role: designer }
+  status: active
+  tags:
+    features: [macros]
+  summary: >
+    A general-purpose macro processor for Unix. "Kernighan and Ritchie developed m4 in 1977, basing it on the ideas of
+    Christopher Strachey"; it is "an extension of an earlier macro processor, m3, written by Ritchie for an unknown
+    AP-3 minicomputer". Macros can redefine themselves, recurse and test conditions, which makes it a language rather
+    than a substitution tool.
+  notes: >
+    Strachey's General Purpose Macrogenerator (GPM, Computer Journal, October 1965) is not a node yet. The example is a
+    fragment: Wikipedia's full example is interleaved with prose.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/M4_(computer_language)" }
+  sources: [wiki-m4]
+  example:
+    title: A self-redefining counter macro (fragment)
+    language: m4
+    note: "Verbatim fragment of Wikipedia's m4 example: each use of H2 redefines H2_COUNT as its successor and emits a numbered heading."
+    sources: [wiki-m4]
+    code: |
+      # HTML utility macro:
+      define(`H2_COUNT', 0)
+      # The H2_COUNT macro is redefined every time the H2 macro is used:
+      define(`H2',
+      `define(`H2_COUNT', incr(H2_COUNT))<h2>H2_COUNT. $1</h2>')

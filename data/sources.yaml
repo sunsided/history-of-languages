@@ -3624,3 +3624,123 @@
   primary: false
   title: "Wikipedia: PowerBuilder"
   url: https://en.wikipedia.org/wiki/PowerBuilder
+- id: wiki-teco
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TECO (text editor)"
+  url: https://en.wikipedia.org/wiki/TECO_(text_editor)
+- id: wiki-jcl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Job Control Language"
+  url: https://en.wikipedia.org/wiki/Job_Control_Language
+- id: wiki-cms-exec
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CMS EXEC"
+  url: https://en.wikipedia.org/wiki/CMS_EXEC
+- id: wiki-dc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: dc (computer program)"
+  url: https://en.wikipedia.org/wiki/Dc_(computer_program)
+- id: wiki-bc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: bc (programming language)"
+  url: https://en.wikipedia.org/wiki/Bc_(programming_language)
+- id: wiki-m4
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: m4 (computer language)"
+  url: https://en.wikipedia.org/wiki/M4_(computer_language)
+- id: wiki-batch-file
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Batch file"
+  url: https://en.wikipedia.org/wiki/Batch_file
+- id: wiki-command-com
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: COMMAND.COM"
+  url: https://en.wikipedia.org/wiki/COMMAND.COM
+- id: wiki-arexx
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ARexx"
+  url: https://en.wikipedia.org/wiki/ARexx
+- id: wiki-kixtart
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: KiXtart"
+  url: https://en.wikipedia.org/wiki/KiXtart
+- id: wiki-s-lang
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: S-Lang"
+  url: https://en.wikipedia.org/wiki/S-Lang
+- id: wiki-euphoria
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Euphoria (programming language)"
+  url: https://en.wikipedia.org/wiki/Euphoria_(programming_language)
+- id: wiki-pike
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Pike (programming language)"
+  url: https://en.wikipedia.org/wiki/Pike_(programming_language)
+- id: wiki-netrexx
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: NetRexx"
+  url: https://en.wikipedia.org/wiki/NetRexx
+- id: wiki-rebol
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Rebol"
+  url: https://en.wikipedia.org/wiki/Rebol
+- id: wiki-vim
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Vim (text editor)"
+  url: https://en.wikipedia.org/wiki/Vim_(text_editor)
+- id: wiki-autoit
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: AutoIt"
+  url: https://en.wikipedia.org/wiki/AutoIt
+- id: wiki-autohotkey
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: AutoHotkey"
+  url: https://en.wikipedia.org/wiki/AutoHotkey
+- id: wiki-boo
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Boo (programming language)"
+  url: https://en.wikipedia.org/wiki/Boo_(programming_language)
+- id: wiki-red
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Red (programming language)"
+  url: https://en.wikipedia.org/wiki/Red_(programming_language)
+- id: wiki-jq
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: jq (programming language)"
+  url: https://en.wikipedia.org/wiki/Jq_(programming_language)
+- id: wiki-dcl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: DIGITAL Command Language"
+  url: https://en.wikipedia.org/wiki/DIGITAL_Command_Language
+- id: wiki-clist
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CLIST"
+  url: https://en.wikipedia.org/wiki/CLIST
+- id: wiki-exec-2
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: EXEC 2"
+  url: https://en.wikipedia.org/wiki/EXEC_2

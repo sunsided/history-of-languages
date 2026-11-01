@@ -3413,3 +3413,130 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Unreal_Engine" }
   sources: [wiki-unreal-engine]
+
+- id: autohotkey
+  name: AutoHotkey
+  aliases: [AHK, AutoHotkey_L]
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 2003, date: "2003-11-10", precision: exact, note: "First public beta (Wikipedia)." }
+  creators:
+    - { name: Chris Mallett, role: creator }
+    - { name: Steve Gray, role: "developer, AutoHotkey_L and v2" }
+  status: active
+  tags:
+    paradigm: [imperative]
+  milestones:
+    - { version: "1.1", year: 2010, summary: "AutoHotkey_L, renamed v1.1, became the main line of development." }
+    - { version: "2.0", year: 2022, date: "2022-12-20", summary: "Official release after a beta from July 2021; v1.1's final update came on 16 March 2024." }
+  summary: >
+    A free scripting language for Windows automation and hotkeys. Chris Mallett proposed adding hotkey support to
+    AutoIt v2; when that "failed to generate response from the AutoIt community", he "built a new program from scratch
+    basing the syntax on AutoIt v2", using AutoIt v3 "for some commands and the compiler".
+  relations:
+    - { type: influenced_by, to: autoit, weight: strong, confidence: high, sources: [wiki-autohotkey, wiki-autoit], note: "Syntax based on AutoIt v2; \"derived 29 of its functions from the AutoIt 3.1 source code\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/AutoHotkey", homepage: "https://www.autohotkey.com/" }
+  sources: [wiki-autohotkey, wiki-autoit]
+  example:
+    title: Win+G searches the clipboard
+    language: AutoHotkey v2
+    note: "Verbatim from Wikipedia's AutoHotkey article: #g:: binds Windows+G to open a Google search for the clipboard text."
+    sources: [wiki-autohotkey]
+    code: |
+      #g::Run "https://www.google.com/search?q=" . A_Clipboard
+
+- id: boo
+  name: Boo
+  kind: language
+  category: general
+  cluster: managed
+  origin:
+    first_appeared: { year: 2003, precision: year }
+  creators:
+    - { name: Rodrigo B. De Oliveira, role: designer }
+    - { name: Mason Wheeler, role: later maintainer }
+  status: maintained
+  tags:
+    paradigm: [object-oriented]
+    typing: [static-typing, type-inference]
+  summary: >
+    An "object-oriented, statically typed, general-purpose programming language" for .NET with "a Python-inspired
+    syntax", type inference and optional duck typing. De Oliveira later abandoned it, and Mason Wheeler took over.
+    Wikipedia lists Genie and Vala among the languages it influenced.
+  relations:
+    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [wiki-boo] }
+    - { type: influenced_by, to: csharp, weight: moderate, confidence: high, sources: [wiki-boo] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Boo_(programming_language)" }
+  sources: [wiki-boo]
+  example:
+    title: Hello, World
+    language: Boo
+    note: "Verbatim from Wikipedia's Boo article."
+    sources: [wiki-boo]
+    code: |
+      print("Hello World")
+
+- id: red
+  name: Red
+  kind: language
+  category: general
+  cluster: scripting
+  origin:
+    first_appeared: { year: 2011, date: "2011-02", precision: exact, note: "Introduced in February 2011 at the Rebol & Boron conference in the Netherlands (Wikipedia)." }
+  creators:
+    - { name: Nenad Rakočević, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, functional, multi-paradigm]
+  summary: >
+    "A programming language designed to overcome the limits of the programming language Rebol", introduced by Nenad
+    Rakočević in 2011, and "both an imperative and functional programming language". It includes Red/System, a
+    lower-level dialect that Wikipedia compares with C.
+  notes: >
+    No example: Wikipedia has only inline fragments, such as if x > y [print "Hello"].
+  relations:
+    - { type: influenced_by, to: rebol, weight: strong, confidence: high, sources: [wiki-red, wiki-rebol], note: "Infobox family: Rebol; \"designed to overcome the limits\" of Rebol." }
+    - { type: influenced_by, to: lisp, weight: weak, confidence: medium, sources: [wiki-red] }
+    - { type: influenced_by, to: scala, weight: weak, confidence: medium, sources: [wiki-red] }
+    - { type: influenced_by, to: lua, weight: weak, confidence: medium, sources: [wiki-red] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Red_(programming_language)", homepage: "https://www.red-lang.org/" }
+  sources: [wiki-red, wiki-rebol]
+
+- id: jq
+  name: jq
+  kind: language
+  category: query
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 2012, precision: year, note: "Wikipedia's infobox gives 21 August 2012; its body says released in October 2012." }
+  creators:
+    - { name: Stephen Dolan, role: designer }
+  status: active
+  tags:
+    paradigm: [purely-functional, tacit-programming]
+  summary: >
+    A filter language for JSON by Stephen Dolan, "like sed for JSON data": a program is a pipeline of filters that
+    "filters its input data to produce modified output in a manner similar to AWK or sed". Wikipedia classes it as
+    purely functional and tacit. Regular expressions came with version 1.5.
+  relations:
+    - { type: influenced_by, to: sed, weight: moderate, confidence: high, sources: [wiki-jq], note: "Infobox: influenced by sed." }
+    - { type: influenced_by, to: awk, weight: weak, confidence: medium, sources: [wiki-jq] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Jq_(programming_language)", homepage: "https://jqlang.org/" }
+  sources: [wiki-jq]
+  example:
+    title: Wikipedia categories of the jq article
+    language: jq (in a POSIX shell)
+    note: "Verbatim from Wikipedia's jq article: fetch the parse API's JSON and print each category name."
+    sources: [wiki-jq]
+    code: |
+      $ wget -qO- 'https://en.wikipedia.org/w/api.php?action=parse&page=jq_(programming_language)&format=json' | jq '.parse.categories[]."*"'

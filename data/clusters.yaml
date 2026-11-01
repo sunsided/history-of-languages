@@ -604,30 +604,11 @@
   name: Scripting languages
   research_status: draft
   backlog:
-    - { name: "AutoHotkey", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "AutoIt", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "ARexx", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "NetRexx", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Batch file (Windows/MS-DOS)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "DCL (DIGITAL Command Language)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "JCL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "CLIST", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "CMS EXEC", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "EXEC 2", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "DCL (DIGITAL Command Language)", hint: "DEC; first implemented for IAS as the Program Development System, then RSX-11M, RT-11, RSTS/E, strongest on VAX/VMS; infobox: influenced by CCL and MCR, influenced Windows PowerShell (wiki-dcl). Needs a first-appeared year. Example in the article: $ TYPE SYS$INPUT: ... $ EXIT." }
+    - { name: "CLIST", hint: "Command List for TSO; \"originated in OS/360 Release 20\"; OS/VS2 R3.6 (MVS) added If-Then-Else and loops; secondary since Rexx in TSO/E Version 2 (wiki-clist). Needs the year of OS/360 Release 20." }
+    - { name: "EXEC 2", hint: "Written in the 1970s, formally introduced with VM/SP Release 1; successor of CMS EXEC (mostly compatible), superseded by REXX (wiki-exec-2). Needs the VM/SP Release 1 year; then successor_of cms-exec, and rexx influenced_by it." }
     - { name: "Control Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Hamilton C shell", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "KiXtart", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Vim script", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "M4", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "bc (basic calculator)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "dc", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "jq", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "S-Lang", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Pike", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "REBOL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Red", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Euphoria", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Boo", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "BeanShell", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "JScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "JScript .NET", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }

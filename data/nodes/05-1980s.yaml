@@ -2639,3 +2639,73 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/LPC_(programming_language)" }
   sources: [wiki-lpmud]
+
+- id: batch
+  name: Batch file language
+  aliases: [Batch file, .BAT, COMMAND.COM batch, cmd.exe batch]
+  kind: language
+  category: shell
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1980, precision: circa, note: "The Batch file article gives no date; COMMAND.COM, which runs .BAT files, was released in 1980 (Wikipedia: COMMAND.COM, infobox, developers starting with Seattle Computer Products)." }
+    places: [{ institution: Seattle Computer Products, country: US }]
+  status: active
+  tags:
+    paradigm: [imperative]
+  summary: >
+    The script language of DOS, OS/2 and Windows command interpreters: a text file of commands with GOTO, IF,
+    FOR and %variables% that COMMAND.COM, and later cmd.exe, executes. Wikipedia: "Similar to Job Control Language
+    (JCL), DCL and other systems on mainframe and minicomputer systems, batch files were added to ease the work
+    required for certain regular tasks".
+  notes: >
+    Windows NT "introduced an enhanced 32-bit command interpreter (cmd.exe)", and NT and OS/2 added the .cmd
+    extension; the article gives no year, so there is no milestone yet. Extended Batch Language (Frank Canova, IBM, 1982) is a separate language, not yet a node.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Batch_file" }
+  sources: [wiki-batch-file, wiki-command-com]
+  example:
+    title: Hello, World
+    language: DOS batch
+    note: "Verbatim from Wikipedia's Batch file article. @ suppresses the echo of the first line itself; PAUSE waits for a key."
+    sources: [wiki-batch-file]
+    code: |
+      @ECHO OFF
+      ECHO Hello World!
+      PAUSE
+
+- id: arexx
+  name: ARexx
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1987, precision: year }
+  creators:
+    - { name: William S. Hawes, role: author }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+  milestones:
+    - { version: AmigaOS 2.0, year: 1990, summary: "Included by Commodore with AmigaOS 2.0 and every later AmigaOS release." }
+  summary: >
+    The Amiga's implementation of REXX, written by William S. Hawes in 68000 assembly and "based on the Rexx language
+    described by Mike Cowlishaw in the book The REXX Language". Commodore bundled it with AmigaOS 2.0 in 1990.
+  relations:
+    - { type: dialect_of, to: rexx, weight: strong, confidence: high, sources: [wiki-arexx], note: "\"based on the Rexx language described by Mike Cowlishaw\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ARexx" }
+  sources: [wiki-arexx]
+  example:
+    title: Alarm.rexx
+    language: ARexx
+    note: "Verbatim from Wikipedia's ARexx article: the script reports an event code passed as an argument."
+    sources: [wiki-arexx]
+    code: |
+      /* Alarm.rexx */
+      ARG event
+      IF event = 0 THEN EXIT
+      IF event = 1 THEN SAY "Program has ended unexpectedly"
+      IF event = 2 THEN SAY "Program has finished its job"
+      IF event = 3 THEN SAY "Cannot find data in selected directory"
