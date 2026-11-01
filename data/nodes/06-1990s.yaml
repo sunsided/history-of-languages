@@ -1214,3 +1214,62 @@
         z≤n : {n : ℕ} → zero ≤ n
         s≤s : {n m : ℕ} → n ≤ m → suc n ≤ suc m
     sources: [wiki-agda]
+
+- id: xslt
+  name: XSLT
+  aliases: [XSL Transformations]
+  kind: language
+  category: domain-specific
+  cluster: data
+  origin:
+    began: { year: 1998, precision: year, note: "Part of the W3C XSL effort of 1998-1999 (Wikipedia's infobox gives 1998 as first appearance)." }
+    first_appeared: { year: 1999, date: "1999-11-16", precision: exact, note: "XSLT 1.0 W3C Recommendation." }
+    places: [{ institution: World Wide Web Consortium }]
+  creators:
+    - { name: James Clark, role: "editor, XSLT 1.0" }
+    - { name: Michael Howard Kay, role: "editor, XSLT 2.0 and 3.0" }
+  status: active
+  tags:
+    paradigm: [declarative, functional]
+    features: [pattern-matching, recursion]
+    domain: [web]
+  milestones:
+    - { version: "1.0", year: 1999 }
+    - { version: "2.0", year: 2007, summary: "Built on XPath 2.0 and the XDM data model, with schema-aware typing." }
+    - { version: "3.0", year: 2017, summary: "W3C Recommendation 8 June 2017; streaming and higher-order functions." }
+  summary: >
+    "A language for transforming XML documents into other XML documents", designed as part of XSL. A stylesheet
+    is a set of templates matched against nodes by XPath patterns; XSLT "is influenced by functional languages,
+    and by text-based pattern matching languages like SNOBOL and AWK", and is Turing-complete. Its most direct
+    predecessor is the SGML-era DSSSL.
+  notes: >
+    DSSSL (Scheme-based) is not yet a node; "Some members of the standards committee that developed XSLT,
+    including James Clark, the editor, had previously worked on DSSSL." The 2.0 and 3.0 feature summaries are
+    from the Wikipedia article's version list; the specs themselves were not read. Michael Kay's article title
+    is "Michael Howard Kay".
+  relations:
+    - { type: influenced_by, to: snobol, aspects: [pattern-matching], weight: weak, confidence: medium, sources: [wiki-xslt] }
+    - { type: influenced_by, to: awk, aspects: [pattern-matching], weight: weak, confidence: medium, sources: [wiki-xslt] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/XSLT" }
+  sources: [w3c-1999-xslt, wiki-xslt]
+  example:
+    title: Templates matched on nodes
+    language: XSLT 1.0
+    note: "From Wikipedia: turns <person> elements into <name> elements. {@username} is an attribute-value template. Indentation was lost in fetching and is ours."
+    code: |
+      <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+        <xsl:output method="xml" indent="yes"/>
+        <xsl:template match="/persons">
+          <root>
+            <xsl:apply-templates select="person"/>
+          </root>
+        </xsl:template>
+        <xsl:template match="person">
+          <name username="{@username}">
+            <xsl:value-of select="name" />
+          </name>
+        </xsl:template>
+      </xsl:stylesheet>
+    sources: [wiki-xslt]

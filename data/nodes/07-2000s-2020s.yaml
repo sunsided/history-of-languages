@@ -602,6 +602,7 @@
   relations:
     - { type: influenced_by, to: common-lisp, aspects: [multiple-dispatch, macros], weight: strong, confidence: high }
     - { type: influenced_by, to: apl, aspects: [array-programming], weight: weak, confidence: medium }
+    - { type: influenced_by, to: wolfram-language, weight: weak, confidence: medium, sources: [wiki-wolfram-language], note: "Wolfram Language infobox lists Julia under \"Influenced\"." }
     - { type: influenced_by, to: python, weight: moderate, confidence: high }
     - { type: influenced_by, to: r, weight: moderate, confidence: high }
     - { type: influenced_by, to: lisp, weight: moderate, confidence: high }
@@ -2669,3 +2670,88 @@
           println("yielded " ++ i.show)
         [1,2,3].traverse
     sources: [koka-docs]
+
+- id: sparql
+  name: SPARQL
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    first_appeared: { year: 2008, date: "2008-01-15", precision: exact, note: "SPARQL 1.0 W3C Recommendation." }
+    places:
+      - { institution: World Wide Web Consortium }
+      - { institution: Hewlett-Packard Laboratories, city: Bristol, country: GB }
+  creators:
+    - { name: Eric Prud'hommeaux, role: editor }
+    - { name: Andy Seaborne, role: editor }
+  status: active
+  tags:
+    paradigm: [declarative, query]
+    features: [pattern-matching]
+    domain: [databases, web]
+  milestones:
+    - { version: "1.1", year: 2013, summary: "W3C Recommendation 21 March 2013; \"specifies a language for updating the database with several new query forms\"." }
+  summary: >
+    The W3C's query language for RDF: queries are graph patterns of triples with variables, matched "across
+    diverse data sources, whether the data is stored natively as RDF or viewed as RDF via middleware". Its
+    SELECT/WHERE surface echoes SQL, but there are no tables or joins to declare; patterns sharing a variable
+    join implicitly.
+  notes: >
+    No influence on SPARQL is stated on the pages read (no infobox fields; the W3C text does not mention SQL),
+    so there are no edges yet. The SPARQL 1.1 specs were not read.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SPARQL" }
+  sources: [w3c-2008-sparql, wiki-sparql]
+  example:
+    title: A simple query
+    language: SPARQL
+    note: "From the SPARQL 1.0 Recommendation, section 2.1. The WHERE block is one triple pattern; ?title is bound to every matching object."
+    code: |
+      SELECT ?title
+      WHERE
+      {
+        <http://example.org/book/book1> <http://purl.org/dc/elements/1.1/title> ?title .
+      }
+    sources: [w3c-2008-sparql]
+
+- id: cypher
+  name: Cypher
+  aliases: [openCypher]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    first_appeared: { year: 2011, precision: year, note: "\"largely an invention of Andrés Taylor while working for Neo4j, Inc. (formerly Neo Technology) in 2011\"." }
+    places: [{ institution: Neo4j }]
+  creators: [{ name: Andrés Taylor, role: designer }]
+  status: active
+  tags:
+    paradigm: [declarative, query]
+    features: [pattern-matching]
+    domain: [databases]
+  milestones:
+    - { version: openCypher, year: 2015, summary: "Opened to other implementers in October 2015." }
+    - { version: GQL, year: 2024, introduces: [standardization], summary: "Cypher was \"a significant input\" to ISO/IEC 39075:2024 GQL, published April 2024." }
+  summary: >
+    Neo4j's "declarative graph query language" for property graphs, whose patterns are drawn in ASCII art:
+    (node)-[:RELATIONSHIP]->(node). "Designed with the power and capability of SQL ... in mind", it was opened
+    as openCypher in 2015 and became a main input to the ISO GQL standard.
+  notes: >
+    GQL is recorded as a milestone rather than a node for now; it may deserve its own node as a separate
+    standard language. Wikipedia's infobox was not captured.
+  relations:
+    - { type: influenced_by, to: sql, weight: moderate, confidence: medium, sources: [wiki-cypher], note: "\"designed with the power and capability of SQL ... in mind\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Cypher_(query_language)" }
+  sources: [wiki-cypher, iso-39075-gql]
+  example:
+    title: A pattern match
+    language: Cypher
+    note: "From Wikipedia. The MATCH pattern is drawn as nodes in parentheses and a typed, directed relationship; $yearParameter is a query parameter."
+    code: |
+      MATCH (nicole:Actor {name: 'Nicole Kidman'})-[:ACTED_IN]->(movie:Movie)
+      WHERE movie.year < $yearParameter
+      RETURN movie
+    sources: [wiki-cypher]

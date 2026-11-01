@@ -362,7 +362,6 @@
     - { name: "J", year: 1990 }
     - { name: "K", year: 1993 }
     - { name: "Q / kdb+", year: 2003 }
-    - { name: "MATLAB", year: 1984 }
     - { name: "BQN", year: 2020 }
     - { name: "NumPy (library, as concept carrier)", year: 2006 }
 - id: stack
@@ -383,7 +382,6 @@
   research_status: stub
   backlog:
     - { name: "Planner", year: 1969 }
-    - { name: "Datalog", year: 1977 }
     - { name: "Mercury", year: 1995 }
     - { name: "miniKanren", year: 2005 }
     - { name: "Answer set programming", year: 1999 }
@@ -510,12 +508,8 @@
   name: Data, query and statistics languages
   research_status: draft
   backlog:
-    - { name: "QUEL", year: 1976 }
     - { name: "Datalog", year: 1977 }
-    - { name: "SAS", year: 1976 }
-    - { name: "SPSS", year: 1968 }
-    - { name: "Cypher / GQL", year: 2011 }
-    - { name: "Wolfram Language (Mathematica)", year: 1988 }
+    - { name: "SPSS", year: 1968, hint: "Nie, Bent and Hull; researched 2026-11-01 (wiki-spss) but no command-syntax example found (IBM docs unreachable from the sandbox)." }
 - id: joss
   name: JOSS and its descendants
   summary: "RAND's conversational JOSS and the interactive languages that followed it: TELCOMP, CAL, FOCAL, AID, MUMPS."

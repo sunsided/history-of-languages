@@ -1831,3 +1831,59 @@
         is_even (S n) = negb (is_even n).
       Proof. reflexivity. Qed.
     sources: [wiki-rocq]
+
+- id: wolfram-language
+  name: Wolfram Language
+  aliases: [Mathematica, Wolfram Mathematica]
+  kind: language
+  category: scientific
+  cluster: data
+  origin:
+    began: { year: 1986, date: "1986-10", precision: exact, note: "\"The first code for Mathematica was written in October 1986\" (Wolfram)." }
+    first_appeared: { year: 1988, date: "1988-06-23", precision: exact, note: "Mathematica 1.0 released in Champaign, Illinois and Santa Clara, California; the language was named Wolfram Language in June 2013." }
+    places: [{ institution: Wolfram Research, city: Champaign, country: US }]
+  creators:
+    - { name: Stephen Wolfram, role: designer }
+    - { name: Theodore Gray, role: "notebook front end" }
+  status: active
+  tags:
+    paradigm: [functional, multi-paradigm, declarative]
+    typing: [dynamic-typing]
+    features: [pattern-matching, repl, homoiconicity]
+    domain: [scientific-computing]
+  milestones:
+    - { version: "1.0", year: 1988 }
+    - { version: "4", year: 1999, summary: "Packed arrays." }
+    - { version: Wolfram Language, year: 2013, summary: "The language is named separately from Mathematica (June 2013)." }
+  summary: >
+    The symbolic language of Mathematica: everything is an expression head[args], with syntax "similar to the
+    M-expression of 1960s LISP", evaluated by rewriting with pattern-based rules. It grew out of Stephen
+    Wolfram's earlier SMP (1981), "a crucial precursor", and carries thousands of built-in functions covering
+    algebra, numerics, graphics and data. Named the Wolfram Language in 2013.
+  notes: >
+    SMP is not yet a node. Wolfram used Macsyma from 1977 and "outgrew it" in 1979, but its code was not
+    reused. Wikipedia's "fundamentally based on Lisp" is marked [citation needed]. The infobox lists APL, C,
+    C++, FORTRAN, Lisp, Pascal, Prolog, Schoonschip, Simula, Smalltalk and SMP as influences; only the clearest
+    are edges.
+  relations:
+    - { type: influenced_by, to: lisp, aspects: [homoiconicity], weight: moderate, confidence: medium, sources: [wiki-wolfram-language], note: "\"syntax is overall similar to the M-expression of 1960s LISP\"." }
+    - { type: influenced_by, to: apl, weight: weak, confidence: medium, sources: [wiki-wolfram-language], note: "Infobox." }
+    - { type: influenced_by, to: prolog, aspects: [pattern-matching], weight: weak, confidence: medium, sources: [wiki-wolfram-language], note: "Infobox; the aspect is our reading." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Wolfram_Language", homepage: "https://www.wolfram.com/language/" }
+  sources: [wiki-wolfram-language, wiki-mathematica, wolfram-2013-before-mathematica]
+  example:
+    title: Exact and numeric evaluation
+    language: Wolfram Language
+    note: "From Wikipedia's syntax section; the results are shown in comments. Division of integers stays exact (3/2) until N[] asks for a number; functions use square brackets."
+    code: |
+      4 + 3
+      (* = 7 *)
+      6 / 4
+      (* = 3/2 *)
+      Sin[Pi]
+      (* = 0 *)
+      N[3 / 2]
+      (* = 1.5 *)
+    sources: [wiki-wolfram-language]

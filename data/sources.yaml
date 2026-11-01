@@ -2338,3 +2338,119 @@
   title: 'Wikipedia: JOSS'
   url: https://en.wikipedia.org/wiki/JOSS
   checked: '2026-11-01'
+- id: wiki-quel
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: QUEL query languages'
+  url: https://en.wikipedia.org/wiki/QUEL_query_languages
+  checked: '2026-11-01'
+- id: wiki-datalog
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Datalog'
+  url: https://en.wikipedia.org/wiki/Datalog
+  checked: '2026-11-01'
+- id: wiki-xslt
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: XSLT'
+  url: https://en.wikipedia.org/wiki/XSLT
+  checked: '2026-11-01'
+- id: w3c-1999-xslt
+  type: standard
+  primary: true
+  authors:
+  - James Clark
+  title: 'XSL Transformations (XSLT) Version 1.0, W3C Recommendation 16 November 1999'
+  year: 1999
+  url: https://www.w3.org/TR/1999/REC-xslt-19991116
+  checked: '2026-11-01'
+- id: wiki-sparql
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: SPARQL'
+  url: https://en.wikipedia.org/wiki/SPARQL
+  checked: '2026-11-01'
+- id: w3c-2008-sparql
+  type: standard
+  primary: true
+  authors:
+  - Eric Prud'hommeaux
+  - Andy Seaborne
+  title: 'SPARQL Query Language for RDF, W3C Recommendation 15 January 2008'
+  year: 2008
+  url: https://www.w3.org/TR/rdf-sparql-query/
+  checked: '2026-11-01'
+- id: wiki-cypher
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Cypher (query language)'
+  url: https://en.wikipedia.org/wiki/Cypher_(query_language)
+  checked: '2026-11-01'
+- id: iso-39075-gql
+  type: standard
+  primary: true
+  title: 'ISO/IEC 39075:2024 Information technology - Database languages - GQL'
+  year: 2024
+  url: https://www.iso.org/standard/76120.html
+  checked: '2026-11-01'
+- id: wiki-matlab
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: MATLAB'
+  url: https://en.wikipedia.org/wiki/MATLAB
+  checked: '2026-11-01'
+- id: moler-2018-matlab-history
+  type: web
+  primary: true
+  authors:
+  - Cleve Moler
+  title: 'A Brief History of MATLAB (MathWorks technical article)'
+  year: 2018
+  url: https://www.mathworks.com/company/technical-articles/a-brief-history-of-matlab.html
+  checked: '2026-11-01'
+- id: wiki-wolfram-language
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Wolfram Language'
+  url: https://en.wikipedia.org/wiki/Wolfram_Language
+  checked: '2026-11-01'
+- id: wiki-mathematica
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Wolfram Mathematica'
+  url: https://en.wikipedia.org/wiki/Wolfram_Mathematica
+  checked: '2026-11-01'
+- id: wolfram-2013-before-mathematica
+  type: web
+  primary: true
+  authors:
+  - Stephen Wolfram
+  title: 'There Was a Time before Mathematica...'
+  year: 2013
+  url: https://writings.stephenwolfram.com/2013/06/there-was-a-time-before-mathematica/
+  checked: '2026-11-01'
+- id: wiki-sas
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: SAS (software)'
+  url: https://en.wikipedia.org/wiki/SAS_(software)
+  checked: '2026-11-01'
+- id: sas-history
+  type: web
+  primary: true
+  title: 'SAS history (SAS Institute)'
+  url: https://www.sas.com/en_us/company-information/history.html
+  checked: '2026-11-01'
+- id: wiki-spss
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: SPSS'
+  url: https://en.wikipedia.org/wiki/SPSS
+  checked: '2026-11-01'
+- id: wiki-sas-language
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: SAS language'
+  url: https://en.wikipedia.org/wiki/SAS_language
+  checked: '2026-11-01'

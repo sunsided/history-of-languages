@@ -330,6 +330,7 @@
   summary: "Declarative query language for Codd's relational model, built for IBM System R. The most widely used declarative language."
   relations:
     - { type: influenced_by, to: codd-relational-model, weight: strong, confidence: high }
+    - { type: influenced_by, to: datalog, year: 1999, aspects: [recursion], weight: weak, confidence: medium, sources: [wiki-datalog], note: "Datalog's infobox lists SQL under \"Influenced\"; the article notes SQL:1999 \"includes recursive queries\"." }
   research_status: draft
   confidence: high
   sources: [chamberlin-boyce-1974-sequel, codd-1970-relational]
@@ -1356,3 +1357,192 @@
           RETURN MATCH;
       END FIND;
     sources: [wiki-pl-m]
+
+- id: quel
+  name: QUEL
+  aliases: [POSTQUEL]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    first_appeared: { year: 1976, precision: year, note: "Stonebraker, Wong, Kreps and Held, \"The Design and Implementation of INGRES\", ACM TODS 1(3), 1976 (cited by Wikipedia; not read)." }
+    places: [{ institution: "University of California, Berkeley", city: Berkeley, country: US }]
+  creators:
+    - { name: Eugene Wong, role: designer }
+    - { name: Michael Stonebraker, role: designer }
+  status: legacy
+  tags:
+    paradigm: [declarative, query]
+    features: [set-based]
+    domain: [databases]
+  summary: >
+    The query language of Berkeley's INGRES, "based on tuple relational calculus, with some similarities to SQL"
+    and on Codd's never-implemented DSL ALPHA. Queries range tuple variables over relations; aggregation was
+    unusually strong. When Oracle and DB2 won the market in the early 1980s, INGRES moved to SQL; POSTQUEL
+    carried the language into Postgres.
+  notes: >
+    Wikipedia's infobox names Stonebraker as designer; its body says "Eugene Wong of Ingres was the creator of
+    QUEL". Both are listed. ALPHA is not a node.
+  relations:
+    - { type: influenced_by, to: codd-relational-model, weight: strong, confidence: high, sources: [wiki-quel], note: "\"based on Codd's earlier suggested but not implemented Data Sub-Language ALPHA\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/QUEL_query_languages" }
+  sources: [wiki-quel]
+  example:
+    title: A computed retrieval
+    language: QUEL
+    note: "From Wikipedia, \"taken from one of the first original Ingres papers\". range of binds the tuple variable E; retrieve into W stores the result as a new relation."
+    code: |
+      range of E is EMPLOYEE
+      retrieve into W
+      (COMP = E.Salary / (E.Age - 18))
+      where E.Name = "Jones"
+    sources: [wiki-quel]
+
+- id: datalog
+  name: Datalog
+  kind: language
+  category: query
+  cluster: logic
+  origin:
+    first_appeared: { year: 1977, precision: circa, note: "\"it became prominent as a separate area around 1977 when Hervé Gallaire and Jack Minker organized a workshop on logic and databases\" (proceedings 1978). David Maier is credited with the name." }
+  creators:
+    - { name: Hervé Gallaire, role: "1977 workshop on logic and databases" }
+    - { name: Jack Minker, role: "1977 workshop on logic and databases" }
+    - { name: David Maier, role: "coined the name" }
+  status: active
+  tags:
+    paradigm: [declarative, logic, query]
+    features: [recursion, unification]
+    domain: [databases]
+  summary: >
+    Logic programming as a query language: "syntactically a subset of Prolog", but evaluated bottom-up, without
+    cut, function symbols or Turing-completeness, so every program terminates. Non-recursive Datalog equals
+    unions of conjunctive queries; recursion gives transitive closure, which SQL:1999 adopted. Revived in program
+    analysis and in databases such as Datomic, Soufflé and .QL.
+  relations:
+    - { type: subset_of, to: prolog, weight: strong, confidence: high, sources: [wiki-datalog], note: "\"While it is syntactically a subset of Prolog, Datalog generally uses a bottom-up rather than top-down evaluation model.\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Datalog" }
+  sources: [wiki-datalog]
+  example:
+    title: Ancestors by recursion
+    language: Datalog
+    note: "From Wikipedia. Two facts and two rules; a bottom-up engine derives every ancestor pair, and the recursive rule cannot loop."
+    code: |
+      parent(xerces, brooke).
+      parent(brooke, damocles).
+      ancestor(X, Y) :- parent(X, Y).
+      ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).
+    sources: [wiki-datalog]
+
+- id: matlab
+  name: MATLAB
+  aliases: [Matrix Laboratory, PC-MATLAB, Pro-MATLAB]
+  kind: language
+  category: scientific
+  cluster: array
+  origin:
+    began: { year: 1971, precision: circa, note: "Wikipedia: linear-algebra programming with George Forsythe from 1967 and Fortran code for linear equations in 1971; Moler's own history dates the first MATLAB to the 1970s at the University of New Mexico." }
+    first_appeared: { year: 1979, date: "1979-02", precision: exact, note: "\"disclosed to the public for the first time in February 1979 at the Naval Postgraduate School in California\" (Wikipedia)." }
+    places: [{ institution: University of New Mexico, city: Albuquerque, country: US }]
+  creators:
+    - { name: Cleve Moler, role: designer }
+    - { name: John N. Little, role: "commercial MATLAB (MathWorks)" }
+  status: active
+  tags:
+    paradigm: [imperative, array-programming, multi-paradigm]
+    typing: [dynamic-typing]
+    features: [interpreter, repl, first-class-functions]
+    domain: [scientific-computing]
+  milestones:
+    - { version: PC-MATLAB, year: 1984, summary: "Rewritten in C at MathWorks; debuted December 1984 in Las Vegas. The first MATLAB \"was not a programming language; it was a simple interactive matrix calculator\"." }
+    - { version: "4", year: 1992, summary: "Sparse matrices." }
+    - { version: "5", year: 1996, summary: "Cell arrays." }
+    - { version: "6 (R12)", year: 2000, summary: "Desktop environment; LAPACK-based linear algebra replaces LINPACK and EISPACK." }
+  summary: >
+    Cleve Moler's "Matrix Laboratory", first a Fortran interactive matrix calculator with "matrix as the only
+    data type" that gave students LINPACK and EISPACK without writing Fortran. Rewritten in C as a commercial
+    product by MathWorks in 1984, it became the standard language of engineering and numerical computing, with
+    toolboxes, graphics and anonymous functions.
+  notes: >
+    Wikipedia: "So APL, Speakeasy, LINPACK, EISPACK, and PL0 were the predecessors to MATLAB." Speakeasy and PL/0
+    are not nodes. The commercial debut is variously given as the Automatic Control Conference (Wikipedia) and
+    the IEEE Conference on Decision and Control (Moler); both Las Vegas, 1984. Wikipedia's claim that LINPACK and
+    EISPACK were "in C" contradicts Moler (Fortran); Moler is followed.
+  relations:
+    - { type: influenced_by, to: apl, aspects: [array-programming], weight: moderate, confidence: medium, sources: [wiki-matlab], note: "Listed among MATLAB's predecessors." }
+    - { type: implemented_in, to: fortran, weight: strong, confidence: high, sources: [moler-2018-matlab-history], note: "\"I wrote the first MATLAB ... in Fortran\"; the commercial version is C." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MATLAB", homepage: "https://www.mathworks.com/products/matlab.html" }
+  sources: [moler-2018-matlab-history, wiki-matlab]
+  example:
+    title: Solving the van der Pol equation
+    language: MATLAB
+    note: "From Moler's history, section \"Modern MATLAB\". @(t,y) is an anonymous function; [y(2); ...] builds a column vector, and ' transposes."
+    code: |
+      mu = 5;
+      vdp = @(t,y) [y(2); mu*(1-y(1)^2)*y(2)-y(1)];
+      tspan = [0 30];
+      y0 = [0 0.01]';
+      [t,y] = ode23s(vdp,tspan,y0);
+      plot(t,y,'.-')
+      legend({'y','dy/dt'})
+      xlabel('t')
+    sources: [moler-2018-matlab-history]
+
+- id: sas
+  name: SAS
+  aliases: [Statistical Analysis System, SAS language]
+  kind: language
+  category: domain-specific
+  cluster: data
+  origin:
+    began: { year: 1966, precision: year, note: "\"The development of SAS started in 1966 after North Carolina State University re-hired Anthony Barr to program his analysis of variance and regression software so that it would run on IBM System/360 computers.\"" }
+    first_appeared: { year: 1972, precision: year, note: "SAS 71 was a limited release in 1971 and SAS 72 the full version (Wikipedia; infobox \"Release 1972\")." }
+    places: [{ institution: North Carolina State University, city: Raleigh, country: US }]
+  creators:
+    - { name: Anthony James Barr, role: designer }
+    - { name: James Goodnight, role: "statistical routines; co-leader" }
+    - { name: John Sall, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [dynamic-typing]
+    features: [records, macros]
+    domain: [statistics, business-data-processing]
+  milestones:
+    - { version: SAS 76, year: 1976, summary: "Redesigned: improved INPUT/INFILE and PUT/FILE, PROC FORMAT. SAS Institute incorporated the same year." }
+    - { version: SAS 82, year: 1982, introduces: [macros], summary: "Early macro language." }
+    - { version: "9.0", year: 2004 }
+  summary: >
+    The Statistical Analysis System, begun at North Carolina State University for agricultural experiment data.
+    A program is a sequence of DATA steps, which read and transform records row by row, and PROC steps that run
+    canned procedures over the resulting data sets. Spun out as SAS Institute in 1976, it became the dominant
+    commercial statistics language in pharmaceuticals, banking and government.
+  notes: >
+    SAS's own timeline is inconsistent about the incorporation (1971 vs July 1976); Wikipedia gives 1976. The C
+    rewrite is 1985 (Wikipedia) or 1986 (SAS). Barr's Wikipedia title is "Anthony James Barr".
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SAS_(software)" }
+  sources: [wiki-sas, sas-history, wiki-sas-language]
+  example:
+    title: A DATA step and a PROC step
+    language: SAS
+    note: "From Wikipedia's SAS language article. The DATA step builds data set TEMP from inline datalines; PROC PRINT lists it. Statements end with semicolons; * starts a comment statement."
+    code: |
+      * COMMENT;
+      Data TEMP;
+      input X Y Z;
+      datalines;
+      1 2 3
+      5 6 7
+      ;
+      run;
+      PROC PRINT DATA = TEMP;
+      RUN;
+    sources: [wiki-sas-language]

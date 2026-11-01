@@ -1247,3 +1247,81 @@
   wiki: Philip Woodward
   nodes:
   - coral-66
+- id: person-cleve-moler
+  kind: person
+  person: Cleve Moler
+  wiki: Cleve Moler
+  nodes:
+  - matlab
+- id: person-john-n-little
+  kind: person
+  person: John N. Little
+  wiki: John N. Little
+  nodes:
+  - matlab
+- id: person-stephen-wolfram
+  kind: person
+  person: Stephen Wolfram
+  wiki: Stephen Wolfram
+  nodes:
+  - wolfram-language
+- id: person-theodore-gray
+  kind: person
+  person: Theodore Gray
+  wiki: Theodore Gray
+  nodes:
+  - wolfram-language
+- id: person-anthony-james-barr
+  kind: person
+  person: Anthony James Barr
+  wiki: Anthony James Barr
+  nodes:
+  - sas
+- id: person-james-goodnight
+  kind: person
+  person: James Goodnight
+  wiki: James Goodnight
+  nodes:
+  - sas
+- id: person-john-sall
+  kind: person
+  person: John Sall
+  wiki: John Sall
+  nodes:
+  - sas
+- id: person-michael-stonebraker
+  kind: person
+  person: Michael Stonebraker
+  wiki: Michael Stonebraker
+  nodes:
+  - quel
+- id: person-eugene-wong
+  kind: person
+  person: Eugene Wong
+  wiki: Eugene Wong
+  nodes:
+  - quel
+- id: person-david-maier
+  kind: person
+  person: David Maier
+  wiki: David Maier
+  nodes:
+  - datalog
+- id: person-jack-minker
+  kind: person
+  person: Jack Minker
+  wiki: Jack Minker
+  nodes:
+  - datalog
+- id: person-james-clark
+  kind: person
+  person: James Clark
+  wiki: James Clark (XML expert)
+  nodes:
+  - xslt
+- id: person-michael-howard-kay
+  kind: person
+  person: Michael Howard Kay
+  wiki: Michael Howard Kay
+  nodes:
+  - xslt
