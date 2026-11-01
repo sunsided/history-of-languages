@@ -475,6 +475,8 @@
     - { type: influenced_by, to: awk, weight: weak, confidence: medium }
     - { type: influenced_by, to: python, aspects: [generators], weight: weak, confidence: medium, note: "ES2015 generators were modelled partly on Python's." }
     - { type: influenced_by, to: csharp, year: 2017, aspects: [async-await], weight: moderate, confidence: medium }
+    - { type: influenced_by, to: hypertalk, weight: weak, confidence: medium, sources: [wiki-hypercard], note: "\"JavaScript (whose creator, Brendan Eich, was inspired by HyperTalk)\" (Wikipedia, HyperCard); Eich's own statement still to be located." }
+    - { type: influenced_by, to: coffeescript, year: 2015, weight: weak, confidence: medium, sources: [coffeescript-org, wiki-coffeescript], note: "\"ES2015 adopted this feature as their rest parameters\" (coffeescript.org, on splats); in 2011 Eich cited CoffeeScript as an influence on his thinking about JavaScript's future (Wikipedia)." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/JavaScript" }
@@ -935,3 +937,52 @@
 
       __property int X = {read = mX, write = setX};
     sources: [embarcadero-closure, embarcadero-property]
+
+- id: cfml
+  name: CFML
+  aliases: [ColdFusion Markup Language, ColdFusion, CFScript]
+  kind: language
+  category: scripting
+  cluster: web/macromedia
+  origin:
+    first_appeared: { year: 1995, date: "1995-07-02", precision: exact, note: "Cold Fusion released by Allaire on 2 July 1995 (Wikipedia, Adobe ColdFusion)." }
+    places: [{ institution: Allaire Corporation, country: US }]
+  creators:
+    - { name: Joseph J. Allaire, role: co-developer }
+    - { name: Jeremy Allaire, role: co-developer }
+  status: active
+  tags:
+    paradigm: [imperative, object-oriented, scripting]
+    typing: [dynamic-typing]
+    domain: [web, databases]
+  milestones:
+    - { version: "2", year: 1996, summary: "A full platform with an IDE and a full scripting language." }
+    - { version: "4.0", year: 1998, summary: "Renamed ColdFusion; first implementation of CFScript, a JavaScript-like script syntax beside the tags." }
+    - { version: "5", year: 2001, summary: "First release from Macromedia after it acquired Allaire." }
+    - { version: "MX 6.0", year: 2002, summary: "Rebuilt on the Java EE platform; earlier versions were written in C and C++." }
+    - { version: "9", year: 2009, summary: "Components can be written entirely in CFScript." }
+  summary: >
+    The tag-based server-side language of ColdFusion: HTML-like tags such as cfset, cfoutput and cfquery
+    with #expressions#, one of the first ways to put database results on web pages. Created by the Allaire
+    brothers in 1995, sold by Macromedia from 2001 and Adobe from 2005. Despite its name, it is a
+    programming language, with a JavaScript-like script syntax (CFScript) since version 4.
+  notes: >
+    Open-source engines: Railo (student project 2002, open source 2009), Open BlueDragon (2008) and Lucee
+    (a 2015 fork of Railo). Allaire was originally located in Minnesota, then Cambridge and Newton,
+    Massachusetts.
+  relations:
+    - { type: influenced_by, to: javascript, year: 1998, weight: moderate, confidence: medium, sources: [wiki-cfml], note: "CFScript \"resembles JavaScript (ECMAScript)\" (Wikipedia, CFML); added in ColdFusion 4." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ColdFusion_Markup_Language" }
+  sources: [wiki-cfml, wiki-adobe-coldfusion]
+  example:
+    title: Tags and #expressions#
+    language: CFML
+    note: "Both lines are from the Wikipedia CFML article. cfset assigns a variable; inside cfoutput, #...# is replaced by the value of the expression."
+    code: |
+      <cfset value = "Hello">
+      <cfoutput>
+      #value# Bob!
+      </cfoutput>
+    sources: [wiki-cfml]

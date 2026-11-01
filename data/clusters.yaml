@@ -134,7 +134,7 @@
     - { name: "Berkeley RISC I", year: 1981 }
     - { name: "SPARC", year: 1987 }
     - { name: "PowerPC", year: 1992 }
-    - { name: "WebAssembly (virtual ISA)", year: 2017, hint: "Decide whether kind: machine or language." }
+    - { name: "WebAssembly (virtual ISA)", year: 2017, hint: "The text format is node webassembly (kind assembly). Add the ISA as a machine node if the graph needs a targets edge." }
 
 - id: assembly
   name: Assembly languages
@@ -190,7 +190,18 @@
   backlog:
     - { name: "SPARC assembly", year: 1987 }
     - { name: "PowerPC assembly", year: 1992 }
-    - { name: "WebAssembly text format", year: 2017 }
+
+- id: assembly/virtual
+  name: Virtual machine instruction sets
+  parent: assembly
+  summary: "Instruction sets for virtual machines, written by compilers rather than people: p-code, JVM bytecode, CIL, WebAssembly."
+  research_status: stub
+  key_sources: [wiki-webassembly]
+  backlog:
+    - { name: "UCSD p-code", year: 1977 }
+    - { name: "JVM bytecode", year: 1995 }
+    - { name: "CIL (Common Intermediate Language)", year: 2002 }
+    - { name: "LLVM IR", year: 2003 }
 
 # ===================== Early languages =====================
 - id: early
@@ -374,8 +385,6 @@
   backlog:
     - { name: "HOPE", year: 1980, hint: "Algebraic data types and pattern matching into SML." }
     - { name: "Caml (separate node from OCaml?)", year: 1985 }
-    - { name: "Elm", year: 2012 }
-    - { name: "ReasonML / ReScript", year: 2016 }
     - { name: "Coq / Rocq (Gallina)", year: 1989 }
     - { name: "Agda", year: 2007 }
     - { name: "Idris", year: 2007 }
@@ -390,7 +399,6 @@
     - { name: "KRC", year: 1981 }
     - { name: "Lazy ML", year: 1984 }
     - { name: "Clean", year: 1987 }
-    - { name: "PureScript", year: 2013 }
 - id: oop
   name: Object-oriented lineage
   research_status: draft
@@ -411,7 +419,6 @@
   parent: oop
   research_status: stub
   backlog:
-    - { name: "HyperTalk", year: 1987 }
     - { name: "AppleScript", year: 1993 }
     - { name: "Dylan", year: 1992 }
 - id: managed
@@ -473,12 +480,35 @@
 - id: web
   name: Web languages
   research_status: draft
+- id: web/compile-to-js
+  name: Compile-to-JavaScript languages
+  parent: web
+  summary: "Languages whose main target is JavaScript: syntax layers (CoffeeScript), typed functional languages (Elm, PureScript, ReScript) and ports of existing languages (ClojureScript)."
+  research_status: draft
+  key_sources: [wiki-coffeescript, wiki-elm, wiki-haxe]
   backlog:
-    - { name: "CoffeeScript", year: 2009 }
-    - { name: "ActionScript", year: 1998 }
-    - { name: "Elm", year: 2012 }
-    - { name: "WebAssembly", year: 2017 }
-    - { name: "Hack", year: 2014 }
+    - { name: "Coco", year: 2010, hint: "CoffeeScript fork by satyr; parent of LiveScript. Date unverified." }
+    - { name: "Iced CoffeeScript", year: 2011, hint: "CoffeeScript superset adding await and defer; early async syntax." }
+    - { name: "Google Web Toolkit (Java to JavaScript)", year: 2006, hint: "Early compile-to-JS; a compiler, so likely a note on Java unless it changed the language." }
+    - { name: "Dart (dart2js)", year: 2011, hint: "Dart is a node; record JS compilation as a milestone." }
+    - { name: "Opa", year: 2011 }
+    - { name: "Imba", year: 2015 }
+    - { name: "Gleam (JS target)", year: 2016, hint: "Belongs to the modern wave; BEAM and JS targets." }
+  research_questions:
+    - "Find a primary source (Ashkenas or Eich) for which ES2015 features came from CoffeeScript: arrow functions, rest parameters, destructuring, classes."
+    - "Elm 0.17 (2016) dropped signals and FRP for subscriptions: find the release post."
+- id: web/macromedia
+  name: Macromedia and Flash-era languages
+  parent: web
+  summary: "Languages of the MacroMind/Macromedia/Adobe authoring tools: Lingo in Director, ActionScript in Flash, CFML in ColdFusion."
+  research_status: draft
+  key_sources: [wiki-lingo, wiki-actionscript, wiki-cfml]
+  backlog:
+    - { name: "Authorware scripting", year: 1987, hint: "Icon-based authoring; check whether its calculation language counts as a language." }
+    - { name: "MXML", year: 2004, hint: "Flex markup compiled to ActionScript; probably a note on ActionScript unless it computes." }
+    - { name: "ECMAScript 4 (abandoned)", year: 2008, hint: "The draft AS3 implemented; may belong on the JavaScript node as a note." }
+  research_questions:
+    - "Lingo: 1988 (Adobe Director article) or 1989 with Director 2.2 (Lingo article)? Find a MacroMind manual or press release."
 - id: data
   name: Data, query and statistics languages
   research_status: draft

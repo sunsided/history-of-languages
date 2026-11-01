@@ -780,6 +780,7 @@
   person: Rich Hickey
   wiki: Rich Hickey
   nodes:
+  - clojurescript
   - clojure
 - id: person-rob-pike
   kind: person
@@ -1033,3 +1034,34 @@
   wiki: Richard Stallman
   nodes:
   - gnu-c
+- id: person-jeremy-ashkenas
+  kind: person
+  person: Jeremy Ashkenas
+  wiki: Jeremy Ashkenas
+  nodes:
+  - coffeescript
+  - livescript
+- id: person-bill-atkinson
+  kind: person
+  person: Bill Atkinson
+  wiki: Bill Atkinson
+  nodes:
+  - hypertalk
+- id: person-john-h-thompson
+  kind: person
+  person: John H. Thompson
+  wiki: John Thompson (inventor)
+  nodes:
+  - lingo
+- id: person-joseph-j-allaire
+  kind: person
+  person: Joseph J. Allaire
+  wiki: Joseph J. Allaire
+  nodes:
+  - cfml
+- id: person-jeremy-allaire
+  kind: person
+  person: Jeremy Allaire
+  wiki: Jeremy Allaire
+  nodes:
+  - cfml

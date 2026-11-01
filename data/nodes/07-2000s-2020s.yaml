@@ -1032,3 +1032,530 @@
           }
       };
     sources: [wiki-cpp-cli]
+
+- id: actionscript
+  name: ActionScript
+  aliases: [AS3]
+  kind: language
+  category: scripting
+  cluster: web/macromedia
+  origin:
+    first_appeared: { year: 2000, date: "2000-09", precision: exact, note: "Flash 5 (September 2000) first named the scripting 'actions' ActionScript; Flash 4 (1999) had turned them into a small scripting language. Wikipedia's infobox gives 1998, which its text does not support." }
+    places: [{ institution: Macromedia, country: US }]
+  creators:
+    - { name: Gary Grossman, role: designer }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, prototype-based, event-driven, scripting]
+    typing: [static-typing, dynamic-typing]
+    memory: [garbage-collection]
+    features: [classes, bytecode-vm]
+    domain: [web]
+  milestones:
+    - { version: "1.0", year: 2000, summary: "Flash 5: ECMA-262 3rd edition based, prototype inheritance." }
+    - { version: "2.0", year: 2003, introduces: [classes, static-typing], summary: "Flash MX 2004 (September 2003): class syntax and compile-time type checking, partly following the ECMAScript 4 draft." }
+    - { version: "3.0", year: 2006, summary: "June 2006 with Flex 2 and Flash Player 9: a restructured language on the new AVM2 virtual machine (later open-sourced as Tamarin), following the ECMAScript 4 draft." }
+  summary: >
+    Macromedia's (later Adobe's) ECMAScript dialect for Flash. It grew from Flash 4's "actions" into a
+    prototype-based JavaScript relative (2000), gained classes and type annotations (2003), and became a
+    statically checked language on its own VM (2006) that implemented the abandoned ECMAScript 4 draft.
+    For a decade it carried most interactive content and games on the web; Flash ended in 2020.
+  relations:
+    - { type: dialect_of, to: javascript, weight: strong, confidence: high, sources: [wiki-actionscript], note: "\"It is now an implementation of ECMAScript\"; 1.0 followed ECMA-262 3rd edition, 3.0 the ECMAScript 4 draft." }
+    - { type: influenced_by, to: java, year: 2003, aspects: [classes, static-typing], weight: moderate, confidence: medium, sources: [wiki-actionscript], note: "Java is in the Wikipedia infobox; the link to the 2.0 class syntax is our reading." }
+    - { type: influenced_by, to: hypertalk, weight: weak, confidence: medium, sources: [wiki-actionscript, wiki-hypertalk], note: "Both Wikipedia infoboxes list the link; no designer statement found." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ActionScript" }
+  sources: [wiki-actionscript]
+  example:
+    title: An ActionScript 3 class
+    language: ActionScript 3.0
+    year: 2006
+    note: "From the Wikipedia ActionScript article (Greeter.as). Packages, classes and typed variables as in the ECMAScript 4 draft; Sprite and TextField are Flash display classes."
+    code: |
+      package org.wikipedia.example {
+        import flash.display.Sprite;
+        import flash.text.TextField;
+        public class Greeter extends Sprite {
+          public function Greeter() {
+            var txtHello: TextField = new TextField();
+            txtHello.text = "Hello World";
+            this.addChild(txtHello);
+          }
+        }
+      }
+    sources: [wiki-actionscript]
+
+- id: haxe
+  name: Haxe
+  aliases: [haXe]
+  kind: language
+  category: general
+  cluster: web/compile-to-js
+  origin:
+    began: { year: 2005, date: "2005-10-22", precision: exact, note: "Project started on 22 October 2005 (Haxe manual)." }
+    first_appeared: { year: 2005, date: "2005-11-14", precision: exact, note: "First alpha (Wikipedia). Beta February 2006; 1.0 in April (Wikipedia) or May (manual) 2006." }
+    places: [{ institution: Motion-Twin }]
+  creators:
+    - { name: Nicolas Cannasse, role: creator and project lead }
+  status: active
+  tags:
+    paradigm: [object-oriented, functional, multi-paradigm]
+    typing: [static-typing, type-inference, structural-typing]
+    features: [compiles-to-javascript, macros, algebraic-data-types, pattern-matching, generics]
+  milestones:
+    - { version: "1.0", year: 2006, introduces: [type-inference, structural-typing], summary: "Type inference and structural subtyping; targets Flash and Neko." }
+    - { version: "2.0", year: 2008, summary: "PHP target; C++ followed in 2009." }
+    - { version: "2.07", year: 2011, introduces: [macros], summary: "Macros." }
+    - { version: "3.0", year: 2013 }
+  summary: >
+    One ECMAScript-style language compiled to many targets: Flash, JavaScript, C++, Java, C#, PHP, Python,
+    Lua and its own VMs. Nicolas Cannasse built it as the successor to MTASC, his open-source ActionScript 2
+    compiler, and gave it ML ideas (type inference, enums with pattern matching) from OCaml, in which the
+    compiler is written. Widely used for cross-platform games.
+  relations:
+    - { type: successor_of, to: actionscript, weight: strong, confidence: high, sources: [haxe-manual-history, wiki-haxe], note: "Started \"as a successor to the popular open-source ActionScript 2 compiler MTASC\" (Haxe manual)." }
+    - { type: influenced_by, to: ocaml, aspects: [type-inference, algebraic-data-types, pattern-matching], weight: moderate, confidence: medium, sources: [wiki-haxe], note: "OCaml is in the infobox; the aspects are our reading of the manual." }
+    - { type: implemented_in, to: ocaml, weight: strong, confidence: high, sources: [wiki-haxe] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Haxe", homepage: "https://haxe.org" }
+  sources: [wiki-haxe, haxe-manual-history]
+  example:
+    title: Type inference with monomorphs
+    language: Haxe
+    note: "From the Haxe manual, section 3.6 Type Inference. $type prints the inferred type at compile time: the empty array's element type stays unknown until the first push fixes it."
+    code: |
+      class Main {
+        public static function main() {
+          var x = [];
+          $type(x); // Array<Unknown<0>>
+          x.push("foo");
+          $type(x); // Array<String>
+        }
+      }
+    sources: [haxe-manual-type-inference]
+
+- id: coffeescript
+  name: CoffeeScript
+  kind: language
+  category: scripting
+  cluster: web/compile-to-js
+  origin:
+    began: { year: 2009, date: "2009-12-13", precision: exact, note: "First commit, \"initial commit of the mystery language\"." }
+    first_appeared: { year: 2009, date: "2009-12-24", precision: exact, note: "0.1.0, the first tagged release, announced on Hacker News." }
+  creators:
+    - { name: Jeremy Ashkenas, role: designer and developer }
+  status: maintained
+  tags:
+    paradigm: [multi-paradigm, functional, object-oriented, scripting]
+    typing: [dynamic-typing]
+    features: [compiles-to-javascript, offside-rule, list-comprehensions, self-hosting]
+    domain: [web]
+  milestones:
+    - { version: "0.5", year: 2010, introduces: [self-hosting], summary: "Ruby compiler replaced by a self-hosting compiler in CoffeeScript." }
+    - { version: "1.0.0", year: 2010, summary: "Stable release, 24 December 2010." }
+    - { version: "2.0.0", year: 2017, summary: "Output in modern JavaScript (ES2015 and later)." }
+  summary: >
+    "It's just JavaScript": a thin, whitespace-delimited syntax over JavaScript, compiled one-to-one, with
+    sugar from Ruby, Python and Haskell (-> functions, comprehensions, splats, the ? existence operator). It
+    started the compile-to-JavaScript wave and fed ES2015: Brendan Eich cited it, and ES2015 adopted its
+    splats as rest parameters.
+  relations:
+    - { type: influenced_by, to: javascript, weight: strong, confidence: high, sources: [wiki-coffeescript] }
+    - { type: influenced_by, to: ruby, weight: strong, confidence: medium, sources: [wiki-coffeescript], note: "\"syntactic sugar inspired by Ruby, Python, and Haskell\" (Wikipedia)." }
+    - { type: influenced_by, to: python, aspects: [offside-rule, list-comprehensions], weight: moderate, confidence: medium, sources: [wiki-coffeescript] }
+    - { type: influenced_by, to: haskell, weight: weak, confidence: medium, sources: [wiki-coffeescript] }
+    - { type: implemented_in, to: ruby, weight: moderate, confidence: high, sources: [wiki-coffeescript], note: "Until 0.5 (February 2010); self-hosting since." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CoffeeScript", homepage: "https://coffeescript.org" }
+  sources: [wiki-coffeescript, coffeescript-org]
+  example:
+    title: The CoffeeScript overview
+    language: CoffeeScript 2
+    note: "From the overview on coffeescript.org. Compiled with coffee 2: -> becomes a function, runners... a rest parameter, elvis? a check against undefined and null, and the comprehension a loop."
+    code: |
+      # Functions:
+      square = (x) -> x * x
+
+      # Objects:
+      math =
+        root:   Math.sqrt
+        square: square
+        cube:   (x) -> x * square x
+
+      # Splats:
+      race = (winner, runners...) ->
+        print winner, runners
+
+      # Existence:
+      alert "I knew it!" if elvis?
+
+      # Array comprehensions:
+      cubes = (math.cube num for num in list)
+    sources: [coffeescript-org]
+
+- id: clojurescript
+  name: ClojureScript
+  kind: language
+  category: general
+  cluster: web/compile-to-js
+  origin:
+    first_appeared: { year: 2011, date: "2011-07-22", precision: exact, note: "Announced on clojure.org, in alpha status." }
+  creators:
+    - { name: Rich Hickey, role: initial developer }
+  status: active
+  tags:
+    paradigm: [functional]
+    typing: [dynamic-typing]
+    features: [compiles-to-javascript, macros, persistent-data-structures, homoiconicity, host-interop]
+    domain: [web]
+  summary: >
+    Clojure compiled to JavaScript: "the same language semantics as Clojure, not JavaScript". The compiler
+    emits JavaScript in Google Closure's conventions and hands it to the Closure compiler for whole-program
+    optimization, as the Clojure compiler hands bytecode to the JVM.
+  relations:
+    - { type: dialect_of, to: clojure, weight: strong, confidence: high, sources: [clojure-2011-introducing-clojurescript] }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://clojurescript.org" }
+  sources: [clojure-2011-introducing-clojurescript, clojurescript-rationale]
+  example:
+    title: Clojure with the browser as host
+    language: ClojureScript
+    note: "The first block is from the ClojureScript Quick Start; the interop lines below it were written for this dataset (js/ names JavaScript globals, (.method obj) calls, (.-prop obj) reads a property) and have not been run here."
+    code: |
+      (ns hello-world.core)
+
+      (defn average [a b]
+        (/ (+ a b) 2.0))
+
+      (let [items (.querySelectorAll js/document "li")]
+        (js/console.log "items:" (.-length items)))
+
+      (set! (.-title js/document) (str "Average: " (average 3 4)))
+    sources: [clojurescript-quick-start]
+
+- id: livescript
+  name: LiveScript
+  kind: language
+  category: scripting
+  cluster: web/compile-to-js
+  origin:
+    first_appeared: { year: 2011, precision: year }
+  creators:
+    - { name: Jeremy Ashkenas, role: co-designer }
+    - { name: Satoshi Murakami, role: co-designer }
+    - { name: George Zahariev, role: co-designer }
+  status: legacy
+  tags:
+    paradigm: [functional, multi-paradigm, scripting]
+    typing: [dynamic-typing]
+    features: [compiles-to-javascript, offside-rule, pipes]
+  summary: >
+    A functional descendant of CoffeeScript: "a fork of Coco and an indirect descendant of CoffeeScript".
+    It adds piping, operators as functions, partial application and backcalls. Not to be confused with
+    LiveScript, JavaScript's beta name in 1995, to which the name may be a homage.
+  notes: >
+    Coco, the intermediate fork of CoffeeScript, is not yet in the dataset and its date is unverified.
+    Wikipedia spells the second designer both "Satoshi Murakami" (infobox) and "Satoshi Muramaki" (text).
+    Last release found: 1.6.1, 14 July 2020.
+  relations:
+    - { type: influenced_by, to: coffeescript, weight: strong, confidence: high, sources: [livescript-net, wiki-livescript], note: "Via the Coco fork." }
+    - { type: influenced_by, to: haskell, aspects: [first-class-functions], weight: moderate, confidence: medium, sources: [wiki-livescript] }
+    - { type: influenced_by, to: fsharp, aspects: [pipes], weight: moderate, confidence: medium, sources: [wiki-livescript], note: "F# is in the infobox; the |> pipe is our reading." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LiveScript_(programming_language)", homepage: "https://livescript.net" }
+  sources: [wiki-livescript, livescript-net]
+  example:
+    title: Pipes and operator sections
+    language: LiveScript 1.6
+    note: "The pipeline and (+ 2) 4 are from livescript.net; map, filter and fold1 come from prelude.ls, imported in the first line (written for this dataset). Run with lsc: prints 10, then 6."
+    code: |
+      {map, filter, fold1} = require 'prelude-ls'
+
+      [1 2 3] |> map (* 2) |> filter (> 3) |> fold1 (+) |> console.log
+      #=> 10
+
+      console.log (+ 2) 4
+      #=> 6
+    sources: [livescript-net]
+
+- id: elm
+  name: Elm
+  kind: language
+  category: general
+  cluster: web/compile-to-js
+  origin:
+    first_appeared: { year: 2012, date: "2012-03-30", precision: exact, note: "Evan Czaplicki's thesis, \"Elm: Concurrent FRP for Functional GUIs\", dated 30 March 2012, with a working compiler." }
+  creators:
+    - { name: Evan Czaplicki, role: designer }
+  status: maintained
+  tags:
+    paradigm: [purely-functional, functional-reactive-programming]
+    typing: [static-typing, type-inference, strong-typing]
+    features: [compiles-to-javascript, algebraic-data-types, pattern-matching]
+    domain: [web]
+  milestones:
+    - { version: "0.19.1", year: 2019, summary: "Latest release (21 October 2019)." }
+  summary: >
+    A small, purely functional language for web front ends with Haskell/ML syntax and types, known for
+    friendly compiler errors and "no runtime exceptions". It began as a concurrent functional reactive
+    programming language; its model-update-view pattern, "The Elm Architecture", was the main inspiration
+    for Redux in JavaScript.
+  relations:
+    - { type: influenced_by, to: haskell, weight: strong, confidence: high, sources: [wiki-elm, redux-prior-art] }
+    - { type: influenced_by, to: standard-ml, weight: moderate, confidence: medium, sources: [wiki-elm] }
+    - { type: influenced_by, to: ocaml, weight: moderate, confidence: medium, sources: [wiki-elm] }
+    - { type: influenced_by, to: fsharp, weight: moderate, confidence: medium, sources: [wiki-elm] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Elm_(programming_language)", homepage: "https://elm-lang.org" }
+  sources: [wiki-elm, czaplicki-2012-elm-thesis, redux-prior-art]
+  example:
+    title: The Elm Architecture
+    language: Elm 0.19
+    note: "Excerpt from the Buttons example on elm-lang.org (module header, imports, main and init omitted). update is a pure function from message and old model to new model; view renders the model, and onClick produces messages."
+    code: |
+      type Msg
+        = Increment
+        | Decrement
+
+      update : Msg -> Model -> Model
+      update msg model =
+        case msg of
+          Increment ->
+            model + 1
+
+          Decrement ->
+            model - 1
+
+      view : Model -> Html Msg
+      view model =
+        div []
+          [ button [ onClick Decrement ] [ text "-" ]
+          , div [] [ text (String.fromInt model) ]
+          , button [ onClick Increment ] [ text "+" ]
+          ]
+    sources: [elm-lang-examples-buttons]
+
+- id: asm-js
+  name: asm.js
+  kind: language
+  category: systems
+  cluster: web
+  origin:
+    first_appeared: { year: 2013, date: "2013-03-21", precision: exact, note: "Luke Wagner's post \"asm.js in Firefox Nightly\"." }
+    places: [{ institution: Mozilla }]
+  creators:
+    - { name: Mozilla, role: designer }
+  status: historical
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing]
+    features: [optimizing-compiler]
+    domain: [web]
+  summary: >
+    A strictly typed subset of JavaScript, written by compilers such as Emscripten rather than people, in
+    which annotations like x|0 tell the engine a value is a 32-bit integer so it can be compiled ahead of
+    time. Experience with it led directly to WebAssembly, which supplanted it; Mozilla deprecated it in 2026.
+  relations:
+    - { type: subset_of, to: javascript, weight: strong, confidence: high, sources: [wiki-asmjs] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Asm.js" }
+  sources: [wiki-asmjs]
+  example:
+    title: Types by annotation
+    language: asm.js
+    note: "From the Wikipedia asm.js article: the compiled form of the C function int f(int i) { return i + 1; }. Each |0 coerces to a 32-bit integer, which is how asm.js declares types."
+    code: |
+      function f(i) {
+        i = i | 0;
+        return (i + 1) | 0;
+      }
+    sources: [wiki-asmjs]
+
+- id: purescript
+  name: PureScript
+  kind: language
+  category: general
+  cluster: web/compile-to-js
+  origin:
+    first_appeared: { year: 2013, precision: year }
+  creators:
+    - { name: Phil Freeman, role: designer }
+  status: active
+  tags:
+    paradigm: [purely-functional]
+    typing: [static-typing, type-inference, type-classes, higher-kinded-types]
+    features: [compiles-to-javascript, algebraic-data-types, pattern-matching]
+  summary: >
+    A Haskell-like, strictly evaluated, purely functional language that compiles to readable JavaScript.
+    Phil Freeman started it because he was unsatisfied with other attempts to compile Haskell to JavaScript
+    (Fay, Haste, GHCJS). The compiler is written in Haskell.
+  relations:
+    - { type: influenced_by, to: haskell, weight: strong, confidence: high, sources: [purescript-github, wiki-purescript], note: "\"written in and inspired by Haskell\" (README)." }
+    - { type: implemented_in, to: haskell, weight: strong, confidence: high, sources: [purescript-github] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PureScript", homepage: "https://www.purescript.org" }
+  sources: [wiki-purescript, purescript-github, purescript-org]
+  example:
+    title: Effects in the type
+    language: PureScript
+    note: "From purescript.org (\"Hello, PureScript!\"). greet is pure; log returns an Effect, so main's type records that it does I/O."
+    code: |
+      import Prelude
+      import Effect.Console (log)
+
+      greet :: String -> String
+      greet name = "Hello, " <> name <> "!"
+
+      main = log (greet "World")
+    sources: [purescript-org]
+
+- id: hack
+  name: Hack
+  kind: language
+  category: scripting
+  cluster: web
+  origin:
+    first_appeared: { year: 2014, date: "2014-03-20", precision: exact, note: "Released as open source with HHVM; Facebook had migrated nearly its whole PHP codebase during the year before." }
+    places: [{ institution: Facebook }]
+  creators:
+    - { name: Julien Verlaguet, role: designer }
+    - { name: Alok Menghrajani, role: designer }
+    - { name: Drew Paroski, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, object-oriented, functional]
+    typing: [gradual-typing, static-typing, type-inference]
+    concurrency: [async-await]
+    features: [generics]
+    domain: [web]
+  summary: >
+    Facebook's gradually typed dialect of PHP for the HHVM virtual machine. "Most PHP files are already
+    valid Hack files", so a codebase could be typed file by file; the type checker, written in OCaml, adds
+    generics, nullable types and async. A large-scale case of retrofitting static types onto a dynamic
+    language, alongside TypeScript.
+  relations:
+    - { type: dialect_of, to: php, weight: strong, confidence: high, sources: [verlaguet-2014-hack, wiki-hack] }
+    - { type: implemented_in, to: ocaml, weight: moderate, confidence: high, sources: [verlaguet-2014-hack], note: "\"Hack is written primarily in OCaml.\"" }
+    - { type: influenced_by, to: csharp, weight: weak, confidence: low, sources: [wiki-hack], note: "Listed in the Wikipedia infobox with OCaml, Java, Scala and Haskell; no designer statement read yet." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hack_(programming_language)", homepage: "https://docs.hhvm.com/hack/" }
+  sources: [wiki-hack, verlaguet-2014-hack]
+  example:
+    title: Typed functions in a PHP dialect
+    language: Hack
+    note: "Both functions are from the Wikipedia Hack article. Hack files start without PHP's opening tag; the attribute marks the entry point."
+    code: |
+      // Hack functions are annotated with types.
+      function negate(bool $x): bool {
+        return !$x;
+      }
+
+      <<__EntryPoint>>
+      function main(): void {
+        echo 'Hello, World!';
+      }
+    sources: [wiki-hack]
+
+- id: reason
+  name: Reason
+  aliases: [ReasonML]
+  kind: language
+  category: general
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 2016, date: "2016-05-16", precision: exact, note: "First release (0.0.5) on GitHub." }
+    places: [{ institution: Facebook }]
+  creators:
+    - { name: Jordan Walke, role: designer }
+  status: maintained
+  tags:
+    paradigm: [functional, multi-paradigm]
+    typing: [static-typing, type-inference]
+    features: [algebraic-data-types, pattern-matching]
+  summary: >
+    "An alternative, JS-looking syntax layer over OCaml": the same compiler and type system with braces,
+    semicolons and JavaScript-like expressions, aimed at web developers. Compiled to JavaScript through
+    BuckleScript (now Melange), it led to ReScript.
+  relations:
+    - { type: dialect_of, to: ocaml, weight: strong, confidence: high, sources: [wiki-reason, rescript-2020-rebranding], note: "\"Since Reason is an alternate syntax to OCaml, they share the same characteristics.\"" }
+    - { type: influenced_by, to: javascript, weight: moderate, confidence: high, sources: [wiki-reason] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Reason_(programming_language)", homepage: "https://reasonml.github.io" }
+  sources: [wiki-reason, rescript-2020-rebranding]
+  example:
+    title: Variants and switch
+    language: Reason
+    note: "From reasonml.github.io. OCaml's variants and match, in JavaScript-like syntax; the compiler checks the switch is exhaustive."
+    code: |
+      type schoolPerson = Teacher | Director | Student(string);
+
+      let greeting = person =>
+        switch (person) {
+        | Teacher => "Hey Professor!"
+        | Director => "Hello Director."
+        | Student("Richard") => "Still here Ricky?"
+        | Student(anyOtherName) => "Hey, " ++ anyOtherName ++ "."
+        };
+    sources: [reasonml-org]
+
+- id: rescript
+  name: ReScript
+  aliases: [BuckleScript]
+  kind: language
+  category: general
+  cluster: web/compile-to-js
+  origin:
+    began: { year: 2016, precision: year, note: "BuckleScript, an OCaml-to-JavaScript compiler, first released by Bloomberg in 2016." }
+    first_appeared: { year: 2020, date: "2020-07-01", precision: exact, note: "Wikipedia infobox date. BuckleScript introduced its own syntax in 2020 and the rename to ReScript was announced on 10 August 2020." }
+  creators:
+    - { name: ReScript team, role: "compiler team (BuckleScript, later ReScript)" }
+  status: active
+  tags:
+    paradigm: [functional, multi-paradigm]
+    typing: [static-typing, type-inference]
+    features: [compiles-to-javascript, algebraic-data-types, pattern-matching]
+    domain: [web]
+  milestones:
+    - { version: "12", year: 2025, summary: "Support for compiling OCaml syntax dropped; ReScript syntax only." }
+  summary: >
+    The OCaml-to-JavaScript compiler BuckleScript, rebranded in 2020 with its own syntax descended from
+    Reason. It keeps OCaml's type system and fast compiler but aims at JavaScript developers and readable
+    output, and since version 12 it no longer compiles OCaml itself.
+  notes: >
+    The rename post is signed by the ReScript team (Hongbo, Cheng, Cristiano, Maxim, Patrick, Ricky).
+    Who created BuckleScript at Bloomberg is not yet sourced here.
+  relations:
+    - { type: successor_of, to: reason, aspects: [algebraic-data-types, pattern-matching], weight: strong, confidence: high, sources: [wiki-rescript], note: "\"Its syntax is descended from the Reason programming language\"." }
+    - { type: influenced_by, to: ocaml, weight: strong, confidence: high, sources: [wiki-rescript, rescript-2020-rebranding] }
+    - { type: implemented_in, to: ocaml, weight: strong, confidence: high, sources: [wiki-rescript] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ReScript", homepage: "https://rescript-lang.org" }
+  sources: [wiki-rescript, rescript-2020-rebranding]
+  example:
+    title: Variants
+    language: ReScript 12
+    note: "From the ReScript manual (Variant). Compiled with rescript 12 and run under Node; prints Wof."
+    code: |
+      type animal = Dog | Cat | Bird
+      let data = Dog
+      let logData = data => {
+        switch data {
+        | Dog => Console.log("Wof")
+        | Cat => Console.log("Meow")
+        | Bird => Console.log("Kashiiin")
+        }
+      }
+      logData(data)
+    sources: [rescript-manual-variant]

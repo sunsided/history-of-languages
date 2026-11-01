@@ -1499,3 +1499,213 @@
   title: "RAD Studio docs: __property"
   url: https://docwiki.embarcadero.com/RADStudio/Athens/en/Property
   checked: '2026-11-01'
+- id: wiki-hypertalk
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: HyperTalk"
+  url: https://en.wikipedia.org/wiki/HyperTalk
+  checked: '2026-11-01'
+- id: wiki-hypercard
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: HyperCard"
+  url: https://en.wikipedia.org/wiki/HyperCard
+  checked: '2026-11-01'
+- id: wiki-lingo
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lingo (programming language)"
+  url: https://en.wikipedia.org/wiki/Lingo_(programming_language)
+  checked: '2026-11-01'
+- id: wiki-adobe-director
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Adobe Director"
+  url: https://en.wikipedia.org/wiki/Adobe_Director
+  checked: '2026-11-01'
+- id: wiki-cfml
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ColdFusion Markup Language"
+  url: https://en.wikipedia.org/wiki/ColdFusion_Markup_Language
+  checked: '2026-11-01'
+- id: wiki-adobe-coldfusion
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Adobe ColdFusion"
+  url: https://en.wikipedia.org/wiki/Adobe_ColdFusion
+  checked: '2026-11-01'
+- id: wiki-actionscript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ActionScript"
+  url: https://en.wikipedia.org/wiki/ActionScript
+  checked: '2026-11-01'
+- id: wiki-haxe
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Haxe"
+  url: https://en.wikipedia.org/wiki/Haxe
+  checked: '2026-11-01'
+- id: haxe-manual-history
+  type: manual
+  primary: true
+  title: "Haxe manual: 1.5 History"
+  url: https://haxe.org/manual/introduction-haxe-history.html
+  checked: '2026-11-01'
+- id: haxe-manual-type-inference
+  type: manual
+  primary: true
+  title: "Haxe manual: 3.6 Type Inference"
+  url: https://haxe.org/manual/type-system-type-inference.html
+  checked: '2026-11-01'
+- id: wiki-coffeescript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CoffeeScript"
+  url: https://en.wikipedia.org/wiki/CoffeeScript
+  checked: '2026-11-01'
+- id: coffeescript-org
+  type: manual
+  primary: true
+  title: "CoffeeScript (official site and documentation)"
+  url: https://coffeescript.org/
+  checked: '2026-11-01'
+- id: clojure-2011-introducing-clojurescript
+  type: web
+  primary: true
+  title: "Alessandra Sierra: Introducing ClojureScript (clojure.org news, 22 July 2011)"
+  url: https://clojure.org/news/2011/07/22/introducing-clojurescript
+  checked: '2026-11-01'
+- id: clojurescript-rationale
+  type: manual
+  primary: true
+  title: "ClojureScript: Rationale"
+  url: https://clojurescript.org/about/rationale
+  checked: '2026-11-01'
+- id: clojurescript-quick-start
+  type: manual
+  primary: true
+  title: "ClojureScript: Quick Start"
+  url: https://clojurescript.org/guides/quick-start
+  checked: '2026-11-01'
+- id: wiki-livescript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: LiveScript (programming language)"
+  url: https://en.wikipedia.org/wiki/LiveScript_(programming_language)
+  checked: '2026-11-01'
+- id: livescript-net
+  type: manual
+  primary: true
+  title: "LiveScript (official site)"
+  url: https://livescript.net/
+  checked: '2026-11-01'
+- id: wiki-elm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Elm (programming language)"
+  url: https://en.wikipedia.org/wiki/Elm_(programming_language)
+  checked: '2026-11-01'
+- id: czaplicki-2012-elm-thesis
+  type: paper
+  primary: true
+  title: "Evan Czaplicki: Elm: Concurrent FRP for Functional GUIs (thesis, 30 March 2012)"
+  url: https://elm-lang.org/assets/papers/concurrent-frp.pdf
+  checked: '2026-11-01'
+- id: elm-lang-examples-buttons
+  type: manual
+  primary: true
+  title: "Elm examples: Buttons"
+  url: https://elm-lang.org/examples/buttons
+  checked: '2026-11-01'
+- id: redux-prior-art
+  type: manual
+  primary: false
+  title: "Redux docs: Prior Art"
+  url: https://redux.js.org/understanding/history-and-design/prior-art
+  checked: '2026-11-01'
+- id: wiki-asmjs
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: asm.js"
+  url: https://en.wikipedia.org/wiki/Asm.js
+  checked: '2026-11-01'
+- id: wiki-purescript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PureScript"
+  url: https://en.wikipedia.org/wiki/PureScript
+  checked: '2026-11-01'
+- id: purescript-org
+  type: manual
+  primary: true
+  title: "PureScript (official site)"
+  url: https://www.purescript.org/
+  checked: '2026-11-01'
+- id: purescript-github
+  type: manual
+  primary: true
+  title: "PureScript compiler README (GitHub)"
+  url: https://github.com/purescript/purescript
+  checked: '2026-11-01'
+- id: wiki-hack
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Hack (programming language)"
+  url: https://en.wikipedia.org/wiki/Hack_(programming_language)
+  checked: '2026-11-01'
+- id: verlaguet-2014-hack
+  type: web
+  primary: true
+  title: "Julien Verlaguet and Alok Menghrajani: Hack, a new programming language for HHVM (Facebook Engineering, 20 March 2014)"
+  url: https://engineering.fb.com/2014/03/20/developer-tools/hack-a-new-programming-language-for-hhvm/
+  checked: '2026-11-01'
+- id: wiki-reason
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Reason (programming language)"
+  url: https://en.wikipedia.org/wiki/Reason_(programming_language)
+  checked: '2026-11-01'
+- id: reasonml-org
+  type: manual
+  primary: true
+  title: "Reason (official site)"
+  url: https://reasonml.github.io/
+  checked: '2026-11-01'
+- id: wiki-rescript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ReScript"
+  url: https://en.wikipedia.org/wiki/ReScript
+  checked: '2026-11-01'
+- id: rescript-2020-rebranding
+  type: web
+  primary: true
+  title: "ReScript blog: BuckleScript is rebranding (10 August 2020)"
+  url: https://rescript-lang.org/blog/bucklescript-is-rebranding
+  checked: '2026-11-01'
+- id: rescript-manual-variant
+  type: manual
+  primary: true
+  title: "ReScript manual: Variant"
+  url: https://rescript-lang.org/docs/manual/variant
+  checked: '2026-11-01'
+- id: wiki-webassembly
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: WebAssembly"
+  url: https://en.wikipedia.org/wiki/WebAssembly
+  checked: '2026-11-01'
+- id: w3c-2019-wasm-core-1
+  type: standard
+  primary: true
+  title: "W3C: WebAssembly Core Specification 1.0 (Recommendation, 5 December 2019)"
+  url: https://www.w3.org/TR/wasm-core-1/
+  checked: '2026-11-01'
+- id: mdn-wasm-text-format
+  type: manual
+  primary: false
+  title: "MDN: Understanding WebAssembly text format"
+  url: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Understanding_the_text_format
+  checked: '2026-11-01'

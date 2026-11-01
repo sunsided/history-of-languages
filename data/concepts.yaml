@@ -328,6 +328,16 @@
 - id: command-substitution
   name: Command substitution
   facet: features
+- id: compiles-to-javascript
+  name: Compiles to JavaScript
+  facet: features
+  broader:
+  - compiler
+  summary: The language's main implementation emits JavaScript source, so the browser is its runtime.
+  first_seen:
+    node: coffeescript
+    year: 2009
+    note: "Earliest in this dataset; earlier compilers to JavaScript existed and are in the web/compile-to-js backlog."
 - id: compile-time-evaluation
   name: Compile time evaluation
   facet: features
@@ -929,6 +939,17 @@
   name: Event driven
   facet: paradigm
   summary: Control flow determined by events dispatched to handlers.
+- id: functional-reactive-programming
+  name: Functional reactive programming
+  facet: paradigm
+  broader:
+  - functional
+  - event-driven
+  summary: Programs as pure functions over time-varying values and event streams.
+  first_seen:
+    node: elm
+    year: 2012
+    note: "Earliest in this dataset; FRP itself goes back to Fran (Elliott and Hudak, 1997), not yet a node."
 - id: functional
   name: Functional
   facet: paradigm

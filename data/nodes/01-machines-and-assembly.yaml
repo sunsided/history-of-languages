@@ -1011,3 +1011,51 @@
               .data
       msg:    .ascii "Hello, world\n"
     sources: [wiki-risc-v]
+
+- id: webassembly
+  name: WebAssembly
+  aliases: [Wasm, WAT]
+  kind: assembly
+  category: systems
+  cluster: assembly/virtual
+  origin:
+    began: { year: 2015, precision: year, note: "Announced in 2015 by browser vendors (exact day not yet confirmed from a read source)." }
+    first_appeared: { year: 2017, date: "2017-03", precision: exact, note: "The MVP design was declared finished and the preview phase ended in March 2017." }
+  creators:
+    - { name: W3C WebAssembly Community Group, role: "designers, with Mozilla, Microsoft, Google and Apple" }
+    - { name: Andreas Rossberg, role: editor of the core specification }
+  status: active
+  tags:
+    paradigm: [imperative, stack-oriented]
+    typing: [static-typing]
+    features: [bytecode-vm, standardization]
+    domain: [web]
+  milestones:
+    - { version: "1.0", year: 2019, introduces: [standardization], summary: "W3C Recommendation, 5 December 2019." }
+    - { version: "2.0", year: 2022, summary: "SIMD (v128), multiple return values, bulk memory, reference types; finished 2022, W3C standard in December 2024 (Wikipedia)." }
+    - { version: "3.0", year: 2025, summary: "64-bit address space, multiple memories, exception handling, garbage-collected structs and arrays." }
+  summary: >
+    A portable binary instruction format for a stack-based virtual machine, with a text form (WAT) in
+    S-expressions, designed as a compilation target for C, C++, Rust and others in browsers and beyond. Its
+    initial feature set came from asm.js; it is the web's first new execution format since JavaScript.
+  relations:
+    - { type: successor_of, to: asm-js, weight: strong, confidence: high, sources: [wiki-webassembly, wiki-asmjs], note: "\"the initial implementation was based on the feature set of asm.js\"; Google's (P)NaCl was the other precursor." }
+    - { type: influenced_by, to: lisp, weight: weak, confidence: medium, sources: [wiki-webassembly], note: "In the infobox; the text format uses S-expressions." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/WebAssembly", homepage: "https://webassembly.org" }
+  sources: [wiki-webassembly, w3c-2019-wasm-core-1, mdn-wasm-text-format]
+  example:
+    title: A function in the text format
+    language: WebAssembly text format (WAT)
+    note: "From MDN's \"Understanding WebAssembly text format\". Parameters are pushed onto the operand stack and i32.add pops both. Assembled with wat2wasm and called from Node: add(2, 3) returns 5."
+    code: |
+      (module
+        (func $add (param $lhs i32) (param $rhs i32) (result i32)
+          local.get $lhs
+          local.get $rhs
+          i32.add
+        )
+        (export "add" (func $add))
+      )
+    sources: [mdn-wasm-text-format]

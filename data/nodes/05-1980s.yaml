@@ -1117,3 +1117,89 @@
       static void *array[] = { &&foo, &&bar, &&hack };
       goto *array[i];
     sources: [gcc-manual-c-extensions]
+
+- id: hypertalk
+  name: HyperTalk
+  kind: language
+  category: scripting
+  cluster: oop/apple
+  origin:
+    began: { year: 1986, precision: year, note: "Dan Winkler began work on HyperTalk in 1986 (Wikipedia, HyperCard)." }
+    first_appeared: { year: 1987, date: "1987-08-11", precision: exact, note: "Shipped with HyperCard, released on 11 August 1987 for the first day of MacWorld Conference & Expo in Boston." }
+    places: [{ institution: Apple Computer, country: US }]
+  creators:
+    - { name: Dan Winkler, role: designer of HyperTalk }
+    - { name: Bill Atkinson, role: original author of HyperCard }
+  status: historical
+  tags:
+    paradigm: [procedural, event-driven, scripting]
+    typing: [dynamic-typing]
+    features: [english-like-syntax, interpreter]
+  summary: >
+    The scripting language of Apple's HyperCard: English-like sentences ("put ... into ...", "the number of
+    card fields") attached as message handlers to buttons, cards and stacks. It put programming in front of
+    non-programmers on every Macintosh, and its "xTalk" style shaped AppleScript, Macromedia's Lingo and
+    ActionScript; Brendan Eich has said it inspired JavaScript.
+  relations:
+    - { type: influenced_by, to: pascal, weight: weak, confidence: medium, sources: [wiki-hypertalk], note: "Listed in the Wikipedia infobox (with natural-language programming); no designer statement found yet." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/HyperTalk" }
+  sources: [wiki-hypertalk, wiki-hypercard]
+  example:
+    title: A message handler
+    language: HyperTalk
+    note: "From the Wikipedia HyperTalk article. The handler runs when the user releases the mouse over the object that owns the script."
+    code: |
+      on mouseUp
+        repeat with i = 1 to the number of card fields
+          hide field i
+        end repeat
+      end mouseUp
+    sources: [wiki-hypertalk]
+
+- id: lingo
+  name: Lingo
+  aliases: [Director Lingo]
+  kind: language
+  category: scripting
+  cluster: web/macromedia
+  origin:
+    first_appeared: { year: 1989, precision: disputed, note: "Wikipedia's Lingo article: invented by John H. Thompson at MacroMind in 1989 and first released with Director 2.2. Its Adobe Director article says Lingo was added in 1988." }
+    places: [{ institution: MacroMind, country: US }]
+  creators:
+    - { name: John H. Thompson, role: inventor }
+  status: historical
+  tags:
+    paradigm: [procedural, event-driven, object-oriented, scripting]
+    typing: [dynamic-typing]
+    features: [english-like-syntax]
+  milestones:
+    - { version: "Director 4.0", year: 1994, summary: "Lingo extensible through Xtras plug-ins." }
+    - { version: "Director MX 2004", year: 2004, summary: "Dot syntax over the Director Object Model." }
+  summary: >
+    The scripting language of MacroMind (later Macromedia, then Adobe) Director, the dominant CD-ROM and
+    Shockwave multimedia tool of the 1990s. It began with HyperTalk-like sentences and moved towards a
+    dot syntax resembling JavaScript. Director was discontinued in 2017.
+  notes: >
+    Wikipedia names Jeff Tanner (developed and tested Lingo for Director 2.2 and 3.0) and Dave Shields
+    (object-based Lingo for Director 3.13 and 4.0) as contributors. The Wikipedia article for the creator is
+    titled "John Thompson (inventor)"; the name here drops the parenthesis, which build.py does not allow.
+  relations:
+    - { type: influenced_by, to: hypertalk, aspects: [english-like-syntax], weight: strong, confidence: medium, sources: [wiki-hypertalk, wiki-lingo], note: "\"started out with an xTalk-like syntax, although later versions went in a direction resembling JavaScript\" (Wikipedia, HyperTalk)." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lingo_(programming_language)" }
+  sources: [wiki-lingo, wiki-adobe-director]
+  example:
+    title: Three generations of the same line
+    language: Lingo
+    note: "The three forms are from the Wikipedia Lingo article: the original HyperTalk-like verbose syntax, the earlier short form, and the dot syntax of Director MX 2004. All test whether sprite 5 is visible and, if so, jump to the current frame."
+    code: |
+      -- verbose (HyperTalk-like)
+      if the visibility of sprite 5 then go to the frame
+      -- earlier short form
+      if sprite(5).visible then go the frame
+      -- dot syntax (Director MX 2004)
+      if sprite(5).visible then _movie.go(_movie.frame)
+    sources: [wiki-lingo]
