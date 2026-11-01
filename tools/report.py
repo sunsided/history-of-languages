@@ -3,7 +3,7 @@
 
 Usage:  python3 tools/report.py              # everything
         python3 tools/report.py clusters     # one section: clusters, orphans, edges, concepts, sources,
-                                             #   decades, people, find
+                                             #   decades, people, milestones, find
         python3 tools/report.py find <text>  # is a language (or alias, or backlog item) already here?
 """
 import collections, pathlib, sys
@@ -129,6 +129,14 @@ def people_report():
     print("  " + ", ".join(names))
 
 
+def milestones_report():
+    section("Version history starts late (first milestone 3+ years after first appearance; early versions missing?)")
+    for n in sorted(nodes, key=lambda n: n["id"]):
+        ys = [m["year"] for m in n.get("milestones", []) if isinstance(m.get("year"), int)]
+        if n["kind"] == "language" and ys and min(ys) - year(n) >= 3:
+            print(f"  {n['id']:24} appeared {year(n)}, first milestone {min(ys)} (+{min(ys) - year(n)})")
+
+
 def find(text):
     t = text.lower()
     hits = [f"node {n['id']} ({n['name']}, {year(n)}, {n['cluster']})" for n in nodes
@@ -140,7 +148,7 @@ def find(text):
 
 SECTIONS = {"clusters": clusters_report, "orphans": orphans_report, "edges": edges_report,
             "concepts": concepts_report, "sources": sources_report, "decades": decades_report,
-            "people": people_report}
+            "people": people_report, "milestones": milestones_report}
 
 if __name__ == "__main__":
     args = sys.argv[1:]

@@ -512,9 +512,13 @@
     concurrency: [fibers]
     domain: [web]
   milestones:
-    - { version: PHP 3, year: 1998 }
-    - { version: PHP 5, year: 2004, introduces: [object-oriented] }
-    - { version: PHP 7, year: 2015, introduces: [gradual-typing] }
+    - { version: PHP Tools 1.0, year: 1995, summary: "\"Personal Home Page Tools\", announced on Usenet on 8 June 1995: Perl-like variables, form handling and HTML embedding." }
+    - { version: PHP/FI 2.0, year: 1997, summary: "Named PHP/FI in April 1996 and given version 2.0 status that June; out of beta in November 1997. Built-in DBM, mSQL and Postgres95 support, cookies, user-defined functions." }
+    - { version: PHP 3, year: 1998, introduces: [object-oriented], summary: "June 1998. Andi Gutmans and Zeev Suraski's rewrite, the first version close to today's PHP: extension API, object-oriented support, a more consistent syntax." }
+    - { version: PHP 4, year: 2000, summary: "May 2000, on the Zend Engine 1.0: sessions, output buffering, support for more web servers." }
+    - { version: PHP 5, year: 2004, summary: "July 2004, on the Zend Engine 2.0: a new object model, iterators and exceptions." }
+    - { version: PHP 7, year: 2015, introduces: [gradual-typing], summary: "Zend Engine 3.0, up to twice as fast as PHP 5.6; null-coalescing operator, anonymous classes, consistent 64-bit support." }
+    - { version: PHP 8, year: 2020, summary: "26 November 2020: named arguments, union types, attributes and a JIT compiler." }
     - { version: PHP 8.1, year: 2021, introduces: [fibers] }
   summary: "Started as Lerdorf's CGI tools in Perl and C, became the server-side language of the early dynamic web (WordPress, Facebook, Wikipedia)."
   relations:
@@ -523,7 +527,7 @@
     - { type: influenced_by, to: java, weight: moderate, confidence: medium, note: "PHP 5 object model." }
   research_status: draft
   confidence: high
-  sources: [wiki-php]
+  sources: [wiki-php, php-manual-history]
   example:
     title: Code embedded in a page
     language: PHP 8

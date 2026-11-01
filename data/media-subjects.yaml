@@ -786,6 +786,18 @@
   wiki: Randall Smith
   nodes:
   - self
+- id: person-andi-gutmans
+  kind: person
+  person: Andi Gutmans
+  wiki: Andi Gutmans
+  nodes:
+  - php
+- id: person-zeev-suraski
+  kind: person
+  person: Zeev Suraski
+  wiki: Zeev Suraski
+  nodes:
+  - php
 - id: person-rasmus-lerdorf
   kind: person
   person: Rasmus Lerdorf
