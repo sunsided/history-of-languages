@@ -1,6 +1,7 @@
 // Derived lookups over a Dataset: indexes, cluster tree, transitive ancestry, edge styling.
 
 import type { Cluster, Concept, Dataset, Edge, LangNode, MediaItem, RelationType, Source } from './types.ts';
+import { asset } from '$app/paths';
 import { NOW } from './scale.ts';
 
 export type EdgeFamily = 'influence' | 'succession' | 'variant' | 'targets' | 'implementation';
@@ -252,5 +253,5 @@ export function cleanCommons(text: string | undefined): string {
 		.trim();
 }
 
-/** URL of a media file in the dev server (see vite/dataset.ts). */
-export const mediaUrl = (m: MediaItem) => '/' + m.file;
+/** URL of a media file: served by the dev middleware, emitted into the static build (see vite/dataset.ts). */
+export const mediaUrl = (m: MediaItem) => asset(`/${m.file}` as Parameters<typeof asset>[0]);

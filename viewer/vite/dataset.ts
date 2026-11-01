@@ -191,6 +191,15 @@ export function dataset(options: { dataDir: string }): Plugin {
 			server.watcher.on('add', onChange);
 			server.watcher.on('unlink', onChange);
 		},
+		generateBundle() {
+			// Static build: ship the media files the dataset references next to the app, at the same
+			// paths the dev middleware serves them from.
+			if (this.environment.name !== 'client') return;
+			const root = path.dirname(dataDir);
+			for (const m of loadDataset(dataDir).media) {
+				this.emitFile({ type: 'asset', fileName: m.file, source: fs.readFileSync(path.join(root, m.file)) });
+			}
+		},
 		hotUpdate({ file }) {
 			// Data files are handled above; stop Vite from doing anything else with them.
 			if (file.startsWith(dataDir)) return [];
