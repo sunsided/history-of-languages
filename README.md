@@ -84,7 +84,8 @@ primary ones; `reviewed` = checked against primary sources.
 `viewer/` is a SvelteKit app (yarn via corepack) that renders the data as an expandable timeline. It reads
 `data/**/*.yaml` directly through a Vite plugin and pushes updates to the browser on every save, so there's
 no need to run `build.py` first. That loader is lenient: it reports broken YAML and dangling references in the
-toolbar, but the schema is only checked by `build.py`.
+toolbar, but the schema is only checked by `build.py`. The same plugin builds the search index behind the
+Ctrl/⌘-K command palette (languages, clusters, concepts, lineages, eras), so it updates with the data too.
 
 ```
 task dev          # http://localhost:5173, hot reload for code and data

@@ -2,6 +2,7 @@
 	import Toolbar from '#lib/components/Toolbar.svelte';
 	import Timeline from '#lib/components/Timeline.svelte';
 	import DetailPanel from '#lib/components/DetailPanel.svelte';
+	import CommandPalette from '#lib/components/CommandPalette.svelte';
 	import { viewer } from '#lib/viewer.svelte.ts';
 	import '../app.css';
 
@@ -23,6 +24,10 @@
 		{/if}
 	</main>
 </div>
+
+{#if viewer.paletteOpen}
+	<CommandPalette />
+{/if}
 
 <style>
 	.app {

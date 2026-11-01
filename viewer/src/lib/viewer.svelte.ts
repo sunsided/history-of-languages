@@ -1,11 +1,15 @@
 // Global viewer state. Data is live: the dataset plugin pushes a fresh copy on every YAML save.
 
 import initial from 'virtual:dataset';
+import initialIndex from 'virtual:search-index';
 import { MediaQuery, SvelteSet } from 'svelte/reactivity';
 import { buildGraph, clusterPath, type EdgeFamily, type Graph } from './graph.ts';
 import type { Dataset } from './types.ts';
+import type { SearchEntry, SearchIndex } from './search.ts';
 
 const STORAGE_KEY = 'hol-viewer:v2';
+const RECENT_KEY = 'hol-viewer:recent';
+const RECENT_MAX = 8;
 
 /** Influence edges are dense; start with the structural ones and let the user opt in. */
 const DEFAULT_FAMILIES: EdgeFamily[] = ['succession', 'variant'];
@@ -33,12 +37,26 @@ function loadPersisted(): Partial<Persisted> {
 	}
 }
 
+function loadRecent(): string[] {
+	try {
+		const r = JSON.parse(localStorage.getItem(RECENT_KEY) ?? '[]');
+		return Array.isArray(r) ? r.filter((x) => typeof x === 'string') : [];
+	} catch {
+		return [];
+	}
+}
+
 export type Selection = { type: 'node' | 'cluster'; id: string } | null;
 export type Hover = { type: 'node'; id: string } | { type: 'edge'; from: string; to: string; idx: number } | null;
 
 class Viewer {
 	data = $state.raw<Dataset>(initial);
 	graph = $derived(buildGraph(this.data));
+	/** built by the dataset plugin, replaced on every data push */
+	searchIndex = $state.raw<SearchIndex>(initialIndex);
+	paletteOpen = $state(false);
+	/** last palette destinations, "type:id", newest first */
+	recent = $state<string[]>(loadRecent());
 	/** bumps on every live data update, for a small "reloaded" flash */
 	updates = $state(0);
 
@@ -74,7 +92,7 @@ class Viewer {
 	jumpTarget = $state<{ era: string; tick: number } | null>(null);
 
 	/** set to ask the timeline to scroll a node into view */
-	scrollTarget = $state<{ id: string; tick: number } | null>(null);
+	scrollTarget = $state<{ id: string; type: 'node' | 'cluster'; tick: number } | null>(null);
 
 	constructor() {
 		const p = loadPersisted();
@@ -133,7 +151,48 @@ class Viewer {
 	/** Expand every cluster on the way to a node and scroll to it. */
 	reveal(id: string) {
 		for (const c of clusterPath(this.graph, id)) this.expanded.add(c);
-		this.scrollTarget = { id, tick: (this.scrollTarget?.tick ?? 0) + 1 };
+		this.scrollTarget = { id, type: 'node', tick: (this.scrollTarget?.tick ?? 0) + 1 };
+	}
+
+	/** Expand a cluster and its ancestors and scroll its row into view. */
+	revealCluster(id: string) {
+		let cur: string | undefined = id;
+		while (cur && this.graph.clusters.has(cur)) {
+			this.expanded.add(cur);
+			const c: { parent?: string; id: string } = this.graph.clusters.get(cur)!.cluster;
+			cur = c.parent ?? (cur.includes('/') ? cur.slice(0, cur.lastIndexOf('/')) : undefined);
+		}
+		this.scrollTarget = { id, type: 'cluster', tick: (this.scrollTarget?.tick ?? 0) + 1 };
+	}
+
+	/** Navigate to a palette result. */
+	go(e: SearchEntry) {
+		switch (e.type) {
+			case 'node':
+				this.selectNode(e.id);
+				break;
+			case 'cluster':
+				this.revealCluster(e.id);
+				this.selectCluster(e.id);
+				break;
+			case 'lineage':
+				this.setLineage(e.id);
+				break;
+			case 'concept':
+				this.setConcept(e.id);
+				break;
+			case 'era':
+				this.jump(e.id);
+				break;
+		}
+		const key = `${e.type}:${e.id}`;
+		this.recent = [key, ...this.recent.filter((k) => k !== key)].slice(0, RECENT_MAX);
+		try {
+			localStorage.setItem(RECENT_KEY, JSON.stringify(this.recent));
+		} catch {
+			// not persisted; fine
+		}
+		this.paletteOpen = false;
 	}
 
 	setZoom(z: number) {
@@ -212,6 +271,13 @@ $effect.root(() => {
 // Escape peels off one layer: selection first, then concept/lineage highlights.
 if (typeof window !== 'undefined') {
 	window.addEventListener('keydown', (ev) => {
+		// Ctrl/Cmd-K toggles the command palette (overrides the browser's search-bar shortcut).
+		if ((ev.ctrlKey || ev.metaKey) && ev.key.toLowerCase() === 'k') {
+			ev.preventDefault();
+			viewer.paletteOpen = !viewer.paletteOpen;
+			return;
+		}
+		if (viewer.paletteOpen) return; // the palette handles its own keys
 		if (ev.key !== 'Escape' || (ev.target as Element | null)?.matches?.('input, select, textarea')) return;
 		if (viewer.selected) viewer.deselect();
 		else viewer.clearFocus();
@@ -219,5 +285,8 @@ if (typeof window !== 'undefined') {
 }
 
 if (import.meta.hot) {
-	import.meta.hot.on('dataset:update', (d: Dataset) => viewer.setData(d));
+	import.meta.hot.on('dataset:update', (p: { data: Dataset; index: SearchIndex }) => {
+		viewer.setData(p.data);
+		viewer.searchIndex = p.index;
+	});
 }

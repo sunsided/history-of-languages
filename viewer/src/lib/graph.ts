@@ -215,21 +215,3 @@ export function contemporaries(g: Graph, id: string, window = 5): LangNode[] {
 		.filter((m) => Math.abs(firstYear(m) - y) <= window)
 		.sort((a, b) => firstYear(a) - firstYear(b));
 }
-
-export function search(g: Graph, q: string, limit = 12): LangNode[] {
-	const s = q.trim().toLowerCase();
-	if (!s) return [];
-	const score = (n: LangNode) => {
-		const names = [n.name, n.id, ...(n.aliases ?? [])].map((x) => x.toLowerCase());
-		if (names.some((x) => x === s)) return 0;
-		if (names.some((x) => x.startsWith(s))) return 1;
-		if (names.some((x) => x.includes(s))) return 2;
-		return 9;
-	};
-	return g.data.nodes
-		.map((n) => [score(n), n] as const)
-		.filter(([sc]) => sc < 9)
-		.sort((a, b) => a[0] - b[0] || firstYear(a[1]) - firstYear(b[1]))
-		.slice(0, limit)
-		.map(([, n]) => n);
-}

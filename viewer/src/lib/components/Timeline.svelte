@@ -232,13 +232,23 @@
 		if (!t || !scroller) return;
 		const el = scroller;
 		tick().then(() => {
-			const a = lay.anchor.get(t.id);
-			const n = g.node.get(t.id);
-			if (!a || !n) return;
-			const x = scale.x(firstYear(n));
+			let x: number, y: number;
+			if (t.type === 'cluster') {
+				const row = lay.rows.find((r) => r.type === 'cluster' && r.id === t.id);
+				const info = g.clusters.get(t.id);
+				if (!row || !info) return;
+				x = isFinite(info.start) ? scale.x(info.start) + (el.clientWidth - GUTTER) / 3 : el.scrollLeft + (el.clientWidth - GUTTER) / 2;
+				y = row.y + el.clientHeight / 3; // put the header in the upper third so its members show below
+			} else {
+				const a = lay.anchor.get(t.id);
+				const n = g.node.get(t.id);
+				if (!a || !n) return;
+				x = scale.x(firstYear(n));
+				y = a.y;
+			}
 			el.scrollTo({
 				left: Math.max(0, x - (el.clientWidth - GUTTER) / 2),
-				top: Math.max(0, a.y - el.clientHeight / 2),
+				top: Math.max(0, y - el.clientHeight / 2),
 				behavior: 'smooth'
 			});
 		});

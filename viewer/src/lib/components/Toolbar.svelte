@@ -1,17 +1,13 @@
 <script lang="ts">
 	import { viewer } from '../viewer.svelte.ts';
-	import { FAMILIES, firstYear, search } from '../graph.ts';
+	import { FAMILIES } from '../graph.ts';
 	import { NOW } from '../scale.ts';
 
 	const KINDS = ['mechanism', 'machine', 'machine-code', 'formalism', 'notation', 'assembly', 'language'];
 
-	let query = $state('');
-	let open = $state(false);
-	let active = $state(0);
 	let showProblems = $state(false);
 
 	const g = $derived(viewer.graph);
-	const results = $derived(search(g, query));
 	const presentKinds = $derived(KINDS.filter((k) => g.data.nodes.some((n) => n.kind === k)));
 
 	const conceptGroups = $derived.by(() => {
@@ -34,26 +30,7 @@
 	const focusActive = $derived(viewer.selected !== null || viewer.concept !== null || viewer.lineage !== null);
 	const showFilters = $derived(!viewer.narrow.current || viewer.filtersOpen);
 
-	function pick(id: string) {
-		viewer.selectNode(id);
-		query = '';
-		open = false;
-	}
-
-	function onKey(ev: KeyboardEvent) {
-		if (ev.key === 'ArrowDown') {
-			active = Math.min(results.length - 1, active + 1);
-			ev.preventDefault();
-		} else if (ev.key === 'ArrowUp') {
-			active = Math.max(0, active - 1);
-			ev.preventDefault();
-		} else if (ev.key === 'Enter' && results[active]) {
-			pick(results[active].id);
-		} else if (ev.key === 'Escape') {
-			query = '';
-			open = false;
-		}
-	}
+	const isMac = typeof navigator !== 'undefined' && /mac|iphone|ipad/i.test(navigator.platform);
 
 	let flash = $state(false);
 	$effect(() => {
@@ -67,31 +44,11 @@
 <header class="toolbar">
 	<div class="brand">History of languages</div>
 
-	<div class="search">
-		<input
-			type="search"
-			placeholder="Find language…"
-			bind:value={query}
-			onfocus={() => (open = true)}
-			onblur={() => setTimeout(() => (open = false), 150)}
-			oninput={() => {
-				open = true;
-				active = 0;
-			}}
-			onkeydown={onKey}
-		/>
-		{#if open && results.length}
-			<ul class="results">
-				{#each results as n, i (n.id)}
-					<li>
-						<button class:active={i === active} onmousedown={() => pick(n.id)}>
-							<span>{n.name}</span><span class="yr">{firstYear(n)}</span>
-						</button>
-					</li>
-				{/each}
-			</ul>
-		{/if}
-	</div>
+	<button class="search-btn" onclick={() => (viewer.paletteOpen = true)} title="Go to a language, cluster, concept, lineage or era">
+		<span class="search-icon" aria-hidden="true">⌕</span>
+		<span class="search-text">Go to…</span>
+		<kbd>{isMac ? '⌘' : 'Ctrl'}</kbd><kbd>K</kbd>
+	</button>
 
 	{#if viewer.narrow.current}
 		<button class="toggle" class:on={viewer.filtersOpen} onclick={() => (viewer.filtersOpen = !viewer.filtersOpen)} aria-expanded={viewer.filtersOpen}>
@@ -264,11 +221,29 @@
 		font-size: 14px;
 		letter-spacing: -0.01em;
 	}
-	.search {
-		position: relative;
+	.search-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		width: 220px;
+		color: var(--fg-faint);
+		text-align: left;
 	}
-	input[type='search'] {
-		width: 200px;
+	.search-text {
+		flex: 1;
+	}
+	.search-icon {
+		font-size: 15px;
+		line-height: 1;
+	}
+	kbd {
+		font-family: var(--mono);
+		font-size: 10px;
+		padding: 0 4px;
+		border: 1px solid var(--line);
+		border-bottom-width: 2px;
+		border-radius: 3px;
+		color: var(--fg-muted);
 	}
 	@media (max-width: 899px) {
 		.toolbar {
@@ -278,12 +253,13 @@
 		.brand {
 			display: none;
 		}
-		.search {
+		.search-btn {
 			flex: 1;
 			min-width: 0;
+			width: auto;
 		}
-		input[type='search'] {
-			width: 100%;
+		.search-btn kbd {
+			display: none;
 		}
 		.filters {
 			display: flex;
@@ -317,7 +293,6 @@
 			display: inline;
 		}
 	}
-	input[type='search'],
 	select,
 	button {
 		font: inherit;
@@ -335,36 +310,6 @@
 	}
 	select {
 		max-width: 180px;
-	}
-	.results {
-		position: absolute;
-		z-index: 30;
-		top: calc(100% + 3px);
-		left: 0;
-		width: 260px;
-		margin: 0;
-		padding: 3px;
-		list-style: none;
-		background: var(--bg-raised);
-		border: 1px solid var(--line);
-		border-radius: 6px;
-		box-shadow: 0 6px 20px rgb(0 0 0 / 0.2);
-	}
-	.results button {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-		border: none;
-		background: none;
-		text-align: left;
-	}
-	.results button.active,
-	.results button:hover {
-		background: var(--accent-soft);
-	}
-	.yr {
-		color: var(--fg-faint);
-		font-variant-numeric: tabular-nums;
 	}
 	.group {
 		display: flex;

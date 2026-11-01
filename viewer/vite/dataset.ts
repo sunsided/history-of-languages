@@ -1,4 +1,5 @@
-// Vite plugin: loads ../data/**/*.yaml straight into a virtual module (`virtual:dataset`) and pushes a
+// Vite plugin: loads ../data/**/*.yaml straight into a virtual module (`virtual:dataset`), builds the
+// command-palette search index from it (`virtual:search-index`), and pushes a
 // fresh copy to the browser whenever a data file changes, so the viewer updates without a page reload
 // and without running tools/build.py first.
 //
@@ -10,9 +11,13 @@ import path from 'node:path';
 import { parse } from 'yaml';
 import type { Plugin, ViteDevServer } from 'vite';
 import type { Cluster, Dataset, Edge, LangNode } from '../src/lib/types.ts';
+import { buildSearchIndex } from '../src/lib/search.ts';
 
 const VIRTUAL_ID = 'virtual:dataset';
 const RESOLVED_ID = '\0' + VIRTUAL_ID;
+// Search index, built here in Node from the same load so the browser gets precomputed keys.
+const INDEX_ID = 'virtual:search-index';
+const RESOLVED_INDEX_ID = '\0' + INDEX_ID;
 export const UPDATE_EVENT = 'dataset:update';
 
 function readList<T>(file: string, problems: string[], root: string): T[] {
@@ -115,9 +120,11 @@ export function dataset(options: { dataDir: string }): Plugin {
 		name: 'hol-dataset',
 		resolveId(id) {
 			if (id === VIRTUAL_ID) return RESOLVED_ID;
+			if (id === INDEX_ID) return RESOLVED_INDEX_ID;
 		},
 		load(id) {
 			if (id === RESOLVED_ID) return `export default ${JSON.stringify(loadDataset(dataDir))};`;
+			if (id === RESOLVED_INDEX_ID) return `export default ${JSON.stringify(buildSearchIndex(loadDataset(dataDir)))};`;
 		},
 		configureServer(server: ViteDevServer) {
 			server.watcher.add(dataDir);
@@ -128,11 +135,14 @@ export function dataset(options: { dataDir: string }): Plugin {
 				timer = setTimeout(() => {
 					// Next full page load gets fresh data too.
 					for (const env of Object.values(server.environments)) {
-						const mod = env.moduleGraph.getModuleById(RESOLVED_ID);
-						if (mod) env.moduleGraph.invalidateModule(mod);
+						for (const id of [RESOLVED_ID, RESOLVED_INDEX_ID]) {
+							const mod = env.moduleGraph.getModuleById(id);
+							if (mod) env.moduleGraph.invalidateModule(mod);
+						}
 					}
 					const data = loadDataset(dataDir);
-					server.environments.client.hot.send({ type: 'custom', event: UPDATE_EVENT, data });
+					const index = buildSearchIndex(data);
+					server.environments.client.hot.send({ type: 'custom', event: UPDATE_EVENT, data: { data, index } });
 					server.config.logger.info(
 						`dataset reloaded (${path.relative(dataDir, file)}): ${data.nodes.length} nodes, ${data.edges.length} edges, ${data.problems.length} problems`,
 						{ timestamp: true }
