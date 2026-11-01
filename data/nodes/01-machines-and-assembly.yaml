@@ -602,6 +602,8 @@
     places: [{ institution: Birkbeck College, city: London, country: GB }]
   creators: [{ name: Kathleen Booth, role: designer }]
   status: extinct
+  tags:
+    features: [assembly-language]
   summary: "Symbolic notation for the ARC2 computer's instructions, often credited as the first assembly language. Translation to machine code was still done by hand."
   research_status: draft
   confidence: medium
@@ -627,6 +629,8 @@
     places: [{ institution: University of Cambridge Mathematical Laboratory, city: Cambridge, country: GB }]
   creators: [{ name: David Wheeler, role: designer }]
   status: extinct
+  tags:
+    features: [assembly-language]
   summary: "Bootstrap program wired into EDSAC that read mnemonic, single-letter instructions with decimal addresses from paper tape and assembled them into memory. The first assembler in practical use; Initial Orders 2 (1949) added relocation for subroutines."
   relations:
     - { type: targets, to: edsac, weight: strong, confidence: high }
@@ -654,6 +658,8 @@
   origin: { first_appeared: { year: 1955, precision: year }, places: [{ institution: IBM, country: US }] }
   creators: [{ name: Stan Poley, role: designer }]
   status: extinct
+  tags:
+    features: [assembly-language]
   summary: "Assembler for the drum-memory IBM 650 that placed each instruction on the drum to minimise rotational delay."
   relations:
     - { type: targets, to: ibm-650, weight: strong, confidence: high }
@@ -684,6 +690,8 @@
   origin: { first_appeared: { year: 1956, precision: circa }, places: [{ institution: United Aircraft / SHARE user group, country: US }] }
   creators: [{ name: Roy Nutt, role: designer }]
   status: extinct
+  tags:
+    features: [assembly-language]
   summary: "Symbolic assembler for the IBM 704, distributed through SHARE, the first computer user group. Roy Nutt also worked on the first FORTRAN compiler."
   relations:
     - { type: targets, to: ibm-704, weight: strong, confidence: high }
@@ -713,6 +721,8 @@
   cluster: assembly/ibm
   origin: { first_appeared: { year: 1964, precision: year }, places: [{ institution: IBM, country: US }] }
   status: active
+  tags:
+    features: [assembly-language]
   summary: "Assembler family for System/360 and successors, with a powerful macro language. HLASM (1992) is still used for z/OS."
   milestones:
     - { version: HLASM, year: 1992 }
@@ -744,6 +754,8 @@
   cluster: assembly/dec
   origin: { first_appeared: { year: 1970, precision: circa }, places: [{ institution: Digital Equipment Corporation, country: US }] }
   status: extinct
+  tags:
+    features: [assembly-language]
   summary: "DEC's macro assembler for the PDP-11. The early Unix kernel was written in PDP-11 assembly before being rewritten in C in 1973."
   relations:
     - { type: targets, to: pdp-11, weight: strong, confidence: high }
@@ -772,6 +784,8 @@
   cluster: assembly/x86
   origin: { first_appeared: { year: 1978, precision: year }, places: [{ institution: Intel, country: US }] }
   status: active
+  tags:
+    features: [assembly-language]
   summary: "Intel's own mnemonic syntax for the 8086 family: destination operand first, e.g. `mov eax, 1`. Used by MASM, NASM, FASM and most Intel/AMD documentation."
   relations:
     - { type: targets, to: intel-8086, weight: strong, confidence: high }
@@ -794,6 +808,8 @@
   cluster: assembly/x86
   origin: { first_appeared: { year: 1985, precision: circa, note: "Inherited from Unix assemblers on other ISAs; dating for x86 needs research." } }
   status: active
+  tags:
+    features: [assembly-language]
   summary: "Unix-tradition syntax: source first, sigils on registers and immediates, size suffixes (`movl $1, %eax`). Default for GNU as and GCC output."
   relations:
     - { type: dialect_of, to: x86-intel-syntax, weight: strong, confidence: high, note: "Same instruction set, different notation." }
@@ -818,6 +834,8 @@
   cluster: assembly/x86
   origin: { first_appeared: { year: 1981, precision: year }, places: [{ institution: Microsoft, city: Redmond, country: US }] }
   status: active
+  tags:
+    features: [assembly-language]
   summary: "Microsoft's x86 assembler, with high-level macros (.IF, .WHILE, PROC). The DOS and early Windows standard."
   relations:
     - { type: dialect_of, to: x86-intel-syntax, weight: strong, confidence: high }
@@ -852,6 +870,8 @@
   origin: { first_appeared: { year: 1996, precision: year } }
   creators: [{ name: Simon Tatham, role: original author }, { name: Julian Hall, role: original author }]
   status: active
+  tags:
+    features: [assembly-language]
   summary: "Portable, open-source x86 assembler with a simplified Intel syntax."
   relations:
     - { type: dialect_of, to: x86-intel-syntax, weight: strong, confidence: high }
@@ -885,6 +905,8 @@
   cluster: assembly/8-bit
   origin: { first_appeared: { year: 1975, precision: year } }
   status: legacy
+  tags:
+    features: [assembly-language]
   summary: "Accumulator-centred assembly with zero-page addressing; the language of most 8-bit home-computer and console games."
   relations:
     - { type: targets, to: mos-6502, weight: strong, confidence: high }
@@ -914,6 +936,8 @@
   cluster: assembly/8-bit
   origin: { first_appeared: { year: 1976, precision: year } }
   status: legacy
+  tags:
+    features: [assembly-language]
   summary: "Zilog's mnemonics (LD, JP) for the Z80, a superset of the 8080 instruction set but with a different, cleaner syntax than Intel's 8080 mnemonics."
   relations:
     - { type: targets, to: zilog-z80, weight: strong, confidence: high }
@@ -942,6 +966,8 @@
   cluster: assembly/8-bit
   origin: { first_appeared: { year: 1979, precision: year } }
   status: legacy
+  tags:
+    features: [assembly-language]
   summary: "Orthogonal assembly for the 68000 family with source-first operand order; favoured by demoscene and early Mac programmers."
   relations:
     - { type: targets, to: motorola-68000, weight: strong, confidence: high }
@@ -971,6 +997,8 @@
   cluster: assembly/risc
   origin: { first_appeared: { year: 1985, precision: year } }
   status: active
+  tags:
+    features: [assembly-language]
   summary: "Load/store RISC assembly; 32-bit ARM made every instruction conditional; AArch64 (2011) is a redesign."
   relations:
     - { type: targets, to: arm, weight: strong, confidence: high }
@@ -996,6 +1024,8 @@
   cluster: assembly/risc
   origin: { first_appeared: { year: 1985, precision: year } }
   status: legacy
+  tags:
+    features: [assembly-language]
   summary: "Three-operand RISC assembly with branch delay slots; long the standard teaching assembly (SPIM, MARS)."
   relations:
     - { type: targets, to: mips, weight: strong, confidence: high }
@@ -1024,6 +1054,8 @@
   cluster: assembly/risc
   origin: { first_appeared: { year: 2014, precision: year } }
   status: active
+  tags:
+    features: [assembly-language]
   summary: "Assembly for the open RISC-V ISA; syntax close to MIPS. Displacing MIPS in teaching."
   relations:
     - { type: targets, to: risc-v, weight: strong, confidence: high }

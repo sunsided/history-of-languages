@@ -268,6 +268,14 @@
     node: hope
     year: 1980
     note: "Hudak et al. 2007 call Hope \"the language that introduced algebraic data types\"; Wikipedia credits NPL and Hope jointly (NPL is not yet a node)."
+- id: assembly-language
+  name: Assembly language
+  facet: features
+  summary: "One symbolic line per machine instruction: mnemonics and names instead of numeric codes and addresses, translated by an assembler. Also the deliberate form of many programming games and puzzles."
+  first_seen:
+    node: booth-contracted-notation
+    year: 1947
+    note: "Kathleen Booth's contracted notation for the ARC2 is often credited as the first assembly language; it was still assembled by hand. EDSAC's initial orders (1949) were the first to assemble mnemonics automatically."
 - id: assertions
   name: Assertions
   facet: features

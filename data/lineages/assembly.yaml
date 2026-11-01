@@ -1,0 +1,51 @@
+- id: assembly-as-a-game
+  title: "Assembly as a game: from contracted notation to puzzle machines"
+  thesis: >
+    Assembly language began as a convenience for the first stored-program computers and became the everyday
+    language of 8-bit home computers and their games. Programming games then adopted it on purpose: Core War in
+    1984, and since 2012 the 0x10c CPU, Zachtronics' TIS-100, Human Resource Machine and the Advent of Code
+    machines, each inventing a small machine whose assembly is the puzzle.
+  concepts: [assembly-language]
+  research_status: draft
+  steps:
+    - year: 1947
+      title: "Contracted notation"
+      nodes: [booth-contracted-notation]
+      concepts: [assembly-language]
+      text: "Kathleen Booth writes ARC2 instructions symbolically, often credited as the first assembly language; translation to machine code is still done by hand."
+      sources: [booth-1947-coding-arc, wiki-assembly-language]
+    - year: 1949
+      title: "The machine assembles its own code"
+      nodes: [edsac-initial-orders]
+      text: "EDSAC's initial orders read single-letter mnemonic instructions with decimal addresses from paper tape and assemble them into memory."
+      sources: [wilkes-wheeler-gill-1951]
+    - year: 1956
+      title: "Symbolic assemblers and user groups"
+      nodes: [sap-704, ibm-bal]
+      text: "SAP for the IBM 704 is shared through SHARE, the first computer user group; IBM's System/360 assembler (1964) adds a powerful macro language."
+      sources: [wiki-ibm-704, wiki-ibm-assembler]
+    - year: 1975
+      title: "The language of 8-bit games"
+      nodes: [asm-6502, asm-z80]
+      text: "6502 assembly becomes the language of most 8-bit home-computer and console games."
+      sources: [wiki-6502]
+    - year: 1984
+      title: "Core War"
+      nodes: [redcode]
+      text: "Jones and Dewdney publish Redcode, the assembly of a virtual machine (MARS) in which two programs fight for memory."
+      sources: [wiki-core-war]
+    - year: 2012
+      title: "A CPU for a game that never shipped"
+      nodes: [dcpu-16]
+      text: "Mojang publishes the DCPU-16 spec for 0x10c with sample assembler; the game is shelved in 2013, but emulators and assemblers for the CPU are written anyway."
+      sources: [dcpu-16-spec-1-1, wiki-0x10c, sunsided-dcpu-16]
+    - year: 2015
+      title: "Assembly puzzle games"
+      nodes: [tis-100, human-resource-machine]
+      text: "Zachtronics' TIS-100 hands the player a fictional 1980s machine and its manual; Tomorrow Corporation's Human Resource Machine turns an office worker into an accumulator machine, \"a metaphor for assembly language concepts\"."
+      sources: [wiki-tis-100, wiki-human-resource-machine, tomorrow-corp-hrm]
+    - year: 2016
+      title: "Advent of Code machines"
+      nodes: [assembunny, duet, intcode]
+      text: "Advent of Code makes the puzzle input a program: assembunny (2016), the \"strange assembly code labeled simply 'Duet'\" (2017) and Intcode (2019), whose interpreter the solver builds up across several days."
+      sources: [aoc-2016-12, aoc-2017-18, aoc-2019-02]

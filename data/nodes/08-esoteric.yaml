@@ -825,6 +825,7 @@
   status: historical
   tags:
     paradigm: [imperative]
+    features: [assembly-language]
   milestones:
     - { version: "day 23", year: 2016, introduces: [self-modifying-code], summary: "tgl x toggles the instruction x away: inc becomes dec, jnz becomes cpy and so on." }
     - { version: "day 25", year: 2016, summary: "out x transmits a value as the next clock-signal bit." }
@@ -860,6 +861,7 @@
   status: historical
   tags:
     paradigm: [imperative]
+    features: [assembly-language]
   milestones:
     - { version: "day 23", year: 2017, summary: "Coprocessor Conflagration: \"a variant of the kind you saw recently on that tablet\" with set, sub, mul, jnz and registers a to h." }
   summary: >
@@ -932,7 +934,7 @@
   status: maintained
   tags:
     paradigm: [imperative]
-    features: [self-modifying-code]
+    features: [self-modifying-code, assembly-language]
   milestones:
     - { version: ICWS-86, year: 1986, summary: "First standard of the International Core War Society; ten instructions." }
     - { version: ICWS-88, year: 1988, summary: "Eleven instructions." }
@@ -970,6 +972,7 @@
   tags:
     paradigm: [imperative]
     concurrency: [message-passing]
+    features: [assembly-language]
   summary: >
     The assembly of a fictional 1980s "Tessellated Intelligence System", programmed in Zachtronics' puzzle game.
     The machine is a grid of tiny compute nodes (T21 Basic Execution Nodes), each with an accumulator ACC, a
@@ -1006,6 +1009,7 @@
   status: maintained
   tags:
     paradigm: [imperative]
+    features: [assembly-language]
   summary: >
     A puzzle game whose office worker is the CPU: "Your office is a simple computer", "Harvard Architecture with a
     single accumulator". The item the worker carries is the register, numbered floor tiles are memory, and the
