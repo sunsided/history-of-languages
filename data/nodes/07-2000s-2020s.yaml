@@ -126,18 +126,25 @@
   confidence: high
   sources: [jim-2002-cyclone]
   example:
-    title: Safe pointers and regions
+    title: Never-null and fat pointers
     language: Cyclone
-    note: Approximate. @ marks a never-null pointer, ? a bounds-checked 'fat' pointer, and `r names a region; the compiler rejects pointers that could outlive their region. Rust's lifetimes ('a) descend from these regions.
+    note: From Wikipedia's Cyclone article. int@ can never be NULL; char? is a 'fat' pointer that carries its bounds (s.size), so pointer arithmetic is checked. The compiler also rejects returning a pointer into a dead stack frame, through region analysis that is an ancestor of Rust's lifetimes.
     code: |
-      int sum(int *@fat a, int n) {
-        int s = 0;
-        for (int i = 0; i < n; i++) s += a[i];   // bounds-checked
-        return s;
-      }
+      int foo(int@ p);                 /* p can never be NULL */
 
-      int *`r keep(int *`r p) { return p; }      // result lives in p's region
-    sources: [jim-2002-cyclone]
+      int strlen(const char? s) {      /* fat pointer: knows its size */
+          int n = s.size;
+          if (!s) {
+              return 0;
+          }
+          for (int i = 0; i < n; i++, s++) {
+              if (*s == '\0') {
+                  return i;
+              }
+          }
+          return n;
+      }
+    sources: [wiki-cyclone, jim-2002-cyclone]
 
 - id: scala
   name: Scala

@@ -252,13 +252,21 @@
   confidence: high
   sources: [macqueen-harper-reppy-2020-history-sml, milner-1978-type-polymorphism]
   example:
-    title: Inferred polymorphic types
+    title: An LCF ML session
     language: Edinburgh LCF ML
-    note: 'Approximate LCF ML syntax. No type is written, yet the system infers the most general one: map works for functions from any type * to any type **. Hindley-Milner inference is ML''s lasting gift.'
+    note: 'From Wikipedia''s ML article, whose samples are derived from Edinburgh LCF (layout restored). # is the prompt and ;; ends input. No types are written, yet each answer comes back with an inferred type, including the polymorphic hd : ((* list) -> *), where * is a type variable.'
     code: |
-      letrec map f l = if null l then [] else f (hd l) . map f (tl l);;
-      map = - : ((* -> **) -> (* list -> ** list))
-    sources: [milner-1978-type-polymorphism, macqueen-harper-reppy-2020-history-sml]
+      #let add x y = x+y;;
+      add = - : (int -> (int -> int))
+      #letrec fact n = if n = 0 then 1 else n * fact(n-1);;
+      fact = - : (int -> int)
+      #fact 4;;
+      24 : int
+      #hd;;
+      - : ((* list) -> *)
+      #map (\x.x*x) [1;2;3;4];;
+      [1; 4; 9; 16] : (int list)
+    sources: [wiki-ml, macqueen-harper-reppy-2020-history-sml]
 
 - id: iswim
   name: ISWIM

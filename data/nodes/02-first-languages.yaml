@@ -27,22 +27,21 @@
   links: { wikipedia: "https://en.wikipedia.org/wiki/Plankalk%C3%BCl" }
   sources: [bauer-woessner-1972-plankalkul, knuth-pardo-1976-early-development]
   example:
-    title: Maximum of two values
-    language: Plankalkül, modern linear transcription
-    note: 'Approximate. Zuse wrote Plankalkül two-dimensionally: a main line with V (variable), K (component) and S (type) rows under it; 1.n is an n-bit integer. The lower block is the linear form used by later reconstructions such as the FU Berlin implementation (2000). Check against Bauer & Wössner (1972) before publishing.'
+    title: Maximum of three values
+    language: Plankalkül, linear transcription
+    note: From the Wikipedia article. V are inputs, Z intermediates, R results; [:8.0] gives the type. P2 max is called by P1 max3. (cond) → statement is a guarded statement. Zuse's original notation was two-dimensional, with V/K/S rows written under each line; this is the later one-line transcription.
     code: |
-      Zuse's two-dimensional form (one statement):
-        |  V + V ⇒ R
-      V |  0   1   0
-      S |  1.n 1.n 1.n
-
-      Linear transcription:
-      P1 max (V0[:8.0], V1[:8.0]) ⇒ R0[:8.0]
-        V0[:8.0] ⇒ Z1[:8.0]
-        (Z1[:8.0] < V1[:8.0]) → V1[:8.0] ⇒ Z1[:8.0]
-        Z1[:8.0] ⇒ R0[:8.0]
+      P1 max3 (V0[:8.0],V1[:8.0],V2[:8.0]) → R0[:8.0]
+      max(V0[:8.0],V1[:8.0]) → Z1[:8.0]
+      max(Z1[:8.0],V2[:8.0]) → R0[:8.0]
       END
-    sources: [bauer-woessner-1972-plankalkul]
+
+      P2 max (V0[:8.0],V1[:8.0]) → R0[:8.0]
+      V0[:8.0] → Z1[:8.0]
+      (Z1[:8.0] < V1[:8.0]) → V1[:8.0] → Z1[:8.0]
+      Z1[:8.0] → R0[:8.0]
+      END
+    sources: [wiki-plankalkul, bauer-woessner-1972-plankalkul]
 
 - id: short-code
   name: Short Code
@@ -68,16 +67,18 @@
   confidence: medium
   sources: [knuth-pardo-1976-early-development]
   example:
-    title: An equation as two-digit codes
-    language: Short Code (UNIVAC)
+    title: a = (b + c) / b · c as Short Code
+    language: Short Code (BINAC / UNIVAC I)
     year: 1950
-    note: Approximate, after the commonly reproduced example. The programmer wrote the equation, replaced each symbol by its code (03 '=', 09 '(', 07 '+', 02 ')', 04 '/'), with multiplication implied by adjacency, and packed the codes into 12-character words. An interpreter decoded them at run time.
+    note: 'The worked example from the Wikipedia article, step by step: variables are renamed (a→X3, b→X1, c→Y1), operators and parentheses become two-character codes (multiplication is juxtaposition), and the codes are packed into 12-character machine words, read from the right. An interpreter decoded them at run time.'
     code: |
-      a = (b + c) / b · c
+      a = (b + c) / b * c
+      X3 = ( X1 + Y1 ) / X1 * Y1           substitute variables
+      X3 03 09 X1 07 Y1 02 04 X1 Y1        substitute operators and parentheses
 
-      X3 =  (  X1 +  Y1 )  /  X1 Y1
-      X3 03 09 X1 07 Y1 02 04 X1 Y1
-    sources: [knuth-pardo-1976-early-development]
+      07Y10204X1Y1                         group into 12-character words
+      0000X30309X1
+    sources: [wiki-short-code, knuth-pardo-1976-early-development]
 
 - id: glennie-autocode
   name: Autocode (Glennie)
@@ -99,19 +100,27 @@
   confidence: medium
   sources: [knuth-pardo-1976-early-development]
   example:
-    title: Glennie's notation (excerpt)
-    language: Autocode for the Manchester Mark 1
+    title: f(t) = √|t| + 5t³
+    language: Autocode for the Manchester Mark 1 (Glennie)
     year: 1952
-    note: Excerpt reconstructed from Knuth & Trabb Pardo's transcription of their TPK benchmark in Glennie's Autocode; verify against the report. Variables were bound to machine addresses (c@VA), and arrows (→) stored the accumulator, so the program still mirrored the machine closely.
+    note: The example from the Wikipedia article (the function from Knuth & Trabb Pardo's TPK benchmark). c@VA binds a variable to a machine address, → stores the lower accumulator, and the library square root is called as SUBROUTINE 6. The article notes it omits the scaling instructions real programs needed.
     code: |
       c@VA t@IC x@½C y@RC z@NC
-      INTEGERS +5 →c        # put 5 into c
-            →t              # store argument in t
-         +t     TESTA Z     # absolute value of t …
+      INTEGERS +5 →c      # Put 5 into c
+            →t            # Load argument from lower accumulator
+                          # to variable t
+         +t     TESTA Z   # Put |t| into lower accumulator
          -t
                 ENTRY Z
-      SUBROUTINE 6 →z       # square root into z
-    sources: [knuth-pardo-1976-early-development]
+      SUBROUTINE 6 →z     # Run square root subroutine on
+                          # lower accumulator value
+                          # and put the result into z
+        +tt →y →x         # Calculate t^3 and put it into x
+        +tx →y →x
+      +z+cx   CLOSE WRITE 1  # Put z + (c * x) into
+                             # lower accumulator
+                             # and return
+    sources: [wiki-autocode, knuth-pardo-1976-early-development]
 
 - id: a-0
   name: A-0 System
@@ -205,17 +214,20 @@
   confidence: high
   sources: [mccarthy-1978-history-lisp]
   example:
-    title: Walking a list
-    language: pseudocode in IPL style (illustrative)
-    note: 'Illustrative. IPL looked like assembly language for an abstract list machine: each instruction had a name, a prefix code and a symbol, and every data structure was a linked list of symbols. The point is the operations, not the syntax: lists, a stack of cells, and recursion.'
+    title: A list in IPL-V memory
+    language: IPL-V list structure
+    note: From the Wikipedia article. Every cell has a SYMB and a LINK field; 0 ends a list. L1 holds the symbols S4 and S5, and its head cell points to a description list 9-1 that pairs attribute A1 with value V1 and A2 with V2. Lisp's cons cells and property lists come from this layout. No complete IPL-V program listing was found in an accessible source yet.
     code: |
-      L1:  (A  B  C)                 a list is a chain of linked cells
-           load   L1   onto stack
-      loop: test   list empty  → done
-           process first symbol
-           replace by rest of list   (follow the link)
-           jump   loop
-    sources: [mccarthy-1978-history-lisp]
+      Name   SYMB   LINK
+      L1     9-1    100
+      100    S4     101
+      101    S5     0
+      9-1    0      200
+      200    A1     201
+      201    V1     202
+      202    A2     203
+      203    V2     0
+    sources: [wiki-ipl]
 
 - id: fortran
   name: Fortran
@@ -352,18 +364,19 @@
   confidence: high
   sources: [perlis-1978-american-algol, naur-1978-european-algol]
   example:
-    title: Summing a vector
+    title: IAL's for statement and in-line functions
     language: ALGOL 58 (IAL)
     year: 1958
-    note: Approximate. IAL wrote the step form of the for statement as start (step) end, and declared output parameters after =:. begin/end compound statements first appear here.
+    note: 'Syntax forms as described on Wikipedia: IAL''s loop was written base(increment)limit, after Rutishauser''s Superplan; ALGOL 60 replaced it with step … until. IAL also introduced := for assignment beside = for equality. The one-line function definition was dropped from ALGOL 60. Statement layout around the fragments is illustrative.'
     code: |
-      procedure Sum(a[ ], n) =: (s)
-      begin
-        s := 0;
-        for i := 1 (1) n;
-          s := s + a[i]
-      end Sum
-    sources: [perlis-1978-american-algol]
+      f(x) := x / 2;
+
+      s := 0;
+      for i := 1 (1) n;
+         s := s + a[i]
+
+      comment ALGOL 60 form:  for i := 1 step 1 until n do s := s + a[i]
+    sources: [wiki-algol-58, perlis-1978-american-algol]
 
 - id: cobol
   name: COBOL

@@ -53,14 +53,14 @@
   confidence: high
   sources: [wiki-harvard-mark-i]
   example:
-    title: Instructions on 24-channel paper tape
-    language: Mark I tape code (illustrative)
-    note: 'Each tape line had three fields: where a number came from (OUT), where it went (IN) and a miscellaneous code (e.g. multiply, print). Adding was simply sending a number into an accumulator register. Hopper and colleagues wrote these by hand on coding sheets.'
+    title: Three fields per tape line
+    language: Mark I tape code (illustrative values)
+    note: 'The layout is documented: 24 channels in three 8-channel fields giving the result register, the source register and an operation code. The register numbers and operation names below are illustrative, as the original operation codes have not been checked yet.'
     code: |
-      OUT   IN    MISC
-      21    72    –      ; send register 21 into register 72 (adds)
-      22    72    –      ; add register 22 too
-      72    –     PRINT  ; print the sum
+      result   source   operation
+      72       21       add          ; register 72 += register 21
+      72       22       add          ; register 72 += register 22
+      –        72       print        ; print register 72
     sources: [wiki-harvard-mark-i]
 
 - id: eniac
@@ -161,15 +161,21 @@
   confidence: high
   sources: [wiki-ibm-650]
   example:
-    title: Two addresses per instruction
+    title: A one-card program that clears the drum
     language: IBM 650 machine code
-    note: Each 10-digit word instruction held an operation code, a data address and the address of the next instruction. Memory was a rotating drum, so the next-instruction address let programmers place code where the drum would be when the previous instruction finished. Opcodes as in the 650 manual (65 RAL, 15 AL, 20 STL, 01 HLT); verify before publishing.
+    note: IBM's example from Programming Bulletin 5, as reproduced on Wikipedia. Each instruction is op code, data address, next-instruction address. The program copies itself into the accumulator and runs an instruction there, decrementing its data address each pass, to set most of the drum to minus zero. The console switches (8000) are set to a read instruction to start it.
     code: |
-      op  data  next
-      65  1000  0105     ; reset and add lower: acc = [1000]
-      15  1001  0110     ; add lower:           acc += [1001]
-      20  1002  0115     ; store lower:         [1002] = acc
-      01  0000  0000     ; halt
+      loc   op       data next   comment
+      8000  RD  70   0004 xxxx   read the load card
+      0004  RSU 61   0008 0007   upper accumulator := -2019990003
+      0007  LD  69   0006 0005   distributor := 0100008000
+      0005  STD 24   0000 8003   store it in 0000; continue in the accumulator
+      8003  STL 20   1999 0003   store lower accumulator (minus zero) at 1999
+      0003  AU  10   0001 8003   decrement that data address, loop
+      0000  HALT 01  0000 8000   stop
+
+      card: 0001 0000010000  0002 0000000000-  0003 1000018003  0004 6100080007
+            0005 2400008003  0006 0100008000   0007 6900060005  0008 2019990003
     sources: [wiki-ibm-650]
 
 - id: ibm-704
@@ -483,17 +489,18 @@
   confidence: medium
   sources: [wiki-ibm-650]
   example:
-    title: Let the assembler place it on the drum
-    language: SOAP II
-    note: The same program as the 650 machine-code sample, but symbolic. SOAP chose the next-instruction addresses itself to minimise waiting for the drum to rotate ('optimal' assembly).
-    code: |2
-             RAL  A
-             ALO  B
-             STL  C
-             HLT  0000
-      A      …
-      B      …
-      C      …
+    title: C = A + B, placed by the assembler
+    language: SOAP (symbolic, illustrative)
+    note: 'Illustrative: mnemonics follow the 650 operation table (65 RAL, 15 AL, 20 STL, 01 STOP); exact SOAP II spellings have not been checked against a SOAP manual. The point is the blank next-address column: SOAP filled it in, placing each instruction where the drum would be when the previous one finished.'
+    code: |
+      loc   op    data  next
+            RAL   A
+            AL    B
+            STL   C
+            STOP
+      A     …
+      B     …
+      C     …
     sources: [wiki-ibm-650]
 
 - id: sap-704

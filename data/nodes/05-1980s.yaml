@@ -368,16 +368,19 @@
   confidence: high
   sources: [ungar-smith-2007-self]
   example:
-    title: Objects without classes
+    title: 'Prototypes: copy, don''t instantiate'
     language: Self
-    note: Approximate syntax. An object is a set of slots; parent* marks a parent slot to which unknown messages are delegated. New objects are made by copying a prototype, not instantiating a class. JavaScript's prototypes come from here.
+    note: 'From Wikipedia''s Self article. There are no classes: vehicle is an object whose parent* slot delegates to shared behaviour, sportsCar is a copy of it with an extra method slot, and porsche911 is a copy of sportsCar. (The article notes _AddSlots: is a primitive normally hidden behind the environment.)'
     code: |
-      point = (| parent* = traits clonable.
-                 x <- 0. y <- 0.
-                 + p = ( (copy x: x + p x) y: y + p y ) |).
+      'Hello, World!' print.
 
-      (point copy x: 3) + (point copy y: 4)
-    sources: [ungar-smith-2007-self]
+      _AddSlots: (| vehicle <- (|parent* = traits clonable|) |).
+      vehicle _AddSlots: (| name <- 'automobile'|).
+      _AddSlots: (| sportsCar <- vehicle copy |).
+      sportsCar _AddSlots: (| driveToWork = ('some code, this is a method') |).
+      _AddSlots: (| porsche911 <- sportsCar copy |).
+      porsche911 name:'Bobs Porsche'.
+    sources: [wiki-self, ungar-smith-2007-self]
 
 - id: perl
   name: Perl
@@ -444,18 +447,18 @@
   confidence: high
   sources: [van-rossum-2009-history-python]
   example:
-    title: Indentation and high-level types
+    title: Collect the words of a document
     language: ABC
-    note: Approximate. HOW TO defines a command; blocks are indented; tables are built-in associative types. Python kept the indentation and the colon, but not the upper-case keywords.
+    note: The example from Wikipedia's ABC article (indentation restored, as ABC uses it for blocks). Sets, lists and tables are built in. Python kept the colon and the indentation.
     code: |
-      HOW TO COUNT WORDS IN text:
-         PUT {} IN count
-         FOR word IN split text:
-            SELECT:
-               word in keys count: PUT count[word] + 1 IN count[word]
-               ELSE: PUT 1 IN count[word]
-         WRITE count
-    sources: [van-rossum-2009-history-python]
+      HOW TO RETURN words document:
+         PUT {} IN collection
+         FOR line IN document:
+            FOR word IN split line:
+               IF word not.in collection:
+                  INSERT word IN collection
+         RETURN collection
+    sources: [wiki-abc, van-rossum-2009-history-python]
 
 - id: standard-ml
   name: Standard ML
@@ -529,22 +532,39 @@
   confidence: medium
   sources: [wiki-modula-3]
   example:
-    title: Objects, exceptions, safe by default
+    title: An object type behind an interface
     language: Modula-3
-    note: 'Approximate. OBJECT types with methods, TRY/EXCEPT exceptions and garbage collection, while unsafe operations are only allowed in modules marked UNSAFE: the arrangement Rust revived.'
+    note: From Wikipedia's Modula-3 article. The interface says only that Person.T is some subtype (<:) of Public; the module reveals the private fields. BRANDED makes the type distinct even if another has the same structure.
     code: |
-      MODULE Main;
-      IMPORT IO;
+      INTERFACE Person;
+      TYPE T <: Public;
+        Public = OBJECT
+        METHODS
+          getAge(): INTEGER;
+          init(name: TEXT; age: INTEGER): T;
+        END;
+      END Person.
 
-      TYPE Counter = OBJECT n := 0 METHODS inc() := Inc END;
+      MODULE Person;
+      REVEAL T = Public BRANDED
+        OBJECT
+          name: TEXT;   (* These two variables *)
+          age: INTEGER; (* are private. *)
+        OVERRIDES
+          getAge := Age;
+          init := Init;
+        END;
 
-      PROCEDURE Inc(self: Counter) = BEGIN INC(self.n) END Inc;
+      PROCEDURE Age(self: T): INTEGER =
+        BEGIN RETURN self.age; END Age;
 
-      VAR c := NEW(Counter);
+      PROCEDURE Init(self: T; name: TEXT; age: INTEGER): T =
+        BEGIN self.name := name; self.age := age; RETURN self; END Init;
+
       BEGIN
-        c.inc(); c.inc();
-        IO.PutInt(c.n); IO.Put("\n")
-      END Main.
+      END Person.
+
+      (* client: *)  VAR jim := NEW(Person.T).init("Jim", 25);
     sources: [wiki-modula-3]
 
 - id: oberon

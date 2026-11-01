@@ -936,11 +936,13 @@
   primary: false
   title: 'Wikipedia: Harvard Mark I'
   url: https://en.wikipedia.org/wiki/Harvard_Mark_I
+  checked: '2026-11-01'
 - id: wiki-ibm-650
   type: encyclopedia
   primary: false
   title: 'Wikipedia: IBM 650'
   url: https://en.wikipedia.org/wiki/IBM_650
+  checked: '2026-11-01'
 - id: wiki-ibm-704
   type: encyclopedia
   primary: false
@@ -996,6 +998,7 @@
   primary: false
   title: 'Wikipedia: Modula-3'
   url: https://en.wikipedia.org/wiki/Modula-3
+  checked: '2026-11-01'
 - id: wiki-nasm
   type: encyclopedia
   primary: false
@@ -1131,3 +1134,75 @@
   primary: false
   title: 'Esolang wiki: Whitespace'
   url: https://esolangs.org/wiki/Whitespace
+- id: wiki-short-code
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Short Code (computer language)'
+  url: https://en.wikipedia.org/wiki/Short_Code_(computer_language)
+  checked: '2026-11-01'
+- id: wiki-autocode
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Autocode'
+  url: https://en.wikipedia.org/wiki/Autocode
+  checked: '2026-11-01'
+- id: wiki-plankalkul
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Plankalkül'
+  url: https://en.wikipedia.org/wiki/Plankalk%C3%BCl
+  checked: '2026-11-01'
+- id: wiki-ipl
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Information Processing Language'
+  url: https://en.wikipedia.org/wiki/Information_Processing_Language
+  checked: '2026-11-01'
+- id: wiki-algol-58
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: ALGOL 58'
+  url: https://en.wikipedia.org/wiki/ALGOL_58
+  checked: '2026-11-01'
+- id: wiki-cpl
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: CPL (programming language)'
+  url: https://en.wikipedia.org/wiki/CPL_(programming_language)
+  checked: '2026-11-01'
+- id: wiki-self
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Self (programming language)'
+  url: https://en.wikipedia.org/wiki/Self_(programming_language)
+  checked: '2026-11-01'
+- id: wiki-abc
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: ABC (programming language)'
+  url: https://en.wikipedia.org/wiki/ABC_(programming_language)
+  checked: '2026-11-01'
+- id: wiki-alef
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Alef (programming language)'
+  url: https://en.wikipedia.org/wiki/Alef_(programming_language)
+  checked: '2026-11-01'
+- id: wiki-limbo
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Limbo (programming language)'
+  url: https://en.wikipedia.org/wiki/Limbo_(programming_language)
+  checked: '2026-11-01'
+- id: wiki-cyclone
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Cyclone (programming language)'
+  url: https://en.wikipedia.org/wiki/Cyclone_(programming_language)
+  checked: '2026-11-01'
+- id: wiki-ml
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: ML (programming language)'
+  url: https://en.wikipedia.org/wiki/ML_(programming_language)
+  checked: '2026-11-01'

@@ -298,27 +298,25 @@
   confidence: medium
   sources: [pike-go-history-talk]
   example:
-    title: Channels and procs
+    title: Tuples
     language: Alef
-    note: Approximate. C-like syntax with channels as a built-in type; proc starts a new process, task a coroutine in the same process. <-= sends, <- receives.
+    note: 'From the Alef reference manual, via Wikipedia: a function returning a tuple, unpacked by tuple assignment. Go''s multiple return values echo this.'
     code: |
-      void
-      producer(chan(int) c)
+      (int, byte*, byte)
+      func()
       {
-          int i;
-          for(i = 0; i < 10; i++)
-              c <-= i;
+          return (10, "hello", 'c');
       }
 
       void
-      main(void)
+      main()
       {
-          chan(int) c;
-          alloc c;
-          proc producer(c);
-          print("%d\n", <-c);
+          int a;
+          byte* str;
+          byte c;
+          (a, str, c) = func();
       }
-    sources: [pike-go-history-talk]
+    sources: [wiki-alef]
 
 - id: limbo
   name: Limbo
@@ -343,26 +341,23 @@
   confidence: medium
   sources: [pike-go-history-talk]
   example:
-    title: spawn and channels
+    title: Hello World on Inferno
     language: Limbo
-    note: Approximate. spawn starts a thread on the Dis VM; chan of int is a typed channel; <-= sends and <- receives, as in Alef. Go's syntax for the same is very close.
+    note: From Wikipedia's Limbo article. Modules are loaded explicitly at run time (load Sys Sys->PATH) and called through the module handle with ->. Concurrency uses spawn and typed channels (chan of int), which Go kept.
     code: |
-      implement Hello;
-      include "sys.m"; sys: Sys;
-      include "draw.m";
+      implement Command;
 
-      Hello: module { init: fn(nil: ref Draw->Context, nil: list of string); };
+      include "sys.m";
+          sys: Sys;
+      include "draw.m";
+      include "sh.m";
 
       init(nil: ref Draw->Context, nil: list of string)
       {
           sys = load Sys Sys->PATH;
-          c := chan of int;
-          spawn worker(c);
-          sys->print("%d\n", <-c);
+          sys->print("Hello World!\n");
       }
-
-      worker(c: chan of int) { c <-= 42; }
-    sources: [pike-go-history-talk]
+    sources: [wiki-limbo]
 
 - id: java
   name: Java

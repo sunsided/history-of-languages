@@ -139,12 +139,18 @@
   confidence: high
   sources: [ritchie-1993-development-c]
   example:
-    title: Recursive factorial
+    title: MAX over a list
     language: CPL
-    note: Approximate. CPL used square brackets for function arguments and the conditional expression a → b, c, notation that BCPL kept. Never fully implemented in the 1960s.
+    note: A CPL formulation by Peter Norvig, as given on Wikipedia (layout reconstructed). § and §⃒ are CPL's section brackets, the ancestors of BCPL's $( $) and C's { }. 'value of' turns a block into an expression, as BCPL's VALOF later did; := assigns, including simultaneous assignment to a pair.
     code: |
-      let rec Fact[x] = (x = 0) → 1, x × Fact[x − 1]
-    sources: [ritchie-1993-development-c]
+      Max(Items, ValueFunction) = value of
+      §  (Best, BestVal) = (NIL, -∞)
+         while Items do §
+            (Item, Val) = (Head(Items), ValueFunction(Head(Items)))
+            if Val > BestVal then (Best, BestVal) := (Item, Val)
+            Items := Rest(Items) §⃒
+         result is Best §⃒
+    sources: [wiki-cpl]
 
 - id: basic
   name: BASIC
