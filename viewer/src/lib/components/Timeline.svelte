@@ -220,12 +220,15 @@
 		pointer = { x: ev.clientX, y: ev.clientY, mouse: ev.pointerType !== 'touch' };
 	}
 
-	// Start at the computer age instead of antiquity.
+	// Start at the present (as if "Now" was clicked): the left end is sparse antiquity, the right end is
+	// where most languages live.
 	let initialScrollDone = false;
 	$effect(() => {
 		if (!scroller || initialScrollDone) return;
 		initialScrollDone = true;
-		scroller.scrollLeft = Math.max(0, scale.x(1930) - 40);
+		const el = scroller;
+		untrack(() => (viewer.pinnedEra = 'now'));
+		tick().then(() => (el.scrollLeft = el.scrollWidth));
 	});
 
 	$effect(() => {
