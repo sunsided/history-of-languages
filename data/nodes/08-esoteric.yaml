@@ -989,3 +989,46 @@
       ADD ACC
       MOV ACC DOWN
     sources: [tis-100-hackers-guide]
+
+- id: human-resource-machine
+  name: Human Resource Machine
+  aliases: [HRM]
+  kind: assembly
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    first_appeared: { year: 2015, date: "2015-10-15", precision: exact, note: "Windows and OS X release." }
+    places: [{ institution: Tomorrow Corporation, country: US }]
+  creators:
+    - { name: Kyle Gabler, role: designer }
+    - { name: Kyle Gray, role: designer }
+    - { name: Allan Blomquist, role: programmer }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+  summary: >
+    A puzzle game whose office worker is the CPU: "Your office is a simple computer", "Harvard Architecture with a
+    single accumulator". The item the worker carries is the register, numbered floor tiles are memory, and the
+    inbox and outbox are I/O. Players start with 2 commands and end with all 11; Wikipedia calls the game "a
+    metaphor for assembly language concepts". Programs copy out of the game as plain-text assembly.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Human_Resource_Machine", homepage: "https://tomorrowcorporation.com/humanresourcemachine" }
+  sources: [wiki-human-resource-machine, tomorrow-corp-hrm, hrm-solutions]
+  example:
+    title: Copy Floor (level 3)
+    language: Human Resource Machine
+    note: "A solution as the game copies it to the clipboard, from Ates Goral's hrm-solutions. COPYFROM picks up a copy of the item on a numbered floor tile; OUTBOX delivers what the worker holds. The tiles hold letters, and this spells BUG."
+    code: |
+      -- HUMAN RESOURCE MACHINE PROGRAM --
+      -- 03-Copy-Floor - SIZE 6/6 - SPEED 6/6 --
+
+      -- The copyfrom command is introduced. Copy the letters B U G to the outbox.
+
+          COPYFROM 4
+          OUTBOX
+          COPYFROM 0
+          OUTBOX
+          COPYFROM 3
+          OUTBOX
+    sources: [hrm-solutions]

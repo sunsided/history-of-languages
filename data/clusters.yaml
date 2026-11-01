@@ -627,4 +627,5 @@
     - { name: "Advent of Code 2020 handheld boot code", year: 2020, hint: "Day 8: acc/jmp/nop. Unnamed, used once." }
     - { name: "Shenzhen I/O", year: 2016, hint: "Zachtronics, 17 November 2016; \"similar to assembly language\" for MCxxxx microcontrollers; \"a spiritual successor to their previous title TIS-100\" (Wikipedia). Needs a sourced code example (the in-game manual)." }
     - { name: "EXAPUNKS", year: 2018, hint: "Zachtronics, 22 October 2018; EXA agents with \"a few simple opcodes for movement, data processing, network messaging, and interfacing with files and registers\". Needs instruction list and example." }
+    - { name: "7 Billion Humans", year: 2018, hint: "Tomorrow Corporation's sequel to Human Resource Machine (23 August 2018): many workers at once, language \"similar to assembly language\" (Wikipedia). Needs a real program text." }
     - { name: "Darwin", year: 1961, hint: "Vyssotsky, Morris and McIlroy's Bell Labs game of competing programs, cited by Dewdney's 1984 Core War article. Find the original description." }
