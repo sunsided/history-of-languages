@@ -14,6 +14,9 @@ data/lineages/*.yaml         narrative threads through the graph (concurrency, O
 data/claims.yaml             myth-vs-fact checks with quoted evidence
 data/sources.yaml            bibliography; every claim points here
 tools/build.py               validate + derive inverse edges + emit dist/graph.json
+tools/report.py              research to-do: thin clusters, orphans, weak edges, concept dating
+docs/authoring.md            the format contract, with templates (read before adding data)
+CLAUDE.md, .claude/skills/   working rules and research procedures for Claude sessions
 ```
 
 Run `python3 tools/build.py` (needs `pyyaml`, `jsonschema`). It fails on any schema error or dangling
