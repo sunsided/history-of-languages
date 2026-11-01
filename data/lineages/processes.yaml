@@ -1,0 +1,97 @@
+- id: processes-threads-multitasking
+  title: "Who runs, and who decides when to switch: processes, threads, green threads"
+  thesis: >
+    Two questions fork early and recombine repeatedly. The first is what the unit of execution is: whole
+    programs on one CPU (multiprogramming), processes created with fork, threads sharing a process's memory, and
+    finally threads scheduled by a language runtime instead of the OS (Erlang's processes, Java's green threads,
+    goroutines, virtual threads). The second is who decides when to switch: the program itself (cooperative) or a
+    scheduler driven by timer interrupts (preemptive). Mainframes were preemptive from the mid-1960s; DOS and
+    16-bit Windows fell back to improvised and cooperative schemes, until Windows NT and 95 brought preemption to
+    the PC. Language runtimes then re-ran the same choice one level up.
+  concepts: [parallel-hardware, processes, preemptive-scheduling, cooperative-multitasking, interrupts, threads, green-threads, goroutines, virtual-threads]
+  research_status: draft
+  steps:
+    - year: 1960
+      title: "Multiprogramming"
+      concepts: [processes]
+      systems: ["Bull Gamma 60 (designed 1957, released 1960)", "LEO III (1961)"]
+      text: "The Bull Gamma 60 is \"the first computer designed with multiprogramming in mind\": several programs share one machine and take turns at the processor."
+      sources: [wiki-computer-multitasking]
+    - year: 1962
+      title: "Multiprocessors and the first fork"
+      concepts: [parallel-hardware, processes]
+      systems: ["Bull Gamma 60", "Burroughs B5000"]
+      text: "Machines get more than one CPU (the Gamma 60 and B5000 are early master/slave multiprocessors), and Melvin Conway's \"A Multiprocessor System Design\" (1962) gives one of the earliest descriptions of a fork: one flow of control splitting into several."
+      sources: [wiki-multiprocessing, wiki-fork-system-call]
+    - year: 1964
+      title: "Preemptive multitasking on mainframes"
+      concepts: [preemptive-scheduling, interrupts]
+      systems: ["PDP-6 Monitor (1964)", "Multics (1964)", "OS/360 MFT (1967)", "Unix (1969)"]
+      text: "A scheduler takes the CPU away at fixed intervals: \"Preemptive multitasking was implemented in the PDP-6 Monitor and Multics in 1964, in OS/360 MFT in 1967, and in Unix in 1969\"."
+      sources: [wiki-computer-multitasking, corbato-1962-ctss]
+    - year: 1965
+      title: "fork in a time-sharing system"
+      concepts: [processes]
+      systems: ["Project Genie / Berkeley time-sharing system (SDS 930)"]
+      text: "L. Peter Deutsch implements Conway's fork in the Berkeley GENIE time-sharing system; Ritchie notes that separating process creation from program loading \"was present in the Berkeley time-sharing system\" before Unix."
+      sources: [wiki-fork-system-call, ritchie-1979-evolution-unix]
+    - year: 1966
+      title: "Threads get their name"
+      concepts: [threads]
+      systems: ["OS/360 tasks (1967)"]
+      text: "Saltzer (1966) credits Victor Vyssotsky with the term \"thread\"; Dennis and Van Horn describe fork and join within a process; OS/360 ships threads as \"tasks\" in 1967."
+      sources: [wiki-thread-computing, dennis-van-horn-1966]
+    - year: 1971
+      title: "Unix: fork, exec, wait"
+      concepts: [processes]
+      systems: ["Research Unix (fork manual page dated 3 November 1971)"]
+      text: "Ken Thompson borrows fork from GENIE. The first PDP-7 Unix had \"no fork, wait, or exec\"; when added, \"the PDP-7's fork call required precisely 27 lines of assembly code\". fork plus exec becomes the Unix way to start programs and later a POSIX standard."
+      sources: [ritchie-1979-evolution-unix, wiki-fork-system-call]
+    - year: 1984
+      title: "Multitasking bolted onto DOS"
+      concepts: [interrupts, preemptive-scheduling]
+      systems: ["TSRs such as Borland SideKick", "Concurrent DOS 3.1 (March 1984)", "IBM TopView (March 1985)", "DESQview (July 1985)", "Multitasking MS-DOS 4.0 (May 1986)"]
+      text: "Single-tasking DOS grows concurrency from the outside. TSR programs stay resident and hook interrupt vectors (\"installing a timer interrupt handler allows a TSR to run periodically\"). Digital Research's Concurrent DOS uses preemptive multitasking; DESQview runs well-behaved programs side by side in real mode, where one misbehaving program can still crash everything; Microsoft's multitasking MS-DOS 4.0 adds a time-sliced, preemptive scheduler with background sessions but finds no OEMs and is dropped."
+      sources: [wiki-tsr, wiki-multiuser-dos, wiki-desqview, wiki-ms-dos-4-multitasking]
+    - year: 1985
+      title: "Cooperative multitasking on PCs"
+      concepts: [cooperative-multitasking]
+      systems: ["Windows 1.0-3.x (16-bit applications)", "classic Mac OS"]
+      text: "\"Cooperative multitasking was the primary scheduling scheme for 16-bit applications employed by Microsoft Windows before Windows 95 and Windows NT\", and of classic Mac OS: each program runs until it yields. A step back from the preemptive mainframes of the 1960s."
+      sources: [wiki-cooperative-multitasking, wiki-computer-multitasking]
+    - year: 1986
+      title: "Threads inside processes"
+      concepts: [threads]
+      systems: ["Mach (1986)", "OS/2 1.0 (1987)", "Windows NT (1993)", "POSIX threads (1995)"]
+      text: "Operating systems separate the process (address space, resources) from the thread (a flow of control inside it): Mach describes its threads in 1986, OS/2 1.0 supports them in 1987, Windows NT in 1993, and IEEE standardizes pthreads in 1995."
+      sources: [wiki-thread-computing]
+    - year: 1986
+      title: "Green processes: Erlang"
+      concepts: [green-threads, preemptive-scheduling]
+      nodes: [erlang]
+      text: "Erlang's processes are scheduled by its own runtime: \"lightweight (grow and shrink dynamically) with a small memory footprint, fast to create and terminate\", and share no state, like OS processes but implemented inside the Erlang Run Time System."
+      sources: [erlang-ref-processes, wiki-green-thread, armstrong-2007-history-erlang]
+    - year: 1993
+      title: "Preemption returns to the PC"
+      concepts: [preemptive-scheduling]
+      systems: ["Windows NT 3.1 (1993)", "Windows 95"]
+      text: "\"Microsoft made preemptive multitasking a core feature of their flagship operating system in the early 1990s when developing Windows NT 3.1 and then Windows 95.\""
+      sources: [wiki-computer-multitasking]
+    - year: 1997
+      title: "Java's green threads"
+      concepts: [green-threads]
+      nodes: [java]
+      text: "The original Java thread library, by Sun's Green Team, schedules threads in the JVM: in Java 1.1 \"green threads were the only threading model used by the JVM, at least on Solaris\". Java 1.3 abandons them for native threads; green threads are briefly available \"between 1997 and 2000\"."
+      sources: [wiki-green-thread]
+    - year: 2009
+      title: "Goroutines: M:N scheduling as the default"
+      concepts: [goroutines]
+      nodes: [go]
+      text: "Go's runtime multiplexes \"independently executing functions—coroutines—onto a set of threads\"; each goroutine needs little more than \"a few kilobytes\" of stack, so programs start them by the thousand."
+      sources: [go-faq]
+    - year: 2023
+      title: "Virtual threads: green threads return to Java"
+      concepts: [virtual-threads]
+      nodes: [java]
+      text: "Virtual threads, previewed in Java 19 and final in Java 21, bring runtime-scheduled threads back to the JVM 23 years after green threads were dropped."
+      sources: [wiki-green-thread, jep-444]

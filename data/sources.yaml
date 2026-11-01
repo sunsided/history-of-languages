@@ -3125,3 +3125,69 @@
   title: "Ates Goral: hrm-solutions, Human Resource Machine solutions as copied from the game"
   url: https://github.com/atesgoral/hrm-solutions
   checked: '2026-11-01'
+- id: wiki-multiprocessing
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Multiprocessing"
+  url: https://en.wikipedia.org/wiki/Multiprocessing
+  checked: '2026-11-01'
+- id: wiki-computer-multitasking
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Computer multitasking"
+  url: https://en.wikipedia.org/wiki/Computer_multitasking
+  checked: '2026-11-01'
+- id: wiki-fork-system-call
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: fork (system call)"
+  url: https://en.wikipedia.org/wiki/Fork_(system_call)
+  checked: '2026-11-01'
+- id: ritchie-1979-evolution-unix
+  type: paper
+  primary: true
+  title: "Dennis M. Ritchie: The Evolution of the Unix Time-sharing System"
+  url: https://www.nokia.com/bell-labs/about/dennis-m-ritchie/hist.html
+  checked: '2026-11-01'
+- id: wiki-thread-computing
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Thread (computing)"
+  url: https://en.wikipedia.org/wiki/Thread_(computing)
+  checked: '2026-11-01'
+- id: wiki-green-thread
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Green thread"
+  url: https://en.wikipedia.org/wiki/Green_thread
+  checked: '2026-11-01'
+- id: erlang-ref-processes
+  type: manual
+  primary: true
+  title: "Erlang System Documentation: Processes (reference manual)"
+  url: https://www.erlang.org/doc/system/ref_man_processes.html
+  checked: '2026-11-01'
+- id: wiki-tsr
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Terminate-and-stay-resident program"
+  url: https://en.wikipedia.org/wiki/Terminate-and-stay-resident_program
+  checked: '2026-11-01'
+- id: wiki-desqview
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: DESQview"
+  url: https://en.wikipedia.org/wiki/DESQview
+  checked: '2026-11-01'
+- id: wiki-ms-dos-4-multitasking
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MS-DOS 4.0 (multitasking)"
+  url: https://en.wikipedia.org/wiki/MS-DOS_4.0_(multitasking)
+  checked: '2026-11-01'
+- id: wiki-multiuser-dos
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Multiuser DOS (Concurrent DOS)"
+  url: https://en.wikipedia.org/wiki/Multiuser_DOS
+  checked: '2026-11-01'
