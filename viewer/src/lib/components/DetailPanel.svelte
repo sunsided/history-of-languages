@@ -5,11 +5,13 @@
 		FAMILY_OF,
 		FORWARD_LABEL,
 		conceptArrival,
+		cleanCommons,
 		contemporaries,
 		firstYear,
+		mediaUrl,
 		narrowerConcepts
 	} from '../graph.ts';
-	import type { Dating, Edge } from '../types.ts';
+	import type { Dating, Edge, MediaItem } from '../types.ts';
 
 	const g = $derived(viewer.graph);
 	const node = $derived(viewer.selected?.type === 'node' ? g.node.get(viewer.selected.id) : undefined);
@@ -31,6 +33,11 @@
 		}
 		return out.sort((a, b) => a.year - b.year);
 	});
+
+	const images = $derived(node ? (g.nodeMedia.get(node.id) ?? []) : []);
+	const portraits = $derived(
+		node ? (node.creators ?? []).map((c) => g.personMedia.get(c.name)).filter((m): m is MediaItem => !!m) : []
+	);
 
 	const claims = $derived(node ? g.data.claims.filter((c) => c.nodes?.includes(node.id)) : []);
 	const rivals = $derived(node ? contemporaries(g, node.id) : []);
@@ -60,6 +67,14 @@
 		return [...groups.entries()];
 	}
 </script>
+
+{#snippet attribution(m: MediaItem)}
+	<span class="credit">
+		{cleanCommons(m.credit)} ·
+		{#if m.license_url}<a href={m.license_url} target="_blank" rel="noreferrer">{m.license}</a>{:else}{m.license}{/if}
+		· <a href={m.source_url} target="_blank" rel="noreferrer">source</a>
+	</span>
+{/snippet}
 
 {#snippet nodeLink(id: string)}
 	<button class="link" onclick={() => viewer.selectNode(id)}>{name(id)}</button>
@@ -127,13 +142,35 @@
 			<button class="close" onclick={() => (viewer.panelOpen = false)} title="Fold panel">×</button>
 		</header>
 
+		{#each images as m (m.id)}
+			<figure class="hero">
+				<a href={m.source_url} target="_blank" rel="noreferrer" title="Open on Wikimedia Commons">
+					<img src={mediaUrl(m)} alt={cleanCommons(m.caption)} loading="lazy" />
+				</a>
+				<figcaption>
+					<span class="caption" title={cleanCommons(m.caption)}>{cleanCommons(m.caption)}</span>
+					{@render attribution(m)}
+				</figcaption>
+			</figure>
+		{/each}
+
 		<dl class="facts">
 			{#if node.origin.began}<dt>began</dt><dd>{dating(node.origin.began)}{#if node.origin.began.note}<div class="note">{node.origin.began.note}</div>{/if}</dd>{/if}
 			<dt>appeared</dt>
 			<dd>{dating(node.origin.first_appeared)}{#if node.origin.first_appeared.note}<div class="note">{node.origin.first_appeared.note}</div>{/if}</dd>
 			{#if node.creators?.length}
 				<dt>creators</dt>
-				<dd>{#each node.creators as c, i (i)}<div>{c.name}{c.role ? ` (${c.role})` : ''}{c.affiliation ? `, ${c.affiliation}` : ''}</div>{/each}</dd>
+				<dd>
+					{#each node.creators as c, i (i)}
+						{@const photo = g.personMedia.get(c.name)}
+						<div class="creator">
+							{#if photo}
+								<img class="avatar" src={mediaUrl(photo)} alt={c.name} loading="lazy" title="{c.name} · {cleanCommons(photo.credit)} · {photo.license}" />
+							{/if}
+							<span>{c.name}{c.role ? ` (${c.role})` : ''}{c.affiliation ? `, ${c.affiliation}` : ''}</span>
+						</div>
+					{/each}
+				</dd>
 			{/if}
 			{#if node.origin.places?.length}
 				<dt>where</dt>
@@ -215,6 +252,15 @@
 		{#if node.sources?.length}
 			<h3>Sources</h3>
 			{@render sourceList(node.sources)}
+		{/if}
+
+		{#if portraits.length}
+			<h3>Image credits</h3>
+			<ul class="sources">
+				{#each portraits as m (m.id)}
+					<li>{m.person}: {@render attribution(m)}</li>
+				{/each}
+			</ul>
 		{/if}
 	{:else if cluster}
 		{@const c = cluster.cluster}
@@ -408,6 +454,51 @@
 	}
 	.summary {
 		margin: 10px 0;
+	}
+	.hero {
+		margin: 4px 0 12px;
+	}
+	.hero img {
+		display: block;
+		width: 100%;
+		max-height: 240px;
+		object-fit: contain;
+		background: var(--code-bg);
+		border-radius: 6px;
+	}
+	.hero figcaption {
+		margin-top: 4px;
+		font-size: 11px;
+		color: var(--fg-muted);
+		display: flex;
+		flex-direction: column;
+		gap: 1px;
+	}
+	.caption {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.credit {
+		color: var(--fg-faint);
+		font-size: 10.5px;
+	}
+	.creator {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		min-height: 22px;
+	}
+	.avatar {
+		width: 28px;
+		height: 28px;
+		flex: none;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: 50% 25%;
+		background: var(--code-bg);
 	}
 	.ex-title {
 		font-weight: 600;

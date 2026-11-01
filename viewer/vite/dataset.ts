@@ -10,7 +10,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
 import type { Plugin, ViteDevServer } from 'vite';
-import type { Cluster, Dataset, Edge, LangNode } from '../src/lib/types.ts';
+import type { Cluster, Dataset, Edge, LangNode, MediaItem } from '../src/lib/types.ts';
 import { buildSearchIndex } from '../src/lib/search.ts';
 
 const VIRTUAL_ID = 'virtual:dataset';
@@ -63,6 +63,7 @@ export function loadDataset(dataDir: string): Dataset {
 		lineages: readDir(path.join(dataDir, 'lineages'), problems, root),
 		claims: readList(path.join(dataDir, 'claims.yaml'), problems, root),
 		sources: readList(path.join(dataDir, 'sources.yaml'), problems, root),
+		media: [],
 		problems,
 		loadedAt: new Date().toISOString()
 	};
@@ -110,8 +111,34 @@ export function loadDataset(dataDir: string): Dataset {
 		}
 	}
 
+	// Media: keep entries whose file exists on disk (fetch_media.py may not have run yet), report the rest.
+	const media = readList<MediaItem>(path.join(dataDir, 'media.yaml'), problems, root);
+	let missing = 0;
+	for (const m of media) {
+		if (!m?.file?.startsWith('assets/media/')) {
+			problems.push(`media ${m?.id ?? '?'}: file must live under assets/media/`);
+			continue;
+		}
+		if (!fs.existsSync(path.join(root, m.file))) {
+			missing++;
+			continue;
+		}
+		for (const n of m.nodes ?? []) if (!nodeIds.has(n)) problems.push(`media ${m.id}: unknown node '${n}'`);
+		dataset.media.push(m);
+	}
+	if (missing) problems.push(`${missing} media files not downloaded yet (run tools/fetch_media.py)`);
+
 	return dataset;
 }
+
+const MIME: Record<string, string> = {
+	'.jpg': 'image/jpeg',
+	'.jpeg': 'image/jpeg',
+	'.png': 'image/png',
+	'.webp': 'image/webp',
+	'.gif': 'image/gif',
+	'.svg': 'image/svg+xml'
+};
 
 export function dataset(options: { dataDir: string }): Plugin {
 	const dataDir = path.resolve(options.dataDir);
@@ -127,6 +154,17 @@ export function dataset(options: { dataDir: string }): Plugin {
 			if (id === RESOLVED_INDEX_ID) return `export default ${JSON.stringify(buildSearchIndex(loadDataset(dataDir)))};`;
 		},
 		configureServer(server: ViteDevServer) {
+			// Serve ../assets/media/* at /assets/media/* (it lives outside the Vite root).
+			const mediaDir = path.join(path.dirname(dataDir), 'assets', 'media');
+			server.middlewares.use('/assets/media', (req, res, next) => {
+				const name = decodeURIComponent((req.url ?? '').split('?')[0]).replace(/^\/+/, '');
+				const file = path.resolve(mediaDir, name);
+				const type = MIME[path.extname(file).toLowerCase()];
+				if (!file.startsWith(mediaDir + path.sep) || !type || !fs.existsSync(file)) return next();
+				res.setHeader('Content-Type', type);
+				res.setHeader('Cache-Control', 'no-cache');
+				fs.createReadStream(file).pipe(res);
+			});
 			server.watcher.add(dataDir);
 			let timer: ReturnType<typeof setTimeout> | undefined;
 			const onChange = (file: string) => {

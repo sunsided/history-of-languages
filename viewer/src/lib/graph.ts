@@ -1,6 +1,6 @@
 // Derived lookups over a Dataset: indexes, cluster tree, transitive ancestry, edge styling.
 
-import type { Cluster, Concept, Dataset, Edge, LangNode, RelationType, Source } from './types.ts';
+import type { Cluster, Concept, Dataset, Edge, LangNode, MediaItem, RelationType, Source } from './types.ts';
 import { NOW } from './scale.ts';
 
 export type EdgeFamily = 'influence' | 'succession' | 'variant' | 'targets' | 'implementation';
@@ -69,6 +69,10 @@ export interface Graph {
 	outgoing: Map<string, Edge[]>;
 	/** edges pointing at a node from newer ones */
 	incoming: Map<string, Edge[]>;
+	/** machine / document / artifact images per node */
+	nodeMedia: Map<string, MediaItem[]>;
+	/** portraits by person name, as written in nodes' creators */
+	personMedia: Map<string, MediaItem>;
 }
 
 export const startYear = (n: LangNode) => n.origin.began?.year ?? n.origin.first_appeared.year;
@@ -135,7 +139,17 @@ export function buildGraph(data: Dataset): Graph {
 		info.nodes.sort((a, b) => startYear(node.get(a)!) - startYear(node.get(b)!));
 	}
 
-	return { data, node, concept, source, clusters, roots, outgoing, incoming };
+	const nodeMedia = new Map<string, MediaItem[]>();
+	const personMedia = new Map<string, MediaItem>();
+	for (const m of data.media ?? []) {
+		if (m.kind === 'person') {
+			if (m.person) personMedia.set(m.person, m);
+			continue;
+		}
+		for (const n of m.nodes ?? []) (nodeMedia.get(n) ?? nodeMedia.set(n, []).get(n)!).push(m);
+	}
+
+	return { data, node, concept, source, clusters, roots, outgoing, incoming, nodeMedia, personMedia };
 }
 
 /** Cluster ids from the root down to (and including) the node's own cluster. */
@@ -215,3 +229,16 @@ export function contemporaries(g: Graph, id: string, window = 5): LangNode[] {
 		.filter((m) => Math.abs(firstYear(m) - y) <= window)
 		.sort((a, b) => firstYear(a) - firstYear(b));
 }
+
+/** Strip Wikimedia Commons template residue from captions and dates ("date QS:P,+1843-…", "w:en:"). */
+export function cleanCommons(text: string | undefined): string {
+	if (!text) return '';
+	return text
+		.replace(/date QS:P\S*/g, '')
+		.replace(/\bw:[a-z]{2,3}:/g, '')
+		.replace(/\s+/g, ' ')
+		.trim();
+}
+
+/** URL of a media file in the dev server (see vite/dataset.ts). */
+export const mediaUrl = (m: MediaItem) => '/' + m.file;
