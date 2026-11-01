@@ -206,6 +206,24 @@ def main():
                 missing["cluster"].add(pre)
                 errors.append(f"cluster {k}: missing ancestor cluster '{pre}'")
 
+    # \" is only an escape inside double-quoted YAML strings; in plain and block (> |) scalars the
+    # backslash stays in the text and the viewer shows it. Code examples may contain it on purpose.
+    def literal_escapes(x, where, path):
+        if isinstance(x, dict):
+            for k, v in x.items():
+                if k != "code":
+                    literal_escapes(v, where, f"{path}/{k}")
+        elif isinstance(x, list):
+            for i, v in enumerate(x):
+                literal_escapes(v, where, f"{path}/{i}")
+        elif isinstance(x, str) and '\\"' in x:
+            errors.append(f"{where}{path}: literal \\\" in text (only escapes inside double quotes; write \" or quote the value): {x[:60]!r}")
+
+    for kind, items in (("node", nodes), ("concept", concepts), ("cluster", clusters), ("era", eras),
+                        ("source", sources), ("claim", claims), ("media", media), ("lineage", lineages)):
+        for it in items:
+            literal_escapes(it, f"{kind} {it.get('id', '?')}", "")
+
     if "--missing" in sys.argv:
         for kind, ids in sorted(missing.items()):
             print(f"## {kind} ({len(ids)})")
