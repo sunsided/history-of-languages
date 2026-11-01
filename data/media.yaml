@@ -1205,6 +1205,20 @@
   source_url: https://commons.wikimedia.org/wiki/File:Lars_Bak.png
   commons_file: File:Lars_Bak.png
   checked: '2026-11-01'
+- id: person-markus-persson
+  file: assets/media/person-markus-persson.jpg
+  kind: person
+  person: Markus Persson
+  nodes:
+  - dcpu-16
+  caption: Markus Persson, 2016-03-17 00:16
+  date: 2016-03-17 00:16
+  credit: Official GDC
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:GDC_2016_awards_16-20_42_56-01-7D2_0739_(cropped).jpg
+  commons_file: File:GDC_2016_awards_16-20_42_56-01-7D2_0739_(cropped).jpg
+  checked: '2026-11-01'
 - id: person-marlyn-meltzer
   file: assets/media/person-marlyn-meltzer.png
   kind: person
