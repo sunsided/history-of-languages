@@ -877,3 +877,80 @@
       p * not := imp(p,con) ; Prop
     sources: [aut-4-1-manual]
 
+- id: pilot
+  name: PILOT
+  aliases: [Programmed Inquiry, Learning, or Teaching, COMPUTEST]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1962, precision: year, note: "Wikipedia: begun \"in 1960\"; \"by 1962 the system was functional on a IBM 1620 and given the name COMPUTEST\"; renamed PILOT after a 1965 grant; shown 1966, \"almost-complete version was released in 1968\"." }
+    places: [{ institution: "University of California, San Francisco", country: US }]
+  creators:
+    - { name: John Amsden Starkweather, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    domain: [education]
+  milestones:
+    - { version: "PILOT", year: 1968, summary: "\"The almost-complete version was released in 1968.\"" }
+  summary: >
+    "A simple high-level programming language" for computer-assisted instruction, written by UCSF psychology
+    professor John Starkweather: each line starts with a one-letter command and a colon, T: to type text,
+    A: to accept an answer, M: to match it and J: to jump. "Like its sibling LOGO", it was an early attempt at
+    teaching with computers. Later versions such as Atari PILOT added turtle graphics.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PILOT" }
+  sources: [wiki-pilot]
+  example:
+    title: Separate statements from the Wikipedia article
+    language: PILOT
+    note: "Five statements quoted separately in Wikipedia's PILOT article, listed one per line; they are not one program. T: types text with $NAME substituted, J: jumps to a label, M: matches the last answer against alternatives, C: computes."
+    code: |
+      T:Thank you for your support.
+      T:Thank you, $NAME.
+      J:*RESTART
+      M:TRUTH,$MEXICO,YOUTH
+      C:#AM=(#X+#Y)/2
+    sources: [wiki-pilot]
+
+- id: tutor
+  name: TUTOR
+  aliases: [PLATO Author Language]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1969, date: "1969-01", precision: exact, note: "Wikipedia: developed \"beginning in roughly 1965\"; first documentation, The TUTOR Manual, January 1969 (infobox: first appeared 1969)." }
+    places: [{ institution: University of Illinois at Urbana-Champaign, country: US }]
+  creators:
+    - { name: Paul Tenczar, role: initial designer }
+    - { name: Richard Blomme, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    domain: [education]
+  summary: >
+    The authoring language of the PLATO system: lessons are units of commands (at, write, arrow, answer) that
+    draw on the screen and judge students' typed answers. Each command sits in a fixed 8-character field with its
+    arguments from column 9. cT at Carnegie Mellon and TenCORE descend from it.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TUTOR" }
+  sources: [wiki-tutor]
+  example:
+    title: A two-question arithmetic unit
+    language: TUTOR
+    note: "From Wikipedia's TUTOR article; the fixed 8-character command field is not preserved in this copy, and ×  is the page's multiplication sign. at and arrow take screen positions; answer gives the expected reply."
+    code: |
+      unit math
+      at 205
+      write Answer these problems
+      3 + 3 =
+      4 × 3 =
+      arrow 413
+      answer 6
+      arrow 613
+      answer 12
+    sources: [wiki-tutor]

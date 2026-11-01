@@ -1855,3 +1855,45 @@
       \def\sp@n{\span\omit\advance\mscount\m@ne}
     sources: [plain-tex]
 
+- id: comal
+  name: COMAL
+  aliases: [Common Algorithmic Language]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1975, date: "1975-02", precision: exact, note: "Wikipedia: \"the first release (on paper tape) was ready in February 1975\"." }
+    places: [{ country: DK }]
+  creators:
+    - { name: Børge R. Christensen, role: designer }
+    - { name: Benedict Løfstedt, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, structured, procedural]
+    features: [line-numbers, turtle-graphics]
+    domain: [education]
+  summary: >
+    A Danish teaching language by mathematics teacher Børge R. Christensen and Benedict Løfstedt. "It was based on
+    the BASIC programming language, adding multi-line statements and well-defined subroutines": line numbers
+    stayed, but IF ... ENDIF, FOR ... ENDFOR and named procedures brought Pascal's structure, and later versions
+    added Logo's turtle graphics.
+  relations:
+    - { type: influenced_by, to: basic, weight: strong, confidence: high, sources: [wiki-comal], note: "\"based on the BASIC programming language\"" }
+    - { type: influenced_by, to: pascal, aspects: [structured], weight: moderate, confidence: high, sources: [wiki-comal], note: "Infobox: influenced by BASIC, Pascal." }
+    - { type: influenced_by, to: logo, aspects: [turtle-graphics], weight: weak, confidence: medium, sources: [wiki-comal], note: "\"a mixture of ... BASIC, Pascal, and ... the turtle graphics of Logo\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/COMAL" }
+  sources: [wiki-comal]
+  example:
+    title: A multi-line IF with line numbers
+    language: COMAL
+    note: "From Wikipedia's COMAL article; the article describes the body as indented when listed, which this copy does not preserve. ENDIF closes the block, which BASIC of the time could not express."
+    code: |
+      10 IF A>10 THEN
+      20 PRINT "A IS GREATER THAN 10"
+      30 A=A+10
+      40 PRINT "A IS NOW ";A
+      50 ENDIF
+      60 PRINT "RETURNING TO OUR REGULARLY SCHEDULED PROGRAMMING"
+    sources: [wiki-comal]

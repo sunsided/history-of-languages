@@ -902,7 +902,10 @@
   summary: "Languages designed for teaching programming, from PILOT and TUTOR to block-based Scratch and Snap!."
   research_status: stub
   backlog:
+    - { name: "Snap!", year: 2011, hint: "Jens Mönig and Brian Harvey (UC Berkeley); formerly BYOB, \"a modification of Scratch\"; manual: \"Scheme disguised as Scratch\" (first-class procedures, lexical scope, continuations); AGPLv3 (wiki-snap). Needs a text example: its manual shows scripts only as images." }
     - { name: "ScratchJr", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Etoys", year: 1996, hint: "Alan Kay at Disney Imagineering on Squeak; prototype-based; influenced Scratch (wiki-etoys). Needs a textual example." }
+    - { name: "Blockly", year: 2012, hint: "Google (Neil Fraser and others), a JavaScript library for building block languages, not a language itself; Scratch 3.0 blocks use a fork of it (wiki-blockly). Probably a note on Scratch rather than a node." }
     - { name: "Kodu", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Starlogo", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "NetLogo", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }

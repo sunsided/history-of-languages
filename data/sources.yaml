@@ -3454,3 +3454,53 @@
   primary: true
   title: "uzu/strudel on Codeberg"
   url: https://codeberg.org/uzu/strudel
+- id: wiki-pilot
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PILOT"
+  url: https://en.wikipedia.org/wiki/PILOT
+- id: wiki-tutor
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TUTOR"
+  url: https://en.wikipedia.org/wiki/TUTOR
+- id: wiki-karel
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Karel (programming language)"
+  url: https://en.wikipedia.org/wiki/Karel_(programming_language)
+- id: wiki-comal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: COMAL"
+  url: https://en.wikipedia.org/wiki/COMAL
+- id: wiki-turing-language
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Turing (programming language)"
+  url: https://en.wikipedia.org/wiki/Turing_(programming_language)
+- id: wiki-scratch
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Scratch (programming language)"
+  url: https://en.wikipedia.org/wiki/Scratch_(programming_language)
+- id: wiki-snap
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Snap! (programming language)"
+  url: https://en.wikipedia.org/wiki/Snap!_(programming_language)
+- id: wiki-etoys
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Etoys (programming language)"
+  url: https://en.wikipedia.org/wiki/Etoys_(programming_language)
+- id: wiki-blockly
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Blockly"
+  url: https://en.wikipedia.org/wiki/Blockly
+- id: scratch-wiki-block-plugin
+  type: web
+  primary: false
+  title: "Scratch Wiki: Block Plugin (scratchblocks text notation)"
+  url: https://en.scratch-wiki.info/wiki/Block_Plugin

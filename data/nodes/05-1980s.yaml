@@ -2284,3 +2284,104 @@
       </CsoundSynthesizer>
     sources: [wiki-csound]
 
+- id: karel
+  name: Karel
+  aliases: [Karel the Robot]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1981, precision: year, note: "Pattis, Karel The Robot: A Gentle Introduction to the Art of Programming (Wiley, 1981)." }
+  creators:
+    - { name: Richard E. Pattis, role: creator }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+    domain: [education]
+  summary: >
+    "An educational programming language for beginners", introduced in Richard Pattis's 1981 book: a robot on a
+    grid of streets and avenues that can only move, turnLeft, pick and put beepers, so even turning right must be
+    defined as a new instruction. Pattis used it at Stanford; Karel++ (Java-like) and Guido van Robot followed.
+    Not to be confused with FANUC's robot language Karel.
+  relations:
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [wiki-karel], note: "Infobox: influenced by Pascal." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Karel_(programming_language)" }
+  sources: [wiki-karel]
+  example:
+    title: Defining turnRight from three left turns
+    language: Karel
+    note: "From Wikipedia's Karel article, which our copy renders on one line; line breaks and indentation are restored at the keywords, the tokens are unchanged."
+    code: |
+      BEGINNING-OF-PROGRAM
+        DEFINE turnRight AS
+        BEGIN
+          turnLeft;
+          turnLeft;
+          turnLeft;
+        END
+        BEGINNING-OF-EXECUTION
+          ITERATE 3 TIMES
+          BEGIN
+            turnRight;
+            move
+          END
+          turnoff
+        END-OF-EXECUTION
+      END-OF-PROGRAM
+    sources: [wiki-karel]
+
+- id: turing
+  name: Turing
+  aliases: [Turing programming language, OOT, Object-Oriented Turing]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1982, precision: year, note: "Wikipedia: \"developed in 1982 by Ric Holt and James Cordy, at University of Toronto\"." }
+    places: [{ institution: University of Toronto, country: CA }]
+  creators:
+    - { name: Ric Holt, role: designer }
+    - { name: James Cordy, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, structured, procedural]
+    typing: [static-typing]
+    domain: [education]
+  summary: >
+    A Pascal-family language from the University of Toronto, "designed to help students taking their first
+    computer science course learn how to code": "a descendant of Pascal, Euclid, and SP/k with a clean syntax and
+    precise machine-independent semantics". Holt Software Associates developed it further.
+  notes: >
+    Euclid and SP/k (also Toronto) are not nodes yet; SP/k is in the education backlog.
+  relations:
+    - { type: influenced_by, to: pascal, weight: strong, confidence: high, sources: [wiki-turing-language], note: "\"a descendant of Pascal, Euclid, and SP/k\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Turing_(programming_language)" }
+  sources: [wiki-turing-language]
+  example:
+    title: Factorial with input checking
+    language: Turing
+    note: "From Wikipedia's Turing article, which our copy renders on one line; line breaks and indentation are restored at statement boundaries and the comment marker is shown as %, Turing's line comment. Tokens are unchanged."
+    code: |
+      % Accepts a number and calculates its factorial
+      function factorial (n: int) : real
+          if n = 0 then
+              result 1
+          else
+              result n * factorial (n - 1)
+          end if
+      end factorial
+
+      var n: int
+      loop
+          put "Please input an integer: " ..
+          get n
+          exit when n >= 0
+          put "Input must be a non-negative integer."
+      end loop
+
+      put "The factorial of ", n, " is ", factorial (n)
+    sources: [wiki-turing-language]

@@ -3154,3 +3154,51 @@
       sound("bd [hh hh] sd [hh bd] bd - [hh sd] cp")
     sources: [strudel-workshop]
 
+- id: scratch
+  name: Scratch
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2007, date: "2007-05-15", precision: exact, note: "Scratch 1.0; a prototype (Scratch 0.1) dates from 30 June 2003 (Wikipedia infobox)." }
+    places: [{ institution: MIT Media Lab, country: US }]
+  creators:
+    - { name: Mitchel Resnick, role: "co-principal investigator, Lifelong Kindergarten group" }
+    - { name: Yasmin Kafai, role: co-principal investigator }
+  status: active
+  tags:
+    paradigm: [imperative, event-driven, object-oriented]
+    features: [turtle-graphics]
+    domain: [education]
+  milestones:
+    - { version: "1.0", year: 2007, summary: "First public release, built on Squeak Smalltalk." }
+  summary: >
+    "A high-level, block-based visual programming language and website aimed primarily at children": programs
+    are stacks of jigsaw-shaped blocks attached to sprites and triggered by events, from the MIT Media Lab's
+    Lifelong Kindergarten group. The 1.x versions "were based on Squeak, which itself is based on Smalltalk-80",
+    and Wikipedia lists Logo, Smalltalk, HyperCard, StarLogo, AgentSheets and Etoys among its influences. In
+    Scratch 3.0, "Scratch blocks are implemented using a fork of Blockly".
+  notes: >
+    Edges to Etoys, StarLogo, HyperCard and AgentSheets wait for those nodes (education/ backlog). The Scratch
+    Team left the Media Lab on 11 March 2019 for the Scratch Foundation.
+  relations:
+    - { type: influenced_by, to: logo, weight: strong, confidence: high, sources: [wiki-scratch], note: "Infobox: influenced by Logo." }
+    - { type: implemented_in, to: smalltalk, year: 2007, weight: moderate, confidence: high, sources: [wiki-scratch], note: "\"the 1.x versions were based on Squeak, which itself is based on Smalltalk-80\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Scratch_(programming_language)", homepage: "https://scratch.mit.edu/" }
+  sources: [wiki-scratch, scratch-wiki-block-plugin]
+  example:
+    title: A custom block, in scratchblocks text notation
+    language: Scratch (scratchblocks)
+    note: "Verbatim from the Scratch Wiki's Block Plugin page. Scratch itself is edited as graphical blocks; scratchblocks is the community's text notation for them, with [ ] for text inputs, ( ) for number reporters, < > for booleans and v for dropdowns."
+    code: |
+      define dance (speed)
+      set [dist v] to ((speed) * (distance to (mouse-pointer v)))
+      repeat until <(timer) > [10]>
+      move (dist) steps
+      next costume
+      play note (pick random (40) to (100)) for (0.5) beats
+      say [Wow! Scratch scripts on the Wiki!]
+      end
+    sources: [scratch-wiki-block-plugin]
