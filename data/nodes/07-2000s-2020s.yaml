@@ -3202,3 +3202,51 @@
       say [Wow! Scratch scripts on the Wiki!]
       end
     sources: [scratch-wiki-block-plugin]
+
+- id: opencl-c
+  name: OpenCL C
+  aliases: [OpenCL, Open Computing Language]
+  kind: language
+  category: systems
+  cluster: gpu
+  origin:
+    first_appeared: { year: 2009, date: "2009-08-28", precision: exact, note: "OpenCL 1.0 specification \"approved for public release on December 8, 2008\"; first shipped with Mac OS X Snow Leopard on 28 August 2009." }
+    places: [{ institution: Apple Inc., country: US }, { institution: Khronos Group, country: US }]
+  status: active
+  tags:
+    paradigm: [imperative, procedural, concurrent]
+    typing: [static-typing]
+    memory: [manual-memory]
+    features: [pointers]
+    domain: [parallel-hardware, hpc]
+  summary: >
+    The kernel language of OpenCL, "a framework for writing programs that execute across heterogeneous platforms"
+    such as GPUs and other accelerators. "OpenCL C is a C99-based language dialect adapted to fit the device model":
+    address-space qualifiers (__global, __local) and __kernel entry points, each instance finding its work item
+    with get_global_id. Initially developed by Apple with AMD, IBM, Qualcomm, Intel and Nvidia, and maintained by
+    the Khronos Group.
+  relations:
+    - { type: dialect_of, to: c, from_version: C99, weight: strong, confidence: high, sources: [wiki-opencl], note: "\"OpenCL C is a C99-based language dialect\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/OpenCL" }
+  sources: [wiki-opencl]
+  example:
+    title: Matrix-vector multiply, one row per work item
+    language: OpenCL C
+    note: "From Wikipedia's OpenCL article; our copy lost the indentation, which is restored here, comments and tokens are unchanged. The host launches one work item per row."
+    code: |
+      // Multiplies A*x, leaving the result in y.
+      // A is a row-major matrix, meaning the (i,j) element is at A[i*ncols+j].
+      __kernel void matvec(__global const float *A, __global const float *x,
+                           uint ncols, __global float *y)
+      {
+          size_t i = get_global_id(0);              // Global id, used as the row index
+          __global float const *a = &A[i*ncols];    // Pointer to the i'th row
+          float sum = 0.f;                          // Accumulator for dot product
+          for (size_t j = 0; j < ncols; j++) {
+              sum += a[j] * x[j];
+          }
+          y[i] = sum;
+      }
+    sources: [wiki-opencl]

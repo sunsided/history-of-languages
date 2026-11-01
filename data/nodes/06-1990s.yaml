@@ -1597,3 +1597,44 @@
       // Factorial function
       f = { |x| if(x == 0) { 1 } { f.(x-1) * x } };
     sources: [wiki-supercollider]
+
+- id: gnu-octave
+  name: GNU Octave
+  aliases: [Octave]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1993, date: "1993-01-04", precision: exact, note: "First alpha 4 January 1993; 1.0 on 17 February 1994; conceived around 1988, \"Full development was started by John W. Eaton in 1992\"." }
+  creators:
+    - { name: John W. Eaton, role: original developer }
+  status: active
+  tags:
+    paradigm: [array-programming, procedural]
+    typing: [dynamic-typing]
+    domain: [scientific-computing]
+  milestones:
+    - { version: "1.0", year: 1994, summary: "First stable release, 17 February 1994." }
+  summary: >
+    "A scientific programming language for scientific computing and numerical computation", the GNU project's
+    counterpart to MATLAB: "Its syntax is very similar to MATLAB, and careful programming of a script will allow it
+    to run on both Octave and MATLAB."
+  relations:
+    - { type: influenced_by, to: matlab, weight: strong, confidence: high, sources: [wiki-gnu-octave], note: "\"built with MATLAB compatibility in mind, and shares many features with MATLAB\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GNU_Octave", homepage: "https://octave.org/" }
+  sources: [wiki-gnu-octave]
+  example:
+    title: A script and a function file
+    language: GNU Octave
+    note: "From Wikipedia's GNU Octave article; the function body's indentation was lost in our copy and is restored here. The two parts live in separate files, as the comments say; b = a * 2 without a semicolon prints its value."
+    code: |
+      % Script: myscript.m
+      a = 5;
+      b = a * 2
+      % Function: myfunc.m
+      function result = myfunc(x)
+        result = x^2 + 3;
+      end
+    sources: [wiki-gnu-octave]

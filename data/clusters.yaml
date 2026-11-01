@@ -940,7 +940,7 @@
   summary: "Programs drawn as diagrams or patched dataflow graphs: LabVIEW, Prograph, Max and Pure Data."
   research_status: stub
   backlog:
-    - { name: "LabVIEW", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "LabVIEW", year: 1986, hint: "National Instruments; 1.0 \"released in late October 1986\" for the Macintosh; its graphical dataflow language is called G; NXT-G is based on it (wiki-labview). Needs a way to show a block diagram as an example." }
     - { name: "Max", year: 1988, hint: "Miller Puckette, IRCAM, work began 1985, first used for Pluton (1988); originally The Patcher; named after Max Mathews and \"a descendant of his MUSIC language\"; Cycling '74 Max/MSP 1997 (wiki-max-software). Graphical, so the example needs a patch screenshot or .maxpat text." }
     - { name: "Pure Data", year: 1996, hint: "Miller Puckette, open source (BSD), \"very similar in scope and design to Puckette's original Max\" (wiki-pure-data, wiki-max-software). Example could be a .pd file (#N canvas / #X obj lines) from Pd's own documentation." }
     - { name: "Prograph", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
@@ -966,14 +966,12 @@
   summary: "Computer algebra, numerical, statistical, optimisation and simulation languages outside the Fortran and array families."
   research_status: stub
   backlog:
-    - { name: "Maple", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Maxima", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Macsyma", hint: "MIT Project MAC computer algebra system, \"Lisp-based\" (wiki-maple); Maxima is \"based on a 1982 version of Macsyma\" (wiki-maxima). Needs year, creators and an example." }
     - { name: "GAP", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Magma", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "MuPAD", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "PARI/GP", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "FORMAC", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "GNU Octave", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Scilab", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "IDL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Yorick", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
@@ -1017,10 +1015,9 @@
   summary: "Languages for programming graphics processors and accelerators: GLSL, HLSL, WGSL, OpenCL, SYCL."
   research_status: stub
   backlog:
-    - { name: "OpenGL Shading Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "High Level Shader Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "OpenGL Shading Language", year: 2002, hint: "GLSL; OpenGL ARB, extension to OpenGL 1.4 (24 July 2002), core in OpenGL 2.0 (2004); \"syntax based on the C programming language\" (wiki-glsl). Wikipedia has no full shader; needs a verbatim example (Khronos spec or OpenGL wiki)." }
+    - { name: "High Level Shader Language", hint: "HLSL; Microsoft, for Direct3D 9; \"developed alongside the Cg ... shading language from Nvidia\", early versions \"considered identical\"; influenced by C and RenderMan Shading Language (wiki-hlsl). Needs year and a verbatim example." }
     - { name: "WebGPU Shading Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "OpenCL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "SYCL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Halide (programming language)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "C*", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }

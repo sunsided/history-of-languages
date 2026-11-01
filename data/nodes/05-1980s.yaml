@@ -2385,3 +2385,86 @@
 
       put "The factorial of ", n, " is ", factorial (n)
     sources: [wiki-turing-language]
+
+- id: maple
+  name: Maple
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1982, precision: year, note: "Wikipedia infobox; the idea \"arose from a meeting in late 1980 at the University of Waterloo\"." }
+    places: [{ institution: University of Waterloo, country: CA }]
+  creators:
+    - { name: Gaston Gonnet, role: co-creator }
+  status: active
+  tags:
+    paradigm: [multi-paradigm, procedural, functional]
+    typing: [dynamic-typing]
+    domain: [scientific-computing]
+  summary: >
+    "A symbolic and numeric computing environment as well as a multi-paradigm programming language", begun at the
+    University of Waterloo when researchers who wanted to run "the Lisp-based computer algebra system Macsyma"
+    decided to build their own. A small kernel "written in C ... provides the Maple language"; most of the
+    mathematics is written in Maple itself. Sold by Waterloo Maple (Maplesoft).
+  notes: >
+    Creators: Wikipedia names Gaston Gonnet only in a cited title ("co-creator of Maple"); Keith Geddes and others
+    of the Waterloo Symbolic Computation Group need a source before being added.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Maple_(software)" }
+  sources: [wiki-maple]
+  example:
+    title: Factorial as a typed procedure
+    language: Maple
+    note: "From Wikipedia's Maple article; the indentation was lost in our copy and is restored here, the tokens are unchanged. n::nonnegint is a type check on the parameter."
+    code: |
+      myfac := proc(n::nonnegint)
+          local out, i;
+          out := 1;
+          for i from 2 to n do
+              out := out * i
+          end do;
+          out
+      end proc;
+    sources: [wiki-maple]
+
+- id: maxima
+  name: Maxima
+  aliases: [DOE Macsyma]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1982, precision: year, note: "\"Maxima is based on a 1982 version of Macsyma, which was developed at MIT\"; maintained by Bill Schelter \"from 1982 until his death in 2001\"." }
+    places: [{ institution: MIT Project MAC, country: US }]
+  creators:
+    - { name: William Schelter, role: maintainer 1982-2001 }
+  status: active
+  tags:
+    paradigm: [functional, procedural]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    domain: [scientific-computing]
+  summary: >
+    The free descendant of MIT's Macsyma computer algebra system, "based on a 1982 version of Macsyma" and kept
+    alive by Bill Schelter; it "does not include any of the many modifications and enhancements made to the
+    commercial version of Macsyma during 1982–1999". Expressions, function definitions and commands share one
+    syntax.
+  notes: >
+    Macsyma (MIT Project MAC) is in the scientific backlog; once it is a node, Maxima is a fork_of it. The creator
+    entry assumes Wikipedia's article for Bill Schelter is titled "William Schelter"; check it.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Maxima_(software)", homepage: "https://maxima.sourceforge.io/" }
+  sources: [wiki-maxima, wiki-maple]
+  example:
+    title: Defining, expanding, factoring, solving
+    language: Maxima
+    note: "Statements listed in Wikipedia's Maxima article. $ ends a statement without printing its result, ; prints it."
+    code: |
+      f(x):=x^3$
+      f(4);
+      expand((a-b)^3);
+      factor(x^2-1);
+      solve(x^2 + a*x + 1, x);
+    sources: [wiki-maxima]

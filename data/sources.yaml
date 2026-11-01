@@ -3504,3 +3504,38 @@
   primary: false
   title: "Scratch Wiki: Block Plugin (scratchblocks text notation)"
   url: https://en.scratch-wiki.info/wiki/Block_Plugin
+- id: wiki-maple
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Maple (software)"
+  url: https://en.wikipedia.org/wiki/Maple_(software)
+- id: wiki-maxima
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Maxima (software)"
+  url: https://en.wikipedia.org/wiki/Maxima_(software)
+- id: wiki-gnu-octave
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GNU Octave"
+  url: https://en.wikipedia.org/wiki/GNU_Octave
+- id: wiki-glsl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: OpenGL Shading Language"
+  url: https://en.wikipedia.org/wiki/OpenGL_Shading_Language
+- id: wiki-hlsl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: High-Level Shader Language"
+  url: https://en.wikipedia.org/wiki/High-Level_Shader_Language
+- id: wiki-opencl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: OpenCL"
+  url: https://en.wikipedia.org/wiki/OpenCL
+- id: wiki-labview
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: LabVIEW"
+  url: https://en.wikipedia.org/wiki/LabVIEW
