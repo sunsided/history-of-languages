@@ -313,11 +313,7 @@
   backlog:
     - { name: "Objective-C++", year: 2000 }
     - { name: "C--", year: 1997 }
-    - { name: "Carbon", year: 2022 }
-    - { name: "Odin", year: 2016 }
-    - { name: "Nim", year: 2008 }
     - { name: "V", year: 2019 }
-    - { name: "Hare", year: 2022 }
 - id: c-family/compilers
   name: Compiler-defined C and C++ dialects
   parent: c-family
@@ -389,7 +385,7 @@
     - { name: "Agda", year: 2007 }
     - { name: "Idris", year: 2007 }
     - { name: "Lean", year: 2013 }
-    - { name: "Koka", year: 2012, hint: "Effect handlers; relevant to async lineage." }
+    - { name: "Koka", year: 2012, hint: "Effect handlers; relevant to async lineage. Daan Leijen (book: koka-lang.github.io). First-appearance date not yet found: check Leijen 2014 'Koka: Programming with Row Polymorphic Effect Types'." }
 - id: ml-family/lazy
   name: Lazy functional languages
   parent: ml-family
@@ -426,7 +422,6 @@
   research_status: draft
   backlog:
     - { name: "Pizza / GJ", year: 1996, hint: "Odersky & Wadler; Java generics." }
-    - { name: "Ceylon", year: 2011 }
     - { name: "C++/CX", year: 2012, hint: "C++ for the Windows Runtime; borrows ref and ^ from C++/CLI (Wikipedia: C++/CLI)." }
 - id: managed/dynamic
   name: Dynamic languages on the JVM and .NET
@@ -455,20 +450,16 @@
     - { name: "Bash", year: 1989 }
     - { name: "Zsh / fish / PowerShell / Nushell", year: 1990 }
     - { name: "sed", year: 1974 }
-    - { name: "Raku", year: 2015 }
 - id: scripting/python
   name: Python and its lineage
   parent: scripting
   research_status: draft
   backlog:
-    - { name: "Mojo", year: 2023 }
     - { name: "Cython", year: 2007 }
 - id: scripting/ruby
   name: Ruby
   parent: scripting
   research_status: stub
-  backlog:
-    - { name: "Crystal", year: 2014 }
 - id: scripting/embedded
   name: Embeddable scripting languages
   parent: scripting
@@ -493,7 +484,6 @@
     - { name: "Dart (dart2js)", year: 2011, hint: "Dart is a node; record JS compilation as a milestone." }
     - { name: "Opa", year: 2011 }
     - { name: "Imba", year: 2015 }
-    - { name: "Gleam (JS target)", year: 2016, hint: "Belongs to the modern wave; BEAM and JS targets." }
   research_questions:
     - "Find a primary source (Ashkenas or Eich) for which ES2015 features came from CoffeeScript: arrow functions, rest parameters, destructuring, classes."
     - "Elm 0.17 (2016) dropped signals and FRP for subscriptions: find the release post."
@@ -574,9 +564,8 @@
   backlog:
     - { name: "Multilisp", year: 1985, hint: "Futures in a language." }
     - { name: "Argus", year: 1983, hint: "Promises (Liskov & Shrira 1988)." }
-    - { name: "E language", year: 1997, hint: "Promise pipelining; ancestor of JS promises." }
+    - { name: "E language", year: 1997, hint: "Promise pipelining; ancestor of JS promises. Pony names E's programming model as its inspiration." }
     - { name: "Cilk", year: 1994 }
-    - { name: "Pony", year: 2015 }
     - { name: "Chapel / X10", year: 2004 }
     - { name: "Joule", year: 1994 }
 - id: concurrency/plan9
@@ -590,7 +579,6 @@
   parent: concurrency
   research_status: draft
   backlog:
-    - { name: "Gleam", year: 2019 }
     - { name: "LFE (Lisp Flavoured Erlang)", year: 2008 }
 
 # ===================== Esoteric =====================

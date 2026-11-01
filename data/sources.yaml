@@ -1709,3 +1709,171 @@
   title: "MDN: Understanding WebAssembly text format"
   url: https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Understanding_the_text_format
   checked: '2026-11-01'
+- id: wiki-vala
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Vala (programming language)"
+  url: https://en.wikipedia.org/wiki/Vala_(programming_language)
+  checked: '2026-11-01'
+- id: vala-dev
+  type: manual
+  primary: true
+  title: "Vala (official site)"
+  url: https://vala.dev/
+  checked: '2026-11-01'
+- id: wiki-nim
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Nim (programming language)"
+  url: https://en.wikipedia.org/wiki/Nim_(programming_language)
+  checked: '2026-11-01'
+- id: nim-lang-org
+  type: manual
+  primary: true
+  title: "Nim (official site)"
+  url: https://nim-lang.org/
+  checked: '2026-11-01'
+- id: nim-2019-version-1
+  type: web
+  primary: true
+  title: "Nim blog: Version 1.0 released (23 September 2019)"
+  url: https://nim-lang.org/blog/2019/09/23/version-100-released.html
+  checked: '2026-11-01'
+- id: wiki-crystal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Crystal (programming language)"
+  url: https://en.wikipedia.org/wiki/Crystal_(programming_language)
+  checked: '2026-11-01'
+- id: crystal-lang-org
+  type: manual
+  primary: true
+  title: "Crystal (official site)"
+  url: https://crystal-lang.org/
+  checked: '2026-11-01'
+- id: crystal-2021-1-0
+  type: web
+  primary: true
+  title: "Crystal blog: Crystal 1.0, what to expect (22 March 2021)"
+  url: https://crystal-lang.org/2021/03/22/crystal-1.0-what-to-expect/
+  checked: '2026-11-01'
+- id: wiki-pony
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Pony (programming language)"
+  url: https://en.wikipedia.org/wiki/Pony_(programming_language)
+  checked: '2026-11-01'
+- id: ponylang-io
+  type: manual
+  primary: true
+  title: "Pony (official site)"
+  url: https://www.ponylang.io/
+  checked: '2026-11-01'
+- id: clebsch-2015-deny-capabilities
+  type: paper
+  primary: true
+  title: "Clebsch, Drossopoulou, Blessing, McNeil: Deny Capabilities for Safe, Fast Actors (AGERE! 2015)"
+  url: https://www.ponylang.io/media/papers/fast-cheap.pdf
+  checked: '2026-11-01'
+- id: wiki-gleam
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Gleam (programming language)"
+  url: https://en.wikipedia.org/wiki/Gleam_(programming_language)
+  checked: '2026-11-01'
+- id: gleam-run
+  type: manual
+  primary: true
+  title: "Gleam (official site)"
+  url: https://gleam.run/
+  checked: '2026-11-01'
+- id: gleam-2024-v1
+  type: web
+  primary: true
+  title: "Louis Pilfold: Gleam version 1 (4 March 2024)"
+  url: https://gleam.run/news/gleam-version-1/
+  checked: '2026-11-01'
+- id: devault-2022-announcing-hare
+  type: web
+  primary: true
+  title: "Drew DeVault: Announcing the Hare programming language (25 April 2022)"
+  url: https://harelang.org/blog/2022-04-25-announcing-hare/
+  checked: '2026-11-01'
+- id: harelang-org
+  type: manual
+  primary: true
+  title: "Hare (official site)"
+  url: https://harelang.org/
+  checked: '2026-11-01'
+- id: wiki-carbon
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Carbon (programming language)"
+  url: https://en.wikipedia.org/wiki/Carbon_(programming_language)
+  checked: '2026-11-01'
+- id: carbon-lang-readme
+  type: manual
+  primary: true
+  title: "Carbon Language README (GitHub)"
+  url: https://github.com/carbon-language/carbon-lang
+  checked: '2026-11-01'
+- id: carbon-lang-snippets
+  type: manual
+  primary: true
+  title: "Carbon Language: code snippets (docs/images/snippets.md)"
+  url: https://github.com/carbon-language/carbon-lang/blob/trunk/docs/images/snippets.md
+  checked: '2026-11-01'
+- id: wiki-mojo
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Mojo (programming language)"
+  url: https://en.wikipedia.org/wiki/Mojo_(programming_language)
+  checked: '2026-11-01'
+- id: mojo-why
+  type: manual
+  primary: true
+  title: "Modular: Why Mojo"
+  url: https://docs.modular.com/mojo/why-mojo
+  checked: '2026-11-01'
+- id: mojo-manual
+  type: manual
+  primary: true
+  title: "Mojo Manual"
+  url: https://mojolang.org/docs/manual/
+  checked: '2026-11-01'
+- id: wiki-ceylon
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Ceylon (programming language)"
+  url: https://en.wikipedia.org/wiki/Ceylon_(programming_language)
+  checked: '2026-11-01'
+- id: eclipse-ceylon
+  type: web
+  primary: false
+  title: "Eclipse Foundation: Eclipse Ceylon project (archived)"
+  url: https://projects.eclipse.org/projects/technology.ceylon
+  checked: '2026-11-01'
+- id: wiki-raku
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Raku (programming language)"
+  url: https://en.wikipedia.org/wiki/Raku_(programming_language)
+  checked: '2026-11-01'
+- id: raku-org
+  type: manual
+  primary: true
+  title: "Raku (official site)"
+  url: https://raku.org/
+  checked: '2026-11-01'
+- id: wiki-odin
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Odin (programming language)"
+  url: https://en.wikipedia.org/wiki/Odin_(programming_language)
+  checked: '2026-11-01'
+- id: odin-lang-org
+  type: manual
+  primary: true
+  title: "Odin (official site)"
+  url: https://odin-lang.org/
+  checked: '2026-11-01'

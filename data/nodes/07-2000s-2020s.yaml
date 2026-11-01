@@ -1559,3 +1559,566 @@
       }
       logData(data)
     sources: [rescript-manual-variant]
+
+- id: vala
+  name: Vala
+  aliases: [Genie]
+  kind: language
+  category: general
+  cluster: c-family
+  origin:
+    first_appeared: { year: 2006, date: "2006-05", precision: exact, note: "Compiler finished in May 2006 (Wikipedia); first release 0.0.1 on 15 July 2006." }
+  creators:
+    - { name: Jürg Billeter, role: conceived it; implementer }
+    - { name: Raffaele Sandrini, role: implementer }
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative]
+    typing: [static-typing, type-inference]
+    memory: [reference-counting]
+    features: [properties, lambdas, generics, self-hosting]
+  milestones:
+    - { version: "0.1.0", year: 2007, introduces: [self-hosting], summary: "Compiler self-hosted (July 2007), after bootstrapping in C." }
+    - { version: "0.56", year: 2022, summary: "Long-term-support branch, still current in 2026; no 1.0 yet." }
+  summary: >
+    C#-like syntax for the GNOME/GObject world: the compiler translates Vala into C that uses the GObject
+    type system, so classes, signals and properties cost nothing at run time and libraries stay usable from
+    C. The designers "liked the syntax and semantics of C# but did not want to use Mono". Genie (2008) is a
+    Python-like syntax for the same compiler.
+  relations:
+    - { type: influenced_by, to: csharp, weight: strong, confidence: high, sources: [wiki-vala], note: "\"They liked the syntax and semantics of C# but did not want to use Mono\"." }
+    - { type: influenced_by, to: java, weight: weak, confidence: medium, sources: [vala-dev] }
+    - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [wiki-vala], note: "Compiles to C and calls C libraries directly." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Vala_(programming_language)", homepage: "https://vala.dev" }
+  sources: [wiki-vala, vala-dev]
+  example:
+    title: A GTK application class
+    language: Vala 0.56
+    note: "Excerpt from the example on vala.dev (main and the closing brace omitted). The class derives from a GObject class; btn.clicked.connect hooks a method to a signal and win.child sets a property. Built with valac --pkg gtk4."
+    code: |
+      public class ExampleApp : Gtk.Application {
+        public ExampleApp () {
+          Object (application_id: "com.example.App");
+        }
+
+        public override void activate () {
+          var win = new Gtk.ApplicationWindow (this);
+
+          var btn = new Gtk.Button.with_label ("Hello World");
+          btn.clicked.connect (win.close);
+
+          win.child = btn;
+          win.present ();
+        }
+    sources: [vala-dev]
+
+- id: nim
+  name: Nim
+  aliases: [Nimrod]
+  kind: language
+  category: general
+  cluster: c-family
+  origin:
+    began: { year: 2005, precision: year, note: "Development started in 2005 under the name Nimrod." }
+    first_appeared: { year: 2008, precision: year, note: "Made public in 2008." }
+  creators:
+    - { name: Andreas Rumpf, role: designer and original implementer }
+  status: active
+  tags:
+    paradigm: [multi-paradigm, imperative, procedural, object-oriented, functional]
+    typing: [static-typing, type-inference]
+    memory: [reference-counting, garbage-collection]
+    features: [macros, templates, generics, offside-rule, compile-time-evaluation, self-hosting]
+  milestones:
+    - { version: "0.10.2", year: 2014, summary: "Renamed from Nimrod to Nim (December 2014)." }
+    - { version: "1.0.0", year: 2019, summary: "23 September 2019: a stable base with backwards compatibility within 1.x." }
+    - { version: "2.0.0", year: 2023, summary: "ARC/ORC memory management becomes the default (1 August 2023)." }
+  summary: >
+    Python-like indentation over a statically typed systems language that compiles to C, C++ or
+    JavaScript. It combines "successful concepts from mature languages like Python, Ada and Modula" with
+    Lisp-style macros working on the syntax tree, compile-time evaluation and uniform function call syntax.
+  relations:
+    - { type: influenced_by, to: python, aspects: [offside-rule], weight: strong, confidence: high, sources: [nim-lang-org, wiki-nim] }
+    - { type: influenced_by, to: ada, weight: moderate, confidence: high, sources: [nim-lang-org, wiki-nim], note: "Its creator says Nim combines the best parts of Ada's type system (Wikipedia)." }
+    - { type: influenced_by, to: modula-3, weight: moderate, confidence: medium, sources: [nim-lang-org, wiki-nim] }
+    - { type: influenced_by, to: lisp, aspects: [macros], weight: moderate, confidence: medium, sources: [wiki-nim] }
+    - { type: influenced_by, to: oberon, weight: weak, confidence: medium, sources: [wiki-nim] }
+    - { type: implemented_in, to: pascal, weight: moderate, confidence: high, sources: [wiki-nim], note: "The first compiler (2005–2008) was written in Pascal with Free Pascal; self-hosted since 2008." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Nim_(programming_language)", homepage: "https://nim-lang.org" }
+  sources: [wiki-nim, nim-lang-org, nim-2019-version-1]
+  example:
+    title: Uniform function call syntax
+    language: Nim
+    note: "From the Wikipedia Nim article: seven equivalent ways to call echo. Any procedure can be called as a method on its first argument, with or without parentheses."
+    code: |
+      echo "hello world"
+      echo("hello world")
+      "hello world".echo()
+      "hello world".echo
+      echo("hello", " world")
+      "hello".echo(" world")
+      "hello".echo " world"
+    sources: [wiki-nim]
+
+- id: crystal
+  name: Crystal
+  aliases: [Joy]
+  kind: language
+  category: general
+  cluster: scripting/ruby
+  origin:
+    began: { year: 2011, date: "2011-06", precision: exact, note: "Work began in June 2011, first under the name Joy." }
+    first_appeared: { year: 2014, date: "2014-06-19", precision: exact, note: "Crystal 0.1.0, the first official version." }
+    places: [{ institution: Manas Technology Solutions }]
+  creators:
+    - { name: Ary Borenszweig, role: designer }
+    - { name: Juan Wajnerman, role: designer }
+    - { name: Brian Cardiff, role: designer }
+  status: active
+  tags:
+    paradigm: [object-oriented, multi-paradigm]
+    typing: [static-typing, type-inference, null-safety]
+    memory: [garbage-collection]
+    concurrency: [fibers, channels]
+    features: [macros, self-hosting]
+  milestones:
+    - { version: "0.1.0", year: 2014, summary: "First official release." }
+    - { version: "1.0", year: 2021, summary: "March 2021: the stability promise; deprecated features removed." }
+  summary: >
+    Ruby's syntax with static types and native code: global type inference means most programs need no
+    annotations, union types with flow typing make nil explicit, and LLVM compiles it ahead of time.
+    Concurrency uses fibers and channels after Go.
+  relations:
+    - { type: influenced_by, to: ruby, weight: strong, confidence: high, sources: [crystal-lang-org, wiki-crystal], note: "\"With syntax inspired by Ruby\"." }
+    - { type: influenced_by, to: go, aspects: [fibers, channels], weight: moderate, confidence: high, sources: [wiki-crystal], note: "\"lightweight fibers and channels ... inspired by Go\"." }
+    - { type: implemented_in, to: ruby, weight: moderate, confidence: high, sources: [wiki-crystal], note: "The compiler was written in Ruby until it became self-hosting in November 2013." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Crystal_(programming_language)", homepage: "https://crystal-lang.org" }
+  sources: [wiki-crystal, crystal-lang-org, crystal-2021-1-0]
+  example:
+    title: Flow typing over a nilable union
+    language: Crystal
+    note: "From crystal-lang.org. gets returns String | Nil; the compiler narrows the type in each branch of the case, so message.upcase only compiles where nil is ruled out."
+    code: |
+      loop do
+        case message = gets # type is `String | Nil`
+        when Nil
+          break
+        when ""
+          puts "Please enter a message"
+        else
+          # In this branch, `message` cannot be `Nil` so we can safely call `String#upcase`
+          puts message.upcase
+        end
+      end
+    sources: [crystal-lang-org]
+
+- id: pony
+  name: Pony
+  kind: language
+  category: general
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 2015, date: "2015-04-28", precision: exact, note: "First public release, ponyc 0.1.0." }
+    places: [{ institution: Imperial College London, country: GB }, { institution: Causality Ltd. }]
+  creators:
+    - { name: Sylvan Clebsch, role: creator (PhD student at Imperial College London) }
+  status: active
+  tags:
+    paradigm: [object-oriented, concurrent]
+    typing: [static-typing]
+    memory: [garbage-collection]
+    concurrency: [actors, message-passing]
+  summary: >
+    An actor language whose type system rules out data races: "reference capabilities" on every reference
+    say whether data may be read, written or shared, so mutable data can be passed between actors by
+    reference safely. Created by Sylvan Clebsch at Imperial College London; compiled ahead of time with LLVM.
+  notes: >
+    Wikipedia names E's programming model as the inspiration (E is in the concurrency backlog) and lists
+    Microsoft's Project Verona as influenced. The design paper is Clebsch, Drossopoulou, Blessing and
+    McNeil, "Deny Capabilities for Safe, Fast Actors" (AGERE! 2015). Not yet 1.0.
+  relations:
+    - { type: influenced_by, to: actor-model, aspects: [actors, message-passing], weight: strong, confidence: high, sources: [clebsch-2015-deny-capabilities], note: "The paper's starting point: \"Combining the actor-model with shared memory for performance is efficient but can introduce data-races.\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pony_(programming_language)", homepage: "https://www.ponylang.io" }
+  sources: [wiki-pony, ponylang-io, clebsch-2015-deny-capabilities]
+  example:
+    title: An actor with a behaviour
+    language: Pony
+    note: "Excerpt from ponylang.io. A be (behaviour) is an asynchronous message handler; String val is a reference capability: an immutable string that may be shared between actors."
+    code: |
+      actor Friend
+        let _name: String val
+
+        new create(name: String val) =>
+          _name = name
+
+        be invite(party: Party) =>
+          // friends with short names are too busy
+          let attending = _name.size() > 3
+          party.rsvp(_name, attending)
+    sources: [ponylang-io]
+
+- id: gleam
+  name: Gleam
+  kind: language
+  category: general
+  cluster: concurrency/beam
+  origin:
+    began: { year: 2016, date: "2016-06-13", precision: exact, note: "Created in 2016 by Louis Pilfold for a conference talk, later redesigned (Wikipedia; the infobox dates it 13 June 2016)." }
+    first_appeared: { year: 2019, date: "2019-04-15", precision: exact, note: "First numbered version." }
+  creators:
+    - { name: Louis Pilfold, role: designer and developer }
+  status: active
+  tags:
+    paradigm: [functional, concurrent]
+    typing: [static-typing, type-inference]
+    concurrency: [actors, message-passing]
+    features: [compiles-to-javascript, algebraic-data-types, pattern-matching]
+  milestones:
+    - { version: "0.16", year: 2021, introduces: [compiles-to-javascript], summary: "JavaScript target alongside Erlang." }
+    - { version: "1.0.0", year: 2024, summary: "4 March 2024, first stable release; semantic versioning from here." }
+  summary: >
+    A statically typed functional language for the Erlang VM, with "a type system inspired by languages such
+    as Elm, OCaml, and Rust" and a C-family syntax. It compiles to Erlang or to JavaScript, and its
+    toolchain is written in Rust.
+  relations:
+    - { type: influenced_by, to: erlang, aspects: [actors, message-passing], weight: strong, confidence: high, sources: [gleam-run, wiki-gleam], note: "Runs on the Erlang virtual machine and compiles to Erlang source." }
+    - { type: influenced_by, to: elm, weight: moderate, confidence: high, sources: [gleam-2024-v1] }
+    - { type: influenced_by, to: ocaml, weight: moderate, confidence: high, sources: [gleam-2024-v1] }
+    - { type: influenced_by, to: rust, weight: moderate, confidence: high, sources: [gleam-2024-v1] }
+    - { type: influenced_by, to: elixir, weight: weak, confidence: medium, sources: [wiki-gleam] }
+    - { type: implemented_in, to: rust, weight: strong, confidence: high, sources: [wiki-gleam] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Gleam_(programming_language)", homepage: "https://gleam.run" }
+  sources: [wiki-gleam, gleam-run, gleam-2024-v1]
+  example:
+    title: use and case
+    language: Gleam 1.0
+    note: "From the Gleam v1 announcement. use flattens callbacks (each use line takes the rest of the block as a function); result.try chains steps that may fail, and case matches on the Result."
+    code: |
+      import gleam/json
+      import gleam/result.{try}
+      import my_app/person
+      import wisp.{type Request, type Response}
+
+      pub fn handle_request(req: Request, ctx: Context) -> Response {
+        use json <- wisp.require_json(req)
+
+        let result = {
+          use data <- try(person.decode(json))
+          use row <- try(person.insert(ctx.db, data))
+          Ok(person.to_json(row))
+        }
+
+        case result {
+          Ok(json) -> wisp.json_response(json, 201)
+          Error(_) -> wisp.unprocessable_entity()
+        }
+      }
+    sources: [gleam-2024-v1]
+
+- id: hare
+  name: Hare
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    began: { year: 2019, precision: circa, note: "Developed in private for about two and a half years before the announcement." }
+    first_appeared: { year: 2022, date: "2022-04-25", precision: exact, note: "Announced by Drew DeVault." }
+  creators:
+    - { name: Drew DeVault, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing]
+    memory: [manual-memory]
+    features: [minimalism]
+  summary: >
+    A small systems language that aims to be simpler than C: "most similar to C, and almost all programs
+    written in C can also be written in Hare". It has tagged unions, error handling with ! and ?, no
+    libc by default, and uses the small QBE compiler backend instead of LLVM. The design is meant to freeze
+    at 1.0.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [devault-2022-announcing-hare] }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://harelang.org" }
+  sources: [devault-2022-announcing-hare, harelang-org]
+  example:
+    title: Hello in five scripts
+    language: Hare
+    note: "From harelang.org. The ! after fmt::println asserts that the I/O error cannot happen; without it the error must be handled."
+    code: |
+      use fmt;
+
+      export fn main() void = {
+          const greetings = [
+              "Hello, world!",
+              "¡Hola Mundo!",
+              "Γειά σου Κόσμε!",
+              "Привіт, світе!",
+              "こんにちは世界！",
+          ];
+          for (let greeting .. greetings) {
+              fmt::println(greeting)!;
+          };
+      };
+    sources: [harelang-org]
+
+- id: carbon
+  name: Carbon
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    first_appeared: { year: 2022, date: "2022-07", precision: exact, note: "Started in Toronto in July 2022; presented at CppNorth 2022 (\"Carbon Language: An experimental successor to C++\", Chandler Carruth). No released version yet: 0.1 is planned for late 2026 at the earliest." }
+    places: [{ institution: Google, city: Toronto, country: CA }]
+  creators:
+    - { name: Google, role: designer (company) }
+  status: active
+  tags:
+    paradigm: [imperative, object-oriented, generic-programming]
+    typing: [static-typing, type-inference]
+    features: [generics, c-interop]
+  summary: >
+    An experimental "successor language" to C++ from Google: rather than evolving C++ incrementally, a new
+    language with bidirectional, zero-overhead interoperability with existing C++ code, aiming for
+    C++-level performance with modern generics and memory safety later. Not ready for use as of 2026.
+  notes: >
+    Wikipedia's infobox credits Google as designer; Chandler Carruth's role is attested only by the talk
+    title and citation metadata, so he is not listed as a creator yet.
+  relations:
+    - { type: successor_of, to: cpp, weight: strong, confidence: high, sources: [carbon-lang-readme], note: "\"Carbon is fundamentally a successor language approach, rather than an attempt to incrementally evolve C++.\"" }
+    - { type: influenced_by, to: rust, weight: moderate, confidence: medium, sources: [wiki-carbon] }
+    - { type: influenced_by, to: swift, weight: weak, confidence: medium, sources: [wiki-carbon] }
+    - { type: influenced_by, to: kotlin, weight: weak, confidence: medium, sources: [wiki-carbon] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Carbon_(programming_language)", homepage: "https://github.com/carbon-language/carbon-lang" }
+  sources: [wiki-carbon, carbon-lang-readme]
+  example:
+    title: The look and feel
+    language: Carbon (design sketch)
+    note: "Illustrative: from the project's snippets page, which the README calls \"hypothetical and meant to show the look and feel of the language\". Not compiled."
+    code: |
+      // Carbon:
+      package Geometry;
+      import Math;
+
+      class Circle {
+        var r: f32;
+      }
+
+      fn PrintTotalArea(circles: slice(Circle)) {
+        var area: f32 = 0;
+        for (c: Circle in circles) {
+          area += Math.Pi * c.r * c.r;
+        }
+        Print("Total area: {0}", area);
+      }
+    sources: [carbon-lang-snippets]
+
+- id: mojo
+  name: Mojo
+  kind: language
+  category: general
+  cluster: scripting/python
+  origin:
+    began: { year: 2022, precision: year, note: "Public change logs go back to 2022 (Wikipedia)." }
+    first_appeared: { year: 2023, date: "2023-05", precision: exact, note: "First publicly testable version, in a hosted playground." }
+    places: [{ institution: Modular Inc. }]
+  creators:
+    - { name: Chris Lattner, role: designer }
+  status: active
+  tags:
+    paradigm: [multi-paradigm, imperative, object-oriented]
+    typing: [static-typing, type-inference]
+    memory: [ownership-borrowing]
+    features: [compile-time-evaluation, generics]
+    domain: [artificial-intelligence, hpc]
+  milestones:
+    - { version: "1.0.0", year: 2026, summary: "11 August 2026; compiler open-sourced on 18 August 2026." }
+  summary: >
+    "A member of the Python family" for AI and accelerator programming: Python syntax with static types,
+    ownership, compile-time metaprogramming and SIMD, built directly on the MLIR compiler framework by Chris
+    Lattner (LLVM, Swift). Its early goal of being a superset of Python was later dropped or postponed.
+  notes: >
+    Conflict: Modular's "Why Mojo" page states the long-term goal of "a superset of Python"; Wikipedia says
+    this goal was abandoned or postponed indefinitely by March 2026, citing a Modular forum post not yet read.
+  relations:
+    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [mojo-why], note: "\"A member of the Python family\"." }
+    - { type: influenced_by, to: swift, weight: moderate, confidence: medium, sources: [wiki-mojo] }
+    - { type: influenced_by, to: rust, aspects: [ownership-borrowing], weight: moderate, confidence: medium, sources: [wiki-mojo] }
+    - { type: influenced_by, to: cpp, weight: weak, confidence: medium, sources: [wiki-mojo] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Mojo_(programming_language)", homepage: "https://mojolang.org" }
+  sources: [wiki-mojo, mojo-why, mojo-manual]
+  example:
+    title: Typed functions and structs
+    language: Mojo 1.x
+    note: "Both pieces are from the Mojo manual (Functions; Structs). Python syntax with required types on def arguments; @fieldwise_init generates the constructor."
+    code: |
+      def max(a: Int, b: Int) -> Int:
+          return a if a > b else b
+
+      @fieldwise_init
+      struct MyPair:
+          var first: Int
+          var second: Int
+
+          def get_sum(self) -> Int:
+              return self.first + self.second
+    sources: [mojo-manual]
+
+- id: ceylon
+  name: Ceylon
+  kind: language
+  category: general
+  cluster: managed
+  origin:
+    first_appeared: { year: 2011, date: "2011-04", precision: exact, note: "Revealed by Red Hat in April 2011 (The Register, 13 April 2011, cited by Wikipedia); first milestone M1 on 20 December 2011." }
+    places: [{ institution: Red Hat }]
+  creators:
+    - { name: Gavin King, role: designer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented, functional]
+    typing: [static-typing, type-inference, null-safety]
+    features: [module-system, generics]
+  milestones:
+    - { version: "1.0.0", year: 2013, summary: "13 November 2013." }
+    - { version: "1.2.0", year: 2015, summary: "Constructors, including constructor-based enumerations." }
+    - { version: "1.3.3", year: 2017, summary: "Last release (21 August 2017)." }
+  summary: >
+    Red Hat's attempt at a cleaner Java for the JVM and JavaScript, with Java-like syntax and a type system
+    built on union and intersection types (A|B, A&B), which also made null an ordinary type. Donated to the
+    Eclipse Foundation in 2017, it stalled by 2020 and was archived in 2023.
+  relations:
+    - { type: influenced_by, to: java, weight: strong, confidence: high, sources: [wiki-ceylon], note: "\"heavily influenced by Java's syntax\"." }
+    - { type: influenced_by, to: scala, weight: moderate, confidence: medium, sources: [wiki-ceylon] }
+    - { type: influenced_by, to: smalltalk, weight: weak, confidence: medium, sources: [wiki-ceylon] }
+    - { type: influenced_by, to: ml, weight: weak, confidence: medium, sources: [wiki-ceylon] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ceylon_(programming_language)", homepage: "https://projects.eclipse.org/projects/technology.ceylon" }
+  sources: [wiki-ceylon, eclipse-ceylon]
+  example:
+    title: Union types and flow typing
+    language: Ceylon 1.3
+    note: "From the Wikipedia Ceylon article. Integer|String is a union type; inside the is-branch the compiler narrows input to Integer. Double backticks interpolate into strings."
+    code: |
+      shared void integerOrString(Integer|String input) {
+          if (is Integer input) {
+              print("Got the integer ``input``");
+          } else {
+              print("Got the string '``input``'");
+          }
+      }
+    sources: [wiki-ceylon]
+
+- id: raku
+  name: Raku
+  aliases: [Perl 6]
+  kind: language
+  category: general
+  cluster: scripting/unix
+  origin:
+    began: { year: 2000, date: "2000-07-19", precision: exact, note: "Announced by Larry Wall in his State of the Onion talk at the Perl Conference, 19 July 2000." }
+    first_appeared: { year: 2015, date: "2015-12-25", precision: exact, note: "First stable version of the language (Wikipedia infobox)." }
+  creators:
+    - { name: Larry Wall, role: designer }
+  status: active
+  tags:
+    paradigm: [multi-paradigm, object-oriented, functional, procedural]
+    typing: [gradual-typing, dynamic-typing]
+    concurrency: [futures-promises]
+    features: [regular-expressions, multiple-dispatch, lazy-evaluation]
+  milestones:
+    - { version: "6.d", year: 2018, summary: "\"Diwali\"; Wikipedia's infobox dates the stable release to 24 October 2020." }
+    - { version: "Raku", year: 2019, summary: "Perl 6 renamed Raku (October 2019)." }
+  summary: >
+    Begun in 2000 as Perl 6, the redesign of Perl, it took 15 years and became a separate member of the Perl
+    family, renamed Raku in 2019. It has grammars as a built-in way to write parsers, gradual typing,
+    multiple dispatch, lazy lists and junctions. Compatibility with Perl was not a goal.
+  relations:
+    - { type: influenced_by, to: perl, weight: strong, confidence: high, sources: [wiki-raku], note: "\"a member of the Perl family\"; \"Compatibility with Perl was not a goal\"." }
+    - { type: influenced_by, to: haskell, weight: moderate, confidence: medium, sources: [wiki-raku] }
+    - { type: influenced_by, to: ruby, weight: weak, confidence: medium, sources: [wiki-raku] }
+    - { type: influenced_by, to: smalltalk, weight: weak, confidence: medium, sources: [wiki-raku] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Raku_(programming_language)", homepage: "https://raku.org" }
+  sources: [wiki-raku, raku-org]
+  example:
+    title: Grammars
+    language: Raku
+    note: "From raku.org. A grammar is a class of named regexes (rule, token); parse returns a match tree, shown in the OUTPUT comments."
+    code: |
+      grammar Parser {
+          rule  TOP  { I <love> <lang> }
+          token love { '♥' | love }
+          token lang { < Raku Rust Go Python Ruby TypeScript PHP > }
+      }
+
+      say Parser.parse: 'I ♥ Raku';
+      # OUTPUT: ｢I ♥ Raku｣ love => ｢♥｣ lang => ｢Raku｣
+
+      say Parser.parse: 'I love Python';
+      # OUTPUT: ｢I love Python｣ love => ｢love｣ lang => ｢Python｣
+    sources: [raku-org]
+
+- id: odin
+  name: Odin
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    first_appeared: { year: 2016, date: "2016-07", precision: exact, note: "Development began in July 2016; no 1.0 yet, dated monthly releases." }
+  creators:
+    - { name: Bill Hall, role: "designer (\"Ginger Bill\")" }
+  status: active
+  tags:
+    paradigm: [imperative, procedural, data-driven]
+    typing: [static-typing]
+    memory: [manual-memory]
+    features: [generics]
+  summary: >
+    "The C alternative for the Joy of Programming": a systems language for data-oriented programming, with
+    Pascal/Go-flavoured declarations (name :: proc()), defer, an implicit context for allocators, and
+    array programming built in. Used notably in game development.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [wiki-odin, odin-lang-org], note: "\"created to serve as an alternative to C\"." }
+    - { type: influenced_by, to: go, weight: moderate, confidence: medium, sources: [wiki-odin] }
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [wiki-odin] }
+    - { type: influenced_by, to: oberon, weight: weak, confidence: medium, sources: [wiki-odin], note: "The infobox names Oberon-2." }
+    - { type: influenced_by, to: newsqueak, weight: weak, confidence: medium, sources: [wiki-odin] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Odin_(programming_language)", homepage: "https://odin-lang.org" }
+  sources: [wiki-odin, odin-lang-org]
+  example:
+    title: defer
+    language: Odin
+    note: "From odin-lang.org. defer schedules delete(nums) to run when main returns; deferred statements run in reverse order of declaration."
+    code: |
+      package main
+
+      import "core:fmt"
+
+      main :: proc() {
+          nums := make([]int, 3)
+          defer delete(nums) // runs when main returns
+
+          nums[0], nums[1], nums[2] = 1, 2, 3
+          fmt.println(nums)
+      }
+    sources: [odin-lang-org]
