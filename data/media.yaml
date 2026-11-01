@@ -1314,6 +1314,34 @@
   source_url: https://commons.wikimedia.org/wiki/File:Wadler2.JPG
   commons_file: File:Wadler2.JPG
   checked: '2026-11-01'
+- id: person-andi-gutmans
+  file: assets/media/person-andi-gutmans.jpg
+  kind: person
+  person: Andi Gutmans
+  nodes:
+  - php
+  caption: Andi Gutmans, Taken on 20 June 2015, 00:18:55
+  date: Taken on 20 June 2015, 00:18:55
+  credit: Peter Adams
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:AndiGutmans18045.commons.jpg
+  commons_file: File:AndiGutmans18045.commons.jpg
+  checked: '2026-11-01'
+- id: person-zeev-suraski
+  file: assets/media/person-zeev-suraski.jpg
+  kind: person
+  person: Zeev Suraski
+  nodes:
+  - php
+  caption: Zeev Suraski, 2010-04-27
+  date: '2010-04-27'
+  credit: Léo Lefebvre
+  license: CC BY 3.0
+  license_url: https://creativecommons.org/licenses/by/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:ZeevSuraski.jpg
+  commons_file: File:ZeevSuraski.jpg
+  checked: '2026-11-01'
 - id: person-rasmus-lerdorf
   file: assets/media/person-rasmus-lerdorf.jpg
   kind: person
