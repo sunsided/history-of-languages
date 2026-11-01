@@ -441,3 +441,120 @@
                  IF GROSS-PAY IS GREATER THAN 1000
                      SUBTRACT TAX FROM GROSS-PAY.
                  ADD GROSS-PAY TO TOTAL-PAYROLL.
+
+- id: rpg
+  name: RPG
+  aliases: [Report Program Generator, IBM RPG, RPG II, RPG III, RPG IV, ILE RPG, RPG/400]
+  kind: language
+  category: business
+  cluster: business
+  origin:
+    first_appeared: { year: 1959, precision: year, note: "\"introduced in 1959 for the IBM 1401\"." }
+    places: [{ institution: IBM, country: US }]
+  status: active
+  tags:
+    paradigm: [declarative, procedural]
+    typing: [static-typing]
+    features: [records]
+    domain: [business-data-processing]
+  milestones:
+    - { version: RPG II, year: 1969, summary: "Introduced \"about 1969\" with the System/3; later on System/32, /34 and /36." }
+    - { version: RPG III, year: 1979, summary: "For the System/38 (1979) and later the AS/400; it \"significantly departed from the original language\"." }
+    - { version: RPG IV, year: 1994, summary: "Also called ILE RPG, with OS/400 V3R2." }
+    - { version: "V5R1 free-form", year: 2001, summary: "Free-format calculation specifications." }
+    - { version: "7.1 TR7", year: 2013, summary: "Whole programs in free form, without /free and /end-free." }
+  summary: >
+    IBM's report program generator, made so that tabulating-machine technicians who had wired plugboards could
+    move to the 1401: "Instead of writing a particular program for a report, the user states his problem and its
+    solution" on fixed-column specification sheets, and an implicit program cycle reads, calculates and prints.
+    It evolved through RPG II, III and IV into a free-form procedural language still used on IBM i.
+  notes: >
+    Influenced by 9PAC and FARGO (Wikipedia infobox), neither yet a node; FARGO was "the predecessor to RPG on the
+    IBM 1401". FOLDOC credits Wilf Hey with the work that led to RPG; not confirmed, so no creator is listed.
+    The infobox also lists dialects Baby/36, Baby/400, Lattice RPG and VAX RPG II.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IBM_RPG" }
+  sources: [wiki-ibm-rpg, ibm-1964-1401-rpg]
+  example:
+    title: Fully free-form RPG IV with embedded SQL
+    language: RPG IV
+    year: 2013
+    note: "From Wikipedia: a program called with a customer number that returns name and address, written completely in free form as allowed from 7.1 TR7. The fetched text lost indentation; it is ours. The original fixed-column specification sheets could not be recovered from the fetch."
+    code: |
+      ctl-opt main(GetCustInf);
+      dcl-ds ARMSTF1 ext end-ds;
+      dcl-proc GetCustInf;
+        dcl-pi *n extpgm('CUS001');
+          inCusNo like(arCNum) const;
+          outName like(arName);
+          outAddr1 like(arAdd1);
+          outAddr2 like(arAdd2);
+          outCity like(arCity);
+          outState like(arStte);
+          outZip like(arZip);
+        end-pi;
+        exec sql select arName, arAdd1, arAdd2, arCity, arStte, arZip
+                 into :outName, :outAddr1, :outAddr2, :outCity, :outState,
+                      :outZip
+                 from ARMSTF1
+                 where arCNum = :inCusNo
+                 fetch first 1 row only
+                 with CS
+                 use currently committed;
+        return;
+      end-proc;
+    sources: [wiki-ibm-rpg]
+
+- id: jovial
+  name: JOVIAL
+  aliases: [Jules' Own Version of the International Algebraic Language, J3, J73]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    began: { year: 1958, precision: circa, note: "A late-1958 SDC memo, \"OVIAL - Our Version of the International Algebraic Language\"; renamed JOVIAL around January 1959 and first documented April 1959 (Schwartz 1978)." }
+    first_appeared: { year: 1960, date: "1960-01", precision: exact, note: "The J0 interpreter was in use in January 1960; the J-1 compiler was available to compiler developers in fall 1959 (Schwartz 1978)." }
+    places: [{ institution: System Development Corporation, country: US }]
+  creators:
+    - { name: Jules Schwartz, role: designer }
+    - { name: Erwin Book, role: "1958 study" }
+    - { name: Harvey Bratman, role: "1958 study" }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing]
+    features: [block-structure, records]
+    domain: [embedded, safety-critical]
+  milestones:
+    - { version: J2, year: 1961, summary: "Delivered March 1961 for the IBM 7090." }
+    - { version: MIL-STD-1589, year: 1973, introduces: [standardization], summary: "\"JOVIAL was standardized during 1973 with MIL-STD-1589\"." }
+    - { version: MIL-STD-1589C, year: 1984, summary: "Revised standard." }
+  summary: >
+    The US Air Force's embedded and command-and-control language, created at SDC for the SACCS project and
+    "based on ALGOL 58": its name is a joke on Jules Schwartz's own version of the International Algebraic
+    Language. Used for avionics and other mission-critical systems for decades; dialects J3, J3B-2 and J73.
+  relations:
+    - { type: influenced_by, to: algol-58, weight: strong, confidence: high, sources: [schwartz-1978-jovial, wiki-jovial], note: "\"the International Algebraic Language, which served as the language architectural base\"; SAGE contributed experience of large systems." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/JOVIAL" }
+  sources: [schwartz-1978-jovial, wiki-jovial]
+  example:
+    title: Table lookup in J73
+    language: JOVIAL J73
+    note: "From Wikipedia, citing the Computer Programming Manual for the JOVIAL (J73) Language. ITEM declares a scalar (U unsigned, F floating); a single statement after IF or FOR needs no BEGIN. Indentation was lost in fetching and is ours."
+    code: |
+      PROC RETRIEVE(CODE:VALUE);
+        BEGIN
+        ITEM CODE U;
+        ITEM VALUE F;
+        VALUE = -99999.;
+        FOR I:0 BY 1 WHILE I<1000;
+          IF CODE = TABCODE(I);
+            BEGIN
+            VALUE = TABVALUE(I);
+            EXIT;
+            END
+        END
+    sources: [wiki-jovial]

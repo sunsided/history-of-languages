@@ -2249,3 +2249,92 @@
   year: 2012
   url: https://www.cs.kent.ac.uk/people/staff/dat/tfp12/tfp12.pdf
   checked: '2026-11-01'
+- id: wiki-jovial
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: JOVIAL'
+  url: https://en.wikipedia.org/wiki/JOVIAL
+  checked: '2026-11-01'
+- id: schwartz-1978-jovial
+  type: paper
+  primary: true
+  authors:
+  - Jules Schwartz
+  title: 'The Development of JOVIAL'
+  venue: 'ACM SIGPLAN Notices 13(8) (HOPL I)'
+  year: 1978
+  url: http://jovial.com/documents/p203-schwartz-jovial.pdf
+  checked: '2026-11-01'
+- id: wiki-coral
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: CORAL'
+  url: https://en.wikipedia.org/wiki/CORAL
+  checked: '2026-11-01'
+- id: coral-66-definition
+  type: standard
+  primary: true
+  authors:
+  - P. M. Woodward
+  - P. R. Wetherall
+  - B. Gorman
+  title: 'Official Definition of Coral 66 (HMSO; first published 1970, second impression 1973)'
+  year: 1970
+  url: https://archive.org/details/official-definition-of-coral-66
+  checked: '2026-11-01'
+- id: wiki-pl-m
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: PL/M'
+  url: https://en.wikipedia.org/wiki/PL/M
+  checked: '2026-11-01'
+- id: wiki-bliss
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: BLISS'
+  url: https://en.wikipedia.org/wiki/BLISS
+  checked: '2026-11-01'
+- id: wulf-1971-bliss
+  type: paper
+  primary: true
+  authors:
+  - William Wulf
+  - D. B. Russell
+  - Nico Habermann
+  title: 'BLISS: A Language for Systems Programming'
+  venue: 'Communications of the ACM 14(12)'
+  year: 1971
+  url: https://www2.cs.arizona.edu/classes/cs520/spring06/bliss.pdf
+  checked: '2026-11-01'
+- id: dec-1979-bliss-primer
+  type: manual
+  primary: true
+  title: 'BLISS Primer, Volume 2 (Digital Equipment Corporation, EY-AY008-SP-001)'
+  year: 1979
+  url: https://bitsavers.org/pdf/dec/bliss/EY-AY008-SP-001_BLISS_Primer_Volume_2_1979.pdf
+  checked: '2026-11-01'
+- id: wiki-mumps
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: MUMPS'
+  url: https://en.wikipedia.org/wiki/MUMPS
+  checked: '2026-11-01'
+- id: wiki-ibm-rpg
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: IBM RPG'
+  url: https://en.wikipedia.org/wiki/IBM_RPG
+  checked: '2026-11-01'
+- id: ibm-1964-1401-rpg
+  type: manual
+  primary: true
+  title: 'IBM 1401 RPG (on Disk) Specifications (C24-3261-1)'
+  year: 1964
+  url: https://www.bitsavers.org/pdf/ibm/1401/C24-3261-1_1401_diskRPG.pdf
+  checked: '2026-11-01'
+- id: wiki-joss
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: JOSS'
+  url: https://en.wikipedia.org/wiki/JOSS
+  checked: '2026-11-01'

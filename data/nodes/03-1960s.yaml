@@ -663,3 +663,136 @@
 
       (FATC 5)     ; DWIM: FATC → FACT ?  answered yes, evaluates (FACT 5) = 120
     sources: [wiki-interlisp]
+
+- id: joss
+  name: JOSS
+  aliases: [JOHNNIAC Open Shop System, JOSS-2, JOSS II]
+  kind: language
+  category: scientific
+  cluster: joss
+  origin:
+    first_appeared: { year: 1963, date: "1963-05", precision: exact, note: "\"brought up formally for the first time in May 1963\" on the JOHNNIAC; fully operational on eight terminals in January 1964." }
+    places: [{ institution: RAND Corporation, country: US }]
+  creators: [{ name: Cliff Shaw, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    typing: [dynamic-typing]
+    features: [interactive-time-sharing, interpreter, line-numbers, english-like-syntax]
+  milestones:
+    - { version: JOSS-2, year: 1966, summary: "Reimplemented on the PDP-6; \"fully functional\" by the end of 1966." }
+  summary: >
+    "One of the first interactive, time-sharing programming languages", written almost entirely by Cliff Shaw
+    at RAND for the JOHNNIAC. Users typed numbered steps in English-like sentences ("Type", "Set", "Do part")
+    at typewriter consoles; it "so emphasized user-friendliness that 'JOSS-like' became a descriptor". Its
+    descendants include TELCOMP, CAL, FOCAL, AID and MUMPS.
+  notes: >
+    Wikipedia notes JOSS's "strong resemblance to the BASIC interpreters found on microcomputers in the 1980s"
+    but does not claim influence on BASIC, so there is no edge. JOSS-3 ran on an IBM 370/158 in the early 1970s
+    but "was never widely used". RAND reports (Shaw 1965; Marks 1971) were not reached.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/JOSS" }
+  sources: [wiki-joss]
+  example:
+    title: A loop over a part
+    language: JOSS
+    note: "From Wikipedia: for applies to a single step, so a loop body goes in its own part and is called with Do. 1(1)100 is start(step)end. The fetched text ran the steps together; one step per line is ours. The article does not say whether this is original JOSS or simulator syntax."
+    code: |
+      1.3 Do part 5 for i=1(1)100.
+      5.1 Type "Hello, Wikipedia!".
+      5.2 Type "This is JOSS.".
+    sources: [wiki-joss]
+
+- id: coral-66
+  name: CORAL 66
+  aliases: [CORAL, Coral 66, Computer On-line Real-time Applications Language, PO-CORAL, BT-CORAL]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    began: { year: 1964, precision: year, note: "Wikipedia dates CORAL to 1964 at RRE (\"The R was originally for 'radar'\"); Coral 64 is the predecessor." }
+    first_appeared: { year: 1966, precision: disputed, note: "The official definition says Coral 66 \"was originally designed in 1966 by I. F. Currie and M. Griffiths\"; Wikipedia's infobox gives 1964 for CORAL as a whole. The definition was first published in 1970." }
+    places: [{ institution: Royal Radar Establishment, city: Malvern, country: GB }]
+  creators:
+    - { name: I. F. Currie, role: designer }
+    - { name: M. Griffiths, role: designer }
+    - { name: Philip Woodward, role: "editor of the official definition" }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing]
+    features: [block-structure, records]
+    domain: [embedded, safety-critical]
+  milestones:
+    - { version: Official Definition, year: 1970, introduces: [standardization], summary: "Published by HMSO, edited by Woodward, Wetherall and Gorman; adopted as an inter-service standard. In 1971 the Ministry of Defence selected CORAL for future military applications." }
+  summary: >
+    The British Ministry of Defence's real-time language, from the Royal Radar Establishment in Malvern: "a
+    general-purpose programming language based on Algol 60, with some features from Coral 64 and Jovial, and
+    some from Fortran". Fixed-point types and packed tables suited control computers. Its compiler validation
+    may have been its biggest legacy: "enforcing quality control in commercial compilers". PO-CORAL was used
+    for the System X telephone exchanges.
+  relations:
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: high, sources: [coral-66-definition, wiki-coral], note: "\"based on Algol 60\"." }
+    - { type: influenced_by, to: jovial, weight: strong, confidence: high, sources: [coral-66-definition, wiki-coral], note: "\"It was influenced primarily by JOVIAL, and thus ALGOL, but is not a subset of either.\"" }
+    - { type: influenced_by, to: fortran, weight: weak, confidence: high, sources: [coral-66-definition], note: "Algol 60's name parameter replaced by \"the more efficient 'location' or reference parameter used in Fortran\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CORAL" }
+  sources: [coral-66-definition, wiki-coral]
+  example:
+    title: A packed table declaration
+    language: CORAL 66
+    note: "From the Official Definition, section 4.4.3. A table of 30 entries, 3 words each; each field gives its type and word,bit position. FIXED (16,-4) and UNSIGNED (4,2) are fixed-point with total and fraction bits. OCR text; spacing as in the scan."
+    code: |
+      TABLE april [ 3,30 ]
+      [ tickets INTEGER 0;
+        weight FIXED (16,-4) 1;
+        rain UNSIGNED (4,2) 2,0;
+        sunshine UNSIGNED (4) 2,4;
+        humidity UNSIGNED (6,6) 2,8;
+        temperature (10,2) 2,14 ]
+    sources: [coral-66-definition]
+
+- id: mumps
+  name: MUMPS
+  aliases: [M, Massachusetts General Hospital Utility Multi-Programming System, DSM-11, GT.M]
+  kind: language
+  category: domain-specific
+  cluster: joss
+  origin:
+    first_appeared: { year: 1966, precision: range, note: "Developed \"during 1966 and 1967\" (infobox: 1966)." }
+    places: [{ institution: Massachusetts General Hospital, city: Boston, country: US }]
+  creators:
+    - { name: Neil Pappalardo, role: designer }
+    - { name: Robert A. Greenes, role: designer }
+    - { name: Curt Marble, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [typeless]
+    features: [interpreter, associative-arrays]
+    domain: [databases]
+  milestones:
+    - { version: X11.1-1977, year: 1977, introduces: [standardization], summary: "ANSI standard approved 15 September 1977." }
+    - { version: X11.1-1995, year: 1995, summary: "Last ANSI revision (8 December 1995); ISO 11756:1999." }
+    - { version: GT.M open source, year: 2000, summary: "Greystone's GT.M released under the GPL on Linux, 7 November 2000." }
+  summary: >
+    A language with a built-in hierarchical database, "originally developed at Massachusetts General Hospital
+    for managing patient medical records" in Octo Barnett's lab. Global variables prefixed with ^ are persistent,
+    sparse, string-keyed trees on disk. Standardised by ANSI in 1977 and still running large hospital and
+    banking systems; InterSystems' Caché grew out of it.
+  relations:
+    - { type: influenced_by, to: joss, weight: strong, confidence: high, sources: [wiki-mumps], note: "\"Some aspects of MUMPS can be traced from RAND Corporation's JOSS through BBN's TELCOMP and STRINGCOMP.\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MUMPS" }
+  sources: [wiki-mumps]
+  example:
+    title: Output and a persistent global
+    language: MUMPS
+    note: "From Wikipedia. ! in a write starts a new line; the caret makes ^Car a global, stored in the database rather than in memory, with string subscripts. The two lines come from different places in the article."
+    code: |
+      write "Hello, World!",!
+      SET ^Car("Door","Color")="BLUE"
+    sources: [wiki-mumps]

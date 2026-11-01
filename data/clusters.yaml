@@ -250,7 +250,6 @@
   name: Business and data-processing languages
   research_status: draft
   backlog:
-    - { name: "RPG", year: 1959 }
     - { name: "ABAP", year: 1983 }
     - { name: "dBase / xBase", year: 1979 }
 - id: algol
@@ -258,12 +257,22 @@
   summary: "ALGOL 58/60/68 and the languages defined by agreeing or disagreeing with them."
   research_status: draft
   backlog:
-    - { name: "JOVIAL", year: 1959 }
     - { name: "MAD", year: 1959 }
     - { name: "NELIAC", year: 1958 }
     - { name: "Burroughs ALGOL / ESPOL", year: 1961 }
     - { name: "ALGOL 68C / ALGOL 68-R", year: 1970 }
     - { name: "Euler", year: 1965 }
+- id: algol/systems
+  name: Military, real-time and systems languages
+  parent: algol
+  summary: "ALGOL- and PL/I-derived languages for defence, real-time control and systems programming before C took over."
+  research_status: stub
+  backlog:
+    - { name: "CMS-2", year: 1968, hint: "US Navy; JOVIAL-influenced (JOVIAL infobox)." }
+    - { name: "SYMPL", year: 1970, hint: "CDC; JOVIAL-influenced (JOVIAL infobox)." }
+    - { name: "XPL", year: 1967, hint: "PL/I-based compiler-writing language; PL/M's model." }
+    - { name: "PL360", year: 1968, hint: "Wirth; named by Wulf 1971 as a BLISS-like systems language." }
+    - { name: "PLuS", year: 1975, hint: "Signetics 2650 port of PL/M." }
 - id: algol/bcpl-line
   name: CPL and BCPL
   parent: algol
@@ -507,6 +516,16 @@
     - { name: "SPSS", year: 1968 }
     - { name: "Cypher / GQL", year: 2011 }
     - { name: "Wolfram Language (Mathematica)", year: 1988 }
+- id: joss
+  name: JOSS and its descendants
+  summary: "RAND's conversational JOSS and the interactive languages that followed it: TELCOMP, CAL, FOCAL, AID, MUMPS."
+  research_status: stub
+  backlog:
+    - { name: "TELCOMP", year: 1964, hint: "BBN; JOSS-derived; MUMPS lineage runs through it and STRINGCOMP (Wikipedia: MUMPS)." }
+    - { name: "FOCAL", year: 1968, hint: "DEC PDP-8; JOSS descendant (Wikipedia: JOSS)." }
+    - { name: "CAL", year: 1967, hint: "Berkeley SDS 940; JOSS descendant." }
+    - { name: "AID (Algebraic Interpretive Dialogue)", year: 1968, hint: "PDP-10 JOSS descendant." }
+    - { name: "Caché ObjectScript", year: 1997, hint: "InterSystems MUMPS dialect; GT.M as an implementation note." }
 - id: basic
   name: BASIC family
   summary: "Dartmouth BASIC and its descendants: the home-computer interpreters, Microsoft's DOS and Windows line, and machine-specific extensions."

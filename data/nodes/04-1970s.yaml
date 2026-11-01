@@ -1218,3 +1218,141 @@
       ack m 0 = ack (m-1) 1
       ack m n = ack (m-1) (ack m (n-1))
     sources: [turner-2012-history-fp]
+
+- id: bliss
+  name: BLISS
+  aliases: [BLISS-10, BLISS-11, BLISS-16, BLISS-32, BLISS-36, BLISS-64, Common BLISS]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    began: { year: 1969, precision: year, note: "\"In the fall of 1969, Carnegie-Mellon University acquired a pdp-10 to support a research project on computer networks\" (Wulf et al. 1971)." }
+    first_appeared: { year: 1970, precision: circa, note: "\"around 1970\"; described in CACM, December 1971." }
+    places: [{ institution: Carnegie Mellon University, city: Pittsburgh, country: US }]
+  creators:
+    - { name: William Wulf, role: designer }
+    - { name: D. B. Russell, role: designer }
+    - { name: Nico Habermann, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [typeless]
+    features: [expression-oriented, block-structure, macros, optimizing-compiler]
+    domain: [operating-systems]
+  summary: >
+    Carnegie Mellon's systems programming language for the PDP-10, "an algol-PL/1 derivative" with no goto, in
+    which everything is an expression ("In BLISS, an expression is an expression is an expression") and
+    variables name locations, so their contents are fetched with an explicit dot. DEC adopted it as Common
+    BLISS for the PDP-11, VAX and later machines and wrote much of VMS's utilities in BLISS-32. "Perhaps the
+    best known system language until C debuted a few years later."
+  notes: >
+    Wulf named EPL, B5500 Extended ALGOL, PL360 and BCPL as existing languages of the same kind, without
+    claiming influence. The name's expansion is disputed; Wulf's 2015 oral history (not read) reportedly says
+    "Bill's Language for Implementing System Software". Version years for BLISS-10/11/32/36 not found.
+  relations:
+    - { type: influenced_by, to: algol-60, aspects: [block-structure], weight: moderate, confidence: high, sources: [wulf-1971-bliss, wiki-bliss], note: "\"an algol-PL/1 derivative in the sense that it has a similar expression format and operator hierarchy, a block structure...\"" }
+    - { type: influenced_by, to: pl-i, weight: moderate, confidence: high, sources: [wulf-1971-bliss], note: "Same quote." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/BLISS" }
+  sources: [wulf-1971-bliss, dec-1979-bliss-primer, wiki-bliss]
+  example:
+    title: A module with two routines
+    language: BLISS-32
+    note: "Wikipedia: \"taken verbatim from the Bliss Language Manual\". .X fetches the contents of X; X alone is its address. Comments run from ! to end of line; ELUDOM closes MODULE. Indentation was lost in fetching and is ours."
+    code: |
+      MODULE E1 (MAIN = CTRL) =
+      BEGIN
+
+      FORWARD ROUTINE
+          CTRL,
+          STEP;
+
+      ROUTINE CTRL =
+      !+
+      ! This routine inputs a value, operates on it, and
+      ! then outputs the result.
+      !-
+          BEGIN
+          EXTERNAL ROUTINE
+              GETNUM,     ! Input a number from terminal
+              PUTNUM;     ! Output a number to terminal
+          LOCAL
+              X,          ! Storage for input value
+              Y;          ! Storage for output value
+          GETNUM(X);
+          Y = STEP(.X);
+          PUTNUM(.Y)
+          END;
+
+      ROUTINE STEP(A) =
+      !+
+      ! This routine adds 1 to the given value.
+      !-
+          (.A+1);
+      END
+      ELUDOM
+    sources: [wiki-bliss]
+
+- id: pl-m
+  name: PL/M
+  aliases: [Programming Language for Microcomputers, PL/M-80, PL/M-86, PL/M-51, PL/M-96]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1973, precision: year, note: "\"conceived and developed by Gary Kildall in 1973 for Hank Smith at Intel for the Intel 8008\"." }
+    places:
+      - { institution: Intel, city: Santa Clara, country: US }
+      - { institution: Naval Postgraduate School, city: Monterey, country: US }
+  creators: [{ name: Gary Kildall, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing, weak-typing]
+    features: [block-structure, macros]
+    domain: [embedded, operating-systems]
+  milestones:
+    - { version: PL/M-80, year: 1976, summary: "For the 8080 (also 8085 and Z80); the 8080's memory stack made a self-hosted compiler practical. Year from the PL/M-80 manual's first edition (1976)." }
+  summary: >
+    Gary Kildall's language for Intel's microprocessors, "the first higher level programming language for
+    microprocessor-based computers". Built "on the concepts of the XPL language, which in turn was based on
+    ... PL/I", with an integrated macro processor and no standard I/O. Kildall wrote the non-assembly parts
+    of CP/M in it; later versions targeted the 8051, 8086 family and MCS-96.
+  notes: >
+    Wikipedia's infobox names Kildall's firm Microcomputer Applications Associates as developer; the body
+    describes him working at the Naval Postgraduate School and for Intel. XPL is in the algol/systems backlog.
+    The PL/M-80 manual (bitsavers) could not be read as text.
+  relations:
+    - { type: influenced_by, to: pl-i, weight: strong, confidence: high, sources: [wiki-pl-m], note: "Via XPL (not yet a node): \"The language incorporated ideas from PL/I and XPL\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PL/M" }
+  sources: [wiki-pl-m]
+  example:
+    title: String search
+    language: PL/M-80
+    note: "From Wikipedia. BYTE and ADDRESS are the only types (8 and 16 bits); := inside an expression is embedded assignment, and LAST,J = J + 1 assigns to both. Indentation was lost in fetching and is ours."
+    code: |
+      FIND: PROCEDURE(PA,PB) BYTE;
+          DECLARE (PA,PB) BYTE;
+          /* FIND THE STRING IN SCRATCH STARTING AT PA AND ENDING AT PB */
+          DECLARE J ADDRESS,
+              (K, MATCH) BYTE;
+          J = BACK ;
+          MATCH = FALSE;
+          DO WHILE NOT MATCH AND (MAXM > J);
+              LAST,J = J + 1; /* START SCAN AT J */
+              K = PA ; /* ATTEMPT STRING MATCH AT K */
+              DO WHILE SCRATCH(K) = MEMORY(LAST) AND
+                  NOT (MATCH := K = PB);
+                  /* MATCHED ONE MORE CHARACTER */
+                  K = K + 1; LAST = LAST + 1;
+              END;
+          END;
+          IF MATCH THEN /* MOVE STORAGE */
+              DO; LAST = LAST - 1; CALL MOVER;
+              END;
+          RETURN MATCH;
+      END FIND;
+    sources: [wiki-pl-m]

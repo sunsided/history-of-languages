@@ -308,6 +308,7 @@
   wiki: Cliff Shaw
   nodes:
   - ipl
+  - joss
 - id: person-cynthia-solomon
   kind: person
   person: Cynthia Solomon
@@ -1204,3 +1205,45 @@
   wiki: Leonardo de Moura
   nodes:
   - lean
+- id: person-jules-schwartz
+  kind: person
+  person: Jules Schwartz
+  wiki: Jules Schwartz
+  nodes:
+  - jovial
+- id: person-gary-kildall
+  kind: person
+  person: Gary Kildall
+  wiki: Gary Kildall
+  nodes:
+  - pl-m
+- id: person-william-wulf
+  kind: person
+  person: William Wulf
+  wiki: William Wulf
+  nodes:
+  - bliss
+- id: person-nico-habermann
+  kind: person
+  person: Nico Habermann
+  wiki: Nico Habermann
+  nodes:
+  - bliss
+- id: person-neil-pappalardo
+  kind: person
+  person: Neil Pappalardo
+  wiki: Neil Pappalardo
+  nodes:
+  - mumps
+- id: person-robert-a-greenes
+  kind: person
+  person: Robert A. Greenes
+  wiki: Robert A. Greenes
+  nodes:
+  - mumps
+- id: person-philip-woodward
+  kind: person
+  person: Philip Woodward
+  wiki: Philip Woodward
+  nodes:
+  - coral-66
