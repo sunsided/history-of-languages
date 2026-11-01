@@ -284,52 +284,15 @@
   summary: "ALGOL- and PL/I-derived languages for defence, real-time control and systems programming before C took over."
   research_status: stub
   backlog:
-    - { name: "CMS-2", year: 1968, hint: "US Navy; JOVIAL-influenced (JOVIAL infobox)." }
-    - { name: "SYMPL", year: 1970, hint: "CDC; JOVIAL-influenced (JOVIAL infobox)." }
-    - { name: "XPL", year: 1967, hint: "PL/I-based compiler-writing language; PL/M's model." }
-    - { name: "PL360", year: 1968, hint: "Wirth; named by Wulf 1971 as a BLISS-like systems language." }
-    - { name: "PLuS", year: 1975, hint: "Signetics 2650 port of PL/M." }
-    - { name: "SAIL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SAKO", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Edinburgh IMP", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PL/S", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PL/P", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PL-11", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PLANC", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Mary", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "RTL/2", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "XPL0", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Cybil", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "NEWP", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Transaction Application Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "TACL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Draco", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Z++", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Zonnon", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Project Verona", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "ParaSail", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Whiley", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "LYaPAS", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "LIS", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Lynx", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "ORCA/Modula-2", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "JAL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "PL/B", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Mystic Programming Language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "XC", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "XL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SPS", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Hermes", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Lithe", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SOL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "ZOPL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "PROMAL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "A.NET (A#/A sharp)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Bosque", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Wyvern", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Ch", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Accent (Rational Synergy)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Kaleidoscope", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "PL/P", hint: "Prime Computer's PL/I dialect: \"at version 16, a version of PL/I, called PL/P, became the high level language of choice within PRIMOS\" (Wikipedia: PRIMOS). No year or designer; needs a PRIMOS revision 16 date or a Prime manual." }
+    - { name: "PLANC", hint: "Norsk Data's Pascal-family systems language (Programming LAnguage for Nd Computers), influenced by NPL, for Nord-10/ND-500, 68000, 88000, x86 (Wikipedia: PLANC). No year or designer on the page; check the PLANC Reference Manual ND-60.117." }
+    - { name: "Cybil", hint: "CDC's \"Pascal-like\" Cyber Implementation Language, used for NOS/VE and the ETA10 eOS (Wikipedia: Cybil). No year; Ragan, \"CYBIL - CYBER Implementation Language\", SIGPLAN Notices May 1985 is the lead." }
+    - { name: "Mystic Programming Language", hint: "MPL is only a feature line in Wikipedia's Mystic BBS article (BBS began 1995, first public release December 1997); no year for the language itself. Probably a scripting/embedded item." }
+    - { name: "XC", hint: "XMOS language combining C with occam/CSP-style concurrency, \"introduced by XMOS in the late 2000s\" (Wikipedia: XMOS, section XC); no exact year. Find the XC reference manual date." }
+    - { name: "XL", hint: "Christophe de Dinechin's eXtensible Language with \"programmer-reconfigurable syntax and semantics\" (section of his Wikipedia biography); no year. Tao3D (2010-2017) is a derivative." }
+    - { name: "SPS", hint: "IBM 1401 Symbolic Programming System, an assembler by Gary Mokotoff, SPS-1 and SPS-2 (Wikipedia). No year on the page (\"announced by IBM with the machine\"); belongs in assembly/ibm once dated." }
+    - { name: "ZOPL", hint: "Geac's OPL (\"Our Programming Language\") \"which later became ZOPL\" (Wikipedia: Geac Computer Corporation, founded 1971). No year or designer for the language." }
+    - { name: "Accent (Rational Synergy)", hint: "ACcent, created for CaseWare's SCM tool (first released 1990); \"pre-dates [Java] by five years\" (Wikipedia: Rational Synergy). No exact year; Pete Orelup led the 1988 research project." }
 - id: algol/bcpl-line
   name: CPL and BCPL
   parent: algol

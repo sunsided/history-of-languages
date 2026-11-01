@@ -270,6 +270,7 @@
   summary: "Wirth and Hoare's conservative successor proposal for ALGOL 60, rejected by IFIP WG 2.1 in favour of what became ALGOL 68. Introduced records and references; led directly to Pascal."
   relations:
     - { type: influenced_by, to: algol-60, weight: strong, confidence: high }
+    - { type: implemented_in, to: pl360, weight: strong, confidence: high, sources: [wiki-pl360], note: "\"Wirth used PL360 to create ALGOL W.\"" }
   research_status: draft
   confidence: high
   sources: [wirth-1993-recollections-pascal]
@@ -1416,3 +1417,315 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Macsyma" }
   sources: [wiki-macsyma]
+
+- id: sako
+  name: SAKO
+  aliases: [System Automatycznego Kodowania]
+  kind: language
+  category: scientific
+  cluster: algol/systems
+  origin:
+    began: { year: 1959, precision: year, note: "\"written between 1959 and 1960 by a team from the ZAM division of the Polish Academy of Sciences\"." }
+    first_appeared: { year: 1960, precision: year, note: "Infobox \"First appeared: 1960\"." }
+    places: [{ institution: Polish Academy of Sciences, city: Warsaw, country: PL }]
+  creators:
+    - { name: Leon Łukaszewicz, role: co-designer }
+    - { name: Antoni Mazurkiewicz, role: co-designer }
+    - { name: Jan Borowiec, role: co-designer }
+    - { name: Jowita Koncewicz, role: co-designer }
+    - { name: Maria Łącka, role: co-designer }
+    - { name: Stefan Sawicki, role: co-designer }
+    - { name: Jerzy Swianiewicz, role: co-designer }
+    - { name: Piotr Szorc, role: co-designer }
+    - { name: Alfred Szurman, role: co-designer }
+    - { name: Andrzej Wiśniewski, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+    features: [compiler]
+    domain: [scientific-computing]
+  summary: >
+    A Polish-keyword programming language for numerical work, "Originally developed for the XYZ and ZAM-2 computers"
+    and later ported to the ZAM-21, ZAM-41 and Mińsk-22. "The most characteristic feature of SAKO are Polish commands, e.g.
+    CZYTAJ, SKOCZ DO." A 1963 visitors' report lists Fortran as its influence.
+  notes: >
+    Warsaw comes from a reference title (Instytut Maszyn Matematycznych, ZAM 2, Warsaw); the body names only the ZAM
+    division.
+  relations:
+    - { type: influenced_by, to: fortran, weight: moderate, confidence: medium, sources: [wiki-sako], note: "Infobox \"Influenced by: Fortran\", citing a 1963 \"Report of a Visit to Discuss Common Programming Languages in Czechoslowakia and Poland\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SAKO_(programming_language)" }
+  sources: [wiki-sako]
+  example:
+    title: Hello, world
+    language: SAKO
+    note: "From Wikipedia. TEKST prints the following line, LINIA a newline; STOP NASTEPNY stops, KONIEC ends the program."
+    code: |
+      TEKST:
+      HELLO, WORLD
+      LINIA
+      STOP NASTEPNY
+      KONIEC
+    sources: [wiki-sako]
+
+- id: lyapas
+  name: LYaPAS
+  aliases: [ЛЯПАС, Logical Language for the Representation of Synthesis Algorithms, LYaPAS-M]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    began: { year: 1962, precision: year, note: "\"The development started in the end of 1962\"; \"The first translators were implemented in 1963.\"" }
+    first_appeared: { year: 1964, precision: year, note: "Infobox \"First appeared: 1964\"." }
+    places: [{ institution: Siberian Physical-Technical Institute, country: SU }]
+  creators:
+    - { name: Arkady Zakrevsky, role: designer }
+  status: extinct
+  tags:
+    paradigm: [functional, structured, modular]
+    typing: [dynamic-typing]
+  milestones:
+    - { version: LYaPAS-M, year: 1974, summary: "\"a new version of the language\"." }
+  summary: >
+    A Soviet language "initially designed especially for non-numeric programming for the Soviet designed and built
+    Ural-1 line of mainframe computers", using octal numbers and a terse symbolic notation. Later versions ran on the
+    Minsk-22 (LYaPAS-70), BESM-6 and M-220 (LYaPAS-71); LYaPAS-M followed in 1974.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LYaPAS" }
+  sources: [wiki-lyapas]
+  example:
+    title: GCD
+    language: LYaPAS-M
+    note: "Wikipedia's \"Example program in LYaPAS-M for calculating GCD of variables N and M\"."
+    code: |
+      П1 N ↑–2 M;N=R N=M R=N ↑=1
+      П2 M=D **
+    sources: [wiki-lyapas]
+
+- id: pl360
+  name: PL360
+  aliases: [PL/360]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1966, precision: year, note: "Infobox \"First appeared: 1966\"; Wirth's Stanford report \"A Programming Language for the 360 Computers\" is dated December 24, 1965 and the JACM paper January 1968." }
+    places: [{ institution: Stanford University, country: US }]
+  creators:
+    - { name: Niklaus Wirth, role: designer }
+    - { name: Joseph W. Wells Jr., role: implementer }
+    - { name: Edwin Satterthwaite Jr., role: implementer }
+  status: extinct
+  tags:
+    paradigm: [procedural, imperative, structured]
+    typing: [static-typing, strong-typing]
+    features: [assembly-language, self-hosting]
+    domain: [operating-systems]
+  summary: >
+    A "system programming language" for the IBM System/360 with "a syntax similar to ALGOL that provides facilities
+    for specifying exact machine code (language) instructions and registers similar to assembly language" alongside
+    expressions and control structures. It was first written in ALGOL on Stanford's B5500, then recoded in PL360 itself.
+    "Wirth used PL360 to create ALGOL W", and Stanford's SPIRES database was written in it.
+  relations:
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: medium, sources: [wiki-pl360], note: "Infobox \"Influenced by: ALGOL, Executive Systems Problem Oriented Language\" (ESPOL is in the algol backlog)." }
+    - { type: targets, to: ibm-system-360, weight: strong, confidence: high, sources: [wiki-pl360] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PL360" }
+  sources: [wiki-pl360]
+  example:
+    title: Registers as variables
+    language: PL360
+    note: "From Wikipedia; R0, R1, R2 and FLAG are predeclared."
+    code: |
+      BEGIN INTEGER BUCKET;
+           IF FLAG THEN
+           BEGIN BUCKET := R0; R0 := R1; R1 := R2;
+                 R2 := BUCKET;
+           END ELSE
+           BEGIN BUCKET := R2; R2 := R1; R1 := R0;
+                R0 := BUCKET;
+           END
+           RESET(FLAG);
+      END
+    sources: [wiki-pl360]
+
+- id: edinburgh-imp
+  name: Edinburgh IMP
+  aliases: [IMP, IMP77, IMP80, IMP9]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1966, precision: year, note: "Infobox \"First appeared: 1966\"; \"initially developed around 1966-1969\"." }
+    places: [{ institution: University of Edinburgh, country: GB }]
+  creators:
+    - { name: Hamish Dewar, role: co-designer }
+    - { name: Peter D. Schofield, role: co-designer }
+    - { name: Peter D. Stephens, role: co-designer }
+    - { name: Peter Robertson, role: IMP77 }
+    - { name: David Rees, role: co-designer }
+    - { name: Roderick McLeod, role: co-designer }
+    - { name: M. M. Barritt, role: co-designer }
+  status: legacy
+  tags:
+    paradigm: [procedural, imperative, structured]
+    typing: [static-typing, strong-typing]
+    features: [block-structure, records, self-hosting, portable-compiler]
+    domain: [operating-systems]
+  milestones:
+    - { version: IMP77, year: 1977, summary: "Peter Robertson's portable compiler; reference manual dated December 1977.", introduces: [portable-compiler] }
+    - { version: IMP77 revival, year: 2002, summary: "Resurrected by the Edinburgh Computer History Project for x86 DOS, Windows and Linux." }
+  summary: >
+    "a development of Atlas Autocode" from the University of Edinburgh, "used heavily for systems programming". It
+    has ALGOL-style block structure, arrays and records, plus "significant control over the storage mapping of data, plus
+    commands for addressing within parts of words". IMP77 and IMP80 consolidated its dialects, and IMP80 stayed in use
+    into the 1990s.
+  notes: >
+    The infobox also lists designers "Bratley" and "Whitfield" without first names; they are left out. Unrelated
+    to Edgar T. Irons's extensible IMP for the CDC 6600. Atlas Autocode is in the early/pioneers backlog; add an edge
+    when it is a node.
+  relations:
+    - { type: influenced_by, to: algol-60, aspects: [block-structure], weight: strong, confidence: high, sources: [wiki-edinburgh-imp], note: "Infobox \"Influenced by: ALGOL 60, Atlas Autocode\"; \"highly similar to ALGOL\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Edinburgh_IMP" }
+  sources: [wiki-edinburgh-imp]
+
+- id: xpl
+  name: XPL
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1967, precision: disputed, note: "\"designed in 1967\" and \"first announced at the 1968 Fall Joint Computer Conference\"; the infobox says 1964." }
+    places: [{ institution: Stanford University, country: US }]
+  creators:
+    - { name: William M. McKeeman, role: designer }
+    - { name: David B. Wortman, role: co-designer }
+    - { name: Jim Horning, role: co-designer }
+  status: legacy
+  tags:
+    paradigm: [procedural, imperative, structured]
+    features: [self-hosting, string-processing]
+  summary: >
+    "a simple, small, efficient dialect of PL/I intended mainly for the task of writing compilers", shipped with a
+    self-compiling one-pass compiler (XCOM) and a parser generator, so "a better label for XPL is a translator writing
+    system". It adds one thing PL/I lacks, "a STRING datatype with dynamic lengths". Distributed through SHARE, it was the basis
+    of Kildall's PL/M.
+  relations:
+    - { type: subset_of, to: pl-i, weight: strong, confidence: high, sources: [wiki-xpl], note: "\"XPL is a small dialect of the full language\", with one added STRING type." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/XPL" }
+  sources: [wiki-xpl]
+
+- id: cms-2
+  name: CMS-2
+  aliases: [Compiler Monitor System]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1968, precision: disputed, note: "Infobox \"1968\" and \"implemented by Computer Sciences Corporation in 1968\"; another sentence says \"developed by RAND Corporation in the early 1970s\"." }
+    places: [{ institution: Fleet Computer Programming Center - Pacific, city: "San Diego, California", country: US }]
+  creators:
+    - { name: RAND Corporation, role: design }
+    - { name: Intermetrics, role: design assistance }
+    - { name: Computer Sciences Corporation, role: implementer }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    domain: [embedded, safety-critical]
+  summary: >
+    "an embedded systems programming language used by the United States Navy", "developed primarily for the US
+    Navy's tactical data systems (NTDS)" and "an early attempt to develop a standardized high-level computer programming
+    language intended to improve code portability and reusability". Variants such as CMS-2M and CMS-2Y targeted the
+    AN/UYK-7, AN/UYK-43 and AN/AYK-14.
+  relations:
+    - { type: influenced_by, to: jovial, weight: strong, confidence: medium, sources: [wiki-cms-2], note: "Infobox \"Influenced by: CS-1, Fortran, JOVIAL, PL/I\"." }
+    - { type: influenced_by, to: fortran, weight: moderate, confidence: medium, sources: [wiki-cms-2], note: "Infobox." }
+    - { type: influenced_by, to: pl-i, weight: moderate, confidence: medium, sources: [wiki-cms-2], note: "Infobox." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CMS-2" }
+  sources: [wiki-cms-2]
+
+- id: pl-s
+  name: PL/S
+  aliases: [BSL, Basic Systems Language, Programming Language/Systems, PL/S II, PL/AS, PL/X]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1968, precision: circa, note: "\"developed by IBM in the late 1960s, under the name Basic Systems Language (BSL)\"; the BSL Language Specifications are dated 1968." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: IBM, role: developer }
+  status: maintained
+  tags:
+    paradigm: [procedural, imperative]
+    features: [assembly-language]
+    domain: [operating-systems]
+  milestones:
+    - { version: PL/S II, year: 1974, summary: "Guide to PL/S II, 1974; later PL/S III, PL/AS and PL/X." }
+  summary: >
+    A "machine-oriented" programming language "based on PL/I" that IBM built as "a replacement for assembly language
+    on internal software projects", with "support for inline assembly and explicit control over register usage". It was
+    the language of IBM's mainframe system software; IBM long kept it internal and later offered current versions to
+    selected ISVs.
+  relations:
+    - { type: subset_of, to: pl-i, weight: strong, confidence: medium, sources: [wiki-pl-s], note: "\"a machine-oriented programming language based on PL/I\"; whether it is a strict subset is not said." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IBM_PL/S" }
+  sources: [wiki-pl-s]
+
+- id: sail
+  name: SAIL
+  aliases: [Stanford Artificial Intelligence Language, MAINSAIL]
+  kind: language
+  category: research
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1969, precision: exact, note: "\"The first release was in November 1969\"." }
+    places: [{ institution: Stanford AI Lab, country: US }]
+  creators:
+    - { name: Dan Swinehart, role: co-designer }
+    - { name: Bob Sproull, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural]
+    features: [block-structure, associative-arrays, string-processing]
+    domain: [artificial-intelligence]
+  summary: >
+    "a large ALGOL 60-like language for the PDP-10 and DECSYSTEM-20" from the Stanford AI Lab, combining the GOGOL
+    compiler with "a symbolic data system based upon an associative store based on LEAP by Jerry Feldman and Paul Rovner".
+    Early versions of FTP and TeX, the PUB formatter and the NIH's BRIGHT database were written in it, and the
+    machine-independent MAINSAIL followed in the late 1970s.
+  relations:
+    - { type: dialect_of, to: algol-60, weight: strong, confidence: medium, sources: [wiki-sail], note: "Infobox \"Influenced by: ALGOL-60\"; short description \"Dialect of ALGOL-60\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SAIL_(programming_language)" }
+  sources: [wiki-sail]
+  example:
+    title: Upper-casing a string
+    language: SAIL
+    note: "\"found in the Tutorial\", as quoted on Wikipedia."
+    code: |
+      STRING PROCEDURE upper(STRING rawstring);
+        BEGIN "upper"
+         STRING tmp;
+         INTEGER char;
+         tmp←NULL;
+         WHILE LENGTH(rawstring) DO
+           BEGIN
+             char←LOP(rawstring); COMMENT LOP returns the first character and moves the pointer past it
+             tmp←tmp&(IF "a" LEQ char LEQ "z" THEN char-'40 ELSE char);
+           END;
+         RETURN(tmp);
+        END "upper";
+    sources: [wiki-sail]

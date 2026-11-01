@@ -4439,3 +4439,188 @@
   primary: false
   title: "Wikipedia: Futhark (programming language)"
   url: https://en.wikipedia.org/wiki/Futhark_(programming_language)
+- id: wiki-sako
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SAKO (programming language)"
+  url: https://en.wikipedia.org/wiki/SAKO_(programming_language)
+- id: wiki-lyapas
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: LYaPAS"
+  url: https://en.wikipedia.org/wiki/LYaPAS
+- id: wiki-pl360
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PL360"
+  url: https://en.wikipedia.org/wiki/PL360
+- id: wiki-edinburgh-imp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Edinburgh IMP"
+  url: https://en.wikipedia.org/wiki/Edinburgh_IMP
+- id: wiki-xpl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: XPL"
+  url: https://en.wikipedia.org/wiki/XPL
+- id: wiki-cms-2
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CMS-2"
+  url: https://en.wikipedia.org/wiki/CMS-2
+- id: wiki-pl-s
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IBM PL/S"
+  url: https://en.wikipedia.org/wiki/IBM_PL/S
+- id: wiki-sail
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SAIL (programming language)"
+  url: https://en.wikipedia.org/wiki/SAIL_(programming_language)
+- id: wiki-sympl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SYMPL"
+  url: https://en.wikipedia.org/wiki/SYMPL
+- id: wiki-pl-11
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PL-11"
+  url: https://en.wikipedia.org/wiki/PL-11
+- id: wiki-mary
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Mary (programming language)"
+  url: https://en.wikipedia.org/wiki/Mary_(programming_language)
+- id: wiki-rtl-2
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: RTL/2"
+  url: https://en.wikipedia.org/wiki/RTL/2
+- id: wiki-pl-b
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Programming Language for Business"
+  url: https://en.wikipedia.org/wiki/Programming_Language_for_Business
+- id: wiki-tacl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TACL (programming language)"
+  url: https://en.wikipedia.org/wiki/TACL_(programming_language)
+- id: wiki-signetics-2650
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Signetics 2650"
+  url: https://en.wikipedia.org/wiki/Signetics_2650
+- id: wiki-tal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Transaction Application Language"
+  url: https://en.wikipedia.org/wiki/Transaction_Application_Language
+- id: wiki-xpl0
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: XPL0"
+  url: https://en.wikipedia.org/wiki/XPL0
+- id: wiki-burroughs-large-systems
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Burroughs Large Systems"
+  url: https://en.wikipedia.org/wiki/Burroughs_Large_Systems
+- id: wiki-lis
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: LIS (programming language)"
+  url: https://en.wikipedia.org/wiki/LIS_(programming_language)
+- id: wiki-draco
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Draco (programming language)"
+  url: https://en.wikipedia.org/wiki/Draco_(programming_language)
+- id: wiki-lithe
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lithe"
+  url: https://en.wikipedia.org/wiki/Lithe
+- id: wiki-lynx
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lynx (programming language)"
+  url: https://en.wikipedia.org/wiki/Lynx_(programming_language)
+- id: wiki-promal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PROMAL"
+  url: https://en.wikipedia.org/wiki/PROMAL
+- id: wiki-hermes
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Hermes (programming language)"
+  url: https://en.wikipedia.org/wiki/Hermes_(programming_language)
+- id: wiki-z-plus-plus
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Z++"
+  url: https://en.wikipedia.org/wiki/Z%2B%2B
+- id: wiki-kaleidoscope
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Kaleidoscope (programming language)"
+  url: https://en.wikipedia.org/wiki/Kaleidoscope_(programming_language)
+- id: wiki-ch
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Ch (computer programming)"
+  url: https://en.wikipedia.org/wiki/Ch_(computer_programming)
+- id: wiki-secure-operations-language
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Secure Operations Language"
+  url: https://en.wikipedia.org/wiki/Secure_Operations_Language
+- id: wiki-zonnon
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Zonnon"
+  url: https://en.wikipedia.org/wiki/Zonnon
+- id: wiki-jal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: JAL (compiler)"
+  url: https://en.wikipedia.org/wiki/JAL_(compiler)
+- id: wiki-a-sharp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: A# (.NET)"
+  url: https://en.wikipedia.org/wiki/A_Sharp_(.NET)
+- id: wiki-parasail
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ParaSail (programming language)"
+  url: https://en.wikipedia.org/wiki/ParaSail_(programming_language)
+- id: wiki-whiley
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Whiley (programming language)"
+  url: https://en.wikipedia.org/wiki/Whiley_(programming_language)
+- id: wiki-wyvern
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Wyvern (programming language)"
+  url: https://en.wikipedia.org/wiki/Wyvern_(programming_language)
+- id: wiki-project-verona
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Project Verona"
+  url: https://en.wikipedia.org/wiki/Project_Verona
+- id: wiki-bosque
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Bosque (programming language)"
+  url: https://en.wikipedia.org/wiki/Bosque_(programming_language)
+- id: wiki-orca-modula-2
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ORCA/Modula-2"
+  url: https://en.wikipedia.org/wiki/ORCA/Modula-2

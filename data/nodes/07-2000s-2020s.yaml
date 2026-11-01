@@ -4665,3 +4665,365 @@
                    (transpose B))
             A
     sources: [wiki-futhark]
+
+- id: ch
+  name: Ch
+  kind: language
+  category: scripting
+  cluster: c-family
+  origin:
+    first_appeared: { year: 2001, precision: exact, note: "Infobox \"Release: October 1, 2001\"." }
+    places: [{ institution: "SoftIntegration, Inc.", country: US }]
+  creators:
+    - { name: Harry H. Cheng, role: original author }
+  status: maintained
+  tags:
+    paradigm: [imperative, procedural, scripting]
+    features: [interpreter, classes]
+    domain: [education, scientific-computing]
+  milestones:
+    - { version: "8.0.0", year: 2017 }
+  summary: >
+    "a proprietary cross-platform C and C++ interpreter and scripting language environment", designed by Harry Cheng
+    "as a scripting language for beginners to learn mathematics, computing, numerical analysis (numeric methods), and
+    programming in C/C++". "It is a superset of C with C++ classes" and supports C99.
+  relations:
+    - { type: superset_of, to: c, weight: strong, confidence: high, sources: [wiki-ch], note: "\"It is a superset of C with C++ classes.\"" }
+    - { type: influenced_by, to: cpp, aspects: [classes], weight: moderate, confidence: high, sources: [wiki-ch], note: "\"with C++ classes\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ch_(computer_programming)" }
+  sources: [wiki-ch]
+
+- id: secure-operations-language
+  name: SOL
+  aliases: [Secure Operations Language, SOLj]
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 2002, precision: circa, note: "No year in the text; the earliest cited paper is Bharadwaj, \"SOL: A Verifiable Synchronous Language for Reactive Systems\" (2002)." }
+    places:
+      - { institution: United States Naval Research Laboratory, country: US }
+      - { institution: Utah State University, country: US }
+  creators:
+    - { name: Ramesh Bharadwaj, role: investigator }
+    - { name: Supratik Mukhopadhyay, role: investigator }
+  status: historical
+  tags:
+    paradigm: [synchronous-programming]
+    domain: [distributed-systems, safety-critical]
+  summary: >
+    "a domain-specific synchronous programming language for developing distributed applications" and service-based
+    systems, from the US Naval Research Laboratory and Utah State University. It "is based on software engineering
+    principles developed in the Software Cost Reduction project at the Naval Research Laboratory in the late 1970s and
+    early 1980s"; a Java extension, SOLj, followed.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Secure_Operations_Language" }
+  sources: [wiki-secure-operations-language]
+
+- id: zonnon
+  name: Zonnon
+  kind: language
+  category: general
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 2003, precision: disputed, note: "Infobox \"First appeared: 2013\"; but \"Zonnon for .NET - A Language and Compiler Experiment\" appeared at JMLC 2003 and the Language Report is dated December 2005." }
+    places: [{ institution: ETH Zurich, city: Zürich, country: CH }]
+  creators:
+    - { name: Jürg Gutknecht, role: designer }
+  status: historical
+  tags:
+    paradigm: [imperative, structured, modular, object-oriented, concurrent]
+    typing: [strong-typing]
+  summary: >
+    "a general purpose programming language in the line or family of the preceding languages Pascal, Modula, and
+    Oberon", built for .NET at ETH Zürich. "Its computing model is concurrent, based on active objects which interact via
+    syntax controlled dialogs"; the active object was "imported from the Active Oberon language and generalized towards a
+    unified model of hierarchic activities".
+  relations:
+    - { type: influenced_by, to: oberon, weight: strong, confidence: high, sources: [wiki-zonnon], note: "Infobox \"Influenced by: Oberon, Pascal\"; active objects from Active Oberon (not a node yet)." }
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: high, sources: [wiki-zonnon], note: "\"a member of the Pascal family of languages\"." }
+    - { type: targets, to: cil, weight: moderate, confidence: medium, sources: [wiki-zonnon], note: "\"Zonnon for .NET\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Zonnon" }
+  sources: [wiki-zonnon]
+
+- id: jal
+  name: JAL
+  aliases: [Just Another Language, JALV2]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 2003, precision: year, note: "\"originally created by Wouter van Ooijen and released as free software under the GNU General Public License in 2003\"." }
+  creators:
+    - { name: Wouter van Ooijen, role: designer }
+    - { name: Kyle York, role: JALV2 programmer }
+  status: maintained
+  tags:
+    paradigm: [procedural, imperative]
+    domain: [embedded]
+  milestones:
+    - { version: JALV2, year: 2006, summary: "New version initiated by Stef Mientki, programmed by Kyle York." }
+  summary: >
+    "a Pascal-like programming language and compiler that generates executable code for PIC microcontrollers",
+    free-format, extendable through libraries and mixable with PIC assembly.
+  relations:
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [wiki-jal], note: "Only \"Pascal-like\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/JAL_(compiler)" }
+  sources: [wiki-jal]
+
+- id: a-sharp
+  name: "A# (.NET)"
+  aliases: [A Sharp, A.NET, GNAT for .NET]
+  kind: language
+  category: general
+  cluster: algol/ada
+  origin:
+    first_appeared: { year: 2004, precision: year, note: "Infobox \"First appeared: 2004\"." }
+    places: [{ institution: United States Air Force Academy, country: US }]
+  creators:
+    - { name: Martin C. Carlisle, role: co-designer }
+    - { name: Ricky Sward, role: co-designer }
+    - { name: Jeff Humphries, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, object-oriented]
+    typing: [static-typing, strong-typing]
+  milestones:
+    - { version: GNAT for .NET, year: 2007, summary: "AdaCore takes over development." }
+  summary: >
+    "a port of the Ada programming language to the Microsoft .NET platform", distributed by the US Air Force Academy's
+    Department of Computer Science under the GPL. AdaCore took it over in 2007 as GNAT for .NET; by 2021 it was
+    "considered by some to be a dead language".
+  relations:
+    - { type: dialect_of, to: ada, weight: strong, confidence: high, sources: [wiki-a-sharp], note: "\"a port of the Ada programming language to the Microsoft .NET platform\"." }
+    - { type: targets, to: cil, weight: strong, confidence: high, sources: [wiki-a-sharp] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/A_Sharp_(.NET)" }
+  sources: [wiki-a-sharp]
+
+- id: parasail
+  name: ParaSail
+  aliases: [Parallel Specification and Implementation Language]
+  kind: language
+  category: general
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 2009, precision: year, note: "\"Initial design of ParaSail began in September 2009, by S. Tucker Taft.\"" }
+    places: [{ institution: AdaCore, country: US }]
+  creators:
+    - { name: S. Tucker Taft, role: designer }
+  status: maintained
+  tags:
+    paradigm: [concurrent, imperative, structured, object-oriented]
+    typing: [static-typing, strong-typing]
+    memory: [region-based-memory]
+    concurrency: [data-parallelism]
+  milestones:
+    - { version: "9.3", year: 2021 }
+  summary: >
+    "an object-oriented parallel programming language" with "a pointer-free programming model" and value semantics:
+    "It has no global garbage collected heap. Instead, region-based memory management is used throughout", and "Any
+    possible race conditions are detected at compile time". Its syntax "is similar to Modula", with an object model
+    "more similar to Java or C#". Both an interpreter and an LLVM compiler exist.
+  relations:
+    - { type: influenced_by, to: ada, weight: strong, confidence: medium, sources: [wiki-parasail], note: "Infobox \"Influenced by: Modula, Ada, Pascal, ML\"." }
+    - { type: influenced_by, to: modula-2, weight: moderate, confidence: medium, sources: [wiki-parasail], note: "\"The syntax of ParaSail is similar to Modula\"." }
+    - { type: influenced_by, to: pascal, weight: weak, confidence: medium, sources: [wiki-parasail], note: "Infobox." }
+    - { type: influenced_by, to: ml, weight: weak, confidence: medium, sources: [wiki-parasail], note: "Infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ParaSail_(programming_language)" }
+  sources: [wiki-parasail]
+  example:
+    title: A map interface
+    language: ParaSail
+    note: "From Wikipedia."
+    code: |
+      interface BMap<Key_Type is Ordered<>; Element_Type is Assignable<>> is
+          op "[]"() -> BMap;  // Create an empty map
+
+          func Insert(var BMap; Key : Key_Type; Value : Element_Type);
+          func Find(BMap; Key : Key_Type) -> optional Element_Type;
+          func Delete(var BMap; Key : Key_Type);
+          func Count(BMap) -> Univ_Integer;
+      end interface BMap;
+    sources: [wiki-parasail]
+
+- id: whiley
+  name: Whiley
+  kind: language
+  category: research
+  cluster: verification
+  origin:
+    began: { year: 2009, precision: year, note: "\"began in 2009 in response to the 'Verifying Compiler Grand Challenge' put forward by Tony Hoare in 2003\"." }
+    first_appeared: { year: 2010, precision: exact, note: "\"The first public release of Whiley was in June, 2010\" (v0.2.27)." }
+  creators:
+    - { name: David J. Pearce, role: designer }
+  status: maintained
+  tags:
+    paradigm: [imperative, functional]
+    typing: [static-typing, strong-typing, structural-typing, refinement-types]
+    features: [contracts]
+  milestones:
+    - { version: "0.6.1", year: 2022 }
+  summary: >
+    "an experimental programming language that combines features from the functional and imperative programming
+    paradigms, and supports formal specification through function preconditions, postconditions and loop invariants",
+    with flow typing. It follows SPARK/Ada, ESC/Java, Spec#, Dafny, Why3 and Frama-C but "was designed from scratch in an
+    effort to avoid common pitfalls and make verification more tractable". It compiles to the JVM.
+  relations:
+    - { type: influenced_by, to: java, weight: moderate, confidence: medium, sources: [wiki-whiley], note: "Infobox \"Influenced by: Java, C, Python, Rust\"." }
+    - { type: influenced_by, to: python, weight: moderate, confidence: medium, sources: [wiki-whiley], note: "Infobox." }
+    - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-whiley], note: "Infobox." }
+  notes: >
+    The infobox also lists Rust as an influence; Rust's node dates from 2015, after Whiley's first release, and the page
+    does not say what came from it (v0.3.40 added reference lifetimes), so the edge is left out until that is known.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Whiley_(programming_language)" }
+  sources: [wiki-whiley]
+  example:
+    title: A verified indexOf
+    language: Whiley
+    note: "From Wikipedia; the empty // comment lines left out."
+    code: |
+      type nat is (int x) where x >= 0
+
+      public function indexOf(int[] items, int item) -> (int|null index)
+      // If int returned, element at this position matches item
+      ensures index is int ==> items[index] == item
+      // If int returned, element at this position is first match
+      ensures index is int ==> no { i in 0 .. index | items[i] == item }
+      // If null returned, no element in items matches item
+      ensures index is null ==> no { i in 0 .. |items| | items[i] == item }:
+          nat i = 0
+          while i < |items|
+          // No element seen so far matches item
+          where no { j in 0 .. i | items[j] == item }:
+              if items[i] == item:
+                  return i
+              i = i + 1
+          return null
+    sources: [wiki-whiley]
+
+- id: wyvern
+  name: Wyvern
+  kind: language
+  category: research
+  cluster: managed
+  origin:
+    first_appeared: { year: 2013, precision: year, note: "Only the category \"Programming languages created in 2013\"; the text gives no year." }
+  creators:
+    - { name: Jonathan Aldrich, role: co-designer }
+    - { name: Alex Potanin, role: co-designer }
+  status: active
+  tags:
+    paradigm: [object-oriented]
+    typing: [structural-typing]
+    domain: [web]
+  summary: >
+    A language "for the development of web and mobile applications with security and assurance being number one
+    priority": it "supports object capabilities, it is structurally typed", and lets several embedded languages be used
+    safely in one program. It is a GPLv2 prototype.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Wyvern_(programming_language)", homepage: "https://wyvernlang.github.io" }
+  sources: [wiki-wyvern]
+
+- id: project-verona
+  name: Project Verona
+  aliases: [Verona]
+  kind: language
+  category: systems
+  cluster: c-family/safe
+  origin:
+    first_appeared: { year: 2019, precision: year, note: "Infobox \"First appeared: 2019\"." }
+    places:
+      - { institution: Microsoft Research, city: Cambridge, country: GB }
+      - { institution: Imperial College London, city: London, country: GB }
+  creators:
+    - { name: Microsoft Research, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, concurrent]
+    memory: [ownership-borrowing]
+  summary: >
+    "an experimental research programming language developed by Microsoft" with Imperial College London, aiming "to
+    create a safer platform for memory management". "Unlike in Rust where the ownership model is based on a single
+    object, it is based on groups of objects in Verona." It is MIT-licensed and developed on GitHub.
+  relations:
+    - { type: influenced_by, to: rust, aspects: [ownership-borrowing], weight: strong, confidence: medium, sources: [wiki-project-verona], note: "Infobox \"Influenced by: Rust, Cyclone, Pony\"; ownership over groups of objects." }
+    - { type: influenced_by, to: cyclone, weight: moderate, confidence: medium, sources: [wiki-project-verona], note: "Infobox." }
+    - { type: influenced_by, to: pony, weight: moderate, confidence: medium, sources: [wiki-project-verona], note: "Infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Project_Verona" }
+  sources: [wiki-project-verona]
+  example:
+    title: A while loop over an iterator
+    language: Verona
+    note: "From Wikipedia."
+    code: |
+      while_sum(x: List[U32]) : U32
+      {
+        var sum: U32 = 0;
+        let iter = x.values();
+
+        while { iter.has_value() }
+        {
+          let a = iter();
+          next iter;
+          sum = sum + a
+        }
+
+        sum
+      }
+    sources: [wiki-project-verona]
+
+- id: bosque
+  name: Bosque
+  kind: language
+  category: research
+  cluster: web
+  origin:
+    first_appeared: { year: 2019, precision: exact, note: "Infobox \"First appeared: March 3, 2019\"." }
+    places: [{ institution: Microsoft Research, country: US }]
+  creators:
+    - { name: Mark Marron, role: designer }
+  status: active
+  tags:
+    paradigm: [functional]
+    typing: [static-typing]
+  summary: >
+    A Microsoft Research language "inspired by the syntax and data types of TypeScript and the semantics of ML and
+    Node/JavaScript", with the stated goals of "better software quality and improved developer productivity". Marron
+    calls its paradigm "regularized programming".
+  relations:
+    - { type: influenced_by, to: typescript, weight: strong, confidence: high, sources: [wiki-bosque], note: "\"inspired by the syntax and data types of TypeScript\"." }
+    - { type: influenced_by, to: ml, weight: moderate, confidence: high, sources: [wiki-bosque], note: "\"the semantics of ML and Node/JavaScript\"." }
+    - { type: influenced_by, to: javascript, weight: moderate, confidence: high, sources: [wiki-bosque], note: "\"the semantics of ML and Node/JavaScript\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Bosque_(programming_language)" }
+  sources: [wiki-bosque]
+  example:
+    title: Named arguments
+    language: Bosque
+    note: "From Wikipedia."
+    code: |
+      function add2(x: Int, y: Int): Int {
+          return x + y;
+      }
+
+      add2(2, 3)     // 5
+      add2(x=2, y=3) // 5
+      add2(y=2, 5)   // 7
+    sources: [wiki-bosque]

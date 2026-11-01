@@ -748,9 +748,13 @@
   relations:
     - { type: successor_of, to: pascal, weight: strong, confidence: high }
     - { type: influenced_by, to: mesa, aspects: [modules], weight: strong, confidence: high }
+  notes: >
+    ORCA/Modula-2 (Peter Easdown, The Byte Works, 1993–94) is a Modula-2 compiler for the Apple IIGS, written in
+    Modula-2 and first developed with TopSpeed Modula-2 on a PC, emitting 65816 assembly for ORCA/M; its source is on
+    GitHub (Wikipedia: ORCA/Modula-2).
   research_status: draft
   confidence: high
-  sources: [wirth-2007-modula2-oberon]
+  sources: [wirth-2007-modula2-oberon, wiki-orca-modula-2]
   example:
     title: Modules with explicit imports
     language: Modula-2
@@ -841,6 +845,7 @@
     - { type: influenced_by, to: algol-68, weight: moderate, confidence: medium }
     - { type: influenced_by, to: simula, weight: weak, confidence: medium }
     - { type: influenced_by, to: csp, aspects: [synchronous-rendezvous], weight: moderate, confidence: medium }
+    - { type: influenced_by, to: lis, weight: moderate, confidence: medium, sources: [wiki-lis], note: "LIS, by Ada's designer Jean Ichbiah, \"has contributed to the definition of Ada\"." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Ada_(programming_language)" }
@@ -2627,3 +2632,379 @@
       Solve transport using lp minimizing z ;
       Display x.l, x.m ;
     sources: [wiki-gams]
+
+- id: sympl
+  name: SYMPL
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1970, precision: decade, note: "Only \"for use on the CDC 6000 series computer systems in the 1970s and 1980s\"; the reference manuals linked are from 1978 and 1980." }
+    places: [{ institution: Control Data Corporation, country: US }]
+  creators:
+    - { name: Control Data Corporation, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [strong-typing]
+    features: [compiler]
+    domain: [operating-systems]
+  summary: >
+    An "obsolete programming language" for the CDC 6000 series, "based on a subset of CDC's version of JOVIAL, as an
+    alternative to assembly language", without JOVIAL's fixed point type, table structures and COMPOOL. CDC wrote
+    compilers, libraries, a full-screen editor and major subsystems in it.
+  relations:
+    - { type: subset_of, to: jovial, weight: strong, confidence: high, sources: [wiki-sympl], note: "\"based on a subset of CDC's version of JOVIAL\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SYMPL" }
+  sources: [wiki-sympl]
+
+- id: pl-11
+  name: PL-11
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1971, precision: year, note: "\"developed by R.D. Russell of CERN in 1971\"; report CERN-74-24 (1974)." }
+    places: [{ institution: CERN, city: Geneva, country: CH }]
+  creators:
+    - { name: R. D. Russell, role: designer }
+  status: extinct
+  tags:
+    paradigm: [procedural]
+    features: [assembly-language]
+  summary: >
+    "a high-level machine-oriented programming language for the PDP-11", built for CERN's Omega particle-physics
+    project. "Written in Fortran IV, it is similar to PL360 and is cross-compiled on other machines": first on the CII
+    10070, later on the IBM 370/168 and a Burroughs B6700 in New Zealand.
+  relations:
+    - { type: influenced_by, to: pl360, weight: moderate, confidence: low, sources: [wiki-pl-11], note: "Only \"similar to PL360\"; Russell's CERN-74-24 report would show whether PL360 was the model." }
+    - { type: targets, to: pdp-11, weight: strong, confidence: high, sources: [wiki-pl-11] }
+    - { type: implemented_in, to: fortran, weight: moderate, confidence: high, sources: [wiki-pl-11], note: "\"Written in Fortran IV\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PL-11" }
+  sources: [wiki-pl-11]
+
+- id: mary
+  name: Mary
+  aliases: [Mary/2]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1971, precision: year, note: "Infobox \"First appeared: 1971\"; \"during the 1970s\" in the prose." }
+    places: [{ institution: RUNIT, city: Trondheim, country: "NO" }]
+  creators:
+    - { name: Mark Rain, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing, strong-typing]
+    features: [expression-oriented, pointers]
+  summary: >
+    A Norwegian systems language that "borrowed many features from ALGOL 68 but was designed for systems programming
+    (machine-oriented programming)". Its first compiler was
+    in NU ALGOL on the Univac 1100 and bootstrapped native compilers for the Kongsberg SM-4 and Norsk Data Nord-10/ND-100;
+    Mary/2 was developed later in the US.
+  relations:
+    - { type: influenced_by, to: algol-68, weight: strong, confidence: high, sources: [wiki-mary], note: "\"It borrowed many features from ALGOL 68\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Mary_(programming_language)" }
+  sources: [wiki-mary]
+  example:
+    title: References and left-to-right assignment
+    language: Mary
+    note: "From Wikipedia."
+    code: |
+      BEGIN
+         INT i := 10;          %% Variable with initial value.
+         REF INT ri := i;      %% Pointer initialized to point to i.
+         INT j := 11;
+         j :- REF INT =: ri;   %% Type conversion and assignment
+                               %% ri now points to j.
+         i =: (ri :- VAL REF INT);
+                               %% Assignment and type conversion
+                               %% ri points to j so j is changed.
+         IF j > 10             %% Conditional statement with result
+         THEN                  %% used inside an arithmetic expression.
+            1
+         ELSE
+            2
+         FI + j =: j;
+      END
+    sources: [wiki-mary]
+
+- id: rtl-2
+  name: RTL/2
+  aliases: [Real-Time Language]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1972, precision: year, note: "Infobox \"First appeared: 1972\"; distributed by SPL International from 1974." }
+    places: [{ institution: Imperial Chemical Industries, country: GB }]
+  creators:
+    - { name: John Barnes, role: designer, affiliation: ICI }
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    typing: [static-typing, strong-typing]
+    features: [separate-compilation, standardization]
+    domain: [embedded, industrial-automation]
+  milestones:
+    - { version: BS 5904, year: 1980, summary: "Standardised by the British Standards Institution.", introduces: [standardization] }
+  summary: >
+    "a discontinued high-level programming language for use in real-time computing" from ICI, "based on concepts from
+    ALGOL 68, and intended to be small and simple", strongly typed with separate compilation. ICI used it internally, SPL
+    International distributed it from 1974, and BSI standardised it in 1980.
+  notes: >
+    Barnes's Wikipedia article is "John Barnes (computer scientist)"; the parenthesis is dropped because build.py rejects
+    it.
+  relations:
+    - { type: influenced_by, to: algol-68, weight: strong, confidence: high, sources: [wiki-rtl-2], note: "\"based on concepts from ALGOL 68\"." }
+    - { type: targets, to: pdp-11, weight: moderate, confidence: high, sources: [wiki-rtl-2], note: "Infobox platforms \"PDP-11, VAX\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/RTL/2" }
+  sources: [wiki-rtl-2]
+
+- id: pl-b
+  name: PL/B
+  aliases: [DATABUS, Programming Language for Business]
+  kind: language
+  category: business
+  cluster: business
+  origin:
+    first_appeared: { year: 1972, precision: year, note: "\"originally called DATABUS and designed by Datapoint in 1972\"." }
+    places: [{ institution: Datapoint, country: US }]
+  creators:
+    - { name: Datapoint, role: developer }
+  status: maintained
+  tags:
+    paradigm: [procedural, imperative]
+    typing: [static-typing, strong-typing]
+    features: [bytecode-vm, standardization]
+    domain: [business-data-processing]
+  summary: >
+    A business language "designed by Datapoint in 1972 as an alternative to COBOL because Datapoint's 8-bit computers
+    could not fit COBOL into their limited memory", and because COBOL lacked facilities for their built-in keyboard and
+    screen. Programs compile to "an intermediate byte-code, which is then interpreted by a runtime library". A version
+    became an ANSI standard, renamed PL/B when Datapoint kept the DATABUS trademark.
+  relations:
+    - { type: influenced_by, to: cobol, weight: moderate, confidence: medium, sources: [wiki-pl-b], note: "Infobox \"Influenced by: COBOL\"; designed \"as an alternative to COBOL\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Programming_Language_for_Business" }
+  sources: [wiki-pl-b]
+  example:
+    title: Screen handling
+    language: PL/B
+    note: "First block of Wikipedia's source code example."
+    code: |
+      IF (DF_EDIT[ITEM] = "PHYS")
+         STATESAVE MYSTATE
+         IF (C_F07B != 2)
+            DISPLAY   *SETSWALL 1:1:1:80:
+                      *BGCOLOR=2,*COLOR=15:
+                      *P49:1," 7-Find "
+         ELSE
+            DISPLAY   *SETSWALL 1:1:1:80:
+                      *BGCOLOR=7,*COLOR=0:
+                      *P49:1," 7-Find "
+         ENDIF
+         STATEREST MYSTATE
+         TRAP      GET_PRO NORESET IF F7
+      ENDIF
+    sources: [wiki-pl-b]
+
+- id: tacl
+  name: TACL
+  aliases: [Tandem Advanced Command Language]
+  kind: language
+  category: shell
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1970, precision: decade, note: "Infobox \"Release: 1970s\"." }
+    places: [{ institution: Tandem Computers, country: US }]
+  creators:
+    - { name: Tandem Computers, role: original author }
+  status: maintained
+  tags:
+    paradigm: [scripting]
+    features: [interpreter, macros]
+  summary: >
+    "the scripting programming language which acts as the shell in Tandem Computers/NonStop computers", interpreted,
+    and also used "as a job control language for batch jobs". Scripts are stored as MACROS, ROUTINES or DEFINES. HPE
+    later added a ksh-based shell that does not cover every TACL capability.
+  relations:
+    - { type: implemented_in, to: tal, weight: moderate, confidence: high, sources: [wiki-tacl], note: "Infobox \"Written in: Tandem Application Language (TAL)\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TACL_(programming_language)" }
+  sources: [wiki-tacl]
+  example:
+    title: A routine
+    language: TACL
+    note: "From Wikipedia; run with LOAD / KEEP 1 / FILE1, then HELLO_BERNARD."
+    code: |
+      ?Section HELLO_BERNARD ROUTINE
+      #OUTPUT Hello BERNARD
+    sources: [wiki-tacl]
+
+- id: plus
+  name: PLuS
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1975, precision: year, note: "\"During the summer of 1975, Kildall was working as a consultant at Signetics, who asked him to port PL/M to their Signetics 2650. This resulted in the PLuS language.\"" }
+    places: [{ institution: Signetics, country: US }]
+  creators:
+    - { name: Gary Kildall, role: porter }
+  status: extinct
+  tags:
+    paradigm: [procedural, structured]
+  summary: >
+    Gary Kildall's port of PL/M to the Signetics 2650 microprocessor, made while consulting for Signetics in 1975. The
+    2650 "bombed" in the market and Signetics gave up on it within a year.
+  relations:
+    - { type: dialect_of, to: pl-m, weight: strong, confidence: high, sources: [wiki-pl-m], note: "\"asked him to port PL/M to their Signetics 2650. This resulted in the PLuS language.\"" }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PL/M" }
+  sources: [wiki-pl-m, wiki-signetics-2650]
+
+- id: tal
+  name: TAL
+  aliases: [Transaction Application Language, Tandem Application Language, pTAL, epTAL]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1975, precision: circa, note: "Infobox \"First appeared: mid 1970s\"." }
+    places: [{ institution: Tandem Computers, country: US }]
+  creators:
+    - { name: Tandem Computers, role: developer }
+  status: legacy
+  tags:
+    paradigm: [procedural, imperative]
+    features: [block-structure]
+    domain: [operating-systems]
+  summary: >
+    "a block-structured, procedural language optimized for use on Tandem (and later HP NonStop) hardware" that
+    "resembles a cross between C and Pascal". It "was the original system programming language for the Tandem Computers
+    CISC machines, which had no assembler", and "an evolution of Hewlett-Packard's SPL". pTAL and epTAL carried it to
+    MIPS and Itanium; it is now deprecated for new development.
+  relations:
+    - { type: influenced_by, to: algol-60, weight: moderate, confidence: medium, sources: [wiki-tal], note: "Infobox \"Influenced by: ALGOL, Pascal, C\"; HP SPL, its stated predecessor, is not a node." }
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [wiki-tal], note: "\"resembles a cross between C and Pascal\"." }
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-tal], note: "\"resembles a cross between C and Pascal\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Transaction_Application_Language" }
+  sources: [wiki-tal]
+
+- id: xpl0
+  name: XPL0
+  kind: language
+  category: general
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1976, precision: year, note: "\"created in 1976 by Peter J. R. Boyle\"." }
+  creators:
+    - { name: Peter J. R. Boyle, role: designer }
+  status: maintained
+  tags:
+    paradigm: [procedural, imperative, structured]
+    features: [self-hosting, compiler]
+  summary: >
+    "essentially a cross between Pascal and C. It looks somewhat like Pascal but works more like C." Boyle based it on
+    "PL/0, an example compiler in the book Algorithms + Data Structures = Programs by Niklaus Wirth", wrote the first
+    compiler in ALGOL for a 6502 pseudo-machine, then made it compile itself. From 1980 it was sold with an Apple II
+    operating system, and it now has optimising 32- and 64-bit compilers.
+  relations:
+    - { type: influenced_by, to: pl-0, weight: strong, confidence: high, sources: [wiki-xpl0], note: "\"XPL0 is based on PL/0\"." }
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [wiki-xpl0], note: "\"a cross between Pascal and C\"." }
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-xpl0], note: "\"works more like C\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/XPL0" }
+  sources: [wiki-xpl0]
+  example:
+    title: TPK algorithm
+    language: XPL0
+    note: "From Wikipedia; the page's Markdown escapes removed."
+    code: |
+      func real F(T);
+      real T;
+      return sqrt(abs(T)) + 5.*Pow(T, 3.);
+
+      int I;  real Y, A(11);
+      [for I:= 0 to 10 do A(I):= RlIn(0);
+      for I:= 10 downto 0 do
+          [Y:= F(A(I));
+          if Y > 400. then [IntOut(0, I);  Text(0, " TOO LARGE")]
+                      else [IntOut(0, I);  RlOut(0, Y)];
+          CrLf(0);
+          ];
+      ]
+    sources: [wiki-xpl0]
+
+- id: newp
+  name: NEWP
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1976, precision: circa, note: "ESPOL \"was replaced in the mid-to-late 70s by a language called NEWP\"; the naming story is dated \"circa 1976\"." }
+    places: [{ institution: Burroughs Corporation, country: US }]
+  creators:
+    - { name: John McClintock, role: developer }
+  status: maintained
+  tags:
+    paradigm: [procedural, imperative, structured]
+    features: [safe-unsafe-split, modules]
+    domain: [operating-systems]
+  summary: >
+    The systems language of the Burroughs large systems, which replaced ESPOL. "NEWP, too, was a subset
+    ALGOL extension, but it was more secure than ESPOL": "all unsafe constructs are rejected by the NEWP compiler unless
+    a block is specifically marked to allow those instructions". It adds named interfaces, modules and super-modules for
+    large projects such as the operating system.
+  notes: >
+    ESPOL is in the algol backlog; NEWP should get successor_of espol when it is a node.
+  relations:
+    - { type: dialect_of, to: algol-60, weight: strong, confidence: medium, sources: [wiki-burroughs-large-systems], note: "\"a subset ALGOL extension\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Burroughs_Large_Systems#ESPOL_and_NEWP" }
+  sources: [wiki-burroughs-large-systems]
+
+- id: lis
+  name: LIS
+  aliases: [Langage d'Implémentation de Systèmes]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1976, precision: circa, note: "The page gives no year; the earliest dated document is Ichbiah's \"The System implementation language LIS\" (CII, Louveciennes, 1976). Find the first LIS report." }
+    places: [{ institution: Compagnie internationale pour l'informatique, country: FR }]
+  creators:
+    - { name: Jean Ichbiah, role: designer }
+  status: extinct
+  tags:
+    paradigm: [procedural, imperative]
+    domain: [operating-systems]
+  summary: >
+    "a system implementation programming language designed by Jean Ichbiah, who later designed Ada", "based on Pascal
+    and Simula". It was used to implement the Karlsruhe compiler for the Ada-0 subset on Siemens BS2000; that compiler was
+    later rewritten in Ada-0 itself, "which was easy, because LIS and Ada-0 are very close".
+  relations:
+    - { type: influenced_by, to: pascal, weight: strong, confidence: high, sources: [wiki-lis], note: "\"LIS was based on Pascal and Simula.\"" }
+    - { type: influenced_by, to: simula, weight: strong, confidence: high, sources: [wiki-lis], note: "\"LIS was inspired by Pascal and Simula\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LIS_(programming_language)" }
+  sources: [wiki-lis]

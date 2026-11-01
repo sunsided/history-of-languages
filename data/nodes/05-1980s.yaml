@@ -3597,3 +3597,150 @@
       cmd:>prime(100...200)
       [101,103,107,109,113,127,131,137,139,149,151,157,163,167,173,179,181,191,193,197,199]
     sources: [wiki-sequencel]
+
+- id: draco
+  name: Draco
+  kind: language
+  category: general
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1981, precision: circa, note: "Infobox \"early 1980s, discontinued around 1990\"; CP/M first, \"Amiga version followed in 1987\"." }
+  creators:
+    - { name: Chris Gray, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing, strong-typing]
+  milestones:
+    - { version: Amiga, year: 1987, summary: "Amiga version; Gray used it to port Peter Langston's Empire." }
+  summary: >
+    A shareware language by Chris Gray for CP/M and later the Amiga, "a blend of Pascal and C" whose "uniqueness as a
+    language was its main weak point". Gray wrote his Amiga port of the game Empire in it.
+  relations:
+    - { type: influenced_by, to: pascal, weight: strong, confidence: medium, sources: [wiki-draco], note: "\"a blend of Pascal and C\"; infobox \"Influenced by: ALGOL 68, Pascal, C\"." }
+    - { type: influenced_by, to: c, weight: strong, confidence: medium, sources: [wiki-draco], note: "\"a blend of Pascal and C\"." }
+    - { type: influenced_by, to: algol-68, weight: moderate, confidence: medium, sources: [wiki-draco], note: "Infobox only." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Draco_(programming_language)" }
+  sources: [wiki-draco]
+  example:
+    title: Hello world
+    language: Draco
+    note: "From Wikipedia."
+    code: |
+      proc main()void:
+          writeln("Hello world");
+      corp;
+    sources: [wiki-draco]
+
+- id: lithe
+  name: Lithe
+  kind: language
+  category: research
+  cluster: oop
+  origin:
+    first_appeared: { year: 1982, precision: year, note: "\"created in 1982 by David Sandberg at the University of Washington\"." }
+    places: [{ institution: University of Washington, country: US }]
+  creators:
+    - { name: David Sandberg, role: designer }
+  status: extinct
+  tags:
+    paradigm: [declarative, object-oriented]
+    features: [classes, metaprogramming]
+  summary: >
+    An experimental language "which allows the programmer to freely choose their own syntax": it "merges SDT
+    [syntax-directed translation] with the class model by using classes as the non-terminal alphabet of the grammar".
+    Where Smalltalk uses message passing, Lithe uses syntax-directed translation, so a new notation is a rule-action pair.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lithe" }
+  sources: [wiki-lithe]
+  example:
+    title: Absolute value as syntax
+    language: Lithe
+    note: "From Wikipedia; afterwards |x - y| + 3 is a valid expression. The two-space indent of the second line is unverified."
+    code: |
+      rule "|" <i:int> "|" return int;
+        {if i<0 then return -i else return i end}
+    sources: [wiki-lithe]
+
+- id: lynx
+  name: Lynx
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1984, precision: year, note: "\"developed by the University of Wisconsin–Madison in 1984 for the Charlotte multicomputer operating system\"." }
+    places: [{ institution: University of Wisconsin–Madison, country: US }]
+  status: extinct
+  tags:
+    paradigm: [concurrent]
+    concurrency: [message-passing]
+    domain: [distributed-systems]
+  milestones:
+    - { version: Chrysalis port, year: 1986, summary: "Ported at the University of Rochester to the BBN Butterfly." }
+  summary: >
+    "a programming language for large distributed networks, using remote procedure calls", written for the Charlotte
+    multicomputer operating system and later ported to the BBN Butterfly. M. L. Scott's 1991 paper describes its
+    motivation, design and experience.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lynx_(programming_language)" }
+  sources: [wiki-lynx]
+
+- id: promal
+  name: PROMAL
+  aliases: [PROgrammer's Microapplication Language]
+  kind: language
+  category: general
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1984, precision: exact, note: "Infobox \"First appeared: 1984-08-16\"." }
+    places: [{ institution: Systems Management Associates, country: US }]
+  creators:
+    - { name: Systems Management Associates, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+    features: [offside-rule, bytecode-vm]
+  milestones:
+    - { version: 2.1e, year: 1986, summary: "Last stable release (1986-10-14)." }
+  summary: >
+    "a structured programming language from Systems Management Associates for MS-DOS, Commodore 64, and Apple II" with
+    "no line numbers, long variable names, functions and procedures with argument passing", and indentation as part of
+    the syntax. A single-pass compiler generated byte code that was interpreted at run time. Ahoy! called it "one of the
+    best" structured languages for the C64.
+  relations:
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-promal], note: "Infobox \"Influenced by: C\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PROMAL" }
+  sources: [wiki-promal]
+
+- id: hermes
+  name: Hermes
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1986, precision: range, year_end: 1992, note: "\"developed at IBM's Thomas J. Watson Research Center from 1986 through 1992\"." }
+    places: [{ institution: Thomas J. Watson Research Center, country: US }]
+  creators:
+    - { name: IBM, role: developer }
+  status: extinct
+  tags:
+    paradigm: [concurrent]
+    concurrency: [processes, message-passing]
+    features: [tables]
+    domain: [distributed-systems]
+  summary: >
+    "a language for distributed programming" with built-in processes and interprocess communication, "Representation-
+    independent data aggregates called tables" and no pointers. It used typestate analysis for "Compile-time verification
+    that operations use initialized data"; with its predecessor NIL it was among "the earliest programming languages
+    supporting this form of initialization checking", comparable to the definite assignment analysis of Java, Cyclone
+    and C#.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hermes_(programming_language)" }
+  sources: [wiki-hermes]

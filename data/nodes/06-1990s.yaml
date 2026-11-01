@@ -3468,3 +3468,89 @@
       A := matrix( [[1,2],[3,4]] )
       A+A, -A, 2*A, A*A, A^-1, exp( A ), A.A, A^0, 0*A
     sources: [wiki-mupad]
+
+- id: z-plus-plus
+  name: Z++
+  kind: notation
+  category: research
+  cluster: verification
+  origin:
+    first_appeared: { year: 1990, precision: year, note: "Lano, \"Z++, an Object-Oriented Extension to Z\", Z User Workshop, Oxford 1990 (proceedings 1991)." }
+  creators:
+    - { name: Kevin Lano, role: designer }
+  status: historical
+  tags:
+    paradigm: [object-oriented, declarative]
+    features: [classes, inheritance, formal-semantics]
+  summary: >
+    "an object-oriented extension to the Z specification language" whose "primary construct" is the class, related to
+    others "through inheritance, association, or aggregation". A class has optional clauses for attributes, functions,
+    operations, invariants and a HISTORY of real-time-logic predicates.
+  notes: >
+    The page has no inline citations; the designer is inferred from the cited papers' author. The Z notation itself is not
+    a node yet.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Z%2B%2B" }
+  sources: [wiki-z-plus-plus]
+  example:
+    title: Class structure
+    language: Z++
+    note: "Illustrative: the clause template from Wikipedia (ENTENDS is the page's spelling), not a worked specification."
+    code: |
+      CLASS ClassName
+        [OWNS List_of_attributes]
+        [FUNCTIONS constant_definitions]
+        [TYPE type_declaration]
+        [ENTENDS list_of_super_classes]
+        [OPERATIONS list_of_state_change_operations_definitions]
+        [RETURNS list_of_query_operations_definitions]
+        [ACTIONS all_operations_declarations]
+        [INVARIANT predicates]
+        [HISTORY RTL_predicates]
+      END CLASS
+    sources: [wiki-z-plus-plus]
+
+- id: kaleidoscope
+  name: Kaleidoscope
+  aliases: ["Kaleidoscope'90", "Kaleidoscope'91", "Kaleidoscope'93"]
+  kind: language
+  category: research
+  cluster: oop
+  origin:
+    first_appeared: { year: 1990, precision: circa, note: "No year in the text; the earliest of the three versions is named Kaleidoscope'90, and the papers are dated 1993 and 1994." }
+  creators:
+    - { name: Bjorn Freeman-Benson, role: co-author }
+    - { name: Alan Borning, role: co-author }
+    - { name: Gus Lopez, role: co-author }
+  status: extinct
+  tags:
+    paradigm: [imperative, object-oriented, declarative]
+    features: [constraints, multiple-dispatch]
+  milestones:
+    - { version: "'91", year: 1991, summary: "Algol-like syntax replaces the Smalltalk-like one; multiple dispatch." }
+    - { version: "'93", year: 1993, summary: "Imperative variables, destructive assignment, perturbation constraint model." }
+  summary: >
+    "a constraint programming language embedding constraints into an imperative object-oriented language": always,
+    once and assert .. during state relational invariants, and objects have constraint constructors. Its three versions
+    "show an evolution from declarative to an increasingly imperative style".
+  notes: >
+    Creators are the authors of the cited papers (Lopez, Freeman-Benson, Borning); the article itself names no designer.
+    Milestone years are read from the version names.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Kaleidoscope_(programming_language)" }
+  sources: [wiki-kaleidoscope]
+  example:
+    title: A thermometer with constraints
+    language: Kaleidoscope
+    note: "Wikipedia's \"With constraints\" version; indentation was flattened on the page and is restored here."
+    code: |
+      always: temperature = mercury.height / scale;
+      always: white rectangle( thermometer );
+      always: grey rectangle( mercury );
+      always: display number( temperature );
+      while mouse.button = down do
+        mercury.top = mouse.location.y;
+      end while;
+    sources: [wiki-kaleidoscope]

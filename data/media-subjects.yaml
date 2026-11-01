@@ -542,6 +542,7 @@
   person: Jean Ichbiah
   wiki: Jean Ichbiah
   nodes:
+  - lis
   - ada
 - id: person-jeff-bezanson
   kind: person
@@ -617,6 +618,7 @@
   person: Jürg Gutknecht
   wiki: Jürg Gutknecht
   nodes:
+  - zonnon
   - oberon
 - id: person-kathleen-antonelli
   kind: person
@@ -742,6 +744,7 @@
   person: Niklaus Wirth
   wiki: Niklaus Wirth
   nodes:
+  - pl360
   - algol-w
   - pascal
   - modula-2
@@ -1256,6 +1259,7 @@
   person: Gary Kildall
   wiki: Gary Kildall
   nodes:
+  - plus
   - pl-m
 - id: person-william-wulf
   kind: person
@@ -1576,3 +1580,27 @@
   wiki: David H. Munro
   nodes:
   - yorick
+- id: person-jim-horning
+  kind: person
+  person: Jim Horning
+  wiki: Jim Horning
+  nodes:
+  - xpl
+- id: person-bob-sproull
+  kind: person
+  person: Bob Sproull
+  wiki: Bob Sproull
+  nodes:
+  - sail
+- id: person-kevin-lano
+  kind: person
+  person: Kevin Lano
+  wiki: Kevin Lano
+  nodes:
+  - z-plus-plus
+- id: person-john-barnes
+  kind: person
+  person: John Barnes
+  wiki: John Barnes (computer scientist)
+  nodes:
+  - rtl-2
