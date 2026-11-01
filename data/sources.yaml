@@ -3539,6 +3539,11 @@
   primary: false
   title: "Wikipedia: LabVIEW"
   url: https://en.wikipedia.org/wiki/LabVIEW
+- id: wiki-labwindows-cvi
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: LabWindows/CVI"
+  url: https://en.wikipedia.org/wiki/LabWindows/CVI
 - id: wiki-quakec
   type: encyclopedia
   primary: false

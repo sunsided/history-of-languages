@@ -1024,6 +1024,14 @@
   name: Imperative
   facet: paradigm
   summary: Programs as sequences of state-changing commands.
+- id: visual-programming
+  name: Visual programming
+  facet: paradigm
+  summary: Programs built by arranging graphical elements (blocks, tiles, boxes and wires) instead of writing text.
+- id: dataflow-programming
+  name: Dataflow programming
+  facet: paradigm
+  summary: Programs as graphs of operations that run when their inputs arrive, with data flowing along the edges.
 - id: logic
   name: Logic
   facet: paradigm

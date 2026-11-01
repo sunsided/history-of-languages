@@ -559,3 +559,40 @@
             END
         END
     sources: [wiki-jovial]
+
+- id: music-n
+  name: MUSIC-N
+  aliases: ["MUSIC I", "MUSIC II", "MUSIC III", "MUSIC IV", "MUSIC V"]
+  kind: language
+  category: domain-specific
+  cluster: audio
+  origin:
+    first_appeared: { year: 1957, precision: year, note: "MUSIC I, written by Max Mathews at Bell Labs for the IBM 704 (Wikipedia: MUSIC-N)." }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: Max Mathews, role: designer }
+  status: historical
+  tags:
+    paradigm: [declarative]
+    features: [unit-generators]
+    domain: [music-audio]
+  milestones:
+    - { version: MUSIC II, year: 1958 }
+    - { version: MUSIC III, year: 1960 }
+    - { version: MUSIC IV, year: 1963, summary: "With J. Miller." }
+    - { version: MUSIC 11, year: 1973, summary: "Barry Vercoe's version at MIT, from which Csound descends." }
+  summary: >
+    The family of sound-synthesis programs Max Mathews began at Bell Labs with MUSIC I on the IBM 704 in 1957,
+    continued as MUSIC II (1958), III (1960), IV (1963) and V and ported widely. Wikipedia calls it "the parent
+    program" of later audio languages such as Csound, Max, Pure Data, SuperCollider and ChucK. Its model of
+    instruments built from unit generators, driven by a separate score of notes, is the one Csound still uses.
+  notes: >
+    Which MUSIC version first had unit generators and the orchestra/score split needs a primary source (Mathews,
+    The Technology of Computer Music, 1969) before a milestone records it with `introduces`. No example yet: a verbatim MUSIC V score from Mathews (1969), ch. 2-3, would be the one to quote
+    (archive.org bitsavers_attBellLabputerMusic1969_6881054).
+  relations:
+    - { type: targets, to: ibm-704, year: 1957, weight: moderate, confidence: high, sources: [wiki-music-n], note: "MUSIC I ran on the IBM 704." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MUSIC-N" }
+  sources: [wiki-music-n]

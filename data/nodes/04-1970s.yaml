@@ -86,6 +86,10 @@
     Ritchie added types to B so it could address bytes on the PDP-11, and C became the language of
     Unix. Its portability made it the lingua franca of systems programming. Most later mainstream
     syntax (braces, `++`, `for(;;)`) descends from it.
+  notes: >
+    LabWindows/CVI ("C for Virtual Instrumentation", National Instruments, 1.0 for DOS in January 1989, project begun
+    1987) is "an ANSI C programming environment for test and measurement" sharing LabVIEW's libraries; it accepts C
+    rather than a dialect, so it is a note here, not a node (wiki-labwindows-cvi).
   relations:
     - { type: successor_of, to: b, weight: strong, confidence: high }
     - { type: influenced_by, to: algol-68, aspects: [static-typing], weight: moderate, confidence: high, note: "Ritchie: the scheme of type composition owes a debt to Algol 68." }

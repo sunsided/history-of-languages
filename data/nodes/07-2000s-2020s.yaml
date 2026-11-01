@@ -3179,10 +3179,11 @@
     and Wikipedia lists Logo, Smalltalk, HyperCard, StarLogo, AgentSheets and Etoys among its influences. In
     Scratch 3.0, "Scratch blocks are implemented using a fork of Blockly".
   notes: >
-    Edges to Etoys, StarLogo, HyperCard and AgentSheets wait for those nodes (education/ backlog). The Scratch
+    Edges to StarLogo, HyperCard and AgentSheets wait for those nodes (education/ backlog). The Scratch
     Team left the Media Lab on 11 March 2019 for the Scratch Foundation.
   relations:
     - { type: influenced_by, to: logo, weight: strong, confidence: high, sources: [wiki-scratch], note: "Infobox: influenced by Logo." }
+    - { type: influenced_by, to: etoys, weight: moderate, confidence: high, sources: [wiki-scratch, wiki-etoys], note: "Both infoboxes: Etoys influenced Scratch." }
     - { type: implemented_in, to: smalltalk, year: 2007, weight: moderate, confidence: high, sources: [wiki-scratch], note: "\"the 1.x versions were based on Squeak, which itself is based on Smalltalk-80\"" }
   research_status: draft
   confidence: medium
@@ -3295,3 +3296,120 @@
       print(`The baseNumber is {baseNumber}`)
       --> The baseNumber is 2
     sources: [wiki-luau]
+
+- id: glsl
+  name: OpenGL Shading Language
+  aliases: [GLSL, GLslang]
+  kind: language
+  category: domain-specific
+  cluster: gpu
+  origin:
+    first_appeared: { year: 2002, date: "2002-07-24", precision: exact, note: "Released by the OpenGL ARB as an extension to OpenGL 1.4; core in OpenGL 2.0 (2004) (Wikipedia)." }
+    places: [{ institution: OpenGL Architecture Review Board, country: US }]
+  status: active
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing]
+    domain: [parallel-hardware]
+  milestones:
+    - { version: "OpenGL 2.0", year: 2004, summary: "Became part of core OpenGL." }
+  summary: >
+    The shading language of OpenGL, with "syntax based on the C programming language", in which vertex and fragment
+    shaders run on the graphics processor. The ARB released it in 2002 as an extension to OpenGL 1.4 and made it
+    core in OpenGL 2.0 in 2004.
+  notes: >
+    No example yet: Wikipedia shows no complete shader; the GLSL specification or the Khronos OpenGL wiki would
+    supply one.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [wiki-glsl], note: "\"syntax based on the C programming language\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/OpenGL_Shading_Language" }
+  sources: [wiki-glsl]
+
+- id: snap
+  name: "Snap!"
+  aliases: [BYOB, "Build Your Own Blocks"]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2011, precision: year, note: "As Snap!; its predecessor BYOB was \"a modification of Scratch\" (Wikipedia)." }
+    places: [{ institution: "University of California, Berkeley", country: US }]
+  creators:
+    - { name: Jens Mönig, role: designer }
+    - { name: Brian Harvey, role: designer }
+  status: active
+  tags:
+    paradigm: [visual-programming, functional, imperative]
+    features: [first-class-functions, first-class-continuations, lexical-scoping]
+    domain: [education]
+  summary: >
+    A block-based language from Jens Mönig and Brian Harvey that started as BYOB, "a modification of Scratch", and
+    adds first-class procedures, lexical scope and continuations. Its manual calls it "Scheme disguised as
+    Scratch". It is licensed under the AGPLv3.
+  notes: >
+    No example yet: the manual shows scripts only as images.
+  relations:
+    - { type: fork_of, to: scratch, weight: strong, confidence: high, sources: [wiki-snap], note: "BYOB, Snap!'s predecessor, was \"a modification of Scratch\"; Snap! itself is a reimplementation." }
+    - { type: influenced_by, to: scheme, aspects: [first-class-functions, first-class-continuations, lexical-scoping], weight: strong, confidence: high, sources: [wiki-snap], note: "Manual: \"Scheme disguised as Scratch\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Snap!_(programming_language)", homepage: "https://snap.berkeley.edu/" }
+  sources: [wiki-snap]
+
+- id: sonic-pi
+  name: Sonic Pi
+  kind: language
+  category: educational
+  cluster: audio
+  origin:
+    first_appeared: { year: 2012, precision: year }
+    places: [{ institution: University of Cambridge Computer Laboratory, country: GB }]
+  creators:
+    - { name: Sam Aaron, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [live-coding]
+    domain: [music-audio, education]
+  summary: >
+    A live-coding environment for music "based on Ruby", which Sam Aaron created at the University of Cambridge
+    Computer Laboratory for teaching programming in schools. It is free software under the AGPL.
+  notes: >
+    No example yet: needs a verbatim program from sonic-pi.net or its built-in tutorial.
+  relations:
+    - { type: dialect_of, to: ruby, weight: strong, confidence: medium, sources: [wiki-sonic-pi], note: "\"based on Ruby\"; Sonic Pi programs are Ruby with a music DSL, but whether every program is valid Ruby is not stated." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Sonic_Pi", homepage: "https://sonic-pi.net/" }
+  sources: [wiki-sonic-pi]
+
+- id: verse
+  name: Verse
+  kind: language
+  category: scripting
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 2023, precision: year, note: "Presented at Haskell eXchange in December 2022; shipped with Unreal Editor for Fortnite (UEFN) in March 2023 (Wikipedia: Unreal Engine)." }
+    places: [{ institution: Epic Games, country: US }]
+  creators:
+    - { name: Tim Sweeney, role: conceived it }
+    - { name: Simon Peyton Jones, role: designer }
+    - { name: Lennart Augustsson, role: designer }
+  status: active
+  tags:
+    paradigm: [functional, logic]
+    domain: [game-scripting]
+  summary: >
+    Epic Games' scripting language for Fortnite's editor, conceived by Tim Sweeney and
+    designed with Simon Peyton Jones and Lennart Augustsson. It was presented in December 2022 as "an open source
+    functional-logic language" and launched with Unreal Editor for Fortnite in March 2023.
+  notes: >
+    The influence of Haskell (through its designers) is plausible but not yet sourced as a language influence. The
+    Verse calculus paper (Augustsson et al., ICFP 2023) would be the primary source. No example yet: Epic's
+    documentation renders client-side.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Unreal_Engine" }
+  sources: [wiki-unreal-engine]

@@ -1782,3 +1782,137 @@
         DBMS_OUTPUT.PUT_LINE(RecordIndex.person_code);
       END LOOP;
     sources: [wiki-pl-sql]
+
+- id: powerbuilder
+  name: PowerBuilder
+  aliases: [PowerScript]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1991, precision: disputed, note: "Wikipedia's article body gives PowerBuilder 1.0 as July 1991; its infobox says July 1992." }
+    places: [{ institution: Powersoft, country: US }]
+  creators:
+    - { name: Mitchell Kertzman, role: "founder of Powersoft (formerly Computer Solutions Inc.)" }
+  status: maintained
+  tags:
+    paradigm: [imperative, object-oriented, event-driven]
+    domain: [databases, business-data-processing]
+  summary: >
+    A database application builder from Powersoft whose language, PowerScript, is "a language built around the
+    DataWindow". The product belongs to SAP today and is developed by Appeon.
+  notes: >
+    No example yet: needs a verbatim multi-line PowerScript listing from Appeon's documentation.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PowerBuilder" }
+  sources: [wiki-powerbuilder]
+
+- id: pure-data
+  name: Pure Data
+  aliases: [Pd]
+  kind: language
+  category: domain-specific
+  cluster: visual
+  origin:
+    first_appeared: { year: 1996, precision: year }
+  creators:
+    - { name: Miller Puckette, role: designer }
+  status: active
+  tags:
+    paradigm: [visual-programming, dataflow-programming]
+    domain: [music-audio]
+  summary: >
+    Miller Puckette's open-source (BSD-licensed) visual language for audio and multimedia, "very similar in scope and
+    design to Puckette's original Max": programs are patches of boxes connected by wires that carry messages and
+    audio signals.
+  notes: >
+    No example yet: Pd patches are saved as text (#N canvas / #X obj lines), so a .pd file from Pd's own
+    documentation could be quoted verbatim.
+  relations:
+    - { type: influenced_by, to: max, weight: strong, confidence: high, sources: [wiki-pure-data, wiki-max-software], note: "Same designer; \"very similar in scope and design to Puckette's original Max\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pure_Data", homepage: "https://puredata.info/" }
+  sources: [wiki-pure-data, wiki-max-software]
+
+- id: etoys
+  name: Etoys
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1996, precision: year }
+    places: [{ institution: Walt Disney Imagineering, country: US }]
+  creators:
+    - { name: Alan Kay, role: "lead, at Disney" }
+  tags:
+    paradigm: [visual-programming, prototype-based, object-oriented]
+    domain: [education]
+  summary: >
+    A tile-based, prototype-based scripting environment for children that Alan Kay's group built on Squeak at
+    Disney. Wikipedia names Logo, Smalltalk and HyperCard as its
+    influences and Scratch among the languages it influenced.
+  notes: >
+    No example yet: scripts are tiles, so a sourced textual rendering is needed.
+  relations:
+    - { type: implemented_in, to: smalltalk, year: 1996, weight: moderate, confidence: high, sources: [wiki-etoys], note: "Built on Squeak, a Smalltalk-80 implementation." }
+    - { type: influenced_by, to: smalltalk, weight: strong, confidence: high, sources: [wiki-etoys] }
+    - { type: influenced_by, to: logo, weight: moderate, confidence: high, sources: [wiki-etoys] }
+    - { type: influenced_by, to: hypertalk, weight: weak, confidence: medium, sources: [wiki-etoys], note: "Wikipedia names HyperCard, the environment HyperTalk scripts." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Etoys_(programming_language)" }
+  sources: [wiki-etoys]
+
+- id: unrealscript
+  name: UnrealScript
+  kind: language
+  category: scripting
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 1998, precision: circa, note: "Shipped with the game Unreal and its engine in 1998; Wikipedia gives no separate release date for the language." }
+    places: [{ institution: Epic Games, country: US }]
+  creators:
+    - { name: Tim Sweeney, role: designer }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, imperative]
+    domain: [game-scripting]
+  summary: >
+    The scripting language of the Unreal Engine from the game Unreal (1998) on. Wikipedia describes it as "similar
+    to Java": object-oriented, without multiple inheritance. Unreal Engine 4 replaced it with C++.
+  notes: >
+    No example yet: Epic's UnrealScript reference on the Unreal Developer Network has no complete listing that
+    was reachable; a class from the UT99 or UDK source would serve.
+  relations:
+    - { type: influenced_by, to: java, weight: weak, confidence: medium, sources: [wiki-unreal-engine], note: "\"Similar to Java\"; whether Java was an influence or only a resemblance needs Sweeney's own account." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/UnrealScript" }
+  sources: [wiki-unreal-engine]
+
+- id: gml
+  name: Game Maker Language
+  aliases: [GML]
+  kind: language
+  category: scripting
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 1999, date: "1999-11-15", precision: exact, note: "GameMaker (as Animo) was first released on 15 November 1999; whether that first version already had GML needs a source." }
+  creators:
+    - { name: Mark Overmars, role: "creator of GameMaker" }
+  status: active
+  tags:
+    paradigm: [imperative]
+    typing: [dynamic-typing]
+    domain: [game-scripting]
+  summary: >
+    The scripting language of GameMaker, which Mark Overmars first released as Animo in 1999. Wikipedia describes it
+    as "an imperative, dynamically typed language commonly likened to JavaScript and C-like languages".
+  notes: >
+    No example yet: the GameMaker manual (manual.gamemaker.io) blocked the fetch.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GameMaker" }
+  sources: [wiki-gamemaker]

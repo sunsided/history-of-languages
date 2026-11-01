@@ -902,9 +902,7 @@
   summary: "Languages designed for teaching programming, from PILOT and TUTOR to block-based Scratch and Snap!."
   research_status: stub
   backlog:
-    - { name: "Snap!", year: 2011, hint: "Jens Mönig and Brian Harvey (UC Berkeley); formerly BYOB, \"a modification of Scratch\"; manual: \"Scheme disguised as Scratch\" (first-class procedures, lexical scope, continuations); AGPLv3 (wiki-snap). Needs a text example: its manual shows scripts only as images." }
     - { name: "ScratchJr", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Etoys", year: 1996, hint: "Alan Kay at Disney Imagineering on Squeak; prototype-based; influenced Scratch (wiki-etoys). Needs a textual example." }
     - { name: "Blockly", year: 2012, hint: "Google (Neil Fraser and others), a JavaScript library for building block languages, not a language itself; Scratch 3.0 blocks use a fork of it (wiki-blockly). Probably a note on Scratch rather than a node." }
     - { name: "Kodu", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Starlogo", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
@@ -940,9 +938,6 @@
   summary: "Programs drawn as diagrams or patched dataflow graphs: LabVIEW, Prograph, Max and Pure Data."
   research_status: stub
   backlog:
-    - { name: "LabVIEW", year: 1986, hint: "National Instruments; 1.0 \"released in late October 1986\" for the Macintosh; its graphical dataflow language is called G; NXT-G is based on it (wiki-labview). Needs a way to show a block diagram as an example." }
-    - { name: "Max", year: 1988, hint: "Miller Puckette, IRCAM, work began 1985, first used for Pluton (1988); originally The Patcher; named after Max Mathews and \"a descendant of his MUSIC language\"; Cycling '74 Max/MSP 1997 (wiki-max-software). Graphical, so the example needs a patch screenshot or .maxpat text." }
-    - { name: "Pure Data", year: 1996, hint: "Miller Puckette, open source (BSD), \"very similar in scope and design to Puckette's original Max\" (wiki-pure-data, wiki-max-software). Example could be a .pd file (#N canvas / #X obj lines) from Pd's own documentation." }
     - { name: "Prograph", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "DRAKON", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Agilent VEE", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
@@ -957,8 +952,6 @@
   research_status: stub
   key_sources: [wiki-music-n]
   backlog:
-    - { name: "MUSIC-N (MUSIC I to V)", year: 1957, hint: "Max Mathews, Bell Labs, IBM 704; MUSIC II 1958, III 1960, IV 1963 (with J. Miller), V; unit generators and orchestra/score split; \"the parent program\" of Csound, Max, Pd, SuperCollider, ChucK (wiki-music-n). Needs a verbatim MUSIC V score: Mathews, The Technology of Computer Music (1969), ch. 2-3; archive.org copies technologyofcompm00math (truncated), bitsavers_attBellLabputerMusic1969_6881054." }
-    - { name: "Sonic Pi", year: 2012, hint: "Sam Aaron, University of Cambridge Computer Laboratory; live coding \"based on Ruby\", for school lessons; AGPL (wiki-sonic-pi). Needs a verbatim example from sonic-pi.net." }
     - { name: "FAUST", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "LilyPond", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
 - id: scientific
@@ -1015,7 +1008,6 @@
   summary: "Languages for programming graphics processors and accelerators: GLSL, HLSL, WGSL, OpenCL, SYCL."
   research_status: stub
   backlog:
-    - { name: "OpenGL Shading Language", year: 2002, hint: "GLSL; OpenGL ARB, extension to OpenGL 1.4 (24 July 2002), core in OpenGL 2.0 (2004); \"syntax based on the C programming language\" (wiki-glsl). Wikipedia has no full shader; needs a verbatim example (Khronos spec or OpenGL wiki)." }
     - { name: "High Level Shader Language", hint: "HLSL; Microsoft, for Direct3D 9; \"developed alongside the Cg ... shading language from Nvidia\", early versions \"considered identical\"; influenced by C and RenderMan Shading Language (wiki-hlsl). Needs year and a verbatim example." }
     - { name: "WebGPU Shading Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "SYCL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
@@ -1068,12 +1060,8 @@
   summary: "Languages built into games and game engines: QuakeC, UnrealScript, LPC and MOO for MUDs, GML, Luau, Verse."
   research_status: stub
   backlog:
-    - { name: "UnrealScript", hint: "Tim Sweeney, Epic Games, for Unreal (1998); \"Similar to Java\", object-oriented without multiple inheritance; replaced by C++ in Unreal Engine 4 (wiki-unreal-engine). Needs its own release year and a verbatim example (UDN reference has none)." }
-    - { name: "LPC", year: 1989, hint: "Lars Pensjö, LPMud driver, Genesis (April 1989); \"a new, C-based, object-oriented programming language\" (wiki-lpmud). Needs a verbatim example from a mudlib or driver docs." }
     - { name: "NWScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Game Maker Language", hint: "GML; GameMaker by Mark Overmars, first released as Animo on 15 November 1999; \"an imperative, dynamically typed language commonly likened to JavaScript and C-like languages\" (wiki-gamemaker). Needs a verbatim example (manual.gamemaker.io blocked the fetch)." }
     - { name: "LSL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Verse", year: 2023, hint: "Epic Games, conceived by Tim Sweeney, with Simon Peyton Jones and Lennart Augustsson; presented at Haskell eXchange December 2022 as \"an open source functional-logic language\", launched in UEFN March 2023 (wiki-unreal-engine). Needs a verbatim example (Epic docs render client-side)." }
     - { name: "Game Oriented Assembly Lisp", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "AngelScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "JASS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
@@ -1086,7 +1074,6 @@
   backlog:
     - { name: "Clarion", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "DataFlex", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PowerBuilder", year: 1991, hint: "PowerScript; Powersoft (formerly Computer Solutions Inc., Mitchell Kertzman); 1.0 July 1991 per the article body, July 1992 per its infobox; \"a language built around the DataWindow\"; SAP/Appeon today (wiki-powerbuilder). Needs a verbatim multi-line example." }
     - { name: "Uniface", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "LANSA", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "OpenEdge Advanced Business Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }

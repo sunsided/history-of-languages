@@ -2251,8 +2251,9 @@
     along a timeline." It is named for C, the language it was written in, "in contrast to some of its
     predecessors".
   notes: >
-    MUSIC-N (Mathews, Bell Labs, 1957; MUSIC II to V and many ports) is in the audio backlog until a real MUSIC IV
-    or V score can be quoted; Csound "descended from MUSIC 11" (Vercoe et al., MIT, 1973).
+    Csound "descended from MUSIC 11" (Vercoe et al., MIT, 1973), the MIT member of the MUSIC-N family.
+  relations:
+    - { type: influenced_by, to: music-n, weight: strong, confidence: high, sources: [wiki-csound, wiki-music-n], note: "Based on Vercoe's Music 11, which \"followed the MUSIC-N model initiated by Max Mathews at Bell Labs\"." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Csound", homepage: "https://csound.com/" }
@@ -2555,3 +2556,86 @@
       ? "Hello World!"
       Return //Or Retu, same result.
     sources: [wiki-clipper]
+
+- id: labview
+  name: LabVIEW
+  aliases: [G]
+  kind: language
+  category: domain-specific
+  cluster: visual
+  origin:
+    first_appeared: { year: 1986, precision: year, note: "Wikipedia: LabVIEW 1.0 was \"released in late October 1986\" for the Apple Macintosh." }
+    places: [{ institution: National Instruments, country: US }]
+  status: active
+  tags:
+    paradigm: [visual-programming, dataflow-programming]
+    domain: [scientific-computing]
+  summary: >
+    National Instruments' system for instrument control, data acquisition and test, first released for the
+    Macintosh in October 1986. Programs are block diagrams wired together; the graphical dataflow language
+    itself is called G. LEGO's NXT-G for Mindstorms is based on it.
+  notes: >
+    LabWindows/CVI ("C for Virtual Instrumentation"), NI's text-based sibling from 1987-89, "uses the same libraries
+    and data-acquisition modules" as LabVIEW but is "an ANSI C programming environment", so it is a note on the C node
+    rather than a node here (wiki-labwindows-cvi). No example yet: G programs are diagrams, so one would need a
+    sourced screenshot. Creators (Jeff Kodosky is usually named) are not stated in the Wikipedia article read.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LabVIEW", homepage: "https://www.ni.com/labview" }
+  sources: [wiki-labview, wiki-labwindows-cvi]
+
+- id: max
+  name: Max
+  aliases: ["The Patcher", "Max/MSP", "Max/MSP/Jitter"]
+  kind: language
+  category: domain-specific
+  cluster: visual
+  origin:
+    began: { year: 1985, precision: year }
+    first_appeared: { year: 1988, precision: year, note: "Wikipedia: work began in 1985 at IRCAM; first used for the piece Pluton (1988)." }
+    places: [{ institution: IRCAM, city: Paris, country: FR }]
+  creators:
+    - { name: Miller Puckette, role: designer }
+  status: active
+  tags:
+    paradigm: [visual-programming, dataflow-programming]
+    domain: [music-audio]
+  milestones:
+    - { version: Max/MSP, year: 1997, summary: "Cycling '74 version with MSP audio-signal objects." }
+  summary: >
+    A visual language for music and multimedia in which programs are patches: boxes for objects wired together on
+    screen. Miller Puckette began it at IRCAM in 1985 as "The Patcher"; it was first used for the piece Pluton in
+    1988. It is named after Max Mathews and is, in Wikipedia's words, "a descendant of his MUSIC language". Cycling
+    '74 has developed it as a commercial product since 1997.
+  notes: >
+    No example yet: a patch is graphical; a .maxpat (JSON) listing from Cycling '74's documentation could serve.
+  relations:
+    - { type: influenced_by, to: music-n, weight: moderate, confidence: high, sources: [wiki-max-software], note: "Named after Max Mathews; \"a descendant of his MUSIC language\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Max_(software)", homepage: "https://cycling74.com/products/max" }
+  sources: [wiki-max-software]
+
+- id: lpc
+  name: LPC
+  kind: language
+  category: scripting
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 1989, precision: year, note: "With the LPMud driver; the first LPMud, Genesis, opened in April 1989 (Wikipedia: LPMud)." }
+  creators:
+    - { name: Lars Pensjö, role: designer }
+  tags:
+    paradigm: [object-oriented, imperative]
+    domain: [game-scripting]
+  summary: >
+    The language of LPMud, the MUD server Lars Pensjö wrote in 1989: in Wikipedia's words "a new, C-based,
+    object-oriented programming language", in which the MUD's game content is written.
+  notes: >
+    No example yet: a verbatim object from a mudlib (for example the Genesis or Lima mudlib) would serve.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [wiki-lpmud], note: "\"C-based\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LPC_(programming_language)" }
+  sources: [wiki-lpmud]
