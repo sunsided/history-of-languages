@@ -270,7 +270,6 @@
   research_status: draft
   backlog:
     - { name: "ABAP", year: 1983 }
-    - { name: "dBase / xBase", year: 1979 }
 - id: algol
   name: ALGOL family
   summary: "ALGOL 58/60/68 and the languages defined by agreeing or disagreeing with them."
@@ -1085,20 +1084,15 @@
   summary: "Fourth-generation and database application languages: dBase descendants, report writers and vendor languages such as PL/SQL and ABAP's peers."
   research_status: stub
   backlog:
-    - { name: "Clipper", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "FoxBase/FoxPro", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Visual FoxPro", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Harbour", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Clarion", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "DataFlex", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PowerBuilder", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "PowerBuilder", year: 1991, hint: "PowerScript; Powersoft (formerly Computer Solutions Inc., Mitchell Kertzman); 1.0 July 1991 per the article body, July 1992 per its infobox; \"a language built around the DataWindow\"; SAP/Appeon today (wiki-powerbuilder). Needs a verbatim multi-line example." }
     - { name: "Uniface", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "LANSA", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "OpenEdge Advanced Business Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "IBM Informix-4GL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "DIBOL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PL/SQL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Transact-SQL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Transact-SQL", hint: "T-SQL; Sybase, then Microsoft SQL Server (announced January 1988 with Ashton-Tate, licensed from Sybase) and SAP ASE; \"an extension of SQL\" (wiki-transact-sql). Needs a release year and a verbatim example." }
     - { name: "PeopleCode", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "LotusScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "@Formula", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }

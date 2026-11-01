@@ -3579,3 +3579,43 @@
   primary: false
   title: "Wikipedia: GameMaker"
   url: https://en.wikipedia.org/wiki/GameMaker
+- id: wiki-dbase
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: dBase"
+  url: https://en.wikipedia.org/wiki/DBase
+- id: wiki-clipper
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Clipper (programming language)"
+  url: https://en.wikipedia.org/wiki/Clipper_(programming_language)
+- id: wiki-foxpro
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: FoxPro"
+  url: https://en.wikipedia.org/wiki/FoxPro
+- id: wiki-visual-foxpro
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Visual FoxPro"
+  url: https://en.wikipedia.org/wiki/Visual_FoxPro
+- id: wiki-harbour
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Harbour (programming language)"
+  url: https://en.wikipedia.org/wiki/Harbour_(programming_language)
+- id: wiki-pl-sql
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PL/SQL"
+  url: https://en.wikipedia.org/wiki/PL/SQL
+- id: wiki-transact-sql
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Transact-SQL"
+  url: https://en.wikipedia.org/wiki/Transact-SQL
+- id: wiki-powerbuilder
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PowerBuilder"
+  url: https://en.wikipedia.org/wiki/PowerBuilder

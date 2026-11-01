@@ -2468,3 +2468,90 @@
       factor(x^2-1);
       solve(x^2 + a*x + 1, x);
     sources: [wiki-maxima]
+
+- id: foxpro
+  name: FoxPro
+  aliases: [FoxBASE, FoxBASE+, Visual FoxPro, VFP]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1984, precision: year, note: "Wikipedia (Visual FoxPro): FoxBASE \"was developed by Fox Software beginning in 1984\"." }
+    places: [{ institution: Fox Software, country: US }]
+  status: legacy
+  tags:
+    paradigm: [procedural, object-oriented]
+    typing: [dynamic-typing]
+    domain: [databases, business-data-processing]
+  milestones:
+    - { version: "FoxPro 1.0", year: 1991, summary: "FoxPro 1.0 for DOS, November 1991. Microsoft bought Fox Software in 1992." }
+    - { version: "Visual FoxPro 3.0", year: 1995, summary: "First Visual FoxPro, June 1995: object-oriented, for Windows." }
+    - { version: "Visual FoxPro 9.0", year: 2004, summary: "\"The final version of the product\" (December 2004; SP2 in October 2007)." }
+  summary: >
+    Fox Software's dBase-compatible line, from FoxBASE to FoxPro and Microsoft's Visual FoxPro: "derived from
+    FoxBASE ..., which was in turn derived from dBase III", and later "also an object-oriented programming language".
+    It is one of the xBase languages, "which have syntax based on the dBase programming language".
+  relations:
+    - { type: dialect_of, to: dbase, weight: strong, confidence: high, sources: [wiki-foxpro], note: "\"FoxPro was derived from FoxBASE ..., which was in turn derived from dBase III\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FoxPro" }
+  sources: [wiki-foxpro, wiki-visual-foxpro]
+  example:
+    title: A message box and a factorial function in Visual FoxPro
+    language: Visual FoxPro
+    note: "From Wikipedia's Visual FoxPro article; our copy lost the indentation inside FUNCTION, which is restored here. * starts a comment line."
+    code: |
+      * Display text in a standard message box
+      MESSAGEBOX('Hello World')
+      * Function call
+      f = Factorial(10)
+      * Function definition
+      FUNCTION Factorial(n)
+        LOCAL i, r
+        r = 1
+        FOR i = n TO 1 STEP -1
+          r = r * i
+        ENDFOR
+        RETURN r
+      ENDFUNC
+    sources: [wiki-visual-foxpro]
+
+- id: clipper
+  name: Clipper
+  aliases: [Nantucket Clipper, CA-Clipper]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1985, date: "1985-05-25", precision: exact, note: "Wikipedia: \"Nantucket Clipper Winter'84 – May 25, 1985\"." }
+    places: [{ institution: Nantucket Corporation, country: US }]
+  creators:
+    - { name: Brian Russell, role: technical founder of Nantucket }
+  status: legacy
+  tags:
+    paradigm: [procedural, imperative]
+    typing: [dynamic-typing]
+    features: [compiler]
+    domain: [databases, business-data-processing]
+  summary: >
+    "An xBase compiler that implements a variant of the xBase computer programming language": Nantucket's Clipper
+    "started out as a native code compiler for dBase III databases", so dBase programs could ship as standalone
+    executables, and grew its own extensions. Computer Associates bought Nantucket in 1992.
+  relations:
+    - { type: dialect_of, to: dbase, weight: strong, confidence: high, sources: [wiki-clipper], note: "\"a native code compiler for dBase III databases\"; infobox: influenced by dBase." }
+  notes: >
+    Both FoxPro and Clipper derive from dBASE III; add from_version once dBase has a sourced dBASE III milestone.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Clipper_(programming_language)" }
+  sources: [wiki-clipper]
+  example:
+    title: Hello World
+    language: Clipper
+    note: "From Wikipedia's Clipper article, which our copy renders on one line; line breaks are restored at the statements, comments and tokens unchanged. ? prints a line."
+    code: |
+      Procedure Main //Or Proc Main, same result.
+      ? "Hello World!"
+      Return //Or Retu, same result.
+    sources: [wiki-clipper]

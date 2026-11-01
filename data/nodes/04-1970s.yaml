@@ -1897,3 +1897,39 @@
       50 ENDIF
       60 PRINT "RETURNING TO OUR REGULARLY SCHEDULED PROGRAMMING"
     sources: [wiki-comal]
+
+- id: dbase
+  name: dBase
+  aliases: [dBASE, dBASE II, dBASE III, Vulcan, xBase]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1979, precision: year, note: "Wikipedia infobox; \"Originally released as Vulcan for PTDOS in 1978\", and \"the CP/M port caught the attention of Ashton-Tate in 1980\"." }
+  creators:
+    - { name: Wayne Ratliff, role: "original author (Vulcan)" }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [dynamic-typing]
+    domain: [databases, business-data-processing]
+  summary: >
+    "One of the first database management systems for microcomputers" and "an application development language":
+    commands such as USE, REPLACE and LIST work on the current table, and the same commands make up programs.
+    C. Wayne Ratliff wrote it as Vulcan; Ashton-Tate sold it as dBase. Its language was copied so widely, by
+    FoxBASE, Clipper and others, that the family became known as xBase.
+  notes: >
+    The creator entry uses "Wayne Ratliff"; check his English Wikipedia article title.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/DBase" }
+  sources: [wiki-dbase]
+  example:
+    title: A ten per cent raise for supervisors
+    language: dBase
+    note: "Verbatim from Wikipedia's dBase article: open the empl table, update every matching record, print a listing."
+    code: |
+      USE empl
+      REPLACE ALL salary WITH salary * 1.1 FOR supervisors > 0
+      LIST ALL fname, lname, salary TO PRINT
+    sources: [wiki-dbase]

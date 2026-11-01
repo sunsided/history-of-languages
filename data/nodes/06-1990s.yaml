@@ -1712,3 +1712,73 @@
       	setorigin (self, self.origin);
       };
     sources: [id-quake-source]
+
+- id: harbour
+  name: Harbour
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1999, date: "1999-03", precision: exact, note: "Wikipedia: \"the implementation was started in March 1999\"." }
+  creators:
+    - { name: Antonio Linares, role: founder of the project }
+  status: active
+  tags:
+    paradigm: [procedural, object-oriented]
+    typing: [dynamic-typing]
+    features: [compiler]
+    domain: [databases, business-data-processing]
+  summary: >
+    "A modernised cross-platform version of the older Clipper system", open source and "100% Clipper-compatible",
+    begun by Antonio Linares in 1999 and redesigned from 2009 by Viktor Szakáts and Przemysław Czerpak.
+  relations:
+    - { type: dialect_of, to: clipper, weight: strong, confidence: high, sources: [wiki-harbour], note: "\"Harbour is 100% Clipper-compatible\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Harbour_(programming_language)", homepage: "https://harbour.github.io/" }
+  sources: [wiki-harbour]
+  example:
+    title: Hello, world
+    language: Harbour
+    note: "From Wikipedia's Harbour article; our copy lost any indentation, and the ? line is indented here for readability. The article gives QOut( \"Hello, world!\" ) as the function form of ?."
+    code: |
+      PROCEDURE Main()
+         ? "Hello, world!"
+      RETURN
+    sources: [wiki-harbour]
+
+- id: pl-sql
+  name: PL/SQL
+  aliases: [Procedural Language for SQL]
+  kind: language
+  category: query
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1995, precision: year, note: "Wikipedia: \"The first public version of the PL/SQL definition was in 1995\"; available in Oracle Database since version 6, stored procedures since version 7. Release years of those versions are not on the page." }
+    places: [{ institution: Oracle Corporation, country: US }]
+  status: active
+  tags:
+    paradigm: [procedural, imperative]
+    typing: [static-typing]
+    domain: [databases]
+  summary: >
+    "Oracle Corporation's procedural extension for SQL": blocks, loops, exceptions and stored procedures, packages
+    and triggers around SQL statements that run inside the database. "The designers of PL/SQL modeled its syntax on
+    that of Ada", and both "have Pascal as a common ancestor".
+  relations:
+    - { type: influenced_by, to: ada, weight: strong, confidence: high, sources: [wiki-pl-sql], note: "\"modeled its syntax on that of Ada\"" }
+    - { type: superset_of, to: sql, weight: strong, confidence: high, sources: [wiki-pl-sql], note: "\"procedural extension for SQL\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PL/SQL" }
+  sources: [wiki-pl-sql]
+  example:
+    title: A cursor FOR loop over a query
+    language: PL/SQL
+    note: "From Wikipedia's PL/SQL article; indentation of the loop body restored. The loop variable is a record for each row the SELECT returns."
+    code: |
+      FOR RecordIndex IN (SELECT person_code FROM people_table)
+      LOOP
+        DBMS_OUTPUT.PUT_LINE(RecordIndex.person_code);
+      END LOOP;
+    sources: [wiki-pl-sql]
