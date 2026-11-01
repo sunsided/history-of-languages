@@ -1206,3 +1206,104 @@
   title: 'Wikipedia: ML (programming language)'
   url: https://en.wikipedia.org/wiki/ML_(programming_language)
   checked: '2026-11-01'
+- id: wiki-u880
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: U880'
+  url: https://en.wikipedia.org/wiki/U880
+  checked: '2026-11-01'
+- id: dewiki-u880
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia (de): U880'
+  url: https://de.wikipedia.org/wiki/U880
+  checked: '2026-11-01'
+- id: kieser-meder-1986-u880
+  type: book
+  primary: true
+  authors:
+  - Heiko Kieser
+  - Michael Meder
+  title: 'Mikroprozessortechnik. Aufbau und Anwendung des Mikroprozessorsystems U880'
+  venue: VEB Verlag Technik, Berlin
+  year: 1986
+- id: wiki-lc80
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: LC80'
+  url: https://en.wikipedia.org/wiki/LC80
+  checked: '2026-11-01'
+- id: dewiki-lc80
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia (de): LC80'
+  url: https://de.wikipedia.org/wiki/LC80
+  checked: '2026-11-01'
+- id: robotrontechnik-lc80
+  type: web
+  primary: false
+  title: 'robotrontechnik.de: Lerncomputer LC80'
+  url: https://www.robotrontechnik.de/html/computer/lc80.htm
+  checked: '2026-11-01'
+- id: hucki-lc80
+  type: web
+  primary: false
+  authors:
+  - Volker Pohlers
+  title: 'Homecomputer DDR: LC 80'
+  url: http://hc-ddr.hucki.net/wiki/doku.php/lc80
+  checked: '2026-11-01'
+- id: kaempf-1984-lc80
+  type: paper
+  primary: true
+  authors:
+  - Werner Kämpf
+  title: 'Lerncomputer LC 80'
+  venue: Radio Fernsehen Elektronik 33(10), pp. 669-672
+  year: 1984
+- id: denkes-1986-lc80-morse
+  type: paper
+  primary: true
+  authors:
+  - N. Denkes
+  title: 'Lerncomputer "LC 80" als Morseübungsgerät'
+  venue: Funkamateur 35(1), pp. 29-30 (transcribed at hc-ddr.hucki.net)
+  year: 1986
+  url: http://hc-ddr.hucki.net/wiki/doku.php/lc80/literatur/fa-86-01
+  checked: '2026-11-01'
+- id: dewiki-polycomputer-880
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia (de): Polycomputer 880'
+  url: https://de.wikipedia.org/wiki/Polycomputer_880
+  checked: '2026-11-01'
+- id: wiki-veb-polytechnik
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: VEB Polytechnik'
+  url: https://en.wikipedia.org/wiki/VEB_Polytechnik
+  checked: '2026-11-01'
+- id: robotrontechnik-poly880
+  type: web
+  primary: false
+  title: 'robotrontechnik.de: POLY880'
+  url: https://www.robotrontechnik.de/html/computer/poly880.htm
+  checked: '2026-11-01'
+- id: arnold-pilz-1982-poly880
+  type: paper
+  primary: true
+  authors:
+  - Harald Arnold
+  - Wolfgang Pilz
+  title: 'Poly-Computer 880'
+  venue: radio fernsehen elektronik 6/1982, pp. 385-386
+  year: 1982
+- id: burkhardt-huebner-1984-poly880
+  type: paper
+  primary: true
+  authors:
+  - Steffen Burkhardt
+  - Uwe Hübner
+  title: 'Technik und Anwendung des Poly-Computers 880'
+  venue: radio fernsehen elektronik 5/1984, pp. 282-287
+  year: 1984

@@ -104,6 +104,27 @@
     - { name: "Intel 4004", year: 1971 }
     - { name: "Intel 8008 / 8080", year: 1974 }
     - { name: "Motorola 6800", year: 1974 }
+    - { name: "Multitech Micro-Professor MPF-1", year: 1981, hint: "Z80 single-board trainer from Taiwan. German Wikipedia says the LC 80's monitor is essentially the MPF-1's, apart from entry addresses: add it, then link lc80 to it once a source confirms the derivation." }
+- id: machines/eastern-bloc
+  name: Eastern Bloc computers
+  parent: machines
+  summary: "Clones and original machines from the GDR, the USSR and Comecon, and the languages taught on them."
+  research_status: stub
+  backlog:
+    - { name: "KR580VM80A (K580IK80)", year: 1979, hint: "Soviet Intel 8080 clone, first used in the SM1800 (1979); ran the Radio-86RK and Vector-06C. wikipedia: KR580VM80A." }
+    - { name: "HC 900 / KC 85/2, /3, /4", year: 1984, hint: "VEB Mikroelektronik 'Wilhelm Pieck' Mühlhausen; HC 900 (1984) renamed KC 85/2 (1985). KC-BASIC in ROM from the KC 85/3 (1986)." }
+    - { name: "KC-BASIC", year: 1986, hint: "BASIC of the KC 85/3 and /4; check its ancestry (Microsoft BASIC?)." }
+    - { name: "Z 1013", year: 1985, hint: "U880 kit computer from VEB Robotron-Elektronik Riesa; about 25,000 kits 1985-1990. BASIC only with at least 16 KB RAM. de.wikipedia: Z 1013." }
+    - { name: "Agat", year: 1983, hint: "Soviet Apple II-inspired school computer, made 1984-1990; ran Rapira and Robic." }
+    - { name: "Rapira", year: 1982, hint: "Educational language by Andrey Ershov for Soviet schools; ran on Agat, PDP-11 clones and Korvet." }
+    - { name: "Robic", year: 1975, hint: "Soviet language for primary-school children (8-11), later in the 'Schoolgirl' package on the Agat." }
+    - { name: "Elbrus-1", year: 1979, hint: "Lebedev Institute; Vsevolod Burtsev. Programmed in El-76." }
+    - { name: "El-76", year: 1972, hint: "High-level language of the Elbrus, by Boris Babayan and colleagues (1972-73), Russian keywords." }
+    - { name: "Refal", year: 1966, hint: "Valentin Turchin's pattern-matching, term-rewriting language; first implemented 1968. Belongs in a language cluster, with a link from here." }
+  research_questions:
+    - "Which BASIC dialects ran on GDR machines (KC-BASIC, Z 1013 BASIC), and do they descend from Microsoft BASIC?"
+    - "Who designed the U880 and how was it copied? Kieser and Meder (1986) and silirium.ru/fwe-z80.html are leads."
+  key_sources: [wiki-u880, kieser-meder-1986-u880]
 - id: machines/risc
   name: RISC architectures
   parent: machines

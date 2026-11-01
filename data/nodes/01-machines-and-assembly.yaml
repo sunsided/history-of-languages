@@ -323,6 +323,135 @@
       C6 03     add a, 3
     sources: [wiki-z80]
 
+- id: u880
+  name: U880
+  aliases: [U880D, UA880D, MME U880]
+  kind: machine
+  category: general
+  cluster: machines/eastern-bloc
+  origin:
+    first_appeared: { year: 1980, precision: year, note: "Production began in 1980 at VEB Funkwerk Erfurt (renamed VEB Mikroelektronik \"Karl Marx\" Erfurt in 1983). The sources do not say whether 1980 means samples or series production." }
+    places: [{ institution: "VEB Funkwerk Erfurt, later VEB Mikroelektronik \"Karl Marx\" Erfurt", city: Erfurt, country: DD }]
+  status: historical
+  summary: >
+    The East German Z80: an unlicensed clone that runs the Zilog Z80 instruction set, including its
+    undocumented opcodes, with only minor differences such as the carry flag after OUTI. Until 1990 it
+    was the only Z80-compatible processor in the Comecon countries (the others cloned the Intel 8080), so
+    it carried the Z80 line into GDR home, office, school and chess computers, and into machines in Poland,
+    Czechoslovakia, Hungary, Romania, Bulgaria and the USSR.
+  notes: >
+    Made until about 1996. Speed grades from 1 MHz (UD880D) to 8 MHz (U880DC08). Late chips were sold to
+    Soviet factories and packaged there as T34VM1 and KR1858VM1. No designers are named in the sources
+    read so far; Kieser and Meder (1986) is the period reference to check.
+  relations:
+    - { type: dialect_of, to: zilog-z80, weight: strong, confidence: high, note: "Unlicensed clone; same instruction set. 'Der U880 ist ein nicht lizenzierter Nachbau des Prozessors Zilog Z80.' (de.wikipedia)", sources: [wiki-u880, dewiki-u880] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/U880" }
+  sources: [wiki-u880, dewiki-u880, kieser-meder-1986-u880]
+  example:
+    title: "Z80 code, byte for byte"
+    language: "U880 machine code"
+    year: 1986
+    note: "The opening of a published LC 80 program (Denkes, Funkamateur 1/1986), disassembled with standard Z80 mnemonics: on the U880 the same bytes mean the same instructions. The article prints hex only; the mnemonics and comments are added here."
+    code: |
+      2000  AF          XOR  A            ; A := 0
+      2001  21 14 23    LD   HL,2314H     ; zero-fill from 2314H with
+      2004  11 15 23    LD   DE,2315H     ; the Z80 block-copy idiom:
+      2007  01 07 00    LD   BC,7         ; store one 0, then let LDIR
+      200A  77          LD   (HL),A       ; copy it forward
+      200B  ED B0       LDIR
+            ...
+      2010  3A 11 23    LD   A,(2311H)    ; pitch, as typed in by the user
+      2013  2F          CPL
+      2014  C6 05       ADD  A,5
+    sources: [denkes-1986-lc80-morse]
+
+- id: poly880
+  name: Poly-Computer 880
+  aliases: [POLY 880, POLY880, Polycomputer 880]
+  kind: machine
+  category: educational
+  cluster: machines/eastern-bloc
+  origin:
+    began: { year: 1982, precision: year, note: "Described by Harald Arnold and Wolfgang Pilz in rfe 6/1982, before production." }
+    first_appeared: { year: 1983, precision: year, note: "Production started 1983 (de.wikipedia; en.wikipedia: VEB Polytechnik)." }
+    places: [{ institution: VEB Polytechnik, city: Karl-Marx-Stadt (Chemnitz), country: DD }]
+  status: historical
+  summary: >
+    A learning computer delivered ready to run in a briefcase (48 × 38 × 12 cm, 5 kg) for schools and
+    higher education, made by VEB Polytechnik, the maker of the Polylux overhead projector. A second-grade
+    U880 at 1 MHz, 4 KB ROM monitor, 1 KB RAM, an eight-digit seven-segment display, a hex keypad with
+    function keys, and LEDs showing every address and data bus line, so students could watch the
+    processor work. Programs were entered as machine code; it cost 3,449 Mark in 1984, nearly five times
+    the LC 80 that was sold alongside it.
+  notes: >
+    It came with a user manual, a system manual and a workbook; none has been read yet, so key labels,
+    monitor commands and a published program are still missing. Cassette storage via DIN socket; a
+    teleprinter could be attached for printing. Designers are not named in the sources read; Arnold and
+    Pilz (rfe 1982) and Burkhardt and Hübner (rfe 1984) are the leads.
+  relations:
+    - { type: targets, to: u880, weight: strong, confidence: high, note: "Built on a U880 at 1 MHz; programs are U880 machine code.", sources: [dewiki-polycomputer-880] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://de.wikipedia.org/wiki/Polycomputer_880" }
+  sources: [dewiki-polycomputer-880, wiki-veb-polytechnik, robotrontechnik-poly880, arnold-pilz-1982-poly880, burkhardt-huebner-1984-poly880]
+  example:
+    title: "Count to 256 and halt"
+    language: "U880 machine code"
+    note: "Illustrative: no listing from the POLY 880 manuals has been found yet, so this is generic U880 code of the kind typed in on its hex keypad, using no monitor routines or fixed addresses. Replace it with a program from the Arbeitsbuch or rfe 5/1984 when one is found."
+    code: |
+      3E 00     LD   A,0
+      3C        INC  A        ; loop:
+      20 FD     JR   NZ,loop  ; FD = -3, back to INC A
+      76        HALT
+    sources: [dewiki-polycomputer-880]
+
+- id: lc80
+  name: LC 80
+  aliases: [LC80, Lerncomputer LC 80]
+  kind: machine
+  category: educational
+  cluster: machines/eastern-bloc
+  origin:
+    began: { year: 1983, precision: disputed, note: "Wikipedia (en and de): development started 1983. robotrontechnik.de says it was developed in 1982." }
+    first_appeared: { year: 1984, precision: year, note: "Shown at the Leipzig spring fair 1984 (rfe 7/1984). On sale from mid-1984 (Wikipedia infobox) or early 1985 (en.wikipedia text)." }
+    places: [{ institution: "Beratungs- und Informationsstelle Mikroelektronik Erfurt, with VEB Mikroelektronik \"Karl Marx\" Erfurt", city: Erfurt, country: DD }]
+  creators:
+    - { name: Werner Kämpf, role: "developer; described the machine in rfe 10/1984" }
+  status: historical
+  summary: >
+    A single-board learning computer with a U880 at 900 kHz, 1 KB RAM, 2 KB ROM monitor, a six-digit
+    seven-segment display and a 25-key calculator keypad, sold for 720 Mark. Programs were typed in as
+    hexadecimal machine code and saved to cassette. Called the first computer freely available to buy in
+    the GDR; the manufacturer published its software as hex listings in booklets, and readers published
+    more in rfe and Funkamateur.
+  notes: >
+    German Wikipedia says its monitor is essentially the Multitech Microprofessor I's, apart from entry
+    addresses. An export version (wooden case, 12 KB ROM, 4 KB RAM, SC-80 chess program) was made only as
+    samples. Production ended around 1986/87. Number built and the full developer collective are not
+    stated in the sources read; the key labels and entry sequence need the manual (Zielosko).
+  relations:
+    - { type: targets, to: u880, weight: strong, confidence: high, note: "Built on the U880; its monitor and every program for it are U880 machine code." , sources: [wiki-lc80] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LC80" }
+  sources: [wiki-lc80, dewiki-lc80, robotrontechnik-lc80, hucki-lc80, kaempf-1984-lc80]
+  example:
+    title: "A Morse trainer, as printed in Funkamateur"
+    language: "LC 80 hex listing"
+    year: 1986
+    note: "The first four of sixteen rows of Table 2 in N. Denkes, 'Lerncomputer LC 80 als Morseübungsgerät', Funkamateur 1/1986, typed in from address 2000H. The text to send goes at 2100H, ending in FFH; pitch is set at 2311H and speed at 2310H. Listings like this were how LC 80 software was shared."
+    code: |
+      Adr. 0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F
+      200  AF 21 14 23 11 15 23 01 07 00 77 ED B0 1B ED B0
+      201  3A 11 23 2F C6 05 32 14 23 3A 10 23 32 16 23 21
+      202  00 00 ED 5B 14 23 ED 4B 16 23 0B 19 79 B1 20 FA
+      203  AF EB 21 50 50 0E 03 3C ED 52 30 FB D5 11 FF FF
+      ...
+      20F  01 00 00 00 00 41 10 FE ED 52 20 F6 C9
+    sources: [denkes-1986-lc80-morse]
+
 - id: motorola-68000
   name: Motorola 68000
   kind: machine

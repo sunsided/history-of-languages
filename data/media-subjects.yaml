@@ -965,3 +965,20 @@
   wiki: Yukihiro Matsumoto
   nodes:
   - ruby
+- id: u880
+  kind: artifact
+  wiki: U880
+  nodes:
+  - u880
+- id: lc80
+  kind: machine
+  wiki: LC80
+  nodes:
+  - lc80
+- id: poly880
+  kind: machine
+  wiki: VEB Polytechnik
+  commons_file: File:Poly-computer880.jpg
+  caption: Poly-Computer 880 in its case, with the manual
+  nodes:
+  - poly880
