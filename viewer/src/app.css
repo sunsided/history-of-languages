@@ -1,0 +1,97 @@
+:root {
+	color-scheme: light dark;
+	--font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	--mono: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+
+	--bg: #ffffff;
+	--bg-raised: #f7f7f5;
+	--fg: #1d1d1b;
+	--fg-muted: #5c5c57;
+	--fg-faint: #94948d;
+	--line: #deddd8;
+	--hover: rgb(0 0 0 / 0.045);
+	--grid: #ececea;
+	--grid-major: #d6d6d2;
+	--era-a: #f3f2ee;
+	--era-b: #fbfbf9;
+	--cluster-row: #f4f4f1;
+	--cluster-row-0: #eceae4;
+	--span: rgb(60 60 50 / 0.12);
+	--code-bg: #efeee9;
+	--accent: #2f6fde;
+	--accent-soft: rgb(47 111 222 / 0.13);
+	--warn: #c4590f;
+	--rs-draft: #b08a1a;
+	--rs-reviewed: #2e8b57;
+
+	--fam-succession: #d9480f;
+	--fam-influence: #4c6ef5;
+	--fam-variant: #ae3ec9;
+	--fam-targets: #0c8599;
+	--fam-implementation: #5c940d;
+
+	--kind-mechanism: #a68a64;
+	--kind-machine: #64748b;
+	--kind-machine-code: #7c8aa0;
+	--kind-formalism: #9b59b6;
+	--kind-notation: #c27c0e;
+	--kind-assembly: #0f9d8a;
+	--kind-language: #2f6fde;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #17181a;
+		--bg-raised: #1f2023;
+		--fg: #e6e6e3;
+		--fg-muted: #a5a5a0;
+		--fg-faint: #6f6f6a;
+		--line: #34353a;
+		--hover: rgb(255 255 255 / 0.05);
+		--grid: #232428;
+		--grid-major: #303136;
+		--era-a: #1c1d20;
+		--era-b: #19191c;
+		--cluster-row: #1e1f22;
+		--cluster-row-0: #25262a;
+		--span: rgb(255 255 255 / 0.1);
+		--code-bg: #121315;
+		--accent: #6ea0ff;
+		--accent-soft: rgb(110 160 255 / 0.16);
+		--warn: #f08c3a;
+		--rs-draft: #d4b04a;
+		--rs-reviewed: #4fbf7f;
+
+		--fam-succession: #ff7a3d;
+		--fam-influence: #7d95ff;
+		--fam-variant: #d36ee6;
+		--fam-targets: #2bb5c9;
+		--fam-implementation: #8cc63f;
+
+		--kind-mechanism: #c4a77f;
+		--kind-machine: #94a3b8;
+		--kind-machine-code: #a3b0c2;
+		--kind-formalism: #c084fc;
+		--kind-notation: #eaa53a;
+		--kind-assembly: #2cc4ae;
+		--kind-language: #6ea0ff;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	height: 100%;
+	background: var(--bg);
+	color: var(--fg);
+	font-family: var(--font);
+	-webkit-font-smoothing: antialiased;
+}
+
+svg text {
+	font-family: var(--font);
+}

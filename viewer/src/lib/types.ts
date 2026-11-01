@@ -1,0 +1,192 @@
+// Shapes of the records in ../data (see ../schema/dataset.schema.json).
+// Only the fields the viewer uses are typed strictly; the rest pass through.
+
+export type RelationType =
+	| 'influenced_by'
+	| 'successor_of'
+	| 'dialect_of'
+	| 'superset_of'
+	| 'subset_of'
+	| 'fork_of'
+	| 'targets'
+	| 'implemented_in';
+
+export type Confidence = 'high' | 'medium' | 'low';
+export type Weight = 'strong' | 'moderate' | 'weak';
+export type ResearchStatus = 'stub' | 'draft' | 'reviewed';
+
+export interface Dating {
+	year: number;
+	year_end?: number;
+	date?: string;
+	precision?: string;
+	note?: string;
+}
+
+export interface Place {
+	institution?: string;
+	city?: string;
+	country?: string;
+}
+
+export interface Person {
+	name: string;
+	role?: string;
+	affiliation?: string;
+}
+
+export interface Relation {
+	type: RelationType;
+	to: string;
+	aspects?: string[];
+	weight?: Weight;
+	confidence?: Confidence;
+	note?: string;
+	sources?: string[];
+	year?: number;
+}
+
+export interface Milestone {
+	version: string;
+	year: number;
+	date?: string;
+	introduces?: string[];
+	summary?: string;
+	sources?: string[];
+}
+
+export interface CodeExample {
+	code: string;
+	/** dialect/version, e.g. "LISP 1.5" */
+	language?: string;
+	title?: string;
+	year?: number;
+	note?: string;
+	sources?: string[];
+}
+
+export interface LangNode {
+	id: string;
+	name: string;
+	aliases?: string[];
+	kind: string;
+	category?: string;
+	cluster: string;
+	origin: { began?: Dating; first_appeared: Dating; places?: Place[] };
+	creators?: Person[];
+	status?: string;
+	era?: string;
+	tags?: Record<string, string[]>;
+	milestones?: Milestone[];
+	relations?: Relation[];
+	summary: string;
+	notes?: string;
+	example?: CodeExample;
+	research_status: ResearchStatus;
+	confidence?: Confidence;
+	links?: { wikipedia?: string; homepage?: string };
+	sources?: string[];
+	/** file under data/nodes it came from (viewer only) */
+	_file?: string;
+}
+
+export interface BacklogItem {
+	name: string;
+	year?: number;
+	hint?: string;
+}
+
+export interface Cluster {
+	id: string;
+	name: string;
+	parent?: string;
+	summary?: string;
+	/** viewer hint: start folded */
+	collapsed?: boolean;
+	research_status?: ResearchStatus;
+	backlog?: BacklogItem[];
+	research_questions?: string[];
+	key_sources?: string[];
+	/** synthesized by the viewer because data referenced it without defining it */
+	_synthetic?: boolean;
+}
+
+export interface Era {
+	id: string;
+	name: string;
+	start: number;
+	end?: number;
+	summary?: string;
+	defining_concepts?: string[];
+}
+
+export interface Concept {
+	id: string;
+	name: string;
+	facet?: string;
+	broader?: string[];
+	summary?: string;
+	first_seen?: { node?: string; year?: number; note?: string };
+	sources?: string[];
+}
+
+export interface LineageStep {
+	year: number;
+	title: string;
+	text?: string;
+	nodes?: string[];
+	concepts?: string[];
+	systems?: string[];
+	sources?: string[];
+}
+
+export interface Lineage {
+	id: string;
+	title: string;
+	thesis?: string;
+	concepts?: string[];
+	steps: LineageStep[];
+	claims?: string[];
+	research_status?: ResearchStatus;
+}
+
+export interface Source {
+	id: string;
+	type?: string;
+	primary?: boolean;
+	authors?: string[];
+	title: string;
+	venue?: string;
+	year?: number;
+	url?: string;
+	doi?: string;
+	checked?: string;
+}
+
+export interface Claim {
+	id: string;
+	claim: string;
+	verdict: string;
+	summary?: string;
+	evidence?: { source: string; locator?: string; quote?: string }[];
+	nodes?: string[];
+}
+
+/** A stored relation, flattened: `from` is the newer node that stores it, `to` the older one. */
+export interface Edge extends Relation {
+	from: string;
+}
+
+export interface Dataset {
+	eras: Era[];
+	clusters: Cluster[];
+	concepts: Concept[];
+	nodes: LangNode[];
+	edges: Edge[];
+	lineages: Lineage[];
+	claims: Claim[];
+	sources: Source[];
+	/** load problems: YAML errors, dangling references. Full validation lives in tools/build.py. */
+	problems: string[];
+	loadedAt: string;
+}

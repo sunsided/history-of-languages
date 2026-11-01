@@ -1,0 +1,10 @@
+{
+	"extends": "$app/tsconfig",
+	"compilerOptions": {
+		"strict": true,
+		"allowImportingTsExtensions": true,
+		"types": ["$app/types", "node", "vite/client"]
+	},
+	"include": ["src", "vite", "*.ts"],
+	"exclude": ["src/service-worker"]
+}

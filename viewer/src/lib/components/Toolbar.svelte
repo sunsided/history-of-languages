@@ -1,0 +1,509 @@
+<script lang="ts">
+	import { viewer } from '../viewer.svelte.ts';
+	import { FAMILIES, firstYear, search } from '../graph.ts';
+	import { NOW } from '../scale.ts';
+
+	const KINDS = ['mechanism', 'machine', 'machine-code', 'formalism', 'notation', 'assembly', 'language'];
+
+	let query = $state('');
+	let open = $state(false);
+	let active = $state(0);
+	let showProblems = $state(false);
+
+	const g = $derived(viewer.graph);
+	const results = $derived(search(g, query));
+	const presentKinds = $derived(KINDS.filter((k) => g.data.nodes.some((n) => n.kind === k)));
+
+	const conceptGroups = $derived.by(() => {
+		const groups = new Map<string, { id: string; name: string }[]>();
+		for (const c of [...g.data.concepts].sort((a, b) => a.name.localeCompare(b.name))) {
+			const f = c.facet ?? 'other';
+			(groups.get(f) ?? groups.set(f, []).get(f)!).push(c);
+		}
+		return [...groups.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+	});
+
+	const eras = $derived([...g.data.eras].sort((a, b) => a.start - b.start));
+	// Eras may overlap; the latest-starting one containing the centre year wins (same rule as build.py).
+	const activeEra = $derived.by(() => {
+		if (viewer.pinnedEra) return viewer.pinnedEra;
+		if (viewer.centerYear > NOW - 3) return 'now';
+		const hits = eras.filter((e) => e.start <= viewer.centerYear && viewer.centerYear <= (e.end ?? NOW) + 1);
+		return hits.at(-1)?.id ?? null;
+	});
+	const focusActive = $derived(viewer.selected !== null || viewer.concept !== null || viewer.lineage !== null);
+	const showFilters = $derived(!viewer.narrow.current || viewer.filtersOpen);
+
+	function pick(id: string) {
+		viewer.selectNode(id);
+		query = '';
+		open = false;
+	}
+
+	function onKey(ev: KeyboardEvent) {
+		if (ev.key === 'ArrowDown') {
+			active = Math.min(results.length - 1, active + 1);
+			ev.preventDefault();
+		} else if (ev.key === 'ArrowUp') {
+			active = Math.max(0, active - 1);
+			ev.preventDefault();
+		} else if (ev.key === 'Enter' && results[active]) {
+			pick(results[active].id);
+		} else if (ev.key === 'Escape') {
+			query = '';
+			open = false;
+		}
+	}
+
+	let flash = $state(false);
+	$effect(() => {
+		if (viewer.updates === 0) return;
+		flash = true;
+		const t = setTimeout(() => (flash = false), 900);
+		return () => clearTimeout(t);
+	});
+</script>
+
+<header class="toolbar">
+	<div class="brand">History of languages</div>
+
+	<div class="search">
+		<input
+			type="search"
+			placeholder="Find language…"
+			bind:value={query}
+			onfocus={() => (open = true)}
+			onblur={() => setTimeout(() => (open = false), 150)}
+			oninput={() => {
+				open = true;
+				active = 0;
+			}}
+			onkeydown={onKey}
+		/>
+		{#if open && results.length}
+			<ul class="results">
+				{#each results as n, i (n.id)}
+					<li>
+						<button class:active={i === active} onmousedown={() => pick(n.id)}>
+							<span>{n.name}</span><span class="yr">{firstYear(n)}</span>
+						</button>
+					</li>
+				{/each}
+			</ul>
+		{/if}
+	</div>
+
+	{#if viewer.narrow.current}
+		<button class="toggle" class:on={viewer.filtersOpen} onclick={() => (viewer.filtersOpen = !viewer.filtersOpen)} aria-expanded={viewer.filtersOpen}>
+			Filters{focusActive ? ' •' : ''}
+		</button>
+	{/if}
+
+	{#if showFilters}
+	<div class="filters">
+	<fieldset class="group">
+		<legend>Edges</legend>
+		{#each FAMILIES as f (f.id)}
+			<label class="chip fam-{f.id}" title={f.hint}>
+				<input type="checkbox" checked={viewer.families.has(f.id)} onchange={() => viewer.toggle(viewer.families, f.id)} />
+				<span class="swatch"></span>{f.label}
+			</label>
+		{/each}
+	</fieldset>
+
+	<fieldset class="group">
+		<legend>Kinds</legend>
+		{#each presentKinds as k (k)}
+			<label class="chip kind-{k}">
+				<input type="checkbox" checked={!viewer.hiddenKinds.has(k)} onchange={() => viewer.toggle(viewer.hiddenKinds, k)} />
+				<span class="swatch round"></span>{k}
+			</label>
+		{/each}
+	</fieldset>
+
+	<fieldset class="group">
+		<legend>Highlight</legend>
+		<select
+			value={viewer.concept ?? ''}
+			onchange={(e) => viewer.setConcept(e.currentTarget.value || null)}
+			title="Highlight nodes that have a concept (or a narrower one) and mark when it arrived"
+		>
+			<option value="">concept…</option>
+			{#each conceptGroups as [facet, items] (facet)}
+				<optgroup label={facet}>
+					{#each items as c (c.id)}<option value={c.id}>{c.name}</option>{/each}
+				</optgroup>
+			{/each}
+		</select>
+		<select
+			value={viewer.lineage ?? ''}
+			onchange={(e) => viewer.setLineage(e.currentTarget.value || null)}
+			title="Highlight a narrative lineage"
+		>
+			<option value="">lineage…</option>
+			{#each g.data.lineages as l (l.id)}<option value={l.id}>{l.title}</option>{/each}
+		</select>
+		<label class="chip" title="On selection, follow edges transitively or only one hop">
+			<input type="checkbox" checked={viewer.depth === 'full'} onchange={() => (viewer.depth = viewer.depth === 'full' ? 'direct' : 'full')} />
+			transitive
+		</label>
+	</fieldset>
+
+	<fieldset class="group">
+		<legend>View</legend>
+		<button onclick={() => viewer.expandAll()} title="Expand all clusters">expand</button>
+		<button onclick={() => viewer.collapseAll()} title="Collapse all clusters">collapse</button>
+		<button onclick={() => viewer.setZoom(viewer.effectiveZoom / 1.4)} title="Zoom out">−</button>
+		<span class="zoom">{viewer.effectiveZoom.toFixed(2)}×</span>
+		<button onclick={() => viewer.setZoom(viewer.effectiveZoom * 1.4)} title="Zoom in">+</button>
+		{#if focusActive}
+			<button onclick={() => viewer.clearFocus()} title="Clear selection and highlights">clear</button>
+		{/if}
+	</fieldset>
+	</div>
+	{/if}
+
+	<div class="status" class:flash>
+		{#if g.data.problems.length}
+			<button class="problems" onclick={() => (showProblems = !showProblems)}>
+				⚠ {g.data.problems.length} problem{g.data.problems.length === 1 ? '' : 's'}
+			</button>
+		{:else}
+			<span class="ok" title="Lenient load OK. Run `task data:build` for full schema validation.">data ok</span>
+		{/if}
+		<span class="loaded" title="Last loaded from data/">{new Date(g.data.loadedAt).toLocaleTimeString()}</span>
+		<button
+			class="toggle panel-toggle"
+			class:on={viewer.panelOpen}
+			onclick={() => (viewer.panelOpen = !viewer.panelOpen)}
+			aria-expanded={viewer.panelOpen}
+			title={viewer.panelOpen ? 'Fold the detail panel' : 'Open the detail panel'}
+		>
+			{viewer.panelOpen ? 'Hide details' : 'Details'}
+		</button>
+	</div>
+
+	<nav class="eras" aria-label="Jump to era">
+		{#each eras as e (e.id)}
+			<button class:active={activeEra === e.id} onclick={() => viewer.jump(e.id)} title="{e.name} ({e.start < 0 ? `${-e.start} BC` : e.start}–{e.end ?? 'now'}){e.summary ? '\n' + e.summary : ''}">
+				<span class="era-year">{e.start < 0 ? `${-e.start} BC` : e.start}</span>
+				<span class="era-name">{e.name}</span>
+			</button>
+		{/each}
+		<button class="now" class:active={activeEra === 'now'} onclick={() => viewer.jump('now')} title="Scroll to the present">Now →</button>
+	</nav>
+</header>
+
+{#if showProblems && g.data.problems.length}
+	<div class="problem-list">
+		<div class="pl-head">
+			<span>Load problems (lenient loader; run <code>task data:build</code> for full schema validation)</span>
+			<button onclick={() => (showProblems = false)}>close</button>
+		</div>
+		<ul>
+			{#each g.data.problems as p, i (i)}<li>{p}</li>{/each}
+		</ul>
+	</div>
+{/if}
+
+<style>
+	.toolbar {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 6px 14px;
+		padding: 6px 12px;
+		border-bottom: 1px solid var(--line);
+		background: var(--bg-raised);
+		font-size: 12px;
+	}
+	.filters {
+		display: contents;
+	}
+	.toggle.on {
+		background: var(--accent-soft);
+		border-color: var(--accent);
+	}
+	.eras {
+		flex-basis: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+		scrollbar-width: thin;
+		padding-bottom: 2px;
+	}
+	.eras button {
+		flex: none;
+		display: inline-flex;
+		align-items: baseline;
+		gap: 5px;
+		max-width: 220px;
+		border-radius: 999px;
+		padding: 2px 9px;
+		white-space: nowrap;
+	}
+	.eras button.active {
+		background: var(--accent-soft);
+		border-color: var(--accent);
+	}
+	.era-year {
+		color: var(--fg-faint);
+		font-variant-numeric: tabular-nums;
+		font-size: 11px;
+	}
+	.era-name {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.eras .now {
+		margin-left: auto;
+		font-weight: 600;
+	}
+	.brand {
+		font-weight: 700;
+		font-size: 14px;
+		letter-spacing: -0.01em;
+	}
+	.search {
+		position: relative;
+	}
+	input[type='search'] {
+		width: 200px;
+	}
+	@media (max-width: 899px) {
+		.toolbar {
+			gap: 6px 8px;
+			padding: 6px 10px;
+		}
+		.brand {
+			display: none;
+		}
+		.search {
+			flex: 1;
+			min-width: 0;
+		}
+		input[type='search'] {
+			width: 100%;
+		}
+		.filters {
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			flex-basis: 100%;
+			order: 5;
+			padding: 6px 0;
+			border-top: 1px solid var(--line);
+		}
+		.group {
+			flex-wrap: wrap;
+		}
+		.status {
+			margin-left: 0;
+			gap: 6px;
+		}
+		.loaded {
+			display: none;
+		}
+		.eras {
+			order: 6;
+			flex-wrap: nowrap;
+			overflow-x: auto;
+		}
+		.era-name {
+			display: none;
+		}
+		.eras button:hover .era-name,
+		.eras button.active .era-name {
+			display: inline;
+		}
+	}
+	input[type='search'],
+	select,
+	button {
+		font: inherit;
+		color: var(--fg);
+		background: var(--bg);
+		border: 1px solid var(--line);
+		border-radius: 5px;
+		padding: 3px 7px;
+	}
+	button {
+		cursor: pointer;
+	}
+	button:hover {
+		background: var(--hover);
+	}
+	select {
+		max-width: 180px;
+	}
+	.results {
+		position: absolute;
+		z-index: 30;
+		top: calc(100% + 3px);
+		left: 0;
+		width: 260px;
+		margin: 0;
+		padding: 3px;
+		list-style: none;
+		background: var(--bg-raised);
+		border: 1px solid var(--line);
+		border-radius: 6px;
+		box-shadow: 0 6px 20px rgb(0 0 0 / 0.2);
+	}
+	.results button {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		border: none;
+		background: none;
+		text-align: left;
+	}
+	.results button.active,
+	.results button:hover {
+		background: var(--accent-soft);
+	}
+	.yr {
+		color: var(--fg-faint);
+		font-variant-numeric: tabular-nums;
+	}
+	.group {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		border: none;
+		margin: 0;
+		padding: 0;
+	}
+	legend {
+		float: left;
+		padding: 0 4px 0 0;
+		color: var(--fg-faint);
+		font-size: 10.5px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+	.chip {
+		display: inline-flex;
+		align-items: center;
+		gap: 4px;
+		padding: 2px 6px;
+		border: 1px solid var(--line);
+		border-radius: 999px;
+		cursor: pointer;
+		user-select: none;
+	}
+	.chip:has(input:not(:checked)) {
+		opacity: 0.45;
+	}
+	.chip input {
+		display: none;
+	}
+	.swatch {
+		width: 14px;
+		height: 3px;
+		background: var(--sw, var(--fg-muted));
+		border-radius: 2px;
+	}
+	.swatch.round {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+	}
+	.fam-succession {
+		--sw: var(--fam-succession);
+	}
+	.fam-influence {
+		--sw: var(--fam-influence);
+	}
+	.fam-variant {
+		--sw: var(--fam-variant);
+	}
+	.fam-targets {
+		--sw: var(--fam-targets);
+	}
+	.fam-implementation {
+		--sw: var(--fam-implementation);
+	}
+	.kind-mechanism {
+		--sw: var(--kind-mechanism);
+	}
+	.kind-machine {
+		--sw: var(--kind-machine);
+	}
+	.kind-machine-code {
+		--sw: var(--kind-machine-code);
+	}
+	.kind-formalism {
+		--sw: var(--kind-formalism);
+	}
+	.kind-notation {
+		--sw: var(--kind-notation);
+	}
+	.kind-assembly {
+		--sw: var(--kind-assembly);
+	}
+	.kind-language {
+		--sw: var(--kind-language);
+	}
+	.zoom {
+		min-width: 40px;
+		text-align: center;
+		font-variant-numeric: tabular-nums;
+		color: var(--fg-muted);
+	}
+	.status {
+		margin-left: auto;
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 2px 6px;
+		border-radius: 5px;
+		transition: background 0.6s;
+	}
+	.status.flash {
+		background: var(--accent-soft);
+		transition: none;
+	}
+	.problems {
+		color: var(--warn);
+		border-color: var(--warn);
+	}
+	.ok {
+		color: var(--rs-reviewed);
+	}
+	.loaded {
+		color: var(--fg-faint);
+		font-variant-numeric: tabular-nums;
+	}
+	.problem-list {
+		position: absolute;
+		z-index: 40;
+		right: 12px;
+		top: 46px;
+		width: min(720px, calc(100vw - 24px));
+		max-height: 60vh;
+		overflow: auto;
+		background: var(--bg-raised);
+		border: 1px solid var(--warn);
+		border-radius: 6px;
+		box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
+		font-size: 12px;
+	}
+	.pl-head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 8px;
+		padding: 8px 10px;
+		border-bottom: 1px solid var(--line);
+		position: sticky;
+		top: 0;
+		background: var(--bg-raised);
+	}
+	.problem-list ul {
+		margin: 0;
+		padding: 8px 10px 10px 28px;
+		font-family: var(--mono);
+		font-size: 11.5px;
+	}
+</style>

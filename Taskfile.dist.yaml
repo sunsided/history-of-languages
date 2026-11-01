@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+# Shared tasks. Put personal overrides in a gitignored Taskfile.yaml (it takes precedence).
+version: '3'
+
+vars:
+  VIEWER: viewer
+
+env:
+  COREPACK_ENABLE_DOWNLOAD_PROMPT: '0'
+
+tasks:
+  default:
+    desc: Start the viewer dev server
+    cmds:
+      - task: dev
+
+  install:
+    desc: Install viewer dependencies (yarn via corepack)
+    dir: '{{.VIEWER}}'
+    sources:
+      - package.json
+      - yarn.lock
+    generates:
+      - node_modules/.yarn-state.yml
+    cmds:
+      - corepack yarn install
+
+  dev:
+    desc: Run the timeline viewer with hot reload (also reloads live on data/*.yaml edits)
+    dir: '{{.VIEWER}}'
+    deps: [install]
+    cmds:
+      - corepack yarn dev {{.CLI_ARGS}}
+
+  check:
+    desc: Type-check the viewer (svelte-check)
+    dir: '{{.VIEWER}}'
+    deps: [install]
+    cmds:
+      - corepack yarn svelte-kit sync
+      - corepack yarn check
+
+  data:build:
+    desc: Validate data/ against the schema and emit dist/graph.json
+    cmds:
+      - python3 tools/build.py
+
+  data:missing:
+    desc: List referenced-but-undefined ids
+    cmds:
+      - python3 tools/build.py --missing
