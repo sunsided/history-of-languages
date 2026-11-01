@@ -791,6 +791,7 @@
     features: [pipes, command-substitution]
   summary: "Unix's scripting shell with control structures. Bourne used ALGOL 68C keywords (if/fi, case/esac) and even C macros to make the C source look like ALGOL. Ancestor of ksh, bash and POSIX sh."
   relations:
+    - { type: influenced_by, to: pwb-shell, weight: moderate, confidence: high, sources: [wiki-pwb-unix], note: "\"The PWB shell, written by John R. Mashey, which preceded Steve Bourne's Bourne shell\"." }
     - { type: influenced_by, to: algol-68, weight: moderate, confidence: high }
     - { type: successor_of, to: thompson-shell, weight: strong, confidence: high, sources: [wiki-thompson-shell], note: "\"the Thompson shell was replaced as the main Unix shell by the Bourne shell in Version 7 Unix\"." }
   research_status: draft
@@ -1087,6 +1088,8 @@
   notes: >
     Its documented ancestor is the ed editor (1971), not yet a node: "The syntax for sed, notably the use
     of / for pattern matching, and s/// for substitution, originated with ed".
+  relations:
+    - { type: influenced_by, to: ed, weight: strong, confidence: high, sources: [wiki-ed], note: "sed \"implemented many of the scripting features of qed that were not supported by ed\"; ed's command syntax is its base." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Sed" }
@@ -3159,3 +3162,124 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/FOIL_(programming_language)" }
   sources: [wiki-foil]
+
+- id: exec-2
+  name: EXEC 2
+  kind: language
+  category: shell
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1970, precision: decade, note: "\"Written in the 1970s and formally introduced for CMS with VM/SP Release 1\"; no exact year." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: IBM, role: developer }
+  status: maintained
+  tags:
+    paradigm: [imperative, scripting]
+    features: [interpreter]
+  summary: >
+    "an interpreted, command procedure control, computer scripting language" for IBM VM/CMS, "mostly compatible with CMS
+    EXEC" but with 255-character statements and user-defined functions; scripts must begin with &TRACE. It "was preceded
+    by CMS EXEC and superseded by REXX", and z/VM still supports all three.
+  relations:
+    - { type: successor_of, to: cms-exec, weight: strong, confidence: high, sources: [wiki-exec-2], note: "\"EXEC 2 was preceded by CMS EXEC and superseded by REXX\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/EXEC_2" }
+  sources: [wiki-exec-2]
+
+- id: pwb-shell
+  name: PWB shell
+  aliases: [Mashey shell]
+  kind: language
+  category: shell
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1975, precision: range, year_end: 1977, note: "\"distributed with the Programmer's Workbench UNIX, circa 1975–1977\"; PWB/UNIX 1.0 was released July 1, 1977." }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: John Mashey, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, scripting]
+    features: [pipes]
+  summary: >
+    "an upward-compatible version of the Thompson shell, augmented by John Mashey and others" for PWB/UNIX, which
+    "focused on making shell programming practical, especially in large shared computing centers". It "added shell
+    variables (precursors of environment variables, including the search path mechanism that evolved into $PATH),
+    user-executable shell scripts, and interrupt-handling", and preceded the Bourne shell.
+  relations:
+    - { type: successor_of, to: thompson-shell, weight: strong, confidence: high, sources: [wiki-unix-shell], note: "\"an upward-compatible version of the Thompson shell\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PWB/UNIX" }
+  sources: [wiki-unix-shell, wiki-thompson-shell, wiki-pwb-unix]
+
+- id: dcl
+  name: DCL
+  aliases: [DIGITAL Command Language]
+  kind: language
+  category: shell
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1975, precision: circa, note: "No year in the text; only the category \"Programming languages created in 1975\". First implemented for IAS as the Program Development System." }
+    places: [{ institution: Digital Equipment Corporation, country: US }]
+  creators:
+    - { name: Digital Equipment Corporation, role: designer }
+  status: maintained
+  tags:
+    paradigm: [imperative, scripting]
+    features: [interpreter]
+  summary: >
+    "the standard command language for many of the operating systems created by Digital Equipment Corporation", first on
+    IAS, then RSX-11M, RT-11 and RSTS/E, and in "its most powerful form in VAX/VMS (later OpenVMS)". It handles strings,
+    integers, bit arrays, arrays and Booleans but not floating point. VSI still develops it; its infobox lists PowerShell
+    among the languages it influenced.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/DIGITAL_Command_Language" }
+  sources: [wiki-dcl]
+  example:
+    title: Inline input
+    language: DCL
+    note: "From Wikipedia."
+    code: |
+      $ TYPE SYS$INPUT:
+      This is an example of using the TYPE verb
+      in the DCL language.
+      $ EXIT
+    sources: [wiki-dcl]
+
+- id: control-language
+  name: Control Language
+  aliases: [CL, IBM i CL, CLLE]
+  kind: language
+  category: shell
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1978, precision: year, note: "Infobox \"First appeared: 1978\"; created for the System/38 Control Program Facility." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: IBM, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, scripting]
+    features: [compiler]
+  summary: >
+    "a scripting language originally created by IBM for the System/38 Control Program Facility and later used in OS/400
+    (now known as IBM i)". It "bears a resemblance to the IBM Job Control Language" and consists of command objects; though
+    a system administration language, "it is used mainly to create compiled programs".
+  relations:
+    - { type: influenced_by, to: jcl, weight: moderate, confidence: high, sources: [wiki-control-language], note: "Infobox \"Influenced by: Job Control Language, PL/I\"; \"bears a resemblance to the IBM Job Control Language\"." }
+    - { type: influenced_by, to: pl-i, weight: moderate, confidence: medium, sources: [wiki-control-language], note: "Infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Control_Language" }
+  sources: [wiki-control-language]
+  example:
+    title: Change Program command
+    language: CL
+    note: "From Wikipedia."
+    code: |
+      CHGPGM MYPGM OPTIMIZE(*FULL) RMVOBS(*BLKORD *PRCORD) TEXT('My program.')
+    sources: [wiki-control-language]

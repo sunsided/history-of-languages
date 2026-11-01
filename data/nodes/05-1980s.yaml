@@ -453,6 +453,8 @@
     features: [offside-rule, high-level-collections, repl]
     domain: [education]
   summary: "Teaching language with indentation-based blocks and high-level lists and tables. Guido van Rossum worked on its implementation; Python began as a successor fixing its frustrations (no extensibility, closed environment)."
+  relations:
+    - { type: influenced_by, to: setl, weight: strong, confidence: high, sources: [wiki-setl], note: "Van Rossum: \"Python's predecessor, ABC, was inspired by SETL – Lambert Meertens spent a year with the SETL group at NYU\"." }
   research_status: draft
   confidence: high
   sources: [van-rossum-2009-history-python]
@@ -1238,6 +1240,7 @@
     instruction is passed to the host environment as a command. It spread to OS/2, the Amiga (ARexx) and
     other systems and is seen as a precursor of Tcl and Python as general-purpose scripting languages.
   relations:
+    - { type: influenced_by, to: exec-2, weight: strong, confidence: high, sources: [wiki-rexx, wiki-exec-2], note: "Rexx infobox \"Influenced by: PL/I, ALGOL, EXEC, EXEC 2\"; EXEC 2 was \"superseded by REXX\"." }
     - { type: influenced_by, to: pl-i, weight: strong, confidence: high, sources: [wiki-rexx], note: "\"Mike also intended Rexx to be a simplified and easier to learn version of PL/I\"." }
   research_status: draft
   confidence: high
@@ -4165,3 +4168,250 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Watcom_C/C%2B%2B" }
   sources: [wiki-watcom]
+
+- id: tcsh
+  name: tcsh
+  kind: language
+  category: shell
+  cluster: scripting/unix
+  origin:
+    began: { year: 1975, precision: exact, note: "\"Greer began working on his code to implement Tenex-style file name completion in September 1975, finally merging it into the C shell in December 1981.\"" }
+    first_appeared: { year: 1983, precision: exact, note: "\"On October 3, 1983, Greer posted source to the net.sources newsgroup.\"" }
+    places: [{ institution: Carnegie Mellon University, country: US }]
+  creators:
+    - { name: Ken Greer, role: author }
+    - { name: Paul Placeway, role: maintainer }
+    - { name: Christos Zoulas, role: maintainer }
+  status: maintained
+  tags:
+    paradigm: [imperative, scripting]
+    features: [interpreter]
+  summary: >
+    "a Unix shell based on and backward compatible with the C shell", "essentially the C shell with programmable
+    command-line completion, command-line editing, and a few other features"; its completion and editing were "borrowed
+    from the TENEX operating system, which is the source of the t". It became the main line of csh development.
+  relations:
+    - { type: dialect_of, to: c-shell, weight: strong, confidence: high, sources: [wiki-tcsh], note: "\"based on and backward compatible with the C shell\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Tcsh" }
+  sources: [wiki-tcsh]
+  example:
+    title: Wildcard matching in a condition
+    language: tcsh
+    note: "From Wikipedia; the page's Markdown escapes removed."
+    code: |
+      if ( "$input" =~ [0-9]* ) then
+        echo "the input starts with an integer"
+      else
+        echo "the input does NOT start with an integer"
+      endif
+    sources: [wiki-tcsh]
+
+- id: opl
+  name: OPL
+  aliases: [Open Programming Language, Organiser Programming Language]
+  kind: language
+  category: general
+  cluster: basic
+  origin:
+    first_appeared: { year: 1984, precision: year, note: "\"released by the British company Psion in 1984\" for the original Psion Organiser." }
+    places: [{ institution: Psion, country: GB }]
+  creators:
+    - { name: Colly Myers, role: designer }
+    - { name: Richard Harrison, role: implementer }
+    - { name: Martin Stamp, role: implementer }
+  status: legacy
+  tags:
+    paradigm: [imperative, structured]
+    typing: [static-typing, strong-typing]
+    features: [interpreter]
+    domain: [embedded]
+  milestones:
+    - { version: Organiser II, year: 1986, summary: "Built into the Psion Organiser II." }
+    - { version: "1.56", year: 2006, summary: "opl-dev release." }
+  summary: >
+    "a programming language for embedded systems and mobile devices that run the operating systems EPOC and Symbian",
+    "an interpreted language similar to BASIC", first for the Psion Organiser and later the Series 3 and 5. It is now
+    open source as opl-dev.
+  relations:
+    - { type: influenced_by, to: basic, weight: moderate, confidence: medium, sources: [wiki-opl], note: "\"an interpreted language similar to BASIC\"; infobox family BASIC." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Open_Programming_Language" }
+  sources: [wiki-opl]
+  example:
+    title: Hello World
+    language: OPL
+    note: "From Wikipedia (\"taken from the PCDevPrimer in the OPL Wiki\")."
+    code: |
+      PROC main:
+        PRINT "Hello World!"
+        PAUSE 40
+      ENDP
+    sources: [wiki-opl]
+
+- id: rpl
+  name: RPL
+  aliases: [Reverse Polish Lisp, User RPL, System RPL]
+  kind: language
+  category: scientific
+  cluster: stack
+  origin:
+    began: { year: 1984, precision: year, note: "\"RPL originated from HP's Corvallis, Oregon development facility in 1984\"." }
+    first_appeared: { year: 1986, precision: year, note: "\"The first calculator utilizing it internally was the HP-18C and the first calculator making it available to users was the HP-28C, both from 1986.\"" }
+    places: [{ institution: Hewlett-Packard, city: "Corvallis, Oregon", country: US }]
+  creators:
+    - { name: Hewlett-Packard, role: designer }
+  status: legacy
+  tags:
+    paradigm: [concatenative, stack-oriented, structured]
+    features: [threaded-code]
+  summary: >
+    The operating system and user language of HP's RPN graphing calculators (HP 28, 48, 49, 50), "a structured
+    programming language based on RPN, but equally capable of processing algebraic expressions", "implemented as a
+    threaded interpreter". It "has many similarities to Forth, both languages being stack-based, as well as the list-based
+    LISP". The last RPL calculator, the HP 50g, was discontinued in 2015.
+  relations:
+    - { type: influenced_by, to: forth, weight: strong, confidence: high, sources: [wiki-rpl], note: "Infobox \"Influenced by: RPN, Forth, Lisp\"; \"the derivation of the language from Forth and Lisp\"." }
+    - { type: influenced_by, to: lisp, weight: strong, confidence: high, sources: [wiki-rpl], note: "Name \"Reverse Polish Lisp\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/RPL_(programming_language)" }
+  sources: [wiki-rpl]
+  example:
+    title: Sum 1 to 10
+    language: User RPL
+    note: "From Wikipedia."
+    code: |
+      «
+         0       @ Start with zero on the stack
+         1 10    @ Loop from 1 to 10
+         FOR I   @ "I" is the local variable
+            I +  @ Add "I" to the running total
+         NEXT    @ Repeat...
+      »
+    sources: [wiki-rpl]
+
+- id: dec-tpu
+  name: DEC TPU
+  aliases: [DECTPU, Text Processing Utility]
+  kind: language
+  category: domain-specific
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1985, precision: circa, note: "No year on the page; EVE, \"the first TPU-based editor\", was \"delivered with VAX/VMS by mid-1985\"." }
+    places: [{ institution: Digital Equipment Corporation, country: US }]
+  creators:
+    - { name: Digital Equipment Corporation, role: developer }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    features: [embeddable]
+  summary: >
+    "a dedicated programming language developed by Digital Equipment Corporation (DEC) to easily create
+    multi-functional text editors", part of OpenVMS. The EVE editor was written in it, and in 1986 DEC rewrote EDT in TPU.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/DEC_Text_Processing_Utility" }
+  sources: [wiki-dec-tpu]
+
+- id: cms-pipelines
+  name: CMS Pipelines
+  aliases: [Hartmann pipelines, Pipelines, BatchPipeWorks]
+  kind: language
+  category: shell
+  cluster: scripting
+  origin:
+    began: { year: 1980, precision: year, note: "\"John Hartmann, of IBM Denmark, started development of CMS Pipelines in 1980.\"" }
+    first_appeared: { year: 1986, precision: year, note: "Infobox \"First appeared: 1986\"." }
+    places: [{ institution: IBM Denmark, country: DK }]
+  creators:
+    - { name: John P. Hartmann, role: designer }
+  status: maintained
+  tags:
+    paradigm: [dataflow-programming]
+    features: [pipes]
+  milestones:
+    - { version: VM/ESA, year: 1991, summary: "Integrated in VM/ESA late 1991; frozen at 1.1.10 in 1997." }
+    - { version: BatchPipeWorks, year: 1995, summary: "TSO implementation in BatchPipes/MVS." }
+    - { version: z/VM 6.4, year: 2016, summary: "Current level included in z/VM again." }
+  summary: >
+    A VM/CMS facility in which "the programs in a pipeline operate on a sequential stream of records", connected through
+    a device-independent interface. Because CMS lacked Unix-style stdin and stdout, it ships its own library of stages,
+    and pipelines can branch and rejoin through labels; users add stages in REXX. Its infobox lists Unix pipelines as the
+    influence.
+  notes: >
+    The infobox names "Pipeline (Unix)" as its influence, a concept rather than one language, so no edge is drawn.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CMS_Pipelines" }
+  sources: [wiki-cms-pipelines]
+  example:
+    title: A branching pipeline
+    language: CMS Pipelines
+    note: "From Wikipedia: records with Hello get \" World!\" appended, the rest are upper-cased, and both streams are merged."
+    code: |
+      PIPE (end ?)
+               < input txt
+             | a: locate /Hello/
+             | insert / World!/ after
+             | i: faninany
+             | > newfile txt a
+             ? a:
+             | xlate upper
+             | i:
+    sources: [wiki-cms-pipelines]
+
+- id: hamilton-c-shell
+  name: Hamilton C shell
+  kind: language
+  category: shell
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1988, precision: exact, note: "\"first released on OS/2 on December 12, 1988 and on Windows NT in July 1992\"." }
+    places: [{ institution: Hamilton Laboratories, city: "Wayland, MA", country: US }]
+  creators:
+    - { name: Nicole Hamilton, role: original author }
+  status: maintained
+  tags:
+    paradigm: [imperative, scripting]
+    features: [compiler]
+  summary: >
+    "a clone of the Unix C shell and utilities for Microsoft Windows" (first OS/2), "a completely original work, not
+    based on any prior code". Its recursive-descent parser compiles statements to an internal form before running them.
+  relations:
+    - { type: dialect_of, to: c-shell, weight: strong, confidence: high, sources: [wiki-hamilton-c-shell], note: "\"a clone of the Unix C shell\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hamilton_C_shell" }
+  sources: [wiki-hamilton-c-shell]
+
+- id: almquist-shell
+  name: Almquist shell
+  aliases: [ash, dash, Debian Almquist shell]
+  kind: language
+  category: shell
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1989, precision: exact, note: "\"first released via a posting to the comp.sources.unix Usenet news group ... on 30 May 1989\"." }
+  creators:
+    - { name: Kenneth Almquist, role: author }
+    - { name: Herbert Xu, role: dash }
+  status: active
+  tags:
+    paradigm: [imperative, scripting]
+    features: [pipes, standardization]
+  milestones:
+    - { version: dash, year: 1997, summary: "Herbert Xu ports ash from NetBSD to Debian; renamed Dash with 0.4.1 in 2002." }
+    - { version: Ubuntu /bin/sh, year: 2006, summary: "Dash becomes Ubuntu's /bin/sh (6.10); Debian follows in 2011." }
+  summary: >
+    "a lightweight Unix shell", "Initially a clone of the System V.4 variant of the Bourne shell", which "replaced the
+    original Bourne shell in the BSD versions of Unix released in the early 1990s". Its Debian port dash, focused on
+    "POSIX conformance and slim implementation", is /bin/sh on Debian and Ubuntu.
+  relations:
+    - { type: dialect_of, to: bourne-shell, weight: strong, confidence: high, sources: [wiki-almquist-shell], note: "\"a clone of the System V.4 variant of the Bourne shell\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Almquist_shell" }
+  sources: [wiki-almquist-shell]

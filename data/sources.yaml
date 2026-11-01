@@ -4959,3 +4959,178 @@
   primary: false
   title: "Wikipedia: V (programming language)"
   url: https://en.wikipedia.org/wiki/V_(programming_language)
+- id: wiki-ttm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TTM (programming language)"
+  url: https://en.wikipedia.org/wiki/TTM_(programming_language)
+- id: wiki-setl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SETL"
+  url: https://en.wikipedia.org/wiki/SETL
+- id: wiki-ed
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ed (text editor)"
+  url: https://en.wikipedia.org/wiki/Ed_(text_editor)
+- id: wiki-unix-shell
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Unix shell"
+  url: https://en.wikipedia.org/wiki/Unix_shell
+- id: wiki-pwb-unix
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PWB/UNIX"
+  url: https://en.wikipedia.org/wiki/PWB/UNIX
+- id: wiki-control-language
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Control Language"
+  url: https://en.wikipedia.org/wiki/Control_Language
+- id: wiki-tcsh
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: tcsh"
+  url: https://en.wikipedia.org/wiki/Tcsh
+- id: wiki-opl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Open Programming Language"
+  url: https://en.wikipedia.org/wiki/Open_Programming_Language
+- id: wiki-rpl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: RPL (programming language)"
+  url: https://en.wikipedia.org/wiki/RPL_(programming_language)
+- id: wiki-dec-tpu
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: DEC Text Processing Utility"
+  url: https://en.wikipedia.org/wiki/DEC_Text_Processing_Utility
+- id: wiki-cms-pipelines
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CMS Pipelines"
+  url: https://en.wikipedia.org/wiki/CMS_Pipelines
+- id: wiki-hamilton-c-shell
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Hamilton C shell"
+  url: https://en.wikipedia.org/wiki/Hamilton_C_shell
+- id: wiki-almquist-shell
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Almquist shell"
+  url: https://en.wikipedia.org/wiki/Almquist_shell
+- id: wiki-skill
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Cadence SKILL"
+  url: https://en.wikipedia.org/wiki/Cadence_SKILL
+- id: wiki-cfengine
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CFEngine"
+  url: https://en.wikipedia.org/wiki/CFEngine
+- id: wiki-livecode
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: LiveCode"
+  url: https://en.wikipedia.org/wiki/LiveCode
+- id: wiki-lasso
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lasso (programming language)"
+  url: https://en.wikipedia.org/wiki/Lasso_(programming_language)
+- id: wiki-jscript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: JScript"
+  url: https://en.wikipedia.org/wiki/JScript
+- id: wiki-miva-script
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MIVA Script"
+  url: https://en.wikipedia.org/wiki/MIVA_Script
+- id: wiki-tea
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Tea (programming language)"
+  url: https://en.wikipedia.org/wiki/Tea_(programming_language)
+- id: wiki-curl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Curl (programming language)"
+  url: https://en.wikipedia.org/wiki/Curl_(programming_language)
+- id: wiki-logtalk
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Logtalk"
+  url: https://en.wikipedia.org/wiki/Logtalk
+- id: wiki-beanshell
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: BeanShell"
+  url: https://en.wikipedia.org/wiki/BeanShell
+- id: wiki-pascal-script
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Pascal Script"
+  url: https://en.wikipedia.org/wiki/Pascal_Script
+- id: wiki-jscript-net
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: JScript .NET"
+  url: https://en.wikipedia.org/wiki/JScript_.NET
+- id: wiki-hollywood
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Hollywood (programming language)"
+  url: https://en.wikipedia.org/wiki/Hollywood_(programming_language)
+- id: wiki-nix
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Nix (package manager)"
+  url: https://en.wikipedia.org/wiki/Nix_(package_manager)
+- id: wiki-squirrel
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Squirrel (programming language)"
+  url: https://en.wikipedia.org/wiki/Squirrel_(programming_language)
+- id: wiki-nekovm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: NekoVM"
+  url: https://en.wikipedia.org/wiki/NekoVM
+- id: wiki-cython
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Cython"
+  url: https://en.wikipedia.org/wiki/Cython
+- id: wiki-google-apps-script
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Google Apps Script"
+  url: https://en.wikipedia.org/wiki/Google_Apps_Script
+- id: wiki-power-query
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Power Query"
+  url: https://en.wikipedia.org/wiki/Power_Query
+- id: wiki-godot
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Godot (game engine)"
+  url: https://en.wikipedia.org/wiki/Godot_(game_engine)
+- id: wiki-source-sicp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Source (programming language)"
+  url: https://en.wikipedia.org/wiki/Source_(programming_language)
+- id: wiki-power-fx
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Microsoft Power Fx"
+  url: https://en.wikipedia.org/wiki/Microsoft_Power_Fx

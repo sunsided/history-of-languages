@@ -2101,3 +2101,123 @@
       TY Goodbye!
       STOP
     sources: [wiki-foil]
+
+- id: ttm
+  name: TTM
+  kind: language
+  category: systems
+  cluster: string-processing
+  origin:
+    first_appeared: { year: 1968, precision: year, note: "\"developed in 1968 by Steven Caine and E. Kent Gordon at the California Institute of Technology\"." }
+    places: [{ institution: California Institute of Technology, country: US }]
+  creators:
+    - { name: Steven Caine, role: co-designer }
+    - { name: E. Kent Gordon, role: co-designer }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    features: [macros, string-processing, interpreter]
+  summary: >
+    "a string oriented, general purpose macro processing programming language", "recursive, interpretive" and meant for
+    "string manipulation, text editing, macro definition and expansion". It first ran conversationally under Caltech's
+    time-sharing system on an IBM System/360 Model 50. "It is derived from GAP and GPM"; "The exact relationship between
+    TTM and TRAC is unknown."
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TTM_(programming_language)" }
+  sources: [wiki-ttm]
+  example:
+    title: Define and call a macro
+    language: TTM
+    note: "From Wikipedia (line numbers are the page's); returns abc11def22."
+    code: |
+      [01] #<ds;F;abcxxdefyy>
+      [02] #<ss;F;xx;yy>
+      [03] #<F;11;22>
+    sources: [wiki-ttm]
+
+- id: setl
+  name: SETL
+  aliases: [SET Language, SETL2, ISETL, GNU SETL]
+  kind: language
+  category: research
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1969, precision: year, note: "Infobox \"First appeared: 1969\"; \"in the late 1960s\"." }
+    places: [{ institution: New York University Courant Institute of Mathematical Sciences, country: US }]
+  creators:
+    - { name: Jacob T. Schwartz, role: designer }
+    - { name: Robert Dewar, role: co-developer }
+    - { name: E. Schonberg, role: co-developer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [dynamic-typing]
+    features: [set-based]
+  milestones:
+    - { version: Ada/Ed, year: 1983, summary: "NYU's Ada translator in SETL becomes the first validated Ada implementation (April 11, 1983)." }
+  summary: >
+    "a very high-level programming language based on the mathematical theory of sets", from NYU's Courant Institute,
+    with set-former notation "similar to list comprehension". It hosted NYU Ada/Ed, the first validated Ada
+    implementation. Guido van Rossum: "Python's predecessor, ABC, was inspired by SETL".
+  relations:
+    - { type: influenced_by, to: algol-60, weight: moderate, confidence: medium, sources: [wiki-setl], note: "Infobox \"Influenced by: ALGOL 60\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SETL" }
+  sources: [wiki-setl]
+  example:
+    title: Primes up to N
+    language: SETL
+    note: "From Wikipedia."
+    code: |
+      print([n in [2..N] | forall m in {2..n - 1} | n mod m > 0]);
+    sources: [wiki-setl]
+
+- id: ed
+  name: ed
+  kind: language
+  category: shell
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1969, precision: disputed, note: "\"developed by Ken Thompson in August 1969 on a PDP-7 at AT&T Bell Labs\"; the infobox release says 1973." }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: Ken Thompson, role: original author }
+    - { name: Dennis Ritchie, role: "\"definitive\" ed" }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    features: [regular-expressions, standardization]
+  summary: >
+    The Unix line editor, "one of the first features of the Unix operating system", whose command language of addresses,
+    regular expressions and s/// substitutions shaped Unix text tools. "Many of its features came from the qed text
+    editor"; grep "was inspired by a common special use of qed and later ed", and ed went on to influence ex and vi. It
+    remains part of POSIX.
+  notes: >
+    Dennis Ritchie's spelling follows the existing nodes; the page links him as Dennis M. Ritchie.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ed_(text_editor)" }
+  sources: [wiki-ed]
+  example:
+    title: An editing session
+    language: ed
+    note: "Shortened from Wikipedia's transcript; output lines are the ones ending in $ or giving byte counts."
+    code: |
+      a
+      ed is the standard Unix text editor.
+      This is line number two.
+      .
+      2i
+
+      .
+      ,l
+      ed is the standard Unix text editor.$
+      $
+      This is line number two.$
+      3s/two/three/
+      w text.txt
+      65
+      q
+    sources: [wiki-ed]

@@ -371,6 +371,7 @@
   person: Dennis Ritchie
   wiki: Dennis Ritchie
   nodes:
+  - ed
   - b
   - c
 - id: person-don-syme
@@ -642,6 +643,7 @@
   person: Ken Thompson
   wiki: Ken Thompson
   nodes:
+  - ed
   - thompson-shell
   - b
   - c
@@ -1757,3 +1759,33 @@
   wiki: David Rosenboom
   nodes:
   - foil-music
+- id: person-jacob-t-schwartz
+  kind: person
+  person: Jacob T. Schwartz
+  wiki: Jacob T. Schwartz
+  nodes:
+  - setl
+- id: person-robert-dewar
+  kind: person
+  person: Robert Dewar
+  wiki: Robert Dewar
+  nodes:
+  - setl
+- id: person-john-mashey
+  kind: person
+  person: John Mashey
+  wiki: John Mashey
+  nodes:
+  - pwb-shell
+- id: person-mark-burgess
+  kind: person
+  person: Mark Burgess
+  wiki: Mark Burgess (computer scientist)
+  nodes:
+  - cfengine
+- id: person-steve-ward
+  kind: person
+  person: Steve Ward
+  wiki: Steve Ward (computer scientist)
+  nodes:
+  - curl-lang

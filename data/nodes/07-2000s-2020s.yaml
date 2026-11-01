@@ -1123,6 +1123,7 @@
     compiler, and gave it ML ideas (type inference, enums with pattern matching) from OCaml, in which the
     compiler is written. Widely used for cross-platform games.
   relations:
+    - { type: targets, to: neko, weight: moderate, confidence: high, sources: [wiki-nekovm], note: "\"The Haxe language can compile to Neko code\"." }
     - { type: successor_of, to: actionscript, weight: strong, confidence: high, sources: [haxe-manual-history, wiki-haxe], note: "Started \"as a successor to the popular open-source ActionScript 2 compiler MTASC\" (Haxe manual)." }
     - { type: influenced_by, to: ocaml, aspects: [type-inference, algebraic-data-types, pattern-matching], weight: moderate, confidence: medium, sources: [wiki-haxe], note: "OCaml is in the infobox; the aspects are our reading of the manual." }
     - { type: implemented_in, to: ocaml, weight: strong, confidence: high, sources: [wiki-haxe] }
@@ -2204,6 +2205,8 @@
     commands (cmdlets) pass typed objects whose properties later stages can filter, sort and format. Its
     grammar was based on the POSIX KornShell, with influences from Perl, C# and others.
   relations:
+    - { type: influenced_by, to: control-language, weight: weak, confidence: medium, sources: [wiki-control-language], note: "CL infobox \"Influenced: Windows PowerShell\"." }
+    - { type: influenced_by, to: dcl, weight: weak, confidence: medium, sources: [wiki-dcl], note: "DCL infobox \"Influenced: Windows PowerShell\"." }
     - { type: influenced_by, to: kornshell, weight: strong, confidence: high, sources: [wiki-powershell], note: "\"PowerShell's developers based the core grammar of the tool on that of the POSIX 1003.2 KornShell.\"" }
     - { type: influenced_by, to: perl, weight: moderate, confidence: medium, sources: [wiki-powershell] }
     - { type: influenced_by, to: csharp, weight: moderate, confidence: medium, sources: [wiki-powershell] }
@@ -5684,3 +5687,424 @@
           println("Hello, World!")
       }
     sources: [wiki-vlang]
+
+- id: pascal-script
+  name: Pascal Script
+  aliases: [CajScript, Innerfuse Pascal Script, RemObjects Pascal Script]
+  kind: language
+  category: scripting
+  cluster: algol/pascal-dialects
+  origin:
+    first_appeared: { year: 2000, precision: year, note: "\"Pascal Script started out in 2000 with CajScript 1.0\"." }
+  creators:
+    - { name: Carlo Kok, role: original author }
+  status: maintained
+  tags:
+    paradigm: [procedural, object-oriented, scripting]
+    typing: [strong-typing]
+    features: [embeddable, bytecode-vm]
+  summary: >
+    "a scripting language based on the programming language Pascal that facilitates automated runtime control over
+    scriptable applications and server software", with a free engine that compiles to and interprets byte code. It
+    "supports the majority of Object Pascal constructs, making it partly compatible to Delphi, Free Pascal and GNU
+    Pascal"; RemObjects maintains it and the Lazarus IDE ships it.
+  relations:
+    - { type: dialect_of, to: object-pascal, weight: strong, confidence: high, sources: [wiki-pascal-script], note: "\"supports the majority of Object Pascal constructs\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pascal_Script" }
+  sources: [wiki-pascal-script]
+
+- id: jscript-net
+  name: JScript .NET
+  aliases: [JScript 7, JScript 8, JScript 10]
+  kind: language
+  category: scripting
+  cluster: web
+  origin:
+    first_appeared: { year: 2002, precision: exact, note: "JScript .NET 7.0, 2002-01-05, with .NET Framework 1.0 (version table in the JScript article)." }
+    places: [{ institution: Microsoft, country: US }]
+  creators:
+    - { name: Microsoft, role: developer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented, prototype-based, functional, imperative, scripting]
+    typing: [dynamic-typing, weak-typing]
+  milestones:
+    - { version: "8.0", year: 2005 }
+    - { version: "10.0", year: 2010 }
+  summary: >
+    "a .NET framework programming language developed by Microsoft", "a Microsoft .NET implementation of JScript" that
+    "adds several new features from the abandoned fourth edition of the ECMAScript standard".
+    Its versions "are unrelated to classic JScript versions"; it "has received little attention, from the media and
+    developers".
+  relations:
+    - { type: dialect_of, to: jscript, weight: strong, confidence: high, sources: [wiki-jscript-net, wiki-jscript], note: "\"a Microsoft .NET implementation of JScript\"." }
+    - { type: targets, to: cil, weight: strong, confidence: high, sources: [wiki-jscript-net] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/JScript_.NET" }
+  sources: [wiki-jscript-net, wiki-jscript]
+  example:
+    title: Typed variable
+    language: JScript .NET
+    note: "From Wikipedia."
+    code: |
+      import System;
+
+      Console.WriteLine("Hello, what's your name?");
+      Console.WriteLine("Type your name: ");
+
+      var name: String = Console.ReadLine();
+
+      Console.WriteLine($"Hello, {name}");
+    sources: [wiki-jscript-net]
+
+- id: hollywood
+  name: Hollywood
+  kind: language
+  category: general
+  cluster: basic
+  origin:
+    began: { year: 2002, precision: year, note: "Development began \"in Spring 2002\"." }
+    first_appeared: { year: 2002, precision: exact, note: "\"Version 1.0 of the software was released in November 2002, but only for 68000-based Amiga systems.\"" }
+    places: [{ institution: Airsoft Softwair }]
+  creators:
+    - { name: Andreas Falkenhahn, role: developer }
+  status: active
+  tags:
+    paradigm: [procedural]
+    domain: [game-scripting]
+  milestones:
+    - { version: "2.0", year: 2006, summary: "Lua becomes its virtual machine." }
+    - { version: "11", year: 2026 }
+  summary: >
+    "a commercially distributed programming language ... which mainly focuses on the creation of multimedia-oriented
+    applications", "inspired by Amiga programming languages like AMOS, Blitz BASIC, and Amiga E". Since 2.0 it runs on a
+    modified Lua virtual machine, and its built-in cross compiler produces executables for AmigaOS, MorphOS, Windows,
+    macOS, Linux, Android and iOS.
+  relations:
+    - { type: influenced_by, to: amiga-e, weight: moderate, confidence: high, sources: [wiki-hollywood], note: "\"Inspired by Amiga programming languages like AMOS, Blitz BASIC, and Amiga E\"." }
+    - { type: implemented_in, to: lua, year: 2006, weight: moderate, confidence: high, sources: [wiki-hollywood], note: "\"Starting with version 2.0 (released in January 2006), Hollywood is using the Lua programming language as its virtual machine\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hollywood_(programming_language)" }
+  sources: [wiki-hollywood]
+  example:
+    title: Hello World
+    language: Hollywood
+    note: "From Wikipedia."
+    code: |
+      Print("Hello World!")
+      WaitLeftMouse
+      End
+    sources: [wiki-hollywood]
+
+- id: nix-lang
+  name: Nix
+  aliases: [Nix language, Nix expression language]
+  kind: language
+  category: domain-specific
+  cluster: scripting
+  origin:
+    first_appeared: { year: 2003, precision: exact, note: "Infobox \"Release: June 15, 2003\"; \"Nix was developed in 2003 by Eelco Dolstra.\"" }
+  creators:
+    - { name: Eelco Dolstra, role: original author }
+  status: active
+  tags:
+    paradigm: [declarative, purely-functional]
+    typing: [dynamic-typing]
+    features: [lazy-evaluation]
+  summary: >
+    The "purpose-built Nix language, a declarative, purely functional, lazily evaluated, dynamically typed programming
+    language" in which package recipes for the Nix package manager (and NixOS) are written. It has strings with context,
+    first-class paths and indented strings; Lix, Tvix and Snix are later forks or reimplementations.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Nix_(package_manager)", homepage: "https://nixos.org" }
+  sources: [wiki-nix]
+
+- id: squirrel
+  name: Squirrel
+  kind: language
+  category: scripting
+  cluster: scripting/embedded
+  origin:
+    first_appeared: { year: 2003, precision: exact, note: "Infobox \"First appeared: September 6, 2003\"." }
+  creators:
+    - { name: Alberto Demichelis, role: designer }
+  status: maintained
+  tags:
+    paradigm: [imperative, object-oriented, functional, scripting]
+    typing: [dynamic-typing]
+    features: [embeddable]
+    domain: [game-scripting]
+  milestones:
+    - { version: "2.0", year: 2005 }
+    - { version: "3.2", year: 2022 }
+  summary: >
+    "a lightweight scripting language that fits in the size, memory bandwidth, and real-time requirements of
+    applications like video games", whose "syntax is similar to C/C++/Java etc... but the language has a very dynamic
+    nature like Python/Lua". Compiler and VM together are about 7,000 lines of C++. Code::Blocks scripts with it.
+  relations:
+    - { type: influenced_by, to: lua, weight: strong, confidence: high, sources: [wiki-squirrel], note: "Infobox \"Influenced by: C++, JavaScript, Lua, Python\"." }
+    - { type: influenced_by, to: python, weight: moderate, confidence: high, sources: [wiki-squirrel] }
+    - { type: influenced_by, to: cpp, weight: moderate, confidence: high, sources: [wiki-squirrel] }
+    - { type: influenced_by, to: javascript, weight: moderate, confidence: high, sources: [wiki-squirrel] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Squirrel_(programming_language)", homepage: "http://squirrel-lang.org" }
+  sources: [wiki-squirrel]
+  example:
+    title: Factorial
+    language: Squirrel
+    note: "From Wikipedia, comments shortened."
+    code: |
+      local function factorial(x)
+      {
+        if (x <= 1) {
+          return 1;
+        }
+        else {
+          return x * factorial(x-1);
+        }
+      }
+    sources: [wiki-squirrel]
+
+- id: neko
+  name: Neko
+  aliases: [NekoVM]
+  kind: language
+  category: scripting
+  cluster: web/compile-to-js
+  origin:
+    first_appeared: { year: 2005, precision: year, note: "Infobox \"First appeared: 2005\"." }
+    places: [{ institution: Motion Twin, city: Bordeaux, country: FR }]
+  creators:
+    - { name: Nicolas Cannasse, role: designer }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, prototype-based, scripting]
+    typing: [dynamic-typing]
+    features: [bytecode-vm, embeddable]
+  summary: >
+    The "high-level dynamically typed programming language" whose bytecode is NekoVM's native format, built by Nicolas
+    Cannasse at Motion Twin and later Shiro Games in Bordeaux. It serves as an embedded scripting language and as a
+    target: "The Haxe language can compile to Neko code".
+  relations:
+    - { type: implemented_in, to: ocaml, weight: moderate, confidence: medium, sources: [wiki-nekovm], note: "Language infobox \"Implementation language: OCaml\" (the VM infobox says C)." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/NekoVM" }
+  sources: [wiki-nekovm]
+  example:
+    title: Hello World
+    language: Neko
+    note: "From Wikipedia."
+    code: |
+      $print("Hello World!");
+    sources: [wiki-nekovm]
+
+- id: cython
+  name: Cython
+  kind: language
+  category: general
+  cluster: scripting/python
+  origin:
+    first_appeared: { year: 2007, precision: exact, note: "Infobox \"First appeared: 28 July 2007\"; forked from Pyrex in 2007." }
+  creators:
+    - { name: Robert Bradshaw, role: developer }
+    - { name: Stefan Behnel, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, object-oriented]
+    typing: [gradual-typing]
+    features: [compiler, c-interop]
+    domain: [scientific-computing]
+  milestones:
+    - { version: "3.0", year: 2023, summary: "Python 3 syntax by default." }
+  summary: >
+    "a superset of the programming language Python" with "optional, C-inspired syntax extensions" that "yields
+    performance comparable to that of C", compiled to CPython extension modules. It "was forked from Pyrex in 2007 by
+    developers of the Sage computer algebra package"; much of SciPy, pandas and scikit-learn is written in it.
+  relations:
+    - { type: superset_of, to: python, weight: strong, confidence: high, sources: [wiki-cython], note: "\"a superset of the programming language Python\"." }
+    - { type: influenced_by, to: c, aspects: [static-typing], weight: moderate, confidence: high, sources: [wiki-cython], note: "Infobox \"Influenced by: C, Python\"; \"C-inspired syntax extensions\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Cython", homepage: "https://cython.org" }
+  sources: [wiki-cython]
+  example:
+    title: Hello World module
+    language: Cython
+    note: "From Wikipedia."
+    code: |
+      # hello.pyx - Python module, this code will be translated to C by Cython.
+      def say_hello():
+          print("Hello World!")
+    sources: [wiki-cython]
+
+- id: google-apps-script
+  name: Google Apps Script
+  kind: language
+  category: scripting
+  cluster: web
+  origin:
+    first_appeared: { year: 2009, precision: exact, note: "Infobox \"Release: August 19, 2009\"; beta announced May 2009." }
+    places: [{ institution: Google, country: US }]
+  creators:
+    - { name: Mike Harm, role: original developer }
+  status: active
+  tags:
+    paradigm: [scripting]
+    domain: [business-data-processing]
+  milestones:
+    - { version: V8 runtime, year: 2020, summary: "Modern ECMAScript replaces Rhino's JavaScript 1.6." }
+  summary: >
+    "a scripting platform developed by Google for light-weight application development in the Google Workspace
+    platform", begun by Mike Harm as a side project on Google Sheets. Until 2020 it ran on Mozilla's Rhino, limited to
+    JavaScript 1.6; since then on V8 with modern ECMAScript.
+  relations:
+    - { type: dialect_of, to: javascript, weight: strong, confidence: high, sources: [wiki-google-apps-script], note: "Based on Rhino JavaScript, then V8 \"bringing with it full support of modern ECMAScript\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Google_Apps_Script" }
+  sources: [wiki-google-apps-script]
+
+- id: power-query-m
+  name: Power Query M
+  aliases: [M formula language, M]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    first_appeared: { year: 2011, precision: circa, note: "The page gives no year for M; Power Query, \"built on what was then a new query language called M\", was announced in 2011 as Data Explorer." }
+    places: [{ institution: Microsoft, country: US }]
+  creators:
+    - { name: Microsoft, role: developer }
+  status: active
+  tags:
+    paradigm: [functional, purely-functional, query]
+    typing: [dynamic-typing]
+    features: [lazy-evaluation, let-expressions]
+    domain: [business-data-processing]
+  summary: >
+    "a mashup language (hence the letter M) designed to create queries that mix together data", underlying Microsoft's
+    Power Query ETL tool in Excel and Power BI. Microsoft calls it a "mostly pure, higher-order, dynamically typed,
+    partially lazy, functional language"; Wikipedia says it "is similar to the F# programming language".
+  relations:
+    - { type: influenced_by, to: fsharp, weight: weak, confidence: low, sources: [wiki-power-query], note: "Only \"similar to the F# programming language\"; confirm from Microsoft's M specification." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Power_Query" }
+  sources: [wiki-power-query]
+  example:
+    title: A let expression
+    language: M
+    note: "From Wikipedia."
+    code: |
+      let
+          a = "Hello",
+          b = "World",
+          result = a & " " & b
+      in
+          result
+    sources: [wiki-power-query]
+
+- id: gdscript
+  name: GDScript
+  kind: language
+  category: scripting
+  cluster: scripting/embedded
+  origin:
+    first_appeared: { year: 2014, precision: circa, note: "Not dated itself; Godot, whose built-in language it is, had its public release on 14 January 2014." }
+    places: [{ institution: Codenix, city: Buenos Aires, country: AR }]
+  creators:
+    - { name: Juan Linietsky, role: Godot co-author }
+    - { name: Ariel Manzur, role: Godot co-author }
+  status: active
+  tags:
+    paradigm: [object-oriented, scripting]
+    typing: [gradual-typing]
+    domain: [game-scripting]
+  summary: >
+    Godot's "built-in scripting language", "a high-level, gradually typed programming language which is syntactically
+    similar to ... Python". The developers "tested" Python, Lua and Squirrel "before deciding that a custom language would
+    allow for superior editor integration".
+  notes: >
+    Lambda functions and typed arrays came in Godot 4.0, typed dictionaries in 4.4 and abstract classes in 4.5; the
+    release years were only in a summarised part of the page.
+  relations:
+    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [wiki-godot], note: "Infobox \"Influenced by: Python, Lua\"; \"syntactically similar to ... Python\"." }
+    - { type: influenced_by, to: lua, weight: moderate, confidence: high, sources: [wiki-godot] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Godot_(game_engine)" }
+  sources: [wiki-godot]
+  example:
+    title: Hello World
+    language: GDScript
+    note: "From Wikipedia; tab shown as four spaces."
+    code: |
+      func _ready():
+          print("Hello World")
+    sources: [wiki-godot]
+
+- id: source-sicp
+  name: Source
+  aliases: [JediScript, Source §1, Source §4]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2017, precision: year, note: "Infobox \"First appeared: 2017\"; the SICP JS work started in 2008." }
+  status: active
+  tags:
+    paradigm: [functional, imperative, scripting]
+    typing: [dynamic-typing]
+    domain: [education]
+  summary: >
+    "a family of sublanguages of JavaScript, developed for the textbook Structure and Interpretation of Computer Programs,
+    JavaScript Edition", each "only expressive enough to support all examples of the respective chapter"; Source §1 is "a
+    very small purely functional sublanguage". It was first called JediScript after Crockford's JavaScript: The Good Parts.
+  relations:
+    - { type: subset_of, to: javascript, weight: strong, confidence: high, sources: [wiki-source-sicp], note: "\"a family of sublanguages of JavaScript\"." }
+    - { type: influenced_by, to: scheme, weight: moderate, confidence: high, sources: [wiki-source-sicp], note: "Infobox \"Influenced by: JavaScript, Scheme\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Source_(programming_language)" }
+  sources: [wiki-source-sicp]
+
+- id: power-fx
+  name: Power Fx
+  aliases: [Microsoft Power Fx]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 2021, precision: year, note: "\"first announced at Ignite 2021 and the specification was released in March 2021\"." }
+    places: [{ institution: Microsoft, country: US }]
+  creators:
+    - { name: Vijay Mital, role: co-designer }
+    - { name: Robin Abraham, role: co-designer }
+    - { name: Shon Katzenberger, role: co-designer }
+    - { name: Darryl Rubin, role: co-designer }
+    - { name: Greg Lindhorst, role: co-designer }
+    - { name: Mike Stall, role: co-designer }
+  status: active
+  tags:
+    paradigm: [declarative, functional, imperative]
+    typing: [strong-typing]
+    domain: [business-data-processing]
+  summary: >
+    "a free and open source low-code, general-purpose programming language for expressing logic across the Microsoft
+    Power Platform", "based on spreadsheet-like formulas". It grew out of the Tangram and Siena projects and Power Apps,
+    and "was also influenced by programming languages and tools like Pascal, Mathematica, and Miranda". Its source was
+    MIT-licensed in November 2021.
+  relations:
+    - { type: influenced_by, to: miranda, weight: weak, confidence: medium, sources: [wiki-power-fx], note: "\"influenced by programming languages and tools like Pascal, Mathematica, and Miranda\"." }
+    - { type: influenced_by, to: pascal, weight: weak, confidence: medium, sources: [wiki-power-fx] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Microsoft_Power_Fx" }
+  sources: [wiki-power-fx]

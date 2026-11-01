@@ -3834,3 +3834,387 @@
   confidence: low
   links: { wikipedia: "https://en.wikipedia.org/wiki/Lennart_Augustsson" }
   sources: [wiki-lennart-augustsson]
+
+- id: skill
+  name: SKILL
+  aliases: [Cadence SKILL, SKILL++, IL]
+  kind: language
+  category: domain-specific
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1990, precision: year, note: "\"originally put forth in an Institute of Electrical and Electronics Engineers (IEEE) paper in 1990\" (Barnes, \"SKILL: a CAD system extension language\", DAC 1990)." }
+    places: [{ institution: Cadence Design Systems, country: US }]
+  creators:
+    - { name: Cadence Design Systems, role: developer }
+  status: active
+  tags:
+    paradigm: [functional, object-oriented, scripting]
+    typing: [dynamic-typing]
+    features: [embeddable]
+  summary: >
+    "a Lisp dialect used as a scripting language and PCell (parameterized cells) description language" in Cadence's
+    electronic design automation tools. It "was originally based on a flavor of Lisp called Franz Lisp"; the infobox lists
+    Scheme, Common Lisp and CLOS as influences, and SKILL++ as a dialect.
+  relations:
+    - { type: dialect_of, to: franz-lisp, weight: strong, confidence: high, sources: [wiki-skill], note: "\"originally based on a flavor of Lisp called Franz Lisp\"." }
+    - { type: influenced_by, to: scheme, weight: moderate, confidence: medium, sources: [wiki-skill], note: "Infobox \"Influenced by: Scheme, Common Lisp, CLOS\"." }
+    - { type: influenced_by, to: common-lisp, weight: moderate, confidence: medium, sources: [wiki-skill], note: "Infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Cadence_SKILL" }
+  sources: [wiki-skill]
+
+- id: rexx-os2
+  name: Procedures Language/2
+  aliases: [OS/2 REXX, REXX for OS/2]
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1991, precision: circa, note: "Shipped with \"OS/2 (1.3 and later, where it is officially named Procedures Language/2)\"; the earliest dated document cited is \"Procedures Language/2 - REXX Reference - Version 2.00\", December 1991. The OS/2 1.3 release year is not on the page." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: IBM, role: developer }
+  status: legacy
+  tags:
+    paradigm: [procedural, structured, scripting]
+    typing: [dynamic-typing]
+    features: [interpreter]
+  summary: >
+    REXX as the built-in scripting language of OS/2, where it is "officially named Procedures Language/2" and was part of
+    IBM's SAA as "SAA Procedure Language REXX". OS/2 REXX scripts share the .cmd extension with other scripting languages,
+    and their first line names the interpreter; visual tools VX-REXX (Watcom) and VisPro REXX (Hockware) built on it.
+  relations:
+    - { type: dialect_of, to: rexx, weight: strong, confidence: high, sources: [wiki-rexx], note: "Rexx is supplied with OS/2 1.3 and later, \"where it is officially named Procedures Language/2\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Rexx" }
+  sources: [wiki-rexx]
+
+- id: cfengine
+  name: CFEngine
+  kind: language
+  category: domain-specific
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1993, precision: year, note: "\"The CFEngine project began in 1993\"." }
+    places: [{ institution: University of Oslo, city: Oslo, country: "NO" }]
+  creators:
+    - { name: Mark Burgess, role: author }
+  status: active
+  tags:
+    paradigm: [declarative]
+    domain: [distributed-systems]
+  milestones:
+    - { version: "3", year: 2008, summary: "Rewritten around Burgess's promise theory." }
+  summary: >
+    "a configuration management system, written by Mark Burgess" at Oslo University, which "gained significant attention
+    from a wider community because it hid platform differences using a domain-specific language". CFEngine 3 (2008)
+    rebuilt the language on promise theory, "a model of distributed cooperation for self-healing automation".
+  notes: >
+    Burgess's Wikipedia article is "Mark Burgess (computer scientist)"; the parenthesis is dropped because build.py
+    rejects it.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CFEngine", homepage: "https://cfengine.com" }
+  sources: [wiki-cfengine]
+
+- id: es-shell
+  name: es
+  aliases: [extensible shell]
+  kind: language
+  category: shell
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1993, precision: year, note: "\"introduced at the Winter 1993 USENIX conference in San Diego\"." }
+  creators:
+    - { name: Byron Rakitzis, role: co-designer }
+    - { name: Paul Haahr, role: co-designer }
+  status: legacy
+  tags:
+    paradigm: [functional, scripting]
+    features: [first-class-functions]
+  summary: >
+    "an open source, command line interpreter ... that uses a scripting language syntax influenced by the rc shell" and
+    is "intended to provide a fully functional programming language as a Unix shell", with higher-order functions. It was
+    "originally based on code from Byron Rakitzis's clone of rc". Official releases stopped at 0.9-beta-1 in 1997.
+  notes: >
+    rc (Tom Duff) is not a node yet; es should get influenced_by rc when it is.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Rc_(Unix_shell)#es" }
+  sources: [wiki-rc]
+
+- id: livecode-script
+  name: LiveCode Script
+  aliases: [Transcript, MetaTalk, Revolution]
+  kind: language
+  category: scripting
+  cluster: oop/apple
+  origin:
+    first_appeared: { year: 1993, precision: disputed, note: "Infobox \"First appeared: 1993\" (as MetaCard's MetaTalk); the prose says \"The environment was introduced in 2001\"." }
+    places: [{ institution: Runtime Revolution Ltd., city: Edinburgh, country: GB }]
+  creators:
+    - { name: LiveCode Ltd, role: developer }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, scripting]
+    typing: [dynamic-typing]
+    features: [english-like-syntax]
+  milestones:
+    - { version: Community 6.0, year: 2013, summary: "GPL community edition (discontinued with 9.6.4 in 2021)." }
+    - { version: "8.0", year: 2015, summary: "LiveCode Builder; HTML5 deployment." }
+  summary: >
+    The language of LiveCode (formerly Revolution and MetaCard), "a cross-platform rapid application development runtime
+    system inspired by HyperCard"; it "belongs to the family of xTalk scripting languages like HyperCard's HyperTalk" and
+    is "a high level, English-like programming language". Wikipedia calls it "the most widely used HyperCard/HyperTalk
+    clone".
+  relations:
+    - { type: dialect_of, to: hypertalk, weight: strong, confidence: high, sources: [wiki-livecode], note: "Infobox \"Influenced by: HyperTalk\"; one of \"the family of xTalk scripting languages\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LiveCode" }
+  sources: [wiki-livecode]
+  example:
+    title: A loop into a field
+    language: LiveCode Script
+    note: "From Wikipedia."
+    code: |
+      repeat ten times
+        put "Hello world at" && the long time & return after field 1
+        wait 1 second
+      end repeat
+    sources: [wiki-livecode]
+
+- id: lasso
+  name: Lasso
+  kind: language
+  category: scripting
+  cluster: web
+  origin:
+    first_appeared: { year: 1995, precision: year, note: "Version 0.1, September 1995: \"In the fall of 1995, independent developer Vince Bonfanti wrote a new CGI\"; 1.0 on 27 September 1996." }
+  creators:
+    - { name: Vince Bonfanti, role: original author }
+    - { name: Kyle Jessup, role: designer }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, imperative, structured]
+    typing: [dynamic-typing]
+    features: [everything-is-an-object]
+    domain: [web]
+  milestones:
+    - { version: "5", year: 2002, summary: "Rewritten architecture for OS X, Windows and Linux." }
+    - { version: "9", year: 2010, summary: "Major architectural change." }
+    - { version: 9.3.1, year: 2015 }
+  summary: >
+    "an application server and server management interface designed to develop internet applications" and "a
+    general-purpose, high-level programming language" in which "every value is an object". It began as a FileMaker web
+    CGI; there was never a Lasso 4. LassoSoft Inc. took it over in 2010.
+  notes: >
+    The infobox also names Scala (2004) as an influence; it would have arrived with a later version, which the page does
+    not say, so no edge is drawn.
+  relations:
+    - { type: influenced_by, to: dylan, weight: moderate, confidence: medium, sources: [wiki-lasso], note: "Infobox \"Influenced by: Dylan, Smalltalk, Scala\"." }
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: medium, sources: [wiki-lasso], note: "Infobox." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lasso_(programming_language)" }
+  sources: [wiki-lasso]
+
+- id: jscript
+  name: JScript
+  kind: language
+  category: scripting
+  cluster: web
+  origin:
+    first_appeared: { year: 1996, precision: exact, note: "\"first supported in the Internet Explorer 3.0 browser released in August 1996\"." }
+    places: [{ institution: Microsoft, country: US }]
+  creators:
+    - { name: Microsoft, role: developer }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, prototype-based, functional, imperative, scripting]
+    typing: [dynamic-typing, weak-typing]
+  milestones:
+    - { version: "5.0", year: 1999 }
+    - { version: "9.0", year: 2011, summary: "Last version, in Internet Explorer 9 (Chakra)." }
+  summary: >
+    "Microsoft's legacy dialect of the ECMAScript standard", used in Internet Explorer, HTML Applications and as a
+    Windows scripting language through Active Scripting. Douglas Crockford relays Microsoft's view that JScript and
+    JavaScript "are just different names for the same language", named differently "to get around trademark issues". It
+    added conditional compilation inside comments.
+  relations:
+    - { type: dialect_of, to: javascript, weight: strong, confidence: high, sources: [wiki-jscript], note: "\"Microsoft's legacy dialect of the ECMAScript standard\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/JScript" }
+  sources: [wiki-jscript]
+
+- id: miva-script
+  name: Miva Script
+  aliases: [HTMLScript, MIVA Script]
+  kind: language
+  category: scripting
+  cluster: web
+  origin:
+    first_appeared: { year: 1996, precision: disputed, note: "Infobox 1996; \"first developed under the name HTMLScript by Joe Austin and others in 1995\"." }
+    places: [{ institution: HTMLScript Corporation, country: US }]
+  creators:
+    - { name: David Haldy, role: co-author }
+    - { name: Joseph Austin, role: co-author }
+    - { name: Jon Burchmore, role: rewrite 1997 }
+  status: maintained
+  tags:
+    paradigm: [imperative, scripting]
+    typing: [dynamic-typing, weak-typing]
+    domain: [web]
+  milestones:
+    - { version: compiler, year: 2002, summary: "Miva Script compiler; HTMLScript syntax dropped." }
+  summary: >
+    "a proprietary computer scripting language mainly used for internet applications such as e-commerce", written as
+    tags beginning <Mv. Its first version was a Perl program, Logic Enhanced HTML; Miva Merchant (San Diego) now owns it.
+  relations:
+    - { type: influenced_by, to: perl, weight: moderate, confidence: medium, sources: [wiki-miva-script], note: "Infobox \"Influenced by: C, Perl, Java, C++\"; the first version \"was written in the programming language Perl\"." }
+    - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-miva-script], note: "Infobox." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MIVA_Script" }
+  sources: [wiki-miva-script]
+
+- id: tea
+  name: Tea
+  kind: language
+  category: scripting
+  cluster: managed/dynamic
+  origin:
+    first_appeared: { year: 1997, precision: year, note: "Infobox \"First appeared: 1997\"." }
+  creators:
+    - { name: Jorge Nunes, role: developer }
+  status: legacy
+  tags:
+    paradigm: [functional, object-oriented, scripting]
+    features: [closures, interpreter]
+  summary: >
+    "a high-level scripting language for the Java environment" that "combines features of Scheme, Tcl, and Java", with
+    Scheme-like closures; its interpreter is "100% pure Java".
+  relations:
+    - { type: influenced_by, to: scheme, weight: strong, confidence: high, sources: [wiki-tea], note: "\"It combines features of Scheme, Tcl, and Java.\"" }
+    - { type: influenced_by, to: tcl, weight: strong, confidence: high, sources: [wiki-tea] }
+    - { type: influenced_by, to: java, weight: moderate, confidence: high, sources: [wiki-tea] }
+    - { type: implemented_in, to: java, weight: moderate, confidence: high, sources: [wiki-tea], note: "\"The Tea interpreter is implemented in Java.\"" }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Tea_(programming_language)" }
+  sources: [wiki-tea]
+
+- id: curl-lang
+  name: Curl
+  kind: language
+  category: general
+  cluster: web
+  origin:
+    first_appeared: { year: 1998, precision: year, note: "Infobox \"First appeared: 1998\"; based on MIT research." }
+    places: [{ institution: Massachusetts Institute of Technology, country: US }]
+  creators:
+    - { name: Steve Ward, role: designer }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, reflective]
+    typing: [strong-typing]
+    domain: [web]
+  summary: >
+    "a reflective object-oriented programming language for interactive web applications, whose goal is to provide a
+    smoother transition between content formatting and computer programming": the same language marks up text and
+    reaches up to "a compiled, strongly typed, object-oriented system programming language". Curl, Inc. commercialised it;
+    it now runs only on Windows.
+  notes: >
+    Ward's Wikipedia article is "Steve Ward (computer scientist)"; the parenthesis is dropped because build.py rejects it.
+  relations:
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: medium, sources: [wiki-curl], note: "Infobox \"Influenced by: HTML, JavaScript, Lisp\"." }
+    - { type: influenced_by, to: javascript, weight: weak, confidence: medium, sources: [wiki-curl], note: "Infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Curl_(programming_language)" }
+  sources: [wiki-curl]
+  example:
+    title: Hello World applet
+    language: Curl
+    note: "From Wikipedia."
+    code: |
+      {Curl 7.0, 8.0 applet}
+      {text
+          color = "blue",
+          font-size = 16pt,
+          Hello World}
+    sources: [wiki-curl]
+
+- id: logtalk
+  name: Logtalk
+  kind: language
+  category: general
+  cluster: logic
+  origin:
+    first_appeared: { year: 1998, precision: year, note: "Infobox \"First appeared: 1998\"." }
+  creators:
+    - { name: Paulo Moura, role: designer }
+  status: active
+  tags:
+    paradigm: [logic, object-oriented, prototype-based]
+  summary: >
+    "an object-oriented logic programming language that extends and leverages the Prolog language with a feature set
+    suitable for programming in the large", using "standard Prolog syntax with the addition of a few operators and
+    directives" and running on a dozen Prolog back-ends.
+  relations:
+    - { type: superset_of, to: prolog, weight: strong, confidence: high, sources: [wiki-logtalk], note: "\"extends and leverages the Prolog language\"." }
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: medium, sources: [wiki-logtalk], note: "Infobox \"Influenced by: Prolog, Smalltalk, Objective-C\"." }
+    - { type: influenced_by, to: objective-c, weight: moderate, confidence: medium, sources: [wiki-logtalk], note: "Infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Logtalk", homepage: "https://logtalk.org" }
+  sources: [wiki-logtalk]
+  example:
+    title: An object
+    language: Logtalk
+    note: "From Wikipedia."
+    code: |
+      :- object(my_first_object).
+
+          :- initialization((write('Hello world'), nl)).
+
+          :- public(p1/0).
+          p1 :- write('This is a public predicate'), nl.
+
+          :- private(p2/0).
+          p2 :- write('This is a private predicate'), nl.
+
+      :- end_object.
+    sources: [wiki-logtalk]
+
+- id: beanshell
+  name: BeanShell
+  kind: language
+  category: scripting
+  cluster: managed/dynamic
+  origin:
+    first_appeared: { year: 1999, precision: year, note: "\"The first versions of BeanShell (0.96, 1.0) were released by Patrick Niemeyer in 1999\"." }
+  creators:
+    - { name: Patrick Niemeyer, role: author }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, scripting]
+    typing: [dynamic-typing, strong-typing]
+    features: [embeddable, interpreter]
+  milestones:
+    - { version: 2.0b4, year: 2005 }
+  summary: >
+    "a small, free, embeddable Java source interpreter" that "dynamically executes standard Java syntax and extends it
+    with common scripting conveniences such as loose types, commands, and method closures, like those in Perl and
+    JavaScript". Its JSR 274 is dormant.
+  relations:
+    - { type: superset_of, to: java, weight: strong, confidence: high, sources: [wiki-beanshell], note: "\"dynamically executes standard Java syntax and extends it\"." }
+    - { type: influenced_by, to: javascript, weight: weak, confidence: medium, sources: [wiki-beanshell] }
+    - { type: influenced_by, to: perl, weight: weak, confidence: medium, sources: [wiki-beanshell] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/BeanShell" }
+  sources: [wiki-beanshell]

@@ -478,64 +478,26 @@
   name: Scripting languages
   research_status: draft
   backlog:
-    - { name: "DCL (DIGITAL Command Language)", hint: "DEC; first implemented for IAS as the Program Development System, then RSX-11M, RT-11, RSTS/E, strongest on VAX/VMS; infobox: influenced by CCL and MCR, influenced Windows PowerShell (wiki-dcl). Needs a first-appeared year. Example in the article: $ TYPE SYS$INPUT: ... $ EXIT." }
-    - { name: "CLIST", hint: "Command List for TSO; \"originated in OS/360 Release 20\"; OS/VS2 R3.6 (MVS) added If-Then-Else and loops; secondary since Rexx in TSO/E Version 2 (wiki-clist). Needs the year of OS/360 Release 20." }
-    - { name: "EXEC 2", hint: "Written in the 1970s, formally introduced with VM/SP Release 1; successor of CMS EXEC (mostly compatible), superseded by REXX (wiki-exec-2). Needs the VM/SP Release 1 year; then successor_of cms-exec, and rexx influenced_by it." }
-    - { name: "Control Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Hamilton C shell", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "BeanShell", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "JScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "JScript .NET", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Google Apps Script", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Lasso", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Tea", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Nix", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "CFEngine", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Pipelines", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Hartmann pipeline", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "MaxScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Maya (MEL)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Unicon", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SETL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Logtalk", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Neko", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Hollywood", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Transcript (LiveCode)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Pascal Script", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "QtScript", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Script.NET", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Nullsoft Scriptable Install System", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Visual DialogScript", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Kv (Kivy)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "MIVA Script", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Text Processing Utility", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "TTM", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Snowball", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SBL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "RPL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Curl", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "M Formula language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Microsoft Power Fx", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Serpent", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SKILL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Source", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Open Programming Language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "CLIST", hint: "TSO Command List: \"It originated in OS/360 Release 20\"; OS/VS2 R3.6 (MVS) added If-Then-Else and loops; secondary since Rexx in TSO/E Version 2 (Wikipedia: CLIST). No year on the page; needs the OS/360 Release 20 date." }
+    - { name: "MaxScript", hint: "Only a section of the Autodesk 3ds Max article (3D Studio MAX 1.0, 1996); no date for MAXScript itself." }
+    - { name: "Maya (MEL)", hint: "Maya Embedded Language: \"syntactically similar to Perl and Tcl\"; Python added as an alternative in Maya 8.5 (Wikipedia). No year or authors on the page." }
+    - { name: "Unicon", hint: "Clint Jeffery et al.; \"descended from Icon and a preprocessor for Icon called IDOL\" (Wikipedia). No year on the page; use unicon.sourceforge.net or the Unicon book." }
+    - { name: "QtScript", hint: "ECMAScript-based engine \"part of the Qt ... framework since version 4.3.0\", deprecated in Qt 5.5 (April 2015), dropped in 6.5 (Wikipedia). The Qt 4.3.0 year is not on the page." }
+    - { name: "Script.NET", hint: "S#, JavaScript-like scripting for .NET (Wikipedia: Script.NET); no year or author on the page (homepage protsyk.com/scriptdotnet)." }
+    - { name: "Nullsoft Scriptable Install System", hint: "Only two sentences in the Nullsoft article (SourceForge Project of the Month January 2006); no year for the NSIS script language." }
+    - { name: "Visual DialogScript", hint: "Julian Moss (JM-Tech), later Emmanuel Daunizeau (S.A.D.E., from 1998 after 3.0); syntax similar to MS-DOS batch (Wikipedia). No first-release year." }
+    - { name: "Kv (Kivy)", hint: "Kivy's UI description language (Kivy first released 1 February 2011); no year for Kv itself on the page." }
+    - { name: "Snowball", hint: "Martin Porter's string language for stemming algorithms, named after SNOBOL (Wikipedia). No year on the page; snowballstem.org has the history." }
+    - { name: "SBL", hint: "The list's SBL link points to Superbase (database), which never mentions SBL; possibly Snowball's .sbl files. Unresolved." }
+    - { name: "Serpent", hint: "The list links to Ethereum#Programming_languages, which no longer exists; Solidity's article mentions Serpent only in passing. Needs an Ethereum-era source." }
 - id: scripting/unix
   name: Unix shell and text tools
   parent: scripting
   research_status: draft
-  backlog:
-    - { name: "ed", year: 1971, hint: "Thompson's line editor; the source of sed's s/// and /re/ syntax. Inclusion test 2 (missing link)." }
-    - { name: "PWB (Mashey) shell", year: 1975, hint: "Between the Thompson and Bourne shells (Wikipedia, Thompson shell)." }
-    - { name: "tcsh", year: 1983, hint: "C shell successor with completion and line editing from TENEX; date unsourced." }
-    - { name: "Almquist shell (ash, dash)", year: 1989 }
-    - { name: "es (extensible shell)", year: 1993, hint: "Influenced by rc (Wikipedia, rc)." }
 - id: scripting/python
   name: Python and its lineage
   parent: scripting
   research_status: draft
-  backlog:
-    - { name: "Cython", year: 2007 }
 - id: scripting/ruby
   name: Ruby
   parent: scripting
@@ -547,16 +509,14 @@
   research_status: draft
   key_sources: [snover-2002-monad-manifesto]
   backlog:
-    - { name: "Elvish", year: 2016 }
-    - { name: "Oil / Oils (YSH)", year: 2016 }
+    - { name: "Elvish", year: 2016, hint: "No Wikipedia article (Elvish_(shell) is 404). Use elv.sh." }
+    - { name: "Oil / Oils (YSH)", year: 2016, hint: "No Wikipedia article (Oil_shell is 404) and not in the Unix shell article. Use oilshell.org." }
 - id: scripting/embedded
   name: Embeddable scripting languages
   parent: scripting
   research_status: stub
   backlog:
-    - { name: "Squirrel", year: 2003 }
-    - { name: "GDScript", year: 2014 }
-    - { name: "Minecraft commands / mcfunction", hint: "Mojang; datapack function files of in-game commands. Redstone circuits are not a language (Turing-complete by accident), so only the command language could be a node. Needs year and a sourced example." }
+    - { name: "Minecraft commands / mcfunction", hint: "Minecraft article only: command blocks October 2012, data packs in Java 1.13 (2018); no description of the command or function language. Probably out of scope without a better source." }
 - id: web
   name: Web languages
   research_status: draft
