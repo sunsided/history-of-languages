@@ -5,10 +5,11 @@ Usage:  python3 tools/build.py            # validate + build
         python3 tools/build.py --missing  # list referenced-but-undefined ids, grouped
 
 Checks: JSON Schema per record, unique ids, every referenced node/concept/cluster/source/claim exists,
-no relation points forward in time by more than a tolerance (likely reversed edge), cluster parents exist.
+no relation points forward in time by more than a tolerance (likely reversed edge), cluster parents exist,
+every node has an example, one person per creator entry, photos match creator names exactly.
 Derives inverse edges (influenced, superseded_by, has_dialect, ...) and each node's era.
 """
-import json, sys, pathlib, collections
+import json, re, sys, pathlib, collections
 import yaml
 from jsonschema import Draft202012Validator
 
@@ -106,8 +107,18 @@ def main():
                 need("source", S, s, w)
         for s in (n.get("example") or {}).get("sources", []):
             need("source", S, s, f"{w} example")
+        if not n.get("example"):
+            errors.append(f"{w}: no example (every node needs one; pseudocode only when nothing real exists)")
+        for c in n.get("creators", []):
+            # one person per entry, named as in their Wikipedia article: the viewer matches photos by exact name
+            if re.search(r", | and |\(|\)", c["name"]):
+                errors.append(f"{w}: creator '{c['name']}' looks like a list; give each person their own entry")
         y = n["origin"]["first_appeared"]["year"]
+        seen_rel = set()
         for r in n.get("relations", []):
+            if r["to"] == n["id"] or (r["type"], r["to"]) in seen_rel:
+                errors.append(f"{w}: self or duplicate relation {r['type']} -> {r['to']}")
+            seen_rel.add((r["type"], r["to"]))
             need("node", N, r["to"], w)
             for c in r.get("aspects", []):
                 need("concept", C, c, f"{w} -> {r['to']}")
@@ -153,12 +164,33 @@ def main():
         for x in cl.get("nodes", []):
             need("node", N, x, f"claim {cl['id']}")
 
+    creator_names = {c["name"] for n in nodes for c in n.get("creators", [])}
     MD = index(media, "media")
     for m in media:
         for x in m.get("nodes", []):
             need("node", N, x, f"media {m['id']}")
         if not m["file"].startswith("assets/media/"):
             errors.append(f"media {m['id']}: file must live under assets/media/")
+        if m["kind"] == "person" and m.get("person") not in creator_names:
+            errors.append(f"media {m['id']}: person '{m.get('person')}' matches no creator name (the viewer would not show it)")
+
+    # Input for tools/fetch_media.py: same rules, checked before anything is fetched.
+    subjects = load_list(DATA / "media-subjects.yaml") if (DATA / "media-subjects.yaml").exists() else []
+    seen_subj = set()
+    for s in subjects:
+        w = f"media-subjects {s.get('id', '?')}"
+        for k in ("id", "kind", "wiki"):
+            if k not in s and not (k == "wiki" and s.get("commons_file")):
+                errors.append(f"{w}: missing '{k}'")
+        if s.get("id") in seen_subj:
+            errors.append(f"duplicate media-subjects id: {s.get('id')}")
+        seen_subj.add(s.get("id"))
+        if s.get("kind") not in ("machine", "person", "document", "artifact"):
+            errors.append(f"{w}: kind must be machine, person, document or artifact")
+        if s.get("kind") == "person" and s.get("person") not in creator_names:
+            errors.append(f"{w}: person '{s.get('person')}' matches no creator name")
+        for x in s.get("nodes", []):
+            need("node", N, x, w)
     missing_files = [m["id"] for m in media if not (ROOT / m["file"]).exists()]
     if missing_files:
         warnings.append(f"{len(missing_files)} media files not downloaded yet (run tools/fetch_media.py)")

@@ -237,7 +237,10 @@
     places: [{ institution: University of Edinburgh, city: Edinburgh, country: GB }]
   creators:
     - { name: Robin Milner, role: designer }
-    - { name: "Lockwood Morris, Malcolm Newey, Michael Gordon, Chris Wadsworth", role: co-designers }
+    - { name: Lockwood Morris, role: co-designer }
+    - { name: Malcolm Newey, role: co-designer }
+    - { name: Michael Gordon, role: co-designer }
+    - { name: Chris Wadsworth, role: co-designer }
   status: extinct
   tags:
     paradigm: [functional, imperative]
@@ -464,7 +467,11 @@
     began: { year: 1973, precision: year }
     first_appeared: { year: 1975, precision: circa }
     places: [{ institution: MIT, city: Cambridge MA, country: US }]
-  creators: [{ name: Barbara Liskov, role: designer }, { name: "Russ Atkinson, Craig Schaffert, Alan Snyder", role: co-designers }]
+  creators:
+    - { name: Barbara Liskov, role: designer }
+    - { name: Russ Atkinson, role: co-designer }
+    - { name: Craig Schaffert, role: co-designer }
+    - { name: Alan Snyder, role: co-designer }
   status: extinct
   tags:
     paradigm: [procedural, data-abstraction]
@@ -550,7 +557,10 @@
   origin:
     first_appeared: { year: 1976, precision: circa }
     places: [{ institution: Xerox PARC, city: Palo Alto, country: US }]
-  creators: [{ name: "Charles Geschke, Butler Lampson, Jim Mitchell, and others", role: designers }]
+  creators:
+    - { name: Charles Geschke, role: designer }
+    - { name: Butler Lampson, role: designer }
+    - { name: Jim Mitchell, role: designer }
   status: extinct
   tags:
     paradigm: [imperative, modular]
@@ -657,7 +667,8 @@
   origin:
     first_appeared: { year: 1978, precision: year, note: "Hoare, CACM 1978; process-algebra version in the 1985 book." }
     places: [{ institution: Queen's University Belfast / Oxford, country: GB }]
-  creators: [{ name: C. A. R. Hoare, role: designer }]
+  creators:
+    - { name: Tony Hoare, role: designer }
   status: active
   tags:
     concurrency: [channels, message-passing, synchronous-rendezvous]
@@ -793,7 +804,7 @@
     places: [{ institution: CII Honeywell Bull, city: Paris, country: FR }]
   creators:
     - { name: Jean Ichbiah, role: lead designer }
-    - { name: US Department of Defense (HOLWG), role: sponsor }
+    - { name: US Department of Defense, role: sponsor, affiliation: "High Order Language Working Group (HOLWG)" }
   status: active
   tags:
     paradigm: [imperative, structured, object-oriented, modular]

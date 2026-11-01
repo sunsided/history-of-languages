@@ -111,7 +111,13 @@
   origin:
     first_appeared: { year: 2002, precision: year }
     places: [{ institution: AT&T Labs Research and Cornell University, country: US }]
-  creators: [{ name: "Trevor Jim, Greg Morrisett, Dan Grossman, Michael Hicks, James Cheney, Yanling Wang", role: designers }]
+  creators:
+    - { name: Trevor Jim, role: designer }
+    - { name: Greg Morrisett, role: designer }
+    - { name: Dan Grossman, role: designer }
+    - { name: Michael Hicks, role: designer }
+    - { name: James Cheney, role: designer }
+    - { name: Yanling Wang, role: designer }
   status: extinct
   tags:
     paradigm: [imperative]
@@ -351,7 +357,9 @@
     began: { year: 2006, precision: year, note: "Personal project of Graydon Hoare; Mozilla sponsorship from 2009; announced 2010." }
     first_appeared: { year: 2015, date: "2015-05-15", precision: exact, note: "1.0 release." }
     places: [{ institution: Mozilla Research, city: Mountain View, country: US }]
-  creators: [{ name: Graydon Hoare, role: original designer }, { name: "Rust team (Mozilla, later Rust Foundation)", role: designers }]
+  creators:
+    - { name: Graydon Hoare, role: original designer }
+    - { name: Rust team, role: designers, affiliation: "Mozilla, later the Rust Foundation" }
   status: active
   tags:
     paradigm: [multi-paradigm, imperative, functional, generic-programming]
@@ -577,7 +585,11 @@
     began: { year: 2009, precision: year }
     first_appeared: { year: 2012, precision: year }
     places: [{ institution: MIT, city: Cambridge MA, country: US }]
-  creators: [{ name: "Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman", role: designers }]
+  creators:
+    - { name: Jeff Bezanson, role: designer }
+    - { name: Stefan Karpinski, role: designer }
+    - { name: Viral B. Shah, role: designer }
+    - { name: Alan Edelman, role: designer }
   status: active
   tags:
     paradigm: [multi-paradigm, functional, array-programming]

@@ -173,7 +173,9 @@
   origin:
     first_appeared: { year: 1984, precision: year, note: "'Common Lisp the Language' (Steele) 1984; ANSI standard 1994." }
     places: [{ country: US }]
-  creators: [{ name: "Guy L. Steele Jr. (editor) and the Common Lisp committee", role: designers }]
+  creators:
+    - { name: Guy L. Steele Jr., role: editor }
+    - { name: Common Lisp committee, role: designers }
   status: maintained
   tags:
     paradigm: [multi-paradigm, functional, object-oriented, reflective]
@@ -516,7 +518,12 @@
     first_appeared: { year: 1988, precision: year }
     places: [{ institution: DEC Systems Research Center and Olivetti Research, city: Palo Alto, country: US }]
   creators:
-    - { name: "Luca Cardelli, James Donahue, Lucille Glassman, Mick Jordan, Bill Kalsow, Greg Nelson", role: designers }
+    - { name: Luca Cardelli, role: designer }
+    - { name: James Donahue, role: designer }
+    - { name: Lucille Glassman, role: designer }
+    - { name: Mick Jordan, role: designer }
+    - { name: Bill Kalsow, role: designer }
+    - { name: Greg Nelson, role: designer }
   status: extinct
   tags:
     paradigm: [imperative, structured, object-oriented, modular]

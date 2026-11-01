@@ -41,7 +41,7 @@
     first_appeared: { year: 850, precision: circa, note: "Described in the Banū Mūsā brothers' treatise on automata, 9th century." }
     places: [{ city: Baghdad, country: "Abbasid Caliphate" }]
   creators:
-    - { name: "Banū Mūsā brothers (Muhammad, Ahmad, al-Hasan ibn Mūsā ibn Shākir)", role: designers }
+    - { name: Banū Mūsā, role: "designers (the brothers Muhammad, Ahmad and al-Hasan ibn Mūsā ibn Shākir)" }
   status: extinct
   summary: >
     Water-powered automaton whose melody is encoded as pins on an exchangeable rotating cylinder.

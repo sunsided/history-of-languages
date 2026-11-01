@@ -241,7 +241,15 @@
     places: [{ institution: IBM, city: New York, country: US }]
   creators:
     - { name: John Backus, role: team lead }
-    - { name: "Irving Ziller, Harlan Herrick, Roy Nutt, Lois Haibt, Robert Nelson, Sheldon Best, David Sayre, Richard Goldberg, Peter Sheridan", role: team }
+    - { name: Irving Ziller, role: team member }
+    - { name: Harlan Herrick, role: team member }
+    - { name: Roy Nutt, role: team member }
+    - { name: Lois Haibt, role: team member }
+    - { name: Robert Nelson, role: team member }
+    - { name: Sheldon Best, role: team member }
+    - { name: David Sayre, role: team member }
+    - { name: Richard Goldberg, role: team member }
+    - { name: Peter Sheridan, role: team member }
   status: active
   tags:
     paradigm: [imperative, procedural, array-programming, object-oriented]
@@ -349,8 +357,14 @@
     first_appeared: { year: 1958, precision: year, note: "ACM-GAMM meeting, Zürich, May-June 1958." }
     places: [{ institution: ETH Zürich (ACM / GAMM joint committee), city: Zürich, country: CH }]
   creators:
-    - { name: "Friedrich L. Bauer, Hermann Bottenbruch, Heinz Rutishauser, Klaus Samelson (GAMM)", role: committee }
-    - { name: "John Backus, Charles Katz, Alan Perlis, Joseph Wegstein (ACM)", role: committee }
+    - { name: Friedrich L. Bauer, role: committee member, affiliation: GAMM }
+    - { name: Hermann Bottenbruch, role: committee member, affiliation: GAMM }
+    - { name: Heinz Rutishauser, role: committee member, affiliation: GAMM }
+    - { name: Klaus Samelson, role: committee member, affiliation: GAMM }
+    - { name: John Backus, role: committee member, affiliation: ACM }
+    - { name: Charles Katz, role: committee member, affiliation: ACM }
+    - { name: Alan Perlis, role: committee member, affiliation: ACM }
+    - { name: Joseph Wegstein, role: committee member, affiliation: ACM }
   status: extinct
   tags:
     paradigm: [imperative, procedural]

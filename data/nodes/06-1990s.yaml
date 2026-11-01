@@ -10,8 +10,14 @@
     first_appeared: { year: 1990, date: "1990-04", precision: exact, note: "Haskell 1.0 report." }
     places: [{ institution: "International committee (Glasgow, Yale, Chalmers and others)", country: GB }]
   creators:
-    - { name: "Paul Hudak, John Hughes, Simon Peyton Jones, Philip Wadler", role: committee members (HOPL authors) }
-    - { name: "Lennart Augustsson, Thomas Johnsson, Rishiyur Nikhil, Joseph Fasel, and others", role: committee }
+    - { name: Paul Hudak, role: "committee members (HOPL authors)" }
+    - { name: John Hughes, role: "committee members (HOPL authors)" }
+    - { name: Simon Peyton Jones, role: "committee members (HOPL authors)" }
+    - { name: Philip Wadler, role: "committee members (HOPL authors)" }
+    - { name: Lennart Augustsson, role: committee }
+    - { name: Thomas Johnsson, role: committee }
+    - { name: Rishiyur Nikhil, role: committee }
+    - { name: Joseph Fasel, role: committee }
   status: active
   tags:
     paradigm: [functional, purely-functional]
@@ -122,7 +128,10 @@
   origin:
     first_appeared: { year: 1976, precision: year }
     places: [{ institution: Bell Labs, city: Murray Hill NJ, country: US }]
-  creators: [{ name: John Chambers, role: designer }, { name: "Rick Becker, Allan Wilks", role: co-designers }]
+  creators:
+    - { name: John Chambers, role: designer }
+    - { name: Rick Becker, role: co-designer }
+    - { name: Allan Wilks, role: co-designer }
   status: extinct
   tags:
     paradigm: [array-programming, functional]
@@ -326,7 +335,10 @@
   origin:
     first_appeared: { year: 1995, precision: year }
     places: [{ institution: Bell Labs, city: Murray Hill NJ, country: US }]
-  creators: [{ name: "Sean Dorward, Phil Winterbottom, Rob Pike", role: designers }]
+  creators:
+    - { name: Sean Dorward, role: designer }
+    - { name: Phil Winterbottom, role: designer }
+    - { name: Rob Pike, role: designer }
   status: extinct
   tags:
     paradigm: [imperative, concurrent]
@@ -371,7 +383,8 @@
     places: [{ institution: Sun Microsystems, city: Menlo Park, country: US }]
   creators:
     - { name: James Gosling, role: designer }
-    - { name: "Mike Sheridan, Patrick Naughton", role: Green Project }
+    - { name: Mike Sheridan, role: Green Project }
+    - { name: Patrick Naughton, role: Green Project }
   status: active
   tags:
     paradigm: [object-oriented, imperative, functional]
@@ -485,7 +498,10 @@
   origin:
     first_appeared: { year: 1995, date: "1995-06-08", precision: exact, note: "'Personal Home Page Tools' 1.0." }
     places: [{ country: CA }]
-  creators: [{ name: Rasmus Lerdorf, role: original author }, { name: "Andi Gutmans, Zeev Suraski", role: "PHP 3 rewrite / Zend Engine" }]
+  creators:
+    - { name: Rasmus Lerdorf, role: original author }
+    - { name: Andi Gutmans, role: PHP 3 rewrite / Zend Engine }
+    - { name: Zeev Suraski, role: PHP 3 rewrite / Zend Engine }
   status: active
   tags:
     paradigm: [imperative, object-oriented, procedural]
@@ -536,8 +552,13 @@
     first_appeared: { year: 1996, precision: year }
     places: [{ institution: INRIA, city: Rocquencourt, country: FR }]
   creators:
-    - { name: "Xavier Leroy, Jérôme Vouillon, Damien Doligez, Didier Rémy", role: designers }
-    - { name: "Gérard Huet, Guy Cousineau, Ascánder Suárez", role: Caml }
+    - { name: Xavier Leroy, role: designer }
+    - { name: Jérôme Vouillon, role: designer }
+    - { name: Damien Doligez, role: designer }
+    - { name: Didier Rémy, role: designer }
+    - { name: Gérard Huet, role: Caml }
+    - { name: Guy Cousineau, role: Caml }
+    - { name: Ascánder Suárez, role: Caml }
   status: active
   tags:
     paradigm: [functional, imperative, object-oriented]

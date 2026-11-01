@@ -10,7 +10,18 @@
     places: [{ city: Paris, country: FR }]
   creators:
     - { name: Peter Naur, role: editor }
-    - { name: "John Backus, Friedrich L. Bauer, Julien Green, Charles Katz, John McCarthy, Alan Perlis, Heinz Rutishauser, Klaus Samelson, Bernard Vauquois, Joseph Wegstein, Adriaan van Wijngaarden, Michael Woodger", role: committee }
+    - { name: John Backus, role: committee member }
+    - { name: Friedrich L. Bauer, role: committee member }
+    - { name: Julien Green, role: committee member }
+    - { name: Charles Katz, role: committee member }
+    - { name: John McCarthy, role: committee member }
+    - { name: Alan Perlis, role: committee member }
+    - { name: Heinz Rutishauser, role: committee member }
+    - { name: Klaus Samelson, role: committee member }
+    - { name: Bernard Vauquois, role: committee member }
+    - { name: Joseph Wegstein, role: committee member }
+    - { name: Adriaan van Wijngaarden, role: committee member }
+    - { name: Michael Woodger, role: committee member }
   status: extinct
   tags:
     paradigm: [imperative, procedural, structured]
@@ -253,7 +264,7 @@
     places: [{ institution: Stanford University, city: Stanford, country: US }]
   creators:
     - { name: Niklaus Wirth, role: designer }
-    - { name: C. A. R. Hoare, role: designer }
+    - { name: Tony Hoare, role: designer }
   status: extinct
   tags:
     paradigm: [imperative, structured]
@@ -347,7 +358,8 @@
   origin:
     first_appeared: { year: 1965, precision: year, note: "'Record Handling', ALGOL Bulletin 21, 1965; expanded 1966." }
     places: [{ country: GB }]
-  creators: [{ name: C. A. R. Hoare, role: author }]
+  creators:
+    - { name: Tony Hoare, role: author }
   status: historical
   tags:
     features: [records, references]
@@ -457,7 +469,9 @@
     places: [{ institution: IFIP Working Group 2.1, country: NL }]
   creators:
     - { name: Adriaan van Wijngaarden, role: lead editor }
-    - { name: "Barry Mailloux, John Peck, Kees Koster", role: editors }
+    - { name: Barry Mailloux, role: editor }
+    - { name: John Peck, role: editor }
+    - { name: Kees Koster, role: editor }
   status: extinct
   tags:
     paradigm: [imperative, structured]

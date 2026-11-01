@@ -74,7 +74,12 @@
   creators:
     - { name: J. Presper Eckert, role: designer }
     - { name: John Mauchly, role: designer }
-    - { name: "Kathleen McNulty, Jean Jennings, Betty Snyder, Marlyn Wescoff, Frances Bilas, Ruth Lichterman", role: first programmers }
+    - { name: Kathleen Antonelli, role: "first programmer (then Kathleen McNulty)" }
+    - { name: Jean Bartik, role: "first programmer (then Jean Jennings)" }
+    - { name: Betty Holberton, role: "first programmer (then Betty Snyder)" }
+    - { name: Marlyn Meltzer, role: "first programmer (then Marlyn Wescoff)" }
+    - { name: Frances Spence, role: "first programmer (then Frances Bilas)" }
+    - { name: Ruth Teitelbaum, role: "first programmer (then Ruth Lichterman)" }
   status: extinct
   summary: "First programmable general-purpose electronic computer. Originally programmed by setting switches and plugging cables; converted in 1948 to run a fixed set of stored instructions selected from function tables."
   research_status: stub
@@ -101,7 +106,7 @@
     first_appeared: { year: 1948, date: "1948-06-21", precision: exact }
     places: [{ institution: Victoria University of Manchester, city: Manchester, country: GB }]
   creators:
-    - { name: Frederic C. Williams, role: designer }
+    - { name: Frederic Calland Williams, role: designer }
     - { name: Tom Kilburn, role: designer }
     - { name: Geoff Tootill, role: designer }
   status: extinct
