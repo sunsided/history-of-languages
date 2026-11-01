@@ -125,6 +125,8 @@ def main():
             for s in r.get("sources", []):
                 need("source", S, s, w)
             t = N.get(r["to"])
+            if t and "from_version" in r and r["from_version"] not in {str(m.get("version")) for m in t.get("milestones", [])}:
+                errors.append(f"{w} -> {r['to']}: from_version '{r['from_version']}' is not a milestone version of {r['to']}")
             if t and r["type"] not in ("targets", "implemented_in"):
                 ty = t["origin"].get("began", t["origin"]["first_appeared"])["year"]
                 if ty > r.get("year", y) + FORWARD_TOLERANCE:

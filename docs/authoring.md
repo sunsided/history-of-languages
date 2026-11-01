@@ -159,6 +159,11 @@ A complete node, annotated (based on `zig`, with fields it does not have yet add
 
 - Always newer → older. `build.py` warns when an edge points more than 3 years forward in time. When a
   later version adopted the idea, set `year` on the relation (JavaScript got async/await from C# in 2017).
+- Where on the older node's timeline does the edge start? Set `from_version` to the target's milestone
+  version the branch came from (`{ type: successor_of, to: objective-c, from_version: "2.0" }`); the target
+  needs that milestone, or `build.py` fails. The older line may go on after the branch: its later
+  milestones stay on its own timeline. Without `from_version` the viewer infers the anchor from `year`,
+  then from this node's `began` / `first_appeared`. Only set it when a source names the version.
 - `weight`: `strong` = a defining trait came from there; `moderate` = clear but partial; `weak` = a
   detail or a general atmosphere.
 - `confidence`: `high` = the designers say so in a primary source; `medium` = consistent secondary

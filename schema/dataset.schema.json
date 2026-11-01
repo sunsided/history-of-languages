@@ -152,6 +152,10 @@
         "year": {
           "$ref": "#/$defs/year",
           "description": "when the influence happened, if later than the node's first appearance (e.g. a feature adopted in a later version)"
+        },
+        "from_version": {
+          "type": "string",
+          "description": "the version of the TARGET node this edge branches from (must equal a milestones[].version on the target), e.g. Swift successor_of Objective-C from_version \"2.0\". The viewer anchors the edge there on the target's timeline; without it, the anchor is inferred from year, then from this node's began/first_appeared."
         }
       },
       "additionalProperties": false
