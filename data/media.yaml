@@ -530,6 +530,7 @@
   person: Chris Lattner
   nodes:
   - swift
+  - mojo
   caption: Chris Lattner, 2021-03-30
   date: '2021-03-30'
   credit: Waldyrious
@@ -694,6 +695,7 @@
   person: Edwin Brady
   nodes:
   - whitespace
+  - idris
   caption: Edwin Brady, circa 1911date QS:P,+1911-00-00T00:00:00
   date: circa 1911date QS:P,+1911-00-00T00:00:00
   credit: River Rovers book scan at Internet Archive
@@ -833,6 +835,7 @@
   kind: person
   person: Guy L. Steele Jr.
   nodes:
+  - emacs-lisp
   - scheme
   - common-lisp
   caption: Guy L. Steele Jr., 2015-12-01 13:08:30
@@ -1082,6 +1085,7 @@
   kind: person
   person: Ken Thompson
   nodes:
+  - thompson-shell
   - b
   - c
   - go
@@ -1169,6 +1173,7 @@
   person: Larry Wall
   nodes:
   - perl
+  - raku
   caption: Larry Wall, 2007-06-24 18:11
   date: 2007-06-24 18:11
   credit: Randal Schwartz from Portland, OR, USA
@@ -1332,6 +1337,7 @@
   kind: person
   person: Rich Hickey
   nodes:
+  - clojurescript
   - clojure
   caption: Rich Hickey, 2009-06-03
   date: '2009-06-03'
@@ -1601,6 +1607,7 @@
   person: Xavier Leroy
   nodes:
   - ocaml
+  - caml
   caption: Xavier Leroy, 2010-01-20 07:48:40
   date: '2010-01-20 07:48:40'
   credit: David Van Horn
@@ -1738,6 +1745,8 @@
   kind: person
   person: Richard Stallman
   nodes:
+  - lisp-machine-lisp
+  - emacs-lisp
   - gnu-c
   caption: Richard Stallman, 2024-04-09 17:19:11
   date: '2024-04-09 17:19:11'
@@ -1746,4 +1755,283 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Richard_Stallman_Bologna_2024_abc1_(3x4,_rule_of_thirdscropped).jpg
   commons_file: File:Richard_Stallman_Bologna_2024_abc1_(3x4,_rule_of_thirdscropped).jpg
+  checked: '2026-11-01'
+- id: person-jeremy-ashkenas
+  file: assets/media/person-jeremy-ashkenas.jpg
+  kind: person
+  person: Jeremy Ashkenas
+  nodes:
+  - coffeescript
+  - livescript
+  caption: Jeremy Ashkenas, 2010-04-17 10:26
+  date: 2010-04-17 10:26
+  credit: JS Conf
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Jeremy_Ashkenas_(4575590175).jpg
+  commons_file: File:Jeremy_Ashkenas_(4575590175).jpg
+  checked: '2026-11-01'
+- id: person-bill-atkinson
+  file: assets/media/person-bill-atkinson.jpeg
+  kind: person
+  person: Bill Atkinson
+  nodes:
+  - hypertalk
+  caption: Bill Atkinson, 2012-08-12 18:15
+  date: 2012-08-12 18:15
+  credit: Jay Cross from Berkeley, California, US
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Bill_Atkinson_at_25_years_of_HyperCard_event_(cropped).jpeg
+  commons_file: File:Bill_Atkinson_at_25_years_of_HyperCard_event_(cropped).jpeg
+  checked: '2026-11-01'
+- id: person-jeremy-allaire
+  file: assets/media/person-jeremy-allaire.jpg
+  kind: person
+  person: Jeremy Allaire
+  nodes:
+  - cfml
+  caption: Jeremy Allaire, 2018-06-13 10:57:01
+  date: '2018-06-13 10:57:01'
+  credit: MoneyConf
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Jeremy_Allaire_at_MoneyConf_2018_(2)_(cropped).jpg
+  commons_file: File:Jeremy_Allaire_at_MoneyConf_2018_(2)_(cropped).jpg
+  checked: '2026-11-01'
+- id: person-bill-joy
+  file: assets/media/person-bill-joy.jpg
+  kind: person
+  person: Bill Joy
+  nodes:
+  - c-shell
+  caption: Bill Joy, 28 July 2007 (original upload date)
+  date: 28 July 2007 (original upload date)
+  credit: The original uploader was SqueakBox at English Wikipedia.
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Bill_Joy_at_World_Economic_Forum_(Davos),_2003-01_(cropped).jpg
+  commons_file: File:Bill_Joy_at_World_Economic_Forum_(Davos),_2003-01_(cropped).jpg
+  checked: '2026-11-01'
+- id: person-mike-cowlishaw
+  file: assets/media/person-mike-cowlishaw.jpg
+  kind: person
+  person: Mike Cowlishaw
+  nodes:
+  - rexx
+  caption: Mike Cowlishaw, 2008-04-23
+  date: '2008-04-23'
+  credit: Mfc
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Mike_Cowlishaw_2005.jpg
+  commons_file: File:Mike_Cowlishaw_2005.jpg
+  checked: '2026-11-01'
+- id: person-tom-duff
+  file: assets/media/person-tom-duff.jpg
+  kind: person
+  person: Tom Duff
+  nodes:
+  - rc-shell
+  caption: Tom Duff, 12 May 2006
+  date: 12 May 2006
+  credit: Tom Duff
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Tom-Duff-in-his-office.jpg
+  commons_file: File:Tom-Duff-in-his-office.jpg
+  checked: '2026-11-01'
+- id: person-jeffrey-snover
+  file: assets/media/person-jeffrey-snover.jpg
+  kind: person
+  person: Jeffrey Snover
+  nodes:
+  - powershell
+  caption: Jeffrey Snover, 2009-11-18
+  date: '2009-11-18'
+  credit: Microsoft PDC
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Professional_Developers_Conference_2009_Technical_Leaders_Panel_1_(Jeffrey_Snover).jpg
+  commons_file: File:Professional_Developers_Conference_2009_Technical_Leaders_Panel_1_(Jeffrey_Snover).jpg
+  checked: '2026-11-01'
+- id: person-lee-e-mcmahon
+  file: assets/media/person-lee-e-mcmahon.jpg
+  kind: person
+  person: Lee E. McMahon
+  nodes:
+  - sed
+  caption: Lee E. McMahon, 1966
+  date: '1966'
+  credit: Internet Archive Book Images
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Bell_telephone_magazine_(1922)_(14756062432).jpg
+  commons_file: File:Bell_telephone_magazine_(1922)_(14756062432).jpg
+  checked: '2026-11-01'
+- id: person-richard-greenblatt
+  file: assets/media/person-richard-greenblatt.jpg
+  kind: person
+  person: Richard Greenblatt
+  nodes:
+  - maclisp
+  caption: Richard Greenblatt, 2009-03-25
+  date: '2009-03-25'
+  credit: en:Richard P. Gabriel
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Greenblattrpg-6cropped.jpg
+  commons_file: File:Greenblattrpg-6cropped.jpg
+  checked: '2026-11-01'
+- id: person-richard-fateman
+  file: assets/media/person-richard-fateman.jpg
+  kind: person
+  person: Richard Fateman
+  nodes:
+  - franz-lisp
+  caption: Richard Fateman, 1981
+  date: '1981'
+  credit: George Bergman
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Richard_Fateman_1981_(headshot).jpg
+  commons_file: File:Richard_Fateman_1981_(headshot).jpg
+  checked: '2026-11-01'
+- id: person-matthias-felleisen
+  file: assets/media/person-matthias-felleisen.jpg
+  kind: person
+  person: Matthias Felleisen
+  nodes:
+  - racket
+  caption: Matthias Felleisen, 2010-01-23 03:40:16
+  date: '2010-01-23 03:40:16'
+  credit: David Van Horn
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Matthias_Felleisen.jpg
+  commons_file: File:Matthias_Felleisen.jpg
+  checked: '2026-11-01'
+- id: person-paul-graham
+  file: assets/media/person-paul-graham.jpg
+  kind: person
+  person: Paul Graham
+  nodes:
+  - arc
+  caption: Paul Graham
+  credit: 'Crédit photo: Sarah Harlin'
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Paulgraham_240x320.jpg
+  commons_file: File:Paulgraham_240x320.jpg
+  checked: '2026-11-01'
+- id: person-robert-tappan-morris
+  file: assets/media/person-robert-tappan-morris.jpg
+  kind: person
+  person: Robert Tappan Morris
+  nodes:
+  - arc
+  caption: Robert Tappan Morris, 28 April 2008
+  date: 28 April 2008
+  credit: Trevor Blackwell
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Robert_Tappan_Morris.jpg
+  commons_file: File:Robert_Tappan_Morris.jpg
+  checked: '2026-11-01'
+- id: person-damien-doligez
+  file: assets/media/person-damien-doligez.jpg
+  kind: person
+  person: Damien Doligez
+  nodes:
+  - caml
+  - ocaml
+  caption: Damien Doligez, 2020-10-31
+  date: '2020-10-31'
+  credit: Damien Doligez
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Damien-Doligez-portrait-March2023.jpg
+  commons_file: File:Damien-Doligez-portrait-March2023.jpg
+  checked: '2026-11-01'
+- id: person-gerard-huet
+  file: assets/media/person-gerard-huet.jpg
+  kind: person
+  person: Gérard Huet
+  nodes:
+  - caml
+  - rocq
+  caption: Gérard Huet, Taken in 1978
+  date: Taken in 1978
+  credit: David MacQueen
+  license: CC0
+  license_url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+  source_url: https://commons.wikimedia.org/wiki/File:GH_1978.jpg
+  commons_file: File:GH_1978.jpg
+  checked: '2026-11-01'
+- id: person-thierry-coquand
+  file: assets/media/person-thierry-coquand.jpg
+  kind: person
+  person: Thierry Coquand
+  nodes:
+  - rocq
+  caption: Thierry Coquand, 2006-06-20
+  date: '2006-06-20'
+  credit: Andrej Bauer
+  license: CC BY-SA 2.5 si
+  license_url: https://creativecommons.org/licenses/by-sa/2.5/si/deed.en
+  source_url: https://commons.wikimedia.org/wiki/File:Thierry_Coquand_(cropped).jpg
+  commons_file: File:Thierry_Coquand_(cropped).jpg
+  checked: '2026-11-01'
+- id: person-christine-paulin-mohring
+  file: assets/media/person-christine-paulin-mohring.jpg
+  kind: person
+  person: Christine Paulin-Mohring
+  nodes:
+  - rocq
+  caption: Christine Paulin-Mohring, 2026-06-19 11:14:30
+  date: '2026-06-19 11:14:30'
+  credit: David.Monniaux
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Christine_Paulin-Mohring_P1220212.jpg
+  commons_file: File:Christine_Paulin-Mohring_P1220212.jpg
+  checked: '2026-11-01'
+- id: person-leonardo-de-moura
+  file: assets/media/person-leonardo-de-moura.jpg
+  kind: person
+  person: Leonardo de Moura
+  nodes:
+  - lean
+  caption: Leonardo de Moura, 2026-04-13 14:34:32
+  date: '2026-04-13 14:34:32'
+  credit: David.Monniaux
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Leo_de_Moura_P1210629.jpg
+  commons_file: File:Leo_de_Moura_P1210629.jpg
+  checked: '2026-11-01'
+- id: person-gary-kildall
+  file: assets/media/person-gary-kildall.jpg
+  kind: person
+  person: Gary Kildall
+  nodes:
+  - pl-m
+  caption: Gary Kildall, 2024-04-01 18:01:50
+  date: '2024-04-01 18:01:50'
+  credit: Piotr J. Flatau
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Kildall_801lighthouse.jpg
+  commons_file: File:Kildall_801lighthouse.jpg
+  checked: '2026-11-01'
+- id: person-philip-woodward
+  file: assets/media/person-philip-woodward.jpg
+  kind: person
+  person: Philip Woodward
+  nodes:
+  - coral-66
+  caption: Philip Woodward, 15 March 2007 (original upload date)
+  date: 15 March 2007 (original upload date)
+  credit: The original uploader was Billtaylor at English Wikipedia.
+  license: CC BY-SA 2.5
+  license_url: https://creativecommons.org/licenses/by-sa/2.5
+  source_url: https://commons.wikimedia.org/wiki/File:Philip_Woodward_and_his_W5_Clock.jpg
+  commons_file: File:Philip_Woodward_and_his_W5_Clock.jpg
   checked: '2026-11-01'
