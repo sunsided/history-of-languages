@@ -116,7 +116,11 @@
 							{/if}
 							{#if e.hasExample}<span class="code-mark" title="has a code example">&lt;/&gt;</span>{/if}
 						</span>
-						<span class="detail">{e.detail}</span>
+						{#if hit.snippet}
+							<span class="detail snippet">{hit.snippet[0]}<mark>{hit.snippet[1]}</mark>{hit.snippet[2]}</span>
+						{:else}
+							<span class="detail">{e.detail}</span>
+						{/if}
 						{#if TYPE_LABEL[e.type]}<span class="type">{TYPE_LABEL[e.type]}</span>{/if}
 						{#if e.year !== undefined}<span class="year">{e.year < 0 ? `${-e.year} BC` : e.year}</span>{/if}
 					</li>
@@ -228,6 +232,12 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
+	}
+.snippet {
+		font-style: italic;
+	}
+	.snippet mark {
+		font-style: normal;
 	}
 	.type {
 		font-size: 10px;
