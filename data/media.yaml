@@ -361,6 +361,8 @@
   nodes:
   - csharp
   - typescript
+  - turbo-pascal
+  - delphi
   caption: Anders Hejlsberg, 2008-10-27
   date: '2008-10-27'
   credit: DBegley
@@ -1659,4 +1661,89 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Poly-computer880.jpg
   commons_file: File:Poly-computer880.jpg
+  checked: '2026-11-01'
+- id: person-bill-gates
+  file: assets/media/person-bill-gates.jpg
+  kind: person
+  person: Bill Gates
+  nodes:
+  - microsoft-basic
+  caption: Bill Gates, 2025-06-25
+  date: '2025-06-25'
+  credit: Bogdan Hoyaux / European Union
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Bill_Gates_at_the_European_Commission_-_P067383-987995_(cropped)_5.jpg
+  commons_file: File:Bill_Gates_at_the_European_Commission_-_P067383-987995_(cropped)_5.jpg
+  checked: '2026-11-01'
+- id: person-paul-allen
+  file: assets/media/person-paul-allen.jpg
+  kind: person
+  person: Paul Allen
+  nodes:
+  - microsoft-basic
+  caption: Paul Allen, 2013-04-02 22:50:56
+  date: '2013-04-02 22:50:56'
+  credit: Miles Harris
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Paul_G._Allen_(cropped).jpg
+  commons_file: File:Paul_G._Allen_(cropped).jpg
+  checked: '2026-11-01'
+- id: person-jim-hugunin
+  file: assets/media/person-jim-hugunin.jpg
+  kind: person
+  person: Jim Hugunin
+  nodes:
+  - jython
+  - ironpython
+  caption: Jim Hugunin, 2018-09-19
+  date: '2018-09-19'
+  credit: Jeskeca
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Jim_hugunin_headshot.jpg
+  commons_file: File:Jim_hugunin_headshot.jpg
+  checked: '2026-11-01'
+- id: person-carol-shaw
+  file: assets/media/person-carol-shaw.jpg
+  kind: person
+  person: Carol Shaw
+  nodes:
+  - atari-basic
+  caption: Carol Shaw, 1983-08-07
+  date: '1983-08-07'
+  credit: Carol B Shaw
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Carol_Shaw_Holding_Gold_River_Raid_Cartridge_(cropped).jpg
+  commons_file: File:Carol_Shaw_Holding_Gold_River_Raid_Cartridge_(cropped).jpg
+  checked: '2026-11-01'
+- id: person-larry-tesler
+  file: assets/media/person-larry-tesler.jpeg
+  kind: person
+  person: Larry Tesler
+  nodes:
+  - object-pascal
+  caption: Larry Tesler, 2007-07-23 16:22
+  date: 2007-07-23 16:22
+  credit: Yahoo! Blog from Sunnyvale, California, USA
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Larry_Tesler_Smiles_at_Whisper.jpeg
+  commons_file: File:Larry_Tesler_Smiles_at_Whisper.jpeg
+  checked: '2026-11-01'
+- id: person-richard-stallman
+  file: assets/media/person-richard-stallman.jpg
+  kind: person
+  person: Richard Stallman
+  nodes:
+  - gnu-c
+  caption: Richard Stallman, 2024-04-09 17:19:11
+  date: '2024-04-09 17:19:11'
+  credit: Patafisik
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Richard_Stallman_Bologna_2024_abc1_(3x4,_rule_of_thirdscropped).jpg
+  commons_file: File:Richard_Stallman_Bologna_2024_abc1_(3x4,_rule_of_thirdscropped).jpg
   checked: '2026-11-01'
