@@ -1117,3 +1117,58 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/G-code" }
   sources: [wiki-g-code]
+
+- id: cesil
+  name: CESIL
+  aliases: [Computer Education in Schools Instruction Language]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1969, date: "1969-04", precision: exact, note: "\"introduced in April 1969\"." }
+    places: [{ institution: John Hoskyns Group (Computer Education in Schools project) }]
+  status: historical
+  tags:
+    paradigm: [imperative]
+    domain: [education]
+  summary: >
+    A toy assembly-like language for teaching British schoolchildren how a computer works: "CESIL was developed by
+    Hoskyns as part of the CES project, and introduced in April 1969". It is "a simple language containing a total of
+    fourteen instructions" and "only works with integers". ICL took the project over in September 1969 as ICL-CES.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CESIL" }
+  sources: [wiki-cesil]
+
+- id: pl-c
+  name: PL/C
+  aliases: [PL/CT, PL/CS, PL/CV]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1970, date: "1970-09", precision: exact, note: "\"PL/C began being used on a regular basis in September 1970.\"" }
+    places: [{ institution: Cornell University Department of Computer Science }]
+  creators:
+    - { name: Richard W. Conway, role: project head }
+    - { name: Thomas R. Wilcox, role: co-developer }
+  status: historical
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [strong-typing]
+    domain: [education]
+  milestones:
+    - { version: "Release 4", year: 1971, summary: "Available by January 1971." }
+    - { version: "7.1", year: 1975, summary: "March 1975." }
+    - { version: "PL/CT", year: 1974, summary: "Variant first made available at Cornell in 1974." }
+    - { version: "7.6", year: 1977, summary: "Apparently the last release." }
+  summary: >
+    "An instructional dialect of the programming language PL/I" from Cornell, led by Richard W. Conway and Thomas R.
+    Wilcox. Its compiler was built for students: it repaired syntax errors and kept going (the article's example turns
+    "PUT LIST (A B)" into "PUT LIST (A, B);"). It grew out of Cornell's earlier CUPL compiler, itself influenced by CORC.
+  relations:
+    - { type: dialect_of, to: pl-i, weight: strong, confidence: high, sources: [wiki-pl-c], note: "\"PL/C is an instructional dialect of the programming language PL/I\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PL/C" }
+  sources: [wiki-pl-c]

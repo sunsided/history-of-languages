@@ -2298,3 +2298,128 @@
       CLOSE TERMINAL;
       END;
       MODEND;
+
+- id: elan
+  name: ELAN
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1974, precision: year }
+    places: [{ institution: Technische Universität Berlin, city: Berlin }]
+  creators:
+    - { name: C. H. A. Koster, role: designer }
+  status: historical
+  tags:
+    paradigm: [procedural, structured]
+    typing: [static-typing, strong-typing]
+    domain: [education]
+  summary: >
+    An educational language "developed in 1974 by C.H.A. Koster and a group at Technische Universität Berlin as an
+    alternative to BASIC in teaching". It was interpreted and was also used at Radboud University Nijmegen.
+  relations:
+    - { type: influenced_by, to: algol-68, weight: moderate, confidence: medium, sources: [wiki-elan], note: "Wikipedia infobox \"Influenced by: ALGOL 68\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ELAN_(programming_language)" }
+  sources: [wiki-elan]
+
+- id: sp-k
+  name: SP/k
+  aliases: [SP/1, SP/8]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1974, precision: circa, note: "\"developed circa 1974\"." }
+  creators:
+    - { name: Ric Holt, role: co-designer }
+    - { name: D. B. Wortman, role: co-designer }
+    - { name: D. T. Barnard, role: co-designer }
+    - { name: James Cordy, role: co-designer }
+  status: historical
+  tags:
+    paradigm: [imperative, structured]
+    typing: [static-typing, strong-typing]
+    domain: [education]
+  summary: >
+    A teaching subset of PL/I, and "actually a sequence of language subsets called SP/1, SP/2, ... SP/8", each adding
+    features. It was "one of the first languages specifically designed to encourage structured programming" and was used
+    for about a decade at over 40 sites in Canada and the US. Wikipedia lists Turing, by the same group, as its heir.
+  relations:
+    - { type: subset_of, to: pl-i, weight: strong, confidence: high, sources: [wiki-sp-k], note: "\"a subset of the PL/I programming language designed for teaching programming\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SP/k" }
+  sources: [wiki-sp-k]
+
+- id: pl-0
+  name: PL/0
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1976, precision: year, note: "Wikipedia's body says Algorithms + Data Structures = Programs (1976); its reference list dates the book 1975. The Compilerbau booklet with the full compiler is December 1976." }
+  creators:
+    - { name: Niklaus Wirth, role: designer }
+  status: historical
+  tags:
+    paradigm: [imperative, procedural, structured]
+    domain: [education]
+  milestones:
+    - { version: "Compilerbau, 2nd ed.", year: 1986, summary: "The edition Wikipedia's example is taken from." }
+  summary: >
+    Niklaus Wirth's minimal teaching language for compiler construction, "originally introduced in the book Algorithms
+    + Data Structures = Programs". "The only data types are integers." Later editions moved its syntax closer to
+    Modula-2, and Wirth eventually "replaced PL/0 with Oberon-0".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PL/0" }
+  sources: [wiki-pl-0]
+  example:
+    title: Squares from 1 to 10
+    language: PL/0 (Compilerbau, 1986)
+    note: "From Wikipedia's PL/0 article; the fetched copy had lost its indentation, which is restored here. `!` writes a value; `CALL` invokes a parameterless procedure."
+    sources: [wiki-pl-0]
+    code: |
+      VAR x, squ;
+
+      PROCEDURE square;
+      BEGIN
+         squ:= x * x
+      END;
+
+      BEGIN
+         x := 1;
+         WHILE x <= 10 DO
+         BEGIN
+            CALL square;
+            ! squ;
+            x := x + 1
+         END
+      END.
+
+- id: lse
+  name: LSE
+  aliases: [LSE-83, LSE-2000]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1968, year_end: 1975, precision: range, note: "\"developed at Supélec and Télémécanique from the late 1960s to the mid-1970s\"; no first-release year given." }
+    places: [{ institution: Supélec }, { institution: Télémécanique }]
+  tags:
+    paradigm: [imperative, procedural]
+    domain: [education]
+  milestones:
+    - { version: LSE-83, year: 1983, summary: "By Jacques Arsac; added structured programming and exception handling." }
+  summary: >
+    A French teaching language "similar to BASIC, except with French-language instead of English-language keywords"
+    (FAIRE, POUR, AFFICHER, SI ... ALORS). It "was derived from an earlier language called LSD, also developed at
+    Supélec". LSE-83 by Jacques Arsac added structured programming; LSE-2000 added more types and operators.
+  relations:
+    - { type: influenced_by, to: basic, weight: weak, confidence: low, sources: [wiki-lse], note: "Wikipedia only says it \"is similar to BASIC\"; a direct influence is not stated." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LSE_(programming_language)" }
+  sources: [wiki-lse]

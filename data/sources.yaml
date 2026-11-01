@@ -4074,3 +4074,173 @@
   primary: false
   title: "Wikipedia: P4 (programming language)"
   url: https://en.wikipedia.org/wiki/P4_(programming_language)
+- id: wiki-action
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Action!"
+  url: https://en.wikipedia.org/wiki/Action!_(programming_language)
+- id: wiki-actor
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Actor (programming language)"
+  url: https://en.wikipedia.org/wiki/Actor_(programming_language)
+- id: wiki-alice
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Alice (software)"
+  url: https://en.wikipedia.org/wiki/Alice_(software)
+- id: wiki-ambienttalk
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: AmbientTalk"
+  url: https://en.wikipedia.org/wiki/AmbientTalk
+- id: wiki-amiga-e
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Amiga E"
+  url: https://en.wikipedia.org/wiki/Amiga_E
+- id: wiki-app-inventor
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MIT App Inventor"
+  url: https://en.wikipedia.org/wiki/MIT_App_Inventor
+- id: wiki-ballerina
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Ballerina (programming language)"
+  url: https://en.wikipedia.org/wiki/Ballerina_(programming_language)
+- id: wiki-cecil
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Cecil (programming language)"
+  url: https://en.wikipedia.org/wiki/Cecil_(programming_language)
+- id: wiki-cesil
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CESIL"
+  url: https://en.wikipedia.org/wiki/CESIL
+- id: wiki-clarion
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Clarion (programming language)"
+  url: https://en.wikipedia.org/wiki/Clarion_(programming_language)
+- id: wiki-dataflex
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: DataFlex"
+  url: https://en.wikipedia.org/wiki/DataFlex
+- id: wiki-e
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: E (programming language)"
+  url: https://en.wikipedia.org/wiki/E_(programming_language)
+- id: wiki-elan
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ELAN (programming language)"
+  url: https://en.wikipedia.org/wiki/ELAN_(programming_language)
+- id: wiki-fantom
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Fantom (programming language)"
+  url: https://en.wikipedia.org/wiki/Fantom_(programming_language)
+- id: wiki-gosu
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Gosu (programming language)"
+  url: https://en.wikipedia.org/wiki/Gosu_(programming_language)
+- id: wiki-haggis
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Haggis (programming language)"
+  url: https://en.wikipedia.org/wiki/Haggis_(programming_language)
+- id: wiki-j-sharp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Visual J#"
+  url: https://en.wikipedia.org/wiki/Visual_J_Sharp
+- id: wiki-javafx-script
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: JavaFX Script"
+  url: https://en.wikipedia.org/wiki/JavaFX_Script
+- id: wiki-kodu
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Kodu Game Lab"
+  url: https://en.wikipedia.org/wiki/Kodu_Game_Lab
+- id: wiki-kojo
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Kojo (learning environment)"
+  url: https://en.wikipedia.org/wiki/Kojo_(learning_environment)
+- id: wiki-lse
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: LSE (programming language)"
+  url: https://en.wikipedia.org/wiki/LSE_(programming_language)
+- id: wiki-nemerle
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Nemerle"
+  url: https://en.wikipedia.org/wiki/Nemerle
+- id: wiki-netlogo
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: NetLogo"
+  url: https://en.wikipedia.org/wiki/NetLogo
+- id: wiki-openedge-abl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: OpenEdge Advanced Business Language"
+  url: https://en.wikipedia.org/wiki/OpenEdge_Advanced_Business_Language
+- id: wiki-pl-0
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PL/0"
+  url: https://en.wikipedia.org/wiki/PL/0
+- id: wiki-pl-c
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PL/C"
+  url: https://en.wikipedia.org/wiki/PL/C
+- id: wiki-processing
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Processing"
+  url: https://en.wikipedia.org/wiki/Processing
+- id: wiki-sp-k
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SP/k"
+  url: https://en.wikipedia.org/wiki/SP/k
+- id: wiki-starlogo
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: StarLogo"
+  url: https://en.wikipedia.org/wiki/StarLogo
+- id: wiki-visual-j-plus-plus
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Visual J++"
+  url: https://en.wikipedia.org/wiki/Visual_J%2B%2B
+- id: wiki-x-plus-plus
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Microsoft Dynamics AX (X++)"
+  url: https://en.wikipedia.org/wiki/Microsoft_Dynamics_AX
+- id: wiki-xojo
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Xojo"
+  url: https://en.wikipedia.org/wiki/Xojo
+- id: wiki-xotcl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: XOTcl"
+  url: https://en.wikipedia.org/wiki/XOTcl
+- id: wiki-xtend
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Xtend"
+  url: https://en.wikipedia.org/wiki/Xtend

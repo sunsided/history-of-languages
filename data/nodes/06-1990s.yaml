@@ -2817,3 +2817,276 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/TTCN" }
   sources: [wiki-ttcn]
+
+- id: cecil
+  name: Cecil
+  kind: language
+  category: research
+  cluster: oop
+  origin:
+    first_appeared: { year: 1992, precision: year }
+    places: [{ institution: University of Washington }]
+  creators:
+    - { name: Craig Chambers, role: designer }
+  tags:
+    paradigm: [object-oriented]
+    typing: [dynamic-typing, static-typing]
+  summary: >
+    "A pure object-oriented programming language" with "optional static type checking", developed by Craig Chambers at
+    the University of Washington in 1992 as part of the Vortex optimizing-compiler project. Wikipedia notes similarities
+    to Objective-C, Modula-3 and Self, and lists Diesel as its successor.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Cecil_(programming_language)" }
+  sources: [wiki-cecil]
+
+- id: amiga-e
+  name: Amiga E
+  kind: language
+  category: general
+  cluster: oop
+  origin:
+    began: { year: 1991, precision: year }
+    first_appeared: { year: 1993, date: "1993-09-29", precision: exact }
+  creators:
+    - { name: Wouter van Oortmerssen, role: designer }
+  status: historical
+  tags:
+    paradigm: [multi-paradigm, functional, object-oriented, procedural]
+  milestones:
+    - { version: "3.3a", year: 1997, summary: "Final release, 27 October 1997." }
+  summary: >
+    Wouter van Oortmerssen's compiled language for AmigaOS on the 68000, begun in 1991 and first released in 1993. It
+    "combines features from several languages but follows the original C programming language most closely in terms of
+    basic concepts"; its infobox lists Ada, C++ and Lisp as influences.
+  relations:
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-amiga-e], note: "\"follows the original C programming language most closely\"." }
+    - { type: influenced_by, to: ada, weight: weak, confidence: medium, sources: [wiki-amiga-e], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: cpp, weight: weak, confidence: medium, sources: [wiki-amiga-e], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: lisp, weight: weak, confidence: medium, sources: [wiki-amiga-e], note: "Wikipedia infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Amiga_E" }
+  sources: [wiki-amiga-e]
+  example:
+    title: Hello, World!
+    language: Amiga E
+    note: "From Wikipedia's article; the fetched copy ran it onto one line, so the line breaks are a reconstruction."
+    sources: [wiki-amiga-e]
+    code: |
+      PROC main()
+        WriteF('Hello, World!')
+      ENDPROC
+
+- id: visual-j-plus-plus
+  name: Visual J++
+  aliases: [J++]
+  kind: language
+  category: general
+  cluster: oop
+  origin:
+    first_appeared: { year: 1996, date: "1996-10-01", precision: exact }
+    places: [{ institution: Microsoft }]
+  status: historical
+  tags:
+    paradigm: [object-oriented, imperative]
+    typing: [static-typing, strong-typing]
+    features: [garbage-collection]
+  milestones:
+    - { version: "6.0", year: 1999, summary: "Final release, in Visual Studio 6.0; discontinued January 2004." }
+  summary: >
+    "Microsoft's discontinued implementation of Java", whose "syntax, reserved words (keywords), and formal grammar
+    conventions are the same as Java's", but with Windows-only extensions such as direct ActiveX calls. It stayed
+    "frozen at the feature set of Java version 1.1.4"; Wikipedia lists Visual J# and C# as its descendants.
+  relations:
+    - { type: dialect_of, to: java, weight: strong, confidence: high, sources: [wiki-visual-j-plus-plus], note: "\"Microsoft's discontinued implementation of Java\" with the same syntax and grammar, plus Windows extensions." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Visual_J%2B%2B" }
+  sources: [wiki-visual-j-plus-plus]
+  example:
+    title: Calling ActiveX
+    language: Visual J++
+    note: "From Wikipedia's article; the fetched copy had lost its indentation, which is restored here. com.ms.activeX is the Microsoft-only extension."
+    sources: [wiki-visual-j-plus-plus]
+    code: |
+      package org.wikipedia.examples;
+
+      import com.ms.activeX.ActiveXComponent;
+      import com.ms.activeX.Variant;
+
+      public class Example {
+          public static void main(String[] args) {
+              try {
+                  ActiveXComponent ax = new ActiveXComponent("InternetExplorer.Application");
+                  ax.setProperty("Visible", new Variant(true));
+                  ax.invoke("Navigate", new Variant("http://www.microsoft.com"));
+              } catch (Exception e) {
+                  e.printStackTrace();
+              }
+          }
+      }
+
+- id: e
+  name: E
+  kind: language
+  category: research
+  cluster: oop
+  origin:
+    first_appeared: { year: 1997, precision: year }
+    places: [{ institution: Electric Communities }]
+  creators:
+    - { name: Mark S. Miller, role: designer }
+    - { name: Dan Bornstein, role: co-creator }
+    - { name: Douglas Crockford, role: co-creator }
+    - { name: Chip Morningstar, role: co-creator }
+  tags:
+    paradigm: [object-oriented, concurrent]
+    typing: [dynamic-typing, strong-typing]
+    concurrency: [message-passing]
+    domain: [distributed-systems]
+  summary: >
+    "An object-oriented programming language for secure distributed computing", created at Electric Communities in 1997
+    by Mark S. Miller, Dan Bornstein, Douglas Crockford, Chip Morningstar and others. "E is mainly descended from the
+    concurrent language Joule and from Original-E, a set of extensions to Java for secure distributed programming."
+  relations:
+    - { type: influenced_by, to: joule, weight: strong, confidence: high, sources: [wiki-e], note: "\"E is mainly descended from the concurrent language Joule\"." }
+    - { type: influenced_by, to: java, weight: moderate, confidence: high, sources: [wiki-e], note: "Through Original-E, \"a set of extensions to Java\"; infobox lists Java." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/E_(programming_language)" }
+  sources: [wiki-e]
+  example:
+    title: Factorial
+    language: E
+    note: "From Wikipedia's E article; the fetched copy had lost its indentation, which is restored here. `:int` are guards."
+    sources: [wiki-e]
+    code: |
+      def factorial(n :int) :int {
+          if (n == 1) {
+              return 1
+          } else if (n > 0) {
+              return n * factorial(n-1)
+          } else {
+              throw("invalid argument to factorial: "+n)
+          }
+      }
+
+- id: xojo
+  name: Xojo
+  aliases: [REALbasic, CrossBasic, Real Studio]
+  kind: language
+  category: general
+  cluster: basic
+  origin:
+    first_appeared: { year: 1998, precision: year, note: "REALbasic 1.0, introduced at MacWorld Expo 1998; the CrossBasic shareware it grew from was bought in 1996." }
+    places: [{ institution: FYI Software }]
+  creators:
+    - { name: Andrew Barry, role: author of CrossBasic }
+    - { name: Geoff Perlman, role: founder of FYI Software }
+  status: active
+  tags:
+    paradigm: [object-oriented]
+    features: [ide]
+  milestones:
+    - { version: Xojo, year: 2013, summary: "Real Studio renamed Xojo, 4 June 2013." }
+  summary: >
+    A cross-platform object-oriented BASIC that "looks similar to Visual Basic"; its maker calls it "the spiritual
+    successor to Visual BASIC". It began as Andrew Barry's shareware CrossBasic, bought by Geoff Perlman's FYI Software in
+    1996 and renamed REALbasic (1.0 in 1998), then Real Studio, and Xojo in 2013.
+  relations:
+    - { type: influenced_by, to: visual-basic, weight: moderate, confidence: medium, sources: [wiki-xojo], note: "\"looks similar to Visual Basic\"; Xojo, Inc. calls it \"the spiritual successor to Visual BASIC\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Xojo" }
+  sources: [wiki-xojo]
+  example:
+    title: Fill a list box
+    language: Xojo
+    note: "From Wikipedia's Xojo article; the indentation of the loop body is restored."
+    sources: [wiki-xojo]
+    code: |
+      Var names() As String = Array("Red Sox", "Yankees", "Orioles", "Blue Jays", "Rays")
+      For i As Integer = 0 To names.LastRowIndex
+        ListBox1.AddRow(names(i))
+      Next
+
+- id: x-plus-plus
+  name: X++
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1998, date: "1998-03", precision: exact, note: "The release of IBM Axapta (March 1998), whose MorphX environment uses X++; Wikipedia does not date the language separately." }
+    places: [{ institution: Damgaard Data }]
+  tags:
+    paradigm: [object-oriented]
+    features: [garbage-collection, query-expressions]
+    domain: [business-data-processing]
+  summary: >
+    The language of Microsoft Dynamics AX (originally IBM Axapta, from IBM and Damgaard Data) and its MorphX environment.
+    It "is an object-oriented, class-based, single dispatch language. X++ is derived from C++ ... with added garbage
+    collection and language-integrated SQL queries."
+  relations:
+    - { type: influenced_by, to: cpp, weight: strong, confidence: medium, sources: [wiki-x-plus-plus], note: "\"X++ is derived from C++ (both lack the finally keyword for example)\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Microsoft_Dynamics_AX" }
+  sources: [wiki-x-plus-plus]
+
+- id: alice
+  name: Alice
+  aliases: [Storytelling Alice]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    began: { year: 1994, precision: year, note: "\"developed first at University of Virginia in 1994, then Carnegie Mellon (from 1997)\"." }
+    first_appeared: { year: 1998, precision: year, note: "Wikipedia infobox release year." }
+    places: [{ institution: University of Virginia }, { institution: Carnegie Mellon University }]
+  creators:
+    - { name: Randy Pausch, role: research group leader }
+  status: maintained
+  tags:
+    paradigm: [object-oriented, visual-programming]
+    domain: [education]
+  milestones:
+    - { version: "3.9.0.2", year: 2024, summary: "Stable release, June 2024." }
+  summary: >
+    "An object-based educational programming language with an integrated development environment", in which students
+    drag statements together to animate 3D scenes. It was built by Randy Pausch's group, first at the University of
+    Virginia (1994) and then at Carnegie Mellon. Caitlin Kelleher's Storytelling Alice variant was succeeded by Looking
+    Glass at Washington University in St. Louis.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Alice_(software)" }
+  sources: [wiki-alice]
+
+- id: netlogo
+  name: NetLogo
+  aliases: [NetLogo Web, NetLogo 3D]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1999, precision: year }
+    places: [{ institution: Northwestern University Center for Connected Learning and Computer-Based Modeling }]
+  creators:
+    - { name: Uri Wilensky, role: designer }
+  status: active
+  tags:
+    paradigm: [multi-paradigm, procedural]
+    typing: [dynamic-typing, strong-typing]
+    domain: [education, simulation]
+  milestones:
+    - { version: "7.0.4", year: 2026, summary: "Stable release, May 2026." }
+  summary: >
+    An agent-based modelling language designed by Uri Wilensky at Northwestern University "in the spirit of the
+    programming language Logo, to be low threshold and no ceiling". Users program thousands of turtles moving over a
+    grid of patches. Its infobox lists Logo and StarLogo as influences.
+  relations:
+    - { type: influenced_by, to: logo, weight: strong, confidence: high, sources: [wiki-netlogo], note: "\"in the spirit of the programming language Logo\"; infobox lists Logo." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/NetLogo" }
+  sources: [wiki-netlogo]

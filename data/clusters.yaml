@@ -499,26 +499,10 @@
   name: Object-oriented lineage
   research_status: draft
   backlog:
-    - { name: "Nemerle", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Fantom", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Cobra", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Gosu", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "J# (J sharp)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "J++ (J plus plus)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Visual J++ (Visual J plus plus)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "JavaFX Script", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Xtend", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Mirah", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Mirah", hint: "Charles Oliver Nutter's Ruby-syntax JVM language, formerly Duby; infobox influences Ruby, Java, Boo; stable 0.2.1 (26 September 2016). Wikipedia gives no first-appeared year (wiki-mirah not yet added)." }
     - { name: "Golo", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "OptimJ", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Cecil", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Actor", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "E", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "AmbientTalk", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Ballerina", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "XOTcl", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Amiga E", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Action!", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "PortablE", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Polymorphic Programming Language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "GNU E", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
@@ -842,22 +826,11 @@
   backlog:
     - { name: "ScratchJr", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Blockly", year: 2012, hint: "Google (Neil Fraser and others), a JavaScript library for building block languages, not a language itself; Scratch 3.0 blocks use a fork of it (wiki-blockly). Probably a note on Scratch rather than a node." }
-    - { name: "Kodu", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Starlogo", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "NetLogo", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Alice ML", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Alice ML", hint: "Not the Carnegie Mellon Alice (now node alice). Check whether this entry belongs in ml-family." }
     - { name: "Catrobat", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Hopscotch", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Tynker", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "App Inventor for Android's visual block language (MIT App Inventor)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "ELAN", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "HAGGIS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "CESIL (Computer Education in Schools Instruction Language)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PL/C", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SP/k", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PL/0", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Kojo", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Processing", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Ezhil", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Fjölnir", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Qalb", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
@@ -866,8 +839,7 @@
     - { name: "ObjectLOGO", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Legoscript", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Not eXactly C", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Not Quite C", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "LSE", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "Not Quite C", hint: "Language for the Lego RCX; Wikipedia has no own article (the URL redirects to Lego Mindstorms). Find the NQC homepage or manual for a date." }
     - { name: "Mohol", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "SiMPLE", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Ubercode", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
@@ -1002,22 +974,17 @@
   summary: "Fourth-generation and database application languages: dBase descendants, report writers and vendor languages such as PL/SQL and ABAP's peers."
   research_status: stub
   backlog:
-    - { name: "Clarion", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "DataFlex", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Uniface", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "LANSA", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "OpenEdge Advanced Business Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "IBM Informix-4GL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "DIBOL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Transact-SQL", hint: "T-SQL; Sybase, then Microsoft SQL Server (announced January 1988 with Ashton-Tate, licensed from Sybase) and SAP ASE; \"an extension of SQL\" (wiki-transact-sql). Needs a release year and a verbatim example." }
     - { name: "PeopleCode", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "LotusScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "LotusScript", hint: "Object-oriented, \"similar to Visual Basic\", used by Lotus Notes \"since version 4.0\". Wikipedia gives no year; find the Notes 4.0 release date." }
     - { name: "@Formula", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Magik", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "X++ (X plus plus/Microsoft Dynamics AX)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Apex (Salesforce.com, Inc)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Apex (Salesforce.com, Inc)", hint: "Salesforce's \"proprietary Java-like programming language\", initially designed by Craig Weissman (Wikipedia: Salesforce). en.wikipedia.org/wiki/Apex_(programming_language) redirects to Salesforce; needs a year from Salesforce docs." }
     - { name: "EGL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Xojo", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "LiveCode", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "SenseTalk", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "SuperTalk", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
@@ -1027,7 +994,6 @@
     - { name: "FOCUS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Powerhouse", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "CorVision", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Visual DataFlex", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Topspeed (Clarion)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "AdvPL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "CobolScript", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }

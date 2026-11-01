@@ -433,6 +433,7 @@
     - { type: influenced_by, to: scala, weight: strong, confidence: high }
     - { type: influenced_by, to: csharp, weight: moderate, confidence: high }
     - { type: influenced_by, to: groovy, weight: weak, confidence: medium }
+    - { type: influenced_by, to: gosu, weight: weak, confidence: medium, sources: [wiki-gosu], note: "Gosu's Wikipedia infobox lists Kotlin under \"Influenced\"." }
     - { type: targets, to: webassembly, year: 2023, weight: moderate, confidence: high, sources: [kotlin-1-8-20-notes], note: "Kotlin/Wasm went Experimental in Kotlin 1.8.20 (25 April 2023); Beta since." }
   research_status: draft
   confidence: high
@@ -1753,6 +1754,7 @@
     McNeil, "Deny Capabilities for Safe, Fast Actors" (AGERE! 2015). Not yet 1.0.
   relations:
     - { type: influenced_by, to: actor-model, aspects: [actors, message-passing], weight: strong, confidence: high, sources: [clebsch-2015-deny-capabilities], note: "The paper's starting point: \"Combining the actor-model with shared memory for performance is efficient but can introduce data-races.\"" }
+    - { type: influenced_by, to: e, weight: moderate, confidence: medium, sources: [wiki-e], note: "E's Wikipedia infobox lists Pony under \"Influenced\"." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Pony_(programming_language)", homepage: "https://www.ponylang.io" }
@@ -3838,3 +3840,560 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/P4_(programming_language)" }
   sources: [wiki-p4]
+
+- id: xotcl
+  name: XOTcl
+  aliases: [Extended Object Tcl]
+  kind: language
+  category: scripting
+  cluster: oop
+  origin:
+    first_appeared: { year: 2000, precision: year }
+  creators:
+    - { name: Gustaf Neumann, role: co-designer }
+    - { name: Uwe Zdun, role: co-designer }
+  tags:
+    paradigm: [multi-paradigm, object-oriented, functional, imperative, event-driven]
+    typing: [dynamic-typing]
+    features: [metaclasses]
+  milestones:
+    - { version: "1.6.8", year: 2014, summary: "Stable release, 29 April 2014." }
+  summary: >
+    "An object-oriented extension for the Tool Command Language" by Gustaf Neumann and Uwe Zdun. "It is a derivative of
+    MIT OTcl and is based on a dynamic object system with metaclasses influenced by CLOS."
+  relations:
+    - { type: superset_of, to: tcl, weight: strong, confidence: high, sources: [wiki-xotcl], note: "\"an object-oriented extension for the Tool Command Language\"; a derivative of MIT OTcl." }
+    - { type: influenced_by, to: common-lisp, weight: moderate, confidence: medium, sources: [wiki-xotcl], note: "Its object system has \"metaclasses influenced by CLOS\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/XOTcl" }
+  sources: [wiki-xotcl]
+
+- id: starlogo
+  name: StarLogo
+  aliases: [StarLogo TNG, StarLogo Nova]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2001, precision: year, note: "Wikipedia infobox year. The article also says \"The first StarLogo ran on a Connection Machine 2 parallel computer\", and NetLogo (1999) lists StarLogo as an influence, so 2001 is likely a later version's date; an earlier date needs a source." }
+    places: [{ institution: MIT Media Lab }, { institution: MIT Scheller Teacher Education Program }]
+  creators:
+    - { name: Mitchel Resnick, role: designer }
+    - { name: Eric Klopfer, role: designer }
+    - { name: Daniel Wendel, role: lead designer and developer }
+  status: active
+  tags:
+    paradigm: [multi-paradigm, procedural]
+    typing: [dynamic-typing, strong-typing]
+    domain: [education, simulation]
+  milestones:
+    - { version: StarLogo TNG 1.0, year: 2008, summary: "July 2008; blocks-based 3D version." }
+    - { version: StarLogo Nova, year: 2014, summary: "Beta, summer 2014." }
+  summary: >
+    "An extension of the Logo programming language" for agent-based simulation, developed by Mitchel Resnick, Eric
+    Klopfer and others at the MIT Media Lab and the Scheller Teacher Education Program: thousands of turtles act in
+    parallel. StarLogo TNG (2008) and StarLogo Nova (2014) moved it to programming with blocks.
+  relations:
+    - { type: superset_of, to: logo, weight: strong, confidence: high, sources: [wiki-starlogo], note: "\"an extension of the Logo programming language\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/StarLogo" }
+  sources: [wiki-starlogo]
+
+- id: processing
+  name: Processing
+  kind: language
+  category: domain-specific
+  cluster: education
+  origin:
+    first_appeared: { year: 2001, precision: year }
+    places: [{ institution: MIT Media Lab Aesthetics and Computation Group }]
+  creators:
+    - { name: Casey Reas, role: co-designer }
+    - { name: Ben Fry, role: co-designer }
+  status: active
+  tags:
+    paradigm: [object-oriented]
+    domain: [education]
+  milestones:
+    - { version: "4.5.2", year: 2026, summary: "Stable release, May 2026." }
+  summary: >
+    A language and sketchbook environment for visual arts, begun in 2001 by Casey Reas and Ben Fry of the MIT Media Lab's
+    Aesthetics and Computation Group. It "was based on the original work done on Design By Numbers project at MIT" and
+    "is a direct child of that experiment". Its infobox lists Wiring and Arduino as languages it influenced; the
+    Processing Foundation (2012) maintains it.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Processing" }
+  sources: [wiki-processing]
+  example:
+    title: Hello mouse
+    language: Processing
+    note: "From Wikipedia's Processing article; the fetched copy had lost its indentation, which is restored here. setup runs once and draw runs every frame."
+    sources: [wiki-processing]
+    code: |
+      // Hello mouse.
+      void setup() {
+        size(400, 400);
+        stroke(255);
+        background(192, 64, 0);
+      }
+
+      void draw() {
+        line(150, 25, mouseX, mouseY);
+      }
+
+- id: j-sharp
+  name: J#
+  aliases: [Visual J#, J Sharp]
+  kind: language
+  category: general
+  cluster: oop
+  origin:
+    first_appeared: { year: 2002, precision: year }
+    places: [{ institution: Microsoft India Development Center, city: Hyderabad, country: IN }]
+  status: historical
+  tags:
+    paradigm: [object-oriented]
+  milestones:
+    - { version: "2.0 Second Edition", year: 2007, summary: "May 2007, the final release; discontinued 2007." }
+  summary: >
+    "A transitional language for programmers of Java and Visual J++ languages, so they could use their existing knowledge
+    and applications with the .NET Framework". Built at the Microsoft India Development Center in Hyderabad, it was
+    introduced in 2002 and discontinued in 2007.
+  relations:
+    - { type: dialect_of, to: java, weight: strong, confidence: medium, sources: [wiki-j-sharp], note: "Java syntax on .NET as \"a transitional language for programmers of Java\"." }
+    - { type: successor_of, to: visual-j-plus-plus, weight: strong, confidence: medium, sources: [wiki-j-sharp, wiki-visual-j-plus-plus], note: "For programmers of Visual J++; Visual J++'s infobox lists Visual J# among what it influenced." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Visual_J_Sharp" }
+  sources: [wiki-j-sharp]
+
+- id: nemerle
+  name: Nemerle
+  kind: language
+  category: general
+  cluster: oop
+  origin:
+    first_appeared: { year: 2003, precision: year }
+    places: [{ institution: Wrocław University }]
+  creators:
+    - { name: Kamil Skalski, role: co-designer }
+    - { name: Michał Moskal, role: co-designer }
+    - { name: Leszek Pacholski, role: co-designer }
+    - { name: Paweł Olszta, role: co-designer }
+  tags:
+    paradigm: [multi-paradigm, functional, object-oriented, imperative]
+    typing: [static-typing, strong-typing, type-inference]
+    features: [macros, metaprogramming]
+  summary: >
+    A multi-paradigm language for .NET and Mono from Wrocław University, mixing C#-style objects with ML-style
+    functional programming and Lisp-style macros (its infobox lists C#, Lisp and ML as influences). The core developers
+    joined JetBrains in June 2012; the Russian Software Development Network maintains it now.
+  relations:
+    - { type: influenced_by, to: csharp, weight: strong, confidence: medium, sources: [wiki-nemerle], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: ml, weight: moderate, confidence: medium, sources: [wiki-nemerle], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: medium, sources: [wiki-nemerle], note: "Wikipedia infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Nemerle" }
+  sources: [wiki-nemerle]
+  example:
+    title: Hello, world!
+    language: Nemerle
+    note: "From Wikipedia's Nemerle article; the fetched copy had lost its indentation, which is restored here."
+    sources: [wiki-nemerle]
+    code: |
+      class Hello
+      {
+        static Main () : void
+        {
+          System.Console.WriteLine ("Hello, world!");
+        }
+      }
+
+- id: fantom
+  name: Fantom
+  aliases: [Fan]
+  kind: language
+  category: general
+  cluster: oop
+  origin:
+    first_appeared: { year: 2005, precision: year }
+  creators:
+    - { name: Brian Frank, role: co-creator }
+    - { name: Andy Frank, role: co-creator }
+  status: maintained
+  tags:
+    paradigm: [multi-paradigm, object-oriented, functional]
+    typing: [static-typing, dynamic-typing]
+    concurrency: [actors]
+  milestones:
+    - { version: "1.0.81", year: 2024, summary: "Stable release, December 2024." }
+  summary: >
+    "A general-purpose object-oriented programming language" by Brian Frank and Andy Frank that "blends aspects of both
+    static and dynamic typing" and offers actors. Originally Fan, after the Fan District of Richmond, Virginia, it was
+    renamed Fantom in November 2009.
+  relations:
+    - { type: influenced_by, to: java, weight: moderate, confidence: medium, sources: [wiki-fantom], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: csharp, weight: moderate, confidence: medium, sources: [wiki-fantom], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: scala, weight: weak, confidence: medium, sources: [wiki-fantom], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: ruby, weight: weak, confidence: medium, sources: [wiki-fantom], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: erlang, weight: weak, confidence: medium, sources: [wiki-fantom], note: "Wikipedia infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Fantom_(programming_language)" }
+  sources: [wiki-fantom]
+
+- id: ambienttalk
+  name: AmbientTalk
+  kind: language
+  category: research
+  cluster: oop
+  origin:
+    first_appeared: { year: 2006, precision: year }
+    places: [{ institution: "Programming Technology Laboratory, Vrije Universiteit Brussel", country: BE }]
+  creators:
+    - { name: Tom Van Cutsem, role: co-designer }
+    - { name: Stijn Mostinckx, role: co-designer }
+    - { name: Jessie Dedecker, role: co-designer }
+    - { name: Wolfgang De Meuter, role: co-designer }
+  tags:
+    paradigm: [object-oriented, prototype-based, concurrent, event-driven, reflective]
+    typing: [dynamic-typing, strong-typing]
+    concurrency: [actors]
+    domain: [distributed-systems]
+  milestones:
+    - { version: "2.19", year: 2011, summary: "Stable release, April 2011." }
+  summary: >
+    A prototype-based language for mobile ad hoc networks from the Vrije Universiteit Brussel. Its concurrency
+    features "are founded on the actor model and have been largely influenced by the E programming language", while its
+    object model draws on Smalltalk and Self. Wikipedia's infobox lists ECMAScript Harmony among what it influenced.
+  relations:
+    - { type: influenced_by, to: e, weight: strong, confidence: high, sources: [wiki-ambienttalk], note: "\"largely influenced by the E programming language\"." }
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: high, sources: [wiki-ambienttalk], note: "Object-oriented features \"find their influence in languages like Smalltalk\"." }
+    - { type: influenced_by, to: self, weight: moderate, confidence: high, sources: [wiki-ambienttalk], note: "\"... and Self\"." }
+    - { type: influenced_by, to: scheme, weight: weak, confidence: medium, sources: [wiki-ambienttalk], note: "Wikipedia infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/AmbientTalk" }
+  sources: [wiki-ambienttalk]
+  example:
+    title: Hello world
+    language: AmbientTalk
+    note: "From Wikipedia's article, which adds that it \"is not very representative of the language features\"."
+    sources: [wiki-ambienttalk]
+    code: |
+      system.println("Hello world");
+
+- id: javafx-script
+  name: JavaFX Script
+  aliases: [F3, Form Follows Function]
+  kind: language
+  category: domain-specific
+  cluster: oop
+  origin:
+    first_appeared: { year: 2007, precision: year, note: "Renamed from F3 and open-sourced at JavaOne 2007; JavaFX 1.0 followed on 4 December 2008." }
+    places: [{ institution: Sun Microsystems }]
+  creators:
+    - { name: Chris Oliver, role: developer of F3 }
+  status: historical
+  tags:
+    paradigm: [declarative]
+    typing: [static-typing]
+  milestones:
+    - { version: "1.0", year: 2008, summary: "JavaFX 1.0, 4 December 2008." }
+    - { version: "1.2", year: 2009, summary: "June 2009, the last stable release; Oracle announced its discontinuation on 10 September 2010." }
+  summary: >
+    "A compiled, statically typed, declarative scripting language for the Java Platform" for building user interfaces.
+    Chris Oliver developed it as F3 ("Form Follows Function") before Sun renamed and open-sourced it at JavaOne 2007.
+    Oracle discontinued it in 2010.
+  relations:
+    - { type: targets, to: java, weight: moderate, confidence: high, sources: [wiki-javafx-script], note: "\"built on top of the Java Platform\"; Java classes are usable directly." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/JavaFX_Script" }
+  sources: [wiki-javafx-script]
+  example:
+    title: Hello World window
+    language: JavaFX Script
+    note: "From Wikipedia's article; the fetched copy had lost its indentation, which is restored here."
+    sources: [wiki-javafx-script]
+    code: |
+      import javafx.stage.Stage;
+      import javafx.scene.Scene;
+      import javafx.scene.text.Text;
+      import javafx.scene.text.Font;
+
+      Stage {
+          title: "Hello World"
+          width: 250
+          height: 80
+          scene: Scene {
+              content: Text {
+                  font : Font {
+                      size : 24
+                  }
+                  x: 10, y: 30
+                  content: "Hello World"
+              }
+          }
+      }
+
+- id: kodu
+  name: Kodu
+  aliases: [Kodu Game Lab, Boku]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2009, date: "2009-06-30", precision: exact, note: "Released on Xbox Live Marketplace." }
+    places: [{ institution: Microsoft FUSE Labs }]
+  tags:
+    paradigm: [visual-programming]
+    domain: [education, game-scripting]
+  summary: >
+    Microsoft FUSE Labs' game-making environment, originally Boku. Characters in a 3D world are programmed in "a
+    high-level, sensory paradigm consisting of a rule-based system or language, based on conditions and actions
+    similarly to AgentSheets": each rule reads WHEN a condition DO an action.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Kodu_Game_Lab" }
+  sources: [wiki-kodu]
+  example:
+    title: Chase the apple
+    language: Kodu
+    note: "From Wikipedia's article; in Kodu it is a row of tiles, written out here as text."
+    sources: [wiki-kodu]
+    code: |
+      WHEN see apple DO move toward
+
+- id: gosu
+  name: Gosu
+  aliases: [GScript]
+  kind: language
+  category: general
+  cluster: oop
+  origin:
+    began: { year: 2002, precision: year, note: "Internal development at Guidewire Software as GScript." }
+    first_appeared: { year: 2010, date: "2010-11-11", precision: exact, note: "First public (0.7 beta) release." }
+    places: [{ institution: Guidewire Software }]
+  creators:
+    - { name: Scott McKinney, role: lead developer }
+  status: maintained
+  tags:
+    paradigm: [multi-paradigm, object-oriented, functional, imperative, reflective]
+    typing: [static-typing, structural-typing]
+  milestones:
+    - { version: "1.18.7", year: 2025, summary: "Stable release, December 2025." }
+  summary: >
+    A statically typed JVM language that began in 2002 inside Guidewire Software as GScript and was released as open
+    source in 2010. "Its influences include Java, C#, and ECMAScript"; it is "often described as a Java variant" and adds
+    structural typing. Wikipedia lists Kotlin among what it influenced.
+  relations:
+    - { type: influenced_by, to: java, weight: strong, confidence: high, sources: [wiki-gosu], note: "\"Its influences include Java, C#, and ECMAScript.\"" }
+    - { type: influenced_by, to: csharp, weight: moderate, confidence: high, sources: [wiki-gosu], note: "\"Its influences include Java, C#, and ECMAScript.\"" }
+    - { type: influenced_by, to: javascript, weight: weak, confidence: high, sources: [wiki-gosu], note: "\"Its influences include Java, C#, and ECMAScript.\"" }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Gosu_(programming_language)" }
+  sources: [wiki-gosu]
+  example:
+    title: Hello, world!
+    language: Gosu
+    note: "From Wikipedia's Gosu article; the fetched copy had lost its indentation, which is restored here."
+    sources: [wiki-gosu]
+    code: |
+      class Main {
+        static function main(args: String[]) {
+          print("Hello, world!")
+        }
+      }
+
+- id: app-inventor
+  name: MIT App Inventor
+  aliases: [App Inventor, App Inventor for Android, AI2]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2010, date: "2010-12-15", precision: exact, note: "Public release; available on request from 12 July 2010." }
+    places: [{ institution: Google }, { institution: Massachusetts Institute of Technology }]
+  creators:
+    - { name: Hal Abelson, role: team lead }
+    - { name: Mark Friedman, role: team lead }
+  status: active
+  tags:
+    paradigm: [visual-programming, event-driven]
+    domain: [education]
+  milestones:
+    - { version: MIT version, year: 2012, summary: "Launched by MIT, March 2012." }
+    - { version: App Inventor 2, year: 2013, summary: "6 December 2013; replaced Open Blocks with Blockly." }
+  summary: >
+    "A high-level block-based visual programming language" for Android apps, built at Google by a team led by Hal Abelson
+    and Mark Friedman and maintained by MIT since 2012. Its first block editor, Open Blocks, "is closely related to
+    StarLogo TNG"; App Inventor 2 (2013) switched to Blockly.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MIT_App_Inventor" }
+  sources: [wiki-app-inventor]
+
+- id: kojo
+  name: Kojo
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2010, precision: year }
+  creators:
+    - { name: Lalit Pant, role: designer }
+  status: active
+  tags:
+    paradigm: [structured, functional, object-oriented]
+    typing: [strong-typing]
+    domain: [education]
+  milestones:
+    - { version: "2.9.33", year: 2025, summary: "Stable release, December 2025." }
+  summary: >
+    A learning environment by Lalit Pant of Dehradun, India, that "draws ideas from the programming languages Logo and
+    Processing" and "is written in, and its approach is based on, the programming language Scala".
+  relations:
+    - { type: influenced_by, to: logo, weight: moderate, confidence: high, sources: [wiki-kojo], note: "\"Kojo draws ideas from the programming languages Logo and Processing.\"" }
+    - { type: influenced_by, to: processing, weight: moderate, confidence: high, sources: [wiki-kojo], note: "\"Kojo draws ideas from the programming languages Logo and Processing.\"" }
+    - { type: implemented_in, to: scala, weight: strong, confidence: high, sources: [wiki-kojo], note: "\"Kojo is written in, and its approach is based on, the programming language Scala\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Kojo_(learning_environment)" }
+  sources: [wiki-kojo]
+
+- id: xtend
+  name: Xtend
+  aliases: [Xtend2]
+  kind: language
+  category: general
+  cluster: oop
+  origin:
+    first_appeared: { year: 2011, date: "2011-06", precision: exact, note: "Part of Xtext in the Eclipse Indigo release." }
+    places: [{ institution: Eclipse Foundation }]
+  creators:
+    - { name: Sven Efftinge, role: co-designer }
+    - { name: Sebastian Zarnekow, role: co-designer }
+  tags:
+    paradigm: [object-oriented, imperative, functional]
+    typing: [static-typing, strong-typing, type-inference]
+  milestones:
+    - { version: "2.3", year: 2012, summary: "Eclipse Juno, June 2012; Xtend becomes a standalone project." }
+    - { version: "2.25.0", year: 2021, summary: "March 2021." }
+  summary: >
+    A concise JVM language from the Eclipse Xtext project. "Syntactically and semantically Xtend has its roots in the
+    Java programming language but focuses on a more concise syntax"; it "uses Java's type system without
+    modifications" and adds functional features.
+  relations:
+    - { type: influenced_by, to: java, weight: strong, confidence: high, sources: [wiki-xtend], note: "\"has its roots in the Java programming language\"." }
+    - { type: influenced_by, to: scala, weight: weak, confidence: medium, sources: [wiki-xtend], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: groovy, weight: weak, confidence: medium, sources: [wiki-xtend], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: smalltalk, weight: weak, confidence: medium, sources: [wiki-xtend], note: "Wikipedia infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Xtend" }
+  sources: [wiki-xtend]
+  example:
+    title: Greeter
+    language: Xtend
+    note: "From Wikipedia's Xtend article; the fetched copy had lost its indentation, which is restored here. name.sayHello calls sayHello as an extension method."
+    sources: [wiki-xtend]
+    code: |
+      package sample
+
+      import java.util.List
+
+      class Greeter {
+        def greetThem(List<String> names) {
+          for(name: names) {
+            println(name.sayHello)
+          }
+        }
+
+        def sayHello(String name) {
+          'Hello ' + name + '!'
+        }
+      }
+
+- id: haggis
+  name: Haggis
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    began: { year: 2010, precision: year, note: "Commissioned by the SQA in 2010." }
+    first_appeared: { year: 2013, precision: year, note: "First used in SQA examinations in the 2013/2014 session (National 5)." }
+    places: [{ institution: Scottish Qualifications Authority }]
+  creators:
+    - { name: Quintin Cutts, role: co-developer }
+    - { name: Greg Michaelson, role: co-developer }
+    - { name: Richard Connor, role: co-developer }
+  status: active
+  tags:
+    paradigm: [functional, imperative, object-oriented]
+    typing: [type-inference]
+    domain: [education]
+  summary: >
+    A reference language for Scottish computing exams, commissioned by the SQA in 2010 and developed by Quintin Cutts
+    (Glasgow), Greg Michaelson (Heriot-Watt) and Richard Connor (Strathclyde). It "is not based on any one language but a
+    mixture" so that pupils taught any classroom language can read it; there is one definition per exam level.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Haggis_(programming_language)" }
+  sources: [wiki-haggis]
+  example:
+    title: Assignment
+    language: Haggis
+    note: "A single statement from Wikipedia's article."
+    sources: [wiki-haggis]
+    code: |
+      SET number TO 32*6
+
+- id: ballerina
+  name: Ballerina
+  kind: language
+  category: general
+  cluster: oop
+  origin:
+    began: { year: 2015, precision: year, note: "\"The project began in 2015 by architects from WSO2\"; first announced publicly in 2017." }
+    first_appeared: { year: 2019, date: "2019-09-10", precision: exact, note: "Version 1.0." }
+    places: [{ institution: WSO2 }]
+  creators:
+    - { name: Sanjiva Weerawarana, role: co-designer }
+    - { name: James Clark, role: co-designer }
+  status: active
+  tags:
+    typing: [structural-typing, strong-typing, static-typing, type-inference]
+    domain: [distributed-systems]
+  milestones:
+    - { version: "2201.12.3", year: 2025, summary: "Swan Lake Update 12, April 2025." }
+  summary: >
+    WSO2's language for cloud integration, "a code-based alternative to the configuration-based integration tools such
+    as enterprise application integration (EAI), enterprise service bus (ESB), and workflow products". Begun in 2015,
+    announced in 2017 and released as 1.0 in 2019, it has a structural static type system.
+  relations:
+    - { type: influenced_by, to: java, weight: moderate, confidence: medium, sources: [wiki-ballerina], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: javascript, weight: moderate, confidence: medium, sources: [wiki-ballerina], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: go, weight: moderate, confidence: medium, sources: [wiki-ballerina], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: rust, weight: weak, confidence: medium, sources: [wiki-ballerina], note: "Wikipedia infobox." }
+    - { type: influenced_by, to: csharp, weight: weak, confidence: medium, sources: [wiki-ballerina], note: "Wikipedia infobox." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ballerina_(programming_language)" }
+  sources: [wiki-ballerina]
+  example:
+    title: Hello World
+    language: Ballerina
+    note: "From Wikipedia's Ballerina article; the indentation of the body is restored."
+    sources: [wiki-ballerina]
+    code: |
+      import ballerina/io;
+
+      public function main() {
+          io:println("Hello World!");
+      }

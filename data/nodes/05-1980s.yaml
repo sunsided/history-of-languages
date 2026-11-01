@@ -3059,3 +3059,140 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/SIGNAL_(programming_language)" }
   sources: [wiki-signal]
+
+- id: openedge-abl
+  name: OpenEdge ABL
+  aliases: [Progress 4GL, PROGRESS, OpenEdge Advanced Business Language]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1981, precision: year, note: "\"The original Progress 4GL was designed in 1981\"." }
+    places: [{ institution: Progress Software Corporation }]
+  status: active
+  tags:
+    paradigm: [imperative, procedural, object-oriented]
+    typing: [strong-typing]
+    features: [english-like-syntax, late-binding]
+    domain: [business-data-processing, databases]
+  milestones:
+    - { version: "10.1", year: 2006, summary: "Object-oriented grammar elements; the language renamed OpenEdge ABL in 2006." }
+    - { version: "OpenEdge 12.8", year: 2024, summary: "Stable release, January 2024." }
+  summary: >
+    Progress Software's database application language, designed in 1981 as Progress 4GL, "an architecture-independent
+    language". It is "a strongly typed, late-bound, English-like programming language"; from version 10.1 it gained
+    object-oriented constructs, and in 2006 it was renamed OpenEdge Advanced Business Language.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/OpenEdge_Advanced_Business_Language" }
+  sources: [wiki-openedge-abl]
+  example:
+    title: List all customers
+    language: OpenEdge ABL
+    note: "From Wikipedia's article, where it is the equivalent of an SQL SELECT; the indentation of the middle line is restored."
+    sources: [wiki-openedge-abl]
+    code: |
+      FOR EACH customer NO-LOCK:
+          DISPLAY customer.
+      END.
+
+- id: dataflex
+  name: DataFlex
+  aliases: [Visual DataFlex]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1982, precision: year, note: "\"developed by Data Access Corporation beginning in 1982\"." }
+    places: [{ institution: Data Access Corporation }]
+  status: active
+  tags:
+    paradigm: [imperative, structured, object-oriented]
+    typing: [weak-typing]
+    domain: [business-data-processing, databases]
+  milestones:
+    - { version: "3.0", year: 1991, summary: "Modernized interface." }
+    - { version: "4 (Visual DataFlex)", year: 1996, summary: "From version 4 up to 17.1 (2015) the product was labelled Visual DataFlex." }
+    - { version: "25.0", year: 2025, summary: "Stable release, June 2025." }
+  summary: >
+    A database application language and environment from Data Access Corporation, begun in 1982. "Variables are loosely
+    typed. The virtual machine takes care of conversions." It was sold as Visual DataFlex from version 4 (1996) until
+    17.1 (2015).
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/DataFlex" }
+  sources: [wiki-dataflex]
+
+- id: action
+  name: Action!
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1983, date: "1983-08", precision: exact, note: "Wikipedia infobox: released August 1983." }
+    places: [{ institution: Optimized Systems Software }]
+  creators:
+    - { name: Clinton Parker, role: author }
+  status: historical
+  tags:
+    paradigm: [imperative, procedural]
+    features: [ide]
+  milestones:
+    - { version: "3.6", year: 1983, summary: "Final release, November 1983." }
+  summary: >
+    A compiled procedural language with an integrated full-screen editor and debugger for the Atari 8-bit computers,
+    written by Clinton Parker and sold by OSS. It "is largely a port of Micro-SPL concepts to the Atari", Micro-SPL
+    being a systems language Parker and Henry Baker had written for the Xerox Alto. It has three numeric base types.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Action!_(programming_language)" }
+  sources: [wiki-action]
+
+- id: clarion
+  name: Clarion
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1986, date: "1986-04", precision: exact, note: "Clarion 1.0 for DOS, April 1986." }
+  creators:
+    - { name: Bruce Barrington, role: creator }
+  status: active
+  tags:
+    paradigm: [imperative, structured, object-oriented]
+    domain: [business-data-processing, databases]
+  milestones:
+    - { version: "12", year: 2025, summary: "Released 15 May 2025." }
+  summary: >
+    A business application language created by Bruce Barrington, first released as the DOS product Clarion 1.0 in April
+    1986. In 1991 Barrington licensed compiler technology from Jensen & Partners International (JPI); SoftVelocity
+    develops it today. Wikipedia places it in the Pascal family.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Clarion_(programming_language)" }
+  sources: [wiki-clarion]
+
+- id: actor
+  name: Actor
+  kind: language
+  category: general
+  cluster: oop
+  origin:
+    first_appeared: { year: 1988, precision: year }
+    places: [{ institution: The Whitewater Group }]
+  creators:
+    - { name: Charles Duff, role: inventor }
+  status: historical
+  tags:
+    paradigm: [object-oriented]
+  summary: >
+    "A pure object-oriented language in the style of Smalltalk", invented by Charles Duff of The Whitewater Group in
+    1988 and released only for Microsoft Windows 2.1 and 3.0. "It was an offshoot of some object-oriented extensions to
+    the Forth language he had been working on."
+  relations:
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: medium, sources: [wiki-actor], note: "\"in the style of Smalltalk\"." }
+    - { type: influenced_by, to: forth, weight: moderate, confidence: medium, sources: [wiki-actor], note: "\"an offshoot of some object-oriented extensions to the Forth language\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Actor_(programming_language)" }
+  sources: [wiki-actor]
