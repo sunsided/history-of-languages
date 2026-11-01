@@ -136,8 +136,10 @@ task preview          # serve that build
 task lint:workflows   # actionlint + zizmor over .github/
 ```
 
-The static build is a single `index.html` with the app, dataset and search index inlined as one classic
-script (so archived copies, such as the Wayback Machine's, run too), plus the photos it references.
+The static build bundles the dataset and search index into the app and copies the photos it references.
+It is built twice: the site itself uses cacheable ES-module chunks, and `static/` holds a single-file copy
+with everything inlined as one classic script. The Wayback Machine can't run ES modules, so the main page
+links to that copy for crawlers and sends archive visitors to it.
 `.github/workflows/pages.yml` validates the data, type-checks the viewer and deploys that build to GitHub
 Pages on every push to `main` that touches the data, photos or viewer.
 

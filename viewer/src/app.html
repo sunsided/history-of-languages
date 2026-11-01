@@ -6,6 +6,13 @@
 		<meta name="description" content="Interactive timeline of programming-language ancestry: lineage, successors, dialects and the concepts that travelled between them, from the Antikythera mechanism to today." />
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" type="image/svg+xml" />
 		<title>History of languages</title>
+		<script>
+			// Archived copies can't run the module build: the Wayback Machine rewrites ES modules as classic
+			// scripts. Send archive visitors to the single-file copy (empty outside the main build).
+			(function (copy) {
+				if (copy && (typeof __wm !== 'undefined' || location.hostname === 'web.archive.org')) location.replace(copy);
+			})('%hol.static-copy%');
+		</script>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
@@ -16,6 +23,7 @@
 				<a href="https://github.com/sunsided/history-of-languages">GitHub</a>.
 			</p>
 		</noscript>
+		<a href="%hol.static-copy%" hidden>Single-file version of the timeline (for web archives)</a>
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>

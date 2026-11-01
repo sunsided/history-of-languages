@@ -257,4 +257,4 @@ export function cleanCommons(text: string | undefined): string {
  * Relative to the page on purpose: the app is a single page that never changes its URL, and a relative
  * path also resolves inside web archives that serve the site under their own prefix.
  */
-export const mediaUrl = (m: MediaItem) => m.file;
+export const mediaUrl = (m: MediaItem) => __MEDIA_PREFIX__ + m.file;

@@ -140,7 +140,7 @@ const MIME: Record<string, string> = {
 	'.svg': 'image/svg+xml'
 };
 
-export function dataset(options: { dataDir: string }): Plugin {
+export function dataset(options: { dataDir: string; emitMedia?: boolean }): Plugin {
 	const dataDir = path.resolve(options.dataDir);
 
 	return {
@@ -194,7 +194,7 @@ export function dataset(options: { dataDir: string }): Plugin {
 		generateBundle() {
 			// Static build: ship the media files the dataset references next to the app, at the same
 			// paths the dev middleware serves them from.
-			if (this.environment.name !== 'client') return;
+			if (options.emitMedia === false || this.environment.name !== 'client') return;
 			const root = path.dirname(dataDir);
 			for (const m of loadDataset(dataDir).media) {
 				this.emitFile({ type: 'asset', fileName: m.file, source: fs.readFileSync(path.join(root, m.file)) });
