@@ -292,6 +292,7 @@
   wiki: Chris Pressey
   nodes:
   - befunge
+  - befunge-98
 - id: person-christopher-strachey
   kind: person
   person: Christopher Strachey
