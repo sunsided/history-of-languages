@@ -1029,6 +1029,13 @@
   primary: false
   title: 'Wikipedia: PHP'
   url: https://en.wikipedia.org/wiki/PHP
+  checked: '2026-11-01'
+- id: php-manual-history
+  type: manual
+  primary: true
+  title: "PHP Manual: History of PHP"
+  url: https://www.php.net/manual/en/history.php.php
+  checked: '2026-11-01'
 - id: wiki-risc-v
   type: encyclopedia
   primary: false
@@ -2903,4 +2910,52 @@
   title: 'Funge-98 Final Specification (Cat''s Eye Technologies, 11 September 1998)'
   year: 1998
   url: http://catseye.tc/view/funge-98/doc/funge98.markdown
+  checked: '2026-11-01'
+- id: wiki-emscripten
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Emscripten"
+  url: https://en.wikipedia.org/wiki/Emscripten
+  checked: '2026-11-01'
+- id: hellorust-2017-wasm32
+  type: web
+  primary: false
+  title: "hellorust.com: wasm32-unknown-unknown landed & enabled (Jan-Erik Rediger, 26 November 2017)"
+  url: https://www.hellorust.com/news/native-wasm-target.html
+  checked: '2026-11-01'
+- id: go-1-11-notes
+  type: manual
+  primary: true
+  title: "Go 1.11 Release Notes"
+  url: https://go.dev/doc/go1.11
+  checked: '2026-11-01'
+- id: kotlin-1-8-20-notes
+  type: manual
+  primary: true
+  title: "What's new in Kotlin 1.8.20"
+  url: https://kotlinlang.org/docs/whatsnew1820.html
+  checked: '2026-11-01'
+- id: zig-0-4-0-notes
+  type: manual
+  primary: true
+  title: "Zig 0.4.0 Release Notes"
+  url: https://ziglang.org/download/0.4.0/release-notes.html
+  checked: '2026-11-01'
+- id: blazor-wasm-3-2
+  type: web
+  primary: true
+  title: "Microsoft .NET Blog: Blazor WebAssembly 3.2.0 now available (19 May 2020)"
+  url: https://devblogs.microsoft.com/dotnet/blazor-webassembly-3-2-0-now-available/
+  checked: '2026-11-01'
+- id: wiki-assemblyscript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: AssemblyScript"
+  url: https://en.wikipedia.org/wiki/AssemblyScript
+  checked: '2026-11-01'
+- id: assemblyscript-org
+  type: web
+  primary: true
+  title: "AssemblyScript: A TypeScript-like language for WebAssembly"
+  url: https://www.assemblyscript.org/
   checked: '2026-11-01'

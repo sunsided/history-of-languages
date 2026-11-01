@@ -36,6 +36,7 @@
     - { type: influenced_by, to: haskell, aspects: [query-expressions, monads], weight: moderate, confidence: high }
     - { type: influenced_by, to: fsharp, year: 2012, aspects: [async-await], weight: strong, confidence: high, note: "Syme, HOPL IV: C# async was based on F# async workflows." }
     - { type: influenced_by, to: clu, aspects: [iterators], weight: weak, confidence: medium }
+    - { type: targets, to: webassembly, year: 2020, weight: weak, confidence: high, sources: [blazor-wasm-3-2, wiki-webassembly], note: "Blazor WebAssembly (released 19 May 2020) runs C# in the browser on a .NET runtime compiled to Wasm, not by compiling C# itself to Wasm." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)" }
@@ -333,6 +334,7 @@
     - { type: influenced_by, to: newsqueak, aspects: [channels], weight: strong, confidence: high }
     - { type: influenced_by, to: alef, weight: moderate, confidence: high }
     - { type: influenced_by, to: csp, aspects: [channels, guarded-commands], weight: strong, confidence: high }
+    - { type: targets, to: webassembly, year: 2018, weight: moderate, confidence: high, sources: [go-1-11-notes], note: "\"Go 1.11 adds an experimental port to WebAssembly (js/wasm)\"; Go 1.21 added WASI." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Go_(programming_language)", homepage: "https://go.dev" }
@@ -391,6 +393,7 @@
     - { type: influenced_by, to: csharp, aspects: [async-await], weight: moderate, confidence: medium }
     - { type: influenced_by, to: swift, weight: weak, confidence: high }
     - { type: implemented_in, to: ocaml, weight: moderate, confidence: high }
+    - { type: targets, to: webassembly, year: 2017, weight: moderate, confidence: high, sources: [hellorust-2017-wasm32, wiki-webassembly], note: "The wasm32-unknown-unknown target was enabled in nightly Rust in November 2017; it is a Tier 2 target today." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Rust_(programming_language)", homepage: "https://www.rust-lang.org" }
@@ -429,6 +432,7 @@
     - { type: influenced_by, to: scala, weight: strong, confidence: high }
     - { type: influenced_by, to: csharp, weight: moderate, confidence: high }
     - { type: influenced_by, to: groovy, weight: weak, confidence: medium }
+    - { type: targets, to: webassembly, year: 2023, weight: moderate, confidence: high, sources: [kotlin-1-8-20-notes], note: "Kotlin/Wasm went Experimental in Kotlin 1.8.20 (25 April 2023); Beta since." }
   research_status: draft
   confidence: high
   sources: [wiki-kotlin]
@@ -750,6 +754,7 @@
     - { type: influenced_by, to: d, aspects: [compile-time-evaluation], weight: moderate, confidence: medium }
     - { type: influenced_by, to: rust, weight: moderate, confidence: medium }
     - { type: influenced_by, to: go, weight: moderate, confidence: medium }
+    - { type: targets, to: webassembly, year: 2019, weight: moderate, confidence: medium, sources: [zig-0-4-0-notes], note: "Zig 0.4.0 notes: with LLVM 8 \"the wasm32 target architecture is guaranteed to be available\" (zig build-exe -target wasm32-freestanding). Year inferred from LLVM 8; the release page shows 9 April without a year." }
   research_status: draft
   confidence: medium
   sources: [wiki-zig]
@@ -2845,3 +2850,49 @@
       NEXT
       DEF SEG 'reset the segment to default
     sources: [wiki-qb64]
+
+- id: assemblyscript
+  name: AssemblyScript
+  kind: language
+  category: general
+  cluster: web
+  origin:
+    first_appeared: { year: 2017, precision: year, note: "Wikipedia infobox; npm package 0.1.0 is cited as 2017." }
+  creators:
+    - { name: Daniel Wirtz, role: designer }
+    - { name: Max Graey, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, object-oriented]
+    typing: [static-typing]
+    domain: [web]
+  summary: >
+    "A TypeScript-like language for WebAssembly": TypeScript syntax with WebAssembly's own value types
+    (i32, f64 and so on), compiled ahead of time to Wasm through Binaryen rather than to JavaScript, so web
+    developers can write Wasm modules without learning C or Rust.
+  relations:
+    - { type: dialect_of, to: typescript, weight: strong, confidence: medium, sources: [wiki-assemblyscript, assemblyscript-org], note: "\"compiles a variant of TypeScript ... to WebAssembly\" (README); Wikipedia: \"a TypeScript-based programming language\". Not every TypeScript program compiles." }
+    - { type: targets, to: webassembly, weight: strong, confidence: high, sources: [wiki-assemblyscript, assemblyscript-org] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/AssemblyScript", homepage: "https://www.assemblyscript.org" }
+  sources: [wiki-assemblyscript, assemblyscript-org]
+  example:
+    title: Fibonacci with machine integer types
+    language: AssemblyScript
+    note: "The example on assemblyscript.org. i32 is WebAssembly's 32-bit integer type, used where TypeScript would say number. Compiled with asc 0.27 and called from Node: fib(0..10) gives 0 1 1 2 3 5 8 13 21 34 55."
+    code: |
+      /** Calculates the n-th Fibonacci number. */
+      export function fib(n: i32): i32 {
+        var a = 0, b = 1
+        if (n > 0) {
+          while (--n) {
+            let t = a + b
+            a = b
+            b = t
+          }
+          return b
+        }
+        return a
+      }
+    sources: [assemblyscript-org]

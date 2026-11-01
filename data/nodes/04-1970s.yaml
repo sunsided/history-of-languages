@@ -92,6 +92,7 @@
     - { type: influenced_by, to: bcpl, weight: strong, confidence: high }
     - { type: influenced_by, to: pdp-11, weight: moderate, confidence: high, note: "Byte addressing on the PDP-11 forced types into the language; ++/-- predate it." }
     - { type: influenced_by, to: pl-i, weight: weak, confidence: medium, note: "Via Multics experience at Bell Labs; e.g. the -> operator." }
+    - { type: targets, to: webassembly, year: 2017, weight: moderate, confidence: high, sources: [wiki-webassembly, wiki-emscripten], note: "WebAssembly was designed as a target for C and C++; Emscripten \"compiles C and C++ to Wasm using Clang as a frontend\" and made Wasm its default output in 2019." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/C_(programming_language)" }

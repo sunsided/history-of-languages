@@ -42,6 +42,7 @@
     - { type: influenced_by, to: ada, aspects: [templates, exceptions], weight: moderate, confidence: high, note: "Post-1985 evolution 'shows the influence of ideas from Ada, Clu, and ML.' (HOPL-II §2.4.4)" }
     - { type: influenced_by, to: clu, aspects: [exceptions, generics], weight: moderate, confidence: high }
     - { type: influenced_by, to: ml, aspects: [exceptions, parametric-polymorphism], weight: moderate, confidence: high }
+    - { type: targets, to: webassembly, year: 2017, weight: moderate, confidence: high, sources: [wiki-webassembly, wiki-emscripten], note: "Via Emscripten or Clang directly; Emscripten switched its default output from asm.js to WebAssembly in 2019." }
   research_status: reviewed
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/C%2B%2B", homepage: "https://isocpp.org" }
