@@ -876,3 +876,4 @@
       q * imp := PN ; Prop
       p * not := imp(p,con) ; Prop
     sources: [aut-4-1-manual]
+

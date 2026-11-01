@@ -3394,3 +3394,63 @@
   primary: false
   title: "LaTeX2e unofficial reference manual: \\newcommand & \\renewcommand"
   url: https://latexref.xyz/_005cnewcommand-_0026-_005crenewcommand.html
+- id: wiki-music-n
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MUSIC-N"
+  url: https://en.wikipedia.org/wiki/MUSIC-N
+- id: wiki-csound
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Csound"
+  url: https://en.wikipedia.org/wiki/Csound
+- id: wiki-supercollider
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SuperCollider"
+  url: https://en.wikipedia.org/wiki/SuperCollider
+- id: wiki-chuck
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ChucK"
+  url: https://en.wikipedia.org/wiki/ChucK
+- id: wiki-max-software
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Max (software)"
+  url: https://en.wikipedia.org/wiki/Max_(software)
+- id: wiki-pure-data
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Pure Data"
+  url: https://en.wikipedia.org/wiki/Pure_Data
+- id: wiki-tidalcycles
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TidalCycles"
+  url: https://en.wikipedia.org/wiki/TidalCycles
+- id: wiki-sonic-pi
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Sonic Pi"
+  url: https://en.wikipedia.org/wiki/Sonic_Pi
+- id: tidalcycles-docs
+  type: manual
+  primary: true
+  title: "TidalCycles documentation: What is Tidal Cycles?"
+  url: https://tidalcycles.org/docs/
+- id: tidalcycles-workshop
+  type: manual
+  primary: true
+  title: "TidalCycles documentation: workshop tutorial"
+  url: https://tidalcycles.org/docs/patternlib/tutorials/workshop
+- id: strudel-workshop
+  type: manual
+  primary: true
+  title: "Strudel workshop: Getting started and First sounds"
+  url: https://strudel.cc/workshop/getting-started/
+- id: strudel-repo
+  type: web
+  primary: true
+  title: "uzu/strudel on Codeberg"
+  url: https://codeberg.org/uzu/strudel

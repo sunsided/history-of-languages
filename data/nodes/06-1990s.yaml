@@ -1556,3 +1556,44 @@
           print "Hello, World!^";
       ];
     sources: [wiki-inform]
+
+- id: supercollider
+  name: SuperCollider
+  aliases: [sclang]
+  kind: language
+  category: domain-specific
+  cluster: audio
+  origin:
+    first_appeared: { year: 1996, precision: year, note: "Wikipedia: \"released originally in 1996 by James McCartney\"." }
+  creators:
+    - { name: James McCartney, role: original author }
+  status: active
+  tags:
+    paradigm: [object-oriented, functional]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [unit-generators, live-coding, closures]
+    domain: [music-audio]
+  summary: >
+    A language and environment "for real-time audio synthesis and algorithmic composition". Its language, sclang,
+    "combines the object-oriented structure of Smalltalk and features from functional programming languages with a
+    C-family syntax"; since version 3 it drives a separate synthesis server, scsynth. Released as free software
+    (GPL) in 2002.
+  relations:
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: high, sources: [wiki-supercollider], note: "\"the object-oriented structure of Smalltalk\"" }
+    - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-supercollider], note: "\"with a C-family syntax\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SuperCollider", homepage: "https://supercollider.github.io/" }
+  sources: [wiki-supercollider]
+  example:
+    title: A sine tone with noise, and a recursive function
+    language: SuperCollider (sclang)
+    note: "Verbatim from Wikipedia's SuperCollider article. { ... }.play turns a function into a synth on the server; SinOsc.ar and PinkNoise.ar are unit generators running at audio rate."
+    code: |
+      // play a mixture of pink noise and a sine tone of 800 Hz
+      { SinOsc.ar(800, 0, 0.1) + PinkNoise.ar(0.01) }.play;
+
+      // Factorial function
+      f = { |x| if(x == 0) { 1 } { f.(x-1) * x } };
+    sources: [wiki-supercollider]

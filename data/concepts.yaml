@@ -228,6 +228,9 @@
 - id: game-scripting
   name: Game scripting
   facet: domain
+- id: music-audio
+  name: Music and audio
+  facet: domain
 - id: hpc
   name: High-performance computing
   facet: domain
@@ -627,6 +630,16 @@
 - id: live-programming
   name: Live programming
   facet: features
+- id: live-coding
+  name: Live coding
+  facet: features
+  broader:
+  - live-programming
+  summary: Writing and changing code on stage as a performance, usually of music, while it runs.
+- id: unit-generators
+  name: Unit generators
+  facet: features
+  summary: 'Sound built by patching small signal-processing routines ("opcodes or unit generators"), the design common to all MUSIC-N descendants.'
 - id: macros
   name: Macros
   facet: features

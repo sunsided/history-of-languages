@@ -2228,3 +2228,59 @@
       \newcommand{\lawyers}[3][company]{#2, #3, and~#1}
       I employ \lawyers[Howe]{Dewey}{Cheatem}.
     sources: [latexref-newcommand]
+
+- id: csound
+  name: Csound
+  kind: language
+  category: domain-specific
+  cluster: audio
+  origin:
+    first_appeared: { year: 1986, precision: year, note: "Wikipedia: developed \"at the MIT Media Lab in 1985\"; infobox initial release 1986." }
+    places: [{ institution: MIT Media Lab, country: US }]
+  creators:
+    - { name: Barry Vercoe, role: original developer }
+  status: active
+  tags:
+    paradigm: [declarative, imperative]
+    features: [unit-generators]
+    domain: [music-audio]
+  summary: >
+    A sound-synthesis language from Barry Vercoe at the MIT Media Lab, "based on his earlier system called Music 11,
+    which in its turn followed the MUSIC-N model initiated by Max Mathews at Bell Labs". A program is two texts:
+    "The orchestra describes the nature of the instruments and the score describes notes and other parameters
+    along a timeline." It is named for C, the language it was written in, "in contrast to some of its
+    predecessors".
+  notes: >
+    MUSIC-N (Mathews, Bell Labs, 1957; MUSIC II to V and many ports) is in the audio backlog until a real MUSIC IV
+    or V score can be quoted; Csound "descended from MUSIC 11" (Vercoe et al., MIT, 1973).
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Csound", homepage: "https://csound.com/" }
+  sources: [wiki-csound, wiki-music-n]
+  example:
+    title: One second of a 1 kHz sine
+    language: Csound (.csd)
+    note: "Verbatim from Wikipedia's Csound article. The orchestra defines instr 1 as an oscillator (oscil) reading table 1; the score builds that table as a sine (GEN 10) and plays one note, with p4 and p5 as amplitude and frequency."
+    code: |
+      <CsoundSynthesizer>
+      <CsOptions>
+      csound -W -d -o tone.wav
+      </CsOptions>
+      <CsInstruments>
+      sr = 96000 ; Sample rate.
+      kr = 9600 ; Control signal rate.
+      ksmps = 10 ; Samples per control signal.
+      nchnls = 1 ; Number of output channels.
+      instr 1
+      a1 oscil p4, p5, 1 ; Oscillator: p4 and p5 are the arguments from the score, 1 is the table number.
+      out a1 ; Output.
+      endin
+      </CsInstruments>
+      <CsScore>
+      f1 0 8192 10 1 ; Table containing a sine wave. Built-in generator 10 produces a sum of sinusoids, here only one.
+      i1 0 1 20000 1000 ; Play one second of one kHz at amplitude 20000.
+      e
+      </CsScore>
+      </CsoundSynthesizer>
+    sources: [wiki-csound]
+

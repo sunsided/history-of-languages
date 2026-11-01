@@ -3024,3 +3024,133 @@
 
       The description of the napkin is "Slightly crumpled."
     sources: [writing-with-inform]
+
+- id: chuck
+  name: ChucK
+  kind: language
+  category: domain-specific
+  cluster: audio
+  origin:
+    first_appeared: { year: 2003, precision: year, note: "Wikipedia infobox." }
+    places: [{ institution: Princeton University, country: US }]
+  creators:
+    - { name: Ge Wang, role: creator and chief designer }
+    - { name: Perry R. Cook, role: doctoral adviser }
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative, concurrent]
+    typing: [static-typing, strong-typing]
+    features: [unit-generators, live-coding]
+    domain: [music-audio]
+  summary: >
+    "A concurrent, strongly timed audio programming language for real-time synthesis, composition, and
+    performance", created by Ge Wang as a graduate student working with Perry R. Cook. Time is a value: a program
+    advances it explicitly (120::ms => now) and is "sample-synchronous" with the audio. The => "ChucK" operator
+    connects unit generators and assigns values, left to right.
+  notes: >
+    Places: Princeton comes from the project's home (chuck.cs.princeton.edu) cited by Wikipedia, not from the
+    article text.
+  relations:
+    - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-chuck], note: "\"a loosely C-like object-oriented language, with strong static typing\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ChucK", homepage: "https://chuck.stanford.edu/" }
+  sources: [wiki-chuck]
+  example:
+    title: Random notes through a reverb, forever
+    language: ChucK
+    note: "From Wikipedia's ChucK article; the page renders it on one line, so line breaks and indentation are restored at statement boundaries. SinOsc => JCRev => dac patches oscillator, reverb and output; 120::ms => now advances time."
+    code: |
+      // signal graph (patch)
+      SinOsc s => JCRev r => dac;
+      .2 => s.gain;
+      // dry/wet mix (for reverb)
+      .1 => r.mix;
+      // an array of pitch classes (semitones)
+      [ 0, 2, 4, 7, 9, 11 ] @=> int hi[];
+      // do forever:
+      while( true )
+      {
+          // choose a note, shift registers, convert to frequency
+          Std.mtof( 45 + Std.rand2(0,3) * 12 + hi[Std.rand2(0,hi.cap()-1)] ) => s.freq;
+          // advance time
+          120::ms => now;
+      }
+    sources: [wiki-chuck]
+
+- id: tidalcycles
+  name: TidalCycles
+  aliases: [Tidal, Tidal Cycles]
+  kind: language
+  category: domain-specific
+  cluster: audio
+  origin:
+    first_appeared: { year: 2009, precision: circa, note: "Tidal docs: \"initiated by Alex McLean around 2009 during doctoral work\"; Wikipedia infobox: initial release 2009." }
+  creators:
+    - { name: Alex McLean, role: creator }
+  status: active
+  tags:
+    paradigm: [functional, declarative]
+    typing: [static-typing, type-inference]
+    features: [live-coding]
+    domain: [music-audio]
+  summary: >
+    "A free/open source live coding environment for algorithmic patterns": a pattern language for rhythm and
+    sound, "embedded in the Haskell language, although you don't have to learn Haskell to learn Tidal". Patterns
+    are written in a compact mini-notation inside strings and transformed with Haskell functions while the music
+    plays. Strudel ports it to JavaScript.
+  relations:
+    - { type: implemented_in, to: haskell, weight: strong, confidence: high, sources: [tidalcycles-docs, wiki-tidalcycles], note: "\"a domain-specific language embedded in the functional programming language Haskell\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TidalCycles", homepage: "https://tidalcycles.org/" }
+  sources: [tidalcycles-docs, wiki-tidalcycles, tidalcycles-workshop]
+  example:
+    title: Three drum patterns from the workshop
+    language: TidalCycles
+    note: "Verbatim lines from the Tidal workshop tutorial, each replacing the last on channel d1. [ ] subdivides a step, *2 repeats it, and bd(3,8) spreads three kicks over eight steps as a Euclidean rhythm."
+    code: |
+      d1 $ sound "bd hh sn hh"
+      d1 $ sound "bd [sd cp]*2"
+      d1 $ sound "bd(3,8) sn*2"
+    sources: [tidalcycles-workshop]
+
+- id: strudel
+  name: Strudel
+  kind: language
+  category: domain-specific
+  cluster: audio
+  origin:
+    first_appeared: { year: 2022, date: "2022-01", precision: exact, note: "Wikipedia (TidalCycles): \"Since January 2022, an official port of Tidal's pattern engine has developed into the web-based live coding environment Strudel.\"" }
+  creators:
+    - { name: Felix Roos, role: co-creator }
+    - { name: Alex McLean, role: co-creator }
+  status: active
+  tags:
+    paradigm: [functional, declarative]
+    typing: [dynamic-typing]
+    features: [live-coding]
+    domain: [music-audio, web]
+  summary: >
+    "An official port of the Tidal Cycles pattern language to JavaScript", running as a live coding environment in
+    the browser. It keeps Tidal's mini-notation strings and pattern transformations, chained as JavaScript method
+    calls instead of Haskell operators. Licensed AGPL-3.0.
+  notes: >
+    Creators per Wikipedia, citing Roos and McLean, "Strudel: Live Coding Patterns on the Web" (ICLC 2023); the
+    Strudel pages read do not name authors.
+  relations:
+    - { type: dialect_of, to: tidalcycles, weight: strong, confidence: high, sources: [strudel-workshop, wiki-tidalcycles], note: "\"an official port of the Tidal Cycles pattern language to JavaScript\"" }
+    - { type: implemented_in, to: javascript, weight: strong, confidence: high, sources: [strudel-workshop, strudel-repo] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TidalCycles", homepage: "https://strudel.cc/" }
+  sources: [strudel-workshop, strudel-repo, wiki-tidalcycles]
+  example:
+    title: First sounds
+    language: Strudel
+    note: "Verbatim from the Strudel workshop's \"First sounds\" page; the second pattern subdivides steps with [ ] and rests with -. Compare Tidal's d1 $ sound \"...\"."
+    code: |
+      sound("bd hh sd oh")
+      sound("bd [hh hh] sd [hh bd] bd - [hh sd] cp")
+    sources: [strudel-workshop]
+
