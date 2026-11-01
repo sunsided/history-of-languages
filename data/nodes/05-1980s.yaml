@@ -1887,3 +1887,150 @@
       N[3 / 2]
       (* = 1.5 *)
     sources: [wiki-wolfram-language]
+
+- id: sinclair-basic
+  name: Sinclair BASIC
+  aliases: [4K BASIC, 8K BASIC, 48K BASIC, 128 BASIC]
+  kind: language
+  category: general
+  cluster: basic
+  origin:
+    began: { year: 1979, precision: year, note: "John Grant \"wrote the BASIC interpreter between June and July 1979\"." }
+    first_appeared: { year: 1980, date: "1980-02", precision: exact, note: "With the ZX80, introduced February 1980." }
+    places: [{ institution: Nine Tiles Networks, country: GB }]
+  creators:
+    - { name: John Grant, role: "4K BASIC" }
+    - { name: Steve Vickers, role: "8K BASIC, floating point" }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing]
+    features: [line-numbers, interpreter, string-processing]
+  milestones:
+    - { version: 8K BASIC, year: 1981, summary: "ZX81: floating point added by Steve Vickers." }
+    - { version: 48K BASIC, year: 1982, summary: "ZX Spectrum (April 1982): 16 KB ROM, colour and sound." }
+  summary: >
+    The BASIC of Sinclair's ZX80, ZX81 and ZX Spectrum, written by Nine Tiles: at first "an incomplete
+    implementation of the 1978 ANSI Minimal BASIC standard with integer arithmetic only", designed to run in 1 KB
+    of RAM. Keywords were entered with single keystrokes, and strings were sliced with A$(5 TO 10) instead of
+    Microsoft's MID$.
+  notes: >
+    The Spectrum 128 (1985) added 128 BASIC; Timex had T/S 2000 BASIC. Wikipedia lists no influences in its
+    infobox.
+  relations:
+    - { type: influenced_by, to: basic, weight: moderate, confidence: high, sources: [wiki-sinclair-basic], note: "Implements (incompletely) ANSI Minimal BASIC, the standardised Dartmouth core." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Sinclair_BASIC" }
+  sources: [wiki-sinclair-basic, wiki-tiny-basic]
+  example:
+    title: String slicing
+    language: Sinclair BASIC
+    note: "Illustrative, built around Wikipedia's inline example A$(5 TO 10) (\"a substring starting with the 5th and ending with the 10th character\"); not run on a Spectrum."
+    code: |
+      10 LET A$="SINCLAIR BASIC"
+      20 PRINT A$(5 TO 10)
+    sources: [wiki-sinclair-basic]
+
+- id: bbc-basic
+  name: BBC BASIC
+  aliases: [BASIC V, BBC BASIC for Windows]
+  kind: language
+  category: educational
+  cluster: basic
+  origin:
+    first_appeared: { year: 1981, precision: year, note: "With the BBC Micro, for the BBC Computer Literacy Project." }
+    places: [{ institution: Acorn Computers, country: GB }]
+  creators:
+    - { name: Sophie Wilson, role: designer }
+    - { name: Richard T. Russell, role: "BBC BASIC for Windows and SDL" }
+  status: active
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing]
+    features: [line-numbers, interpreter]
+    domain: [education]
+  milestones:
+    - { version: BBC BASIC for Windows, year: 2001 }
+  summary: >
+    Acorn's BASIC for the BBC Micro, grown from Atom BASIC with structured constructs: named procedures and
+    functions with LOCAL variables, REPEAT loops and an inline 6502 assembler. On the Archimedes, BASIC V gained
+    an ARM assembler and block structure. It taught a generation of British schoolchildren and lives on in
+    Richard Russell's ports.
+  notes: >
+    "Initially the BBC specified compatibility with Microsoft BASIC", but Acorn's own structured design won.
+    Atom BASIC is not a node. BASIC V (Archimedes) replaced the 6502 assembler with an ARM one; its year is
+    not given in the article.
+  relations:
+    - { type: influenced_by, to: microsoft-basic, weight: weak, confidence: medium, sources: [wiki-bbc-basic], note: "The BBC's initial specification asked for Microsoft BASIC compatibility." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/BBC_BASIC" }
+  sources: [wiki-bbc-basic]
+  example:
+    title: A procedure with LOCAL variables (BASIC V)
+    language: BBC BASIC V
+    note: "From Wikipedia (Acorn Archimedes version). DEF PROC defines a named procedure; % marks integers, & hex; MOVE/DRAW/PLOT call the OS graphics. Line numbers are optional in BASIC V. Indentation is ours."
+    code: |
+      REM Acorn Archimedes version
+      ON ERROR : ON ERROR OFF : PRINT REPORT$; " at line ";ERL : END
+      MODE MODE : REM clears the screen
+      PROC_triangle(700,700,500,200,500,900,"F")
+      END
+      DEF PROC_triangle(x1%,y1%,x2%,y2%,x3%,y3%,fill$)
+        LOCAL triangle_fill_plot_code%
+        triangle_fill_plot_code% = &55
+        MOVE x1%,y1%
+        DRAW x2%,y2%
+        IF fill$="F" THEN
+          PLOT triangle_fill_plot_code%,x3%,y3%
+        ELSE
+          DRAW x3%,y3% : DRAW x1%,y1%
+        ENDIF
+      ENDPROC : REM of PROC_triangle()
+    sources: [wiki-bbc-basic]
+
+- id: true-basic
+  name: True BASIC
+  kind: language
+  category: educational
+  cluster: basic/pc-compilers
+  origin:
+    first_appeared: { year: 1985, precision: disputed, note: "Wikipedia's infobox says 1983; its text says \"introduced in 1985\"." }
+    places: [{ institution: True BASIC Inc., country: US }]
+  creators:
+    - { name: John G. Kemeny, role: designer }
+    - { name: Thomas E. Kurtz, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing]
+    features: [compiler]
+    domain: [education]
+  summary: >
+    BASIC's inventors' answer to the microcomputer BASICs: a structured, compiled BASIC without mandatory line
+    numbers, "descended from Dartmouth BASIC", carrying over the ideas of Dartmouth's SBASIC and the ANSI Full
+    BASIC effort. Released for MS-DOS, the Mac and Windows, it never displaced Microsoft's dialects.
+  relations:
+    - { type: successor_of, to: basic, weight: strong, confidence: high, sources: [wiki-true-basic], note: "\"a variant of the BASIC programming language descended from Dartmouth BASIC\", by its designers." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/True_BASIC" }
+  sources: [wiki-true-basic]
+  example:
+    title: Random text on a graphics window
+    language: True BASIC
+    note: "From Wikipedia (\"An example of the recent code\"). No line numbers; DO ... LOOP and SET WINDOW set up structured graphics; ! starts a comment."
+    code: |
+      RANDOMIZE
+      SET WINDOW 0,20,0,20
+      SET COLOR 5 !Set the pen and text colour to 5 as true basic has 0-15 colours
+      PRINT "Welcome To ..." !Print "Welcome To ..." on the user's screen.
+      DO !Begin the loop
+         LET x=rnd*20 !Let the value 'x' equal a random number between '0' and '20'
+         LET y=rnd*20 !Let the value 'y' equal a random number between '0' and '20'
+         Pause .1 !Waits 1/10 of a second
+         PLOT TEXT, at x, y: "Fabulous Wikipedia!" !Plot 'Fabulous Wikipedia!' at coordinates 'x' and 'y'
+      LOOP !End the loop
+      END !End the program
+    sources: [wiki-true-basic]

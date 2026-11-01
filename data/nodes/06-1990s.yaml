@@ -1273,3 +1273,145 @@
         </xsl:template>
       </xsl:stylesheet>
     sources: [wiki-xslt]
+
+- id: oberon-2
+  name: Oberon-2
+  kind: language
+  category: general
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 1991, precision: year, note: "\"developed in 1991 at ETH Zurich\"; the paper is in Structured Programming 12(4), 1991, the report dated January 1992." }
+    places: [{ institution: ETH Zurich, city: Zurich, country: CH }]
+  creators:
+    - { name: Niklaus Wirth, role: designer }
+    - { name: Hanspeter Mössenböck, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, structured, object-oriented, modular]
+    typing: [static-typing, strong-typing]
+    memory: [garbage-collection]
+    features: [type-extension, separate-compilation, reflection]
+  summary: >
+    "A general-purpose programming language in the tradition of Pascal and Modula-2": Oberon plus type-bound
+    procedures (methods), read-only export marks, open arrays and FOR loops. It "is a superset of Oberon, is fully
+    compatible with it, and was a redesign of Object Oberon"; "type extension makes Oberon-2 an object-oriented
+    language". Component Pascal and Active Oberon descend from it, and Go cites it.
+  relations:
+    - { type: superset_of, to: oberon, weight: strong, confidence: high, sources: [wiki-oberon-2], note: "\"Oberon-2 is a superset of Oberon, is fully compatible with it\"." }
+    - { type: influenced_by, to: modula-2, weight: moderate, confidence: high, sources: [mossenbock-wirth-oberon-2, wiki-oberon-2] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Oberon-2" }
+  sources: [mossenbock-wirth-oberon-2, wiki-oberon-2]
+  example:
+    title: A binary tree with type-bound procedures
+    language: Oberon-2
+    note: "From Wikipedia. PROCEDURE (t: Tree) Insert binds a method to Tree; * exports a name and - exports it read-only; p.name^ dereferences. Indentation was lost in fetching and is ours."
+    code: |
+      MODULE Trees;
+
+      TYPE
+        Tree* = POINTER TO Node;
+        Node* = RECORD
+          name-: POINTER TO ARRAY OF CHAR;
+          left, right: Tree
+        END;
+
+      PROCEDURE (t: Tree) Insert* (name: ARRAY OF CHAR);
+        VAR p, father: Tree;
+      BEGIN p := t;
+        REPEAT father := p;
+          IF name = p.name^ THEN RETURN END;
+          IF name < p.name^ THEN p := p.left ELSE p := p.right END
+        UNTIL p = NIL;
+        NEW(p); p.left := NIL; p.right := NIL; NEW(p.name, LEN(name)+1); COPY(name, p.name^);
+        IF name < father.name^ THEN father.left := p ELSE father.right := p END
+      END Insert;
+
+      PROCEDURE (t: Tree) Search* (name: ARRAY OF CHAR): Tree;
+        VAR p: Tree;
+      BEGIN p := t;
+        WHILE (p # NIL) & (name # p.name^) DO
+          IF name < p.name^ THEN p := p.left ELSE p := p.right END
+        END;
+        RETURN p
+      END Search;
+
+      PROCEDURE NewTree* (): Tree;
+        VAR t: Tree;
+      BEGIN NEW(t); NEW(t.name, 1); t.name[0] := 0X; t.left := NIL; t.right := NIL; RETURN t
+      END NewTree;
+
+      END Trees.
+    sources: [wiki-oberon-2]
+
+- id: free-pascal
+  name: Free Pascal
+  aliases: [FPC, Free Pascal Compiler]
+  kind: language
+  category: general
+  cluster: algol/pascal-dialects
+  origin:
+    first_appeared: { year: 1997, precision: year, note: "Infobox release 1997; 1.0 in July 2000. Begun by student Florian Klämpfl after Borland said Borland Pascal for DOS would stop at version 7." }
+  creators: [{ name: Florian Klämpfl, role: author }]
+  status: active
+  tags:
+    paradigm: [imperative, procedural, object-oriented, generic-programming]
+    typing: [static-typing, strong-typing]
+    memory: [manual-memory, reference-counting]
+    features: [compiler, separate-compilation, generics, operator-overloading]
+  milestones:
+    - { version: "1.0", year: 2000 }
+    - { version: "2.0", year: 2005, summary: "From 2.0 on, \"Delphi compatibility has been continuously implemented or improved\"." }
+    - { version: "3.0", year: 2015 }
+  summary: >
+    A free, GPL-licensed "compiler for the closely related programming-language dialects Pascal and Object
+    Pascal", targeting dozens of platforms. It "initially adopted the de facto standard dialect of Pascal
+    programmers, Borland Pascal, but later adopted Delphi's Object Pascal", and switches between its own
+    objfpc dialect and Turbo Pascal, Delphi, Mac Pascal and ISO modes. The Lazarus IDE is built on it.
+  notes: >
+    Wikipedia's article title for Klämpfl and the early name "FPK Pascal" were not confirmed.
+  relations:
+    - { type: dialect_of, to: object-pascal, weight: strong, confidence: high, sources: [wiki-free-pascal] }
+    - { type: influenced_by, to: turbo-pascal, weight: strong, confidence: high, sources: [wiki-free-pascal], note: "Initially followed Borland Pascal (Turbo Pascal until 1990)." }
+    - { type: influenced_by, to: delphi, weight: strong, confidence: high, sources: [wiki-free-pascal] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Free_Pascal", homepage: "https://www.freepascal.org" }
+  sources: [wiki-free-pascal]
+  example:
+    title: Classes in objfpc mode
+    language: Free Pascal
+    note: "Written for this dataset and compiled with FPC 3.2.2 (prints \"Area: 12.57\"). {$mode objfpc} selects FPC's own Object Pascal dialect; {$H+} makes string an ansistring; Result is the implicit return variable."
+    code: |
+      program Shapes;
+      {$mode objfpc}{$H+}
+
+      type
+        TShape = class
+          function Area: Double; virtual; abstract;
+        end;
+        TCircle = class(TShape)
+          R: Double;
+          constructor Create(ARadius: Double);
+          function Area: Double; override;
+        end;
+
+      constructor TCircle.Create(ARadius: Double);
+      begin
+        R := ARadius;
+      end;
+
+      function TCircle.Area: Double;
+      begin
+        Result := Pi * R * R;
+      end;
+
+      var
+        S: TShape;
+      begin
+        S := TCircle.Create(2.0);
+        WriteLn('Area: ', S.Area:0:2);
+        S.Free;
+      end.
+    sources: [wiki-free-pascal]

@@ -2755,3 +2755,93 @@
       WHERE movie.year < $yearParameter
       RETURN movie
     sources: [wiki-cypher]
+
+- id: freebasic
+  name: FreeBASIC
+  kind: language
+  category: general
+  cluster: basic/pc-compilers
+  origin:
+    first_appeared: { year: 2004, precision: year, note: "Wikipedia infobox; the project site gives no date." }
+  creators: [{ name: Andre Victor T. Vicentini, role: designer }]
+  status: active
+  tags:
+    paradigm: [imperative, procedural, object-oriented]
+    typing: [static-typing]
+    memory: [manual-memory, pointers]
+    features: [compiler, c-interop, operator-overloading]
+  summary: >
+    A free, self-hosted compiler that "originally began as an attempt to create a code-compatible, free alternative
+    to Microsoft QuickBASIC". Its -lang qb mode compiles many QuickBASIC programs unchanged; the default fb dialect
+    adds pointers, classes, operator overloading and direct C library calls, compiling via GCC or its own x86
+    back end.
+  relations:
+    - { type: dialect_of, to: quickbasic, weight: strong, confidence: high, sources: [freebasic-net, wiki-freebasic], note: "\"syntax compatibility with programs originally written in Microsoft QuickBASIC\"." }
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-freebasic], note: "Infobox." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FreeBASIC", homepage: "https://www.freebasic.net" }
+  sources: [freebasic-net, wiki-freebasic]
+  example:
+    title: Functions and subs
+    language: FreeBASIC
+    note: "From freebasic.net (\"Simple Example showing procedures\"), without the page's line numbers. declare allows calling myprint before its definition; top-level code is the main program."
+    code: |
+      function AddNumbers( a as integer, b as integer ) as integer
+          return a + b
+      end function
+
+      sub hello( )
+          print "hello"
+      end sub
+
+      declare sub myprint( num as integer )
+
+      'Code outside any procedures is the main part of the program
+      hello( )
+      print AddNumbers( 1, 1 )
+      myprint 5
+
+      sub myprint( num as integer )
+          print num
+      end sub
+    sources: [freebasic-net]
+
+- id: qb64
+  name: QB64
+  aliases: [QB32, QB64 Phoenix Edition]
+  kind: language
+  category: general
+  cluster: basic/pc-compilers
+  origin:
+    first_appeared: { year: 2007, date: "2007-09-08", precision: exact, note: "Originally named QB32." }
+  creators: [{ name: Rob Galleon, role: author }]
+  status: active
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing]
+    features: [compiler, line-numbers, self-hosting]
+  summary: >
+    "A self-hosting BASIC compiler ... designed to be compatible with Microsoft QBasic and QuickBASIC" that
+    translates to C++ and runs QBasic classics such as Gorillas and Nibbles on modern systems, emulating DOS-era
+    details like VGA memory. Since 2022 it continues in forks, including the QB64 Phoenix Edition.
+  relations:
+    - { type: dialect_of, to: quickbasic, weight: strong, confidence: high, sources: [wiki-qb64], note: "\"QB64's syntax is designed to be completely backwards compatible with QuickBASIC.\"" }
+    - { type: influenced_by, to: qbasic, weight: strong, confidence: high, sources: [wiki-qb64] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/QB64" }
+  sources: [wiki-qb64]
+  example:
+    title: Writing to emulated VGA text memory
+    language: QB64
+    note: "From Wikipedia: DEF SEG and POKE into segment &HB800 write characters straight into DOS text-mode video memory, which QB64 emulates for compatibility."
+    code: |
+      CLS
+      S$ = "Hello, World!"
+      DEF SEG = &HB800 'sets the segment to video memory
+      FOR I = 1 TO LEN(S$)
+          POKE 160 + (I - 1) * 2, ASC(MID$(S$, I, 1))'character
+      NEXT
+      DEF SEG 'reset the segment to default
+    sources: [wiki-qb64]

@@ -2454,3 +2454,109 @@
   title: 'Wikipedia: SAS language'
   url: https://en.wikipedia.org/wiki/SAS_language
   checked: '2026-11-01'
+- id: wiki-basic-plus
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: BASIC-PLUS'
+  url: https://en.wikipedia.org/wiki/BASIC-PLUS
+  checked: '2026-11-01'
+- id: wiki-tiny-basic
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Tiny BASIC'
+  url: https://en.wikipedia.org/wiki/Tiny_BASIC
+  checked: '2026-11-01'
+- id: wiki-bbc-basic
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: BBC BASIC'
+  url: https://en.wikipedia.org/wiki/BBC_BASIC
+  checked: '2026-11-01'
+- id: wiki-sinclair-basic
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Sinclair BASIC'
+  url: https://en.wikipedia.org/wiki/Sinclair_BASIC
+  checked: '2026-11-01'
+- id: wiki-applesoft-basic
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Applesoft BASIC'
+  url: https://en.wikipedia.org/wiki/Applesoft_BASIC
+  checked: '2026-11-01'
+- id: wiki-true-basic
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: True BASIC'
+  url: https://en.wikipedia.org/wiki/True_BASIC
+  checked: '2026-11-01'
+- id: wiki-freebasic
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: FreeBASIC'
+  url: https://en.wikipedia.org/wiki/FreeBASIC
+  checked: '2026-11-01'
+- id: wiki-qb64
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: QB64'
+  url: https://en.wikipedia.org/wiki/QB64
+  checked: '2026-11-01'
+- id: wiki-ucsd-pascal
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: UCSD Pascal'
+  url: https://en.wikipedia.org/wiki/UCSD_Pascal
+  checked: '2026-11-01'
+- id: wiki-free-pascal
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Free Pascal'
+  url: https://en.wikipedia.org/wiki/Free_Pascal
+  checked: '2026-11-01'
+- id: wiki-oberon-2
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Oberon-2'
+  url: https://en.wikipedia.org/wiki/Oberon-2
+  checked: '2026-11-01'
+- id: wiki-vba
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Visual Basic for Applications'
+  url: https://en.wikipedia.org/wiki/Visual_Basic_for_Applications
+  checked: '2026-11-01'
+- id: wiki-modula
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Modula'
+  url: https://en.wikipedia.org/wiki/Modula
+  checked: '2026-11-01'
+- id: wiki-component-pascal
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Component Pascal'
+  url: https://en.wikipedia.org/wiki/Component_Pascal
+  checked: '2026-11-01'
+- id: apple-1977-applesoft-manual
+  type: manual
+  primary: true
+  title: 'Applesoft: Apple II Extended Precision Floating Point BASIC Language Reference Manual (Apple / Microsoft, 1977)'
+  year: 1977
+  url: https://archive.org/details/Apple_II_Extended_Precision_Floating_Point_BASIC_Language_Reference_Manual
+  checked: '2026-11-01'
+- id: freebasic-net
+  type: web
+  primary: true
+  title: 'FreeBASIC (official site and About page)'
+  url: https://www.freebasic.net/
+  checked: '2026-11-01'
+- id: mossenbock-wirth-oberon-2
+  type: report
+  primary: true
+  authors:
+  - Hanspeter Mössenböck
+  - Niklaus Wirth
+  title: 'The Programming Language Oberon-2'
+  url: https://ssw.jku.at/Research/Papers/Oberon2.pdf
+  checked: '2026-11-01'

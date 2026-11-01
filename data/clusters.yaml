@@ -284,9 +284,9 @@
   backlog:
     - { name: "Euler", year: 1965 }
     - { name: "PL360", year: 1968 }
-    - { name: "Modula", year: 1975 }
+    - { name: "Modula", year: 1975, hint: "Researched 2026-11-01 (wiki-modula): Wirth, ETH, report 1976-03; no code example found. Need the ETH report text." }
     - { name: "Cedar", year: 1983 }
-    - { name: "Oberon-2 / Component Pascal", year: 1991 }
+    - { name: "Component Pascal", year: 1997, hint: "Oberon microsystems; \"a minor variant and refinement of Oberon-2\" (wiki-component-pascal). No code found; oberon.ch report unreachable." }
 - id: algol/pascal-dialects
   name: Pascal dialects
   parent: algol/wirth
@@ -294,9 +294,7 @@
   research_status: stub
   key_sources: [wiki-turbo-pascal, wiki-object-pascal, wiki-delphi]
   backlog:
-    - { name: "UCSD Pascal", year: 1977, hint: "p-code machine; ancestor of Apple Pascal and Java-style VMs." }
     - { name: "Clascal", year: 1983, hint: "Apple Lisa; direct ancestor of Object Pascal." }
-    - { name: "Free Pascal", year: 1993, hint: "Open-source Turbo Pascal / Delphi compatible dialect modes." }
     - { name: "Oxygene", year: 2005, hint: "Object Pascal for .NET/JVM (RemObjects)." }
 - id: algol/adt
   name: Abstract data type languages
@@ -524,19 +522,12 @@
   name: BASIC family
   summary: "Dartmouth BASIC and its descendants: the home-computer interpreters, Microsoft's DOS and Windows line, and machine-specific extensions."
   research_status: draft
-  backlog:
-    - { name: "BASIC-PLUS (DEC)", year: 1970, hint: "RSTS/E BASIC on the PDP-11; Microsoft BASIC was patterned on it (Wikipedia: Microsoft BASIC)." }
-    - { name: "Tiny BASIC", year: 1976, hint: "Li-Chen Wang's version became TRS-80 Level I BASIC." }
-    - { name: "BBC BASIC", year: 1981 }
-    - { name: "Sinclair BASIC (ZX81, ZX Spectrum)", year: 1980 }
-    - { name: "FreeBASIC / QB64", year: 2004, hint: "Open-source QuickBASIC descendants (QuickBASIC infobox: influenced)." }
 - id: basic/microsoft
   name: Microsoft BASIC line
   parent: basic
   summary: "From Altair BASIC (1975) through BASICA and GW-BASIC to QuickBASIC, QBasic and Visual Basic."
   research_status: draft
   backlog:
-    - { name: "Applesoft BASIC", year: 1977, hint: "Microsoft 6502 BASIC for the Apple II." }
     - { name: "TRS-80 Level II BASIC / Color BASIC", year: 1978, hint: "Port of BASIC-80; Color BASIC from BASIC-69." }
     - { name: "MSX BASIC", year: 1983 }
     - { name: "Amiga BASIC", year: 1985 }
@@ -558,8 +549,6 @@
   parent: basic
   summary: "Native-code BASIC compilers outside Microsoft: Bob Zale's BASIC/Z, Borland Turbo Basic and PowerBASIC."
   research_status: draft
-  backlog:
-    - { name: "True BASIC", year: 1985 }
 - id: basic/commodore
   name: Commodore BASIC and extensions
   parent: basic

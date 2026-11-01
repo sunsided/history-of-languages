@@ -892,6 +892,7 @@
     September 2025: a primary source for a sourced example still to be taken.
   relations:
     - { type: dialect_of, to: basic, weight: strong, confidence: high, note: "A Dartmouth BASIC descendant by way of DEC BASIC-PLUS, which Gates had used in school.", sources: [wiki-microsoft-basic] }
+    - { type: influenced_by, to: basic-plus, weight: strong, confidence: high, sources: [wiki-basic-plus], note: "\"Microsoft BASIC was patterned very closely on BASIC-PLUS.\"" }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Microsoft_BASIC" }
@@ -1546,3 +1547,178 @@
       PROC PRINT DATA = TEMP;
       RUN;
     sources: [wiki-sas-language]
+
+- id: basic-plus
+  name: BASIC-PLUS
+  aliases: [BASIC-PLUS-2, BP2]
+  kind: language
+  category: general
+  cluster: basic
+  origin:
+    first_appeared: { year: 1971, precision: disputed, note: "Infobox: 1970. Body: EGH delivered the system \"in January 1971\" and RSTS-11 \"shipped with BASIC-PLUS in 1971\"." }
+    places: [{ institution: Digital Equipment Corporation, city: Maynard MA, country: US }]
+  creators:
+    - { name: Tim Hart, role: "EGH Inc." }
+    - { name: Tom Evans, role: "EGH Inc." }
+    - { name: Tom Griffiths, role: "EGH Inc." }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing]
+    features: [line-numbers, interactive-time-sharing, string-processing]
+  summary: >
+    DEC's BASIC for the RSTS/E time-sharing system on the PDP-11, written by the contractors EGH: "not an
+    interpreter but a compile and go system", with matrix math, long variable names, strings and statement
+    modifiers. "Microsoft BASIC was patterned very closely on BASIC-PLUS", which makes it the template of the
+    home-computer BASICs. BASIC-PLUS-2 compiled to threaded code and led to VAX BASIC.
+  relations:
+    - { type: dialect_of, to: basic, weight: strong, confidence: high, sources: [wiki-basic-plus], note: "\"based on BASIC-8 for the TSS/8, itself based very closely on the original Dartmouth BASIC\"; the infobox also names Tymshare SUPER BASIC." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/BASIC-PLUS" }
+  sources: [wiki-basic-plus]
+  example:
+    title: Statement modifiers
+    language: BASIC-PLUS
+    note: "From Wikipedia, which gives these as two separate inline examples: a modifier may follow a statement (PRINT I IF I <> 10 means IF I <> 10 THEN PRINT I), and FOR can loop UNTIL a condition. The line numbers are ours."
+    code: |
+      10 PRINT I IF I <> 10
+      20 FOR I=1 UNTIL I=10
+    sources: [wiki-basic-plus]
+
+- id: tiny-basic
+  name: Tiny BASIC
+  aliases: [Palo Alto Tiny BASIC, 6800 Tiny BASIC]
+  kind: language
+  category: educational
+  cluster: basic
+  origin:
+    first_appeared: { year: 1975, precision: year, note: "Dennis Allison's Design Note in the People's Computer Company newsletter (September 1975 in the body; the Dr. Dobb's table lists December 1975)." }
+    places: [{ institution: People's Computer Company, country: US }]
+  creators:
+    - { name: Dennis Allison, role: designer }
+    - { name: Li-Chen Wang, role: "Palo Alto Tiny BASIC" }
+    - { name: Tom Pittman, role: "6800 Tiny BASIC" }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing]
+    features: [line-numbers, interpreter, minimalism, intermediate-code]
+  milestones:
+    - { version: Palo Alto Tiny BASIC, year: 1976, summary: "Li-Chen Wang, Dr. Dobb's May 1976; 1.77 KB on the 8080. The basis of TRS-80 Level I BASIC." }
+  summary: >
+    A specification rather than a product: "a completely free version of BASIC that would run on the same early
+    microcomputers" as Altair BASIC, published by Dennis Allison with an invitation to implement it. Defined as
+    an interpreter for a small intermediate language, it fit in 2-4 KB, and a dozen implementations appeared in
+    the new Dr. Dobb's Journal, which was founded to carry them. "Tiny BASIC is a proper subset of Dartmouth BASIC".
+  notes: >
+    Wikipedia's infobox lists Astro BASIC, Atari BASIC and Level I BASIC as influenced; only Level I is
+    discussed in the text read. Calling Tiny BASIC the start of the open software movement comes from the
+    article's unread tail, so it is not used here.
+  relations:
+    - { type: subset_of, to: basic, weight: strong, confidence: high, sources: [wiki-tiny-basic], note: "Pittman: \"Tiny BASIC is a proper subset of Dartmouth BASIC\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Tiny_BASIC" }
+  sources: [wiki-tiny-basic]
+  example:
+    title: The interpreter's own intermediate language
+    language: Tiny BASIC IL
+    note: "From Wikipedia. This is not Tiny BASIC itself but the IL in which the interpreter was specified: TST tries to match a keyword and branches if it fails, so these lines parse GOTO/GOSUB and PRINT. Porting meant writing a small IL interpreter for the new CPU."
+    code: |
+      S1: TST S3,'GO'       ;GOTO OR GOSUB?
+          TST S2,'TO'       ;YES...TO, OR...SUB
+          CALL EXPR         ;GET LABEL
+          DONE              ;ERROR IF CR NOT NEXT
+          XFER              ;SET UP AND JUMP
+      S3: TST S8,'PRINT'    ;PRINT.
+    sources: [wiki-tiny-basic]
+
+- id: applesoft-basic
+  name: Applesoft BASIC
+  aliases: [Applesoft, Applesoft II]
+  kind: language
+  category: general
+  cluster: basic/microsoft
+  origin:
+    first_appeared: { year: 1977, precision: year, note: "First version on cassette, 1977 (manual copyright 1977 Apple and Microsoft); Applesoft II in 1978, in ROM on the Apple II Plus." }
+    places:
+      - { institution: Microsoft, country: US }
+      - { institution: Apple Computer, country: US }
+  creators:
+    - { name: Marc McDonald, role: author }
+    - { name: Ric Weiland, role: author }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    typing: [dynamic-typing]
+    features: [line-numbers, interpreter]
+  milestones:
+    - { version: Applesoft II, year: 1978, summary: "Hi-res graphics and ONERR; on disk and in the Apple II Plus ROM (1979)." }
+  summary: >
+    "A powerful, floating point BASIC written expressly for the Apple II computer by Microsoft", built on "the
+    core of Microsoft's 6502 BASIC implementation" and kept backward-compatible with Wozniak's Integer BASIC,
+    which it superseded. Apple reportedly paid Microsoft a flat $31,000 for an eight-year licence.
+  relations:
+    - { type: dialect_of, to: microsoft-basic, weight: strong, confidence: high, sources: [wiki-applesoft-basic], note: "\"a dialect of Microsoft BASIC\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Applesoft_BASIC" }
+  sources: [wiki-applesoft-basic, apple-1977-applesoft-manual]
+  example:
+    title: Hello, world
+    language: Applesoft BASIC
+    note: "From Wikipedia. Spaces were optional and ? abbreviates PRINT; TEXT and HOME switch to text mode and clear the screen."
+    code: |
+      10TEXT:HOME
+      20?"HELLO WORLD"
+    sources: [wiki-applesoft-basic]
+
+- id: ucsd-pascal
+  name: UCSD Pascal
+  aliases: [UCSD p-System, Apple Pascal]
+  kind: language
+  category: educational
+  cluster: algol/pascal-dialects
+  origin:
+    first_appeared: { year: 1977, date: "1977-08", precision: exact, note: "\"UCSD Pascal was first released in 1977\"; infobox: August 1977." }
+    places: [{ institution: "University of California, San Diego", city: San Diego, country: US }]
+  creators:
+    - { name: Kenneth Bowles, role: "project lead" }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing, strong-typing]
+    features: [bytecode-vm, intermediate-code, separate-compilation]
+    domain: [education]
+  summary: >
+    Kenneth Bowles's Pascal system for students at UC San Diego: compiler, editor and operating system running on
+    a portable p-code virtual machine, "based on the Pascal-P2 release of the portable compiler from Zurich". It
+    added "variable length strings, and 'units' of independently compiled code", and as Apple Pascal and the
+    SofTech p-System it spread Pascal across microcomputers; Wirth credited it "with popularizing Pascal".
+    James Gosling cites it as a key influence on the Java virtual machine.
+  notes: >
+    Versions I.3 and I.5 stayed at UCSD; II was the widely distributed one (Apple Pascal); III ran on the
+    Western Digital Pascal MicroEngine; IV was SofTech's commercial line (IV.2.2 R1.1, December 1987). Years
+    for II and III were not found.
+  relations:
+    - { type: dialect_of, to: pascal, weight: strong, confidence: high, sources: [wiki-ucsd-pascal], note: "Based on Pascal-P2 and Urs Ammann's p-code." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/UCSD_Pascal" }
+  sources: [wiki-ucsd-pascal]
+  example:
+    title: A separately compiled unit
+    language: UCSD Pascal
+    note: "Illustrative. No UCSD Pascal code was found in the sources read (the SofTech manual on bitsavers could not be fetched). Shows the UNIT/INTERFACE/IMPLEMENTATION structure and the STRING type UCSD added to Pascal; the exact syntax is unverified."
+    code: |
+      UNIT GREET;
+      INTERFACE
+        PROCEDURE HELLO(NAME: STRING);
+      IMPLEMENTATION
+        PROCEDURE HELLO;
+        BEGIN
+          WRITELN('HELLO, ', NAME)
+        END;
+      END.
+    sources: [wiki-ucsd-pascal]

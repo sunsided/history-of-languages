@@ -563,6 +563,7 @@
   wiki: John G. Kemeny
   nodes:
   - basic
+  - true-basic
 - id: person-john-l-hennessy
   kind: person
   person: John L. Hennessy
@@ -723,6 +724,7 @@
   - pascal
   - modula-2
   - oberon
+  - oberon-2
 - id: person-ole-johan-dahl
   kind: person
   person: Ole-Johan Dahl
@@ -879,6 +881,7 @@
   wiki: Sophie Wilson
   nodes:
   - arm
+  - bbc-basic
 - id: person-stan-poley
   kind: person
   person: Stan Poley
@@ -921,6 +924,7 @@
   wiki: Thomas E. Kurtz
   nodes:
   - basic
+  - true-basic
 - id: person-tom-kilburn
   kind: person
   person: Tom Kilburn
@@ -1325,3 +1329,51 @@
   wiki: Michael Howard Kay
   nodes:
   - xslt
+- id: person-kenneth-bowles
+  kind: person
+  person: Kenneth Bowles
+  wiki: Kenneth Bowles
+  nodes:
+  - ucsd-pascal
+- id: person-dennis-allison
+  kind: person
+  person: Dennis Allison
+  wiki: Dennis Allison
+  nodes:
+  - tiny-basic
+- id: person-li-chen-wang
+  kind: person
+  person: Li-Chen Wang
+  wiki: Li-Chen Wang
+  nodes:
+  - tiny-basic
+- id: person-tom-pittman
+  kind: person
+  person: Tom Pittman
+  wiki: Tom Pittman (computer scientist)
+  nodes:
+  - tiny-basic
+- id: person-steve-vickers
+  kind: person
+  person: Steve Vickers
+  wiki: Steve Vickers (computer scientist)
+  nodes:
+  - sinclair-basic
+- id: person-marc-mcdonald
+  kind: person
+  person: Marc McDonald
+  wiki: Marc McDonald
+  nodes:
+  - applesoft-basic
+- id: person-ric-weiland
+  kind: person
+  person: Ric Weiland
+  wiki: Ric Weiland
+  nodes:
+  - applesoft-basic
+- id: person-richard-t-russell
+  kind: person
+  person: Richard T. Russell
+  wiki: Richard T. Russell
+  nodes:
+  - bbc-basic
