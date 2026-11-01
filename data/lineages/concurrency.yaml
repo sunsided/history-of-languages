@@ -1,0 +1,139 @@
+- id: concurrency-to-async-await
+  title: "From interrupts to async/await"
+  thesis: >
+    Two strands run through 70 years of concurrency. The preemptive strand (interrupts, time-sharing,
+    OS threads, goroutines, virtual threads) lets something else take the CPU away from you. The
+    cooperative strand (coroutines, cooperative multitasking, event loops, generators, async/await)
+    has you hand control over at points you choose. async/await is the cooperative strand's comeback,
+    made safe and readable by compilers, and running on top of the preemptive strand's threads.
+    Since 2015 the preemptive strand has answered back (Java's virtual threads, OCaml effects, Zig
+    dropping async) to avoid "function colouring".
+  concepts: [interrupts, coroutines, cooperative-multitasking, preemptive-scheduling, threads, monitors, channels, futures-promises, event-loop, generators, async-await, green-threads, effect-handlers, structured-concurrency]
+  research_status: draft
+  claims: [async-lineage-thesis]
+  steps:
+    - year: 1954
+      precision: circa
+      title: "Hardware interrupts"
+      concepts: [interrupts]
+      systems: ["DYSEAC (1954)", "UNIVAC 1103A", "IBM 709 data channels (1958)"]
+      text: "I/O devices signal the CPU instead of being polled. The CPU saves state, jumps to a handler and resumes: the first asynchronous control flow, and the mechanism every later preemptive scheduler relies on. Which machine was first is disputed; DYSEAC and the UNIVAC 1103A are the usual candidates."
+      sources: [wiki-interrupt]
+    - year: 1958
+      title: "Coroutines"
+      concepts: [coroutines]
+      systems: ["Conway's COBOL compiler for the Burroughs 220"]
+      text: "Melvin Conway coins 'coroutine' (published 1963) for compiler passes that pass control back and forth as peers rather than caller and callee. This is the cooperative strand's root: explicit suspension and resumption."
+      sources: [conway-1963-coroutines]
+    - year: 1961
+      title: "Multiprogramming and preemptive time-sharing"
+      concepts: [preemptive-scheduling]
+      systems: ["CTSS (MIT, 1961)", "Atlas (Manchester, 1962)", "Multics (1969)"]
+      text: "A timer interrupt lets the OS take the CPU from one program and give it to another. Preemption is in place long before the cooperative multitasking of 1980s PCs."
+      sources: [corbato-1962-ctss]
+    - year: 1965
+      title: "Semaphores and cooperating sequential processes"
+      concepts: [semaphores]
+      text: "Dijkstra's EWD 123 names the problems (critical sections, deadlock, the dining philosophers came shortly after) and introduces semaphores."
+      sources: [dijkstra-1965-cooperating]
+    - year: 1966
+      title: "Fork/join and the thread idea"
+      concepts: [threads]
+      text: "Dennis and Van Horn describe fork, join and shared-memory computations within a process: the conceptual model of threads. PL/I (1964-66) already had multitasking built into the language."
+      nodes: [pl-i]
+      sources: [dennis-van-horn-1966, radin-1978-pl1]
+    - year: 1967
+      title: "Simula: coroutines in a language"
+      concepts: [coroutines]
+      nodes: [simula]
+      text: "Simula 67 objects can detach and resume, running simulated processes in quasi-parallel on one CPU: cooperative multitasking inside a programming language, and the reason objects and concurrency are linked from the start."
+      sources: [nygaard-dahl-1978-simula]
+    - year: 1973
+      title: "Actors"
+      concepts: [actors, message-passing]
+      nodes: [actor-model]
+      text: "Hewitt's actors: no shared state, only asynchronous messages. Scheme (1975) is written to understand them."
+      sources: [hewitt-1973-actor]
+    - year: 1974
+      title: "Monitors"
+      concepts: [monitors]
+      nodes: [concurrent-pascal, mesa]
+      text: "Hoare and Brinch Hansen package shared data with its lock and condition variables. Concurrent Pascal (1975) implements them; Mesa (1980) makes them practical; Java (1996) builds them into every object."
+      sources: [hoare-1974-monitors, brinch-hansen-1993-monitors, lampson-redell-1980-mesa]
+    - year: 1976
+      title: "Futures and promises"
+      concepts: [futures-promises]
+      text: "Friedman and Wise (1976) and Baker and Hewitt (1977) introduce placeholders for values still being computed. Multilisp (1985) puts futures in a language; Liskov and Shrira's promises (1988) add pipelining for distributed calls. Every Task, Promise and Future today descends from these."
+      sources: [friedman-wise-1976-promise, baker-hewitt-1977-futures, halstead-1985-multilisp, liskov-shrira-1988-promises]
+    - year: 1978
+      title: "CSP"
+      concepts: [channels, synchronous-rendezvous]
+      nodes: [csp, occam, ada]
+      text: "Hoare's Communicating Sequential Processes: share nothing, communicate over channels. Leads to occam (1983), Ada's rendezvous (1983) and, through Newsqueak and Limbo, to Go."
+      sources: [hoare-1978-csp]
+    - year: 1985
+      title: "Cooperative multitasking on personal computers"
+      concepts: [cooperative-multitasking]
+      systems: ["Windows 1.0-3.x (1985-1992)", "Mac OS MultiFinder (1987) to Mac OS 9", "RISC OS"]
+      text: "Without memory protection and with little hardware, PC operating systems let each program run until it yields. One misbehaving program freezes everything, which is why Windows 95/NT and Mac OS X moved to preemption. This is a step back from 1960s mainframes, not a step forward from interrupts."
+      sources: [wiki-cooperative-multitasking]
+    - year: 1986
+      title: "Lightweight processes: Erlang"
+      concepts: [green-threads, actors, preemptive-scheduling]
+      nodes: [erlang]
+      text: "Erlang's runtime preemptively schedules millions of tiny processes. Blocking is cheap, so no async syntax is needed: the road not taken by mainstream languages until Go and Java's Loom."
+      sources: [armstrong-2007-history-erlang]
+    - year: 1995
+      title: "OS threads become the default"
+      concepts: [threads, monitors]
+      nodes: [java, c]
+      systems: ["POSIX threads (IEEE 1003.1c-1995)", "Win32 threads", "Java 1.0 (1996)"]
+      text: "Pthreads standardize threads in C; Java ships threads and monitors in the language. Shared-memory threading becomes the mainstream model, with its locks, races and memory models (Java 2004, C++11/C11 2011)."
+    - year: 1999
+      title: "The C10K problem and the event loop"
+      concepts: [event-loop, callbacks]
+      systems: ["select (4.2BSD, 1983)", "kqueue (2000)", "epoll (2002)", "Twisted (2002)", "nginx (2004)", "Node.js (2009)"]
+      text: "One thread per connection does not scale to 10,000 connections. Servers return to a single-threaded loop over non-blocking I/O, which is cooperative multitasking again, now written as callbacks. Node.js (2009) makes it JavaScript's server model."
+      sources: [kegel-c10k]
+    - year: 2001
+      title: "Generators: resumable functions in mainstream languages"
+      concepts: [generators, coroutines]
+      nodes: [clu, icon, python]
+      text: "CLU's iterators (1975) and Icon's generators (1977) reach Python 2.2 (PEP 255). PEP 342 (2005) turns generators into coroutines that can receive values, and Twisted and Tornado use them to write callback code sequentially. This is the direct mechanical ancestor of async functions."
+      sources: [pep-255, pep-342]
+    - year: 2007
+      title: "F# asynchronous workflows"
+      concepts: [async-await, computation-expressions, monads]
+      nodes: [fsharp, haskell]
+      text: "Don Syme builds async { let! x = ... } on F# computation expressions, which come from Haskell's monads. The compiler rewrites sequential-looking code into continuations. This is async/await in everything but keyword."
+      sources: [syme-2020-early-history-fsharp, syme-2011-fsharp-async]
+    - year: 2009
+      title: "Goroutines"
+      concepts: [goroutines, channels]
+      nodes: [go]
+      text: "Go takes the CSP line and the green-thread approach: blocking code everywhere, multiplexed by the runtime onto OS threads. No coloured functions."
+      sources: [go-faq]
+    - year: 2012
+      title: "C# 5 async/await"
+      concepts: [async-await]
+      nodes: [csharp]
+      text: "async and await keywords over Task, compiled to state machines. This is the design the rest of the industry copies."
+      sources: [syme-2020-early-history-fsharp]
+    - year: 2015
+      title: "async/await spreads"
+      concepts: [async-await]
+      nodes: [python, javascript, dart, kotlin, rust, swift, cpp]
+      text: "Python 3.5 (2015), Dart 1.9 (2015), JavaScript ES2017, Kotlin coroutines (2018), Rust 1.39 (2019), C++20 coroutines (2020), Swift 5.5 (2021). The same year, Bob Nystrom's 'What Color is Your Function?' names its cost: async functions can only be called from async functions."
+      sources: [pep-492, rust-async-stabilization, swift-se-0296, nystrom-2015-color]
+    - year: 2018
+      title: "Structured concurrency"
+      concepts: [structured-concurrency]
+      nodes: [kotlin, swift]
+      systems: ["Trio (Python, 2017)", "Kotlin coroutine scopes (2018)", "Swift task groups (2021)", "Java StructuredTaskScope (preview)"]
+      text: "Nathaniel J. Smith's 'Notes on structured concurrency' (2018) argues that unscoped spawning is the new goto. Child tasks must finish inside the block that started them."
+    - year: 2022
+      title: "The preemptive strand answers back"
+      concepts: [virtual-threads, effect-handlers]
+      nodes: [java, ocaml, zig]
+      text: "OCaml 5 (2022) adds effect handlers: direct-style concurrency without colouring. Java 21 (2023) ships virtual threads so blocking code scales, explicitly instead of async/await. Zig removes its async/await (2023) to redesign it. The cooperative/preemptive pendulum is still swinging."
+      sources: [jep-444]

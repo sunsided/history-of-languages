@@ -1,0 +1,494 @@
+# Early machines, machine code and assembly languages.
+# A `machine` node stands for its instruction set (its machine code). Assembly dialects point at it with `targets`.
+# Assembly syntaxes for the same ISA (Intel vs AT&T for x86) are separate nodes with `dialect_of`.
+
+# ---------- Early programmable machines ----------
+- id: zuse-z3
+  name: Zuse Z3
+  kind: machine
+  category: scientific
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1941, date: "1941-05", precision: exact }
+    places: [{ city: Berlin, country: DE }]
+  creators: [{ name: Konrad Zuse, role: designer }]
+  status: extinct
+  summary: "Electromechanical, program-controlled binary floating-point computer, programmed from punched 35 mm film. No conditional branch; shown Turing-complete only in 1998 by an indirect construction."
+  research_status: draft
+  confidence: high
+  sources: [wiki-z3]
+
+- id: harvard-mark-i
+  name: Harvard Mark I
+  aliases: [IBM ASCC]
+  kind: machine
+  category: scientific
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1944, precision: year }
+    places: [{ institution: Harvard University / IBM, city: Cambridge MA, country: US }]
+  creators:
+    - { name: Howard Aiken, role: designer }
+    - { name: Grace Hopper, role: programmer }
+  status: extinct
+  summary: "Electromechanical computer reading instructions from punched paper tape. Grace Hopper was one of its first programmers; her later compiler work grew from this experience."
+  relations:
+    - { type: influenced_by, to: analytical-engine, weight: moderate, confidence: medium, note: "Aiken cited Babbage as an inspiration." }
+  research_status: stub
+  confidence: high
+  sources: [wiki-harvard-mark-i]
+
+- id: eniac
+  name: ENIAC
+  kind: machine
+  category: scientific
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1945, date: "1945-12", precision: exact, note: "Operational late 1945, announced February 1946." }
+    places: [{ institution: University of Pennsylvania, city: Philadelphia, country: US }]
+  creators:
+    - { name: J. Presper Eckert, role: designer }
+    - { name: John Mauchly, role: designer }
+    - { name: "Kathleen McNulty, Jean Jennings, Betty Snyder, Marlyn Wescoff, Frances Bilas, Ruth Lichterman", role: first programmers }
+  status: extinct
+  summary: "First programmable general-purpose electronic computer. Originally programmed by setting switches and plugging cables; converted in 1948 to run a fixed set of stored instructions selected from function tables."
+  research_status: stub
+  confidence: high
+  sources: [wiki-eniac]
+
+- id: manchester-baby
+  name: Manchester Baby
+  aliases: [SSEM]
+  kind: machine
+  category: research
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1948, date: "1948-06-21", precision: exact }
+    places: [{ institution: Victoria University of Manchester, city: Manchester, country: GB }]
+  creators:
+    - { name: Frederic C. Williams, role: designer }
+    - { name: Tom Kilburn, role: designer }
+    - { name: Geoff Tootill, role: designer }
+  status: extinct
+  summary: "First electronic stored-program computer to run a program: program and data in the same memory. From here on, a program is data, and machine code is a language in its own right."
+  relations:
+    - { type: influenced_by, to: turing-machine, weight: weak, confidence: low, note: "The stored-program idea is usually traced to von Neumann's 1945 EDVAC report; Turing's influence on Manchester is debated." }
+  research_status: stub
+  confidence: high
+  sources: [wiki-manchester-baby, von-neumann-1945-edvac]
+
+- id: edsac
+  name: EDSAC
+  kind: machine
+  category: scientific
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1949, date: "1949-05-06", precision: exact }
+    places: [{ institution: University of Cambridge Mathematical Laboratory, city: Cambridge, country: GB }]
+  creators: [{ name: Maurice Wilkes, role: designer }]
+  status: extinct
+  summary: "Early stored-program computer in regular service. Its programming system (initial orders, subroutine library, the Wheeler jump) produced the first programming textbook (Wilkes, Wheeler & Gill, 1951)."
+  research_status: stub
+  confidence: high
+  sources: [wiki-edsac, wilkes-wheeler-gill-1951]
+
+- id: ibm-650
+  name: IBM 650
+  kind: machine
+  category: business
+  cluster: machines/ibm
+  origin: { first_appeared: { year: 1954, precision: year }, places: [{ institution: IBM, country: US }] }
+  status: extinct
+  summary: "Drum-memory computer, the first mass-produced computer (about 2000 units). Hosted SOAP and early compilers."
+  research_status: stub
+  confidence: high
+  sources: [wiki-ibm-650]
+
+- id: ibm-704
+  name: IBM 704
+  kind: machine
+  category: scientific
+  cluster: machines/ibm
+  origin: { first_appeared: { year: 1954, precision: year }, places: [{ institution: IBM, country: US }] }
+  status: extinct
+  summary: "First mass-produced computer with floating-point hardware and index registers. Home of SAP, FORTRAN and the first Lisp; Lisp's CAR and CDR are named after 704 register fields."
+  research_status: stub
+  confidence: high
+  sources: [wiki-ibm-704, mccarthy-1978-history-lisp]
+
+- id: ibm-system-360
+  name: IBM System/360
+  kind: machine
+  category: general
+  cluster: machines/ibm
+  origin: { first_appeared: { year: 1964, date: "1964-04-07", precision: exact, note: "Announced." }, places: [{ institution: IBM, country: US }] }
+  creators:
+    - { name: Gene Amdahl, role: chief architect }
+    - { name: Fred Brooks, role: project manager }
+  status: legacy
+  summary: "A family of compatible machines sharing one instruction set, the first to separate architecture from implementation. Its ISA continues today as IBM z/Architecture. Established the 8-bit byte."
+  research_status: stub
+  confidence: high
+  sources: [wiki-system-360]
+
+- id: pdp-11
+  name: PDP-11
+  kind: machine
+  category: general
+  cluster: machines/dec
+  origin: { first_appeared: { year: 1970, precision: year }, places: [{ institution: Digital Equipment Corporation, city: Maynard MA, country: US }] }
+  status: extinct
+  summary: "16-bit minicomputer with an orthogonal instruction set and autoincrement addressing. Unix and C were moved to it in 1971-73, and its addressing modes shaped C idioms."
+  notes: "Ritchie denies that ++/-- were invented for PDP-11 autoincrement: they came from B, which predates the PDP-11. Worth a myth-vs-fact tooltip."
+  research_status: stub
+  confidence: high
+  sources: [wiki-pdp-11, ritchie-1993-development-c]
+
+- id: intel-8086
+  name: Intel 8086 (x86)
+  aliases: [x86]
+  kind: machine
+  category: general
+  cluster: machines/microprocessors
+  origin: { first_appeared: { year: 1978, precision: year }, places: [{ institution: Intel, city: Santa Clara, country: US }] }
+  creators: [{ name: Stephen Morse, role: architect }]
+  status: active
+  summary: "16-bit microprocessor whose instruction set, extended to 32-bit (80386, 1985) and 64-bit (AMD64, 2003), became the dominant PC and server ISA."
+  milestones:
+    - { version: "80386 (IA-32)", year: 1985 }
+    - { version: "AMD64 / x86-64", year: 2003 }
+  research_status: stub
+  confidence: high
+  sources: [wiki-x86]
+
+- id: mos-6502
+  name: MOS 6502
+  kind: machine
+  category: general
+  cluster: machines/microprocessors
+  origin: { first_appeared: { year: 1975, precision: year }, places: [{ institution: MOS Technology, country: US }] }
+  creators: [{ name: Chuck Peddle, role: designer }, { name: Bill Mensch, role: designer }]
+  status: legacy
+  summary: "Cheap 8-bit CPU behind the Apple II, Commodore 64, Atari 2600 and NES. Its assembly language was the first programming language of a generation of hobbyists."
+  research_status: stub
+  confidence: high
+  sources: [wiki-6502]
+
+- id: zilog-z80
+  name: Zilog Z80
+  kind: machine
+  category: general
+  cluster: machines/microprocessors
+  origin: { first_appeared: { year: 1976, precision: year }, places: [{ institution: Zilog, country: US }] }
+  creators: [{ name: Federico Faggin, role: designer }, { name: Masatoshi Shima, role: designer }]
+  status: legacy
+  summary: "8-bit CPU binary-compatible with the Intel 8080; ran CP/M, the ZX Spectrum and MSX."
+  research_status: stub
+  confidence: high
+  sources: [wiki-z80]
+
+- id: motorola-68000
+  name: Motorola 68000
+  kind: machine
+  category: general
+  cluster: machines/microprocessors
+  origin: { first_appeared: { year: 1979, precision: year }, places: [{ institution: Motorola, country: US }] }
+  status: legacy
+  summary: "32-bit-internal CPU with a clean, PDP-11-like instruction set; powered the original Macintosh, Amiga, Atari ST and early Sun workstations."
+  research_status: stub
+  confidence: high
+  sources: [wiki-68000]
+
+- id: arm
+  name: ARM architecture
+  kind: machine
+  category: general
+  cluster: machines/risc
+  origin: { first_appeared: { year: 1985, precision: year, note: "ARM1 first silicon." }, places: [{ institution: Acorn Computers, city: Cambridge, country: GB }] }
+  creators: [{ name: Sophie Wilson, role: ISA designer }, { name: Steve Furber, role: designer }]
+  status: active
+  summary: "RISC instruction set from Acorn, now the dominant architecture in phones and increasingly in laptops and servers."
+  milestones:
+    - { version: "AArch64 (ARMv8-A)", year: 2011 }
+  research_status: stub
+  confidence: high
+  sources: [wiki-arm]
+
+- id: mips
+  name: MIPS architecture
+  kind: machine
+  category: general
+  cluster: machines/risc
+  origin:
+    began: { year: 1981, precision: year, note: "Stanford MIPS project." }
+    first_appeared: { year: 1985, precision: year, note: "R2000." }
+    places: [{ institution: Stanford University / MIPS Computer Systems, country: US }]
+  creators: [{ name: John L. Hennessy, role: designer }]
+  status: legacy
+  summary: "Textbook RISC architecture; the teaching ISA of Patterson & Hennessy until RISC-V."
+  research_status: stub
+  confidence: high
+  sources: [wiki-mips]
+
+- id: risc-v
+  name: RISC-V
+  kind: machine
+  category: general
+  cluster: machines/risc
+  origin:
+    began: { year: 2010, precision: year }
+    first_appeared: { year: 2014, precision: year, note: "User-level ISA spec 2.0 frozen." }
+    places: [{ institution: "University of California, Berkeley", city: Berkeley, country: US }]
+  creators:
+    - { name: Krste Asanović, role: designer }
+    - { name: Andrew Waterman, role: designer }
+    - { name: Yunsup Lee, role: designer }
+    - { name: David Patterson, role: designer }
+  status: active
+  summary: "Open, royalty-free RISC instruction set with a small base and optional extensions."
+  relations:
+    - { type: influenced_by, to: mips, weight: moderate, confidence: medium }
+  research_status: stub
+  confidence: high
+  sources: [wiki-risc-v]
+
+# ---------- Assembly languages ----------
+- id: booth-contracted-notation
+  name: Booth's contracted notation
+  kind: assembly
+  category: research
+  cluster: assembly/early
+  origin:
+    first_appeared: { year: 1947, precision: year, note: "'Coding for A.R.C.', written with Andrew Booth during a visit to the IAS, Princeton." }
+    places: [{ institution: Birkbeck College, city: London, country: GB }]
+  creators: [{ name: Kathleen Booth, role: designer }]
+  status: extinct
+  summary: "Symbolic notation for the ARC2 computer's instructions, often credited as the first assembly language. Translation to machine code was still done by hand."
+  research_status: draft
+  confidence: medium
+  sources: [booth-1947-coding-arc, wiki-assembly-language]
+
+- id: edsac-initial-orders
+  name: EDSAC Initial Orders
+  kind: assembly
+  category: systems
+  cluster: assembly/early
+  origin:
+    first_appeared: { year: 1949, precision: year }
+    places: [{ institution: University of Cambridge Mathematical Laboratory, city: Cambridge, country: GB }]
+  creators: [{ name: David Wheeler, role: designer }]
+  status: extinct
+  summary: "Bootstrap program wired into EDSAC that read mnemonic, single-letter instructions with decimal addresses from paper tape and assembled them into memory. The first assembler in practical use; Initial Orders 2 (1949) added relocation for subroutines."
+  relations:
+    - { type: targets, to: edsac, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [wilkes-wheeler-gill-1951, wiki-edsac]
+
+- id: soap
+  name: SOAP (Symbolic Optimal Assembly Program)
+  kind: assembly
+  category: general
+  cluster: assembly/ibm
+  origin: { first_appeared: { year: 1955, precision: year }, places: [{ institution: IBM, country: US }] }
+  creators: [{ name: Stan Poley, role: designer }]
+  status: extinct
+  summary: "Assembler for the drum-memory IBM 650 that placed each instruction on the drum to minimise rotational delay."
+  relations:
+    - { type: targets, to: ibm-650, weight: strong, confidence: high }
+  research_status: stub
+  confidence: medium
+  sources: [wiki-ibm-650]
+
+- id: sap-704
+  name: SAP (SHARE Assembly Program)
+  aliases: [Symbolic Assembly Program]
+  kind: assembly
+  category: general
+  cluster: assembly/ibm
+  origin: { first_appeared: { year: 1956, precision: circa }, places: [{ institution: United Aircraft / SHARE user group, country: US }] }
+  creators: [{ name: Roy Nutt, role: designer }]
+  status: extinct
+  summary: "Symbolic assembler for the IBM 704, distributed through SHARE, the first computer user group. Roy Nutt also worked on the first FORTRAN compiler."
+  relations:
+    - { type: targets, to: ibm-704, weight: strong, confidence: high }
+  research_status: stub
+  confidence: medium
+  sources: [wiki-ibm-704]
+
+- id: ibm-bal
+  name: IBM Basic Assembly Language / HLASM
+  aliases: [BAL, Assembler H, HLASM]
+  kind: assembly
+  category: systems
+  cluster: assembly/ibm
+  origin: { first_appeared: { year: 1964, precision: year }, places: [{ institution: IBM, country: US }] }
+  status: active
+  summary: "Assembler family for System/360 and successors, with a powerful macro language. HLASM (1992) is still used for z/OS."
+  milestones:
+    - { version: HLASM, year: 1992 }
+  relations:
+    - { type: targets, to: ibm-system-360, weight: strong, confidence: high }
+  research_status: stub
+  confidence: medium
+  sources: [wiki-ibm-assembler]
+
+- id: macro-11
+  name: MACRO-11
+  kind: assembly
+  category: systems
+  cluster: assembly/dec
+  origin: { first_appeared: { year: 1970, precision: circa }, places: [{ institution: Digital Equipment Corporation, country: US }] }
+  status: extinct
+  summary: "DEC's macro assembler for the PDP-11. The early Unix kernel was written in PDP-11 assembly before being rewritten in C in 1973."
+  relations:
+    - { type: targets, to: pdp-11, weight: strong, confidence: high }
+  research_status: stub
+  confidence: medium
+  sources: [wiki-macro-11]
+
+- id: x86-intel-syntax
+  name: x86 assembly (Intel syntax)
+  aliases: [ASM86, MASM syntax]
+  kind: assembly
+  category: systems
+  cluster: assembly/x86
+  origin: { first_appeared: { year: 1978, precision: year }, places: [{ institution: Intel, country: US }] }
+  status: active
+  summary: "Intel's own mnemonic syntax for the 8086 family: destination operand first, e.g. `mov eax, 1`. Used by MASM, NASM, FASM and most Intel/AMD documentation."
+  relations:
+    - { type: targets, to: intel-8086, weight: strong, confidence: high }
+  research_status: stub
+  confidence: high
+  sources: [wiki-x86-assembly]
+
+- id: x86-att-syntax
+  name: x86 assembly (AT&T syntax)
+  kind: assembly
+  category: systems
+  cluster: assembly/x86
+  origin: { first_appeared: { year: 1985, precision: circa, note: "Inherited from Unix assemblers on other ISAs; dating for x86 needs research." } }
+  status: active
+  summary: "Unix-tradition syntax: source first, sigils on registers and immediates, size suffixes (`movl $1, %eax`). Default for GNU as and GCC output."
+  relations:
+    - { type: dialect_of, to: x86-intel-syntax, weight: strong, confidence: high, note: "Same instruction set, different notation." }
+    - { type: influenced_by, to: macro-11, weight: weak, confidence: low, note: "Hypothesis: source-first order follows PDP-11 convention. Needs a source." }
+    - { type: targets, to: intel-8086, weight: strong, confidence: high }
+  research_status: stub
+  confidence: medium
+  sources: [wiki-x86-assembly]
+
+- id: masm
+  name: MASM (Microsoft Macro Assembler)
+  kind: assembly
+  category: systems
+  cluster: assembly/x86
+  origin: { first_appeared: { year: 1981, precision: year }, places: [{ institution: Microsoft, city: Redmond, country: US }] }
+  status: active
+  summary: "Microsoft's x86 assembler, with high-level macros (.IF, .WHILE, PROC). The DOS and early Windows standard."
+  relations:
+    - { type: dialect_of, to: x86-intel-syntax, weight: strong, confidence: high }
+  research_status: stub
+  confidence: high
+  sources: [wiki-masm]
+
+- id: nasm
+  name: NASM (Netwide Assembler)
+  kind: assembly
+  category: systems
+  cluster: assembly/x86
+  origin: { first_appeared: { year: 1996, precision: year } }
+  creators: [{ name: Simon Tatham, role: original author }, { name: Julian Hall, role: original author }]
+  status: active
+  summary: "Portable, open-source x86 assembler with a simplified Intel syntax."
+  relations:
+    - { type: dialect_of, to: x86-intel-syntax, weight: strong, confidence: high }
+  research_status: stub
+  confidence: high
+  sources: [wiki-nasm]
+
+- id: asm-6502
+  name: 6502 assembly
+  kind: assembly
+  category: systems
+  cluster: assembly/8-bit
+  origin: { first_appeared: { year: 1975, precision: year } }
+  status: legacy
+  summary: "Accumulator-centred assembly with zero-page addressing; the language of most 8-bit home-computer and console games."
+  relations:
+    - { type: targets, to: mos-6502, weight: strong, confidence: high }
+  research_status: stub
+  confidence: high
+  sources: [wiki-6502]
+
+- id: asm-z80
+  name: Z80 assembly
+  kind: assembly
+  category: systems
+  cluster: assembly/8-bit
+  origin: { first_appeared: { year: 1976, precision: year } }
+  status: legacy
+  summary: "Zilog's mnemonics (LD, JP) for the Z80, a superset of the 8080 instruction set but with a different, cleaner syntax than Intel's 8080 mnemonics."
+  relations:
+    - { type: targets, to: zilog-z80, weight: strong, confidence: high }
+  research_status: stub
+  confidence: high
+  sources: [wiki-z80]
+
+- id: asm-68k
+  name: 68k assembly
+  kind: assembly
+  category: systems
+  cluster: assembly/8-bit
+  origin: { first_appeared: { year: 1979, precision: year } }
+  status: legacy
+  summary: "Orthogonal assembly for the 68000 family with source-first operand order; favoured by demoscene and early Mac programmers."
+  relations:
+    - { type: targets, to: motorola-68000, weight: strong, confidence: high }
+    - { type: influenced_by, to: macro-11, weight: weak, confidence: low, note: "The 68000 ISA is often compared to the PDP-11; needs a source." }
+  research_status: stub
+  confidence: medium
+  sources: [wiki-68000]
+
+- id: asm-arm
+  name: ARM assembly
+  kind: assembly
+  category: systems
+  cluster: assembly/risc
+  origin: { first_appeared: { year: 1985, precision: year } }
+  status: active
+  summary: "Load/store RISC assembly; 32-bit ARM made every instruction conditional; AArch64 (2011) is a redesign."
+  relations:
+    - { type: targets, to: arm, weight: strong, confidence: high }
+  research_status: stub
+  confidence: high
+  sources: [wiki-arm]
+
+- id: asm-mips
+  name: MIPS assembly
+  kind: assembly
+  category: educational
+  cluster: assembly/risc
+  origin: { first_appeared: { year: 1985, precision: year } }
+  status: legacy
+  summary: "Three-operand RISC assembly with branch delay slots; long the standard teaching assembly (SPIM, MARS)."
+  relations:
+    - { type: targets, to: mips, weight: strong, confidence: high }
+  research_status: stub
+  confidence: high
+  sources: [wiki-mips]
+
+- id: asm-risc-v
+  name: RISC-V assembly
+  kind: assembly
+  category: systems
+  cluster: assembly/risc
+  origin: { first_appeared: { year: 2014, precision: year } }
+  status: active
+  summary: "Assembly for the open RISC-V ISA; syntax close to MIPS. Displacing MIPS in teaching."
+  relations:
+    - { type: targets, to: risc-v, weight: strong, confidence: high }
+    - { type: influenced_by, to: asm-mips, weight: moderate, confidence: medium }
+  research_status: stub
+  confidence: high
+  sources: [wiki-risc-v]

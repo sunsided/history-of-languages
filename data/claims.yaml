@@ -1,0 +1,92 @@
+# Fact-checks ("myth vs. fact" side sheets). Each claim cites evidence with locators and, where read, verbatim quotes.
+
+- id: cpp-oop-by-accident
+  claim: "C++ only got classes/OOP by accident, because Stroustrup was unaware that Smalltalk had already solved encapsulation differently."
+  verdict: "false"
+  summary: >
+    Stroustrup's own history says the opposite on both counts. Classes were the point of the project
+    from day one: he set out in April 1979 to add Simula's classes to C, after Simula had helped him
+    design a simulator during his Cambridge PhD and its slow implementation had nearly sunk it. He
+    knew Smalltalk and listed it among the languages he considered. He deliberately followed
+    Simula's statically typed model rather than Smalltalk's dynamically typed one. The kernel of
+    truth: C++ did not take Smalltalk's message-passing, late-bound idea of objects, and Alan Kay
+    has said C++ was not what he meant by object-oriented. The "two answers" story is real, but it
+    was a choice, not an accident. Objective-C (1984) is the Smalltalk-style answer on top of C.
+  evidence:
+    - source: stroustrup-1993-hopl2
+      locator: "§2.4.4, p.12"
+      quote: "At the time, I considered Modula-2, Ada, Smalltalk, Mesa, and Clu as alternatives to C and as sources for ideas for C++ [Stroustrup,1984b] so there was no shortage of inspiration. However, only C, Simula, Algol68, and in one case BCPL left noticeable traces in C++ as released in 1985."
+    - source: stroustrup-1993-hopl2
+      locator: "§1, p.1"
+      quote: "C++ was designed to provide Simula's facilities for program organization together with C's efficiency and flexibility for systems programming."
+    - source: stroustrup-1993-hopl2
+      locator: "§2.1, p.2"
+      quote: "Simula's class concept was seen as the key difference and ever since I have seen classes as the proper primary focus of program design."
+    - source: stroustrup-1993-hopl2
+      locator: "§2.1, p.3"
+      quote: "The implementation of Simula, however, did not scale in the same way and as a result the whole project came close to disaster."
+    - source: stroustrup-1993-hopl2
+      locator: "§3.7, p.30 (quoting his 1986 paper)"
+      quote: "In other words, C++ follows the Simula rather than the Smalltalk model of inheritance and type checking"
+    - source: stroustrup-1993-hopl2
+      locator: "§2.4.6, p.13"
+      quote: "The derived class concept is C++'s version of Simula's prefixed class notion and thus a sibling of Smalltalk's subclass concept."
+    - source: stroustrup-1993-hopl2
+      locator: "§2.3, p.6"
+      quote: "Support for object-oriented programming was not claimed until the provision of virtual functions in C++ in 1983."
+      note: "Possible origin of the 'accident' framing: the OOP label came in 1983 with virtual functions, but classes were there from 1979."
+    - source: kay-1997-oopsla-keynote
+      note: "Kay's widely quoted line 'I made up the term object-oriented, and I can tell you I did not have C++ in mind.' Quote to be verified against a recording before publishing."
+  nodes: [cpp, simula, smalltalk, objective-c]
+
+- id: lovelace-first-programmer
+  claim: "Ada Lovelace wrote the first computer program."
+  verdict: nuanced
+  summary: "Note G (1843) is the first published program for a general-purpose computer and the most elaborate of its time. Babbage had sketched smaller Analytical Engine programs in his notebooks from 1837, and historians disagree on how much of Note G is hers. Her undisputed contribution is the insight in Note A that the engine could manipulate any symbols, not just numbers."
+  evidence:
+    - { source: menabrea-lovelace-1843, locator: "Notes A and G" }
+  nodes: [lovelace-note-g, analytical-engine]
+
+- id: hopper-mother-of-cobol
+  claim: "Grace Hopper invented COBOL."
+  verdict: mostly-false
+  summary: "COBOL was designed by the CODASYL Short-Range Committee in 1959. Hopper was a technical adviser and her FLOW-MATIC was its main model, so 'grandmother of COBOL' is fairer. She did write early compilers (A-0, 1952) and popularized the word 'compiler'."
+  evidence:
+    - { source: sammet-1978-early-cobol, note: "Sammet was on the committee." }
+  nodes: [cobol, flow-matic, a-0]
+
+- id: c-increment-pdp11
+  claim: "C's ++ and -- operators were invented for the PDP-11's autoincrement addressing."
+  verdict: "false"
+  summary: "Ritchie says ++ and -- were invented by Thompson for B, before the PDP-11 existed; they were not motivated by its addressing modes."
+  evidence:
+    - { source: ritchie-1993-development-c }
+  nodes: [b, c, pdp-11]
+
+- id: erlang-implements-actor-model
+  claim: "Erlang was designed as an implementation of Hewitt's actor model."
+  verdict: mostly-false
+  summary: "Erlang's processes and messages closely resemble actors, but Armstrong described the design as driven by telecom fault tolerance, and said the team did not know the actor model at the time. Convergent design, not descent."
+  evidence:
+    - { source: armstrong-2007-history-erlang, note: "Locator to be added when re-read." }
+  nodes: [erlang, actor-model]
+
+- id: async-lineage-thesis
+  claim: "Asynchronous programming descends from interrupt-driven concurrency, then cooperative multitasking, then threads, then async/await."
+  verdict: nuanced
+  summary: >
+    The ingredients are right but the order is not a single line. Interrupts (c. 1954) and coroutines
+    (1958) are both 1950s; preemptive time-sharing (CTSS, 1961) came before the cooperative multitasking
+    of 1980s PCs, which was a hardware-constrained step back. async/await (F# 2007, C# 2012) is
+    not the successor of threads so much as a return to cooperative scheduling: coroutines with explicit
+    suspension points, compiled into state machines, running on top of threads and event loops. A better
+    picture is two strands, preemptive (interrupts, time-sharing, threads, goroutines, virtual threads)
+    and cooperative (coroutines, Simula, Windows 3.x/Mac OS, event loops, generators, async/await),
+    that keep borrowing from each other. See the concurrency lineage.
+  evidence:
+    - { source: conway-1963-coroutines }
+    - { source: corbato-1962-ctss }
+    - { source: syme-2020-early-history-fsharp }
+    - { source: nystrom-2015-color }
+    - { source: jep-444 }
+  nodes: [simula, fsharp, csharp, go, java]

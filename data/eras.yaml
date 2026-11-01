@@ -1,0 +1,62 @@
+# Eras are deliberately coarse and overlapping-friendly. A node's era defaults to the latest-starting era containing
+# its first_appeared year; set `era` on a node to override. Eras are a reading aid, not a classification.
+
+- id: prehistory
+  name: Mechanical prehistory
+  start: -300
+  end: 1935
+  summary: "Mechanisms that compute (Antikythera) and machines driven by exchangeable instructions (automata, Jacquard, Babbage, Lovelace, Hollerith)."
+  defining_concepts: [punched-card-program]
+- id: foundations
+  name: Theory and first computers
+  start: 1936
+  end: 1948
+  summary: "Turing and Church define computability; Zuse, Aiken and ENIAC build programmable machines; Plankalkül is designed but not run; the stored-program idea appears."
+- id: machine-code
+  name: Stored programs and assemblers
+  start: 1949
+  end: 1953
+  summary: "Programs live in memory beside data. Machine code gets symbolic names, assemblers, subroutine libraries and the first interpreters and 'compilers'."
+  defining_concepts: [interpreter, compiler]
+- id: first-languages
+  name: First high-level languages
+  start: 1954
+  end: 1959
+  summary: "FORTRAN proves compiled code can compete with assembly; Lisp, ALGOL 58, FLOW-MATIC and COBOL found the scientific, symbolic and business traditions."
+  defining_concepts: [optimizing-compiler, garbage-collection, english-like-syntax]
+- id: algol-age
+  name: The ALGOL age
+  start: 1960
+  end: 1969
+  summary: "ALGOL 60 defines block structure and lexical scope; Simula invents objects; APL, BASIC, PL/I, BCPL and ALGOL 68 spread the ideas; time-sharing and multiprogramming arrive."
+  defining_concepts: [block-structure, lexical-scoping, classes, coroutines]
+- id: paradigm-explosion
+  name: Paradigm explosion
+  start: 1970
+  end: 1979
+  summary: "Nearly every paradigm still in use is founded: C, Pascal, Smalltalk, Prolog, ML, Scheme, SQL, CLU; concurrency theory (monitors, CSP, actors) is formalized."
+  defining_concepts: [structured, object-oriented, logic, type-inference, monitors, abstract-data-types]
+- id: consolidation
+  name: Consolidation, objects and modules
+  start: 1980
+  end: 1989
+  summary: "Object orientation goes mainstream (C++, Objective-C, Eiffel); Ada and Modula-2 bring modules and tasks; Common Lisp and Standard ML consolidate families; personal computers bring BASIC and Pascal to millions."
+  defining_concepts: [modules, inheritance, generics]
+- id: internet-vms
+  name: The internet and virtual machines
+  start: 1990
+  end: 1999
+  summary: "Java and JavaScript ship with the web; Python, Ruby, Lua, PHP and Perl 5 make scripting serious; Haskell standardizes lazy pure FP; GC and bytecode VMs become default."
+  defining_concepts: [bytecode-vm, garbage-collection, jit-compilation]
+- id: managed-multicore
+  name: Managed runtimes and the multicore turn
+  start: 2000
+  end: 2009
+  summary: "C#, Scala, F#, Clojure, Go. Clock speeds stop rising (c. 2005), so concurrency moves into language design: futures, STM, async workflows, goroutines."
+  defining_concepts: [futures-promises, software-transactional-memory, async-await]
+- id: convergence
+  name: Convergence and safety
+  start: 2010
+  end: 2026
+  summary: "Rust, Swift, Kotlin, TypeScript, Zig. Mainstream languages converge on a shared toolkit: type inference, algebraic data types, pattern matching, lambdas, null safety, async/await, and memory safety without GC."
+  defining_concepts: [ownership-borrowing, null-safety, pattern-matching, structured-concurrency]

@@ -1,0 +1,479 @@
+# 2000 onwards: C#, D, Cyclone, Scala, F#, Clojure, Go, Rust, Kotlin, Dart, Elixir, Julia, TypeScript, Swift, Zig.
+# This is where the convergence of "imperative" and "functional" is most visible: see milestones[].introduces.
+
+- id: csharp
+  name: C#
+  kind: language
+  category: general
+  cluster: managed
+  origin:
+    began: { year: 1999, precision: year, note: "Codename COOL." }
+    first_appeared: { year: 2000, date: "2000-07", precision: exact, note: "Announced at PDC 2000; 1.0 with .NET in January 2002." }
+    places: [{ institution: Microsoft, city: Redmond, country: US }]
+  creators: [{ name: Anders Hejlsberg, role: lead designer }]
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative, functional, multi-paradigm]
+    typing: [static-typing, strong-typing, type-inference]
+    memory: [garbage-collection]
+    concurrency: [threads, futures-promises, async-await]
+    features: [generics, lambdas, query-expressions, iterators, pattern-matching, records, properties]
+  milestones:
+    - { version: "1.0", year: 2002 }
+    - { version: "2.0", year: 2005, introduces: [generics, iterators], summary: "Reified generics; iterators with yield return (from CLU via Sather)." }
+    - { version: "3.0", year: 2007, introduces: [lambdas, query-expressions, type-inference], summary: "LINQ: monad-comprehension-like queries, designed with Erik Meijer from Haskell ideas." }
+    - { version: "5.0", year: 2012, introduces: [async-await], summary: "async/await on Task, the version that popularized the syntax across the industry." }
+    - { version: "7.0", year: 2017, introduces: [pattern-matching] }
+    - { version: "9.0", year: 2020, introduces: [records] }
+  summary: >
+    Microsoft's managed language for .NET, initially very close to Java. From 3.0 it absorbed functional
+    ideas quickly. C# 5's async/await (2012), built on F#'s asynchronous workflows, is the version
+    that JavaScript, Python, Rust, Swift, Kotlin and C++ followed.
+  relations:
+    - { type: influenced_by, to: java, weight: strong, confidence: high }
+    - { type: influenced_by, to: cpp, weight: strong, confidence: high }
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, note: "Via Delphi (Hejlsberg): properties, events. Add a Delphi node." }
+    - { type: influenced_by, to: haskell, aspects: [query-expressions, monads], weight: moderate, confidence: high }
+    - { type: influenced_by, to: fsharp, year: 2012, aspects: [async-await], weight: strong, confidence: high, note: "Syme, HOPL IV: C# async was based on F# async workflows." }
+    - { type: influenced_by, to: clu, aspects: [iterators], weight: weak, confidence: medium }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)" }
+  sources: [wiki-csharp, syme-2020-early-history-fsharp]
+
+- id: d
+  name: D
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    first_appeared: { year: 2001, precision: year, note: "1.0 in 2007; D2 from 2007." }
+    places: [{ institution: Digital Mars, country: US }]
+  creators: [{ name: Walter Bright, role: designer }, { name: Andrei Alexandrescu, role: co-designer (D2) }]
+  status: maintained
+  tags:
+    paradigm: [multi-paradigm, object-oriented, imperative, functional, generic-programming]
+    typing: [static-typing, type-inference]
+    memory: [garbage-collection, manual-memory]
+    features: [compile-time-evaluation, design-by-contract, templates, modules]
+  summary: "A re-engineered C++ by the author of the first native C++ compiler (Zortech). Pioneered compile-time function execution (CTFE) and `static if` that later flowed into C++ constexpr."
+  relations:
+    - { type: influenced_by, to: cpp, weight: strong, confidence: high }
+    - { type: influenced_by, to: c, weight: strong, confidence: high }
+    - { type: influenced_by, to: java, weight: moderate, confidence: high }
+    - { type: influenced_by, to: eiffel, aspects: [design-by-contract], weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [bright-2020-origins-d]
+
+- id: cyclone
+  name: Cyclone
+  kind: language
+  category: research
+  cluster: c-family/safe
+  origin:
+    first_appeared: { year: 2002, precision: year }
+    places: [{ institution: AT&T Labs Research and Cornell University, country: US }]
+  creators: [{ name: "Trevor Jim, Greg Morrisett, Dan Grossman, Michael Hicks, James Cheney, Yanling Wang", role: designers }]
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing]
+    memory: [region-based-memory, manual-memory]
+    features: [safe-pointers]
+  summary: "Safe dialect of C with region-based memory management and fat/never-null pointers. Its regions are a direct ancestor of Rust's lifetimes."
+  relations:
+    - { type: dialect_of, to: c, weight: strong, confidence: high }
+    - { type: influenced_by, to: ml, weight: moderate, confidence: medium }
+  research_status: draft
+  confidence: high
+  sources: [jim-2002-cyclone]
+
+- id: scala
+  name: Scala
+  kind: language
+  category: general
+  cluster: managed
+  origin:
+    began: { year: 2001, precision: year }
+    first_appeared: { year: 2004, date: "2004-01", precision: exact }
+    places: [{ institution: EPFL, city: Lausanne, country: CH }]
+  creators: [{ name: Martin Odersky, role: designer }]
+  status: active
+  tags:
+    paradigm: [object-oriented, functional, multi-paradigm]
+    typing: [static-typing, type-inference, parametric-polymorphism]
+    memory: [garbage-collection]
+    concurrency: [actors, futures-promises]
+    features: [traits, pattern-matching, algebraic-data-types, implicits, higher-kinded-types]
+  milestones:
+    - { version: "2.8", year: 2010 }
+    - { version: "2.10", year: 2013, summary: "Futures/Promises in the standard library; Akka replaces Scala actors." }
+    - { version: "3.0", year: 2021, summary: "Dotty / DOT calculus: given/using, enums, union types." }
+  summary: "Fuses object-oriented and functional programming on the JVM: every value is an object and every function a value. Odersky had earlier built Pizza and GJ, whose generics became Java 5's."
+  relations:
+    - { type: influenced_by, to: java, weight: strong, confidence: high }
+    - { type: influenced_by, to: haskell, aspects: [type-classes], weight: moderate, confidence: high }
+    - { type: influenced_by, to: standard-ml, weight: moderate, confidence: high }
+    - { type: influenced_by, to: smalltalk, aspects: [everything-is-an-object], weight: moderate, confidence: medium }
+    - { type: influenced_by, to: erlang, aspects: [actors], weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [wiki-scala]
+
+- id: fsharp
+  name: F#
+  kind: language
+  category: general
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 2005, precision: year, note: "1.0 May 2005; research work from 2002." }
+    places: [{ institution: Microsoft Research, city: Cambridge, country: GB }]
+  creators: [{ name: Don Syme, role: designer }]
+  status: active
+  tags:
+    paradigm: [functional, object-oriented, multi-paradigm]
+    typing: [static-typing, type-inference]
+    memory: [garbage-collection]
+    concurrency: [async-await, computation-expressions]
+    features: [algebraic-data-types, pattern-matching, computation-expressions, units-of-measure, type-providers, offside-rule]
+  milestones:
+    - { version: "1.9.x (async workflows)", year: 2007, introduces: [async-await, computation-expressions], summary: "Asynchronous workflows: async { let! x = ... } compiled to continuations. The direct ancestor of C# async/await." }
+    - { version: "2.0", year: 2010 }
+    - { version: "6.0", year: 2021, summary: "task { } computation expression." }
+  summary: >
+    OCaml-style language for .NET. Its async workflows (2007), monadic computation expressions with
+    let! for awaiting, are the line from Haskell's monads to async/await in C#.
+  relations:
+    - { type: influenced_by, to: ocaml, weight: strong, confidence: high }
+    - { type: influenced_by, to: haskell, aspects: [monads, computation-expressions], weight: strong, confidence: high }
+    - { type: influenced_by, to: csharp, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [syme-2020-early-history-fsharp, syme-2011-fsharp-async]
+
+- id: clojure
+  name: Clojure
+  kind: language
+  category: general
+  cluster: lisp
+  origin:
+    first_appeared: { year: 2007, date: "2007-10", precision: exact }
+    places: [{ city: New York, country: US }]
+  creators: [{ name: Rich Hickey, role: designer }]
+  status: active
+  tags:
+    paradigm: [functional]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    concurrency: [software-transactional-memory, channels]
+    features: [persistent-data-structures, macros, homoiconicity]
+  summary: "Lisp on the JVM built around immutable persistent data structures and managed references (STM, atoms, agents). core.async (2013) brought Go-style channels."
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high }
+    - { type: influenced_by, to: haskell, aspects: [software-transactional-memory], weight: moderate, confidence: high }
+    - { type: influenced_by, to: java, weight: moderate, confidence: high }
+    - { type: influenced_by, to: csp, aspects: [channels], weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [hickey-2020-history-clojure]
+
+- id: go
+  name: Go
+  aliases: [Golang]
+  kind: language
+  category: systems
+  cluster: concurrency/plan9
+  origin:
+    began: { year: 2007, date: "2007-09", precision: exact }
+    first_appeared: { year: 2009, date: "2009-11-10", precision: exact, note: "Go 1.0 March 2012." }
+    places: [{ institution: Google, city: Mountain View, country: US }]
+  creators:
+    - { name: Robert Griesemer, role: designer }
+    - { name: Rob Pike, role: designer }
+    - { name: Ken Thompson, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, concurrent, structured]
+    typing: [static-typing, strong-typing, structural-typing, type-inference]
+    memory: [garbage-collection]
+    concurrency: [goroutines, green-threads, channels, preemptive-scheduling]
+    features: [interfaces, generics, multiple-return-values]
+  milestones:
+    - { version: "1.0", year: 2012 }
+    - { version: "1.14", year: 2020, introduces: [preemptive-scheduling], summary: "Asynchronous preemption of goroutines." }
+    - { version: "1.18", year: 2022, introduces: [generics] }
+  summary: >
+    C's syntax, Pascal/Oberon's declarations and packages, and the Newsqueak/Alef/Limbo line of
+    CSP-style channels. Goroutines are cheap, runtime-scheduled threads: concurrency without
+    async/await or function colouring.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high }
+    - { type: influenced_by, to: oberon, aspects: [modules], weight: strong, confidence: high, note: "Method receivers, package model." }
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: high }
+    - { type: influenced_by, to: limbo, aspects: [channels, green-threads], weight: strong, confidence: high }
+    - { type: influenced_by, to: newsqueak, aspects: [channels], weight: strong, confidence: high }
+    - { type: influenced_by, to: alef, weight: moderate, confidence: high }
+    - { type: influenced_by, to: csp, aspects: [channels, guarded-commands], weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Go_(programming_language)", homepage: "https://go.dev" }
+  sources: [go-faq, pike-go-history-talk]
+
+- id: rust
+  name: Rust
+  kind: language
+  category: systems
+  cluster: c-family/safe
+  origin:
+    began: { year: 2006, precision: year, note: "Personal project of Graydon Hoare; Mozilla sponsorship from 2009; announced 2010." }
+    first_appeared: { year: 2015, date: "2015-05-15", precision: exact, note: "1.0 release." }
+    places: [{ institution: Mozilla Research, city: Mountain View, country: US }]
+  creators: [{ name: Graydon Hoare, role: original designer }, { name: "Rust team (Mozilla, later Rust Foundation)", role: designers }]
+  status: active
+  tags:
+    paradigm: [multi-paradigm, imperative, functional, generic-programming]
+    typing: [static-typing, strong-typing, type-inference, affine-types, parametric-polymorphism]
+    memory: [ownership-borrowing, raii, move-semantics]
+    concurrency: [threads, async-await, atomics, memory-model]
+    features: [traits, algebraic-data-types, pattern-matching, hygienic-macros, safe-unsafe-split, zero-cost-abstractions]
+  milestones:
+    - { version: "pre-1.0 (green threads, typestate)", year: 2012, summary: "Early Rust had GC'd pointers, green threads and a runtime; all removed before 1.0." }
+    - { version: "1.0", year: 2015, introduces: [ownership-borrowing] }
+    - { version: "1.39", year: 2019, introduces: [async-await], summary: "async/await: stackless, poll-based futures compiled to state machines, no built-in runtime." }
+    - { version: Edition 2021, year: 2021 }
+    - { version: Edition 2024, year: 2025 }
+  summary: >
+    Memory safety without garbage collection through ownership and borrow checking, with C++-level
+    control. A deliberate synthesis of research ideas: Cyclone's regions, ML's types, Haskell's type
+    classes as traits, C++'s RAII and zero-cost abstractions. It dropped green threads before 1.0
+    and later adopted stackless async/await.
+  relations:
+    - { type: influenced_by, to: cpp, aspects: [raii, zero-cost-abstractions, move-semantics], weight: strong, confidence: high }
+    - { type: influenced_by, to: cyclone, aspects: [region-based-memory], weight: strong, confidence: high }
+    - { type: influenced_by, to: ocaml, weight: strong, confidence: high, note: "First compiler (rustboot) was written in OCaml." }
+    - { type: influenced_by, to: haskell, aspects: [type-classes], weight: strong, confidence: high }
+    - { type: influenced_by, to: standard-ml, aspects: [algebraic-data-types, pattern-matching], weight: moderate, confidence: high }
+    - { type: influenced_by, to: erlang, weight: moderate, confidence: high, note: "Early task model, message passing." }
+    - { type: influenced_by, to: limbo, aspects: [channels], weight: weak, confidence: high }
+    - { type: influenced_by, to: newsqueak, weight: weak, confidence: high }
+    - { type: influenced_by, to: scheme, aspects: [hygienic-macros], weight: moderate, confidence: high }
+    - { type: influenced_by, to: csharp, aspects: [async-await], weight: moderate, confidence: medium }
+    - { type: influenced_by, to: swift, weight: weak, confidence: high }
+    - { type: implemented_in, to: ocaml, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Rust_(programming_language)", homepage: "https://www.rust-lang.org" }
+  sources: [rust-reference-influences, rust-async-stabilization]
+
+- id: kotlin
+  name: Kotlin
+  kind: language
+  category: general
+  cluster: managed
+  origin:
+    first_appeared: { year: 2011, date: "2011-07", precision: exact, note: "Announced; 1.0 February 2016." }
+    places: [{ institution: JetBrains, city: Saint Petersburg, country: RU }]
+  creators: [{ name: Andrey Breslav, role: lead designer }, { name: JetBrains, role: developer }]
+  status: active
+  tags:
+    paradigm: [object-oriented, functional, multi-paradigm]
+    typing: [static-typing, type-inference, null-safety]
+    memory: [garbage-collection]
+    concurrency: [coroutines, structured-concurrency]
+    features: [extension-functions, data-classes, lambdas]
+  milestones:
+    - { version: "1.0", year: 2016 }
+    - { version: "1.3", year: 2018, introduces: [coroutines, structured-concurrency], summary: "Stable coroutines: suspend functions without await keyword; structured concurrency via coroutine scopes." }
+  summary: "Pragmatic JVM language from the makers of IntelliJ. Its suspend functions are async/await with implicit awaiting; it popularized structured concurrency."
+  relations:
+    - { type: influenced_by, to: java, weight: strong, confidence: high }
+    - { type: influenced_by, to: scala, weight: strong, confidence: high }
+    - { type: influenced_by, to: csharp, weight: moderate, confidence: high }
+    - { type: influenced_by, to: groovy, weight: weak, confidence: medium }
+  research_status: draft
+  confidence: high
+  sources: [wiki-kotlin]
+
+- id: groovy
+  name: Groovy
+  kind: language
+  category: scripting
+  cluster: managed
+  origin: { first_appeared: { year: 2003, precision: year }, places: [{ country: GB }] }
+  creators: [{ name: James Strachan, role: designer }]
+  status: maintained
+  tags:
+    paradigm: [object-oriented, scripting]
+    typing: [dynamic-typing, gradual-typing]
+  summary: "Dynamic JVM language with Ruby/Python-like conveniences; the Gradle build language."
+  relations:
+    - { type: influenced_by, to: java, weight: strong, confidence: high }
+    - { type: influenced_by, to: ruby, weight: moderate, confidence: high }
+    - { type: influenced_by, to: python, weight: moderate, confidence: medium }
+  research_status: stub
+  confidence: high
+  sources: [wiki-groovy]
+
+- id: dart
+  name: Dart
+  kind: language
+  category: general
+  cluster: web
+  origin:
+    first_appeared: { year: 2011, date: "2011-10", precision: exact }
+    places: [{ institution: Google, city: Aarhus, country: DK }]
+  creators: [{ name: Lars Bak, role: designer }, { name: Kasper Lund, role: designer }]
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative]
+    typing: [static-typing, null-safety, type-inference]
+    memory: [garbage-collection]
+    concurrency: [event-loop, futures-promises, async-await, isolates]
+    features: [mixins]
+  milestones:
+    - { version: "1.9", year: 2015, introduces: [async-await] }
+    - { version: "2.12", year: 2021, introduces: [null-safety] }
+  summary: "Google's planned JavaScript replacement, by V8's creators; found its niche as Flutter's language. Concurrency via single-threaded isolates with async/await."
+  relations:
+    - { type: influenced_by, to: javascript, weight: strong, confidence: high }
+    - { type: influenced_by, to: java, weight: strong, confidence: high }
+    - { type: influenced_by, to: csharp, aspects: [async-await], weight: moderate, confidence: medium }
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: medium, note: "Bak and Lund came from the Self/Strongtalk/HotSpot world." }
+    - { type: influenced_by, to: erlang, aspects: [isolates], weight: weak, confidence: low }
+  research_status: draft
+  confidence: high
+  sources: [wiki-dart]
+
+- id: elixir
+  name: Elixir
+  kind: language
+  category: general
+  cluster: concurrency/beam
+  origin:
+    first_appeared: { year: 2012, precision: year }
+    places: [{ institution: Plataformatec, city: São Paulo, country: BR }]
+  creators: [{ name: José Valim, role: designer }]
+  status: active
+  tags:
+    paradigm: [functional, concurrent]
+    typing: [dynamic-typing, gradual-typing]
+    memory: [garbage-collection]
+    concurrency: [actors, message-passing, green-threads, preemptive-scheduling]
+    features: [macros, pattern-matching, protocols]
+  summary: "Ruby-flavoured syntax and Lisp-style macros on Erlang's BEAM VM and OTP."
+  relations:
+    - { type: influenced_by, to: erlang, weight: strong, confidence: high }
+    - { type: influenced_by, to: ruby, weight: strong, confidence: high }
+    - { type: influenced_by, to: clojure, aspects: [protocols], weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [wiki-elixir]
+
+- id: julia
+  name: Julia
+  kind: language
+  category: scientific
+  cluster: data
+  origin:
+    began: { year: 2009, precision: year }
+    first_appeared: { year: 2012, precision: year }
+    places: [{ institution: MIT, city: Cambridge MA, country: US }]
+  creators: [{ name: "Jeff Bezanson, Stefan Karpinski, Viral B. Shah, Alan Edelman", role: designers }]
+  status: active
+  tags:
+    paradigm: [multi-paradigm, functional, array-programming]
+    typing: [dynamic-typing, parametric-polymorphism]
+    memory: [garbage-collection]
+    concurrency: [green-threads, channels]
+    features: [multiple-dispatch, jit-compilation, macros, homoiconicity]
+    domain: [scientific-computing]
+  summary: "Dynamic, JIT-compiled scientific language built around multiple dispatch, aiming for Python's ease with C's speed."
+  relations:
+    - { type: influenced_by, to: common-lisp, aspects: [multiple-dispatch, macros], weight: strong, confidence: high }
+    - { type: influenced_by, to: apl, aspects: [array-programming], weight: weak, confidence: medium }
+    - { type: influenced_by, to: python, weight: moderate, confidence: high }
+    - { type: influenced_by, to: r, weight: moderate, confidence: high }
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [bezanson-2017-julia]
+
+- id: typescript
+  name: TypeScript
+  kind: language
+  category: general
+  cluster: web
+  origin:
+    first_appeared: { year: 2012, date: "2012-10", precision: exact }
+    places: [{ institution: Microsoft, city: Redmond, country: US }]
+  creators: [{ name: Anders Hejlsberg, role: lead designer }]
+  status: active
+  tags:
+    paradigm: [multi-paradigm, object-oriented, functional]
+    typing: [static-typing, gradual-typing, structural-typing, type-inference]
+    concurrency: [async-await, event-loop]
+  summary: "JavaScript plus an erasable, structural, gradual type system. Showed that types could be retrofitted onto a huge dynamic ecosystem."
+  relations:
+    - { type: superset_of, to: javascript, weight: strong, confidence: high }
+    - { type: influenced_by, to: csharp, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [wiki-typescript]
+
+- id: swift
+  name: Swift
+  kind: language
+  category: general
+  cluster: oop/apple
+  origin:
+    began: { year: 2010, date: "2010-07", precision: exact }
+    first_appeared: { year: 2014, date: "2014-06-02", precision: exact }
+    places: [{ institution: Apple, city: Cupertino, country: US }]
+  creators: [{ name: Chris Lattner, role: original designer }]
+  status: active
+  tags:
+    paradigm: [multi-paradigm, object-oriented, functional, protocol-oriented]
+    typing: [static-typing, type-inference, null-safety]
+    memory: [reference-counting]
+    concurrency: [async-await, actors, structured-concurrency]
+    features: [protocols, algebraic-data-types, pattern-matching, generics]
+  milestones:
+    - { version: "5.5", year: 2021, introduces: [async-await, actors, structured-concurrency], summary: "async/await, structured concurrency, actors built into the type system." }
+    - { version: "6.0", year: 2024, summary: "Compile-time data-race safety." }
+  summary: "Objective-C's successor for Apple platforms. Keeps ARC and protocols, adds ML-style enums and pattern matching. Its 5.5 concurrency model combines async/await with language-level actors."
+  relations:
+    - { type: successor_of, to: objective-c, weight: strong, confidence: high }
+    - { type: influenced_by, to: rust, weight: moderate, confidence: high }
+    - { type: influenced_by, to: haskell, weight: moderate, confidence: high }
+    - { type: influenced_by, to: csharp, weight: moderate, confidence: high }
+    - { type: influenced_by, to: python, weight: weak, confidence: medium }
+    - { type: influenced_by, to: ruby, weight: weak, confidence: medium }
+  research_status: draft
+  confidence: high
+  sources: [lattner-swift-homepage, swift-se-0296]
+
+- id: zig
+  name: Zig
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    first_appeared: { year: 2016, precision: year }
+    places: [{ country: US }]
+  creators: [{ name: Andrew Kelley, role: designer }]
+  status: active
+  tags:
+    paradigm: [imperative, procedural, generic-programming]
+    typing: [static-typing]
+    memory: [manual-memory]
+    features: [compile-time-evaluation, c-interop]
+  summary: "A 'better C' with comptime as its single metaprogramming mechanism. It added and then removed async/await (removed in 0.11, 2023) and is redesigning it as a library-level I/O interface: a live case study in the colouring debate."
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high }
+    - { type: influenced_by, to: d, aspects: [compile-time-evaluation], weight: moderate, confidence: medium }
+    - { type: influenced_by, to: rust, weight: moderate, confidence: medium }
+    - { type: influenced_by, to: go, weight: moderate, confidence: medium }
+  research_status: draft
+  confidence: medium
+  sources: [wiki-zig]

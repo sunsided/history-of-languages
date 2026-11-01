@@ -1,0 +1,210 @@
+# Esoteric languages that matter: each one demonstrates a real idea (minimal Turing-completeness, 2D control flow,
+# combinators, invisible syntax, deliberate hostility). Selection criterion: is it cited as the origin of an esolang family
+# or does it illustrate a computational concept? See clusters.yaml esoteric backlog for candidates.
+
+- id: p-prime-prime
+  name: P′′
+  aliases: [P-double-prime]
+  kind: formalism
+  category: esoteric
+  cluster: esoteric/minimal
+  origin:
+    first_appeared: { year: 1964, precision: year }
+    places: [{ country: IT }]
+  creators: [{ name: Corrado Böhm, role: designer }]
+  status: historical
+  summary: "Böhm's minimal language for a Turing machine with a tape, using only composition and a while-loop, proven Turing-complete. It is the first 'GOTO-less' structured language with a proof, and Brainfuck is almost exactly P′′ with I/O."
+  research_status: draft
+  confidence: high
+  sources: [bohm-1964-p-prime-prime]
+
+- id: intercal
+  name: INTERCAL
+  kind: language
+  category: esoteric
+  cluster: esoteric/parody
+  origin:
+    first_appeared: { year: 1972, precision: year }
+    places: [{ institution: Princeton University, city: Princeton, country: US }]
+  creators: [{ name: Don Woods, role: designer }, { name: James M. Lyon, role: designer }]
+  status: maintained
+  tags:
+    features: [come-from]
+  summary: "The first esoteric language: a parody of the languages of its time, requiring the right amount of PLEASE. C-INTERCAL (1990) added COME FROM, the inverse of GOTO, which was itself a parody of Dijkstra's 'Go To Statement Considered Harmful'."
+  relations:
+    - { type: influenced_by, to: fortran, weight: weak, confidence: medium, note: "Parody target." }
+    - { type: influenced_by, to: pl-i, weight: weak, confidence: medium, note: "Parody target." }
+  research_status: draft
+  confidence: high
+  sources: [esolangs-intercal]
+
+- id: false-lang
+  name: "FALSE"
+  kind: language
+  category: esoteric
+  cluster: esoteric/minimal
+  origin:
+    first_appeared: { year: 1993, precision: year }
+    places: [{ country: NL }]
+  creators: [{ name: Wouter van Oortmerssen, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [stack-oriented, concatenative]
+  summary: "Forth-like stack language with a 1024-byte compiler for the Amiga. Inspired both Brainfuck and Befunge."
+  relations:
+    - { type: influenced_by, to: forth, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [esolangs-false]
+
+- id: brainfuck
+  name: Brainfuck
+  kind: language
+  category: esoteric
+  cluster: esoteric/minimal
+  origin:
+    first_appeared: { year: 1993, precision: year }
+    places: [{ country: CH }]
+  creators: [{ name: Urban Müller, role: designer }]
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [minimalism]
+  summary: "Eight single-character commands on a byte tape; Müller aimed for the smallest possible compiler (240 bytes for the Amiga). The template for hundreds of trivial substitution variants, and a standard first target for toy compilers."
+  relations:
+    - { type: influenced_by, to: false-lang, weight: strong, confidence: high }
+    - { type: influenced_by, to: p-prime-prime, weight: moderate, confidence: medium, note: "Structurally equivalent to P′′ plus I/O; whether Müller knew P′′ is not documented." }
+    - { type: influenced_by, to: turing-machine, weight: moderate, confidence: medium }
+  research_status: draft
+  confidence: high
+  sources: [esolangs-brainfuck]
+
+- id: befunge
+  name: Befunge
+  kind: language
+  category: esoteric
+  cluster: esoteric/2d
+  origin:
+    first_appeared: { year: 1993, precision: year }
+    places: [{ country: CA }]
+  creators: [{ name: Chris Pressey, role: designer }]
+  status: maintained
+  tags:
+    paradigm: [stack-oriented]
+    features: [two-dimensional, self-modifying-code]
+  summary: "Programs are a 2D grid that an instruction pointer travels across in four directions; designed to be as hard to compile as possible. Origin of the 'fungeoid' 2D language family."
+  relations:
+    - { type: influenced_by, to: false-lang, weight: strong, confidence: high }
+    - { type: influenced_by, to: forth, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [esolangs-befunge]
+
+- id: malbolge
+  name: Malbolge
+  kind: language
+  category: esoteric
+  cluster: esoteric/hostile
+  origin:
+    first_appeared: { year: 1998, precision: year }
+    places: [{ country: US }]
+  creators: [{ name: Ben Olmstead, role: designer }]
+  status: historical
+  tags:
+    features: [self-modifying-code]
+  summary: "Designed to be as difficult as possible: ternary machine, self-encrypting instructions. The first program (printing 'Hello World') was found two years later by a beam search, not written by a human."
+  relations:
+    - { type: influenced_by, to: intercal, weight: moderate, confidence: medium }
+  research_status: draft
+  confidence: high
+  sources: [esolangs-malbolge]
+
+- id: unlambda
+  name: Unlambda
+  kind: language
+  category: esoteric
+  cluster: esoteric/combinators
+  origin:
+    first_appeared: { year: 1999, precision: year }
+    places: [{ country: FR }]
+  creators: [{ name: David Madore, role: designer }]
+  status: historical
+  tags:
+    paradigm: [functional]
+    features: [first-class-continuations]
+  summary: "A purely functional language based on S and K combinators plus call/cc, with no variables. Shows that a practical(ish) language needs nothing but combinatory logic."
+  relations:
+    - { type: influenced_by, to: combinatory-logic, weight: strong, confidence: high }
+    - { type: influenced_by, to: scheme, aspects: [first-class-continuations], weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [esolangs-unlambda]
+
+- id: shakespeare
+  name: Shakespeare Programming Language
+  aliases: [SPL]
+  kind: language
+  category: esoteric
+  cluster: esoteric/natural-language
+  origin:
+    first_appeared: { year: 2001, precision: year }
+    places: [{ institution: KTH Royal Institute of Technology, city: Stockholm, country: SE }]
+  creators: [{ name: Karl Hasselström, role: designer }, { name: Jon Åslund, role: designer }]
+  status: historical
+  summary: "Programs read like plays: variables are characters, assignment is insult or compliment. A satire of 'English-like' languages descended from FLOW-MATIC and COBOL."
+  relations:
+    - { type: influenced_by, to: cobol, aspects: [english-like-syntax], weight: weak, confidence: low, note: "Thematic, not documented." }
+  research_status: stub
+  confidence: high
+  sources: [esolangs-shakespeare]
+
+- id: piet
+  name: Piet
+  kind: language
+  category: esoteric
+  cluster: esoteric/2d
+  origin:
+    first_appeared: { year: 2001, precision: circa }
+    places: [{ country: AU }]
+  creators: [{ name: David Morgan-Mar, role: designer }]
+  status: historical
+  tags:
+    paradigm: [stack-oriented]
+    features: [two-dimensional]
+  summary: "Programs are abstract images in the style of Piet Mondrian; instructions are encoded in hue and lightness changes between colour blocks."
+  relations:
+    - { type: influenced_by, to: befunge, aspects: [two-dimensional], weight: moderate, confidence: medium }
+  research_status: stub
+  confidence: high
+  sources: [esolangs-piet]
+
+- id: whitespace
+  name: Whitespace
+  kind: language
+  category: esoteric
+  cluster: esoteric/hostile
+  origin:
+    first_appeared: { year: 2003, date: "2003-04-01", precision: exact }
+    places: [{ institution: Durham University, city: Durham, country: GB }]
+  creators: [{ name: Edwin Brady, role: designer }, { name: Chris Morris, role: designer }]
+  status: historical
+  tags:
+    paradigm: [stack-oriented]
+  summary: "Only spaces, tabs and newlines are significant, so programs are invisible and can hide inside other source code. Brady later created the dependently typed language Idris."
+  research_status: stub
+  confidence: high
+  sources: [esolangs-whitespace]
+
+- id: lolcode
+  name: LOLCODE
+  kind: language
+  category: esoteric
+  cluster: esoteric/natural-language
+  origin:
+    first_appeared: { year: 2007, precision: year }
+  creators: [{ name: Adam Lindsay, role: designer }]
+  status: historical
+  summary: "Keywords from the lolcats meme (HAI, KTHXBYE). A cultural marker of the meme-language genre."
+  research_status: stub
+  confidence: high
+  sources: [esolangs-lolcode]

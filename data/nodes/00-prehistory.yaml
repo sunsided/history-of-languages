@@ -1,0 +1,189 @@
+# Prehistory: mechanisms, punched cards, notations and formalisms before stored-program computers.
+# These are not languages. They are here because the graph needs roots, and because
+# "what counts as a program" is itself a story worth showing on the site.
+
+- id: antikythera-mechanism
+  name: Antikythera mechanism
+  kind: mechanism
+  category: scientific
+  cluster: prehistory/mechanisms
+  origin:
+    first_appeared: { year: -150, year_end: -60, precision: range, note: "Dating debated; estimates range from c. 205 BC to c. 60 BC." }
+    places: [{ city: "found off Antikythera", country: "Ancient Greece" }]
+  status: extinct
+  summary: >
+    Geared analogue computer predicting astronomical positions and eclipses. Its behaviour is
+    fixed by its gear train, so it computes but is not programmable. It is the conventional
+    starting point of "machines that calculate", which is why it opens the timeline.
+  notes: "Use as the root of the 'computation' axis, not the 'programming' axis. No outgoing influence edges are claimed: there is no documented line from it to later programmable machines."
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Antikythera_mechanism" }
+  sources: [freeth-2006-antikythera, wiki-antikythera]
+
+- id: banu-musa-flute-player
+  name: Banū Mūsā automatic flute player
+  kind: mechanism
+  category: domain-specific
+  cluster: prehistory/mechanisms
+  origin:
+    first_appeared: { year: 850, precision: circa, note: "Described in the Banū Mūsā brothers' treatise on automata, 9th century." }
+    places: [{ city: Baghdad, country: "Abbasid Caliphate" }]
+  creators:
+    - { name: "Banū Mūsā brothers (Muhammad, Ahmad, al-Hasan ibn Mūsā ibn Shākir)", role: designers }
+  status: extinct
+  summary: >
+    Water-powered automaton whose melody is encoded as pins on an exchangeable rotating cylinder.
+    Swapping the cylinder changes the tune, which makes it a candidate for the earliest
+    programmable machine: the program is separate from the machine.
+  research_status: draft
+  confidence: medium
+  sources: [koetsier-2001-programmable]
+
+- id: jacquard-loom
+  name: Jacquard loom
+  kind: mechanism
+  category: domain-specific
+  cluster: prehistory/punched-cards
+  origin:
+    first_appeared: { year: 1804, precision: circa, note: "Demonstrated 1801, patented 1804." }
+    places: [{ city: Lyon, country: FR }]
+  creators:
+    - { name: Joseph Marie Jacquard, role: inventor }
+  status: historical
+  summary: >
+    Loom controlled by a chain of punched cards, each card selecting which warp threads rise.
+    The first widely used machine driven by an exchangeable, stored sequence of instructions.
+    Babbage adopted its cards for the Analytical Engine.
+  relations:
+    - { type: influenced_by, to: banu-musa-flute-player, weight: weak, confidence: low, note: "Shared idea (exchangeable stored pattern), not a documented line of transmission. Earlier looms by Basile Bouchon (1725) and Jacques de Vaucanson (1745) are the direct ancestors; add them when the subgraph is unfolded." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Jacquard_machine" }
+  sources: [wiki-jacquard]
+
+- id: analytical-engine
+  name: Analytical Engine
+  kind: machine
+  category: general
+  cluster: prehistory/babbage
+  origin:
+    began: { year: 1834, precision: year }
+    first_appeared: { year: 1837, precision: year, note: "Design described 1837; never completed." }
+    places: [{ city: London, country: GB }]
+  creators:
+    - { name: Charles Babbage, role: designer }
+  status: extinct
+  summary: >
+    Babbage's design for a general-purpose mechanical computer with a separate store (memory)
+    and mill (processor), conditional branching and loops, programmed by punched cards borrowed
+    from the Jacquard loom. Turing-complete in principle; never built.
+  relations:
+    - { type: influenced_by, to: jacquard-loom, aspects: [punched-card-program], weight: strong, confidence: high, note: "Babbage explicitly adopted Jacquard's cards for operation and variable cards." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Analytical_engine" }
+  sources: [menabrea-lovelace-1843, wiki-analytical-engine]
+
+- id: lovelace-note-g
+  name: Lovelace's Note G (Bernoulli numbers program)
+  aliases: [Note G]
+  kind: notation
+  category: scientific
+  cluster: prehistory/babbage
+  origin:
+    first_appeared: { year: 1843, precision: year }
+    places: [{ city: London, country: GB }]
+  creators:
+    - { name: Ada Lovelace, role: author }
+  status: historical
+  summary: >
+    In her translation of Menabrea's paper on the Analytical Engine, Ada Lovelace added notes A-G.
+    Note G tabulates, step by step, how the engine would compute Bernoulli numbers: operations,
+    the variables they read and write, and a repeated cycle. It is usually called the first published
+    computer program. Note A also argues the engine could manipulate symbols other than numbers,
+    such as music.
+  notes: "How much of Note G is Lovelace's own work versus Babbage's is debated by historians; keep the attribution with a note in the side sheet."
+  relations:
+    - { type: targets, to: analytical-engine, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Note_G" }
+  sources: [menabrea-lovelace-1843]
+
+- id: hollerith-tabulator
+  name: Hollerith tabulating machine
+  kind: mechanism
+  category: business
+  cluster: prehistory/punched-cards
+  origin:
+    first_appeared: { year: 1890, precision: year, note: "Used for the 1890 US census." }
+    places: [{ country: US }]
+  creators:
+    - { name: Herman Hollerith, role: inventor }
+  status: historical
+  summary: >
+    Electromechanical tabulator reading data from punched cards. Hollerith's company became part of
+    IBM, and the punched card became the standard medium for both data and programs until the 1970s.
+    Later unit-record machines were "programmed" by wiring plugboards.
+  relations:
+    - { type: influenced_by, to: jacquard-loom, aspects: [punched-card-program], weight: moderate, confidence: medium }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Tabulating_machine" }
+  sources: [wiki-tabulating-machine]
+
+- id: combinatory-logic
+  name: Combinatory logic
+  kind: formalism
+  category: research
+  cluster: prehistory/formalisms
+  origin:
+    first_appeared: { year: 1924, precision: year, note: "Schönfinkel 1924; developed by Haskell Curry from 1930." }
+  creators:
+    - { name: Moses Schönfinkel, role: originator }
+    - { name: Haskell Curry, role: developer }
+  status: active
+  summary: "Computation by combining a few combinators (S, K, I) without variables. Basis of Unlambda and of SKI-based compilation of lazy functional languages."
+  research_status: draft
+  confidence: high
+  sources: [wiki-combinatory-logic]
+
+- id: lambda-calculus
+  name: Lambda calculus
+  kind: formalism
+  category: research
+  cluster: prehistory/formalisms
+  origin:
+    began: { year: 1932, precision: year }
+    first_appeared: { year: 1936, precision: year }
+    places: [{ institution: Princeton University, city: Princeton, country: US }]
+  creators:
+    - { name: Alonzo Church, role: designer }
+  status: active
+  summary: >
+    Church's formal system of function abstraction and application. The theoretical root of the whole
+    functional family: Lisp took its lambda notation, ISWIM and ML its semantics, Haskell its core.
+  relations:
+    - { type: influenced_by, to: combinatory-logic, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lambda_calculus" }
+  sources: [church-1936, wiki-lambda-calculus]
+
+- id: turing-machine
+  name: Turing machine
+  kind: formalism
+  category: research
+  cluster: prehistory/formalisms
+  origin:
+    first_appeared: { year: 1936, precision: year, note: "Paper 'On Computable Numbers' submitted 1936, published 1937." }
+    places: [{ institution: University of Cambridge, city: Cambridge, country: GB }]
+  creators:
+    - { name: Alan Turing, role: designer }
+  status: active
+  summary: "Abstract machine reading and writing symbols on a tape under a finite table of rules. Defines computability; the universal machine anticipates the stored-program computer. Brainfuck is close to a literal Turing machine with a byte tape."
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Turing_machine" }
+  sources: [turing-1936]

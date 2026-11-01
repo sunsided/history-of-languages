@@ -1,0 +1,552 @@
+# The 1970s: Pascal, C, Smalltalk, Prolog, ML, Scheme, SQL, CLU, concurrency languages, Ada.
+
+- id: pascal
+  name: Pascal
+  kind: language
+  category: educational
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 1970, precision: year }
+    places: [{ institution: ETH Zürich, city: Zürich, country: CH }]
+  creators: [{ name: Niklaus Wirth, role: designer }]
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing, strong-typing]
+    features: [records, nested-functions, intermediate-code]
+    domain: [education]
+  milestones:
+    - { version: UCSD Pascal (p-code), year: 1977, introduces: [bytecode-vm], summary: "Portable p-code virtual machine; an ancestor of the JVM idea." }
+    - { version: Turbo Pascal, year: 1983, summary: "Borland's fast IDE-compiler made Pascal a PC mainstream language." }
+    - { version: ISO 7185, year: 1983 }
+    - { version: Object Pascal / Delphi, year: 1995, introduces: [object-oriented], summary: "Apple Object Pascal (1986) then Borland Delphi (1995); see Delphi node later." }
+  summary: >
+    Small, strongly typed ALGOL descendant designed for teaching structured programming. Turbo Pascal
+    and Delphi made it a commercial success. Through Delphi's chief architect, Anders Hejlsberg, it
+    leads to C# and TypeScript.
+  relations:
+    - { type: successor_of, to: algol-w, weight: strong, confidence: high }
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pascal_(programming_language)" }
+  sources: [wirth-1993-recollections-pascal]
+
+- id: c
+  name: C
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    began: { year: 1971, precision: year }
+    first_appeared: { year: 1972, precision: year, note: "Unix kernel rewritten in C during 1973." }
+    places: [{ institution: Bell Labs, city: Murray Hill NJ, country: US }]
+  creators:
+    - { name: Dennis Ritchie, role: designer }
+    - { name: Ken Thompson, role: contributor }
+  status: active
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing, weak-typing]
+    memory: [manual-memory, pointers]
+    concurrency: [threads, atomics]
+    features: [preprocessor, pointer-arithmetic]
+    domain: [operating-systems, embedded]
+  milestones:
+    - { version: K&R C, year: 1978, summary: "The C Programming Language (Kernighan & Ritchie) as de facto standard." }
+    - { version: "C89 / C90", year: 1989, introduces: [standardization, function-prototypes], summary: "ANSI X3.159-1989; prototypes borrowed back from C++." }
+    - { version: C99, year: 1999, introduces: [line-comments], summary: "// comments, inline, VLAs, designated initializers, stdint.h." }
+    - { version: C11, year: 2011, introduces: [threads, atomics, memory-model], summary: "Memory model, <threads.h>, _Atomic (aligned with C++11)." }
+    - { version: C17, year: 2018 }
+    - { version: C23, year: 2024, summary: "nullptr, constexpr objects, typeof, #embed." }
+  summary: >
+    Ritchie added types to B so it could address bytes on the PDP-11, and C became the language of
+    Unix. Its portability made it the lingua franca of systems programming. Most later mainstream
+    syntax (braces, `++`, `for(;;)`) descends from it.
+  relations:
+    - { type: successor_of, to: b, weight: strong, confidence: high }
+    - { type: influenced_by, to: algol-68, aspects: [static-typing], weight: moderate, confidence: high, note: "Ritchie: the scheme of type composition owes a debt to Algol 68." }
+    - { type: influenced_by, to: bcpl, weight: strong, confidence: high }
+    - { type: influenced_by, to: pdp-11, weight: moderate, confidence: high, note: "Byte addressing on the PDP-11 forced types into the language; ++/-- predate it." }
+    - { type: influenced_by, to: pl-i, weight: weak, confidence: medium, note: "Via Multics experience at Bell Labs; e.g. the -> operator." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/C_(programming_language)" }
+  sources: [ritchie-1993-development-c, kernighan-ritchie-1978]
+
+- id: smalltalk
+  name: Smalltalk
+  kind: language
+  category: general
+  cluster: oop/simula-smalltalk
+  origin:
+    began: { year: 1971, precision: circa }
+    first_appeared: { year: 1972, precision: year, note: "Smalltalk-72; public release Smalltalk-80 in 1980." }
+    places: [{ institution: Xerox PARC, city: Palo Alto, country: US }]
+  creators:
+    - { name: Alan Kay, role: designer }
+    - { name: Dan Ingalls, role: designer, affiliation: Xerox PARC }
+    - { name: Adele Goldberg, role: designer, affiliation: Xerox PARC }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, reflective]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    concurrency: [green-threads]
+    features: [message-passing, late-binding, everything-is-an-object, image-based, live-programming, blocks-closures, metaclasses, ide]
+  milestones:
+    - { version: Smalltalk-72, year: 1972, summary: "Objects as message receivers parsing their own messages." }
+    - { version: Smalltalk-76, year: 1976, introduces: [inheritance, classes], summary: "Class hierarchy with inheritance, compiled bytecode." }
+    - { version: Smalltalk-80, year: 1980, introduces: [metaclasses], summary: "Released outside PARC; Blue Book 1983." }
+    - { version: Squeak, year: 1996 }
+    - { version: Pharo, year: 2008 }
+  summary: >
+    Kay's "object-oriented" vision: everything is an object, and objects communicate only by late-bound
+    messages, like cells or networked computers. Pioneered the modern GUI, the IDE, MVC, live
+    programming and bytecode VMs with JIT compilation. It is the dynamic branch of OOP,
+    in contrast to Simula's and C++'s static branch.
+  relations:
+    - { type: influenced_by, to: simula, aspects: [classes, objects], weight: strong, confidence: high, note: "Kay read Simula in 1966 and took the idea of objects as independent simulated entities; Smalltalk-72 did not yet have inheritance." }
+    - { type: influenced_by, to: lisp, aspects: [late-binding, garbage-collection, reflection], weight: strong, confidence: high, note: "Kay called LISP 1.5's eval 'the Maxwell's equations of software'." }
+    - { type: influenced_by, to: logo, weight: moderate, confidence: high, note: "Children as users; Kay visited Papert." }
+    - { type: influenced_by, to: sketchpad, aspects: [objects], weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Smalltalk" }
+  sources: [kay-1993-early-history-smalltalk, ingalls-2020-evolution-smalltalk]
+
+- id: sketchpad
+  name: Sketchpad
+  kind: notation
+  category: research
+  cluster: oop/simula-smalltalk
+  origin:
+    first_appeared: { year: 1963, precision: year }
+    places: [{ institution: MIT Lincoln Laboratory, city: Lexington MA, country: US }]
+  creators: [{ name: Ivan Sutherland, role: designer }]
+  status: historical
+  tags:
+    features: [objects, constraints]
+  summary: "Interactive graphics program (Sutherland's PhD) with master drawings and instances that inherited changes, plus constraint solving. Not a language, but Kay lists it with Simula as a source of the object idea."
+  research_status: draft
+  confidence: high
+  sources: [kay-1993-early-history-smalltalk]
+
+- id: prolog
+  name: Prolog
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1972, precision: year }
+    places: [{ institution: Université d'Aix-Marseille, city: Marseille, country: FR }]
+  creators:
+    - { name: Alain Colmerauer, role: designer }
+    - { name: Philippe Roussel, role: designer }
+    - { name: Robert Kowalski, role: theory (procedural interpretation of Horn clauses), affiliation: University of Edinburgh }
+  status: legacy
+  tags:
+    paradigm: [logic, declarative]
+    typing: [dynamic-typing]
+    features: [unification, backtracking, pattern-matching]
+    domain: [artificial-intelligence, natural-language-processing]
+  milestones:
+    - { version: DEC-10 Prolog (Edinburgh), year: 1977, summary: "Warren's compiler; Edinburgh syntax became the standard." }
+    - { version: WAM, year: 1983, summary: "Warren Abstract Machine." }
+    - { version: ISO Prolog, year: 1995 }
+  summary: "Programming in logic: programs are Horn clauses, execution is resolution with unification and backtracking. Basis of Japan's Fifth Generation project; Erlang's first implementation was in Prolog."
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Prolog" }
+  sources: [colmerauer-roussel-1993-birth-prolog]
+
+- id: ml
+  name: ML
+  aliases: ["Meta Language", "Edinburgh ML"]
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 1973, precision: year, note: "Metalanguage of the LCF theorem prover." }
+    places: [{ institution: University of Edinburgh, city: Edinburgh, country: GB }]
+  creators:
+    - { name: Robin Milner, role: designer }
+    - { name: "Lockwood Morris, Malcolm Newey, Michael Gordon, Chris Wadsworth", role: co-designers }
+  status: extinct
+  tags:
+    paradigm: [functional, imperative]
+    typing: [static-typing, type-inference, parametric-polymorphism]
+    memory: [garbage-collection]
+    features: [exceptions, first-class-functions]
+  summary: "Built as the scripting language for a theorem prover, it introduced Hindley-Milner type inference: static types without annotations, with parametric polymorphism. Root of Standard ML, Caml/OCaml, F#, and (with Miranda) Haskell; its types reach Rust, Swift and Scala."
+  relations:
+    - { type: influenced_by, to: lisp, weight: strong, confidence: high }
+    - { type: influenced_by, to: iswim, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [macqueen-harper-reppy-2020-history-sml, milner-1978-type-polymorphism]
+
+- id: iswim
+  name: ISWIM
+  aliases: ["If you See What I Mean"]
+  kind: notation
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 1966, precision: year, note: "Landin, 'The Next 700 Programming Languages', CACM 1966." }
+    places: [{ country: GB }]
+  creators: [{ name: Peter Landin, role: designer }]
+  status: historical
+  tags:
+    paradigm: [functional]
+    features: [offside-rule, let-expressions, first-class-functions]
+  summary: "Landin's abstract language: lambda calculus with syntactic sugar, let/where, and the off-side rule (indentation as syntax). Never implemented as such; ancestor of ML, SASL, Miranda and Haskell, and of indentation-sensitive syntax in Python and Haskell."
+  relations:
+    - { type: influenced_by, to: lambda-calculus, weight: strong, confidence: high }
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: high, note: "Landin had mapped ALGOL 60 onto lambda calculus." }
+  research_status: draft
+  confidence: high
+  sources: [landin-1966-next-700]
+
+- id: sql
+  name: SQL
+  aliases: [SEQUEL]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    first_appeared: { year: 1974, precision: year, note: "SEQUEL paper by Chamberlin and Boyce, 1974; renamed SQL for trademark reasons." }
+    places: [{ institution: IBM San Jose Research Laboratory, city: San Jose, country: US }]
+  creators:
+    - { name: Donald D. Chamberlin, role: designer }
+    - { name: Raymond F. Boyce, role: designer }
+  status: active
+  tags:
+    paradigm: [declarative, query]
+    typing: [static-typing]
+    features: [set-based]
+    domain: [databases]
+  milestones:
+    - { version: SQL-86, year: 1986, introduces: [standardization] }
+    - { version: SQL-92, year: 1992 }
+    - { version: "SQL:1999", year: 1999, introduces: [recursion], summary: "Recursive common table expressions (WITH RECURSIVE), triggers; makes SQL Turing-complete." }
+    - { version: "SQL:2003", year: 2003, summary: "Window functions." }
+    - { version: "SQL:2016", year: 2016, summary: "JSON." }
+    - { version: "SQL:2023", year: 2023, summary: "Property graph queries (SQL/PGQ)." }
+  summary: "Declarative query language for Codd's relational model, built for IBM System R. The most widely used declarative language."
+  relations:
+    - { type: influenced_by, to: codd-relational-model, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [chamberlin-boyce-1974-sequel, codd-1970-relational]
+
+- id: codd-relational-model
+  name: Relational model (Codd)
+  kind: formalism
+  category: research
+  cluster: data
+  origin:
+    first_appeared: { year: 1970, precision: year }
+    places: [{ institution: IBM San Jose Research Laboratory, city: San Jose, country: US }]
+  creators: [{ name: Edgar F. Codd, role: author }]
+  status: active
+  summary: "Data as relations (tables) manipulated by relational algebra and calculus. The theory under SQL and Datalog-style query languages."
+  research_status: draft
+  confidence: high
+  sources: [codd-1970-relational]
+
+- id: scheme
+  name: Scheme
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1975, precision: year, note: "MIT AI Memo 349." }
+    places: [{ institution: MIT AI Lab, city: Cambridge MA, country: US }]
+  creators:
+    - { name: Gerald Jay Sussman, role: designer }
+    - { name: Guy L. Steele Jr., role: designer }
+  status: active
+  tags:
+    paradigm: [functional, multi-paradigm]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [lexical-scoping, closures, tail-call-optimization, first-class-continuations, hygienic-macros, first-class-functions]
+    domain: [education]
+  milestones:
+    - { version: R2RS, year: 1985 }
+    - { version: R4RS, year: 1991, introduces: [hygienic-macros] }
+    - { version: R5RS, year: 1998 }
+    - { version: R6RS, year: 2007 }
+    - { version: R7RS small, year: 2013 }
+  summary: >
+    Minimal, lexically scoped Lisp written to understand Hewitt's actor model; Sussman and Steele
+    found that actors and closures were the same thing. Brought closures, guaranteed tail calls
+    and first-class continuations into the mainstream of language design. SICP made it a teaching
+    language, and JavaScript's semantics borrow from it.
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high }
+    - { type: influenced_by, to: algol-60, aspects: [lexical-scoping, block-structure], weight: strong, confidence: high }
+    - { type: influenced_by, to: actor-model, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Scheme_(programming_language)" }
+  sources: [sussman-steele-1975-scheme, steele-gabriel-1993-evolution-lisp]
+
+- id: actor-model
+  name: Actor model
+  kind: formalism
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1973, precision: year, note: "Hewitt, Bishop & Steiger, 'A Universal Modular ACTOR Formalism for Artificial Intelligence', IJCAI 1973." }
+    places: [{ institution: MIT, city: Cambridge MA, country: US }]
+  creators:
+    - { name: Carl Hewitt, role: designer }
+    - { name: Peter Bishop, role: co-author }
+    - { name: Richard Steiger, role: co-author }
+  status: active
+  tags:
+    concurrency: [actors, message-passing]
+  summary: "Concurrency as independent actors that only send asynchronous messages, create actors and change their behaviour. Inspired by Smalltalk-72 and Simula; theoretical root of Erlang-style systems (though Erlang's designers say they did not know it) and of Akka."
+  relations:
+    - { type: influenced_by, to: smalltalk, aspects: [message-passing], weight: moderate, confidence: medium }
+    - { type: influenced_by, to: simula, weight: moderate, confidence: medium }
+  research_status: draft
+  confidence: medium
+  sources: [hewitt-1973-actor, armstrong-2007-history-erlang]
+
+- id: clu
+  name: CLU
+  kind: language
+  category: research
+  cluster: algol/adt
+  origin:
+    began: { year: 1973, precision: year }
+    first_appeared: { year: 1975, precision: circa }
+    places: [{ institution: MIT, city: Cambridge MA, country: US }]
+  creators: [{ name: Barbara Liskov, role: designer }, { name: "Russ Atkinson, Craig Schaffert, Alan Snyder", role: co-designers }]
+  status: extinct
+  tags:
+    paradigm: [procedural, data-abstraction]
+    typing: [static-typing, parametric-polymorphism]
+    memory: [garbage-collection]
+    features: [abstract-data-types, iterators, exceptions, multiple-assignment, generics]
+  summary: "Built around abstract data types ('clusters'). Introduced iterators with yield, checked exceptions-like signalling, parameterized types and multiple return/assignment. Its ideas resurface in C++, Java, Python generators, C#, Ruby and Lua."
+  relations:
+    - { type: influenced_by, to: simula, aspects: [classes], weight: moderate, confidence: medium }
+    - { type: influenced_by, to: algol-60, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [liskov-1993-history-clu]
+
+- id: concurrent-pascal
+  name: Concurrent Pascal
+  kind: language
+  category: systems
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1975, precision: year }
+    places: [{ institution: California Institute of Technology, city: Pasadena, country: US }]
+  creators: [{ name: Per Brinch Hansen, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    typing: [static-typing]
+    concurrency: [monitors, processes]
+  summary: "Pascal extended with processes and monitors; the first language to implement monitors, used to write small operating systems."
+  relations:
+    - { type: influenced_by, to: pascal, weight: strong, confidence: high }
+    - { type: influenced_by, to: simula, aspects: [classes], weight: moderate, confidence: high, note: "Monitors were modelled on Simula classes." }
+  research_status: draft
+  confidence: high
+  sources: [brinch-hansen-1993-monitors]
+
+- id: mesa
+  name: Mesa
+  kind: language
+  category: systems
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 1976, precision: circa }
+    places: [{ institution: Xerox PARC, city: Palo Alto, country: US }]
+  creators: [{ name: "Charles Geschke, Butler Lampson, Jim Mitchell, and others", role: designers }]
+  status: extinct
+  tags:
+    paradigm: [imperative, modular]
+    typing: [static-typing, strong-typing]
+    concurrency: [monitors, threads]
+    features: [modules, exceptions]
+  summary: "Strongly typed modular systems language for the Alto/Star workstations. Its monitors and condition variables (Lampson & Redell, 1980) are the model for Java's synchronized/wait/notify. Wirth used it during a sabbatical and built Modula-2 on it."
+  relations:
+    - { type: influenced_by, to: pascal, weight: strong, confidence: medium }
+    - { type: influenced_by, to: algol-68, weight: moderate, confidence: low }
+  research_status: draft
+  confidence: medium
+  sources: [lampson-redell-1980-mesa, wirth-2007-modula2-oberon]
+
+- id: icon
+  name: Icon
+  kind: language
+  category: research
+  cluster: string-processing
+  origin:
+    first_appeared: { year: 1977, precision: year }
+    places: [{ institution: University of Arizona, city: Tucson, country: US }]
+  creators: [{ name: Ralph E. Griswold, role: designer }]
+  status: legacy
+  tags:
+    paradigm: [imperative, goal-directed]
+    typing: [dynamic-typing]
+    features: [generators, backtracking, string-processing]
+  summary: "Goal-directed evaluation: expressions can generate a sequence of results and fail. Its generators are explicitly cited by Python's PEP 255."
+  relations:
+    - { type: successor_of, to: snobol, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [griswold-1993-history-icon, pep-255]
+
+- id: awk
+  name: AWK
+  kind: language
+  category: scripting
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1977, precision: year }
+    places: [{ institution: Bell Labs, city: Murray Hill NJ, country: US }]
+  creators:
+    - { name: Alfred Aho, role: designer }
+    - { name: Peter Weinberger, role: designer }
+    - { name: Brian Kernighan, role: designer }
+  status: active
+  tags:
+    paradigm: [data-driven, scripting]
+    typing: [dynamic-typing]
+    features: [associative-arrays, regular-expressions]
+  summary: "Pattern-action language for text records with associative arrays as a built-in type. A direct ancestor of Perl."
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high }
+    - { type: influenced_by, to: snobol, aspects: [string-processing], weight: weak, confidence: medium }
+  research_status: draft
+  confidence: high
+  sources: [aho-kernighan-weinberger-1988]
+
+- id: csp
+  name: CSP (Communicating Sequential Processes)
+  kind: formalism
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1978, precision: year, note: "Hoare, CACM 1978; process-algebra version in the 1985 book." }
+    places: [{ institution: Queen's University Belfast / Oxford, country: GB }]
+  creators: [{ name: C. A. R. Hoare, role: designer }]
+  status: active
+  tags:
+    concurrency: [channels, message-passing, synchronous-rendezvous]
+  summary: "Processes that share nothing and synchronize by communicating over named channels, with guarded alternatives. Ancestor of occam, Newsqueak, Limbo, Go's goroutines and channels, and Clojure core.async."
+  relations:
+    - { type: influenced_by, to: dijkstra-guarded-commands, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [hoare-1978-csp]
+
+- id: dijkstra-guarded-commands
+  name: Guarded Command Language
+  kind: notation
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1975, precision: year }
+    places: [{ institution: Burroughs / Eindhoven University of Technology, country: NL }]
+  creators: [{ name: Edsger W. Dijkstra, role: designer }]
+  status: historical
+  tags:
+    features: [nondeterminism, guarded-commands]
+  summary: "Dijkstra's notation of guarded commands with nondeterministic choice, for deriving programs with their proofs. Used by CSP's alternative command and Go's select."
+  research_status: draft
+  confidence: high
+  sources: [dijkstra-1975-guarded]
+
+- id: modula-2
+  name: Modula-2
+  kind: language
+  category: systems
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 1978, precision: year, note: "Defined 1978, implemented 1979 for the Lilith workstation." }
+    places: [{ institution: ETH Zürich, city: Zürich, country: CH }]
+  creators: [{ name: Niklaus Wirth, role: designer }]
+  status: legacy
+  tags:
+    paradigm: [imperative, structured, modular]
+    typing: [static-typing, strong-typing]
+    concurrency: [coroutines]
+    features: [modules, separate-compilation]
+  summary: "Pascal plus modules with explicit import/export and separate compilation, and coroutines for concurrency. Influenced Modula-3, Oberon, Ada and Python's module system indirectly."
+  relations:
+    - { type: successor_of, to: pascal, weight: strong, confidence: high }
+    - { type: influenced_by, to: mesa, aspects: [modules], weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [wirth-2007-modula2-oberon]
+
+- id: bourne-shell
+  name: Bourne shell
+  aliases: [sh]
+  kind: language
+  category: shell
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1979, precision: year, note: "Released with Version 7 Unix." }
+    places: [{ institution: Bell Labs, city: Murray Hill NJ, country: US }]
+  creators: [{ name: Stephen R. Bourne, role: designer }]
+  status: active
+  tags:
+    paradigm: [imperative, scripting]
+    typing: [typeless]
+    features: [pipes, command-substitution]
+  summary: "Unix's scripting shell with control structures. Bourne used ALGOL 68C keywords (if/fi, case/esac) and even C macros to make the C source look like ALGOL. Ancestor of ksh, bash and POSIX sh."
+  relations:
+    - { type: influenced_by, to: algol-68, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [wiki-bourne-shell]
+
+- id: ada
+  name: Ada
+  kind: language
+  category: systems
+  cluster: algol/ada
+  origin:
+    began: { year: 1977, precision: year, note: "DoD competition; the 'Green' language of CII Honeywell Bull won in 1979." }
+    first_appeared: { year: 1980, precision: year, note: "MIL-STD-1815 (December 1980, named for Lovelace's birth year); ANSI standard 1983." }
+    places: [{ institution: CII Honeywell Bull, city: Paris, country: FR }]
+  creators:
+    - { name: Jean Ichbiah, role: lead designer }
+    - { name: US Department of Defense (HOLWG), role: sponsor }
+  status: active
+  tags:
+    paradigm: [imperative, structured, object-oriented, modular]
+    typing: [static-typing, strong-typing]
+    concurrency: [tasks, rendezvous, protected-objects]
+    features: [generics, exceptions, packages, contracts]
+    domain: [safety-critical, embedded]
+  milestones:
+    - { version: Ada 83, year: 1983, introduces: [generics, tasks, rendezvous] }
+    - { version: Ada 95, year: 1995, introduces: [object-oriented, protected-objects], summary: "First ISO-standard object-oriented language." }
+    - { version: Ada 2005, year: 2005 }
+    - { version: Ada 2012, year: 2012, introduces: [contracts], summary: "Pre/postconditions, type invariants." }
+    - { version: Ada 2022, year: 2023 }
+  summary: >
+    Commissioned by the US DoD to replace hundreds of languages in embedded systems. Built-in tasks
+    with rendezvous, generics and packages. Named after Ada Lovelace. Its generics and exceptions
+    influenced C++ templates and exceptions; SPARK is its formally verifiable subset.
+  relations:
+    - { type: influenced_by, to: pascal, weight: strong, confidence: high }
+    - { type: influenced_by, to: algol-68, weight: moderate, confidence: medium }
+    - { type: influenced_by, to: simula, weight: weak, confidence: medium }
+    - { type: influenced_by, to: csp, aspects: [synchronous-rendezvous], weight: moderate, confidence: medium }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ada_(programming_language)" }
+  sources: [whitaker-1993-ada]

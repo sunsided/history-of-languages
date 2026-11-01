@@ -1,0 +1,377 @@
+# The 1960s: ALGOL 60 and its children, Simula, APL, BASIC, PL/I, the BCPL line.
+
+- id: algol-60
+  name: ALGOL 60
+  kind: language
+  category: scientific
+  cluster: algol
+  origin:
+    first_appeared: { year: 1960, precision: year, note: "Report on the Algorithmic Language ALGOL 60, Paris meeting January 1960; Revised Report 1963." }
+    places: [{ city: Paris, country: FR }]
+  creators:
+    - { name: Peter Naur, role: editor }
+    - { name: "John Backus, Friedrich L. Bauer, Julien Green, Charles Katz, John McCarthy, Alan Perlis, Heinz Rutishauser, Klaus Samelson, Bernard Vauquois, Joseph Wegstein, Adriaan van Wijngaarden, Michael Woodger", role: committee }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing]
+    memory: [stack-allocation]
+    features: [block-structure, lexical-scoping, recursion, call-by-name, bnf, nested-functions]
+  milestones:
+    - { version: Revised Report, year: 1963 }
+  summary: >
+    The most influential language few people ever used for production. Defined by BNF grammar
+    (Backus-Naur Form), it brought block structure, lexical scope, recursion and the stack-based
+    runtime. Almost every imperative language since is "ALGOL-like"; it was also the lingua
+    franca for publishing algorithms for decades.
+  relations:
+    - { type: successor_of, to: algol-58, weight: strong, confidence: high }
+    - { type: influenced_by, to: lisp, aspects: [conditional-expressions, recursion], weight: moderate, confidence: medium, note: "McCarthy was on the committee and pushed conditional expressions and recursion." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ALGOL_60" }
+  sources: [naur-1963-revised-report, naur-1978-european-algol, perlis-1978-american-algol]
+
+- id: snobol
+  name: SNOBOL
+  kind: language
+  category: domain-specific
+  cluster: string-processing
+  origin:
+    first_appeared: { year: 1962, precision: year }
+    places: [{ institution: Bell Labs, city: Holmdel NJ, country: US }]
+  creators:
+    - { name: David J. Farber, role: designer }
+    - { name: Ralph E. Griswold, role: designer }
+    - { name: Ivan P. Polonsky, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, pattern-matching]
+    typing: [dynamic-typing]
+    features: [pattern-matching, backtracking, string-processing]
+  milestones:
+    - { version: SNOBOL4, year: 1967, summary: "Patterns as first-class values." }
+  summary: "String-manipulation language with patterns as first-class values and success/failure-driven control flow. Ancestor of Icon."
+  research_status: draft
+  confidence: high
+  sources: [griswold-1978-snobol]
+
+- id: apl
+  name: APL
+  aliases: ["A Programming Language"]
+  kind: language
+  category: scientific
+  cluster: array
+  origin:
+    began: { year: 1957, precision: circa, note: "Iverson's notation, developed at Harvard from 1957; book 'A Programming Language' 1962." }
+    first_appeared: { year: 1966, precision: year, note: "APL\\360 implementation at IBM." }
+    places: [{ institution: "Harvard University, then IBM", country: US }]
+  creators:
+    - { name: Kenneth E. Iverson, role: designer }
+    - { name: Adin Falkoff, role: co-designer }
+  status: legacy
+  tags:
+    paradigm: [array-programming, functional, tacit-programming]
+    typing: [dynamic-typing]
+    features: [repl, special-character-set]
+  summary: >
+    Began as a mathematical notation for describing algorithms and machines (it was used to formally
+    describe the System/360). Whole-array operations with a dense special-symbol alphabet. Ancestor
+    of J, K, Q and the array-programming style in NumPy, MATLAB and R.
+  relations:
+    - { type: influenced_by, to: ibm-system-360, weight: weak, confidence: medium, note: "Iverson notation was used to formally describe System/360, and APL\\360 ran on it." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/APL_(programming_language)" }
+  sources: [falkoff-iverson-1978-evolution-apl, iverson-1962-apl]
+
+- id: cpl
+  name: CPL
+  aliases: ["Combined Programming Language"]
+  kind: language
+  category: general
+  cluster: algol/bcpl-line
+  origin:
+    first_appeared: { year: 1963, precision: year }
+    places: [{ institution: University of Cambridge and University of London, country: GB }]
+  creators:
+    - { name: Christopher Strachey, role: designer }
+    - { name: David Barron, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing]
+  summary: "Ambitious ALGOL-derived language for both scientific and commercial use; too large to implement fully in its day. Its stripped-down core became BCPL."
+  relations:
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [ritchie-1993-development-c]
+
+- id: basic
+  name: BASIC
+  aliases: [Dartmouth BASIC]
+  kind: language
+  category: educational
+  cluster: basic
+  origin:
+    first_appeared: { year: 1964, date: "1964-05-01", precision: exact }
+    places: [{ institution: Dartmouth College, city: Hanover NH, country: US }]
+  creators:
+    - { name: John G. Kemeny, role: designer }
+    - { name: Thomas E. Kurtz, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing]
+    features: [line-numbers, interactive-time-sharing]
+    domain: [education]
+  milestones:
+    - { version: Altair BASIC (Microsoft), year: 1975, summary: "Microsoft's first product; interpreted BASICs became the default language of 8-bit home computers." }
+    - { version: Visual Basic, year: 1991, summary: "Event-driven, GUI-designer language; see its own node later." }
+  summary: >
+    Designed so that non-science students could program on the Dartmouth Time-Sharing System.
+    The original was compiled; the interpreted, line-numbered microcomputer BASICs of the 1970s
+    and 80s introduced programming to millions.
+  relations:
+    - { type: influenced_by, to: fortran, weight: strong, confidence: high }
+    - { type: influenced_by, to: algol-60, weight: moderate, confidence: medium }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/BASIC" }
+  sources: [kurtz-1978-basic]
+
+- id: pl-i
+  name: PL/I
+  aliases: [PL/1, NPL]
+  kind: language
+  category: general
+  cluster: business
+  origin:
+    began: { year: 1963, precision: year }
+    first_appeared: { year: 1964, precision: year, note: "Language specification 1964; first compiler 1966." }
+    places: [{ institution: IBM / SHARE, country: US }]
+  creators: [{ name: George Radin, role: lead }]
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing]
+    concurrency: [multitasking]
+    features: [exceptions, pointers, block-structure]
+  summary: >
+    IBM's attempt to unify scientific (Fortran) and business (COBOL) programming for System/360.
+    An early language with exception handling (ON-conditions) and built-in multitasking. Used to
+    write Multics, whose ideas shaped Unix and, through it, C.
+  relations:
+    - { type: influenced_by, to: fortran, weight: strong, confidence: high }
+    - { type: influenced_by, to: cobol, aspects: [records], weight: strong, confidence: high }
+    - { type: influenced_by, to: algol-60, aspects: [block-structure], weight: strong, confidence: high }
+    - { type: targets, to: ibm-system-360, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [radin-1978-pl1]
+
+- id: algol-w
+  name: ALGOL W
+  kind: language
+  category: scientific
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 1966, precision: year }
+    places: [{ institution: Stanford University, city: Stanford, country: US }]
+  creators:
+    - { name: Niklaus Wirth, role: designer }
+    - { name: C. A. R. Hoare, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    typing: [static-typing]
+    features: [records, references]
+  summary: "Wirth and Hoare's conservative successor proposal for ALGOL 60, rejected by IFIP WG 2.1 in favour of what became ALGOL 68. Introduced records and references; led directly to Pascal."
+  relations:
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [wirth-1993-recollections-pascal]
+
+- id: simula
+  name: Simula
+  aliases: [Simula I, Simula 67]
+  kind: language
+  category: domain-specific
+  cluster: oop/simula-smalltalk
+  origin:
+    began: { year: 1962, precision: year, note: "Simula I developed 1962-1965 as a simulation language." }
+    first_appeared: { year: 1967, precision: year, note: "Simula 67 defined at the 1967 Common Base Conference." }
+    places: [{ institution: Norwegian Computing Center, city: Oslo, country: "NO" }]
+  creators:
+    - { name: Ole-Johan Dahl, role: designer }
+    - { name: Kristen Nygaard, role: designer }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, imperative, structured]
+    typing: [static-typing]
+    memory: [garbage-collection]
+    concurrency: [coroutines]
+    features: [classes, objects, inheritance, virtual-dispatch, coroutines]
+    domain: [simulation]
+  milestones:
+    - { version: Simula I, year: 1965, summary: "Process-oriented discrete-event simulation." }
+    - { version: Simula 67, year: 1967, introduces: [classes, objects, inheritance, virtual-dispatch], summary: "General-purpose language with class, subclass (prefix), virtual procedures, and detach/resume coroutines for quasi-parallel processes." }
+  summary: >
+    Superset of ALGOL 60 for discrete-event simulation, where every simulated entity runs as a
+    coroutine. Simula 67 introduced classes, objects, inheritance and virtual procedures: the origin
+    of object-oriented programming. Stroustrup built C++ to get "Simula's facilities for program
+    organization together with C's efficiency".
+  relations:
+    - { type: superset_of, to: algol-60, weight: strong, confidence: high }
+    - { type: influenced_by, to: algol-60, aspects: [block-structure], weight: strong, confidence: high }
+    - { type: influenced_by, to: hoare-record-classes, aspects: [classes, records, references], weight: strong, confidence: high, note: "Dahl and Nygaard credit Hoare's 1965-66 record class proposal for the class/subclass concept of Simula 67." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Simula" }
+  sources: [nygaard-dahl-1978-simula, dahl-2002-birth-oo, stroustrup-1993-hopl2]
+
+- id: hoare-record-classes
+  name: Hoare's record handling (record classes)
+  kind: notation
+  category: research
+  cluster: oop/simula-smalltalk
+  origin:
+    first_appeared: { year: 1965, precision: year, note: "'Record Handling', ALGOL Bulletin 21, 1965; expanded 1966." }
+    places: [{ country: GB }]
+  creators: [{ name: C. A. R. Hoare, role: author }]
+  status: historical
+  tags:
+    features: [records, references]
+  summary: "Proposal for ALGOL extensions: record classes with typed references (pointers) and subclasses. Feeds Simula 67's classes and, via ALGOL W, Pascal's records. Hoare later called the null reference his 'billion-dollar mistake'; it was introduced in ALGOL W."
+  relations:
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: high }
+  research_status: draft
+  confidence: medium
+  sources: [nygaard-dahl-1978-simula, hoare-2009-billion-dollar]
+
+- id: bcpl
+  name: BCPL
+  aliases: ["Basic Combined Programming Language"]
+  kind: language
+  category: systems
+  cluster: algol/bcpl-line
+  origin:
+    first_appeared: { year: 1967, precision: year, note: "Designed by Richards while visiting MIT; first compiler 1967." }
+    places: [{ institution: University of Cambridge / MIT, country: GB }]
+  creators: [{ name: Martin Richards, role: designer }]
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [typeless]
+    features: [portable-compiler, intermediate-code, line-comments]
+  summary: >
+    Typeless systems language (everything is a machine word) cut down from CPL, designed for writing
+    compilers. Its compiler emitted a portable intermediate code (O-code). It is the parent of B,
+    and gave C++ (and later C99) its `//` comments.
+  relations:
+    - { type: successor_of, to: cpl, weight: strong, confidence: high, note: "A subset of CPL's ideas, simplified." }
+  research_status: draft
+  confidence: high
+  sources: [ritchie-1993-development-c, stroustrup-1993-hopl2]
+
+- id: logo
+  name: Logo
+  kind: language
+  category: educational
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1967, precision: year }
+    places: [{ institution: "Bolt, Beranek and Newman (BBN)", city: Cambridge MA, country: US }]
+  creators:
+    - { name: Wally Feurzeig, role: designer }
+    - { name: Seymour Papert, role: designer }
+    - { name: Cynthia Solomon, role: designer }
+  status: legacy
+  tags:
+    paradigm: [functional, procedural]
+    typing: [dynamic-typing]
+    features: [turtle-graphics]
+    domain: [education]
+  summary: "Lisp without parentheses for children; turtle graphics came a little later. Influenced Smalltalk's educational goals and, much later, Scratch."
+  relations:
+    - { type: influenced_by, to: lisp, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [solomon-2020-history-logo]
+
+- id: algol-68
+  name: ALGOL 68
+  kind: language
+  category: general
+  cluster: algol
+  origin:
+    first_appeared: { year: 1968, date: "1968-12", precision: exact, note: "Final report adopted by IFIP WG 2.1 December 1968; Revised Report 1973/75." }
+    places: [{ institution: IFIP Working Group 2.1, country: NL }]
+  creators:
+    - { name: Adriaan van Wijngaarden, role: lead editor }
+    - { name: "Barry Mailloux, John Peck, Kees Koster", role: editors }
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    typing: [static-typing, strong-typing]
+    concurrency: [parallel-clauses, semaphores]
+    features: [orthogonality, operator-overloading, references, unions, expression-oriented, declarations-anywhere]
+  summary: >
+    Radically orthogonal successor to ALGOL 60, defined with two-level (van Wijngaarden) grammars that
+    many found impenetrable. The dissent of Wirth, Hoare and Dijkstra over it produced Pascal and the
+    "Minority Report". Rarely used, but deeply influential: Ritchie credits it for C's type
+    composition, and Stroustrup for C++ operator overloading, references and declarations anywhere.
+  relations:
+    - { type: successor_of, to: algol-60, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [lindsey-1993-history-algol68, ritchie-1993-development-c, stroustrup-1993-hopl2]
+
+- id: b
+  name: B
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    first_appeared: { year: 1969, precision: year }
+    places: [{ institution: Bell Labs, city: Murray Hill NJ, country: US }]
+  creators:
+    - { name: Ken Thompson, role: designer }
+    - { name: Dennis Ritchie, role: contributor }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [typeless]
+    features: [increment-operators]
+  summary: >
+    Thompson's terse, typeless reduction of BCPL for the PDP-7 Unix. Introduced `++`/`--` and
+    `=` for assignment. Its typelessness failed on the byte-addressed PDP-11, which is why Ritchie
+    added types and created C. Kernighan's 1972 B tutorial has the first known "hello, world".
+  relations:
+    - { type: successor_of, to: bcpl, weight: strong, confidence: high, note: "Ritchie: 'BCPL squeezed into 8K bytes of memory and filtered through Thompson's brain'." }
+  research_status: draft
+  confidence: high
+  sources: [ritchie-1993-development-c]
+
+- id: forth
+  name: Forth
+  kind: language
+  category: systems
+  cluster: stack
+  origin:
+    began: { year: 1968, precision: circa }
+    first_appeared: { year: 1970, precision: year, note: "Moore's work at NRAO; name from 1970." }
+    places: [{ institution: National Radio Astronomy Observatory, country: US }]
+  creators: [{ name: Charles H. Moore, role: designer }]
+  status: legacy
+  tags:
+    paradigm: [concatenative, stack-oriented, imperative]
+    typing: [typeless]
+    features: [threaded-code, metaprogramming, repl]
+    domain: [embedded]
+  summary: "Stack-based, extensible language where the programmer defines new words that become part of the language. Ancestor of PostScript and Factor, and of the esoteric FALSE and its descendants."
+  research_status: draft
+  confidence: high
+  sources: [rather-colburn-moore-1993-forth]

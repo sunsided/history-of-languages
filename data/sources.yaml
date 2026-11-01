@@ -1,0 +1,1133 @@
+# Source registry. `checked` = date someone actually re-read the source against the claims citing it.
+# Entries without `checked` are cited from bibliography and still need verification (see README: research workflow).
+- id: backus-1978-history-fortran
+  type: paper
+  primary: true
+  authors:
+  - John Backus
+  title: The History of FORTRAN I, II, and III
+  venue: HOPL I, ACM SIGPLAN Notices 13(8)
+  year: 1978
+- id: mccarthy-1978-history-lisp
+  type: paper
+  primary: true
+  authors:
+  - John McCarthy
+  title: History of LISP
+  venue: HOPL I, ACM SIGPLAN Notices 13(8)
+  year: 1978
+  url: http://jmc.stanford.edu/articles/lisp/lisp.pdf
+- id: naur-1978-european-algol
+  type: paper
+  primary: true
+  authors:
+  - Peter Naur
+  title: The European Side of the Last Phase of the Development of ALGOL 60
+  venue: HOPL I
+  year: 1978
+- id: perlis-1978-american-algol
+  type: paper
+  primary: true
+  authors:
+  - Alan J. Perlis
+  title: The American Side of the Development of ALGOL
+  venue: HOPL I
+  year: 1978
+- id: sammet-1978-early-cobol
+  type: paper
+  primary: true
+  authors:
+  - Jean E. Sammet
+  title: The Early History of COBOL
+  venue: HOPL I
+  year: 1978
+- id: nygaard-dahl-1978-simula
+  type: paper
+  primary: true
+  authors:
+  - Kristen Nygaard
+  - Ole-Johan Dahl
+  title: The Development of the SIMULA Languages
+  venue: HOPL I
+  year: 1978
+- id: falkoff-iverson-1978-evolution-apl
+  type: paper
+  primary: true
+  authors:
+  - Adin D. Falkoff
+  - Kenneth E. Iverson
+  title: The Evolution of APL
+  venue: HOPL I
+  year: 1978
+- id: kurtz-1978-basic
+  type: paper
+  primary: true
+  authors:
+  - Thomas E. Kurtz
+  title: BASIC
+  venue: HOPL I
+  year: 1978
+- id: radin-1978-pl1
+  type: paper
+  primary: true
+  authors:
+  - George Radin
+  title: The Early History and Characteristics of PL/I
+  venue: HOPL I
+  year: 1978
+- id: griswold-1978-snobol
+  type: paper
+  primary: true
+  authors:
+  - Ralph E. Griswold
+  title: A History of the SNOBOL Programming Languages
+  venue: HOPL I
+  year: 1978
+- id: stroustrup-1993-hopl2
+  type: paper
+  primary: true
+  authors:
+  - Bjarne Stroustrup
+  title: 'A History of C++: 1979-1991'
+  venue: HOPL II, ACM SIGPLAN Notices 28(3)
+  year: 1993
+  url: https://www.stroustrup.com/hopl2.pdf
+  checked: '2026-11-01'
+- id: kay-1993-early-history-smalltalk
+  type: paper
+  primary: true
+  authors:
+  - Alan C. Kay
+  title: The Early History of Smalltalk
+  venue: HOPL II
+  year: 1993
+  url: https://worrydream.com/EarlyHistoryOfSmalltalk/
+- id: ritchie-1993-development-c
+  type: paper
+  primary: true
+  authors:
+  - Dennis M. Ritchie
+  title: The Development of the C Language
+  venue: HOPL II
+  year: 1993
+- id: wirth-1993-recollections-pascal
+  type: paper
+  primary: true
+  authors:
+  - Niklaus Wirth
+  title: Recollections about the Development of Pascal
+  venue: HOPL II
+  year: 1993
+- id: colmerauer-roussel-1993-birth-prolog
+  type: paper
+  primary: true
+  authors:
+  - Alain Colmerauer
+  - Philippe Roussel
+  title: The Birth of Prolog
+  venue: HOPL II
+  year: 1993
+- id: steele-gabriel-1993-evolution-lisp
+  type: paper
+  primary: true
+  authors:
+  - Guy L. Steele Jr.
+  - Richard P. Gabriel
+  title: The Evolution of Lisp
+  venue: HOPL II
+  year: 1993
+- id: liskov-1993-history-clu
+  type: paper
+  primary: true
+  authors:
+  - Barbara Liskov
+  title: A History of CLU
+  venue: HOPL II
+  year: 1993
+- id: whitaker-1993-ada
+  type: paper
+  primary: true
+  authors:
+  - William A. Whitaker
+  title: 'Ada - The Project: The DoD High Order Language Working Group'
+  venue: HOPL II
+  year: 1993
+- id: lindsey-1993-history-algol68
+  type: paper
+  primary: true
+  authors:
+  - C. H. Lindsey
+  title: A History of ALGOL 68
+  venue: HOPL II
+  year: 1993
+- id: rather-colburn-moore-1993-forth
+  type: paper
+  primary: true
+  authors:
+  - Elizabeth D. Rather
+  - Donald R. Colburn
+  - Charles H. Moore
+  title: The Evolution of Forth
+  venue: HOPL II
+  year: 1993
+- id: griswold-1993-history-icon
+  type: paper
+  primary: true
+  authors:
+  - Ralph E. Griswold
+  - Madge T. Griswold
+  title: History of the Icon Programming Language
+  venue: HOPL II
+  year: 1993
+- id: brinch-hansen-1993-monitors
+  type: paper
+  primary: true
+  authors:
+  - Per Brinch Hansen
+  title: 'Monitors and Concurrent Pascal: A Personal History'
+  venue: HOPL II
+  year: 1993
+- id: stroustrup-2007-hopl3
+  type: paper
+  primary: true
+  authors:
+  - Bjarne Stroustrup
+  title: 'Evolving a Language in and for the Real World: C++ 1991-2006'
+  venue: HOPL III
+  year: 2007
+- id: hudak-2007-history-haskell
+  type: paper
+  primary: true
+  authors:
+  - Paul Hudak
+  - John Hughes
+  - Simon Peyton Jones
+  - Philip Wadler
+  title: 'A History of Haskell: Being Lazy with Class'
+  venue: HOPL III
+  year: 2007
+- id: armstrong-2007-history-erlang
+  type: paper
+  primary: true
+  authors:
+  - Joe Armstrong
+  title: A History of Erlang
+  venue: HOPL III
+  year: 2007
+- id: ierusalimschy-2007-evolution-lua
+  type: paper
+  primary: true
+  authors:
+  - Roberto Ierusalimschy
+  - Luiz Henrique de Figueiredo
+  - Waldemar Celes
+  title: The Evolution of Lua
+  venue: HOPL III
+  year: 2007
+- id: ungar-smith-2007-self
+  type: paper
+  primary: true
+  authors:
+  - David Ungar
+  - Randall B. Smith
+  title: Self
+  venue: HOPL III
+  year: 2007
+- id: wirth-2007-modula2-oberon
+  type: paper
+  primary: true
+  authors:
+  - Niklaus Wirth
+  title: Modula-2 and Oberon
+  venue: HOPL III
+  year: 2007
+- id: stroustrup-2020-hopl4
+  type: paper
+  primary: true
+  authors:
+  - Bjarne Stroustrup
+  title: 'Thriving in a Crowded and Changing World: C++ 2006-2020'
+  venue: HOPL IV, Proc. ACM Program. Lang. 4
+  year: 2020
+- id: syme-2020-early-history-fsharp
+  type: paper
+  primary: true
+  authors:
+  - Don Syme
+  title: The Early History of F#
+  venue: HOPL IV, Proc. ACM Program. Lang. 4
+  year: 2020
+- id: wirfs-brock-eich-2020-javascript
+  type: paper
+  primary: true
+  authors:
+  - Allen Wirfs-Brock
+  - Brendan Eich
+  title: 'JavaScript: The First 20 Years'
+  venue: HOPL IV
+  year: 2020
+- id: macqueen-harper-reppy-2020-history-sml
+  type: paper
+  primary: true
+  authors:
+  - David MacQueen
+  - Robert Harper
+  - John Reppy
+  title: The History of Standard ML
+  venue: HOPL IV
+  year: 2020
+- id: bright-2020-origins-d
+  type: paper
+  primary: true
+  authors:
+  - Walter Bright
+  - Andrei Alexandrescu
+  - Michael Parker
+  title: Origins of the D Programming Language
+  venue: HOPL IV
+  year: 2020
+- id: hickey-2020-history-clojure
+  type: paper
+  primary: true
+  authors:
+  - Rich Hickey
+  title: A History of Clojure
+  venue: HOPL IV
+  year: 2020
+- id: solomon-2020-history-logo
+  type: paper
+  primary: true
+  authors:
+  - Cynthia Solomon
+  - Brian Harvey
+  - Ken Kahn
+  - Henry Lieberman
+  - Mark L. Miller
+  - Margaret Minsky
+  - Artemis Papert
+  - Brian Silverman
+  title: History of Logo
+  venue: HOPL IV
+  year: 2020
+- id: ingalls-2020-evolution-smalltalk
+  type: paper
+  primary: true
+  authors:
+  - Daniel Ingalls
+  title: 'The Evolution of Smalltalk: From Smalltalk-72 through Squeak'
+  venue: HOPL IV
+  year: 2020
+- id: cox-naroff-hsu-2020-objc
+  type: paper
+  primary: true
+  authors:
+  - Brad J. Cox
+  - Steve Naroff
+  - Hansen Hsu
+  title: The Origins of Objective-C at PPI/Stepstone and Its Evolution at NeXT
+  venue: HOPL IV
+  year: 2020
+- id: chambers-2020-s-r
+  type: paper
+  primary: true
+  authors:
+  - John M. Chambers
+  title: S, R, and Data Science
+  venue: HOPL IV
+  year: 2020
+- id: menabrea-lovelace-1843
+  type: paper
+  primary: true
+  authors:
+  - Luigi Federico Menabrea
+  - Ada Lovelace (translator and notes)
+  title: Sketch of the Analytical Engine Invented by Charles Babbage, with notes by the translator
+  venue: Taylor's Scientific Memoirs, vol. 3
+  year: 1843
+- id: koetsier-2001-programmable
+  type: paper
+  primary: false
+  authors:
+  - Teun Koetsier
+  title: 'On the prehistory of programmable machines: musical automata, looms, calculators'
+  venue: Mechanism and Machine Theory 36(5)
+  year: 2001
+- id: freeth-2006-antikythera
+  type: paper
+  primary: false
+  authors:
+  - Tony Freeth
+  - et al.
+  title: Decoding the ancient Greek astronomical calculator known as the Antikythera Mechanism
+  venue: Nature 444
+  year: 2006
+- id: church-1936
+  type: paper
+  primary: true
+  authors:
+  - Alonzo Church
+  title: An Unsolvable Problem of Elementary Number Theory
+  venue: American Journal of Mathematics 58(2)
+  year: 1936
+- id: turing-1936
+  type: paper
+  primary: true
+  authors:
+  - Alan M. Turing
+  title: On Computable Numbers, with an Application to the Entscheidungsproblem
+  venue: Proceedings of the London Mathematical Society s2-42
+  year: 1936
+- id: von-neumann-1945-edvac
+  type: report
+  primary: true
+  authors:
+  - John von Neumann
+  title: First Draft of a Report on the EDVAC
+  venue: Moore School of Electrical Engineering, University of Pennsylvania
+  year: 1945
+- id: booth-1947-coding-arc
+  type: report
+  primary: true
+  authors:
+  - Andrew D. Booth
+  - Kathleen H. V. Britten
+  title: Coding for A.R.C.
+  venue: Institute for Advanced Study, Princeton
+  year: 1947
+- id: wilkes-wheeler-gill-1951
+  type: book
+  primary: true
+  authors:
+  - Maurice V. Wilkes
+  - David J. Wheeler
+  - Stanley Gill
+  title: The Preparation of Programs for an Electronic Digital Computer
+  venue: Addison-Wesley
+  year: 1951
+- id: knuth-pardo-1976-early-development
+  type: report
+  primary: false
+  authors:
+  - Donald E. Knuth
+  - Luis Trabb Pardo
+  title: The Early Development of Programming Languages
+  venue: Stanford CS report STAN-CS-76-562; reprinted in A History of Computing in the Twentieth Century (1980)
+  year: 1976
+- id: bauer-woessner-1972-plankalkul
+  type: paper
+  primary: false
+  authors:
+  - Friedrich L. Bauer
+  - Hans Wössner
+  title: 'The Plankalkül of Konrad Zuse: A Forerunner of Today''s Programming Languages'
+  venue: Communications of the ACM 15(7)
+  year: 1972
+- id: mccarthy-1960-recursive-functions
+  type: paper
+  primary: true
+  authors:
+  - John McCarthy
+  title: Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I
+  venue: Communications of the ACM 3(4)
+  year: 1960
+- id: naur-1963-revised-report
+  type: standard
+  primary: true
+  authors:
+  - Peter Naur (ed.)
+  title: Revised Report on the Algorithmic Language ALGOL 60
+  venue: Communications of the ACM 6(1)
+  year: 1963
+- id: iverson-1962-apl
+  type: book
+  primary: true
+  authors:
+  - Kenneth E. Iverson
+  title: A Programming Language
+  venue: Wiley
+  year: 1962
+- id: bohm-1964-p-prime-prime
+  type: paper
+  primary: true
+  authors:
+  - Corrado Böhm
+  title: On a family of Turing machines and the related programming language
+  venue: ICC Bulletin 3
+  year: 1964
+- id: landin-1966-next-700
+  type: paper
+  primary: true
+  authors:
+  - Peter J. Landin
+  title: The Next 700 Programming Languages
+  venue: Communications of the ACM 9(3)
+  year: 1966
+- id: codd-1970-relational
+  type: paper
+  primary: true
+  authors:
+  - Edgar F. Codd
+  title: A Relational Model of Data for Large Shared Data Banks
+  venue: Communications of the ACM 13(6)
+  year: 1970
+- id: hewitt-1973-actor
+  type: paper
+  primary: true
+  authors:
+  - Carl Hewitt
+  - Peter Bishop
+  - Richard Steiger
+  title: A Universal Modular ACTOR Formalism for Artificial Intelligence
+  venue: IJCAI 1973
+  year: 1973
+- id: chamberlin-boyce-1974-sequel
+  type: paper
+  primary: true
+  authors:
+  - Donald D. Chamberlin
+  - Raymond F. Boyce
+  title: 'SEQUEL: A Structured English Query Language'
+  venue: ACM SIGFIDET Workshop
+  year: 1974
+- id: sussman-steele-1975-scheme
+  type: report
+  primary: true
+  authors:
+  - Gerald J. Sussman
+  - Guy L. Steele Jr.
+  title: 'Scheme: An Interpreter for Extended Lambda Calculus'
+  venue: MIT AI Memo 349
+  year: 1975
+- id: dijkstra-1975-guarded
+  type: paper
+  primary: true
+  authors:
+  - Edsger W. Dijkstra
+  title: Guarded Commands, Nondeterminacy and Formal Derivation of Programs
+  venue: Communications of the ACM 18(8)
+  year: 1975
+- id: hoare-1978-csp
+  type: paper
+  primary: true
+  authors:
+  - C. A. R. Hoare
+  title: Communicating Sequential Processes
+  venue: Communications of the ACM 21(8)
+  year: 1978
+- id: milner-1978-type-polymorphism
+  type: paper
+  primary: true
+  authors:
+  - Robin Milner
+  title: A Theory of Type Polymorphism in Programming
+  venue: Journal of Computer and System Sciences 17
+  year: 1978
+- id: kernighan-ritchie-1978
+  type: book
+  primary: true
+  authors:
+  - Brian W. Kernighan
+  - Dennis M. Ritchie
+  title: The C Programming Language
+  venue: Prentice Hall
+  year: 1978
+- id: lampson-redell-1980-mesa
+  type: paper
+  primary: true
+  authors:
+  - Butler W. Lampson
+  - David D. Redell
+  title: Experience with Processes and Monitors in Mesa
+  venue: Communications of the ACM 23(2)
+  year: 1980
+- id: aho-kernighan-weinberger-1988
+  type: book
+  primary: true
+  authors:
+  - Alfred V. Aho
+  - Brian W. Kernighan
+  - Peter J. Weinberger
+  title: The AWK Programming Language
+  venue: Addison-Wesley
+  year: 1988
+- id: meyer-1988-oosc
+  type: book
+  primary: true
+  authors:
+  - Bertrand Meyer
+  title: Object-Oriented Software Construction
+  venue: Prentice Hall
+  year: 1988
+- id: stroustrup-1994-design-evolution
+  type: book
+  primary: true
+  authors:
+  - Bjarne Stroustrup
+  title: The Design and Evolution of C++
+  venue: Addison-Wesley
+  year: 1994
+- id: jim-2002-cyclone
+  type: paper
+  primary: true
+  authors:
+  - Trevor Jim
+  - Greg Morrisett
+  - Dan Grossman
+  - Michael Hicks
+  - James Cheney
+  - Yanling Wang
+  title: 'Cyclone: A Safe Dialect of C'
+  venue: USENIX Annual Technical Conference
+  year: 2002
+- id: dahl-2002-birth-oo
+  type: chapter
+  primary: true
+  authors:
+  - Ole-Johan Dahl
+  title: 'The Birth of Object Orientation: the Simula Languages'
+  venue: From Object-Orientation to Formal Methods, LNCS 2635 (published 2004)
+  year: 2004
+- id: hoare-2009-billion-dollar
+  type: talk
+  primary: true
+  authors:
+  - C. A. R. Hoare
+  title: 'Null References: The Billion Dollar Mistake'
+  venue: QCon London
+  year: 2009
+- id: van-rossum-2009-history-python
+  type: web
+  primary: true
+  authors:
+  - Guido van Rossum
+  title: The History of Python (blog series)
+  year: 2009
+  url: https://python-history.blogspot.com/
+- id: syme-2011-fsharp-async
+  type: paper
+  primary: true
+  authors:
+  - Don Syme
+  - Tomas Petricek
+  - Dmitry Lomov
+  title: The F# Asynchronous Programming Model
+  venue: PADL 2011
+  year: 2011
+- id: bezanson-2017-julia
+  type: paper
+  primary: true
+  authors:
+  - Jeff Bezanson
+  - Alan Edelman
+  - Stefan Karpinski
+  - Viral B. Shah
+  title: 'Julia: A Fresh Approach to Numerical Computing'
+  venue: SIAM Review 59(1)
+  year: 2017
+- id: pep-255
+  type: standard
+  primary: true
+  authors:
+  - Neil Schemenauer
+  - Tim Peters
+  - Magnus Lie Hetland
+  title: PEP 255 - Simple Generators
+  year: 2001
+  url: https://peps.python.org/pep-0255/
+- id: pep-342
+  type: standard
+  primary: true
+  authors:
+  - Guido van Rossum
+  - Phillip J. Eby
+  title: PEP 342 - Coroutines via Enhanced Generators
+  year: 2005
+  url: https://peps.python.org/pep-0342/
+- id: pep-3156
+  type: standard
+  primary: true
+  authors:
+  - Guido van Rossum
+  title: 'PEP 3156 - Asynchronous IO Support Rebooted: the asyncio Module'
+  year: 2012
+  url: https://peps.python.org/pep-3156/
+- id: pep-492
+  type: standard
+  primary: true
+  authors:
+  - Yury Selivanov
+  title: PEP 492 - Coroutines with async and await syntax
+  year: 2015
+  url: https://peps.python.org/pep-0492/
+- id: jep-444
+  type: standard
+  primary: true
+  authors:
+  - Ron Pressler
+  - Alan Bateman
+  title: 'JEP 444: Virtual Threads'
+  year: 2023
+  url: https://openjdk.org/jeps/444
+- id: go-faq
+  type: manual
+  primary: true
+  authors:
+  - The Go Authors
+  title: 'Go FAQ: What are Go''s ancestors?'
+  url: https://go.dev/doc/faq
+- id: pike-go-history-talk
+  type: talk
+  primary: true
+  authors:
+  - Rob Pike
+  title: 'Go at Google: Language Design in the Service of Software Engineering'
+  venue: SPLASH 2012
+  year: 2012
+  url: https://go.dev/talks/2012/splash.article
+- id: rust-reference-influences
+  type: manual
+  primary: true
+  authors:
+  - The Rust Project
+  title: 'The Rust Reference: Influences'
+  url: https://doc.rust-lang.org/reference/influences.html
+- id: rust-async-stabilization
+  type: web
+  primary: true
+  authors:
+  - Niko Matsakis
+  title: Async-await on stable Rust!
+  year: 2019
+  url: https://blog.rust-lang.org/2019/11/07/Async-await-stable.html
+- id: swift-se-0296
+  type: standard
+  primary: true
+  authors:
+  - John McCall
+  - Doug Gregor
+  title: 'SE-0296: Async/await'
+  year: 2020
+  url: https://github.com/apple/swift-evolution/blob/main/proposals/0296-async-await.md
+- id: lattner-swift-homepage
+  type: web
+  primary: true
+  authors:
+  - Chris Lattner
+  title: Chris Lattner's homepage (on Swift's influences)
+  url: https://nondot.org/sabre/
+- id: conway-1963-coroutines
+  type: paper
+  primary: true
+  authors:
+  - Melvin E. Conway
+  title: Design of a Separable Transition-Diagram Compiler
+  venue: Communications of the ACM 6(7)
+  year: 1963
+- id: dijkstra-1965-cooperating
+  type: report
+  primary: true
+  authors:
+  - Edsger W. Dijkstra
+  title: Cooperating Sequential Processes (EWD 123)
+  year: 1965
+  url: https://www.cs.utexas.edu/~EWD/transcriptions/EWD01xx/EWD123.html
+- id: dennis-van-horn-1966
+  type: paper
+  primary: true
+  authors:
+  - Jack B. Dennis
+  - Earl C. Van Horn
+  title: Programming Semantics for Multiprogrammed Computations
+  venue: Communications of the ACM 9(3)
+  year: 1966
+- id: hoare-1974-monitors
+  type: paper
+  primary: true
+  authors:
+  - C. A. R. Hoare
+  title: 'Monitors: An Operating System Structuring Concept'
+  venue: Communications of the ACM 17(10)
+  year: 1974
+- id: baker-hewitt-1977-futures
+  type: paper
+  primary: true
+  authors:
+  - Henry G. Baker Jr.
+  - Carl Hewitt
+  title: The Incremental Garbage Collection of Processes
+  venue: ACM SIGART/SIGPLAN Symposium on AI and Programming Languages
+  year: 1977
+- id: friedman-wise-1976-promise
+  type: paper
+  primary: true
+  authors:
+  - Daniel P. Friedman
+  - David S. Wise
+  title: The Impact of Applicative Programming on Multiprocessing
+  venue: International Conference on Parallel Processing
+  year: 1976
+- id: liskov-shrira-1988-promises
+  type: paper
+  primary: true
+  authors:
+  - Barbara Liskov
+  - Liuba Shrira
+  title: 'Promises: Linguistic Support for Efficient Asynchronous Procedure Calls in Distributed Systems'
+  venue: PLDI 1988
+  year: 1988
+- id: halstead-1985-multilisp
+  type: paper
+  primary: true
+  authors:
+  - Robert H. Halstead Jr.
+  title: 'Multilisp: A Language for Concurrent Symbolic Computation'
+  venue: ACM TOPLAS 7(4)
+  year: 1985
+- id: kegel-c10k
+  type: web
+  primary: true
+  authors:
+  - Dan Kegel
+  title: The C10K problem
+  year: 1999
+  url: http://www.kegel.com/c10k.html
+- id: nystrom-2015-color
+  type: web
+  primary: true
+  authors:
+  - Bob Nystrom
+  title: What Color is Your Function?
+  year: 2015
+  url: https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/
+- id: corbato-1962-ctss
+  type: paper
+  primary: true
+  authors:
+  - Fernando J. Corbató
+  - Marjorie Merwin-Daggett
+  - Robert C. Daley
+  title: An Experimental Time-Sharing System
+  venue: AFIPS Spring Joint Computer Conference
+  year: 1962
+- id: wiki-interrupt
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Interrupt (history section)'
+  url: https://en.wikipedia.org/wiki/Interrupt
+- id: wiki-cooperative-multitasking
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Cooperative multitasking'
+  url: https://en.wikipedia.org/wiki/Cooperative_multitasking
+- id: kay-2003-oop-email
+  type: web
+  primary: true
+  authors:
+  - Alan Kay
+  - Stefan Ram
+  title: Dr. Alan Kay on the Meaning of 'Object-Oriented Programming' (email, 2003)
+  year: 2003
+  url: https://www.purl.org/stefan_ram/pub/doc_kay_oop_en
+- id: kay-1997-oopsla-keynote
+  type: talk
+  primary: true
+  authors:
+  - Alan Kay
+  title: The Computer Revolution Hasn't Happened Yet (OOPSLA '97 keynote)
+  year: 1997
+- id: gof-1994
+  type: book
+  primary: true
+  authors:
+  - Erich Gamma
+  - Richard Helm
+  - Ralph Johnson
+  - John Vlissides
+  title: 'Design Patterns: Elements of Reusable Object-Oriented Software'
+  venue: Addison-Wesley
+  year: 1994
+- id: wiki-6502
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: MOS Technology 6502'
+  url: https://en.wikipedia.org/wiki/MOS_Technology_6502
+- id: wiki-68000
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Motorola 68000'
+  url: https://en.wikipedia.org/wiki/Motorola_68000
+- id: wiki-a0
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: A-0 System'
+  url: https://en.wikipedia.org/wiki/A-0_System
+- id: wiki-analytical-engine
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Analytical engine'
+  url: https://en.wikipedia.org/wiki/Analytical_engine
+- id: wiki-antikythera
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Antikythera mechanism'
+  url: https://en.wikipedia.org/wiki/Antikythera_mechanism
+- id: wiki-arm
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: ARM architecture family'
+  url: https://en.wikipedia.org/wiki/ARM_architecture_family
+- id: wiki-assembly-language
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Assembly language'
+  url: https://en.wikipedia.org/wiki/Assembly_language
+- id: wiki-bourne-shell
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Bourne shell'
+  url: https://en.wikipedia.org/wiki/Bourne_shell
+- id: wiki-cobol
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: COBOL'
+  url: https://en.wikipedia.org/wiki/COBOL
+- id: wiki-combinatory-logic
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Combinatory logic'
+  url: https://en.wikipedia.org/wiki/Combinatory_logic
+- id: wiki-csharp
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: C Sharp (programming language)'
+  url: https://en.wikipedia.org/wiki/C_Sharp_(programming_language)
+- id: wiki-dart
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Dart (programming language)'
+  url: https://en.wikipedia.org/wiki/Dart_(programming_language)
+- id: wiki-edsac
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: EDSAC'
+  url: https://en.wikipedia.org/wiki/EDSAC
+- id: wiki-elixir
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Elixir (programming language)'
+  url: https://en.wikipedia.org/wiki/Elixir_(programming_language)
+- id: wiki-eniac
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: ENIAC'
+  url: https://en.wikipedia.org/wiki/ENIAC
+- id: wiki-fortran
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Fortran'
+  url: https://en.wikipedia.org/wiki/Fortran
+- id: wiki-groovy
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Apache Groovy'
+  url: https://en.wikipedia.org/wiki/Apache_Groovy
+- id: wiki-harvard-mark-i
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Harvard Mark I'
+  url: https://en.wikipedia.org/wiki/Harvard_Mark_I
+- id: wiki-ibm-650
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: IBM 650'
+  url: https://en.wikipedia.org/wiki/IBM_650
+- id: wiki-ibm-704
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: IBM 704'
+  url: https://en.wikipedia.org/wiki/IBM_704
+- id: wiki-ibm-assembler
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: IBM Basic assembly language and successors'
+  url: https://en.wikipedia.org/wiki/IBM_Basic_assembly_language_and_successors
+- id: wiki-jacquard
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Jacquard machine'
+  url: https://en.wikipedia.org/wiki/Jacquard_machine
+- id: wiki-java
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Java (programming language)'
+  url: https://en.wikipedia.org/wiki/Java_(programming_language)
+- id: wiki-kotlin
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Kotlin (programming language)'
+  url: https://en.wikipedia.org/wiki/Kotlin_(programming_language)
+- id: wiki-lambda-calculus
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Lambda calculus'
+  url: https://en.wikipedia.org/wiki/Lambda_calculus
+- id: wiki-macro-11
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: MACRO-11'
+  url: https://en.wikipedia.org/wiki/MACRO-11
+- id: wiki-manchester-baby
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Manchester Baby'
+  url: https://en.wikipedia.org/wiki/Manchester_Baby
+- id: wiki-masm
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Microsoft Macro Assembler'
+  url: https://en.wikipedia.org/wiki/Microsoft_Macro_Assembler
+- id: wiki-mips
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: MIPS architecture'
+  url: https://en.wikipedia.org/wiki/MIPS_architecture
+- id: wiki-modula-3
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Modula-3'
+  url: https://en.wikipedia.org/wiki/Modula-3
+- id: wiki-nasm
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Netwide Assembler'
+  url: https://en.wikipedia.org/wiki/Netwide_Assembler
+- id: wiki-ocaml
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: OCaml'
+  url: https://en.wikipedia.org/wiki/OCaml
+- id: wiki-occam
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Occam (programming language)'
+  url: https://en.wikipedia.org/wiki/Occam_(programming_language)
+- id: wiki-pdp-11
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: PDP-11'
+  url: https://en.wikipedia.org/wiki/PDP-11
+- id: wiki-perl
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Perl'
+  url: https://en.wikipedia.org/wiki/Perl
+- id: wiki-php
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: PHP'
+  url: https://en.wikipedia.org/wiki/PHP
+- id: wiki-risc-v
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: RISC-V'
+  url: https://en.wikipedia.org/wiki/RISC-V
+- id: wiki-ruby
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Ruby (programming language)'
+  url: https://en.wikipedia.org/wiki/Ruby_(programming_language)
+- id: wiki-scala
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Scala (programming language)'
+  url: https://en.wikipedia.org/wiki/Scala_(programming_language)
+- id: wiki-system-360
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: IBM System/360'
+  url: https://en.wikipedia.org/wiki/IBM_System/360
+- id: wiki-tabulating-machine
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Tabulating machine'
+  url: https://en.wikipedia.org/wiki/Tabulating_machine
+- id: wiki-typescript
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: TypeScript'
+  url: https://en.wikipedia.org/wiki/TypeScript
+- id: wiki-x86
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: X86'
+  url: https://en.wikipedia.org/wiki/X86
+- id: wiki-x86-assembly
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: X86 assembly language'
+  url: https://en.wikipedia.org/wiki/X86_assembly_language
+- id: wiki-z3
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Z3 (computer)'
+  url: https://en.wikipedia.org/wiki/Z3_(computer)
+- id: wiki-z80
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Zilog Z80'
+  url: https://en.wikipedia.org/wiki/Zilog_Z80
+- id: wiki-zig
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Zig (programming language)'
+  url: https://en.wikipedia.org/wiki/Zig_(programming_language)
+- id: esolangs-befunge
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Befunge'
+  url: https://esolangs.org/wiki/Befunge
+- id: esolangs-brainfuck
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Brainfuck'
+  url: https://esolangs.org/wiki/Brainfuck
+- id: esolangs-false
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: FALSE'
+  url: https://esolangs.org/wiki/FALSE
+- id: esolangs-intercal
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: INTERCAL'
+  url: https://esolangs.org/wiki/INTERCAL
+- id: esolangs-lolcode
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: LOLCODE'
+  url: https://esolangs.org/wiki/LOLCODE
+- id: esolangs-malbolge
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Malbolge'
+  url: https://esolangs.org/wiki/Malbolge
+- id: esolangs-piet
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Piet'
+  url: https://esolangs.org/wiki/Piet
+- id: esolangs-shakespeare
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Shakespeare'
+  url: https://esolangs.org/wiki/Shakespeare
+- id: esolangs-unlambda
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Unlambda'
+  url: https://esolangs.org/wiki/Unlambda
+- id: esolangs-whitespace
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Whitespace'
+  url: https://esolangs.org/wiki/Whitespace

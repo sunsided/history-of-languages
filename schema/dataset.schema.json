@@ -1,0 +1,675 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pl-ancestry/dataset.schema.json",
+  "title": "Programming language ancestry dataset",
+  "description": "Schemas for every YAML file under data/. Directed relations are stored once, on the newer node, pointing back in time; inverse edges (influenced, superseded_by, has_dialect) are derived by tools/build.py.",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9+#._-]*(/[a-z0-9][a-z0-9+#._-]*)*$"
+    },
+    "ids": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/id"
+      },
+      "uniqueItems": true
+    },
+    "year": {
+      "type": "integer",
+      "minimum": -300,
+      "maximum": 2100
+    },
+    "precision": {
+      "enum": [
+        "exact",
+        "year",
+        "circa",
+        "decade",
+        "range",
+        "disputed"
+      ]
+    },
+    "confidence": {
+      "enum": [
+        "high",
+        "medium",
+        "low"
+      ]
+    },
+    "research_status": {
+      "description": "stub = placeholder with name/year only; draft = filled from secondary sources; reviewed = checked against primary sources.",
+      "enum": [
+        "stub",
+        "draft",
+        "reviewed"
+      ]
+    },
+    "dating": {
+      "type": "object",
+      "required": [
+        "year"
+      ],
+      "properties": {
+        "year": {
+          "$ref": "#/$defs/year"
+        },
+        "year_end": {
+          "$ref": "#/$defs/year",
+          "description": "for ranges, e.g. design 1955-1959"
+        },
+        "date": {
+          "type": "string",
+          "description": "ISO 8601 date or partial date (YYYY-MM)"
+        },
+        "precision": {
+          "$ref": "#/$defs/precision"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "place": {
+      "type": "object",
+      "properties": {
+        "institution": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string",
+          "description": "ISO 3166-1 alpha-2, or a historical name for pre-modern entries"
+        }
+      },
+      "additionalProperties": false
+    },
+    "person": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string",
+          "description": "designer, co-designer, implementer, editor, committee chair, ..."
+        },
+        "affiliation": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "relation": {
+      "type": "object",
+      "required": [
+        "type",
+        "to"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "influenced_by",
+            "successor_of",
+            "dialect_of",
+            "superset_of",
+            "subset_of",
+            "fork_of",
+            "targets",
+            "implemented_in"
+          ],
+          "description": "influenced_by: design influence. successor_of: intended replacement in the same line (inverse: superseded_by). dialect_of: variant of the same language. superset_of / subset_of: syntactic or semantic inclusion. fork_of: codebase/community fork. targets: assembly -> machine code -> machine. implemented_in: notable for bootstrapping history."
+        },
+        "to": {
+          "$ref": "#/$defs/id"
+        },
+        "aspects": {
+          "$ref": "#/$defs/ids",
+          "description": "concept ids that travelled along this edge, e.g. classes, virtual-dispatch"
+        },
+        "weight": {
+          "enum": [
+            "strong",
+            "moderate",
+            "weak"
+          ]
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "note": {
+          "type": "string"
+        },
+        "sources": {
+          "$ref": "#/$defs/ids"
+        },
+        "year": {
+          "$ref": "#/$defs/year",
+          "description": "when the influence happened, if later than the node's first appearance (e.g. a feature adopted in a later version)"
+        }
+      },
+      "additionalProperties": false
+    },
+    "milestone": {
+      "type": "object",
+      "required": [
+        "version",
+        "year"
+      ],
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "year": {
+          "$ref": "#/$defs/year"
+        },
+        "date": {
+          "type": "string"
+        },
+        "introduces": {
+          "$ref": "#/$defs/ids",
+          "description": "concept ids first added to THIS node in this version (how convergence becomes visible)"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "sources": {
+          "$ref": "#/$defs/ids"
+        }
+      },
+      "additionalProperties": false
+    },
+    "node": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "cluster",
+        "origin",
+        "summary",
+        "research_status"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string"
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "kind": {
+          "enum": [
+            "mechanism",
+            "machine",
+            "formalism",
+            "notation",
+            "machine-code",
+            "assembly",
+            "language"
+          ],
+          "description": "mechanism: fixed-function device (Antikythera, Jacquard loom). machine: programmable computer whose instruction set others target. formalism: mathematical model (lambda calculus). notation: written program form never (originally) executed. machine-code / assembly / language: as named."
+        },
+        "category": {
+          "enum": [
+            "general",
+            "systems",
+            "scientific",
+            "business",
+            "scripting",
+            "shell",
+            "query",
+            "educational",
+            "research",
+            "domain-specific",
+            "esoteric",
+            "hardware"
+          ],
+          "description": "audience/purpose, not paradigm"
+        },
+        "cluster": {
+          "$ref": "#/$defs/id",
+          "description": "the collapsible subgraph this node belongs to (clusters.yaml)"
+        },
+        "origin": {
+          "type": "object",
+          "required": [
+            "first_appeared"
+          ],
+          "properties": {
+            "began": {
+              "$ref": "#/$defs/dating"
+            },
+            "first_appeared": {
+              "$ref": "#/$defs/dating"
+            },
+            "places": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/place"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "creators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/person"
+          }
+        },
+        "status": {
+          "enum": [
+            "active",
+            "maintained",
+            "legacy",
+            "historical",
+            "extinct"
+          ]
+        },
+        "era": {
+          "$ref": "#/$defs/id",
+          "description": "optional override; otherwise derived from first_appeared"
+        },
+        "tags": {
+          "type": "object",
+          "description": "Facets; every value is a concept id from concepts.yaml. Tags describe the node as of its latest milestone; milestones[].introduces says when.",
+          "properties": {
+            "paradigm": {
+              "$ref": "#/$defs/ids"
+            },
+            "typing": {
+              "$ref": "#/$defs/ids"
+            },
+            "memory": {
+              "$ref": "#/$defs/ids"
+            },
+            "concurrency": {
+              "$ref": "#/$defs/ids"
+            },
+            "features": {
+              "$ref": "#/$defs/ids"
+            },
+            "domain": {
+              "$ref": "#/$defs/ids"
+            }
+          },
+          "additionalProperties": false
+        },
+        "milestones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/milestone"
+          }
+        },
+        "relations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/relation"
+          }
+        },
+        "summary": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "research_status": {
+          "$ref": "#/$defs/research_status"
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence"
+        },
+        "links": {
+          "type": "object",
+          "properties": {
+            "wikipedia": {
+              "type": "string"
+            },
+            "homepage": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "sources": {
+          "$ref": "#/$defs/ids"
+        }
+      },
+      "additionalProperties": false
+    },
+    "cluster": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "research_status"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string"
+        },
+        "parent": {
+          "$ref": "#/$defs/id"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "research_status": {
+          "$ref": "#/$defs/research_status"
+        },
+        "backlog": {
+          "type": "array",
+          "description": "nodes still to add when this subgraph is unfolded",
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "year": {
+                "$ref": "#/$defs/year"
+              },
+              "hint": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "research_questions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "key_sources": {
+          "$ref": "#/$defs/ids"
+        }
+      },
+      "additionalProperties": false
+    },
+    "concept": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "facet"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string"
+        },
+        "facet": {
+          "enum": [
+            "paradigm",
+            "typing",
+            "memory",
+            "concurrency",
+            "features",
+            "domain"
+          ]
+        },
+        "broader": {
+          "$ref": "#/$defs/ids"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "first_seen": {
+          "type": "object",
+          "properties": {
+            "node": {
+              "$ref": "#/$defs/id"
+            },
+            "year": {
+              "$ref": "#/$defs/year"
+            },
+            "note": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "sources": {
+          "$ref": "#/$defs/ids"
+        }
+      },
+      "additionalProperties": false
+    },
+    "era": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "start"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "name": {
+          "type": "string"
+        },
+        "start": {
+          "$ref": "#/$defs/year"
+        },
+        "end": {
+          "$ref": "#/$defs/year"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "defining_concepts": {
+          "$ref": "#/$defs/ids"
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "title"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "type": {
+          "enum": [
+            "paper",
+            "book",
+            "chapter",
+            "report",
+            "standard",
+            "manual",
+            "web",
+            "talk",
+            "interview",
+            "encyclopedia"
+          ]
+        },
+        "primary": {
+          "type": "boolean",
+          "description": "written by the creators / contemporaneous"
+        },
+        "authors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "title": {
+          "type": "string"
+        },
+        "venue": {
+          "type": "string"
+        },
+        "year": {
+          "$ref": "#/$defs/year"
+        },
+        "url": {
+          "type": "string"
+        },
+        "doi": {
+          "type": "string"
+        },
+        "checked": {
+          "type": "string",
+          "description": "date the content was actually read and matched against the claims citing it; absent = cited from bibliography, not yet re-read"
+        }
+      },
+      "additionalProperties": false
+    },
+    "lineage": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "steps"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "type": "string"
+        },
+        "thesis": {
+          "type": "string"
+        },
+        "concepts": {
+          "$ref": "#/$defs/ids"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "year",
+              "title"
+            ],
+            "properties": {
+              "year": {
+                "$ref": "#/$defs/year"
+              },
+              "precision": {
+                "$ref": "#/$defs/precision"
+              },
+              "title": {
+                "type": "string"
+              },
+              "concepts": {
+                "$ref": "#/$defs/ids"
+              },
+              "nodes": {
+                "$ref": "#/$defs/ids"
+              },
+              "systems": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "non-language artifacts: operating systems, machines, libraries"
+              },
+              "text": {
+                "type": "string"
+              },
+              "sources": {
+                "$ref": "#/$defs/ids"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "claims": {
+          "$ref": "#/$defs/ids"
+        },
+        "research_status": {
+          "$ref": "#/$defs/research_status"
+        }
+      },
+      "additionalProperties": false
+    },
+    "claim": {
+      "type": "object",
+      "required": [
+        "id",
+        "claim",
+        "verdict",
+        "summary"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "claim": {
+          "type": "string"
+        },
+        "verdict": {
+          "enum": [
+            "confirmed",
+            "mostly-true",
+            "nuanced",
+            "mostly-false",
+            "false",
+            "unresolved"
+          ]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "source"
+            ],
+            "properties": {
+              "source": {
+                "$ref": "#/$defs/id"
+              },
+              "locator": {
+                "type": "string"
+              },
+              "quote": {
+                "type": "string"
+              },
+              "note": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "nodes": {
+          "$ref": "#/$defs/ids"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

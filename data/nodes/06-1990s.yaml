@@ -1,0 +1,386 @@
+# The 1990s: Haskell, Python, Lua, R, Ruby, Java, JavaScript, PHP, OCaml, Alef/Limbo.
+
+- id: haskell
+  name: Haskell
+  kind: language
+  category: research
+  cluster: ml-family/lazy
+  origin:
+    began: { year: 1987, date: "1987-09", precision: exact, note: "Committee formed at FPCA '87, Portland." }
+    first_appeared: { year: 1990, date: "1990-04", precision: exact, note: "Haskell 1.0 report." }
+    places: [{ institution: "International committee (Glasgow, Yale, Chalmers and others)", country: GB }]
+  creators:
+    - { name: "Paul Hudak, John Hughes, Simon Peyton Jones, Philip Wadler", role: committee members (HOPL authors) }
+    - { name: "Lennart Augustsson, Thomas Johnsson, Rishiyur Nikhil, Joseph Fasel, and others", role: committee }
+  status: active
+  tags:
+    paradigm: [functional, purely-functional]
+    typing: [static-typing, type-inference, parametric-polymorphism, type-classes]
+    memory: [garbage-collection]
+    concurrency: [green-threads, software-transactional-memory]
+    features: [lazy-evaluation, algebraic-data-types, pattern-matching, monads, list-comprehensions, offside-rule]
+  milestones:
+    - { version: Haskell 1.0, year: 1990, introduces: [type-classes] }
+    - { version: Haskell 1.3, year: 1996, introduces: [monads], summary: "Monadic I/O replaces stream-based I/O; do-notation." }
+    - { version: Haskell 98, year: 1999, introduces: [standardization] }
+    - { version: Concurrent Haskell / STM in GHC, year: 2005, introduces: [software-transactional-memory] }
+    - { version: Haskell 2010, year: 2010 }
+  summary: >
+    Open standard for lazy, purely functional programming. Type classes (Wadler & Blott, 1988) and
+    monads for effects (after Moggi; Wadler) were exported to the whole industry: Rust traits,
+    Swift protocols, Scala implicits, LINQ, promises as monads, async as a monad.
+  relations:
+    - { type: influenced_by, to: miranda, weight: strong, confidence: high }
+    - { type: influenced_by, to: ml, aspects: [type-inference], weight: strong, confidence: high }
+    - { type: influenced_by, to: iswim, aspects: [offside-rule], weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Haskell", homepage: "https://www.haskell.org" }
+  sources: [hudak-2007-history-haskell]
+
+- id: python
+  name: Python
+  kind: language
+  category: general
+  cluster: scripting/python
+  origin:
+    began: { year: 1989, date: "1989-12", precision: exact }
+    first_appeared: { year: 1991, date: "1991-02-20", precision: exact, note: "Version 0.9.0 posted to alt.sources." }
+    places: [{ institution: CWI, city: Amsterdam, country: NL }]
+  creators: [{ name: Guido van Rossum, role: designer }]
+  status: active
+  tags:
+    paradigm: [multi-paradigm, object-oriented, imperative, functional]
+    typing: [dynamic-typing, strong-typing, gradual-typing]
+    memory: [reference-counting, garbage-collection]
+    concurrency: [threads, gil, async-await, coroutines, generators]
+    features: [offside-rule, exceptions, modules, generators, list-comprehensions, decorators, pattern-matching]
+  milestones:
+    - { version: "1.0", year: 1994, introduces: [first-class-functions], summary: "lambda, map, filter, reduce." }
+    - { version: "2.0", year: 2000, introduces: [list-comprehensions, garbage-collection], summary: "List comprehensions (from Haskell), cycle-collecting GC." }
+    - { version: "2.2", year: 2001, introduces: [generators], summary: "PEP 255 simple generators (yield), citing Icon; unified types and classes." }
+    - { version: "2.5", year: 2006, introduces: [coroutines], summary: "PEP 342: generators as coroutines (send, throw); enabled Twisted inlineCallbacks-style async." }
+    - { version: "3.0", year: 2008, summary: "Unicode str, print function; deliberately backwards incompatible." }
+    - { version: "3.4", year: 2014, summary: "asyncio (PEP 3156) event loop in the standard library." }
+    - { version: "3.5", year: 2015, introduces: [async-await, gradual-typing], summary: "PEP 492 async/await syntax; PEP 484 type hints." }
+    - { version: "3.10", year: 2021, introduces: [pattern-matching] }
+    - { version: "3.13", year: 2024, summary: "Experimental free-threaded build without the GIL (PEP 703)." }
+  summary: >
+    Successor in spirit to ABC: indentation syntax, but extensible and open. Its path from generators
+    (2001) to coroutines (2006) to async/await (2015) is one of the clearest step-by-step records of
+    how async/await grew out of generators.
+  relations:
+    - { type: influenced_by, to: abc, aspects: [offside-rule, high-level-collections], weight: strong, confidence: high }
+    - { type: influenced_by, to: modula-3, aspects: [exceptions, modules], weight: moderate, confidence: high, note: "Van Rossum credits Modula-3 for exceptions and the module/class system." }
+    - { type: influenced_by, to: c, weight: moderate, confidence: high }
+    - { type: influenced_by, to: icon, aspects: [generators], weight: moderate, confidence: high }
+    - { type: influenced_by, to: haskell, aspects: [list-comprehensions], weight: moderate, confidence: high }
+    - { type: influenced_by, to: lisp, aspects: [first-class-functions], weight: weak, confidence: medium }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Python_(programming_language)", homepage: "https://www.python.org" }
+  sources: [van-rossum-2009-history-python, pep-255, pep-342, pep-492, pep-3156]
+
+- id: s
+  name: S
+  kind: language
+  category: scientific
+  cluster: data
+  origin:
+    first_appeared: { year: 1976, precision: year }
+    places: [{ institution: Bell Labs, city: Murray Hill NJ, country: US }]
+  creators: [{ name: John Chambers, role: designer }, { name: "Rick Becker, Allan Wilks", role: co-designers }]
+  status: extinct
+  tags:
+    paradigm: [array-programming, functional]
+    typing: [dynamic-typing]
+    domain: [statistics]
+  summary: "Interactive language for statistics at Bell Labs. R is an open implementation of it with Scheme semantics underneath."
+  research_status: draft
+  confidence: high
+  sources: [chambers-2020-s-r]
+
+- id: r
+  name: R
+  kind: language
+  category: scientific
+  cluster: data
+  origin:
+    first_appeared: { year: 1993, precision: year, note: "Announced 1993; 1.0 in 2000." }
+    places: [{ institution: University of Auckland, city: Auckland, country: NZ }]
+  creators:
+    - { name: Ross Ihaka, role: designer }
+    - { name: Robert Gentleman, role: designer }
+  status: active
+  tags:
+    paradigm: [array-programming, functional, multi-paradigm]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [lazy-evaluation, lexical-scoping]
+    domain: [statistics, data-science]
+  summary: "Free implementation of the S language with Scheme-style lexical scoping and lazy argument evaluation. The lingua franca of academic statistics."
+  relations:
+    - { type: dialect_of, to: s, weight: strong, confidence: high }
+    - { type: influenced_by, to: scheme, aspects: [lexical-scoping, closures], weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [chambers-2020-s-r]
+
+- id: lua
+  name: Lua
+  kind: language
+  category: scripting
+  cluster: scripting/embedded
+  origin:
+    first_appeared: { year: 1993, precision: year }
+    places: [{ institution: "PUC-Rio (Tecgraf)", city: Rio de Janeiro, country: BR }]
+  creators:
+    - { name: Roberto Ierusalimschy, role: designer }
+    - { name: Luiz Henrique de Figueiredo, role: designer }
+    - { name: Waldemar Celes, role: designer }
+  status: active
+  tags:
+    paradigm: [multi-paradigm, imperative, functional, prototype-based]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    concurrency: [coroutines]
+    features: [tables, metatables, closures, embeddable]
+    domain: [game-scripting, embedded]
+  milestones:
+    - { version: "5.0", year: 2003, introduces: [coroutines], summary: "Asymmetric, stackful coroutines; register-based VM." }
+    - { version: "5.1", year: 2006 }
+    - { version: "5.4", year: 2020 }
+  summary: "Small, embeddable scripting language built on a single data structure, the table. Its first-class stackful coroutines are the textbook example of the alternative to async/await's stackless model."
+  relations:
+    - { type: influenced_by, to: scheme, aspects: [closures, first-class-functions], weight: moderate, confidence: high }
+    - { type: influenced_by, to: clu, aspects: [multiple-assignment, iterators], weight: moderate, confidence: high }
+    - { type: influenced_by, to: snobol, aspects: [associative-arrays], weight: weak, confidence: medium }
+    - { type: influenced_by, to: modula-2, weight: weak, confidence: medium }
+  research_status: draft
+  confidence: high
+  sources: [ierusalimschy-2007-evolution-lua]
+
+- id: ruby
+  name: Ruby
+  kind: language
+  category: general
+  cluster: scripting/ruby
+  origin:
+    began: { year: 1993, date: "1993-02-24", precision: exact }
+    first_appeared: { year: 1995, date: "1995-12-21", precision: exact }
+    places: [{ country: JP }]
+  creators: [{ name: Yukihiro Matsumoto, role: designer }]
+  status: active
+  tags:
+    paradigm: [object-oriented, multi-paradigm, functional, imperative]
+    typing: [dynamic-typing, strong-typing]
+    memory: [garbage-collection]
+    concurrency: [green-threads, gil, fibers]
+    features: [everything-is-an-object, blocks-closures, mixins, metaprogramming]
+  milestones:
+    - { version: "1.9", year: 2007, introduces: [fibers], summary: "YARV VM; Fibers (semi-coroutines)." }
+    - { version: "3.0", year: 2020, summary: "Ractors (actor-like parallelism), Fiber Scheduler for non-blocking I/O." }
+  summary: "Matz aimed for 'more powerful than Perl and more object-oriented than Python'. Smalltalk's everything-is-an-object and blocks in a Perl-friendly syntax. Ruby on Rails (2004) made it a web mainstay."
+  relations:
+    - { type: influenced_by, to: perl, weight: strong, confidence: high }
+    - { type: influenced_by, to: smalltalk, aspects: [everything-is-an-object, blocks-closures, message-passing], weight: strong, confidence: high }
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: high }
+    - { type: influenced_by, to: eiffel, weight: weak, confidence: medium }
+    - { type: influenced_by, to: clu, aspects: [iterators], weight: weak, confidence: medium }
+  research_status: draft
+  confidence: high
+  sources: [wiki-ruby]
+
+- id: alef
+  name: Alef
+  kind: language
+  category: systems
+  cluster: concurrency/plan9
+  origin:
+    first_appeared: { year: 1992, precision: circa }
+    places: [{ institution: Bell Labs, city: Murray Hill NJ, country: US }]
+  creators: [{ name: Phil Winterbottom, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [imperative, concurrent]
+    concurrency: [channels, threads, processes]
+  summary: "Compiled concurrent C-like language for Plan 9 with channels, procs and tasks. Dropped because maintaining its compiler cost too much; its ideas went into Limbo and the libthread C library."
+  relations:
+    - { type: influenced_by, to: newsqueak, aspects: [channels], weight: strong, confidence: high }
+    - { type: influenced_by, to: c, weight: strong, confidence: high }
+  research_status: stub
+  confidence: medium
+  sources: [pike-go-history-talk]
+
+- id: limbo
+  name: Limbo
+  kind: language
+  category: systems
+  cluster: concurrency/plan9
+  origin:
+    first_appeared: { year: 1995, precision: year }
+    places: [{ institution: Bell Labs, city: Murray Hill NJ, country: US }]
+  creators: [{ name: "Sean Dorward, Phil Winterbottom, Rob Pike", role: designers }]
+  status: extinct
+  tags:
+    paradigm: [imperative, concurrent]
+    typing: [static-typing]
+    memory: [garbage-collection, reference-counting]
+    concurrency: [channels, green-threads]
+  summary: "Garbage-collected, channel-based language for the Inferno OS, running on the Dis virtual machine. The closest direct ancestor of Go."
+  relations:
+    - { type: influenced_by, to: alef, weight: strong, confidence: high }
+    - { type: influenced_by, to: newsqueak, weight: strong, confidence: high }
+  research_status: stub
+  confidence: medium
+  sources: [pike-go-history-talk]
+
+- id: java
+  name: Java
+  aliases: [Oak]
+  kind: language
+  category: general
+  cluster: managed
+  origin:
+    began: { year: 1991, date: "1991-06", precision: exact, note: "Oak, Green Project." }
+    first_appeared: { year: 1995, date: "1995-05-23", precision: exact, note: "Public announcement at SunWorld; JDK 1.0 January 1996." }
+    places: [{ institution: Sun Microsystems, city: Menlo Park, country: US }]
+  creators:
+    - { name: James Gosling, role: designer }
+    - { name: "Mike Sheridan, Patrick Naughton", role: Green Project }
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative, functional]
+    typing: [static-typing, strong-typing, type-inference]
+    memory: [garbage-collection]
+    concurrency: [threads, monitors, virtual-threads, futures-promises, memory-model]
+    features: [bytecode-vm, jit-compilation, exceptions, checked-exceptions, interfaces, generics, lambdas, pattern-matching, records]
+  milestones:
+    - { version: "1.0", year: 1996, introduces: [threads, monitors], summary: "Threads and synchronized/wait/notify monitors built into the language." }
+    - { version: "1.2", year: 1998, introduces: [jit-compilation], summary: "Collections; HotSpot JIT (from Self/Strongtalk) shortly after in 1.3." }
+    - { version: "5.0", year: 2004, introduces: [generics, memory-model], summary: "Generics (from GJ/Pizza by Odersky and Wadler), java.util.concurrent, JSR-133 memory model." }
+    - { version: "8", year: 2014, introduces: [lambdas, futures-promises], summary: "Lambdas, streams, CompletableFuture." }
+    - { version: "10", year: 2018, introduces: [type-inference], summary: "var for local type inference." }
+    - { version: "16", year: 2021, introduces: [records] }
+    - { version: "21", year: 2023, introduces: [virtual-threads, pattern-matching], summary: "Virtual threads (Project Loom): cheap blocking threads instead of async/await; pattern matching for switch." }
+  summary: >
+    'Write once, run anywhere': C++-like syntax on a garbage-collected, bytecode VM, originally for
+    embedded consumer devices, then the web and enterprise. Its arc from monitors (1996) via
+    CompletableFuture (2014) to virtual threads (2023) is the explicit decision not to adopt
+    async/await.
+  relations:
+    - { type: influenced_by, to: cpp, aspects: [classes], weight: strong, confidence: high }
+    - { type: influenced_by, to: objective-c, aspects: [interfaces], weight: moderate, confidence: high, note: "Interfaces from Objective-C protocols." }
+    - { type: influenced_by, to: smalltalk, aspects: [bytecode-vm, garbage-collection], weight: moderate, confidence: medium }
+    - { type: influenced_by, to: mesa, aspects: [monitors], weight: moderate, confidence: medium }
+    - { type: influenced_by, to: modula-3, weight: weak, confidence: medium }
+    - { type: influenced_by, to: self, aspects: [jit-compilation], weight: moderate, confidence: high, note: "Implementation influence: HotSpot came from the Self/Strongtalk team." }
+    - { type: influenced_by, to: simula, weight: weak, confidence: medium }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Java_(programming_language)" }
+  sources: [wiki-java, jep-444]
+
+- id: javascript
+  name: JavaScript
+  aliases: [Mocha, LiveScript, ECMAScript]
+  kind: language
+  category: scripting
+  cluster: web
+  origin:
+    first_appeared: { year: 1995, date: "1995-12", precision: exact, note: "Prototype written in 10 days in May 1995; shipped in Netscape Navigator 2.0 betas, named JavaScript December 1995." }
+    places: [{ institution: Netscape Communications, city: Mountain View, country: US }]
+  creators: [{ name: Brendan Eich, role: designer }]
+  status: active
+  tags:
+    paradigm: [multi-paradigm, functional, prototype-based, object-oriented, event-driven]
+    typing: [dynamic-typing, weak-typing]
+    memory: [garbage-collection]
+    concurrency: [event-loop, callbacks, futures-promises, async-await, generators]
+    features: [prototypes, closures, first-class-functions, jit-compilation]
+    domain: [web]
+  milestones:
+    - { version: ES1, year: 1997, introduces: [standardization] }
+    - { version: ES3, year: 1999, introduces: [exceptions] }
+    - { version: ES5, year: 2009, summary: "Strict mode, JSON." }
+    - { version: ES2015 (ES6), year: 2015, introduces: [classes, futures-promises, generators, modules], summary: "Promises (after Promises/A+), generators, classes, modules, arrow functions." }
+    - { version: ES2017, year: 2017, introduces: [async-await] }
+  summary: >
+    Eich was hired to "put Scheme in the browser" and told to make it look like Java. The result:
+    Scheme-ish closures, Self's prototypes, Java's syntax. Its single-threaded event loop made
+    callbacks, then promises, then async/await the defining concurrency story of the web.
+  relations:
+    - { type: influenced_by, to: scheme, aspects: [closures, first-class-functions], weight: strong, confidence: high }
+    - { type: influenced_by, to: self, aspects: [prototypes], weight: strong, confidence: high }
+    - { type: influenced_by, to: java, weight: moderate, confidence: high, note: "Syntax and naming, a marketing requirement." }
+    - { type: influenced_by, to: awk, weight: weak, confidence: medium }
+    - { type: influenced_by, to: python, aspects: [generators], weight: weak, confidence: medium, note: "ES2015 generators were modelled partly on Python's." }
+    - { type: influenced_by, to: csharp, year: 2017, aspects: [async-await], weight: moderate, confidence: medium }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/JavaScript" }
+  sources: [wirfs-brock-eich-2020-javascript]
+
+- id: php
+  name: PHP
+  kind: language
+  category: scripting
+  cluster: web
+  origin:
+    first_appeared: { year: 1995, date: "1995-06-08", precision: exact, note: "'Personal Home Page Tools' 1.0." }
+    places: [{ country: CA }]
+  creators: [{ name: Rasmus Lerdorf, role: original author }, { name: "Andi Gutmans, Zeev Suraski", role: "PHP 3 rewrite / Zend Engine" }]
+  status: active
+  tags:
+    paradigm: [imperative, object-oriented, procedural]
+    typing: [dynamic-typing, weak-typing, gradual-typing]
+    memory: [reference-counting]
+    concurrency: [fibers]
+    domain: [web]
+  milestones:
+    - { version: PHP 3, year: 1998 }
+    - { version: PHP 5, year: 2004, introduces: [object-oriented] }
+    - { version: PHP 7, year: 2015, introduces: [gradual-typing] }
+    - { version: PHP 8.1, year: 2021, introduces: [fibers] }
+  summary: "Started as Lerdorf's CGI tools in Perl and C, became the server-side language of the early dynamic web (WordPress, Facebook, Wikipedia)."
+  relations:
+    - { type: influenced_by, to: perl, weight: strong, confidence: high }
+    - { type: influenced_by, to: c, weight: moderate, confidence: high }
+    - { type: influenced_by, to: java, weight: moderate, confidence: medium, note: "PHP 5 object model." }
+  research_status: draft
+  confidence: high
+  sources: [wiki-php]
+
+- id: ocaml
+  name: OCaml
+  aliases: [Objective Caml, Caml]
+  kind: language
+  category: general
+  cluster: ml-family
+  origin:
+    began: { year: 1985, precision: year, note: "Caml (1985), Caml Light (1990)." }
+    first_appeared: { year: 1996, precision: year }
+    places: [{ institution: INRIA, city: Rocquencourt, country: FR }]
+  creators:
+    - { name: "Xavier Leroy, Jérôme Vouillon, Damien Doligez, Didier Rémy", role: designers }
+    - { name: "Gérard Huet, Guy Cousineau, Ascánder Suárez", role: Caml }
+  status: active
+  tags:
+    paradigm: [functional, imperative, object-oriented]
+    typing: [static-typing, type-inference, parametric-polymorphism]
+    memory: [garbage-collection]
+    concurrency: [effect-handlers, green-threads]
+    features: [algebraic-data-types, pattern-matching, module-system, functors]
+  milestones:
+    - { version: Caml, year: 1985 }
+    - { version: Caml Light, year: 1990 }
+    - { version: "OCaml 1.0", year: 1996, introduces: [object-oriented] }
+    - { version: "OCaml 5.0", year: 2022, introduces: [effect-handlers], summary: "Multicore runtime and effect handlers: direct-style concurrency without async/await colouring." }
+  summary: "ML with objects and a fast native compiler; the implementation language of the first Rust compiler, Coq/Rocq and Flow, and the base F# was modelled on."
+  relations:
+    - { type: influenced_by, to: ml, weight: strong, confidence: high }
+    - { type: influenced_by, to: standard-ml, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/OCaml", homepage: "https://ocaml.org" }
+  sources: [wiki-ocaml]

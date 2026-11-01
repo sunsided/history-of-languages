@@ -1,0 +1,83 @@
+- id: oop-two-traditions
+  title: "Two ideas of objects: Simula's classes and Smalltalk's messages"
+  thesis: >
+    Object orientation was invented twice from the same seed. Simula 67 gave classes as statically
+    checked types with inheritance and virtual procedures; Stroustrup took that line into C++, and from
+    there it reached Java and C#. Alan Kay read Simula and saw instead independent computers exchanging
+    late-bound messages; that line runs through Smalltalk to Objective-C, Self, Ruby and JavaScript. Both
+    put objects on top of C in the early 1980s, as C++ and Objective-C. Since the 1990s the field has
+    moved away from implementation inheritance towards interfaces, traits and composition.
+  concepts: [objects, classes, inheritance, virtual-dispatch, message-passing, late-binding, prototypes, traits, interfaces, multiple-dispatch]
+  research_status: draft
+  claims: [cpp-oop-by-accident]
+  steps:
+    - year: 1963
+      title: "Sketchpad: masters and instances"
+      nodes: [sketchpad]
+      concepts: [objects]
+      text: "Sutherland's drawings have master shapes and instances that follow changes to the master. Kay counts it as a seed of objects."
+      sources: [kay-1993-early-history-smalltalk]
+    - year: 1965
+      title: "Hoare's record classes"
+      nodes: [hoare-record-classes]
+      concepts: [records, references]
+      text: "Typed records with references and subclasses, proposed for ALGOL. Dahl and Nygaard adopt the class/subclass idea."
+      sources: [nygaard-dahl-1978-simula]
+    - year: 1967
+      title: "Simula 67: classes, inheritance, virtual procedures"
+      nodes: [simula]
+      concepts: [classes, inheritance, virtual-dispatch, coroutines]
+      text: "A general-purpose language grown from simulation. Every simulated entity is an object with its own coroutine. The class/prefix/virtual triad is OOP's origin."
+      sources: [nygaard-dahl-1978-simula, dahl-2002-birth-oo]
+    - year: 1972
+      title: "Smalltalk: objects as message receivers"
+      nodes: [smalltalk]
+      concepts: [message-passing, late-binding, everything-is-an-object]
+      text: "Kay coins 'object-oriented' for objects that communicate only by messages, like cells or networked machines. Smalltalk-72 had no inheritance; it arrived in Smalltalk-76. In 2003 Kay summarized OOP as 'messaging, local retention and protection and hiding of state-process, and extreme late-binding of all things'."
+      sources: [kay-1993-early-history-smalltalk, kay-2003-oop-email]
+    - year: 1975
+      title: "Abstract data types (CLU)"
+      nodes: [clu]
+      concepts: [abstract-data-types]
+      text: "Liskov's clusters: encapsulation without inheritance. A third strand that C++ access control, Ada packages and later Rust and Go modules follow."
+      sources: [liskov-1993-history-clu]
+    - year: 1979
+      title: "C with Classes: Simula's model on C"
+      nodes: [cpp]
+      concepts: [classes, inheritance, static-typing]
+      text: "Stroustrup, who had used Simula for his Cambridge PhD, wants its classes with C's efficiency. He knows Smalltalk and deliberately follows Simula's static model. Virtual functions arrive in 1983, at which point he first claims OOP support."
+      sources: [stroustrup-1993-hopl2]
+    - year: 1984
+      title: "Objective-C: Smalltalk's model on C"
+      nodes: [objective-c]
+      concepts: [message-passing, late-binding]
+      text: "Brad Cox adds Smalltalk-style dynamic messaging to C. Same problem, opposite answer to C++."
+      sources: [cox-naroff-hsu-2020-objc]
+    - year: 1986
+      title: "Contracts and pure OOP (Eiffel); prototypes (Self)"
+      nodes: [eiffel, self]
+      concepts: [design-by-contract, prototypes]
+      text: "Eiffel pushes the Simula line towards correctness with contracts. Self (1987) strips Smalltalk down to objects and delegation, without classes."
+      sources: [meyer-1988-oosc, ungar-smith-2007-self]
+    - year: 1988
+      title: "Generic functions (CLOS)"
+      nodes: [common-lisp]
+      concepts: [multiple-dispatch]
+      text: "Methods belong to generic functions, not classes, and dispatch on all arguments. A third model, revived by Julia."
+      sources: [steele-gabriel-1993-evolution-lisp]
+    - year: 1994
+      title: "Composition over inheritance"
+      concepts: [interfaces]
+      text: "The Gang of Four's Design Patterns advises 'favor object composition over class inheritance'. The industry starts backing away from deep hierarchies."
+      sources: [gof-1994]
+    - year: 1995
+      title: "Java and JavaScript: both traditions ship with the web"
+      nodes: [java, javascript]
+      concepts: [interfaces, prototypes]
+      text: "Java is the Simula/C++ line with Objective-C's interfaces and Smalltalk's VM and GC. JavaScript is Self's prototypes in Java's clothing."
+    - year: 2009
+      title: "OOP without inheritance"
+      nodes: [go, rust, swift]
+      concepts: [interfaces, traits, protocols]
+      text: "Go (2009) has structural interfaces and embedding but no inheritance. Rust (2015) has traits from Haskell's type classes. Swift (2014) calls itself protocol-oriented. Objects survive; implementation inheritance does not."
+      sources: [go-faq, rust-reference-influences]

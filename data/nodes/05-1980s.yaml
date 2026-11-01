@@ -1,0 +1,393 @@
+# The 1980s: C++, Objective-C, Common Lisp, Eiffel, Self, Erlang, Miranda, Perl, Standard ML, Modula-3, Oberon, occam, Newsqueak.
+
+- id: cpp
+  name: C++
+  aliases: [C with Classes]
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    began: { year: 1979, date: "1979-04", precision: exact, note: "Work began April 1979 at Bell Labs; Cpre preprocessor running October 1979." }
+    first_appeared: { year: 1985, date: "1985-10", precision: exact, note: "Cfront Release 1.0 and 'The C++ Programming Language', 1985. Named C++ in December 1983 (suggested by Rick Mascitti)." }
+    places: [{ institution: Bell Labs Computing Science Research Center, city: Murray Hill NJ, country: US }]
+  creators: [{ name: Bjarne Stroustrup, role: designer }]
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative, procedural, generic-programming, functional, multi-paradigm]
+    typing: [static-typing, type-inference]
+    memory: [manual-memory, raii, pointers, move-semantics]
+    concurrency: [threads, atomics, memory-model, coroutines]
+    features: [classes, inheritance, virtual-dispatch, operator-overloading, references, templates, exceptions, multiple-inheritance, lambdas, concepts, modules, line-comments, declarations-anywhere, compile-time-evaluation]
+  milestones:
+    - { version: C with Classes, year: 1980, introduces: [classes, inheritance], summary: "Classes, derived classes, access control, constructors/destructors, via the Cpre preprocessor." }
+    - { version: "C++ (Cfront 1.0)", year: 1985, introduces: [virtual-dispatch, operator-overloading, references], summary: "Virtual functions (1983) made it object-oriented in Stroustrup's own terms." }
+    - { version: Cfront 2.0, year: 1989, introduces: [multiple-inheritance], summary: "Multiple inheritance, abstract classes." }
+    - { version: C++98, year: 1998, introduces: [templates, exceptions, generic-programming, standardization], summary: "First ISO standard; the STL (Stepanov) brings generic programming." }
+    - { version: C++11, year: 2011, introduces: [lambdas, move-semantics, threads, atomics, memory-model, type-inference], summary: "auto, lambdas, rvalue references, std::thread, memory model, futures." }
+    - { version: C++14, year: 2014 }
+    - { version: C++17, year: 2017 }
+    - { version: C++20, year: 2020, introduces: [concepts, coroutines, modules], summary: "Concepts, stackless coroutines (co_await), modules, ranges." }
+    - { version: C++23, year: 2023 }
+    - { version: C++26, year: 2026, introduces: [compile-time-evaluation], summary: "Static reflection, contracts, std::execution (senders/receivers). Check final status after publication." }
+  summary: >
+    Stroustrup wanted Simula's classes, which had helped him structure a distributed-systems
+    simulator during his Cambridge PhD, with BCPL/C-level efficiency, since Simula's implementation had
+    nearly sunk that project. He knew Smalltalk and deliberately chose Simula's statically typed model.
+    C++ then grew into the main vehicle for zero-overhead abstraction and generic programming.
+  relations:
+    - { type: superset_of, to: c, weight: strong, confidence: high, note: "Nearly a superset; C and C++ have diverged in details." }
+    - { type: influenced_by, to: simula, aspects: [classes, inheritance, virtual-dispatch, static-typing], weight: strong, confidence: high, note: "'C++ was designed to provide Simula's facilities for program organization together with C's efficiency and flexibility for systems programming.' (HOPL-II, §1)" }
+    - { type: influenced_by, to: algol-68, aspects: [operator-overloading, references, declarations-anywhere], weight: moderate, confidence: high, note: "Stroustrup, HOPL-II §2.4.4." }
+    - { type: influenced_by, to: bcpl, aspects: [line-comments], weight: weak, confidence: high }
+    - { type: influenced_by, to: ada, aspects: [templates, exceptions], weight: moderate, confidence: high, note: "Post-1985 evolution 'shows the influence of ideas from Ada, Clu, and ML.' (HOPL-II §2.4.4)" }
+    - { type: influenced_by, to: clu, aspects: [exceptions, generics], weight: moderate, confidence: high }
+    - { type: influenced_by, to: ml, aspects: [exceptions, parametric-polymorphism], weight: moderate, confidence: high }
+  research_status: reviewed
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/C%2B%2B", homepage: "https://isocpp.org" }
+  sources: [stroustrup-1993-hopl2, stroustrup-1994-design-evolution, stroustrup-2007-hopl3, stroustrup-2020-hopl4]
+
+- id: objective-c
+  name: Objective-C
+  kind: language
+  category: general
+  cluster: oop/simula-smalltalk
+  origin:
+    first_appeared: { year: 1984, precision: circa, note: "Developed early 1980s at Productivity Products International (later Stepstone)." }
+    places: [{ institution: Productivity Products International (Stepstone), country: US }]
+  creators:
+    - { name: Brad Cox, role: designer }
+    - { name: Tom Love, role: co-founder }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, imperative]
+    typing: [static-typing, dynamic-typing]
+    memory: [reference-counting]
+    features: [message-passing, late-binding, categories, protocols, blocks-closures]
+  milestones:
+    - { version: NeXTSTEP adoption, year: 1988 }
+    - { version: Objective-C 2.0, year: 2006, summary: "Properties, fast enumeration, optional GC." }
+    - { version: ARC, year: 2011, introduces: [reference-counting], summary: "Automatic Reference Counting." }
+  summary: >
+    The other way to put objects on C: Smalltalk's dynamic message sending bolted onto C, the road
+    C++ did not take. Via NeXT it became the language of macOS and iOS until Swift. Together with C++
+    it shows the two answers to the same question in the same few years.
+  relations:
+    - { type: superset_of, to: c, weight: strong, confidence: high }
+    - { type: influenced_by, to: smalltalk, aspects: [message-passing, late-binding], weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [cox-naroff-hsu-2020-objc]
+
+- id: occam
+  name: occam
+  kind: language
+  category: systems
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1983, precision: year }
+    places: [{ institution: Inmos, city: Bristol, country: GB }]
+  creators: [{ name: David May, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [imperative, concurrent]
+    typing: [static-typing]
+    concurrency: [channels, synchronous-rendezvous, processes]
+    features: [offside-rule]
+    domain: [embedded, parallel-hardware]
+  summary: "CSP made into a language for the Inmos Transputer: PAR, SEQ and ALT constructs and channels in hardware."
+  relations:
+    - { type: influenced_by, to: csp, aspects: [channels, synchronous-rendezvous], weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [wiki-occam]
+
+- id: common-lisp
+  name: Common Lisp
+  kind: language
+  category: general
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1984, precision: year, note: "'Common Lisp the Language' (Steele) 1984; ANSI standard 1994." }
+    places: [{ country: US }]
+  creators: [{ name: "Guy L. Steele Jr. (editor) and the Common Lisp committee", role: designers }]
+  status: maintained
+  tags:
+    paradigm: [multi-paradigm, functional, object-oriented, reflective]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [macros, multiple-dispatch, metaobject-protocol, conditions-restarts]
+  milestones:
+    - { version: CLOS, year: 1988, introduces: [multiple-dispatch, metaobject-protocol], summary: "Common Lisp Object System: generic functions, multiple dispatch, method combinations; from Flavors and LOOPS." }
+    - { version: ANSI Common Lisp, year: 1994, introduces: [standardization] }
+  summary: "Unification of MacLisp-descended dialects (Lisp Machine Lisp, NIL, Spice Lisp, S-1 Lisp). CLOS showed OOP built from generic functions rather than message sends, the ancestor of Julia's multiple dispatch."
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high }
+    - { type: influenced_by, to: scheme, aspects: [lexical-scoping], weight: moderate, confidence: high }
+    - { type: influenced_by, to: smalltalk, weight: weak, confidence: medium, note: "Via Flavors/LOOPS object systems." }
+  research_status: draft
+  confidence: high
+  sources: [steele-gabriel-1993-evolution-lisp]
+
+- id: miranda
+  name: Miranda
+  kind: language
+  category: research
+  cluster: ml-family/lazy
+  origin:
+    first_appeared: { year: 1985, precision: year }
+    places: [{ institution: Research Software Ltd. / University of Kent, country: GB }]
+  creators: [{ name: David Turner, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [functional, purely-functional]
+    typing: [static-typing, type-inference, parametric-polymorphism]
+    memory: [garbage-collection]
+    features: [lazy-evaluation, algebraic-data-types, pattern-matching, list-comprehensions, offside-rule]
+  summary: "Commercial lazy, purely functional language, the culmination of Turner's SASL and KRC. Being proprietary, it prompted the Haskell committee to create an open standard."
+  relations:
+    - { type: influenced_by, to: ml, aspects: [type-inference, parametric-polymorphism], weight: strong, confidence: high }
+    - { type: influenced_by, to: iswim, aspects: [offside-rule], weight: strong, confidence: high, note: "Via SASL (1972) and KRC (1981), to be added as nodes." }
+  research_status: draft
+  confidence: high
+  sources: [hudak-2007-history-haskell]
+
+- id: eiffel
+  name: Eiffel
+  kind: language
+  category: general
+  cluster: oop/simula-smalltalk
+  origin:
+    first_appeared: { year: 1986, precision: year }
+    places: [{ institution: Interactive Software Engineering, city: Santa Barbara, country: US }]
+  creators: [{ name: Bertrand Meyer, role: designer }]
+  status: legacy
+  tags:
+    paradigm: [object-oriented]
+    typing: [static-typing]
+    memory: [garbage-collection]
+    features: [design-by-contract, multiple-inheritance, generics]
+  summary: "Pure, statically typed OOP with Design by Contract (preconditions, postconditions, invariants). Its contracts reappear in Ada 2012, D, C++26 and Kotlin; the uniform access principle in C# properties."
+  relations:
+    - { type: influenced_by, to: simula, weight: strong, confidence: high }
+    - { type: influenced_by, to: ada, weight: moderate, confidence: medium }
+  research_status: draft
+  confidence: high
+  sources: [meyer-1988-oosc]
+
+- id: erlang
+  name: Erlang
+  kind: language
+  category: general
+  cluster: concurrency/beam
+  origin:
+    began: { year: 1986, precision: year }
+    first_appeared: { year: 1986, precision: year, note: "First (Prolog-based) implementation 1986; open-sourced 1998." }
+    places: [{ institution: Ericsson Computer Science Laboratory, city: Stockholm, country: SE }]
+  creators:
+    - { name: Joe Armstrong, role: designer }
+    - { name: Robert Virding, role: designer }
+    - { name: Mike Williams, role: designer }
+  status: active
+  tags:
+    paradigm: [functional, concurrent]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    concurrency: [actors, message-passing, green-threads, preemptive-scheduling]
+    features: [pattern-matching, hot-code-reloading, let-it-crash, supervision-trees]
+    domain: [telecommunications, distributed-systems]
+  milestones:
+    - { version: BEAM VM, year: 1992 }
+    - { version: OTP, year: 1996 }
+    - { version: Open source release, year: 1998 }
+    - { version: SMP runtime, year: 2006, summary: "Multicore scheduler." }
+  summary: >
+    Built for telephone switches that must never stop: millions of isolated, cheap processes,
+    asynchronous message passing, "let it crash" with supervisors, hot code reloading. Its
+    preemptively scheduled lightweight processes are the road async/await did not take.
+  relations:
+    - { type: influenced_by, to: prolog, aspects: [pattern-matching], weight: strong, confidence: high, note: "Started as a Prolog meta-interpreter; syntax is Prolog-derived." }
+    - { type: influenced_by, to: csp, aspects: [message-passing], weight: weak, confidence: medium }
+    - { type: influenced_by, to: actor-model, aspects: [actors], weight: weak, confidence: medium, note: "Armstrong said the actor model was not a conscious influence; the similarity is convergent. Keep weight weak." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Erlang_(programming_language)" }
+  sources: [armstrong-2007-history-erlang]
+
+- id: self
+  name: Self
+  kind: language
+  category: research
+  cluster: oop/simula-smalltalk
+  origin:
+    first_appeared: { year: 1987, precision: year, note: "Designed 1986 at Xerox PARC; developed at Stanford and Sun Labs." }
+    places: [{ institution: Xerox PARC / Stanford / Sun Microsystems, country: US }]
+  creators:
+    - { name: David Ungar, role: designer }
+    - { name: Randall Smith, role: designer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented, prototype-based]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [prototypes, jit-compilation, adaptive-optimization]
+  summary: "Smalltalk without classes: objects clone prototypes and delegate to parents. Its adaptive JIT compilers led directly to Java HotSpot and V8; its prototypes to JavaScript."
+  relations:
+    - { type: influenced_by, to: smalltalk, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [ungar-smith-2007-self]
+
+- id: perl
+  name: Perl
+  kind: language
+  category: scripting
+  cluster: scripting/unix
+  origin:
+    first_appeared: { year: 1987, date: "1987-12-18", precision: exact }
+    places: [{ institution: Unisys / System Development Corporation, country: US }]
+  creators: [{ name: Larry Wall, role: designer }]
+  status: maintained
+  tags:
+    paradigm: [imperative, procedural, scripting, multi-paradigm]
+    typing: [dynamic-typing]
+    memory: [reference-counting]
+    features: [regular-expressions, associative-arrays, closures]
+  milestones:
+    - { version: Perl 5, year: 1994, introduces: [object-oriented, closures], summary: "References, modules, objects; CPAN 1995." }
+    - { version: "Perl 6 (renamed Raku 2019)", year: 2015, summary: "Separate language; see Raku node later." }
+  summary: "Practical extraction and reporting: sh, awk, sed and C folded into one. The glue language of early web CGI; its regex syntax became the de facto standard (PCRE)."
+  relations:
+    - { type: influenced_by, to: awk, aspects: [associative-arrays, regular-expressions], weight: strong, confidence: high }
+    - { type: influenced_by, to: c, weight: strong, confidence: high }
+    - { type: influenced_by, to: bourne-shell, weight: strong, confidence: high }
+    - { type: influenced_by, to: lisp, aspects: [closures], weight: weak, confidence: medium }
+  research_status: draft
+  confidence: high
+  sources: [wiki-perl]
+
+- id: abc
+  name: ABC
+  kind: language
+  category: educational
+  cluster: scripting/python
+  origin:
+    began: { year: 1975, precision: circa, note: "Precursor 'B' by Meertens from c. 1975." }
+    first_appeared: { year: 1987, precision: year }
+    places: [{ institution: CWI, city: Amsterdam, country: NL }]
+  creators:
+    - { name: Leo Geurts, role: designer }
+    - { name: Lambert Meertens, role: designer }
+    - { name: Steven Pemberton, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    typing: [static-typing]
+    features: [offside-rule, high-level-collections, repl]
+    domain: [education]
+  summary: "Teaching language with indentation-based blocks and high-level lists and tables. Guido van Rossum worked on its implementation; Python began as a successor fixing its frustrations (no extensibility, closed environment)."
+  research_status: draft
+  confidence: high
+  sources: [van-rossum-2009-history-python]
+
+- id: standard-ml
+  name: Standard ML
+  aliases: [SML]
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    began: { year: 1983, precision: year }
+    first_appeared: { year: 1990, precision: year, note: "Definition of Standard ML (1990); revised 1997." }
+    places: [{ institution: University of Edinburgh, city: Edinburgh, country: GB }]
+  creators:
+    - { name: Robin Milner, role: designer }
+    - { name: Mads Tofte, role: designer }
+    - { name: Robert Harper, role: designer }
+    - { name: David MacQueen, role: designer }
+  status: legacy
+  tags:
+    paradigm: [functional, imperative]
+    typing: [static-typing, type-inference, parametric-polymorphism]
+    memory: [garbage-collection]
+    features: [module-system, functors, algebraic-data-types, pattern-matching, exceptions, formal-semantics]
+  milestones:
+    - { version: SML '90, year: 1990, introduces: [formal-semantics] }
+    - { version: SML '97, year: 1997 }
+  summary: "ML unified with HOPE's algebraic data types and pattern matching, with a module system of signatures and functors. The first general-purpose language with a complete formal definition."
+  relations:
+    - { type: successor_of, to: ml, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [macqueen-harper-reppy-2020-history-sml]
+
+- id: modula-3
+  name: Modula-3
+  kind: language
+  category: systems
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 1988, precision: year }
+    places: [{ institution: DEC Systems Research Center and Olivetti Research, city: Palo Alto, country: US }]
+  creators:
+    - { name: "Luca Cardelli, James Donahue, Lucille Glassman, Mick Jordan, Bill Kalsow, Greg Nelson", role: designers }
+  status: extinct
+  tags:
+    paradigm: [imperative, structured, object-oriented, modular]
+    typing: [static-typing, strong-typing]
+    memory: [garbage-collection]
+    concurrency: [threads]
+    features: [modules, exceptions, generics, safe-unsafe-split]
+  summary: "Safe systems language with garbage collection, threads, objects, exceptions and an explicit UNSAFE escape hatch. Barely used, but credited by Java's and Python's designers; its UNSAFE modules anticipate Rust's unsafe."
+  relations:
+    - { type: successor_of, to: modula-2, weight: strong, confidence: medium, note: "Wirth blessed the name but was not a designer." }
+    - { type: influenced_by, to: mesa, weight: moderate, confidence: medium, note: "Via Cedar." }
+  research_status: draft
+  confidence: medium
+  sources: [wiki-modula-3]
+
+- id: oberon
+  name: Oberon
+  kind: language
+  category: systems
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 1987, precision: year }
+    places: [{ institution: ETH Zürich, city: Zürich, country: CH }]
+  creators:
+    - { name: Niklaus Wirth, role: designer }
+    - { name: Jürg Gutknecht, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, structured, modular, object-oriented]
+    typing: [static-typing, strong-typing]
+    memory: [garbage-collection]
+    features: [type-extension, modules]
+  summary: "Smaller than Modula-2, adding record type extension (single inheritance without classes). Oberon's method syntax `func (r Rec) M()` is the acknowledged source of Go's receiver syntax."
+  relations:
+    - { type: successor_of, to: modula-2, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [wirth-2007-modula2-oberon]
+
+- id: newsqueak
+  name: Newsqueak
+  kind: language
+  category: research
+  cluster: concurrency/plan9
+  origin:
+    first_appeared: { year: 1988, precision: year }
+    places: [{ institution: Bell Labs, city: Murray Hill NJ, country: US }]
+  creators: [{ name: Rob Pike, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [concurrent, imperative]
+    concurrency: [channels, processes]
+    features: [first-class-channels]
+  summary: "Pike's language for concurrent window systems, with first-class channels and processes. First of the Pike/Bell Labs line that leads through Alef and Limbo to Go."
+  relations:
+    - { type: influenced_by, to: csp, aspects: [channels], weight: strong, confidence: high }
+    - { type: influenced_by, to: c, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  sources: [pike-go-history-talk]

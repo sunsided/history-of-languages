@@ -1,0 +1,1120 @@
+# Concept registry. Every tag, edge aspect and milestone 'introduces' value refers to an id here.
+# first_seen marks the earliest node IN THIS DATASET credited with the concept; refine as subgraphs are unfolded.
+# Summaries are drafts; concepts without one still need writing.
+- id: actors
+  name: Actors
+  facet: concurrency
+  broader:
+  - message-passing
+  summary: Isolated entities that communicate only by asynchronous messages.
+- id: async-await
+  name: Async await
+  facet: concurrency
+  broader:
+  - coroutines
+  - futures-promises
+  summary: Syntax that lets asynchronous code read sequentially by suspending at await points; compiled to state machines
+    or continuations.
+  first_seen:
+    node: fsharp
+    year: 2007
+    note: F# async workflows; C# 5 (2012) gave the async/await keywords.
+- id: atomics
+  name: Atomics
+  facet: concurrency
+- id: callbacks
+  name: Callbacks
+  facet: concurrency
+  summary: Passing a continuation function to be called on completion.
+- id: channels
+  name: Channels
+  facet: concurrency
+  broader:
+  - message-passing
+  summary: Typed conduits between processes; from CSP.
+  first_seen:
+    node: occam
+    year: 1983
+- id: coarrays
+  name: Coarrays
+  facet: concurrency
+  broader:
+  - data-parallelism
+  summary: Fortran's SPMD parallel arrays across images.
+  first_seen:
+    node: fortran
+    year: 2010
+- id: computation-expressions
+  name: Computation expressions
+  facet: concurrency
+  broader:
+  - monads
+  summary: F#'s general syntax for monadic code, async being one instance.
+  first_seen:
+    node: fsharp
+    year: 2007
+- id: cooperative-multitasking
+  name: Cooperative multitasking
+  facet: concurrency
+  summary: Tasks run until they voluntarily yield.
+- id: coroutines
+  name: Coroutines
+  facet: concurrency
+  summary: Routines that suspend and resume, passing control explicitly. Conway coined the term (1958, published 1963).
+  first_seen:
+    node: simula
+    year: 1967
+    note: First in a mainstream language design; Conway used them in a COBOL compiler.
+- id: data-parallelism
+  name: Data parallelism
+  facet: concurrency
+- id: effect-handlers
+  name: Effect handlers
+  facet: concurrency
+  summary: Resumable exceptions that generalize async, generators and exceptions.
+  first_seen:
+    node: ocaml
+    year: 2022
+    note: As a mainstream feature; research languages Eff and Koka earlier.
+- id: event-loop
+  name: Event loop
+  facet: concurrency
+  summary: A single thread dispatching events and I/O completions to handlers.
+- id: fibers
+  name: Fibers
+  facet: concurrency
+  broader:
+  - coroutines
+  summary: Stackful, cooperatively scheduled user-mode threads.
+- id: futures-promises
+  name: Futures promises
+  facet: concurrency
+  summary: Placeholders for results not yet computed (Friedman & Wise 1976; Baker & Hewitt 1977; Liskov & Shrira 1988).
+- id: gil
+  name: Global interpreter lock (GIL)
+  facet: concurrency
+- id: goroutines
+  name: Goroutines
+  facet: concurrency
+  broader:
+  - green-threads
+  summary: Go's runtime-scheduled lightweight threads.
+  first_seen:
+    node: go
+    year: 2009
+- id: green-threads
+  name: Green threads
+  facet: concurrency
+  broader:
+  - threads
+  summary: Threads scheduled by the language runtime rather than the OS.
+- id: interrupts
+  name: Interrupts
+  facet: concurrency
+  summary: 'Hardware signals that suspend the current instruction stream to run a handler: the first form of asynchronous
+    control flow.'
+- id: isolates
+  name: Isolates
+  facet: concurrency
+- id: memory-model
+  name: Memory model
+  facet: concurrency
+- id: message-passing
+  name: Message passing
+  facet: concurrency
+  summary: Communication by sending messages rather than sharing memory. Also the Smalltalk sense of method invocation.
+- id: monitors
+  name: Monitors
+  facet: concurrency
+  summary: Shared data guarded by mutual exclusion with condition variables (Brinch Hansen, Hoare 1973-74).
+  first_seen:
+    node: concurrent-pascal
+    year: 1975
+- id: multitasking
+  name: Multitasking
+  facet: concurrency
+- id: parallel-clauses
+  name: Parallel clauses
+  facet: concurrency
+- id: preemptive-scheduling
+  name: Preemptive scheduling
+  facet: concurrency
+  summary: The scheduler can interrupt a running task at any time.
+- id: processes
+  name: Processes
+  facet: concurrency
+- id: protected-objects
+  name: Protected objects
+  facet: concurrency
+- id: rendezvous
+  name: Rendezvous
+  facet: concurrency
+  broader:
+  - synchronous-rendezvous
+  summary: Ada's task entry calls.
+  first_seen:
+    node: ada
+    year: 1983
+- id: semaphores
+  name: Semaphores
+  facet: concurrency
+  summary: Counter-based synchronization primitive (Dijkstra, 1965).
+  first_seen:
+    node: algol-68
+    year: 1968
+    note: As a language-level type.
+- id: software-transactional-memory
+  name: Software transactional memory
+  facet: concurrency
+  summary: Memory transactions with automatic retry instead of locks.
+  first_seen:
+    node: haskell
+    year: 2005
+- id: structured-concurrency
+  name: Structured concurrency
+  facet: concurrency
+  summary: Concurrent tasks are scoped to a lexical block that outlives them.
+- id: synchronous-rendezvous
+  name: Synchronous rendezvous
+  facet: concurrency
+  broader:
+  - message-passing
+  summary: Sender and receiver meet; neither proceeds alone.
+- id: tasks
+  name: Tasks
+  facet: concurrency
+- id: threads
+  name: Threads
+  facet: concurrency
+  summary: Independently scheduled flows of control sharing memory.
+- id: virtual-threads
+  name: Virtual threads
+  facet: concurrency
+  broader:
+  - green-threads
+  summary: Java 21's JVM-scheduled threads that make blocking cheap.
+  first_seen:
+    node: java
+    year: 2023
+- id: artificial-intelligence
+  name: Artificial intelligence
+  facet: domain
+- id: business-data-processing
+  name: Business data processing
+  facet: domain
+- id: data-science
+  name: Data science
+  facet: domain
+- id: databases
+  name: Databases
+  facet: domain
+- id: distributed-systems
+  name: Distributed systems
+  facet: domain
+- id: education
+  name: Education
+  facet: domain
+- id: embedded
+  name: Embedded
+  facet: domain
+- id: game-scripting
+  name: Game scripting
+  facet: domain
+- id: hpc
+  name: High-performance computing
+  facet: domain
+- id: natural-language-processing
+  name: Natural language processing
+  facet: domain
+- id: operating-systems
+  name: Operating systems
+  facet: domain
+- id: parallel-hardware
+  name: Parallel hardware
+  facet: domain
+- id: safety-critical
+  name: Safety critical
+  facet: domain
+- id: scientific-computing
+  name: Scientific computing
+  facet: domain
+- id: simulation
+  name: Simulation
+  facet: domain
+- id: statistics
+  name: Statistics
+  facet: domain
+- id: telecommunications
+  name: Telecommunications
+  facet: domain
+- id: web
+  name: Web
+  facet: domain
+- id: abstract-data-types
+  name: Abstract data types
+  facet: features
+- id: adaptive-optimization
+  name: Adaptive optimization
+  facet: features
+- id: algebraic-data-types
+  name: Algebraic data types
+  facet: features
+  summary: Sum and product types, usually with pattern matching.
+  first_seen:
+    node: standard-ml
+    year: 1990
+    note: From HOPE (1980).
+- id: assertions
+  name: Assertions
+  facet: features
+- id: associative-arrays
+  name: Associative arrays
+  facet: features
+- id: backtracking
+  name: Backtracking
+  facet: features
+- id: block-structure
+  name: Block structure
+  facet: features
+  summary: Nested blocks with local declarations.
+  first_seen:
+    node: algol-60
+    year: 1960
+- id: blocks-closures
+  name: Blocks closures
+  facet: features
+- id: bnf
+  name: BNF
+  facet: features
+- id: bytecode-vm
+  name: Bytecode virtual machine
+  facet: features
+  summary: Compiling to an instruction set for a virtual machine.
+  first_seen:
+    node: bcpl
+    year: 1967
+    note: O-code; then Pascal p-code (1977), Smalltalk-76, JVM.
+- id: c-interop
+  name: C interoperability
+  facet: features
+- id: call-by-name
+  name: Call by name
+  facet: features
+- id: categories
+  name: Categories
+  facet: features
+- id: checked-exceptions
+  name: Checked exceptions
+  facet: features
+- id: classes
+  name: Classes
+  facet: features
+  summary: Templates for objects defining state and operations.
+  first_seen:
+    node: simula
+    year: 1967
+- id: closures
+  name: Closures
+  facet: features
+  broader:
+  - first-class-functions
+  summary: Functions capturing their lexical environment.
+  first_seen:
+    node: scheme
+    year: 1975
+- id: come-from
+  name: Come from
+  facet: features
+- id: command-substitution
+  name: Command substitution
+  facet: features
+- id: compile-time-evaluation
+  name: Compile time evaluation
+  facet: features
+- id: compiler
+  name: Compiler
+  facet: features
+  summary: Translates source to machine code ahead of time.
+  first_seen:
+    node: glennie-autocode
+    year: 1952
+- id: compound-statements
+  name: Compound statements
+  facet: features
+- id: concepts
+  name: Concepts
+  facet: features
+- id: conditional-expressions
+  name: Conditional expressions
+  facet: features
+- id: conditions-restarts
+  name: Conditions restarts
+  facet: features
+- id: constraints
+  name: Constraints
+  facet: features
+- id: contracts
+  name: Contracts
+  facet: features
+  summary: Checkable specifications attached to code.
+- id: data-classes
+  name: Data classes
+  facet: features
+- id: decimal-arithmetic
+  name: Decimal arithmetic
+  facet: features
+- id: declarations-anywhere
+  name: Declarations anywhere
+  facet: features
+- id: decorators
+  name: Decorators
+  facet: features
+- id: design-by-contract
+  name: Design by contract
+  facet: features
+  broader:
+  - contracts
+  summary: Pre/postconditions and invariants as part of interfaces.
+  first_seen:
+    node: eiffel
+    year: 1986
+- id: dynamic-allocation
+  name: Dynamic allocation
+  facet: features
+- id: embeddable
+  name: Embeddable
+  facet: features
+- id: english-like-syntax
+  name: English like syntax
+  facet: features
+  summary: Keywords and statements modelled on English prose.
+  first_seen:
+    node: flow-matic
+    year: 1958
+- id: everything-is-an-object
+  name: Everything is an object
+  facet: features
+- id: exceptions
+  name: Exceptions
+  facet: features
+  summary: Non-local transfer of control on error.
+  first_seen:
+    node: pl-i
+    year: 1964
+    note: ON-conditions.
+- id: expression-oriented
+  name: Expression oriented
+  facet: features
+- id: extension-functions
+  name: Extension functions
+  facet: features
+- id: first-class-channels
+  name: First class channels
+  facet: features
+- id: first-class-continuations
+  name: First class continuations
+  facet: features
+- id: first-class-functions
+  name: First class functions
+  facet: features
+  summary: Functions as values that can be passed, returned and stored.
+  first_seen:
+    node: lisp
+    year: 1960
+- id: formal-semantics
+  name: Formal semantics
+  facet: features
+- id: function-prototypes
+  name: Function prototypes
+  facet: features
+- id: functors
+  name: Functors
+  facet: features
+- id: generators
+  name: Generators
+  facet: features
+  broader:
+  - coroutines
+  summary: Functions that yield a sequence of values lazily.
+  first_seen:
+    node: clu
+    year: 1975
+    note: CLU iterators; Icon generators 1977.
+- id: generics
+  name: Generics
+  facet: features
+  broader:
+  - generic-programming
+  summary: Type-parameterized code.
+- id: guarded-commands
+  name: Guarded commands
+  facet: features
+- id: high-level-collections
+  name: High level collections
+  facet: features
+- id: higher-kinded-types
+  name: Higher kinded types
+  facet: features
+- id: homoiconicity
+  name: Homoiconicity
+  facet: features
+  summary: Code represented as the language's own data structures.
+  first_seen:
+    node: lisp
+    year: 1960
+- id: hot-code-reloading
+  name: Hot code reloading
+  facet: features
+- id: hygienic-macros
+  name: Hygienic macros
+  facet: features
+  broader:
+  - macros
+  summary: Macros that cannot accidentally capture identifiers.
+  first_seen:
+    node: scheme
+    year: 1991
+- id: ide
+  name: Integrated development environment
+  facet: features
+- id: image-based
+  name: Image based
+  facet: features
+- id: implicit-typing
+  name: Implicit typing
+  facet: features
+- id: implicits
+  name: Implicits
+  facet: features
+- id: increment-operators
+  name: Increment operators
+  facet: features
+- id: inheritance
+  name: Inheritance
+  facet: features
+  broader:
+  - classes
+  summary: Defining a class by extending another.
+  first_seen:
+    node: simula
+    year: 1967
+    note: Simula's prefix classes.
+- id: interactive-time-sharing
+  name: Interactive time sharing
+  facet: features
+- id: interfaces
+  name: Interfaces
+  facet: features
+- id: intermediate-code
+  name: Intermediate code
+  facet: features
+- id: interpreter
+  name: Interpreter
+  facet: features
+  summary: Executes a program without translating it to machine code first.
+  first_seen:
+    node: short-code
+    year: 1950
+- id: iterators
+  name: Iterators
+  facet: features
+  summary: Abstractions for traversing a collection.
+  first_seen:
+    node: clu
+    year: 1975
+- id: jit-compilation
+  name: JIT compilation
+  facet: features
+  summary: Compiling at run time, guided by observed behaviour.
+  first_seen:
+    node: self
+    year: 1987
+    note: Adaptive optimization; earlier JIT in Lisp and APL implementations.
+- id: lambdas
+  name: Lambdas
+  facet: features
+- id: late-binding
+  name: Late binding
+  facet: features
+  summary: Deciding what code a name refers to as late as possible.
+- id: lazy-evaluation
+  name: Lazy evaluation
+  facet: features
+  summary: Expressions evaluated only when needed.
+- id: let-expressions
+  name: Let expressions
+  facet: features
+- id: let-it-crash
+  name: Let it crash
+  facet: features
+- id: lexical-scoping
+  name: Lexical scoping
+  facet: features
+  summary: Names resolve by program text structure.
+  first_seen:
+    node: algol-60
+    year: 1960
+- id: line-comments
+  name: Line comments
+  facet: features
+  summary: Comments to end of line with //.
+  first_seen:
+    node: bcpl
+    year: 1967
+- id: line-numbers
+  name: Line numbers
+  facet: features
+- id: linked-lists
+  name: Linked lists
+  facet: features
+  summary: Data as chains of cells with pointers.
+  first_seen:
+    node: ipl
+    year: 1956
+- id: list-comprehensions
+  name: List comprehensions
+  facet: features
+- id: live-programming
+  name: Live programming
+  facet: features
+- id: macros
+  name: Macros
+  facet: features
+  broader:
+  - metaprogramming
+  summary: Code that generates code at compile time.
+- id: metaclasses
+  name: Metaclasses
+  facet: features
+- id: metaobject-protocol
+  name: Metaobject protocol
+  facet: features
+- id: metaprogramming
+  name: Metaprogramming
+  facet: features
+- id: metatables
+  name: Metatables
+  facet: features
+- id: minimalism
+  name: Minimalism
+  facet: features
+- id: mixins
+  name: Mixins
+  facet: features
+- id: module-system
+  name: Module system
+  facet: features
+- id: modules
+  name: Modules
+  facet: features
+  summary: Units of code with explicit interfaces.
+- id: monads
+  name: Monads
+  facet: features
+  summary: A structure for sequencing computations with effects (Moggi 1989, Wadler 1992).
+  first_seen:
+    node: haskell
+    year: 1996
+- id: multiple-assignment
+  name: Multiple assignment
+  facet: features
+- id: multiple-dispatch
+  name: Multiple dispatch
+  facet: features
+  summary: Method chosen by the run-time types of all arguments.
+  first_seen:
+    node: common-lisp
+    year: 1988
+    note: CLOS.
+- id: multiple-inheritance
+  name: Multiple inheritance
+  facet: features
+- id: multiple-return-values
+  name: Multiple return values
+  facet: features
+- id: nested-functions
+  name: Nested functions
+  facet: features
+- id: nondeterminism
+  name: Nondeterminism
+  facet: features
+- id: objects
+  name: Objects
+  facet: features
+  summary: Entities bundling state and behaviour with identity.
+  first_seen:
+    node: simula
+    year: 1967
+    note: Sketchpad (1963) had master/instance drawings.
+- id: offside-rule
+  name: Offside rule
+  facet: features
+  summary: Indentation delimits blocks.
+  first_seen:
+    node: iswim
+    year: 1966
+- id: operator-overloading
+  name: Operator overloading
+  facet: features
+- id: optimizing-compiler
+  name: Optimizing compiler
+  facet: features
+  broader:
+  - compiler
+  summary: Compiler that improves generated code.
+  first_seen:
+    node: fortran
+    year: 1957
+- id: orthogonality
+  name: Orthogonality
+  facet: features
+- id: packages
+  name: Packages
+  facet: features
+- id: pattern-matching
+  name: Pattern matching
+  facet: features
+  summary: Selecting behaviour by the shape of data, with destructuring. From SNOBOL strings and Prolog/ML terms to mainstream
+    switch statements.
+- id: persistent-data-structures
+  name: Persistent data structures
+  facet: features
+- id: pipes
+  name: Pipes
+  facet: features
+- id: pointer-arithmetic
+  name: Pointer arithmetic
+  facet: features
+- id: portable-compiler
+  name: Portable compiler
+  facet: features
+- id: preprocessor
+  name: Preprocessor
+  facet: features
+- id: properties
+  name: Properties
+  facet: features
+- id: protocols
+  name: Protocols
+  facet: features
+- id: prototypes
+  name: Prototypes
+  facet: features
+- id: punched-card-program
+  name: Punched card program
+  facet: features
+  summary: Instructions stored as holes in exchangeable cards.
+  first_seen:
+    node: jacquard-loom
+    year: 1804
+- id: query-expressions
+  name: Query expressions
+  facet: features
+- id: records
+  name: Records
+  facet: features
+- id: recursion
+  name: Recursion
+  facet: features
+  summary: Procedures that call themselves.
+- id: references
+  name: References
+  facet: features
+- id: reflection
+  name: Reflection
+  facet: features
+- id: regular-expressions
+  name: Regular expressions
+  facet: features
+- id: repl
+  name: REPL
+  facet: features
+- id: safe-pointers
+  name: Safe pointers
+  facet: features
+- id: safe-unsafe-split
+  name: Safe unsafe split
+  facet: features
+- id: self-hosting
+  name: Self hosting
+  facet: features
+- id: self-modifying-code
+  name: Self modifying code
+  facet: features
+- id: separate-compilation
+  name: Separate compilation
+  facet: features
+- id: set-based
+  name: Set based
+  facet: features
+- id: special-character-set
+  name: Special character set
+  facet: features
+- id: standardization
+  name: Standardization
+  facet: features
+- id: string-processing
+  name: String processing
+  facet: features
+- id: subroutine-library
+  name: Subroutine library
+  facet: features
+- id: subroutines-separate-compilation
+  name: Subroutines separate compilation
+  facet: features
+- id: supervision-trees
+  name: Supervision trees
+  facet: features
+- id: tables
+  name: Tables
+  facet: features
+- id: tail-call-optimization
+  name: Tail call optimization
+  facet: features
+- id: templates
+  name: Templates
+  facet: features
+  broader:
+  - generic-programming
+  summary: C++'s compile-time parameterized code.
+  first_seen:
+    node: cpp
+    year: 1989
+    note: Proposed 1988, in Cfront 3.0 (1991).
+- id: threaded-code
+  name: Threaded code
+  facet: features
+- id: traits
+  name: Traits
+  facet: features
+  summary: Units of behaviour composed into types.
+- id: turtle-graphics
+  name: Turtle graphics
+  facet: features
+- id: two-dimensional
+  name: Two dimensional
+  facet: features
+  summary: Program text laid out and executed in two dimensions.
+  first_seen:
+    node: befunge
+    year: 1993
+- id: type-extension
+  name: Type extension
+  facet: features
+- id: type-providers
+  name: Type providers
+  facet: features
+- id: unification
+  name: Unification
+  facet: features
+- id: unions
+  name: Unions
+  facet: features
+- id: units-of-measure
+  name: Units of measure
+  facet: features
+- id: virtual-dispatch
+  name: Virtual dispatch
+  facet: features
+  summary: Method selected at run time by the receiver's actual class.
+  first_seen:
+    node: simula
+    year: 1967
+- id: zero-cost-abstractions
+  name: Zero cost abstractions
+  facet: features
+- id: garbage-collection
+  name: Garbage collection
+  facet: memory
+  summary: Automatic reclamation of unreachable memory.
+  first_seen:
+    node: lisp
+    year: 1960
+    note: McCarthy's mark-and-sweep for LISP.
+- id: manual-memory
+  name: Manual memory
+  facet: memory
+  summary: Programmer allocates and frees memory explicitly.
+- id: move-semantics
+  name: Move semantics
+  facet: memory
+  summary: Transferring ownership of resources instead of copying.
+- id: ownership-borrowing
+  name: Ownership borrowing
+  facet: memory
+  broader:
+  - affine-types
+  - region-based-memory
+  summary: Compile-time tracking of a single owner and temporary borrows; memory safety without GC.
+  first_seen:
+    node: rust
+    year: 2015
+- id: pointers
+  name: Pointers
+  facet: memory
+- id: raii
+  name: RAII
+  facet: memory
+  summary: Resource lifetime bound to object lifetime via constructors/destructors.
+  first_seen:
+    node: cpp
+    year: 1985
+- id: reference-counting
+  name: Reference counting
+  facet: memory
+  broader:
+  - garbage-collection
+  summary: Objects freed when their reference count drops to zero.
+- id: region-based-memory
+  name: Region based memory
+  facet: memory
+  summary: Allocation in regions freed together, checked statically.
+  first_seen:
+    node: cyclone
+    year: 2002
+    note: ML Kit (Tofte & Talpin) did region inference earlier.
+- id: stack-allocation
+  name: Stack allocation
+  facet: memory
+  summary: Activation records on a run-time stack, enabling recursion.
+  first_seen:
+    node: algol-60
+    year: 1960
+- id: array-programming
+  name: Array programming
+  facet: paradigm
+  summary: Operations apply to whole arrays at once.
+  first_seen:
+    node: apl
+    year: 1966
+- id: concatenative
+  name: Concatenative
+  facet: paradigm
+  broader:
+  - stack-oriented
+  summary: Programs are composed by juxtaposition; each word transforms a stack.
+  first_seen:
+    node: forth
+    year: 1970
+- id: concurrent
+  name: Concurrent
+  facet: paradigm
+  summary: Concurrency is a central organizing principle of the language.
+- id: data-abstraction
+  name: Data abstraction
+  facet: paradigm
+  summary: Types defined by their operations, hiding representation.
+  first_seen:
+    node: clu
+    year: 1975
+- id: data-driven
+  name: Data driven
+  facet: paradigm
+  summary: Program structure follows the shape of the input data (pattern -> action).
+  first_seen:
+    node: awk
+    year: 1977
+- id: declarative
+  name: Declarative
+  facet: paradigm
+  summary: Say what result is wanted, not how to compute it.
+- id: event-driven
+  name: Event driven
+  facet: paradigm
+  summary: Control flow determined by events dispatched to handlers.
+- id: functional
+  name: Functional
+  facet: paradigm
+  summary: Computation as the evaluation of functions, avoiding mutable state. Today a set of features most languages share,
+    not a camp.
+  first_seen:
+    node: lisp
+    year: 1960
+    note: As a practical language; the lambda calculus is the theory.
+- id: generic-programming
+  name: Generic programming
+  facet: paradigm
+  summary: Algorithms written once over types supplied later.
+  first_seen:
+    node: clu
+    year: 1975
+    note: Parameterized clusters; the term comes from Musser & Stepanov, 1988.
+- id: goal-directed
+  name: Goal directed
+  facet: paradigm
+  summary: Expressions succeed or fail and may generate multiple results; failure drives backtracking.
+  first_seen:
+    node: icon
+    year: 1977
+- id: imperative
+  name: Imperative
+  facet: paradigm
+  summary: Programs as sequences of state-changing commands.
+- id: logic
+  name: Logic
+  facet: paradigm
+  broader:
+  - declarative
+  summary: Programs as logical relations; execution as proof search.
+  first_seen:
+    node: prolog
+    year: 1972
+- id: modular
+  name: Modular
+  facet: paradigm
+  summary: Programs built from separately compiled modules with explicit interfaces.
+- id: multi-paradigm
+  name: Multi paradigm
+  facet: paradigm
+  summary: Deliberately supports several paradigms.
+- id: object-oriented
+  name: Object oriented
+  facet: paradigm
+  summary: 'Programs as interacting objects bundling state and behaviour. Two traditions: Simula/C++/Java (classes as static
+    types) and Smalltalk/Self/Objective-C (late-bound messages).'
+  first_seen:
+    node: simula
+    year: 1967
+- id: procedural
+  name: Procedural
+  facet: paradigm
+  broader:
+  - imperative
+  summary: Imperative code organized into callable procedures.
+- id: protocol-oriented
+  name: Protocol oriented
+  facet: paradigm
+  broader:
+  - object-oriented
+  summary: Swift's term for designing with protocols and value types over class inheritance.
+  first_seen:
+    node: swift
+    year: 2014
+- id: prototype-based
+  name: Prototype based
+  facet: paradigm
+  broader:
+  - object-oriented
+  summary: Objects inherit directly from other objects, without classes.
+  first_seen:
+    node: self
+    year: 1987
+- id: purely-functional
+  name: Purely functional
+  facet: paradigm
+  broader:
+  - functional
+  summary: No side effects in the language core; effects are modelled as values (streams, monads).
+- id: query
+  name: Query
+  facet: paradigm
+  broader:
+  - declarative
+  summary: Languages for retrieving and transforming stored data.
+- id: reflective
+  name: Reflective
+  facet: paradigm
+  summary: Programs can inspect and modify their own structure at run time.
+- id: scripting
+  name: Scripting
+  facet: paradigm
+  summary: Glue code that orchestrates other programs or a host application.
+- id: stack-oriented
+  name: Stack oriented
+  facet: paradigm
+  summary: Operations take and return values on an implicit stack.
+- id: structured
+  name: Structured
+  facet: paradigm
+  broader:
+  - imperative
+  summary: Control flow through nested blocks, conditionals and loops instead of arbitrary jumps (Böhm-Jacopini 1966, Dijkstra
+    1968).
+  first_seen:
+    node: p-prime-prime
+    year: 1964
+    note: Böhm's proof that sequence, selection and iteration suffice.
+- id: tacit-programming
+  name: Tacit programming
+  facet: paradigm
+  broader:
+  - functional
+  summary: 'Point-free style: functions defined without naming their arguments.'
+  first_seen:
+    node: apl
+    year: 1966
+- id: affine-types
+  name: Affine types
+  facet: typing
+  broader:
+  - static-typing
+  summary: Values usable at most once; the basis of Rust's moves.
+- id: dynamic-typing
+  name: Dynamic typing
+  facet: typing
+  summary: Types checked at run time on values.
+  first_seen:
+    node: lisp
+    year: 1960
+- id: gradual-typing
+  name: Gradual typing
+  facet: typing
+  summary: Optional static types mixed with dynamic code.
+- id: null-safety
+  name: Null safety
+  facet: typing
+  broader:
+  - static-typing
+  summary: Absence of a value is tracked in the type system.
+- id: parametric-polymorphism
+  name: Parametric polymorphism
+  facet: typing
+  broader:
+  - static-typing
+  summary: Code generic over types ('a list).
+  first_seen:
+    node: ml
+    year: 1973
+- id: static-typing
+  name: Static typing
+  facet: typing
+  summary: Types checked before the program runs.
+- id: strong-typing
+  name: Strong typing
+  facet: typing
+  summary: Few implicit conversions between unrelated types. A loose term; used here as each language's own documentation
+    uses it.
+- id: structural-typing
+  name: Structural typing
+  facet: typing
+  summary: Type compatibility by shape, not by declared name.
+- id: type-classes
+  name: Type classes
+  facet: typing
+  broader:
+  - parametric-polymorphism
+  summary: Ad hoc polymorphism via instances of a class of types; ancestor of Rust traits and Swift protocols.
+  first_seen:
+    node: haskell
+    year: 1990
+    note: Wadler & Blott, 1988.
+- id: type-inference
+  name: Type inference
+  facet: typing
+  broader:
+  - static-typing
+  summary: Types deduced by the compiler without annotations; Hindley-Milner in ML is the root.
+  first_seen:
+    node: ml
+    year: 1973
+- id: typeless
+  name: Typeless
+  facet: typing
+  summary: A single machine-word type; meaning comes from the operation.
+  first_seen:
+    node: bcpl
+    year: 1967
+- id: weak-typing
+  name: Weak typing
+  facet: typing
+  summary: Many implicit conversions, or unchecked reinterpretation of memory.

@@ -1,0 +1,281 @@
+# First high-level languages and the 1950s founders: Plankalkül to COBOL.
+
+- id: plankalkul
+  name: Plankalkül
+  kind: language
+  category: scientific
+  cluster: early/pioneers
+  origin:
+    began: { year: 1942, year_end: 1945, precision: range }
+    first_appeared: { year: 1948, precision: year, note: "Partly published 1948; full text 1972; first implementation 1975 (Hohmann); fuller implementation FU Berlin 2000." }
+    places: [{ country: DE }]
+  creators: [{ name: Konrad Zuse, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    typing: [static-typing]
+    features: [assertions, records]
+  summary: >
+    Zuse's "plan calculus", designed in the 1940s for his Z-series machines: the first high-level
+    language design, with typed variables, arrays, records, assertions and loops. It was not
+    implemented in its time and had little direct influence, though Zuse discussed it with
+    Rutishauser and ALGOL 58 participants.
+  relations:
+    - { type: influenced_by, to: zuse-z3, weight: moderate, confidence: high, note: "Designed for Zuse's machines." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Plankalk%C3%BCl" }
+  sources: [bauer-woessner-1972-plankalkul, knuth-pardo-1976-early-development]
+
+- id: short-code
+  name: Short Code
+  aliases: [Brief Code]
+  kind: language
+  category: scientific
+  cluster: early/pioneers
+  origin:
+    began: { year: 1949, precision: year, note: "Proposed by John Mauchly for BINAC." }
+    first_appeared: { year: 1950, precision: year, note: "Implemented by William F. Schmitt; on UNIVAC I from 1950-51." }
+    places: [{ institution: Eckert-Mauchly Computer Corporation, city: Philadelphia, country: US }]
+  creators:
+    - { name: John Mauchly, role: designer }
+    - { name: William F. Schmitt, role: implementer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [interpreter]
+  summary: "Mathematical expressions encoded as two-character codes and interpreted at run time: one of the first languages above machine code to actually run, about 50 times slower than machine code."
+  relations:
+    - { type: targets, to: eniac, weight: weak, confidence: low, note: "Mauchly co-designed ENIAC; Short Code itself ran on BINAC and UNIVAC I, which need their own machine nodes." }
+  research_status: draft
+  confidence: medium
+  sources: [knuth-pardo-1976-early-development]
+
+- id: glennie-autocode
+  name: Autocode (Glennie)
+  kind: language
+  category: scientific
+  cluster: early/pioneers
+  origin:
+    first_appeared: { year: 1952, precision: year }
+    places: [{ institution: University of Manchester, city: Manchester, country: GB }]
+  creators: [{ name: Alick Glennie, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [compiler]
+  summary: "For the Manchester Mark 1; often cited as the first compiled programming language. 'Autocode' became the generic British term for such languages (Mercury Autocode, Atlas Autocode)."
+  relations:
+    - { type: targets, to: manchester-baby, weight: moderate, confidence: medium, note: "Targeted the Manchester Mark 1, the Baby's successor; add a Mark 1 node later." }
+  research_status: draft
+  confidence: medium
+  sources: [knuth-pardo-1976-early-development]
+
+- id: a-0
+  name: A-0 System
+  kind: language
+  category: scientific
+  cluster: early/hopper
+  origin:
+    first_appeared: { year: 1952, precision: year }
+    places: [{ institution: Remington Rand, city: Philadelphia, country: US }]
+  creators: [{ name: Grace Hopper, role: designer }]
+  status: extinct
+  tags:
+    features: [compiler, subroutine-library]
+  summary: "For UNIVAC I. Translated a sequence of subroutine call numbers and arguments into a machine program; closer to a linker/loader than a modern compiler, but Hopper called it a compiler and the word stuck."
+  relations:
+    - { type: influenced_by, to: harvard-mark-i, weight: weak, confidence: medium, note: "Hopper's Mark I experience with reusable subroutines." }
+  research_status: draft
+  confidence: medium
+  sources: [knuth-pardo-1976-early-development, wiki-a0]
+
+- id: flow-matic
+  name: FLOW-MATIC
+  aliases: [B-0]
+  kind: language
+  category: business
+  cluster: early/hopper
+  origin:
+    began: { year: 1955, precision: year }
+    first_appeared: { year: 1958, precision: circa, note: "Developed 1955-1959; commercially available ~1958." }
+    places: [{ institution: Remington Rand, country: US }]
+  creators: [{ name: Grace Hopper, role: lead }]
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    domain: [business-data-processing]
+    features: [english-like-syntax]
+  summary: "First English-like business data-processing language; separated data descriptions from procedures. The main ancestor of COBOL."
+  relations:
+    - { type: successor_of, to: a-0, weight: moderate, confidence: medium, note: "Same team, A-series to B-series." }
+  research_status: draft
+  confidence: medium
+  sources: [sammet-1978-early-cobol]
+
+- id: ipl
+  name: IPL (Information Processing Language)
+  kind: language
+  category: research
+  cluster: early/ai
+  origin:
+    first_appeared: { year: 1956, precision: year }
+    places: [{ institution: RAND Corporation / Carnegie Institute of Technology, city: Santa Monica / Pittsburgh, country: US }]
+  creators:
+    - { name: Allen Newell, role: designer }
+    - { name: Cliff Shaw, role: designer }
+    - { name: Herbert A. Simon, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [linked-lists, recursion]
+    domain: [artificial-intelligence]
+  summary: "Assembly-like language for list processing, used for the Logic Theorist. Introduced linked lists, list processing and recursion as programming techniques, which McCarthy took into Lisp."
+  research_status: draft
+  confidence: high
+  sources: [mccarthy-1978-history-lisp]
+
+- id: fortran
+  name: Fortran
+  aliases: [FORTRAN, "Formula Translating System"]
+  kind: language
+  category: scientific
+  cluster: fortran
+  origin:
+    began: { year: 1954, precision: year, note: "Preliminary report November 1954." }
+    first_appeared: { year: 1957, date: "1957-04", precision: exact, note: "First compiler delivered for the IBM 704." }
+    places: [{ institution: IBM, city: New York, country: US }]
+  creators:
+    - { name: John Backus, role: team lead }
+    - { name: "Irving Ziller, Harlan Herrick, Roy Nutt, Lois Haibt, Robert Nelson, Sheldon Best, David Sayre, Richard Goldberg, Peter Sheridan", role: team }
+  status: active
+  tags:
+    paradigm: [imperative, procedural, array-programming, object-oriented]
+    typing: [static-typing]
+    concurrency: [coarrays, data-parallelism]
+    features: [optimizing-compiler, implicit-typing, modules]
+    domain: [scientific-computing, hpc]
+  milestones:
+    - { version: FORTRAN II, year: 1958, introduces: [subroutines-separate-compilation], summary: "SUBROUTINE, FUNCTION, separate compilation." }
+    - { version: FORTRAN IV, year: 1962, summary: "Logical IF, type declarations." }
+    - { version: FORTRAN 66, year: 1966, introduces: [standardization], summary: "First ANSI standard for any programming language." }
+    - { version: FORTRAN 77, year: 1978, introduces: [structured], summary: "Block IF/ELSE, CHARACTER type." }
+    - { version: Fortran 90, year: 1991, introduces: [modules, array-programming, recursion, dynamic-allocation], summary: "Free form, modules, whole-array operations, derived types, pointers." }
+    - { version: Fortran 95, year: 1997, introduces: [data-parallelism], summary: "FORALL, PURE and ELEMENTAL procedures (from High Performance Fortran)." }
+    - { version: Fortran 2003, year: 2004, introduces: [object-oriented, c-interop], summary: "Type extension, polymorphism, ISO_C_BINDING." }
+    - { version: Fortran 2008, year: 2010, introduces: [coarrays], summary: "Coarrays (SPMD parallelism), DO CONCURRENT." }
+    - { version: Fortran 2018, year: 2018 }
+    - { version: Fortran 2023, year: 2023 }
+  summary: >
+    The first widely used high-level language and the first optimizing compiler: proof that compiled
+    code could compete with hand-written assembly. Still a leading language for numerical HPC,
+    having absorbed modules, array programming, OOP and parallelism over 60 years.
+  relations:
+    - { type: targets, to: ibm-704, weight: strong, confidence: high }
+    - { type: influenced_by, to: sap-704, weight: weak, confidence: low, note: "Shared team member (Roy Nutt) and machine; not a design influence on the language itself." }
+    - { type: influenced_by, to: glennie-autocode, weight: weak, confidence: low, note: "Backus later said the team was mostly unaware of earlier work; Laning & Zierler's MIT algebraic system (1954) is the one acknowledged precursor. Add it as a node." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Fortran", homepage: "https://fortran-lang.org" }
+  sources: [backus-1978-history-fortran, wiki-fortran]
+
+- id: lisp
+  name: Lisp
+  aliases: [LISP, "LISt Processor"]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    began: { year: 1958, precision: year }
+    first_appeared: { year: 1960, precision: year, note: "CACM paper 'Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I' (1960); first interpreter by Steve Russell on the IBM 704 (1958-59)." }
+    places: [{ institution: MIT, city: Cambridge MA, country: US }]
+  creators:
+    - { name: John McCarthy, role: designer }
+    - { name: Steve Russell, role: first implementer }
+  status: active
+  tags:
+    paradigm: [functional, multi-paradigm]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [homoiconicity, macros, conditional-expressions, recursion, first-class-functions, repl, linked-lists, self-hosting]
+    domain: [artificial-intelligence]
+  milestones:
+    - { version: LISP 1.5, year: 1962, summary: "The LISP 1.5 Programmer's Manual; the reference point for most later dialects." }
+  summary: >
+    Second-oldest high-level language still in use. Introduced garbage collection, conditional
+    expressions, the REPL, code-as-data (homoiconicity) and an eval written in the language itself.
+    It is less a language than a family; see the Lisp cluster.
+  relations:
+    - { type: influenced_by, to: ipl, aspects: [linked-lists, recursion], weight: strong, confidence: high }
+    - { type: influenced_by, to: fortran, weight: moderate, confidence: high, note: "Via FLPL (Fortran List Processing Language) on the 704, which McCarthy found inadequate for recursion and conditional expressions." }
+    - { type: influenced_by, to: lambda-calculus, aspects: [first-class-functions], weight: moderate, confidence: high, note: "McCarthy took the lambda notation but said he did not use the lambda calculus seriously; Lisp's original scoping was dynamic, not Church's." }
+    - { type: targets, to: ibm-704, weight: moderate, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lisp_(programming_language)" }
+  sources: [mccarthy-1960-recursive-functions, mccarthy-1978-history-lisp, steele-gabriel-1993-evolution-lisp]
+
+- id: algol-58
+  name: ALGOL 58
+  aliases: [IAL, International Algebraic Language]
+  kind: language
+  category: scientific
+  cluster: algol
+  origin:
+    first_appeared: { year: 1958, precision: year, note: "ACM-GAMM meeting, Zürich, May-June 1958." }
+    places: [{ institution: ETH Zürich (ACM / GAMM joint committee), city: Zürich, country: CH }]
+  creators:
+    - { name: "Friedrich L. Bauer, Hermann Bottenbruch, Heinz Rutishauser, Klaus Samelson (GAMM)", role: committee }
+    - { name: "John Backus, Charles Katz, Alan Perlis, Joseph Wegstein (ACM)", role: committee }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing]
+    features: [compound-statements]
+  summary: "First transatlantic committee language. Introduced compound statements (begin...end). Its dialects JOVIAL, MAD and NELIAC were used for years."
+  relations:
+    - { type: influenced_by, to: fortran, weight: strong, confidence: high }
+    - { type: influenced_by, to: plankalkul, weight: weak, confidence: low, note: "Indirect, via Rutishauser and Bauer's awareness of Zuse." }
+  research_status: draft
+  confidence: high
+  sources: [perlis-1978-american-algol, naur-1978-european-algol]
+
+- id: cobol
+  name: COBOL
+  aliases: ["COmmon Business-Oriented Language"]
+  kind: language
+  category: business
+  cluster: business
+  origin:
+    began: { year: 1959, date: "1959-05", precision: exact, note: "Pentagon meeting that formed CODASYL." }
+    first_appeared: { year: 1960, precision: year, note: "COBOL-60 specification; first programs ran December 1960 on RCA 501 and UNIVAC II." }
+    places: [{ institution: CODASYL (US Department of Defense sponsored), city: Washington DC, country: US }]
+  creators:
+    - { name: CODASYL Short-Range Committee, role: designers }
+    - { name: Jean Sammet, role: committee member }
+    - { name: Grace Hopper, role: technical consultant }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, object-oriented]
+    typing: [static-typing]
+    features: [english-like-syntax, records, decimal-arithmetic]
+    domain: [business-data-processing]
+  milestones:
+    - { version: COBOL-61, year: 1961 }
+    - { version: COBOL-68 (ANSI), year: 1968 }
+    - { version: COBOL-74, year: 1974 }
+    - { version: COBOL-85, year: 1985, introduces: [structured], summary: "Scope terminators (END-IF), nested programs." }
+    - { version: COBOL 2002, year: 2002, introduces: [object-oriented] }
+    - { version: COBOL 2014, year: 2014 }
+    - { version: COBOL 2023, year: 2023 }
+  summary: >
+    Committee-designed, English-like business language with hierarchical records and decimal
+    arithmetic. Hopper is often called its "mother", but she was an adviser; the design came from
+    the CODASYL committee drawing on FLOW-MATIC, IBM's COMTRAN and Honeywell's FACT. Still runs much
+    of banking and government.
+  relations:
+    - { type: influenced_by, to: flow-matic, aspects: [english-like-syntax], weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/COBOL" }
+  sources: [sammet-1978-early-cobol, wiki-cobol]
