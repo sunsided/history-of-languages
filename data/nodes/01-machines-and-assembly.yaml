@@ -1501,3 +1501,103 @@
         ret i32 %add
       }
     sources: [wiki-nacl]
+
+- id: dcpu-16
+  name: DCPU-16
+  aliases: [0x10c CPU]
+  kind: machine
+  category: esoteric
+  cluster: machines/fantasy
+  origin:
+    first_appeared: { year: 2012, date: "2012-04", precision: exact, note: "0x10c was announced on 3 April 2012; spec 1.1 is \"Copyright 2012 Mojang\" and the Wayback Machine holds a copy from 4 May 2012. The spec's own release day is not confirmed." }
+    places: [{ institution: Mojang, country: SE }]
+  creators: [{ name: Markus Persson, role: designer of 0x10c }]
+  status: historical
+  tags:
+    paradigm: [imperative]
+  milestones:
+    - { version: "1.1", year: 2012, summary: "16-bit words, 0x10000 words of RAM, eight registers (A, B, C, X, Y, Z, I, J) plus PC, SP and O; 4-bit basic and 6-bit non-basic opcodes." }
+  summary: >
+    The 16-bit CPU of 0x10c, a Mojang space game designed by Markus Persson and announced in April 2012. The game
+    was shelved in August 2013 and never released, but the CPU's spec was public, and it was meant to let the
+    community write their own DCPU-16 emulators; implementations such as sunsided/dcpu-16 (an emulator and
+    assembler in Rust) followed.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/0x10c", homepage: "https://github.com/sunsided/dcpu-16" }
+  sources: [dcpu-16-spec-1-1, sunsided-dcpu-16, wiki-0x10c]
+  example:
+    title: The specification's sample program
+    language: DCPU-16 assembly
+    note: "From spec 1.1 (\"Here's some sample assembler, and a memory dump of the compiled code\"), with the machine words as comments. IFN skips the next instruction unless its operands differ; JSR pushes the return address and SET PC, POP returns. \"X should now be 0x40 if everything went right.\""
+    code: |
+      ; Try some basic stuff
+                    SET A, 0x30              ; 7c01 0030
+                    SET [0x1000], 0x20       ; 7de1 1000 0020
+                    SUB A, [0x1000]          ; 7803 1000
+                    IFN A, 0x10              ; c00d
+                       SET PC, crash         ; 7dc1 001a [*]
+
+      ; Do a loopy thing
+                    SET I, 10                ; a861
+                    SET A, 0x2000            ; 7c01 2000
+      :loop         SET [0x2000+I], [A]      ; 2161 2000
+                    SUB I, 1                 ; 8463
+                    IFN I, 0                 ; 806d
+                       SET PC, loop          ; 7dc1 000d [*]
+
+      ; Call a subroutine
+                    SET X, 0x4               ; 9031
+                    JSR testsub              ; 7c10 0018 [*]
+                    SET PC, crash            ; 7dc1 001a [*]
+
+      :testsub      SHL X, 4                 ; 9037
+                    SET PC, POP              ; 61c1
+
+      ; Hang forever. X should now be 0x40 if everything went right.
+      :crash        SET PC, crash            ; 7dc1 001a [*]
+    sources: [dcpu-16-spec-1-1, sunsided-dcpu-16]
+
+- id: tic-80
+  name: TIC-80
+  kind: machine
+  category: domain-specific
+  cluster: machines/fantasy
+  origin:
+    first_appeared: { year: 2017, date: "2017-03-22", precision: exact, note: "Wikipedia infobox release date." }
+  creators: [{ name: Vadim Grigoruk, role: developer (Nesbox) }]
+  status: active
+  tags:
+    paradigm: [imperative]
+    domain: [game-scripting]
+  summary: >
+    "A free and open source fantasy computer for making, playing and sharing tiny games": a 240x136 display,
+    16-colour palette, 256 8x8 sprites and 4-channel sound, with code, sprite, map and sound editors built in. Carts
+    are written in Lua by default, or in MoonScript, JavaScript, Ruby, Wren, Fennel, Squirrel, Janet or Python.
+    Often compared to the closed-source PICO-8.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TIC-80", homepage: "https://tic80.com" }
+  sources: [wiki-tic-80, tic-80-github]
+  example:
+    title: The default Hello World cart
+    language: Lua (TIC-80 API)
+    note: "The cart the new command creates, from the TIC-80 wiki. TIC() runs 60 times a second; btn(0..3) are the arrow buttons, cls clears to colour 13, spr draws an animated sprite, switching frames every 30 ticks. Indentation (tabs in the original) is ours."
+    code: |
+      t=0
+      x=96
+      y=24
+
+      function TIC()
+
+        if btn(0) then y=y-1 end
+        if btn(1) then y=y+1 end
+        if btn(2) then x=x-1 end
+        if btn(3) then x=x+1 end
+
+        cls(13)
+        spr(1+t%60//30*2,x,y,14,3,0,0,2,2)
+        print("HELLO WORLD!",84,84)
+        t=t+1
+      end
+    sources: [tic-80-wiki-hello-world]

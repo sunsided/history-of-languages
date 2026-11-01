@@ -100,6 +100,15 @@
     - { name: "Intel 8008 / 8080", year: 1974 }
     - { name: "Motorola 6800", year: 1974 }
     - { name: "Multitech Micro-Professor MPF-1", year: 1981, hint: "Z80 single-board trainer from Taiwan. German Wikipedia says the LC 80's monitor is essentially the MPF-1's, apart from entry addresses: add it, then link lc80 to it once a source confirms the derivation." }
+- id: machines/fantasy
+  name: Fictional and fantasy computers
+  parent: machines
+  summary: "Machines that exist only as specifications and emulators: CPUs invented for games and 'fantasy consoles' with deliberately tight limits."
+  research_status: draft
+  key_sources: [wiki-0x10c, wiki-tic-80]
+  backlog:
+    - { name: "PICO-8", year: 2015, hint: "Lexaloffle's closed-source fantasy console, scripted in a Lua dialect; Wikipedia's TIC-80 article compares the two. A Lua dialect, so likely a node." }
+    - { name: "DCPU-16 spec 1.7", year: 2012, hint: "Later revision of the 0x10c CPU (dcpu.com); add as a milestone once a copy can be read (Wayback is blocked from the sandbox)." }
 - id: machines/eastern-bloc
   name: Eastern Bloc computers
   parent: machines

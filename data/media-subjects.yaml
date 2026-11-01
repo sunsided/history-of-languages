@@ -685,6 +685,12 @@
   wiki: Leo Geurts
   nodes:
   - abc
+- id: person-markus-persson
+  kind: person
+  person: Markus Persson
+  wiki: Markus Persson
+  nodes:
+  - dcpu-16
 - id: person-mads-tofte
   kind: person
   person: Mads Tofte

@@ -3031,3 +3031,38 @@
   title: "Advent of Code 2019, day 9: Sensor Boost (Eric Wastl)"
   url: https://adventofcode.com/2019/day/9
   checked: '2026-11-01'
+- id: dcpu-16-spec-1-1
+  type: standard
+  primary: true
+  title: "Mojang: DCPU-16 Specification, Version 1.1 (2012), Wayback Machine copy of 0x10c.com/doc/dcpu-16.txt"
+  url: http://web.archive.org/web/20120504005858/http://0x10c.com/doc/dcpu-16.txt
+- id: sunsided-dcpu-16
+  type: web
+  primary: false
+  title: "sunsided/dcpu-16: a DCPU-16 emulator and assembler written in Rust (includes the 1.1 spec as docs/specification.txt)"
+  url: https://github.com/sunsided/dcpu-16
+  checked: '2026-11-01'
+- id: wiki-0x10c
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: 0x10c"
+  url: https://en.wikipedia.org/wiki/0x10c
+  checked: '2026-11-01'
+- id: wiki-tic-80
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TIC-80"
+  url: https://en.wikipedia.org/wiki/TIC-80
+  checked: '2026-11-01'
+- id: tic-80-github
+  type: web
+  primary: true
+  title: "nesbox/TIC-80 README"
+  url: https://github.com/nesbox/TIC-80
+  checked: '2026-11-01'
+- id: tic-80-wiki-hello-world
+  type: manual
+  primary: true
+  title: "TIC-80 wiki: Hello World"
+  url: https://github.com/nesbox/TIC-80/wiki/hello-world
+  checked: '2026-11-01'

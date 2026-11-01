@@ -223,6 +223,7 @@
     - { type: influenced_by, to: clu, aspects: [multiple-assignment, iterators], weight: moderate, confidence: high }
     - { type: influenced_by, to: snobol, aspects: [associative-arrays], weight: weak, confidence: medium }
     - { type: influenced_by, to: modula-2, weight: weak, confidence: medium }
+    - { type: targets, to: tic-80, year: 2017, weight: weak, confidence: medium, sources: [tic-80-github, tic-80-wiki-hello-world], note: "Lua is TIC-80's default cart language (the Hello World cart is Lua); the year is TIC-80's first release, not a checked date for Lua support." }
   research_status: draft
   confidence: high
   sources: [ierusalimschy-2007-evolution-lua]
