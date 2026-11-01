@@ -3539,3 +3539,43 @@
   primary: false
   title: "Wikipedia: LabVIEW"
   url: https://en.wikipedia.org/wiki/LabVIEW
+- id: wiki-quakec
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: QuakeC"
+  url: https://en.wikipedia.org/wiki/QuakeC
+- id: id-quake-source
+  type: web
+  primary: true
+  title: "id-Software/Quake: Quake and QuakeWorld source release (qw-qc/items.qc)"
+  url: https://github.com/id-Software/Quake
+- id: wiki-moo
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MOO (programming language)"
+  url: https://en.wikipedia.org/wiki/MOO_(programming_language)
+- id: lambdamoo-programmers-manual
+  type: manual
+  primary: true
+  title: "Pavel Curtis: LambdaMOO Programmer's Manual (hayseed.net copy)"
+  url: https://www.hayseed.net/MOO/manuals/ProgrammersManual.html
+- id: wiki-luau
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Luau (programming language)"
+  url: https://en.wikipedia.org/wiki/Luau_(programming_language)
+- id: wiki-unreal-engine
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Unreal Engine (UnrealScript and Verse sections)"
+  url: https://en.wikipedia.org/wiki/Unreal_Engine
+- id: wiki-lpmud
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: LPMud"
+  url: https://en.wikipedia.org/wiki/LPMud
+- id: wiki-gamemaker
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GameMaker"
+  url: https://en.wikipedia.org/wiki/GameMaker

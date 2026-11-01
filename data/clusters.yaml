@@ -378,6 +378,7 @@
   summary: "B, C and the languages that kept C's model of the machine."
   research_status: draft
   backlog:
+    - { name: "HolyC", hint: "Terry A. Davis's C dialect for TempleOS, used both as the system language and the shell. Needs year, sources and an example." }
     - { name: "Objective-C++", year: 2000 }
     - { name: "C--", year: 1997 }
     - { name: "V", year: 2019 }
@@ -1068,20 +1069,16 @@
   summary: "Languages built into games and game engines: QuakeC, UnrealScript, LPC and MOO for MUDs, GML, Luau, Verse."
   research_status: stub
   backlog:
-    - { name: "QuakeC", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "UnrealScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "LPC", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "MOO", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "UnrealScript", hint: "Tim Sweeney, Epic Games, for Unreal (1998); \"Similar to Java\", object-oriented without multiple inheritance; replaced by C++ in Unreal Engine 4 (wiki-unreal-engine). Needs its own release year and a verbatim example (UDN reference has none)." }
+    - { name: "LPC", year: 1989, hint: "Lars Pensjö, LPMud driver, Genesis (April 1989); \"a new, C-based, object-oriented programming language\" (wiki-lpmud). Needs a verbatim example from a mudlib or driver docs." }
     - { name: "NWScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Game Maker Language", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Luau", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Game Maker Language", hint: "GML; GameMaker by Mark Overmars, first released as Animo on 15 November 1999; \"an imperative, dynamically typed language commonly likened to JavaScript and C-like languages\" (wiki-gamemaker). Needs a verbatim example (manual.gamemaker.io blocked the fetch)." }
     - { name: "LSL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Verse", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Verse", year: 2023, hint: "Epic Games, conceived by Tim Sweeney, with Simon Peyton Jones and Lennart Augustsson; presented at Haskell eXchange December 2022 as \"an open source functional-logic language\", launched in UEFN March 2023 (wiki-unreal-engine). Needs a verbatim example (Epic docs render client-side)." }
     - { name: "Game Oriented Assembly Lisp", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "AngelScript", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "JASS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "DinkC", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "HolyC", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
 - id: business/4gl
   name: xBase and 4GL languages
   parent: business

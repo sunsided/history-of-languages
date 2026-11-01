@@ -3250,3 +3250,48 @@
           y[i] = sum;
       }
     sources: [wiki-opencl]
+
+- id: luau
+  name: Luau
+  kind: language
+  category: scripting
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 2019, date: "2019-08-27", precision: exact, note: "Wikipedia: \"deployed on the Roblox platform on August 27, 2019\"; open-sourced under MIT on 3 November 2021." }
+    places: [{ institution: Roblox Corporation, country: US }]
+  creators:
+    - { name: Arseny Kapoulkine, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural, multi-paradigm]
+    typing: [gradual-typing, dynamic-typing]
+    features: [embeddable]
+    domain: [game-scripting]
+  milestones:
+    - { version: "open source", year: 2021, summary: "Released under the MIT License on 3 November 2021." }
+  summary: >
+    "An open-source scripting language derived from Lua 5.1", the language of the Roblox platform. It "adds gradual
+    typing, performance improvements, and sandboxing features to the base Lua language", along with syntax such as
+    compound assignment, if-expressions and string interpolation. Wikipedia lists TypeScript, Python and LuaJIT
+    among its influences besides Lua.
+  relations:
+    - { type: fork_of, to: lua, from_version: "5.1", weight: strong, confidence: high, sources: [wiki-luau], note: "\"derived from Lua 5.1\"; Roblox \"decided to create their own language based on Lua 5.1\"" }
+    - { type: influenced_by, to: typescript, aspects: [gradual-typing], weight: weak, confidence: medium, sources: [wiki-luau], note: "Infobox: influenced by Lua 5.1, TypeScript, Python, LuaJIT." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Luau_(programming_language)", homepage: "https://luau.org/" }
+  sources: [wiki-luau]
+  example:
+    title: Type annotations, +=, if-expressions and interpolation
+    language: Luau
+    note: "Verbatim from Wikipedia's Luau article. The last line is the printed output, shown as a comment."
+    code: |
+      local baseNumber: number = 1
+      -- Augmented assignment
+      baseNumber += 1
+      -- Conditional expressions
+      local isBaseNumberTwo: number = if baseNumber == 2 then true else false
+      -- String interpolation
+      print(`The baseNumber is {baseNumber}`)
+      --> The baseNumber is 2
+    sources: [wiki-luau]

@@ -1638,3 +1638,77 @@
         result = x^2 + 3;
       end
     sources: [wiki-gnu-octave]
+
+- id: moo
+  name: MOO
+  aliases: [LambdaMOO, MOO programming language]
+  kind: language
+  category: domain-specific
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 1990, date: "1990-05-02", precision: exact, note: "Wikipedia: Stephen White's first MOO server \"was released on May 2, 1990\"; Pavel Curtis's LambdaMOO opened on 30 October 1990." }
+  creators:
+    - { name: Stephen White, role: original MOO server }
+    - { name: Pavel Curtis, role: LambdaMOO }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, imperative]
+    typing: [dynamic-typing]
+    domain: [game-scripting]
+  summary: >
+    The language of MOO servers, "a text-based online virtual reality system" shared by many users at once, whose
+    objects are programmed with verbs such as player:tell(...). Stephen White wrote the first server "based on his
+    experience from creating the programmable TinyMUCK system"; Pavel Curtis's LambdaMOO followed in October 1990.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MOO_(programming_language)" }
+  sources: [wiki-moo, lambdamoo-programmers-manual]
+  example:
+    title: A loop over all players, from the Programmer's Manual
+    language: MOO
+    note: "Verbatim from the LambdaMOO Programmer's Manual. A string on its own as a statement acts as a comment; player:tell(...) calls the tell verb on the player object."
+    code: |
+      for x in (players())
+        "Grendel eats peanut butter!";
+        player:tell(x.name, " (", x, ")");
+      endfor
+    sources: [lambdamoo-programmers-manual]
+
+- id: quakec
+  name: QuakeC
+  aliases: [QC]
+  kind: language
+  category: domain-specific
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 1996, precision: year, note: "Wikipedia: \"developed in 1996 by John Carmack of id Software\"." }
+    places: [{ institution: id Software, country: US }]
+  creators:
+    - { name: John Carmack, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+    domain: [game-scripting]
+  summary: >
+    "A compiled language developed in 1996 by John Carmack of id Software to program parts of the video game
+    Quake", in which the game's items, weapons and monsters are written (as in id's released qw-qc sources). "The
+    syntax of QuakeC is based on that of the C programming language."
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [wiki-quakec], note: "\"The syntax of QuakeC is based on that of the C programming language\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/QuakeC" }
+  sources: [wiki-quakec, id-quake-source]
+  example:
+    title: Respawning an item, from id's QuakeWorld source
+    language: QuakeC
+    note: "Verbatim from qw-qc/items.qc in id Software's source release. void() SUB_regen = { ... }; is QuakeC's function syntax: the type comes first, then the name is assigned a body."
+    code: |
+      void() SUB_regen =
+      {
+      	self.model = self.mdl;          // restore original model
+      	self.solid = SOLID_TRIGGER;     // allow it to be touched again
+      	sound (self, CHAN_VOICE, "items/itembk2.wav", 1, ATTN_NORM);    // play respawn sound
+      	setorigin (self, self.origin);
+      };
+    sources: [id-quake-source]
