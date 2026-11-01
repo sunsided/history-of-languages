@@ -325,6 +325,9 @@
         "notes": {
           "type": "string"
         },
+        "example": {
+          "$ref": "#/$defs/example"
+        },
         "research_status": {
           "$ref": "#/$defs/research_status"
         },
@@ -368,6 +371,10 @@
         },
         "summary": {
           "type": "string"
+        },
+        "collapsed": {
+          "type": "boolean",
+          "description": "viewer hint: start this cluster folded (default: top-level clusters start expanded)"
         },
         "research_status": {
           "$ref": "#/$defs/research_status"
@@ -666,6 +673,37 @@
           }
         },
         "nodes": {
+          "$ref": "#/$defs/ids"
+        }
+      },
+      "additionalProperties": false
+    },
+    "example": {
+      "type": "object",
+      "required": [
+        "code"
+      ],
+      "description": "A short source sample shown by the viewer on hover and in the detail panel. Prefer period-accurate syntax; say in `note` when it is illustrative or uses a later dialect.",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string",
+          "description": "dialect/version the sample is written in, e.g. 'LISP 1.5', 'FORTRAN II style'"
+        },
+        "title": {
+          "type": "string",
+          "description": "what the sample shows"
+        },
+        "year": {
+          "$ref": "#/$defs/year",
+          "description": "year of the dialect or of the published original"
+        },
+        "note": {
+          "type": "string"
+        },
+        "sources": {
           "$ref": "#/$defs/ids"
         }
       },

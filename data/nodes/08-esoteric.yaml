@@ -37,6 +37,16 @@
   research_status: draft
   confidence: high
   sources: [esolangs-intercal]
+  example:
+    title: "Adding two numbers, politely"
+    language: "C-INTERCAL"
+    note: "Assignment is <-, #5 is a constant and .1 a 16-bit variable. (1000) NEXT calls the system library's addition routine, leaving .1 + .2 in .3. READ OUT prints in Roman numerals (VIII). Too few PLEASEs and the compiler refuses the program as impolite; too many and it calls it excessively polite."
+    code: |
+      DO .1 <- #5
+      DO .2 <- #3
+      DO (1000) NEXT
+      DO READ OUT .3
+      PLEASE GIVE UP
 
 - id: false-lang
   name: "FALSE"
@@ -78,6 +88,12 @@
   research_status: draft
   confidence: high
   sources: [esolangs-brainfuck]
+  example:
+    title: "Hello World!"
+    language: "brainfuck"
+    note: "Eight commands: > < move the pointer, + - change the cell, . , do I/O, and [ ] loop. The first loop builds the multiples of 8 the letters need."
+    code: |
+      ++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.
 
 - id: befunge
   name: Befunge
@@ -208,3 +224,11 @@
   research_status: stub
   confidence: high
   sources: [esolangs-lolcode]
+  example:
+    title: "HAI WORLD"
+    language: "LOLCODE 1.2"
+    code: |
+      HAI 1.2
+      CAN HAS STDIO?
+      VISIBLE "HAI WORLD!"
+      KTHXBYE

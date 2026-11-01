@@ -170,6 +170,14 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Lambda_calculus" }
   sources: [church-1936, wiki-lambda-calculus]
+  example:
+    title: "The Y combinator: recursion without names"
+    language: "untyped lambda calculus"
+    note: "Y f reduces to f (Y f), so a function can call itself without ever being named. Diverges under strict evaluation; strict languages use the Z combinator instead."
+    code: |
+      Y = λf.(λx.f (x x)) (λx.f (x x))
+
+      Y g  →  g (Y g)  →  g (g (Y g))  →  …
 
 - id: turing-machine
   name: Turing machine

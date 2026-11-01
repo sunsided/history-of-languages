@@ -4,11 +4,13 @@
 #   stub     - placeholder; members may be missing entirely
 #   draft    - core members present from secondary sources and HOPL papers; backlog lists what is missing
 #   reviewed - every member checked against primary sources; backlog empty or explicitly deferred
+# collapsed: true makes the viewer start the cluster folded (top-level clusters otherwise start expanded).
 # To unfold a cluster: work through its backlog and research_questions, add nodes, cite sources, then raise its status.
 
 # ===================== Prehistory =====================
 - id: prehistory
   name: Before computers
+  collapsed: true
   summary: "Mechanisms, punched cards, notations and formalisms from antiquity to 1945."
   research_status: draft
 - id: prehistory/mechanisms
@@ -58,6 +60,7 @@
 # ===================== Machines and assembly =====================
 - id: machines
   name: Machines and machine code
+  collapsed: true
   summary: "Each machine node stands for its instruction set. Assembly languages target them."
   research_status: stub
 - id: machines/early
@@ -114,6 +117,7 @@
 
 - id: assembly
   name: Assembly languages
+  collapsed: true
   summary: "Symbolic forms of machine code, from hand-assembled notation (1947) to macro assemblers and syntax dialects."
   research_status: stub
   research_questions:
@@ -170,6 +174,7 @@
 # ===================== Early languages =====================
 - id: early
   name: First programming languages (1942-1958)
+  collapsed: true
   research_status: draft
 - id: early/pioneers
   name: Pioneers

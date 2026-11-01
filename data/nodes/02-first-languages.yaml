@@ -178,6 +178,25 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Fortran", homepage: "https://fortran-lang.org" }
   sources: [backus-1978-history-fortran, wiki-fortran]
+  example:
+    title: "Fixed-form source, DO loop, arithmetic IF"
+    language: "FORTRAN II style (illustrative)"
+    note: "Columns matter: C in column 1 marks a comment, labels go in 1-5, statements start in column 7. IF (e) a, b, c jumps on negative / zero / positive. 6H... is a Hollerith constant: the next 6 characters, counted by hand."
+    code: |
+      C     SUM 1..N, THEN BRANCH ON THE SIGN OF ISUM - 100
+            READ 10, N
+         10 FORMAT (I5)
+            ISUM = 0
+            DO 20 I = 1, N
+         20 ISUM = ISUM + I
+            IF (ISUM - 100) 30, 30, 40
+         30 PRINT 50, ISUM
+            STOP
+         40 PRINT 60, ISUM
+            STOP
+         50 FORMAT (6H SMALL, I8)
+         60 FORMAT (6H LARGE, I8)
+            END
 
 - id: lisp
   name: Lisp
@@ -214,6 +233,17 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Lisp_(programming_language)" }
   sources: [mccarthy-1960-recursive-functions, mccarthy-1978-history-lisp, steele-gabriel-1993-evolution-lisp]
+  example:
+    title: "Recursive factorial"
+    language: "LISP 1.5"
+    year: 1962
+    note: "McCarthy's 1960 paper wrote programs as M-expressions; S-expressions were meant only for data, but programmers preferred them and M-expressions were never implemented."
+    code: |
+      DEFINE ((
+        (FACTORIAL (LAMBDA (N)
+          (COND ((ZEROP N) 1)
+                (T (TIMES N (FACTORIAL (SUB1 N)))))))
+      ))
 
 - id: algol-58
   name: ALGOL 58
@@ -279,3 +309,13 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/COBOL" }
   sources: [sammet-1978-early-cobol, wiki-cobol]
+  example:
+    title: "English-like arithmetic (fragment)"
+    language: "COBOL (illustrative)"
+    note: "Arithmetic verbs instead of formulas, so that managers could read the code. A full program also needs IDENTIFICATION, ENVIRONMENT and DATA divisions."
+    code: |
+             PROCEDURE DIVISION.
+                 MULTIPLY HOURS-WORKED BY HOURLY-RATE GIVING GROSS-PAY.
+                 IF GROSS-PAY IS GREATER THAN 1000
+                     SUBTRACT TAX FROM GROSS-PAY.
+                 ADD GROSS-PAY TO TOTAL-PAYROLL.

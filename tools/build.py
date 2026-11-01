@@ -103,6 +103,8 @@ def main():
                 need("concept", C, c, f"{w} milestone {m['version']}")
             for s in m.get("sources", []):
                 need("source", S, s, w)
+        for s in (n.get("example") or {}).get("sources", []):
+            need("source", S, s, f"{w} example")
         y = n["origin"]["first_appeared"]["year"]
         for r in n.get("relations", []):
             need("node", N, r["to"], w)

@@ -73,6 +73,17 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/C_(programming_language)" }
   sources: [ritchie-1993-development-c, kernighan-ritchie-1978]
+  example:
+    title: "hello, world"
+    language: "K&R C"
+    year: 1978
+    note: "Page one of The C Programming Language. No return type, no #include: pre-ANSI C assumed int and implicitly declared printf."
+    sources: [kernighan-ritchie-1978]
+    code: |
+      main()
+      {
+          printf("hello, world\n");
+      }
 
 - id: smalltalk
   name: Smalltalk
@@ -114,6 +125,15 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Smalltalk" }
   sources: [kay-1993-early-history-smalltalk, ingalls-2020-evolution-smalltalk]
+  example:
+    title: "Everything is a message send"
+    language: "Smalltalk-80"
+    note: "3 + 4 sends #+ to 3. Control structures are messages too: inject:into: takes a block, and conditionals are ifTrue: sent to a Boolean."
+    code: |
+      3 + 4.
+      (1 to: 10) inject: 0 into: [:sum :each | sum + each].
+      (x > 0) ifTrue: ['positive'] ifFalse: ['not positive'].
+      Transcript show: 'Hello, world'; cr.
 
 - id: sketchpad
   name: Sketchpad
@@ -159,6 +179,18 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Prolog" }
   sources: [colmerauer-roussel-1993-birth-prolog]
+  example:
+    title: "Facts, rules, and a query"
+    language: "Edinburgh Prolog"
+    note: "The query is answered by search with backtracking: Who = bob ; Who = ann. Edinburgh syntax (DEC-10 Prolog) became the standard; the 1972 Marseille syntax looked different."
+    code: |
+      parent(tom, bob).
+      parent(bob, ann).
+
+      ancestor(X, Y) :- parent(X, Y).
+      ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).
+
+      ?- ancestor(tom, Who).
 
 - id: ml
   name: ML

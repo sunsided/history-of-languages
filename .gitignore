@@ -1,2 +1,7 @@
 dist/
 __pycache__/
+node_modules/
+.svelte-kit/
+Taskfile.yaml
+.task/
+.playwright-mcp/

@@ -37,6 +37,16 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Haskell", homepage: "https://www.haskell.org" }
   sources: [hudak-2007-history-haskell]
+  example:
+    title: "The famous two-line quicksort"
+    language: "Haskell"
+    note: "Pattern matching and list comprehensions. Elegant but not the real quicksort: it is not in place and allocates new lists at every level."
+    code: |
+      quicksort :: Ord a => [a] -> [a]
+      quicksort []     = []
+      quicksort (p:xs) = quicksort [x | x <- xs, x < p]
+                      ++ [p]
+                      ++ quicksort [x | x <- xs, x >= p]
 
 - id: python
   name: Python
@@ -320,6 +330,16 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/JavaScript" }
   sources: [wirfs-brock-eich-2020-javascript]
+  example:
+    title: "Ten days, then compatibility forever"
+    language: "JavaScript"
+    note: "typeof null is a bug in the first implementation, kept because the web depended on it. The other lines are implicit coercion: + concatenates when either side is a string, - always converts to numbers."
+    code: |
+      typeof null          // "object"
+      0.1 + 0.2 === 0.3    // false (IEEE 754 doubles)
+      "3" + 1              // "31"
+      "3" - 1              // 2
+      [] + []              // ""
 
 - id: php
   name: PHP

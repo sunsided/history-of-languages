@@ -219,6 +219,16 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Go_(programming_language)", homepage: "https://go.dev" }
   sources: [go-faq, pike-go-history-talk]
+  example:
+    title: "Goroutine and channel"
+    language: "Go"
+    note: "CSP-style concurrency by way of Newsqueak and Limbo: go starts a goroutine, and the unbuffered channel makes sender and receiver meet."
+    code: |
+      func main() {
+          ch := make(chan string)
+          go func() { ch <- "ping" }()
+          fmt.Println(<-ch)
+      }
 
 - id: rust
   name: Rust
@@ -265,6 +275,14 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Rust_(programming_language)", homepage: "https://www.rust-lang.org" }
   sources: [rust-reference-influences, rust-async-stabilization]
+  example:
+    title: "Lifetimes in a signature"
+    language: "Rust"
+    note: "'a says the returned reference lives no longer than both inputs, so the borrow checker can reject a dangling reference at compile time with no garbage collector."
+    code: |
+      fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+          if x.len() > y.len() { x } else { y }
+      }
 
 - id: kotlin
   name: Kotlin

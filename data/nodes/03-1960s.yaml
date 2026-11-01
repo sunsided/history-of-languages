@@ -31,6 +31,21 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/ALGOL_60" }
   sources: [naur-1963-revised-report, naur-1978-european-algol, perlis-1978-american-algol]
+  example:
+    title: "Jensen's device: call by name"
+    language: "ALGOL 60"
+    note: "i and term are passed by name, so term (here 1/k) is re-evaluated on every pass of the loop with the current k. The Report sets keywords in bold; I/O was left to implementations."
+    code: |
+      real procedure sum(i, lo, hi, term);
+        value lo, hi; integer i, lo, hi; real term;
+      begin real s;
+        s := 0;
+        for i := lo step 1 until hi do s := s + term;
+        sum := s
+      end;
+
+      comment harmonic number H(100);
+      x := sum(k, 1, 100, 1/k)
 
 - id: snobol
   name: SNOBOL
@@ -84,6 +99,12 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/APL_(programming_language)" }
   sources: [falkoff-iverson-1978-evolution-apl, iverson-1962-apl]
+  example:
+    title: "Conway's Game of Life in one line"
+    language: "Dyalog APL"
+    note: "The well-known one-liner by John Scholes. Braces {⍵} are dfns, a 1990s Dyalog addition; APL\\360 had no lambdas, but the array primitives are classic."
+    code: |
+      life ← {↑1 ⍵∨.∧3 4=+/,¯1 0 1∘.⊖¯1 0 1∘.⌽⊂⍵}
 
 - id: cpl
   name: CPL
@@ -140,6 +161,16 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/BASIC" }
   sources: [kurtz-1978-basic]
+  example:
+    title: "Line numbers, FOR/NEXT"
+    language: "Dartmouth BASIC"
+    year: 1964
+    note: "Every line is numbered; the numbers are the editor, the jump targets and the program order all at once."
+    code: |
+      10 FOR I = 1 TO 10
+      20 PRINT I, SQR(I)
+      30 NEXT I
+      40 END
 
 - id: pl-i
   name: PL/I
@@ -354,6 +385,20 @@
   research_status: draft
   confidence: high
   sources: [ritchie-1993-development-c]
+  example:
+    title: "The first \"hello, world\""
+    language: "B"
+    year: 1973
+    note: "From Kernighan's 'A Tutorial Introduction to the Language B'. B words held four characters, hence the three externals. *n is B's newline escape (C later chose \\n)."
+    code: |
+      main( ) {
+        extrn a, b, c;
+        putchar(a); putchar(b); putchar(c); putchar('!*n');
+      }
+
+      a 'hell';
+      b 'o, w';
+      c 'orld';
 
 - id: forth
   name: Forth
@@ -375,3 +420,10 @@
   research_status: draft
   confidence: high
   sources: [rather-colburn-moore-1993-forth]
+  example:
+    title: "Defining a word"
+    language: "Forth"
+    note: "Everything goes through the data stack. ( n -- n*n ) is a stack-effect comment; . pops and prints, so this prints 25."
+    code: |
+      : SQUARE  ( n -- n*n )  DUP * ;
+      5 SQUARE .
