@@ -214,8 +214,8 @@
   creators: [{ name: Karl Hasselström, role: designer }, { name: Jon Åslund, role: designer }]
   status: historical
   summary: "Programs read like plays: variables are characters, assignment is insult or compliment. A satire of 'English-like' languages descended from FLOW-MATIC and COBOL."
-  relations:
-    - { type: influenced_by, to: cobol, aspects: [english-like-syntax], weight: weak, confidence: low, note: "Thematic, not documented." }
+  notes: >
+    The Esolang wiki compares its syntax to COBOL and Visual Basic ("superficially similar"), without claiming influence.
   research_status: stub
   confidence: high
   sources: [esolangs-shakespeare]
@@ -255,8 +255,6 @@
     paradigm: [stack-oriented]
     features: [two-dimensional]
   summary: "Programs are abstract images in the style of Piet Mondrian; instructions are encoded in hue and lightness changes between colour blocks."
-  relations:
-    - { type: influenced_by, to: befunge, aspects: [two-dimensional], weight: moderate, confidence: medium }
   research_status: stub
   confidence: high
   sources: [esolangs-piet]
@@ -317,3 +315,501 @@
       CAN HAS STDIO?
       VISIBLE "HAI WORLD!"
       KTHXBYE
+
+- id: ook
+  name: Ook!
+  kind: language
+  category: esoteric
+  cluster: esoteric/hostile
+  origin:
+    first_appeared: { year: 2001, precision: circa, note: "Esolang wiki's year category; neither the wiki text nor the author's page gives a date." }
+  creators: [{ name: David Morgan-Mar, role: designer }]
+  status: historical
+  summary: >
+    Brainfuck with its eight commands spelled as pairs of three orangutan words (Ook. Ook? Ook!): "essentially
+    isomorphic to the well-known esoteric language BrainF***, but has even fewer syntax elements". It "represents
+    the first in a long line of Brainfuck command substitutions". Design principle: "A programming language should
+    be writable and readable by orang-utans."
+  relations:
+    - { type: dialect_of, to: brainfuck, weight: strong, confidence: high, sources: [esolangs-ook, morgan-mar-ook], note: "\"identical to Brainfuck, except that the instructions are changed into Orangutan words\"." }
+  research_status: draft
+  confidence: medium
+  sources: [esolangs-ook, morgan-mar-ook]
+  example:
+    title: The start of Hello, world
+    language: Ook!
+    note: "The first two of the sixteen lines of the Esolang wiki's Hello, world program. Each pair of words is one Brainfuck command."
+    code: |
+      Ook. Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook.
+      Ook. Ook. Ook. Ook. Ook! Ook? Ook? Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook. Ook.
+    sources: [esolangs-ook]
+
+- id: chef
+  name: Chef
+  kind: language
+  category: esoteric
+  cluster: esoteric/natural-language
+  origin:
+    first_appeared: { year: 2002, precision: year, note: "\"Chef was designed by David Morgan-Mar in 2002\"; syntax additions dated 17 July 2003 on his page." }
+  creators: [{ name: David Morgan-Mar, role: designer }]
+  status: historical
+  tags:
+    paradigm: [stack-oriented]
+  summary: >
+    "A programming language in which programs look like recipes": ingredients are variables, mixing bowls are
+    stacks, and method steps are instructions. The design principles ask that recipes "not only generate valid
+    output, but be easy to prepare and delicious", so a good Chef program is also a cookable dish.
+  research_status: draft
+  confidence: high
+  sources: [esolangs-chef, morgan-mar-chef]
+  example:
+    title: Hello World Cake (method excerpt)
+    language: Chef
+    note: "The first steps of the method of Mike Worth's Hello World Cake on the Esolang wiki. Each Put pushes an ingredient's value (a character code) onto the mixing bowl, which is a stack."
+    code: |
+      Method.
+      Put chocolate chips into the mixing bowl.
+      Put butter into the mixing bowl.
+      Put sugar into the mixing bowl.
+    sources: [esolangs-chef]
+
+- id: golfscript
+  name: GolfScript
+  kind: language
+  category: esoteric
+  cluster: esoteric/golfing
+  origin:
+    first_appeared: { year: 2007, date: "2007-12-13", precision: exact, note: "\"Dec 13, 2007: GolfScript released!\" (golfscript.com)." }
+  status: historical
+  tags:
+    paradigm: [stack-oriented, concatenative]
+    typing: [dynamic-typing]
+  summary: >
+    "A stack oriented esoteric programming language aimed at solving problems (holes) in as few keystrokes as
+    possible", embedded on top of Ruby, where "short code is achieved by using single symbols to represent high
+    level operations". "The first recorded dedicated golfing language"; CJam (2014) was "heavily inspired by
+    GolfScript", and most later golfing languages are stack-based and concatenative in its image.
+  notes: >
+    The author is not named on the pages read (the download points to github.com/darrenks/golfscript).
+  relations:
+    - { type: implemented_in, to: ruby, weight: strong, confidence: high, sources: [esolangs-golfscript], note: "\"embedded on top of Ruby\"." }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://www.golfscript.com/golfscript/" }
+  sources: [golfscript-com, esolangs-golfscript, wiki-code-golf]
+  example:
+    title: A quine
+    language: GolfScript
+    note: "From the Esolang wiki: the block {\".~\"} pushes the string .~; . duplicates the block and ~ evaluates it, and the stack (the block, printed in braces, then .~) is printed at exit."
+    code: |
+      {".~"}.~
+    sources: [esolangs-golfscript]
+
+- id: hexagony
+  name: Hexagony
+  kind: language
+  category: esoteric
+  cluster: esoteric/2d
+  origin:
+    first_appeared: { year: 2015, precision: year, note: "Esolang wiki year category." }
+  creators: [{ name: Martin Ender, role: designer }]
+  status: historical
+  tags:
+    paradigm: [imperative]
+  summary: >
+    "The first two-dimensional esoteric programming language on a hexagonal grid": the source must be a regular
+    hexagon, up to six instruction pointers move across it, and memory is a separate hexagonal grid of edges. The
+    name is "a portmanteau of 'hexagon' and 'agony'". Turing-complete, since any Brainfuck program can be
+    translated into it.
+  notes: >
+    The wiki says the grid is flat-topped, the author's README says pointy-topped.
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://github.com/m-ender/hexagony" }
+  sources: [esolangs-hexagony, hexagony-github]
+  example:
+    title: Hello, World!
+    language: Hexagony
+    note: "From the Esolang wiki. The program is laid out on a side-4 hexagon; letters set the current memory edge, ; prints it, and the mirrors (/, \\, <, >) steer the instruction pointer; @ ends."
+    code: |2
+          H ; e ;
+         l ; d ; *
+        ; r ; o ; W
+       l ; ; o ; * 4
+        3 3 ; @ . >
+         ; 2 3 < \
+          4 ; * /
+    sources: [esolangs-hexagony]
+
+- id: jelly
+  name: Jelly
+  kind: language
+  category: esoteric
+  cluster: esoteric/golfing
+  origin:
+    first_appeared: { year: 2015, precision: year }
+  creators: [{ name: Dennis Mitchell, role: designer }]
+  status: historical
+  tags:
+    paradigm: [functional, tacit-programming, array-programming]
+  summary: >
+    "A golfing language inspired by J", tacit and functional, with its own 256-character code page so that every
+    symbol is one byte. Wikipedia says it was "motivated by CJam and APL, and inspired by J", and it "would position
+    itself as a dominant contender for tersest language for many years"; several later golfing languages copy it.
+  notes: >
+    J and CJam are not nodes. CJam (2014) was "heavily inspired by GolfScript", so GolfScript is an indirect
+    ancestor; no source states a direct influence.
+  relations:
+    - { type: influenced_by, to: apl, aspects: [array-programming], weight: moderate, confidence: medium, sources: [wiki-code-golf] }
+    - { type: implemented_in, to: python, weight: strong, confidence: medium, sources: [jelly-github], note: "The reference interpreter in the jellylanguage repository." }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://github.com/DennisMitchell/jellylanguage" }
+  sources: [jelly-github, esolangs-jelly, wiki-code-golf]
+  example:
+    title: Hello, World! as a compressed string
+    language: Jelly
+    note: "From the README's quickstart. “...» is a compressed string literal decoded from Jelly's dictionary; eun runs the code given on the command line in Jelly's own encoding."
+    code: |
+      $ jelly eun '“3ḅaė;œ»'
+      Hello, World!
+    sources: [jelly-github]
+
+- id: osabie
+  name: 05AB1E
+  aliases: [osabie, 2sable]
+  kind: language
+  category: esoteric
+  cluster: esoteric/golfing
+  origin:
+    first_appeared: { year: 2015, precision: circa, note: "No year in any source read; Wikipedia lists it among golfing languages released \"since 2015\"." }
+  creators: [{ name: Adnan, role: "designer (Adriandmen)" }]
+  status: active
+  tags:
+    paradigm: [stack-oriented]
+  summary: >
+    "A concise stack-based golfing language" whose name, read as hexadecimal and converted to base64, spells
+    "Base". Rewritten in Elixir; 2sable was an abandoned experimental dialect by the same author.
+  relations:
+    - { type: implemented_in, to: elixir, weight: strong, confidence: high, sources: [osabie-github], note: "\"written in Elixir using the Mix build tool\" (the current implementation)." }
+  research_status: stub
+  confidence: low
+  links: { homepage: "https://github.com/Adriandmen/05AB1E" }
+  sources: [osabie-github, esolangs-05ab1e, wiki-code-golf]
+  example:
+    title: A quine
+    language: 05AB1E
+    note: "From the Esolang wiki: \"1 pushes 1 to the stack. It gets automatically printed at the end.\""
+    code: |
+      1
+    sources: [esolangs-05ab1e]
+
+- id: rockstar
+  name: Rockstar
+  kind: language
+  category: esoteric
+  cluster: esoteric/natural-language
+  origin:
+    first_appeared: { year: 2018, precision: year, note: "\"inspired by a tweet suggesting that 'to really confuse recruiters, someone should make a programming language called Rockstar.'\"" }
+  creators: [{ name: Dylan Beattie, role: designer }]
+  status: active
+  tags:
+    paradigm: [imperative]
+    typing: [dynamic-typing]
+  milestones:
+    - { version: "2.0", year: 2024, summary: "Released 30 November 2024: Rockstar 1 grammar kept, type inference overhauled; Satriani is the reference implementation." }
+  summary: >
+    "A computer programming language based on the lyrics to 1980s hard rock and power ballads", made "to satirise
+    the use of the phrase 'rockstar developer' in IT job listings": anyone who learns it can honestly claim the
+    title. Unlike most joke languages it is fully specified, with poetic number literals and multiple
+    implementations.
+  notes: >
+    The Esolang wiki compares its syntax to COBOL and Visual Basic ("superficially similar"), without claiming influence.
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://codewithrockstar.com" }
+  sources: [codewithrockstar, esolangs-rockstar]
+  example:
+    title: Hello World
+    language: Rockstar
+    note: "From the Esolang wiki, which adds: \"If you can write this, you are a qualified rockstar developer. Congratulations.\""
+    code: |
+      Say "Hello World"
+    sources: [esolangs-rockstar]
+
+- id: fractran
+  name: FRACTRAN
+  kind: language
+  category: esoteric
+  cluster: esoteric/minimal
+  origin:
+    first_appeared: { year: 1987, precision: disputed, note: "Conway's article in Open Problems in Communication and Computation (Springer), dated 1987 by Wikipedia and the Springer DOI, 1986 by the Esolang wiki and the reprint's reference list." }
+    places: [{ institution: Princeton University, city: Princeton, country: US }]
+  creators: [{ name: John Horton Conway, role: designer }]
+  status: historical
+  summary: >
+    John Conway's universal language for arithmetic: a program is a list of fractions, the whole state is one
+    integer, and each step multiplies it by the first fraction that gives an integer. "The power of this formalism
+    comes from viewing numbers as products of prime powers": the exponents are registers, so FRACTRAN "can
+    trivially simulate" Minsky's register machines. A mathematical point, not a joke.
+  research_status: draft
+  confidence: high
+  sources: [conway-1987-fractran, esolangs-fractran, wiki-fractran]
+  example:
+    title: PRIMEGAME
+    language: FRACTRAN
+    note: "Conway's prime generator, as printed on the Esolang wiki. Started on 2, the powers of 2 it passes through are 2^2, 2^3, 2^5, 2^7, ... (checked with a short Python simulation: exponents 2, 3, 5, 7, 11, 13)."
+    code: |
+      17/91, 78/85, 19/51, 23/38, 29/33, 77/29, 95/23, 77/19, 1/17, 11/13, 13/11, 15/14, 15/2, 55/1
+    sources: [esolangs-fractran]
+
+- id: subleq
+  name: Subleq
+  aliases: [OISC, SUBtract and branch if Less-than or EQual to zero]
+  kind: language
+  category: esoteric
+  cluster: esoteric/minimal
+  origin:
+    began: { year: 1988, precision: year, note: "Mavaddat and Parhami's URISC (October 1988) is \"the first known reference to a very similar form of OISC\", but it is a subtract-and-branch-if-negative machine." }
+    first_appeared: { year: 2003, precision: circa, note: "Nurnberg, Wiil and Hicks (September 2003) is the paper Wikipedia credits with the name SUBLEQ. No designer or origin date is given in the sources read." }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    typing: [typeless]
+    features: [self-modifying-code, minimalism]
+  summary: >
+    A one-instruction computer: every instruction is three addresses A B C meaning "subtract A from B, and jump to
+    C if the result is less than or equal to zero". "If no limit is imposed on the size of a memory cell", it is
+    Turing-complete, by translation from Minsky machines; a standing demonstration that an instruction set needs
+    only one instruction.
+  research_status: draft
+  confidence: low
+  sources: [esolangs-subleq, wiki-oisc]
+  example:
+    title: Printing "Hi"
+    language: Subleq
+    note: "From the Esolang wiki tutorial. Address -1 is output, so subtracting from it prints; H: and i: are labels on the data words 72 and 105, and 0 0 -1 jumps to -1, which halts."
+    code: |
+      H -1 3
+      i -1 6
+      0 0 -1
+      H:72 i:105 0
+    sources: [esolangs-subleq]
+
+- id: befunge-98
+  name: Befunge-98
+  aliases: [Funge-98, Unefunge, Trefunge]
+  kind: language
+  category: esoteric
+  cluster: esoteric/2d
+  origin:
+    first_appeared: { year: 1998, date: "1998-09-11", precision: exact, note: "Funge-98 Final Specification, Chris Pressey, 11 September 1998 (revised 30 September)." }
+    places: [{ institution: Cat's Eye Technologies }]
+  creators: [{ name: Chris Pressey, role: designer }]
+  status: maintained
+  tags:
+    paradigm: [stack-oriented, imperative]
+    features: [two-dimensional, self-modifying-code]
+  summary: >
+    "The successor to, and a generalization of, Befunge": the specification lifts Befunge-93's 80×25 limit, which
+    "provides Turing completeness by removing the size restrictions on the program", and generalises the grid to
+    one (Unefunge), two or three (Trefunge) dimensions, with concurrent instruction pointers and loadable
+    fingerprints (extensions).
+  relations:
+    - { type: successor_of, to: befunge, weight: strong, confidence: high, sources: [pressey-1998-funge-98, esolangs-funge-98], note: "\"Funge-98 has evolved from Funge-97, which was a generalization of Befunge-97, which was an improvement over Befunge-96, which was an update of the original Befunge-93 language definition.\"" }
+  research_status: draft
+  confidence: high
+  sources: [pressey-1998-funge-98, esolangs-funge-98, wiki-befunge]
+  example:
+    title: Strings in Befunge-93 and Befunge-98
+    language: Befunge-98
+    note: "From the Funge-98 specification. Befunge-98 collapses runs of spaces inside a string, so a string with several spaces must be built with duplicates (::)."
+    code: |
+      Befunge-93              Befunge-98
+
+      "hello world"           "hello world"
+      "hello   world"         "hello "::"world"
+    sources: [pressey-1998-funge-98]
+
+- id: thue
+  name: Thue
+  kind: language
+  category: esoteric
+  cluster: esoteric/minimal
+  origin:
+    first_appeared: { year: 2000, precision: year }
+  creators: [{ name: John Colagioia, role: designer }]
+  status: historical
+  tags:
+    paradigm: [declarative]
+    features: [nondeterminism, string-processing]
+  summary: >
+    A language of string-rewriting rules "based on a semi-Thue grammar": execution repeatedly picks an arbitrary
+    applicable rule and rewrites the program state, so it is nondeterministic. Its author calls it "a
+    constraint-programming version of a Turing tarpit"; it is Turing-complete by reduction from unrestricted
+    grammars.
+  research_status: draft
+  confidence: medium
+  sources: [esolangs-thue]
+  example:
+    title: Hello World
+    language: Thue
+    note: "From the Esolang wiki. a::=~Hello World! rewrites a by printing the text after ~; the bare ::= ends the rule list, and the last line is the initial state."
+    code: |
+      a::=~Hello World!
+      ::=
+      a
+    sources: [esolangs-thue]
+
+- id: iota
+  name: Iota
+  kind: language
+  category: esoteric
+  cluster: esoteric/combinators
+  origin:
+    first_appeared: { year: 2001, precision: year }
+  creators: [{ name: Chris Barker, role: designer }]
+  status: historical
+  tags:
+    paradigm: [functional]
+    features: [minimalism]
+  summary: >
+    "A two-symbol Turing tarpit" from the linguist Chris Barker: one combinator ι (defined as λx.xSK) and a
+    prefix application marker *, "designed to be as small as possible but still Turing-complete". Its sister
+    language Jot comes from the same article.
+  relations:
+    - { type: influenced_by, to: combinatory-logic, weight: strong, confidence: high, sources: [wiki-iota-jot] }
+  research_status: draft
+  confidence: medium
+  sources: [esolangs-iota, wiki-iota-jot]
+  example:
+    title: Stay's program
+    language: Iota
+    note: "From the Esolang wiki (\"Complexity class\"), as Barker gives it: * applies the following two expressions, i is the one combinator."
+    code: |
+      *i***i*i*i*ii**i*i*i*ii*iii
+    sources: [esolangs-iota]
+
+- id: jot
+  name: Jot
+  kind: language
+  category: esoteric
+  cluster: esoteric/combinators
+  origin:
+    first_appeared: { year: 2001, precision: year }
+  creators: [{ name: Chris Barker, role: designer }]
+  status: historical
+  tags:
+    paradigm: [functional]
+    features: [minimalism]
+  summary: >
+    Iota's sister, "originally described as 'a better Gödel-numbering'": every string of bits, including the empty
+    one, is a valid program, so programs and natural numbers correspond one to one. 0 and 1 denote combinator
+    operations, and any combinator term can be written in it.
+  relations:
+    - { type: influenced_by, to: iota, weight: strong, confidence: high, sources: [esolangs-jot, wiki-iota-jot], note: "\"its sister language Iota\" from the same article." }
+  research_status: draft
+  confidence: medium
+  sources: [esolangs-jot, wiki-iota-jot]
+  example:
+    title: Translating combinators to bits
+    language: Jot
+    note: "From the Esolang wiki (\"Computational class\"): K and S and application map to bit strings, which proves Jot Turing-complete."
+    code: |
+      {K}     ->   11100
+      {S}     ->   11111000
+      {AB}    ->   1{A}{B}
+    sources: [esolangs-jot]
+
+- id: bitwise-cyclic-tag
+  name: Bitwise Cyclic Tag
+  aliases: [BCT, Cyclic Tag]
+  kind: language
+  category: esoteric
+  cluster: esoteric/minimal
+  origin:
+    first_appeared: { year: 2005, date: "2005-12", precision: exact, note: "\"The languages CT and BCT were created by 'r.e.s.' in December 2005.\"" }
+  creators: [{ name: r.e.s., role: designer }]
+  status: historical
+  tags:
+    features: [minimalism]
+  summary: >
+    "A Turing-complete programming language using only two commands (0 and 1)" acting on a data bitstring, made by
+    reading a cyclic tag system's productions as a program. Its "extremely simple syntax and semantics make it a
+    useful target for simulation-based proofs of a language's computational class".
+  research_status: draft
+  confidence: medium
+  sources: [esolangs-bct]
+  example:
+    title: Cyclic tag to BCT
+    language: Bitwise Cyclic Tag
+    note: "From the Esolang wiki: the three CT commands become binary BCT code, which is all it takes to make the program a bit string."
+    code: |
+      0 <-- 10
+      1 <-- 11
+      ; <-- 0
+    sources: [esolangs-bct]
+
+- id: lazy-k
+  name: Lazy K
+  kind: language
+  category: esoteric
+  cluster: esoteric/combinators
+  origin:
+    first_appeared: { year: 2002, precision: year, note: "\"submitted to the 2002 Esoteric Awards\"." }
+  creators: [{ name: Ben Rudiak-Gould, role: designer }]
+  status: historical
+  tags:
+    paradigm: [functional, purely-functional]
+    features: [lazy-evaluation, minimalism]
+  summary: >
+    "A Turing tarpit based on combinatory logic", "lazily evaluated and purely functional": a program is an S, K, I
+    term applied to the whole input as a lazy list, and its result is the output, so I/O has no side effects. It
+    "was designed to address a shortcoming of Unlambda; namely, its lack of functional purity".
+  relations:
+    - { type: influenced_by, to: unlambda, weight: strong, confidence: high, sources: [esolangs-lazy-k] }
+    - { type: influenced_by, to: combinatory-logic, weight: strong, confidence: high, sources: [esolangs-lazy-k], note: "\"Lazy K is based on the SKI combinators.\"" }
+  research_status: draft
+  confidence: medium
+  sources: [esolangs-lazy-k]
+  example:
+    title: Hello world (first line)
+    language: Lazy K
+    note: "The first of the ten lines of the Esolang wiki's Hello world, in Unlambda-style ` notation: ` applies, s, k and i are the combinators. Copied from the fetched page and not run."
+    code: |
+      `k``s``si`k``s`k```sii``s``s`kski``s``s`ksk``s``s`ksk```s``siii``s``s`kski`k``s``si`k``s``s`ksk```s``s`ksk
+    sources: [esolangs-lazy-k]
+
+- id: binary-lambda-calculus
+  name: Binary lambda calculus
+  aliases: [BLC]
+  kind: language
+  category: esoteric
+  cluster: esoteric/combinators
+  origin:
+    first_appeared: { year: 2004, precision: year, note: "\"invented by John Tromp in 2004\"; described in his 2008 chapter in Randomness and Complexity." }
+  creators: [{ name: John Tromp, role: designer }]
+  status: historical
+  tags:
+    paradigm: [functional, purely-functional]
+    features: [minimalism]
+  summary: >
+    "A minimal, pure functional programming language" "based on a binary encoding of the untyped lambda calculus in
+    De Bruijn index notation", designed "to provide a very simple and elegant concrete definition of descriptional
+    complexity (Kolmogorov complexity)". Programs are self-delimiting bit strings with I/O; Tromp's self-interpreter
+    is a few hundred bits.
+  relations:
+    - { type: influenced_by, to: lambda-calculus, weight: strong, confidence: high, sources: [tromp-blc] }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://tromp.github.io/cl/Binary_lambda_calculus.html" }
+  sources: [tromp-blc, esolangs-blc]
+  example:
+    title: The encoding
+    language: Binary lambda calculus
+    note: "From Tromp's page (\"Lambda encoding\"): abstraction is 00, application 01, and variable i (a De Bruijn index) is i ones followed by a zero."
+    code: |
+      blc(λM) = 00 blc(M)
+      blc(M N) = 01 blc(M) blc(N)
+      blc(i) = 1i0
+    sources: [tromp-blc]

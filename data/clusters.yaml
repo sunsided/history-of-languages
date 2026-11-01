@@ -584,45 +584,23 @@
   name: Minimal Turing tarpits
   parent: esoteric
   research_status: draft
-  backlog:
-    - { name: "OISC / Subleq", year: 1988 }
-    - { name: "Thue", year: 2000 }
-    - { name: "Fractran", year: 1987, hint: "Conway; mathematical rather than joke." }
-    - { name: "Bitwise Cyclic Tag", year: 2004 }
 - id: esoteric/2d
   name: Two-dimensional languages
   parent: esoteric
   research_status: draft
-  backlog:
-    - { name: "Befunge-98 / Funge-98", year: 1998 }
-    - { name: "Hexagony", year: 2015 }
 - id: esoteric/combinators
   name: Combinator languages
   parent: esoteric
   research_status: draft
-  backlog:
-    - { name: "Iota and Jot", year: 2001 }
-    - { name: "Lazy K", year: 2002 }
-    - { name: "Binary lambda calculus", year: 2004 }
 - id: esoteric/hostile
   name: Deliberately hostile languages
   parent: esoteric
   research_status: draft
-  backlog:
-    - { name: "Chef", year: 2002 }
-    - { name: "Ook!", year: 2003 }
 - id: esoteric/natural-language
   name: Natural-language parodies
   parent: esoteric
   research_status: draft
-  backlog:
-    - { name: "Chef", year: 2002 }
-    - { name: "Rockstar", year: 2018 }
 - id: esoteric/golfing
   name: Code-golf languages
   parent: esoteric
   research_status: stub
-  backlog:
-    - { name: "GolfScript", year: 2007 }
-    - { name: "Jelly", year: 2015 }
-    - { name: "05AB1E", year: 2015 }

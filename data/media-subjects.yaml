@@ -1438,3 +1438,16 @@
   wiki: Vikram Adve
   nodes:
   - llvm-ir
+- id: person-john-horton-conway
+  kind: person
+  person: John Horton Conway
+  wiki: John Horton Conway
+  nodes:
+  - fractran
+- id: person-chris-barker
+  kind: person
+  person: Chris Barker
+  wiki: Chris Barker (linguist)
+  nodes:
+  - iota
+  - jot

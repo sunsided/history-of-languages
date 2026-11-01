@@ -2710,3 +2710,197 @@
   title: 'Wikipedia: EDVAC'
   url: https://en.wikipedia.org/wiki/EDVAC
   checked: '2026-11-01'
+- id: esolangs-hexagony
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Hexagony'
+  url: https://esolangs.org/wiki/Hexagony
+  checked: '2026-11-01'
+- id: hexagony-github
+  type: web
+  primary: true
+  title: 'Hexagony (GitHub, m-ender/hexagony)'
+  url: https://github.com/m-ender/hexagony
+  checked: '2026-11-01'
+- id: esolangs-chef
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Chef'
+  url: https://esolangs.org/wiki/Chef
+  checked: '2026-11-01'
+- id: morgan-mar-chef
+  type: web
+  primary: true
+  title: 'Chef (David Morgan-Mar, dangermouse.net)'
+  url: http://www.dangermouse.net/esoteric/chef.html
+  checked: '2026-11-01'
+- id: esolangs-ook
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Ook!'
+  url: https://esolangs.org/wiki/Ook!
+  checked: '2026-11-01'
+- id: morgan-mar-ook
+  type: web
+  primary: true
+  title: 'Ook! (David Morgan-Mar, dangermouse.net)'
+  url: http://www.dangermouse.net/esoteric/ook.html
+  checked: '2026-11-01'
+- id: esolangs-rockstar
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Rockstar'
+  url: https://esolangs.org/wiki/Rockstar
+  checked: '2026-11-01'
+- id: codewithrockstar
+  type: web
+  primary: true
+  title: 'Rockstar (codewithrockstar.com)'
+  url: https://codewithrockstar.com/
+  checked: '2026-11-01'
+- id: esolangs-golfscript
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: GolfScript'
+  url: https://esolangs.org/wiki/GolfScript
+  checked: '2026-11-01'
+- id: golfscript-com
+  type: web
+  primary: true
+  title: 'GolfScript (golfscript.com)'
+  url: https://www.golfscript.com/golfscript/
+  checked: '2026-11-01'
+- id: wiki-code-golf
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Code golf'
+  url: https://en.wikipedia.org/wiki/Code_golf
+  checked: '2026-11-01'
+- id: esolangs-jelly
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Jelly'
+  url: https://esolangs.org/wiki/Jelly
+  checked: '2026-11-01'
+- id: jelly-github
+  type: web
+  primary: true
+  title: 'Jelly (GitHub, DennisMitchell/jellylanguage)'
+  url: https://github.com/DennisMitchell/jellylanguage
+  checked: '2026-11-01'
+- id: esolangs-05ab1e
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: 05AB1E'
+  url: https://esolangs.org/wiki/05AB1E
+  checked: '2026-11-01'
+- id: osabie-github
+  type: web
+  primary: true
+  title: '05AB1E (GitHub, Adriandmen/05AB1E)'
+  url: https://github.com/Adriandmen/05AB1E
+  checked: '2026-11-01'
+- id: esolangs-subleq
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Subleq'
+  url: https://esolangs.org/wiki/Subleq
+  checked: '2026-11-01'
+- id: wiki-oisc
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: One-instruction set computer'
+  url: https://en.wikipedia.org/wiki/One-instruction_set_computer
+  checked: '2026-11-01'
+- id: esolangs-thue
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Thue'
+  url: https://esolangs.org/wiki/Thue
+  checked: '2026-11-01'
+- id: esolangs-fractran
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Fractran'
+  url: https://esolangs.org/wiki/Fractran
+  checked: '2026-11-01'
+- id: wiki-fractran
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: FRACTRAN'
+  url: https://en.wikipedia.org/wiki/FRACTRAN
+  checked: '2026-11-01'
+- id: esolangs-bct
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Bitwise Cyclic Tag'
+  url: https://esolangs.org/wiki/Bitwise_Cyclic_Tag
+  checked: '2026-11-01'
+- id: esolangs-iota
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Iota'
+  url: https://esolangs.org/wiki/Iota
+  checked: '2026-11-01'
+- id: esolangs-jot
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Jot'
+  url: https://esolangs.org/wiki/Jot
+  checked: '2026-11-01'
+- id: wiki-iota-jot
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Iota and Jot'
+  url: https://en.wikipedia.org/wiki/Iota_and_Jot
+  checked: '2026-11-01'
+- id: esolangs-lazy-k
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Lazy K'
+  url: https://esolangs.org/wiki/Lazy_K
+  checked: '2026-11-01'
+- id: esolangs-blc
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Binary lambda calculus'
+  url: https://esolangs.org/wiki/Binary_lambda_calculus
+  checked: '2026-11-01'
+- id: esolangs-funge-98
+  type: encyclopedia
+  primary: false
+  title: 'Esolang wiki: Funge-98'
+  url: https://esolangs.org/wiki/Funge-98
+  checked: '2026-11-01'
+- id: wiki-befunge
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Befunge'
+  url: https://en.wikipedia.org/wiki/Befunge
+  checked: '2026-11-01'
+- id: conway-1987-fractran
+  type: chapter
+  primary: true
+  authors:
+  - John Horton Conway
+  title: 'FRACTRAN: A Simple Universal Programming Language for Arithmetic (Open Problems in Communication and Computation, Springer)'
+  year: 1987
+  url: https://www.cs.unc.edu/~stotts/COMP210-s23/madMath/Conway87.pdf
+  checked: '2026-11-01'
+- id: tromp-blc
+  type: web
+  primary: true
+  authors:
+  - John Tromp
+  title: 'Binary Lambda Calculus (John Tromp)'
+  url: https://tromp.github.io/cl/Binary_lambda_calculus.html
+  checked: '2026-11-01'
+- id: pressey-1998-funge-98
+  type: standard
+  primary: true
+  authors:
+  - Chris Pressey
+  title: 'Funge-98 Final Specification (Cat''s Eye Technologies, 11 September 1998)'
+  year: 1998
+  url: http://catseye.tc/view/funge-98/doc/funge98.markdown
+  checked: '2026-11-01'
