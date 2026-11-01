@@ -17,6 +17,21 @@
   research_status: draft
   confidence: high
   sources: [wiki-z3]
+  example:
+    title: (a + b) × c on punched film
+    language: Z3 instruction set
+    year: 1941
+    note: 'The Z3 had nine instructions: Lu (read decimal keyboard), Ld (display), Pr z / Ps z (load from / store to memory cell z), Ls1 (add), Ls2 (subtract), Lm (multiply), Li (divide), Lw (square root). No conditional jump: the program on the film strip simply ran start to end, and loops were made by gluing the film into a loop.'
+    code: |
+      Lu        ; read a from keyboard
+      Lu        ; read b
+      Ls1       ; a + b
+      Ps 1      ; store in cell 1
+      Lu        ; read c
+      Pr 1      ; load a + b
+      Lm        ; multiply
+      Ld        ; show result
+    sources: [wiki-z3]
 
 - id: harvard-mark-i
   name: Harvard Mark I
@@ -37,6 +52,16 @@
   research_status: stub
   confidence: high
   sources: [wiki-harvard-mark-i]
+  example:
+    title: Instructions on 24-channel paper tape
+    language: Mark I tape code (illustrative)
+    note: 'Each tape line had three fields: where a number came from (OUT), where it went (IN) and a miscellaneous code (e.g. multiply, print). Adding was simply sending a number into an accumulator register. Hopper and colleagues wrote these by hand on coding sheets.'
+    code: |
+      OUT   IN    MISC
+      21    72    –      ; send register 21 into register 72 (adds)
+      22    72    –      ; add register 22 too
+      72    –     PRINT  ; print the sum
+    sources: [wiki-harvard-mark-i]
 
 - id: eniac
   name: ENIAC
@@ -55,6 +80,16 @@
   research_status: stub
   confidence: high
   sources: [wiki-eniac]
+  example:
+    title: Programming by wiring
+    language: ENIAC plugboard setup (illustrative pseudocode)
+    note: 'Before 1948 a program was a physical configuration: cables carried numbers between accumulators and program pulses between units, and switches set each unit''s operation. Setting up a new problem took days. The pseudocode describes one such wiring for a running sum.'
+    code: |
+      initiating unit ─pulse→ accumulator 1: receive from constant transmitter
+      accumulator 1 done ─pulse→ accumulator 2: receive (add) from acc 1
+      accumulator 2 done ─pulse→ master programmer: repeat 10 times
+      master programmer done ─pulse→ printer: punch acc 2
+    sources: [wiki-eniac]
 
 - id: manchester-baby
   name: Manchester Baby
@@ -76,6 +111,19 @@
   research_status: stub
   confidence: high
   sources: [wiki-manchester-baby, von-neumann-1945-edvac]
+  example:
+    title: Adding with only subtract
+    language: SSEM mnemonics
+    year: 1948
+    note: 'The Baby had seven instructions and no add: LDN loads the negated value, SUB subtracts, STO stores, CMP skips the next instruction if the accumulator is negative, JMP/JRP jump, STP halts. a + b is computed as −(−a − b).'
+    code: |
+      LDN 20    ; acc = −a
+      SUB 21    ; acc = −a − b
+      STO 22    ; t   = −(a + b)
+      LDN 22    ; acc = a + b
+      STO 23    ; result
+      STP
+    sources: [wiki-manchester-baby]
 
 - id: edsac
   name: EDSAC
@@ -91,6 +139,15 @@
   research_status: stub
   confidence: high
   sources: [wiki-edsac, wilkes-wheeler-gill-1951]
+  example:
+    title: An order in memory
+    language: EDSAC order format
+    year: 1949
+    note: 'An order was 17 bits: a 5-bit function code (written as a letter on the teleprinter), a spare bit, a 10-bit address, and a length bit for short (F) or long (D) numbers. ''A 70 F'' means add the short number at 70 to the accumulator.'
+    code: |
+      function   spare  address       length
+      A          0      0001000110    F (0)       =  A 70 F
+    sources: [wiki-edsac]
 
 - id: ibm-650
   name: IBM 650
@@ -103,6 +160,17 @@
   research_status: stub
   confidence: high
   sources: [wiki-ibm-650]
+  example:
+    title: Two addresses per instruction
+    language: IBM 650 machine code
+    note: Each 10-digit word instruction held an operation code, a data address and the address of the next instruction. Memory was a rotating drum, so the next-instruction address let programmers place code where the drum would be when the previous instruction finished. Opcodes as in the 650 manual (65 RAL, 15 AL, 20 STL, 01 HLT); verify before publishing.
+    code: |
+      op  data  next
+      65  1000  0105     ; reset and add lower: acc = [1000]
+      15  1001  0110     ; add lower:           acc += [1001]
+      20  1002  0115     ; store lower:         [1002] = acc
+      01  0000  0000     ; halt
+    sources: [wiki-ibm-650]
 
 - id: ibm-704
   name: IBM 704
@@ -115,6 +183,16 @@
   research_status: stub
   confidence: high
   sources: [wiki-ibm-704, mccarthy-1978-history-lisp]
+  example:
+    title: Single-address accumulator machine
+    language: IBM 704 machine instructions
+    note: One address per instruction, an accumulator, and index registers. The 704's 36-bit word split into an address part and a decrement part; Lisp's CAR and CDR are 'Contents of the Address/Decrement part of Register'.
+    code: |
+      CLA  A     ; clear and add: AC = A
+      ADD  B     ; AC = AC + B
+      STO  C     ; C = AC
+      HTR  0     ; halt
+    sources: [wiki-ibm-704, mccarthy-1978-history-lisp]
 
 - id: ibm-system-360
   name: IBM System/360
@@ -130,6 +208,16 @@
   research_status: stub
   confidence: high
   sources: [wiki-system-360]
+  example:
+    title: One instruction set, many machines
+    language: System/360 machine code
+    year: 1964
+    note: 'RX-format instructions: opcode byte, register nibble, index nibble, then base register and 12-bit displacement. The same bytes ran on every model of the family, the point of the 360.'
+    code: |
+      58 10 C010     L   1,16(0,12)    load word into register 1
+      5A 10 C014     A   1,20(0,12)    add word
+      50 10 C018     ST  1,24(0,12)    store word
+    sources: [wiki-system-360]
 
 - id: pdp-11
   name: PDP-11
@@ -143,6 +231,14 @@
   research_status: stub
   confidence: high
   sources: [wiki-pdp-11, ritchie-1993-development-c]
+  example:
+    title: Autoincrement addressing
+    language: PDP-11 machine code
+    note: (R1)+ means 'use the word R1 points to, then add 2 to R1'. MOVB (R1)+,(R2)+ copies a byte and advances both pointers in a single 16-bit instruction. C's *p++ looks like this, but Ritchie notes ++ came from B, before the PDP-11.
+    code: |
+      112122      MOVB (R1)+,(R2)+     ; copy one byte, advance both
+      001376      BNE  .-2              ; loop until a zero byte was copied
+    sources: [wiki-pdp-11, ritchie-1993-development-c]
 
 - id: intel-8086
   name: Intel 8086 (x86)
@@ -160,6 +256,15 @@
   research_status: stub
   confidence: high
   sources: [wiki-x86]
+  example:
+    title: 5 + 3 in bytes
+    language: 8086 machine code
+    year: 1978
+    note: B8 is MOV AX, imm16 and 05 is ADD AX, imm16; immediates are little-endian. These two instructions still run unchanged on current x86-64 processors in real mode.
+    code: |
+      B8 05 00     mov ax, 5
+      05 03 00     add ax, 3       ; ax = 8
+    sources: [wiki-x86]
 
 - id: mos-6502
   name: MOS 6502
@@ -173,6 +278,17 @@
   research_status: stub
   confidence: high
   sources: [wiki-6502]
+  example:
+    title: 5 + 3 in bytes
+    language: 6502 machine code
+    year: 1975
+    note: A9 is LDA immediate, 69 ADC immediate, 8D STA absolute (little-endian address). CLC first, because the 6502 only has add-with-carry.
+    code: |
+      18           clc
+      A9 05        lda #$05
+      69 03        adc #$03
+      8D 00 02     sta $0200
+    sources: [wiki-6502]
 
 - id: zilog-z80
   name: Zilog Z80
@@ -186,6 +302,15 @@
   research_status: stub
   confidence: high
   sources: [wiki-z80]
+  example:
+    title: 5 + 3 in bytes
+    language: Z80 machine code
+    year: 1976
+    note: 3E is LD A,n and C6 is ADD A,n. The opcodes match the Intel 8080's (MVI A / ADI); only the mnemonics differ.
+    code: |
+      3E 05     ld  a, 5
+      C6 03     add a, 3
+    sources: [wiki-z80]
 
 - id: motorola-68000
   name: Motorola 68000
@@ -198,6 +323,15 @@
   research_status: stub
   confidence: high
   sources: [wiki-68000]
+  example:
+    title: 5 + 3 in two words
+    language: 68000 machine code
+    year: 1979
+    note: MOVEQ packs an 8-bit constant into the instruction itself (0111 rrr0 dddddddd); ADDQ adds 1-8 likewise. Both are one 16-bit word.
+    code: |
+      7005      moveq  #5,d0
+      5680      addq.l #3,d0
+    sources: [wiki-68000]
 
 - id: arm
   name: ARM architecture
@@ -213,6 +347,15 @@
   research_status: stub
   confidence: high
   sources: [wiki-arm]
+  example:
+    title: Every instruction is conditional
+    language: ARM (A32) machine code
+    year: 1985
+    note: The top nibble E means 'always'; other values make any instruction conditional on the flags. Fixed 32-bit instructions, immediates encoded in the low bits.
+    code: |
+      E3A00005    mov r0, #5
+      E2800003    add r0, r0, #3
+    sources: [wiki-arm]
 
 - id: mips
   name: MIPS architecture
@@ -229,6 +372,15 @@
   research_status: stub
   confidence: high
   sources: [wiki-mips]
+  example:
+    title: Three-operand RISC encoding
+    language: MIPS machine code
+    year: 1985
+    note: 'I-type: 6-bit opcode (001000 = addi), source register, target register, 16-bit immediate. Register $zero always reads 0, which is how MIPS loads constants.'
+    code: |
+      20080005    addi $t0, $zero, 5
+      21080003    addi $t0, $t0, 3
+    sources: [wiki-mips]
 
 - id: risc-v
   name: RISC-V
@@ -251,6 +403,15 @@
   research_status: stub
   confidence: high
   sources: [wiki-risc-v]
+  example:
+    title: A clean, open encoding
+    language: RISC-V (RV32I) machine code
+    year: 2014
+    note: 'I-type: 12-bit immediate, rs1, funct3, rd, opcode 0010011 (OP-IMM). Register x0 is hardwired to zero, as in MIPS. ''li a0, 5'' assembles to this addi.'
+    code: |
+      00500513    addi a0, zero, 5
+      00350513    addi a0, a0, 3
+    sources: [wiki-risc-v]
 
 # ---------- Assembly languages ----------
 - id: booth-contracted-notation
@@ -267,6 +428,16 @@
   research_status: draft
   confidence: medium
   sources: [booth-1947-coding-arc, wiki-assembly-language]
+  example:
+    title: Symbols instead of bits (illustrative)
+    language: pseudocode in the spirit of contracted notation
+    note: 'Illustrative only: Booth''s actual ARC2 symbols are not reproduced here. The idea is what matters: write each instruction as a short symbolic form with a memory address, then translate to binary by hand. Replace with a facsimile from ''Coding for A.R.C.'' when the source is checked.'
+    code: |
+      symbolic         meaning                      binary (hand-translated)
+      cc → A   120     clear acc, add [120]         …
+      A + 121          add [121]                    …
+      A → 122          store acc in [122]           …
+    sources: [booth-1947-coding-arc]
 
 - id: edsac-initial-orders
   name: EDSAC Initial Orders
@@ -284,6 +455,18 @@
   research_status: draft
   confidence: high
   sources: [wilkes-wheeler-gill-1951, wiki-edsac]
+  example:
+    title: Add two numbers
+    language: EDSAC orders read by Initial Orders 2
+    year: 1949
+    note: 'Initial Orders 2 read these letters and decimal addresses from tape and assembled them into memory as it loaded them: a 1949 assembler in 41 words. T 56 K sets the load address; T n F stores and clears the accumulator; Z F stops.'
+    code: |
+      T 56 K      load the following orders from location 56
+      A 70 F      acc += [70]
+      A 71 F      acc += [71]
+      T 72 F      [72] := acc; acc := 0
+      Z F         stop
+    sources: [wilkes-wheeler-gill-1951]
 
 - id: soap
   name: SOAP (Symbolic Optimal Assembly Program)
@@ -299,6 +482,19 @@
   research_status: stub
   confidence: medium
   sources: [wiki-ibm-650]
+  example:
+    title: Let the assembler place it on the drum
+    language: SOAP II
+    note: The same program as the 650 machine-code sample, but symbolic. SOAP chose the next-instruction addresses itself to minimise waiting for the drum to rotate ('optimal' assembly).
+    code: |2
+             RAL  A
+             ALO  B
+             STL  C
+             HLT  0000
+      A      …
+      B      …
+      C      …
+    sources: [wiki-ibm-650]
 
 - id: sap-704
   name: SAP (SHARE Assembly Program)
@@ -315,6 +511,20 @@
   research_status: stub
   confidence: medium
   sources: [wiki-ibm-704]
+  example:
+    title: C = A + B
+    language: SAP (SHARE Assembly Program)
+    note: Label column, mnemonic, operand, as on 80-column cards. DEC assembles a decimal constant, BSS reserves storage, END ends the deck.
+    code: |2
+            CLA   A
+            ADD   B
+            STO   C
+            HTR   0
+      A     DEC   2
+      B     DEC   3
+      C     BSS   1
+            END
+    sources: [wiki-ibm-704]
 
 - id: ibm-bal
   name: IBM Basic Assembly Language / HLASM
@@ -332,6 +542,21 @@
   research_status: stub
   confidence: medium
   sources: [wiki-ibm-assembler]
+  example:
+    title: C = A + B
+    language: IBM Basic Assembly Language
+    note: Register 1 does the arithmetic; F'2' is a fullword constant, DS reserves a fullword. Real programs began with standard linkage (save area, BALR base register), omitted here.
+    code: |
+      ADDEM    CSECT
+               L     1,A        load A into register 1
+               A     1,B        add B
+               ST    1,C        store into C
+               BR    14         return to caller
+      A        DC    F'2'
+      B        DC    F'3'
+      C        DS    F
+               END   ADDEM
+    sources: [wiki-ibm-assembler]
 
 - id: macro-11
   name: MACRO-11
@@ -346,6 +571,19 @@
   research_status: stub
   confidence: medium
   sources: [wiki-macro-11]
+  example:
+    title: strcpy in two instructions
+    language: MACRO-11
+    note: 'The classic string copy: MOVB sets the condition codes from the byte it moved, so BNE loops until the terminating zero has been copied. 1$ is a local label.'
+    code: |2
+              MOV    #SRC,R1
+              MOV    #DST,R2
+      1$:     MOVB   (R1)+,(R2)+
+              BNE    1$
+              HALT
+      SRC:    .ASCIZ /HELLO/
+      DST:    .BLKB  6
+    sources: [wiki-macro-11]
 
 - id: x86-intel-syntax
   name: x86 assembly (Intel syntax)
@@ -361,6 +599,14 @@
   research_status: stub
   confidence: high
   sources: [wiki-x86-assembly]
+  example:
+    title: Destination first
+    language: x86 assembly, Intel syntax
+    note: Destination before source, no register sigils, square brackets for memory. Same two instructions as the AT&T sample, assembling to the same bytes (8B 04 8B, 83 C0 05).
+    code: |
+      mov eax, [ebx + ecx*4]    ; eax = array[ecx]
+      add eax, 5
+    sources: [wiki-x86-assembly]
 
 - id: x86-att-syntax
   name: x86 assembly (AT&T syntax)
@@ -377,6 +623,14 @@
   research_status: stub
   confidence: medium
   sources: [wiki-x86-assembly]
+  example:
+    title: Source first, with sigils
+    language: x86 assembly, AT&T syntax (GNU as)
+    note: Source before destination, % on registers, $ on immediates, an 'l' suffix for 32-bit operands, and base,index,scale in parentheses. Assembles to the same bytes as the Intel-syntax sample.
+    code: |
+      movl (%ebx,%ecx,4), %eax  # eax = array[ecx]
+      addl $5, %eax
+    sources: [wiki-x86-assembly]
 
 - id: masm
   name: MASM (Microsoft Macro Assembler)
@@ -391,6 +645,25 @@
   research_status: stub
   confidence: high
   sources: [wiki-masm]
+  example:
+    title: Hello, world for MS-DOS
+    language: MASM 5+
+    note: DOS function 09h of INT 21h prints a string terminated by '$'; 4Ch exits. .MODEL and .CODE are MASM's simplified segment directives.
+    code: |2
+              .MODEL SMALL
+              .STACK 100h
+              .DATA
+      msg     DB 'Hello, world', 13, 10, '$'
+              .CODE
+      start:  mov  ax, @data
+              mov  ds, ax
+              mov  ah, 09h
+              mov  dx, OFFSET msg
+              int  21h
+              mov  ax, 4C00h
+              int  21h
+              END  start
+    sources: [wiki-masm]
 
 - id: nasm
   name: NASM (Netwide Assembler)
@@ -406,6 +679,25 @@
   research_status: stub
   confidence: high
   sources: [wiki-nasm]
+  example:
+    title: Hello, world on Linux x86-64
+    language: NASM
+    note: 'Calls the kernel directly: syscall 1 is write, 60 is exit. Assemble with nasm -felf64 hello.asm && ld hello.o. Tested.'
+    code: |2
+              global  _start
+              section .text
+      _start: mov     eax, 1          ; write(
+              mov     edi, 1          ;   stdout,
+              lea     rsi, [rel msg]  ;   msg,
+              mov     edx, len        ;   len)
+              syscall
+              mov     eax, 60         ; exit(0)
+              xor     edi, edi
+              syscall
+              section .data
+      msg:    db      "Hello, world", 10
+      len     equ     $ - msg
+    sources: [wiki-nasm]
 
 - id: asm-6502
   name: 6502 assembly
@@ -420,6 +712,21 @@
   research_status: stub
   confidence: high
   sources: [wiki-6502]
+  example:
+    title: Print a string
+    language: 6502 assembly (Apple II)
+    note: X indexes the string; BEQ stops at the zero terminator. JSR $FDED calls the Apple II monitor's COUT routine, which expects characters with the high bit set, hence the ORA.
+    code: |2
+              LDX #0
+      LOOP    LDA MSG,X
+              BEQ DONE
+              ORA #$80
+              JSR $FDED     ; COUT
+              INX
+              BNE LOOP
+      DONE    RTS
+      MSG     .BYTE "HELLO",0
+    sources: [wiki-6502]
 
 - id: asm-z80
   name: Z80 assembly
@@ -434,6 +741,20 @@
   research_status: stub
   confidence: high
   sources: [wiki-z80]
+  example:
+    title: Print a string (ZX Spectrum)
+    language: Z80 assembly
+    note: RST $10 is the Spectrum ROM's print-character routine. OR A sets the zero flag when A is 0, ending the loop at the terminator.
+    code: |2
+              LD   HL, MSG
+      LOOP:   LD   A, (HL)
+              OR   A
+              RET  Z
+              RST  $10
+              INC  HL
+              JR   LOOP
+      MSG:    DEFB "HELLO", 0
+    sources: [wiki-z80]
 
 - id: asm-68k
   name: 68k assembly
@@ -449,6 +770,20 @@
   research_status: stub
   confidence: medium
   sources: [wiki-68000]
+  example:
+    title: String length
+    language: 68k assembly
+    note: TST.B (A0)+ tests a byte and post-increments the address register, the PDP-11 idiom again. MOVEQ clears D0 in one short instruction.
+    code: |
+      strlen: lea     msg,a0
+              moveq   #0,d0
+      loop:   tst.b   (a0)+
+              beq.s   done
+              addq.l  #1,d0
+              bra.s   loop
+      done:   rts
+      msg:    dc.b    'HELLO',0
+    sources: [wiki-68000]
 
 - id: asm-arm
   name: ARM assembly
@@ -463,6 +798,17 @@
   research_status: stub
   confidence: high
   sources: [wiki-arm]
+  example:
+    title: GCD without branches in the loop body
+    language: ARM assembly (A32)
+    note: 'The textbook example of conditional execution: SUBGT and SUBLT only execute when the preceding CMP set the matching flags, so the loop needs a single branch.'
+    code: |
+      gcd:    CMP    r0, r1
+              SUBGT  r0, r0, r1
+              SUBLT  r1, r1, r0
+              BNE    gcd
+              BX     lr
+    sources: [wiki-arm]
 
 - id: asm-mips
   name: MIPS assembly
@@ -477,6 +823,20 @@
   research_status: stub
   confidence: high
   sources: [wiki-mips]
+  example:
+    title: Hello, world in SPIM
+    language: MIPS assembly (SPIM/MARS)
+    note: 'The SPIM and MARS simulators'' system calls: $v0 = 4 prints the string at $a0, $v0 = 10 exits.'
+    code: |2
+              .data
+      msg:    .asciiz "Hello, world\n"
+              .text
+      main:   li   $v0, 4
+              la   $a0, msg
+              syscall
+              li   $v0, 10
+              syscall
+    sources: [wiki-mips]
 
 - id: asm-risc-v
   name: RISC-V assembly
@@ -492,3 +852,21 @@
   research_status: stub
   confidence: high
   sources: [wiki-risc-v]
+  example:
+    title: Hello, world on Linux
+    language: RISC-V assembly (GNU as)
+    note: 'Linux system calls take their number in a7: 64 is write, 93 exit. Arguments go in a0-a2.'
+    code: |2
+              .globl _start
+              .text
+      _start: li    a0, 1          # stdout
+              la    a1, msg
+              li    a2, 13         # length
+              li    a7, 64         # write
+              ecall
+              li    a0, 0
+              li    a7, 93         # exit
+              ecall
+              .data
+      msg:    .ascii "Hello, world\n"
+    sources: [wiki-risc-v]

@@ -20,6 +20,17 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Antikythera_mechanism" }
   sources: [freeth-2006-antikythera, wiki-antikythera]
+  example:
+    title: What the gears compute
+    language: pseudocode (illustrative)
+    note: 'There is no program: the computation is the gear train. Turning the crank advances the date; fixed tooth ratios turn it into astronomical positions. 254 sidereal months fit into 19 years, and the front gearing reproduces that ratio. The back dials count the 235-month Metonic cycle and the 223-month Saros eclipse cycle.'
+    code: |
+      on crank turned by Δdays:
+        sun_angle   += Δdays × 360° / 365.25
+        moon_angle  += sun_angle_delta × 254 / 19      -- gears, not code
+        metonic_dial = month_count mod 235             -- 19-year calendar
+        saros_dial   = month_count mod 223             -- eclipse prediction
+    sources: [freeth-2006-antikythera]
 
 - id: banu-musa-flute-player
   name: Banū Mūsā automatic flute player
@@ -39,6 +50,17 @@
   research_status: draft
   confidence: medium
   sources: [koetsier-2001-programmable]
+  example:
+    title: A melody stored as pins
+    language: pseudocode (illustrative)
+    note: 'The rotating cylinder is the program and the pins are its instructions: each pin lifts a lever that opens one finger hole. Swap the cylinder and the same machine plays a different tune.'
+    code: |
+      cylinder = [ (t=0, hole 3), (t=1, hole 5), (t=2, hole 5), (t=3, hole 1), … ]
+      loop while water flows:
+        t ← cylinder position
+        for each pin at t: open its hole
+        air → flute
+    sources: [koetsier-2001-programmable]
 
 - id: jacquard-loom
   name: Jacquard loom
@@ -61,6 +83,15 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Jacquard_machine" }
   sources: [wiki-jacquard]
+  example:
+    title: One card, one row of the pattern
+    language: punched card (illustrative)
+    note: Each card is one pass of the shuttle. A hole lets a hooked needle through and lifts its warp thread; no hole leaves it down. The chain of laced cards is the program, read in order and looped for repeating patterns.
+    code: |
+      card 001:  ● ○ ○ ● ● ○ ○ ● ● ○ ○ ●     ● hole → lift warp thread
+      card 002:  ○ ● ● ○ ○ ● ● ○ ○ ● ● ○     ○ blank → leave it down
+      card 003:  ● ○ ○ ● ● ○ ○ ● ● ○ ○ ●
+      …          (chain loops back to card 001)
 
 - id: analytical-engine
   name: Analytical Engine
@@ -84,6 +115,16 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Analytical_engine" }
   sources: [menabrea-lovelace-1843, wiki-analytical-engine]
+  example:
+    title: Operation cards and variable cards
+    language: Analytical Engine card notation (illustrative)
+    note: 'Babbage split the program into two decks, as Jacquard''s loom had one: operation cards said what the Mill should do, variable cards said which columns of the Store to read and write. This computes V3 = (V1 + V2) × V1.'
+    code: |
+      Operation cards     Variable cards
+      ───────────────     ─────────────────────────
+      +                   V1, V2  →  V4
+      ×                   V4, V1  →  V3
+    sources: [menabrea-lovelace-1843]
 
 - id: lovelace-note-g
   name: Lovelace's Note G (Bernoulli numbers program)
@@ -110,6 +151,22 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Note_G" }
   sources: [menabrea-lovelace-1843]
+  example:
+    title: The first rows of Note G
+    language: Lovelace's table, Note G (1843)
+    year: 1843
+    note: The opening operations of the program computing the Bernoulli number B7, as a table of operation, input variables, output variables and the value produced. V1 holds 1, V2 holds 2, V3 holds n. Later rows loop back ('repeat operations 13 to 23'), the first published loop.
+    code: |
+      Op  Kind  Variables acted on   Result to       Value
+      1   ×     V2 × V3              V4, V5, V6      2n
+      2   −     V4 − V1              V4              2n − 1
+      3   +     V5 + V1              V5              2n + 1
+      4   ÷     V4 ÷ V5              V11             (2n−1)/(2n+1)
+      5   ÷     V11 ÷ V2             V11             ½·(2n−1)/(2n+1)
+      6   −     V13 − V11            V13             −½·(2n−1)/(2n+1) = A0
+      7   −     V3 − V1              V10             n − 1
+      …
+    sources: [menabrea-lovelace-1843]
 
 - id: hollerith-tabulator
   name: Hollerith tabulating machine
@@ -132,6 +189,15 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Tabulating_machine" }
   sources: [wiki-tabulating-machine]
+  example:
+    title: A census card
+    language: punched card (illustrative)
+    note: Each hole position means a fact about one person (sex, age group, birthplace). Electrical pins dropping through holes into mercury cups advanced counters. The 'program' was the wiring of which holes fed which counters, later done with plugboards.
+    code: |
+      ┌──────────────────────────────────────┐
+      │ M ●  F ○ │ 20-29 ● │ native ○ foreign ● │ …
+      └──────────────────────────────────────┘
+      pin through hole ⇒ circuit closes ⇒ counter[male]++ , counter[20-29]++ …
 
 - id: combinatory-logic
   name: Combinatory logic
@@ -148,6 +214,16 @@
   research_status: draft
   confidence: high
   sources: [wiki-combinatory-logic]
+  example:
+    title: Identity from S and K
+    language: SKI combinator calculus
+    note: 'Every computable function can be built from S and K alone, without variables. Even the identity combinator I is unnecessary: S K K behaves exactly like it. Unlambda programs are written in this calculus.'
+    code: |
+      K x y   = x
+      S x y z = x z (y z)
+
+      S K K x = K x (K x) = x        -- so I = S K K
+    sources: [wiki-combinatory-logic]
 
 - id: lambda-calculus
   name: Lambda calculus
@@ -195,3 +271,13 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Turing_machine" }
   sources: [turing-1936]
+  example:
+    title: Binary increment
+    language: Turing machine transition table
+    note: The head starts on the rightmost digit. It turns trailing 1s into 0s while moving left, then writes a 1 into the first 0 or blank. 1011 becomes 1100.
+    code: |
+      state  read  write  move  next
+      inc    1     0      L     inc
+      inc    0     1      –     halt
+      inc    _     1      –     halt
+    sources: [turing-1936]
