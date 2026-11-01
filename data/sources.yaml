@@ -2977,3 +2977,57 @@
   title: "Chrome for Developers: Native Client"
   url: https://developer.chrome.com/docs/native-client/
   checked: '2026-11-01'
+- id: wiki-advent-of-code
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Advent of Code"
+  url: https://en.wikipedia.org/wiki/Advent_of_Code
+  checked: '2026-11-01'
+- id: aoc-2016-12
+  type: web
+  primary: true
+  title: "Advent of Code 2016, day 12: Leonardo's Monorail (Eric Wastl)"
+  url: https://adventofcode.com/2016/day/12
+  checked: '2026-11-01'
+- id: aoc-2016-23
+  type: web
+  primary: true
+  title: "Advent of Code 2016, day 23: Safe Cracking (Eric Wastl)"
+  url: https://adventofcode.com/2016/day/23
+  checked: '2026-11-01'
+- id: aoc-2016-25
+  type: web
+  primary: true
+  title: "Advent of Code 2016, day 25: Clock Signal (Eric Wastl)"
+  url: https://adventofcode.com/2016/day/25
+  checked: '2026-11-01'
+- id: aoc-2017-18
+  type: web
+  primary: true
+  title: "Advent of Code 2017, day 18: Duet (Eric Wastl)"
+  url: https://adventofcode.com/2017/day/18
+  checked: '2026-11-01'
+- id: aoc-2017-23
+  type: web
+  primary: true
+  title: "Advent of Code 2017, day 23: Coprocessor Conflagration (Eric Wastl)"
+  url: https://adventofcode.com/2017/day/23
+  checked: '2026-11-01'
+- id: aoc-2019-02
+  type: web
+  primary: true
+  title: "Advent of Code 2019, day 2: 1202 Program Alarm (Eric Wastl)"
+  url: https://adventofcode.com/2019/day/2
+  checked: '2026-11-01'
+- id: aoc-2019-05
+  type: web
+  primary: true
+  title: "Advent of Code 2019, day 5: Sunny with a Chance of Asteroids (Eric Wastl)"
+  url: https://adventofcode.com/2019/day/5
+  checked: '2026-11-01'
+- id: aoc-2019-09
+  type: web
+  primary: true
+  title: "Advent of Code 2019, day 9: Sensor Boost (Eric Wastl)"
+  url: https://adventofcode.com/2019/day/9
+  checked: '2026-11-01'

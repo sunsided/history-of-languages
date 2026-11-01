@@ -813,3 +813,107 @@
       blc(M N) = 01 blc(M) blc(N)
       blc(i) = 1i0
     sources: [tromp-blc]
+
+- id: assembunny
+  name: assembunny
+  kind: language
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    first_appeared: { year: 2016, date: "2016-12-12", precision: exact, note: "Advent of Code 2016 day 12, \"Leonardo's Monorail\"; puzzles were released daily at midnight EST." }
+  creators: [{ name: Eric Wastl, role: puzzle author }]
+  status: historical
+  tags:
+    paradigm: [imperative]
+  milestones:
+    - { version: "day 23", year: 2016, introduces: [self-modifying-code], summary: "tgl x toggles the instruction x away: inc becomes dec, jnz becomes cpy and so on." }
+    - { version: "day 25", year: 2016, summary: "out x transmits a value as the next clock-signal bit." }
+  summary: >
+    "Assembunny code": a four-register toy assembly (cpy, inc, dec, jnz with relative jumps) from Advent of
+    Code 2016. Later puzzles reused it: day 23 added tgl, which rewrites another instruction at run time, and day
+    25 added out to emit a clock signal, so solvers kept extending one interpreter.
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://adventofcode.com/2016/day/12" }
+  sources: [aoc-2016-12, wiki-advent-of-code, aoc-2016-23, aoc-2016-25]
+  example:
+    title: Copy, increment, jump
+    language: assembunny
+    note: "The example from the day 12 puzzle. jnz a 2 skips the final dec because a is not zero, so a ends as 42; checked with a small interpreter."
+    code: |
+      cpy 41 a
+      inc a
+      inc a
+      dec a
+      jnz a 2
+      dec a
+    sources: [aoc-2016-12]
+
+- id: duet
+  name: Duet
+  kind: language
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    first_appeared: { year: 2017, date: "2017-12-18", precision: exact, note: "Advent of Code 2017 day 18, \"Duet\"; puzzles were released daily at midnight EST." }
+  creators: [{ name: Eric Wastl, role: puzzle author }]
+  status: historical
+  tags:
+    paradigm: [imperative]
+  milestones:
+    - { version: "day 23", year: 2017, summary: "Coprocessor Conflagration: \"a variant of the kind you saw recently on that tablet\" with set, sub, mul, jnz and registers a to h." }
+  summary: >
+    "Strange assembly code labeled simply \"Duet\"" from Advent of Code 2017: registers named by letters,
+    set/add/mul/mod, jgz, and snd/rcv, which part one reads as playing and recovering sounds. Day 23 reused a
+    variant (set, sub, mul, jnz) on a coprocessor.
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://adventofcode.com/2017/day/18" }
+  sources: [aoc-2017-18, wiki-advent-of-code, aoc-2017-23]
+  example:
+    title: Sounds and jumps
+    language: Duet
+    note: "The example from the day 18 puzzle. snd plays 4 (3 squared mod 5); rcv a is skipped while a is 0, and after the jumps the first non-zero rcv recovers 4. Checked with a small interpreter."
+    code: |
+      set a 1
+      add a 2
+      mul a a
+      mod a 5
+      snd a
+      set a 0
+      rcv a
+      jgz a -1
+      set a 1
+      jgz a -2
+    sources: [aoc-2017-18]
+
+- id: intcode
+  name: Intcode
+  kind: language
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    first_appeared: { year: 2019, date: "2019-12-02", precision: exact, note: "Advent of Code 2019 day 2, \"1202 Program Alarm\"; puzzles were released daily at midnight EST." }
+  creators: [{ name: Eric Wastl, role: puzzle author }]
+  status: historical
+  tags:
+    paradigm: [imperative]
+  milestones:
+    - { version: "day 2", year: 2019, introduces: [self-modifying-code], summary: "Opcodes 1 (add), 2 (multiply) and 99 (halt); programs read and write their own memory." }
+    - { version: "day 5", year: 2019, summary: "Opcodes 3 (input) and 4 (output); position and immediate parameter modes packed into the opcode." }
+    - { version: "day 9", year: 2019, summary: "Relative mode and opcode 9 (adjust relative base): a \"complete Intcode computer\"." }
+  summary: >
+    A machine code of comma-separated integers, built up across Advent of Code 2019: day 2 introduced add,
+    multiply and halt (1, 2, 99) on a program that is its own memory; day 5 added input, output and parameter
+    modes; day 9 added a relative base and called the result a "complete Intcode computer".
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://adventofcode.com/2019/day/2" }
+  sources: [aoc-2019-02, wiki-advent-of-code, aoc-2019-05, aoc-2019-09]
+  example:
+    title: A program that prints itself
+    language: Intcode
+    note: "An example from day 9: it outputs a copy of itself. 109,1 moves the relative base; 204,-1 outputs memory[base-1]; the program counts a cell at address 100 up to 16. Checked with a small interpreter."
+    code: |
+      109,1,204,-1,1001,100,1,100,1008,100,16,101,1006,101,0,99
+    sources: [aoc-2019-09]

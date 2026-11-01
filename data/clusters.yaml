@@ -604,3 +604,13 @@
   name: Code-golf languages
   parent: esoteric
   research_status: stub
+- id: esoteric/puzzle
+  name: Puzzle machine languages
+  parent: esoteric
+  summary: "Toy instruction sets invented for programming puzzles, chiefly Advent of Code, where the puzzle input is a program and the task is to build its interpreter."
+  research_status: draft
+  key_sources: [wiki-advent-of-code]
+  backlog:
+    - { name: "Advent of Code 2015 day 23 register machine", year: 2015, hint: "\"Opening the Turing Lock\": two registers, hlf/tpl/inc/jmp/jie/jio. Unnamed; add only if a name or later reuse turns up." }
+    - { name: "Advent of Code 2018 device opcodes", year: 2018, hint: "Days 16, 19 and 21: 16 opcodes (addr ... eqrr) and an #ip directive binding a register to the instruction pointer. Unnamed on the puzzle pages (\"ElfCode\" is a fan name, unconfirmed)." }
+    - { name: "Advent of Code 2020 handheld boot code", year: 2020, hint: "Day 8: acc/jmp/nop. Unnamed, used once." }
