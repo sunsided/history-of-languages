@@ -139,3 +139,12 @@ task lint:workflows   # actionlint + zizmor over .github/
 The static build bundles the dataset and search index into the app and copies the photos it references.
 `.github/workflows/pages.yml` validates the data, type-checks the viewer and deploys that build to GitHub
 Pages on every push to `main` that touches the data, photos or viewer.
+
+## License
+
+The dataset, code and documentation are licensed under the
+[European Union Public Licence v. 1.2](LICENSE) (EUPL-1.2).
+
+The photos in `assets/media/` are not covered by it: each keeps its own Wikimedia Commons license
+(public domain, CC0, CC BY, CC BY-SA or GFDL), recorded with its author and source in `data/media.yaml`
+and shown next to the image in the viewer.
