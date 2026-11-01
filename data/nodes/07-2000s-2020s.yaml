@@ -511,6 +511,7 @@
     features: [mixins]
   milestones:
     - { version: "1.9", year: 2015, introduces: [async-await] }
+    - { version: "2.0", year: 2018, summary: "August 2018, with a type system; introduced dart2js, the Dart-based compiler to JavaScript for production builds, which \"evolved from earlier compilers\"." }
     - { version: "2.12", year: 2021, introduces: [null-safety] }
   summary: "Google's planned JavaScript replacement, by V8's creators; found its niche as Flutter's language. Concurrency via single-threaded isolates with async/await."
   relations:
@@ -7288,3 +7289,142 @@
   confidence: low
   links: { wikipedia: "https://en.wikipedia.org/wiki/WebGPU" }
   sources: [wiki-webgpu]
+
+- id: oxygene
+  name: Oxygene
+  aliases: [Chrome]
+  kind: language
+  category: general
+  cluster: algol/pascal-dialects
+  origin:
+    first_appeared: { year: 2005, precision: year, note: "Infobox." }
+    places: [{ institution: RemObjects Software }]
+  status: maintained
+  tags:
+    paradigm: [imperative, object-oriented, functional, structured]
+  summary: >
+    "Oxygene (formerly named Chrome) is a programming language developed by RemObjects Software for
+    Microsoft's Common Language Infrastructure (CLI), the Java platform, and Cocoa." It "is based on the
+    language Delphi Object Pascal, and influences from C#, Eiffel, Java, F#, and others", and "is designed
+    to be a 'reinvention' of the language" rather than backward compatible. From 2008 to 2012 its compiler
+    was the backend of Embarcadero Prism; Java and Android support came in 2011.
+  notes: >
+    The Object Pascal article says Delphi's .NET support (Delphi 8 to 2007) "now has been replaced by
+    another language, Oxygene".
+  relations:
+    - { type: dialect_of, to: object-pascal, weight: strong, confidence: high, sources: [wiki-oxygene], note: "\"based on the language Delphi Object Pascal\"." }
+    - { type: influenced_by, to: delphi, weight: strong, confidence: high, sources: [wiki-oxygene], note: "\"has its origins in Object Pascal in general and Delphi in particular\"." }
+    - { type: influenced_by, to: csharp, weight: moderate, confidence: high, sources: [wiki-oxygene], note: "Infobox: influenced by \"Delphi Object Pascal, C#\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Oxygene_(programming_language)" }
+  sources: [wiki-oxygene, wiki-object-pascal]
+  example:
+    title: "Hello World"
+    language: "Oxygene"
+    note: "From Wikipedia's Oxygene article; the page's escaped = signs are restored."
+    code: |
+      namespace HelloWorld;
+      interface
+
+      type
+        HelloClass = class
+        public
+          class method Main;
+        end;
+
+      implementation
+
+      class method HelloClass.Main;
+      begin
+        writeLn('Hello World!');
+      end;
+
+      end.
+
+- id: ironruby
+  name: IronRuby
+  kind: language
+  category: general
+  cluster: managed/dynamic
+  origin:
+    first_appeared: { year: 2007, date: "2007-08-31", precision: exact, note: "\"John Lam and the DLR Design Team released the code in its pre-alpha stage on RubyForge.\"" }
+    places: [{ institution: Microsoft }]
+  creators:
+    - { name: John Lam, role: lead }
+  status: historical
+  tags:
+    paradigm: [object-oriented]
+    typing: [dynamic-typing]
+    features: [host-interop]
+  milestones:
+    - { version: "1.0", year: 2010, summary: "12 April 2010; re-licensed under Apache 2.0 with the DLR in July 2010." }
+    - { version: "1.1.3", year: 2011, summary: "Last release, 13 March 2011." }
+  summary: >
+    "an implementation of the Ruby programming language targeting Microsoft .NET Framework", built on the
+    Dynamic Language Runtime, "a library running on top of the Common Language Infrastructure that provides
+    dynamic typing and dynamic method dispatch". It is written in C#. "The project is currently inactive,
+    with the last release of IronRuby (version 1.1.3) being in March 2011."
+  relations:
+    - { type: dialect_of, to: ruby, weight: strong, confidence: high, sources: [wiki-ironruby], note: "\"an implementation of the Ruby programming language\" on .NET." }
+    - { type: implemented_in, to: csharp, weight: strong, confidence: high, sources: [wiki-ironruby] }
+    - { type: influenced_by, to: ironpython, weight: weak, confidence: medium, sources: [wiki-ironruby], note: "Both built on the DLR; the IronPython node says the DLR \"also carried IronRuby\". The IronRuby page states no direct influence." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IronRuby" }
+  sources: [wiki-ironruby]
+  example:
+    title: "Ruby in a Silverlight page"
+    language: "IronRuby"
+    note: "From Wikipedia's IronRuby article: scripts were passed to IronRuby like client-side JavaScript in script tags."
+    code: |
+      //Client-side script passed to IronRuby and Silverlight.
+      <script type="text/ruby">
+          window.Alert("Hello from Ruby")
+      </script>
+
+- id: opa
+  name: Opa
+  kind: language
+  category: domain-specific
+  cluster: web/compile-to-js
+  origin:
+    first_appeared: { year: 2011, precision: year, note: "Source released on GitHub in June 2011; first presented at an OWASP conference in 2010." }
+    places: [{ institution: MLstate }]
+  tags:
+    paradigm: [functional, imperative]
+    typing: [static-typing, strong-typing, type-inference]
+    features: [compiles-to-javascript]
+    domain: [web]
+  milestones:
+    - { version: "0.9.0", year: 2012, summary: "Database mapping for MongoDB." }
+    - { version: "1.1.0", year: 2013, summary: "PostgreSQL support." }
+    - { version: "1.1.1", year: 2014, summary: "Last stable release, 8 March 2014." }
+  summary: >
+    "a programming language for developing scalable web applications", where "complete programs are
+    written in Opa and subsequently compiled to Node.js on a server and JavaScript on a client, with the
+    compiler automating all communication between the two." Developed by MLstate and implemented mostly in
+    OCaml.
+  notes: >
+    Licence: AGPL for the compiler, MIT for the library.
+  relations:
+    - { type: influenced_by, to: ocaml, weight: strong, confidence: high, sources: [wiki-opa], note: "Infobox: influenced by \"OCaml, Erlang, JavaScript\"." }
+    - { type: influenced_by, to: erlang, weight: moderate, confidence: high, sources: [wiki-opa], note: "Infobox." }
+    - { type: influenced_by, to: javascript, weight: moderate, confidence: high, sources: [wiki-opa], note: "Infobox." }
+    - { type: implemented_in, to: ocaml, weight: strong, confidence: high, sources: [wiki-opa], note: "Infobox implementation language lists OCaml first, with Opa, JavaScript and others." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Opa_(programming_language)" }
+  sources: [wiki-opa]
+  example:
+    title: "A one-page web application"
+    language: "Opa"
+    note: "From Wikipedia's Opa article: a web application that outputs \"Hello, World\"."
+    code: |
+      server = Server.one_page_bundle("Hello World",
+        @static_resource_directory("resources"),
+        ~[],
+        function() {
+          <h1>Hello, World</h1>
+        }
+      )

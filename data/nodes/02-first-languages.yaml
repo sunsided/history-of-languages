@@ -1039,3 +1039,80 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Autocode" }
   sources: [wiki-autocode]
+
+- id: mad
+  name: MAD
+  aliases: [Michigan Algorithm Decoder]
+  kind: language
+  category: scientific
+  cluster: algol
+  origin:
+    first_appeared: { year: 1959, precision: year, note: "\"Developed in 1959 at the University of Michigan\"." }
+    places: [{ institution: University of Michigan }]
+  creators:
+    - { name: Bernard Galler, role: co-designer }
+    - { name: Bruce Arden, role: co-designer }
+    - { name: Robert M. Graham, role: co-designer }
+  tags:
+    paradigm: [procedural, imperative, structured]
+    typing: [static-typing, strong-typing]
+    domain: [education]
+  milestones:
+    - { version: "MAD/I", year: 1965, summary: "\"an 'extended' version of MAD for the IBM System/360\" under MTS; \"Work on the new compiler started in 1965\"." }
+  summary: >
+    The Michigan Algorithm Decoder, a language and compiler for the IBM 704 and its successors, later
+    UNIVAC and System/370 machines. Wikipedia calls it "a variant of the ALGOL language" and adds that
+    "While MAD was motivated by ALGOL 58, it does not resemble ALGOL 58 in any significant way." It "was
+    widely used to teach programming at colleges and universities during the 1960s" and played a minor
+    role in the development of CTSS, Multics and the Michigan Terminal System.
+  notes: >
+    GOM (Good Old MAD), a reimplementation of 7090 MAD for System/370 under MTS, was "created in the early
+    1980s by Don Boettner". In the mid-1960s MAD was ported at the University of Maryland to the UNIVAC 1108.
+  relations:
+    - { type: influenced_by, to: algol-58, weight: moderate, confidence: high, sources: [wiki-mad], note: "Infobox: influenced by \"IAL, ALGOL 58\"; \"motivated by ALGOL 58\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MAD_(programming_language)" }
+  sources: [wiki-mad]
+  example:
+    title: "Hello, world"
+    language: "MAD"
+    note: "From Wikipedia's MAD article; the page's escaped asterisk is restored."
+    code: |
+      PRINT FORMAT HELLOW
+      VECTOR VALUES HELLOW=$13h0Hello, world*$
+      END OF PROGRAM
+
+- id: neliac
+  name: NELIAC
+  aliases: [Navy Electronics Laboratory International ALGOL Compiler]
+  kind: language
+  category: scientific
+  cluster: algol
+  origin:
+    first_appeared: { year: 1958, precision: year, note: "\"developed by the Navy Electronics Laboratory (NEL) in 1958\"." }
+    places: [{ institution: Navy Electronics Laboratory }]
+  creators:
+    - { name: Harry Huskey, role: designer }
+    - { name: Maurice Halstead, role: designer }
+    - { name: Niklaus Wirth, role: contributor }
+  status: extinct
+  tags:
+    paradigm: [procedural, imperative, structured]
+    typing: [static-typing, strong-typing]
+    features: [self-hosting]
+  summary: >
+    "a dialect and compiler implementation of the programming language ALGOL 58", and in Wikipedia's words
+    "the world's first self-compiling compiler, a trait called bootstrapping". It was "the brainchild of
+    Harry Huskey", supported by Maurice Halstead, head of the computing center at NEL. The earliest version
+    ran on the prototype AN/USQ-17 ("the Countess"); NELIAC and ALGOL diverged within two years, and it
+    "fell out of favor after the Navy Department standardized on compilers with commercial support."
+  notes: >
+    The article carries "needs more citations" banners; the self-compiling claim should be checked
+    against a primary source. The Royal Canadian Navy used it from 1967 to 1971.
+  relations:
+    - { type: dialect_of, to: algol-58, weight: strong, confidence: high, sources: [wiki-neliac], note: "\"a dialect and compiler implementation of the programming language ALGOL 58\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/NELIAC" }
+  sources: [wiki-neliac]

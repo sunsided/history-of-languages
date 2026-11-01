@@ -266,6 +266,7 @@
   nodes:
   - cal
   - mesa
+  - euclid
 - id: person-carl-hewitt
   kind: person
   person: Carl Hewitt
@@ -764,6 +765,9 @@
   - modula-2
   - oberon
   - oberon-2
+  - neliac
+  - euler
+  - modula
 - id: person-ole-johan-dahl
   kind: person
   person: Ole-Johan Dahl
@@ -961,6 +965,7 @@
   wiki: Stephen R. Bourne
   nodes:
   - bourne-shell
+  - algol-68c
 - id: person-steve-furber
   kind: person
   person: Steve Furber
@@ -1062,6 +1067,7 @@
   wiki: Bill Gates
   nodes:
   - microsoft-basic
+  - color-basic
 - id: person-paul-allen
   kind: person
   person: Paul Allen
@@ -1610,6 +1616,7 @@
   wiki: Jim Horning
   nodes:
   - xpl
+  - euclid
 - id: person-bob-sproull
   kind: person
   person: Bob Sproull
@@ -1664,6 +1671,7 @@
   wiki: James Cordy
   nodes:
   - txl
+  - euclid
 - id: person-roger-hui
   kind: person
   person: Roger Hui
@@ -1817,6 +1825,7 @@
   wiki: James G. Mitchell
   nodes:
   - watfor
+  - euclid
 - id: person-j-wesley-graham
   kind: person
   person: J. Wesley Graham
@@ -2040,3 +2049,81 @@
   wiki: Bill Paxton (computer scientist)
   nodes:
   - postscript
+- id: person-bernard-galler
+  kind: person
+  person: Bernard Galler
+  wiki: Bernard Galler
+  nodes:
+  - mad
+- id: person-bruce-arden
+  kind: person
+  person: Bruce Arden
+  wiki: Bruce Arden
+  nodes:
+  - mad
+- id: person-robert-m-graham
+  kind: person
+  person: Robert M. Graham
+  wiki: Robert M. Graham (computer scientist)
+  nodes:
+  - mad
+- id: person-harry-huskey
+  kind: person
+  person: Harry Huskey
+  wiki: Harry Huskey
+  nodes:
+  - neliac
+- id: person-michael-guy
+  kind: person
+  person: Michael Guy
+  wiki: Michael Guy
+  nodes:
+  - algol-68c
+- id: person-susan-g-bond
+  kind: person
+  person: Susan G. Bond
+  wiki: Susan G. Bond
+  nodes:
+  - algol-68-r
+- id: person-william-a-wulf
+  kind: person
+  person: William A. Wulf
+  wiki: William A. Wulf
+  nodes:
+  - alphard
+- id: person-mary-shaw
+  kind: person
+  person: Mary Shaw
+  wiki: Mary Shaw (computer scientist)
+  nodes:
+  - alphard
+- id: person-gerald-j-popek
+  kind: person
+  person: Gerald J. Popek
+  wiki: Gerald J. Popek
+  nodes:
+  - euclid
+- id: person-ric-holt
+  kind: person
+  person: Ric Holt
+  wiki: Ric Holt
+  nodes:
+  - euclid
+- id: person-frank-ostrowski
+  kind: person
+  person: Frank Ostrowski
+  wiki: Frank Ostrowski
+  nodes:
+  - gfa-basic
+- id: person-steve-omohundro
+  kind: person
+  person: Steve Omohundro
+  wiki: Steve Omohundro
+  nodes:
+  - sather
+- id: person-ken-kennedy
+  kind: person
+  person: Ken Kennedy
+  wiki: Ken Kennedy (computer scientist)
+  nodes:
+  - hpf

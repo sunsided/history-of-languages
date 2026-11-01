@@ -409,6 +409,11 @@
     embedded consumer devices, then the web and enterprise. Its arc from monitors (1996) via
     CompletableFuture (2014) to virtual threads (2023) is the explicit decision not to adopt
     async/await.
+  notes: >
+    Google Web Toolkit (2006) compiles Java to JavaScript: "the GWT cross-compiler translates the Java
+    application to standalone JavaScript files", with JavaScript versions of common java.lang and java.util
+    classes and handwritten JavaScript mixed in through JSNI (Wikipedia: Google Web Toolkit). It is a
+    compiler, not a dialect, so it is not a node.
   relations:
     - { type: influenced_by, to: emerald, weight: weak, confidence: medium, sources: [wiki-emerald], note: "Emerald infobox \"Influenced: Java, Singularity\"; what travelled is not said." }
     - { type: influenced_by, to: cpp, aspects: [classes], weight: strong, confidence: high }
@@ -421,7 +426,7 @@
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Java_(programming_language)" }
-  sources: [wiki-java, jep-444]
+  sources: [wiki-java, jep-444, wiki-gwt]
   example:
     title: Virtual threads instead of async/await
     language: Java 21
@@ -473,6 +478,12 @@
     Eich was hired to "put Scheme in the browser" and told to make it look like Java. The result:
     Scheme-ish closures, Self's prototypes, Java's syntax. Its single-threaded event loop made
     callbacks, then promises, then async/await the defining concurrency story of the web.
+  notes: >
+    ECMAScript 4, the abandoned fourth edition, "would have been the first major update to ECMAScript
+    since the 3rd edition was published in 1999" and introduced "a strict typing system". "The 4th
+    edition was abandoned due to political differences concerning language complexity"; by August 2008 it
+    had been scaled back into ECMAScript Harmony, and some features reached the sixth edition (Wikipedia:
+    ECMAScript version history).
   relations:
     - { type: influenced_by, to: scheme, aspects: [closures, first-class-functions], weight: strong, confidence: high }
     - { type: influenced_by, to: self, aspects: [prototypes], weight: strong, confidence: high }
@@ -485,7 +496,7 @@
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/JavaScript" }
-  sources: [wirfs-brock-eich-2020-javascript]
+  sources: [wirfs-brock-eich-2020-javascript, wiki-ecmascript-version-history]
   example:
     title: "Ten days, then compatibility forever"
     language: "JavaScript"
@@ -4838,3 +4849,158 @@
   confidence: low
   links: { wikipedia: "https://en.wikipedia.org/wiki/Algebraic_Logic_Functional_programming_language" }
   sources: [wiki-alf]
+
+- id: sather
+  name: Sather
+  kind: language
+  category: general
+  cluster: algol/adt
+  origin:
+    first_appeared: { year: 1990, precision: circa, note: "\"It originated circa 1990 at the International Computer Science Institute (ICSI)\"." }
+    places: [{ institution: International Computer Science Institute }]
+  creators:
+    - { name: Steve Omohundro, role: lead }
+  status: historical
+  tags:
+    paradigm: [object-oriented, functional]
+    typing: [static-typing, strong-typing]
+    memory: [garbage-collection]
+    features: [generics, iterators]
+  milestones:
+    - { version: "1.1", year: 1995, summary: "Last Berkeley release." }
+    - { version: "1.2.3", year: 2007, summary: "Last GNU Sather release, July 2007." }
+  summary: >
+    An object-oriented language from ICSI at Berkeley, "developed by an international team led by Steve
+    Omohundro". It "supports garbage collection and generics by subtypes". "Originally, it was based on
+    Eiffel, but it has diverged, and now includes several functional programming features"; the name is
+    inspired by Eiffel. The ICSI compiler, which compiles to C, became GNU Sather; it "is currently not
+    maintained."
+  notes: >
+    Variants: Sather-K (Karlsruhe), Sather-W (Waikato, Sather 1.3) and pSather, a parallel version for NUMA
+    machines with a shared-memory model. The infobox lists Cool as influenced; it is not a node. The old
+    backlog hint said Sather's iterators link CLU to C#; that is not on the page and is not stored.
+  relations:
+    - { type: influenced_by, to: eiffel, weight: strong, confidence: high, sources: [wiki-sather], note: "\"Originally, it was based on Eiffel\"." }
+    - { type: influenced_by, to: clu, weight: moderate, confidence: high, sources: [wiki-sather], note: "Infobox: influenced by \"Eiffel, CLU, Common Lisp, Scheme\"." }
+    - { type: influenced_by, to: common-lisp, weight: weak, confidence: high, sources: [wiki-sather], note: "Infobox." }
+    - { type: influenced_by, to: scheme, weight: weak, confidence: high, sources: [wiki-sather], note: "Infobox." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Sather" }
+  sources: [wiki-sather]
+  example:
+    title: "Hello World"
+    language: "Sather"
+    note: "From Wikipedia's Sather article; the fetched markup showed \"\\\\n\", restored here as a single escape. Leading space removed."
+    code: |
+      class HELLO_WORLD is
+       main is
+        #OUT+"Hello World\n";
+       end;
+      end;
+
+- id: hpf
+  name: High Performance Fortran
+  aliases: [HPF]
+  kind: language
+  category: scientific
+  cluster: fortran
+  origin:
+    first_appeared: { year: 1993, precision: year, note: "\"The first version of the HPF Report was published in 1993.\"" }
+    places: [{ institution: High Performance Fortran Forum }]
+  creators:
+    - { name: Ken Kennedy, role: chair }
+  status: historical
+  tags:
+    paradigm: [imperative, array-programming]
+    concurrency: [data-parallelism]
+    domain: [hpc, scientific-computing]
+  summary: >
+    "an extension of Fortran 90 designed to support parallel computing", developed by the High Performance
+    Fortran Forum, "convened and chaired by Ken Kennedy of Rice University". "HPF employs a data-parallel
+    model of computation", with compiler directives for array alignment and distribution "influenced by
+    prior efforts such as Fortran D and Vienna Fortran". Adoption was limited and "most developers have
+    transitioned to using OpenMP", but "Some HPF capabilities were incorporated into the Fortran 95
+    standard."
+  notes: >
+    HPF 2.0 "removed features already standardized in Fortran 95" (year not stated). Fortran D and Vienna
+    Fortran are not nodes.
+  relations:
+    - { type: superset_of, to: fortran, from_version: "Fortran 90", weight: strong, confidence: high, sources: [wiki-hpf], note: "\"an extension of Fortran 90\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/High_Performance_Fortran" }
+  sources: [wiki-hpf]
+
+- id: vba
+  name: Visual Basic for Applications
+  aliases: [VBA]
+  kind: language
+  category: scripting
+  cluster: basic/microsoft
+  origin:
+    first_appeared: { year: 1993, precision: year, note: "\"The first Microsoft application to debut VBA was Microsoft Excel 5.0 in 1993, based on Microsoft Visual Basic 3.0.\"" }
+    places: [{ institution: Microsoft }]
+  status: maintained
+  tags:
+    paradigm: [multi-paradigm, event-driven]
+    features: [intermediate-code]
+    domain: [business-data-processing]
+  summary: >
+    "an implementation of Microsoft's event-driven programming language Visual Basic 6.0 built into most
+    desktop Microsoft Office applications." It "supersedes and expands on the abilities of earlier
+    application-specific macro programming languages such as Word's WordBASIC", and is compiled to
+    Microsoft P-Code. Although classic Visual Basic is no longer updated, "the VBA implementation in Office
+    continues to be updated to support new Office features."
+  notes: >
+    "Compatibility ends with Visual Basic version 6; VBA is incompatible with Visual Basic .NET (VB.NET)."
+    The version history (VBA 5.0 in Office 97, 6.x in Office 2000, 7.0 in Office 2010) was only read as a
+    tool summary and is not recorded as milestones yet.
+  relations:
+    - { type: dialect_of, to: visual-basic, weight: strong, confidence: high, sources: [wiki-vba], note: "\"an implementation of ... Visual Basic 6.0\"; first based on Visual Basic 3.0." }
+    - { type: influenced_by, to: quickbasic, weight: moderate, confidence: high, sources: [wiki-vba], note: "Infobox: influenced by \"QuickBASIC, Visual Basic (classic)\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Visual_Basic_for_Applications" }
+  sources: [wiki-vba]
+
+- id: component-pascal
+  name: Component Pascal
+  aliases: [Oberon/L]
+  kind: language
+  category: general
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 1997, precision: year, note: "Infobox; \"originally named Oberon/L\". The IDE was first released in 1994 as Oberon/F." }
+    places: [{ institution: Oberon microsystems }]
+  status: maintained
+  tags:
+    paradigm: [imperative, structured, modular, object-oriented]
+    typing: [static-typing, strong-typing]
+  milestones:
+    - { version: "1.5", year: 2005, summary: "Open-source BlackBox Component Builder, December 2005." }
+    - { version: "1.6", year: 2013, summary: "Final release by Oberon microsystems; volunteers took over from 2014." }
+  summary: >
+    "a programming language in the tradition of Niklaus Wirth's Pascal, Modula-2, Oberon and Oberon-2". It
+    "bears the name of the language Pascal and preserves its heritage, but is incompatible with Pascal.
+    Instead, it is a minor variant and refinement of Oberon-2 with a more expressive type system and
+    built-in string support." It was designed by Oberon microsystems, an ETH Zürich spin-off, for the
+    BlackBox Component Builder.
+  relations:
+    - { type: dialect_of, to: oberon-2, weight: strong, confidence: high, sources: [wiki-component-pascal], note: "\"a minor variant and refinement of Oberon-2\"." }
+    - { type: influenced_by, to: pascal, weight: weak, confidence: high, sources: [wiki-component-pascal], note: "Infobox: influenced by \"Pascal, Oberon, Oberon-2\"." }
+    - { type: influenced_by, to: oberon, weight: moderate, confidence: high, sources: [wiki-component-pascal], note: "Infobox." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Component_Pascal", homepage: "https://blackboxframework.org" }
+  sources: [wiki-component-pascal]
+  example:
+    title: "The module production of the grammar"
+    language: "EBNF"
+    note: "Not a program: the only code on Wikipedia's page is the EBNF from the Language Report; this is its opening production."
+    code: |
+      Module = MODULE ident ";"
+                 [ImportList] DeclSeq
+                 [BEGIN StatementSeq]
+                 [CLOSE StatementSeq]
+               END ident ".".

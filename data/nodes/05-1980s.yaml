@@ -988,12 +988,13 @@
     same extensions and name for Turbo Pascal (Mac 1986, DOS 1989), and Delphi carried the language on;
     Wikipedia lists C#, Java and Nim among the languages it influenced.
   relations:
+    - { type: successor_of, to: clascal, weight: strong, confidence: high, sources: [wiki-clascal], note: "\"Clascal was the basis for Object Pascal on the Apple Macintosh in 1985\"; \"This was renamed Object Pascal.\"" }
     - { type: dialect_of, to: pascal, weight: strong, confidence: high, sources: [wiki-object-pascal] }
     - { type: influenced_by, to: smalltalk, aspects: [objects, inheritance], weight: moderate, confidence: low, note: "Tesler came from Xerox PARC and Smalltalk; the article read does not state a Smalltalk influence. Check Tesler's own accounts." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Object_Pascal" }
-  sources: [wiki-object-pascal]
+  sources: [wiki-object-pascal, wiki-clascal]
   example:
     title: "An object type with a method"
     language: "Object Pascal (Turbo Pascal 5.5 style)"
@@ -2363,13 +2364,14 @@
     computer science course learn how to code": "a descendant of Pascal, Euclid, and SP/k with a clean syntax and
     precise machine-independent semantics". Holt Software Associates developed it further.
   notes: >
-    Euclid and SP/k (also Toronto) are not nodes yet; SP/k is in the education backlog.
+    Concurrent Euclid and SP/k (also Toronto) are not nodes yet; SP/k is in the education backlog.
   relations:
+    - { type: influenced_by, to: euclid, weight: strong, confidence: high, sources: [wiki-euclid], note: "\"Descendants of Euclid include the Concurrent Euclid programming language and the Turing programming language.\"" }
     - { type: influenced_by, to: pascal, weight: strong, confidence: high, sources: [wiki-turing-language], note: "\"a descendant of Pascal, Euclid, and SP/k\"" }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Turing_(programming_language)" }
-  sources: [wiki-turing-language]
+  sources: [wiki-turing-language, wiki-euclid]
   example:
     title: Factorial with input checking
     language: Turing
@@ -5234,3 +5236,340 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/C*" }
   sources: [wiki-c-star]
+
+- id: chill
+  name: CHILL
+  aliases: [CCITT High Level Language]
+  kind: language
+  category: domain-specific
+  cluster: algol/ada
+  origin:
+    first_appeared: { year: 1980, precision: year, note: "\"The first specification of the CHILL language was published in 1980, a few years before Ada.\"" }
+    places: [{ institution: CCITT }]
+  status: legacy
+  tags:
+    paradigm: [procedural]
+    typing: [static-typing, strong-typing]
+    domain: [telecommunications]
+    features: [standardization]
+  summary: >
+    "a procedural programming language designed for use in telecommunication switches", defined by the
+    CCITT as ITU-T Rec. Z.200 (equivalent ISO/IEC 9496:2003). It "is similar in size and complexity to the
+    original Ada language." "In late 1999 CCITT stopped maintaining the CHILL standard", but it is "still
+    used for legacy systems in some telecommunication companies and for signal box programming."
+  notes: >
+    An object-oriented version, Object CHILL, was also developed. A free CHILL compiler was bundled with GCC
+    up to version 2.95.
+  relations:
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: high, sources: [wiki-chill], note: "Infobox: influenced by \"COBOL, PL/1, Pascal, ALGOL 68\"." }
+    - { type: influenced_by, to: algol-68, weight: moderate, confidence: high, sources: [wiki-chill], note: "Infobox." }
+    - { type: influenced_by, to: pl-i, weight: moderate, confidence: high, sources: [wiki-chill], note: "Infobox." }
+    - { type: influenced_by, to: cobol, weight: weak, confidence: high, sources: [wiki-chill], note: "Infobox." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CHILL" }
+  sources: [wiki-chill]
+
+- id: clascal
+  name: Clascal
+  kind: language
+  category: general
+  cluster: algol/pascal-dialects
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "\"developed in 1983 by the Personal Office Systems (POS) division ... of Apple Computer\"." }
+    places: [{ institution: Apple Computer }]
+  status: extinct
+  tags:
+    paradigm: [imperative, structured, object-oriented]
+    typing: [static-typing, strong-typing]
+  summary: >
+    An object-oriented extension of Lisa Pascal, used "to program applications for the Lisa Office System".
+    It was "strongly influenced by the Xerox Palo Alto Research Center (PARC) release of Smalltalk-80, v1"
+    and by Modula, and according to Larry Tesler it replaced Apple's own Smalltalk, which was "too slow".
+    "Clascal was the basis for Object Pascal on the Apple Macintosh in 1985."
+  notes: >
+    Lisa Pascal, its base, "harked back to the UCSD Pascal model originally implemented on the Apple II"; it
+    is not a node. The Clascal and Object Pascal articles name the Lisa environment differently (Lisa Office
+    System and Lisa Workshop).
+  relations:
+    - { type: dialect_of, to: pascal, weight: strong, confidence: high, sources: [wiki-clascal], note: "\"Developed as an extension of Lisa Pascal\"." }
+    - { type: influenced_by, to: smalltalk, weight: strong, confidence: high, sources: [wiki-clascal], note: "\"strongly influenced by the ... release of Smalltalk-80, v1\"." }
+    - { type: influenced_by, to: modula, weight: moderate, confidence: medium, sources: [wiki-clascal], note: "\"and by Modula\"." }
+    - { type: influenced_by, to: simula, weight: moderate, confidence: medium, sources: [wiki-clascal], note: "Infobox: influenced by \"Pascal, Simula, Smalltalk\"." }
+    - { type: influenced_by, to: ucsd-pascal, weight: weak, confidence: medium, sources: [wiki-clascal], note: "Lisa Pascal \"harked back to the UCSD Pascal model\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Clascal" }
+  sources: [wiki-clascal, wiki-object-pascal]
+
+- id: spark
+  name: SPARK
+  kind: language
+  category: systems
+  cluster: algol/ada
+  origin:
+    began: { year: 1987, precision: year, note: "\"The beginnings of the technology go back to 1987, based on work done at the University of Southampton.\"" }
+    first_appeared: { year: 1987, precision: disputed, note: "Prose dates the beginnings to 1987 and the first version (SPARK83) to the University of Southampton without a year; the infobox says 2009. Find the first SPARK report." }
+    places: [{ institution: University of Southampton }]
+  creators:
+    - { name: Bernard Carré, role: co-designer }
+    - { name: Trevor Jennings, role: co-designer }
+  status: active
+  tags:
+    paradigm: [structured, imperative, object-oriented, concurrent]
+    typing: [static-typing, strong-typing]
+    features: [contracts]
+    domain: [safety-critical]
+  milestones:
+    - { version: "SPARK 2014", year: 2014, summary: "\"based on Ada 2012, was released on April 30, 2014\"; \"a complete re-design of the language\"." }
+  summary: >
+    "a formally defined computer programming language based on the Ada programming language, intended for
+    developing high-integrity software". It "consists of a well-defined subset of the Ada language that
+    uses contracts to describe the specification of components". The first version, based on Ada 83, was
+    produced at Southampton with UK Ministry of Defence sponsorship by Bernard Carré and Trevor Jennings;
+    SPARK83, SPARK95 and SPARK2005 followed the Ada standards. Today it is developed by AdaCore and Altran
+    (now Capgemini Engineering).
+  notes: >
+    "The name SPARK was derived from SPADE Ada Kernel, in reference to the SPADE subset of the Pascal
+    programming language." The infobox also lists Eiffel as an influence.
+  relations:
+    - { type: subset_of, to: ada, weight: strong, confidence: high, sources: [wiki-spark], note: "\"a well-defined subset of the Ada language that uses contracts\"." }
+    - { type: influenced_by, to: eiffel, weight: moderate, confidence: medium, sources: [wiki-spark], note: "Infobox: influenced by \"Ada, Eiffel\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SPARK_(programming_language)" }
+  sources: [wiki-spark]
+  example:
+    title: "An Ada specification before SPARK contracts"
+    language: "SPARK"
+    note: "From Wikipedia's SPARK article (\"Consider the Ada subprogram specification below:\"); the article then adds Global and Depends contracts."
+    code: |
+      procedure Increment (X : in out Counter_Type);
+
+- id: color-basic
+  name: Color BASIC
+  kind: language
+  category: general
+  cluster: basic/microsoft
+  origin:
+    first_appeared: { year: 1980, precision: year, note: "\"Color BASIC 1.0 was released with the original 4k TRS-80 Color Computer in 1980.\"" }
+    places: [{ institution: Microsoft }]
+  creators:
+    - { name: Bill Gates, role: designer }
+  tags:
+    paradigm: [imperative, procedural]
+    features: [line-numbers, interpreter]
+  milestones:
+    - { version: "1.3", year: 1982 }
+    - { version: "Extended Color BASIC", year: 1984, summary: "Infobox; needed 16k of memory." }
+    - { version: "Disk Extended Color BASIC", year: 1984 }
+  summary: >
+    "the implementation of Microsoft BASIC that is included in the ROM of the Tandy/Radio Shack TRS-80
+    Color Computers manufactured between 1980 and 1991." "The nucleus of Color BASIC was Microsoft BASIC-69
+    which Tandy licensed from Microsoft." It is interpreted, and "Numeric variables have only one type, a
+    binary floating point implementation."
+  notes: >
+    The infobox credits Bill Gates as designer, citing an interview: "He is most excited about the Extended
+    Color Basic package he wrote." Also used on the Dragon 32/64.
+  relations:
+    - { type: dialect_of, to: microsoft-basic, weight: strong, confidence: high, sources: [wiki-color-basic], note: "\"the implementation of Microsoft BASIC\"; nucleus BASIC-69." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Color_BASIC" }
+  sources: [wiki-color-basic, wiki-microsoft-basic]
+  example:
+    title: "Variables"
+    language: "Color BASIC"
+    note: "From the Examples section of Wikipedia's Color BASIC article."
+    code: |
+      A=5
+      A$="THIS IS A STRING"
+      K7=10
+      BB$="HELLO!"
+      ZZ=1.54
+
+- id: atari-microsoft-basic
+  name: Atari Microsoft BASIC
+  kind: language
+  category: general
+  cluster: basic/atari
+  origin:
+    first_appeared: { year: 1981, precision: year, note: "\"The first version, released 1981, required 32 KB of RAM and was supplied on floppy disk.\"" }
+    places: [{ institution: Microsoft }, { institution: "Atari, Inc." }]
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural]
+    features: [line-numbers]
+  milestones:
+    - { version: "II", year: 1982, summary: "\"most of the code on a ROM cartridge with additional functions on an optional floppy\"." }
+  summary: >
+    The 6502 Microsoft BASIC ported to the Atari 8-bit computers. It "was highly compatible with
+    contemporary Microsoft BASIC releases such as Applesoft BASIC and Commodore BASIC, in contrast to Atari
+    BASIC which was a somewhat different dialect"; the interpreter was "based on the same 9 KB MOS 6502 code"
+    as those two. "Released in 1982, BASIC II also saw little real-world use."
+  relations:
+    - { type: dialect_of, to: microsoft-basic, weight: strong, confidence: high, sources: [wiki-atari-microsoft-basic], note: "\"variants of the 6502-version of Microsoft BASIC\"." }
+    - { type: targets, to: mos-6502, weight: strong, confidence: high, sources: [wiki-atari-microsoft-basic] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Atari_Microsoft_BASIC" }
+  sources: [wiki-atari-microsoft-basic]
+  example:
+    title: "Integer and floating-point division"
+    language: "Atari Microsoft BASIC"
+    note: "From Wikipedia's Atari Microsoft BASIC article; the page shows outputs 1 and 1.5."
+    code: |
+      PRINT 3/2
+      PRINT 3/2.0
+
+- id: msx-basic
+  name: MSX BASIC
+  kind: language
+  category: general
+  cluster: basic/microsoft
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "Infobox." }
+    places: [{ institution: Microsoft }]
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [line-numbers]
+  summary: >
+    "an extended version of Microsoft's MBASIC Version 4.5, adding support for graphic, music, and various
+    peripherals attached to MSX microcomputers." "Generally, MSX BASIC is designed to follow GW-BASIC,
+    released the same year for IBM PCs and clones." It "came bundled in the ROM of all MSX computers", from
+    1.0 on the MSX1 to 4.1 on the Panasonic FS-A1GT turbo R, which added MIDI extensions.
+  notes: >
+    Versions are not dated on the page: 1.0 (MSX1), 2.0/2.1 (MSX2), 3.0 (MSX2+), 4.0 and 4.1 (turbo R).
+    The infobox lists Vilnius BASIC as influenced; it is not a node.
+  relations:
+    - { type: dialect_of, to: microsoft-basic, weight: strong, confidence: high, sources: [wiki-msx-basic], note: "\"an extended version of Microsoft's MBASIC Version 4.5\"." }
+    - { type: influenced_by, to: gw-basic, weight: moderate, confidence: high, sources: [wiki-msx-basic], note: "\"designed to follow GW-BASIC\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MSX_BASIC" }
+  sources: [wiki-msx-basic]
+  example:
+    title: "Talking to a serial port"
+    language: "MSX BASIC"
+    note: "From the Sample section of Wikipedia's MSX BASIC article."
+    code: |
+      100 OPEN "COM5:9600,N,8,1,RS,CS,DS,CD" FOR RANDOM AS #1
+      110 A$=INKEY$
+      120 IF A$<>" " THEN 110
+      130 PRINT #1, "X0"
+      140 INPUT #1, B$
+      150 PRINT B$
+      160 GOTO 110
+
+- id: amiga-basic
+  name: Amiga Basic
+  kind: language
+  category: general
+  cluster: basic/microsoft
+  origin:
+    first_appeared: { year: 1985, precision: year, note: "\"Amiga Basic (released in 1985)\"." }
+    places: [{ institution: Microsoft }]
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    features: [interpreter]
+  milestones:
+    - { version: "1.2", year: 1988, summary: "Final release." }
+  summary: >
+    "an interpreted implementation of the BASIC programming language for the Amiga", "designed and written
+    by Microsoft", and "one of the new BASIC interpreters from Microsoft to not require line numbers". It
+    shipped with AmigaOS 1.1 to 1.3, succeeding MetaComCo's ABasiC, and "was superseded by ARexx" from
+    AmigaOS 2.0; incompatibilities with AmigaOS 2.0 and later 68000 successors made it obsolete.
+  relations:
+    - { type: dialect_of, to: microsoft-basic, weight: strong, confidence: high, sources: [wiki-amiga-basic], note: "Infobox type \"Microsoft BASIC\"; listed among its variants." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Amiga_Basic" }
+  sources: [wiki-amiga-basic]
+  example:
+    title: "Hello World"
+    language: "Amiga Basic"
+    note: "From Wikipedia's Amiga Basic article."
+    code: |
+      ' Hello World for Amiga Basic
+      PRINT "Hello world!"
+
+- id: gfa-basic
+  name: GFA BASIC
+  kind: language
+  category: general
+  cluster: basic/atari
+  origin:
+    first_appeared: { year: 1986, precision: year, note: "\"The first GFA BASIC version was released in 1986.\"" }
+    places: [{ institution: GFA Systemtechnik, country: DE }]
+  creators:
+    - { name: Frank Ostrowski, role: creator }
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    features: [records]
+  summary: >
+    A BASIC dialect written by Frank Ostrowski at GFA Systemtechnik, "a German company in Kiel and
+    Düsseldorf, as a proprietary version of his free BASIC implementation, Turbo-Basic XL." "In the mid
+    and late 1980s it became popular for the Atari ST, because the Atari ST BASIC shipped with them was more
+    primitive"; it was also sold for the Amiga, MS-DOS and Windows. Version 2.0 was the most popular; 3.0
+    "added support for user-defined structures"; the final version was 3.6. GFA "ceased all GFA BASIC
+    activities" around 2002.
+  relations:
+    - { type: influenced_by, to: turbo-basic-xl, weight: strong, confidence: high, sources: [wiki-gfa-basic], note: "\"a proprietary version of his free BASIC implementation, Turbo-Basic XL\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GFA_BASIC" }
+  sources: [wiki-gfa-basic]
+
+- id: super-expander
+  name: Super Expander
+  aliases: [VIC-1211 Super Expander]
+  kind: language
+  category: general
+  cluster: basic/commodore
+  origin:
+    first_appeared: { year: 1981, precision: year, note: "\"created by Commodore Business Machines (CBM) and released in 1981\"." }
+    places: [{ institution: Commodore Business Machines }]
+  tags:
+    paradigm: [imperative]
+    domain: [computer-graphics, music-audio]
+  summary: >
+    A VIC-20 cartridge "designed to provide several extensions to the BASIC interpreter on the computer,
+    mostly to help with programming graphics and sound", because the bundled Commodore BASIC V2.0 "was
+    notorious for its sparse functionality."
+  relations:
+    - { type: superset_of, to: commodore-basic, weight: strong, confidence: high, sources: [wiki-super-expander], note: "\"extensions to the BASIC interpreter\" of the VIC-20, Commodore BASIC V2.0." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Super_Expander" }
+  sources: [wiki-super-expander]
+
+- id: super-expander-64
+  name: Super Expander 64
+  kind: language
+  category: general
+  cluster: basic/commodore
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "\"published by Commodore Business Machines in 1983\"." }
+    places: [{ institution: Commodore Business Machines }]
+  tags:
+    paradigm: [imperative]
+    domain: [computer-graphics, music-audio]
+  summary: >
+    "a cartridge-based extension to the built in BASIC interpreter of Commodore 64", whose Commodore BASIC
+    "does not have direct support for the system's sound and graphics hardware." It "adds functions for
+    drawing graphics, using sprites, reading joysticks, playing audio, and other features."
+  relations:
+    - { type: superset_of, to: commodore-basic, weight: strong, confidence: high, sources: [wiki-super-expander-64], note: "\"a cartridge-based extension to the built in BASIC interpreter\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Super_Expander_64" }
+  sources: [wiki-super-expander-64]
+  example:
+    title: "A rising scale"
+    language: "Super Expander 64"
+    note: "Inline example from Wikipedia's Super Expander 64 article, which says it \"played a rising scale\"."
+    code: |
+      PRINT CHR$(6);"CDEFGAB"

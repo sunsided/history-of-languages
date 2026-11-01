@@ -747,6 +747,7 @@
     features: [modules, separate-compilation]
   summary: "Pascal plus modules with explicit import/export and separate compilation, and coroutines for concurrency. Influenced Modula-3, Oberon, Ada and Python's module system indirectly."
   relations:
+    - { type: successor_of, to: modula, weight: strong, confidence: high, sources: [wiki-modula], note: "\"Wirth then concentrated his efforts on Modula's successor, Modula-2.\"" }
     - { type: successor_of, to: pascal, weight: strong, confidence: high }
     - { type: influenced_by, to: mesa, aspects: [modules], weight: strong, confidence: high }
   notes: >
@@ -755,7 +756,7 @@
     GitHub (Wikipedia: ORCA/Modula-2).
   research_status: draft
   confidence: high
-  sources: [wirth-2007-modula2-oberon, wiki-orca-modula-2]
+  sources: [wirth-2007-modula2-oberon, wiki-orca-modula-2, wiki-modula]
   example:
     title: Modules with explicit imports
     language: Modula-2
@@ -1012,12 +1013,13 @@
     Wikipedia article credits Optimized Systems Software instead of Shepardson Microsystems; the
     relation between the two firms is not yet checked.
   relations:
+    - { type: influenced_by, to: dg-business-basic, weight: moderate, confidence: medium, sources: [wiki-dg-business-basic], note: "The Data General Business Basic article lists Atari BASIC as influenced (citing Lorenzo 2017, p. 106)." }
     - { type: influenced_by, to: basic, weight: strong, confidence: high }
     - { type: targets, to: mos-6502, weight: strong, confidence: high }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Atari_BASIC" }
-  sources: [wiki-atari-basic]
+  sources: [wiki-atari-basic, wiki-dg-business-basic]
   example:
     title: "Strings are dimensioned character arrays"
     language: "Atari BASIC"
@@ -2980,9 +2982,8 @@
     ALGOL extension, but it was more secure than ESPOL": "all unsafe constructs are rejected by the NEWP compiler unless
     a block is specifically marked to allow those instructions". It adds named interfaces, modules and super-modules for
     large projects such as the operating system.
-  notes: >
-    ESPOL is in the algol backlog; NEWP should get successor_of espol when it is a node.
   relations:
+    - { type: successor_of, to: espol, weight: strong, confidence: high, sources: [wiki-burroughs-large-systems], note: "ESPOL \"was replaced in the mid-to-late 70s by a language called NEWP\"." }
     - { type: dialect_of, to: algol-60, weight: strong, confidence: medium, sources: [wiki-burroughs-large-systems], note: "\"a subset ALGOL extension\"." }
   research_status: stub
   confidence: medium
@@ -3657,3 +3658,281 @@
         draw z1..z3..z6{z2-z6}..z5..{z4-z2}z4..cycle;
       endchar;
     sources: [wiki-metafont]
+
+- id: algol-68c
+  name: ALGOL 68C
+  aliases: [ALGOL 68 Cambridge]
+  kind: language
+  category: general
+  cluster: algol
+  origin:
+    first_appeared: { year: 1970, precision: circa, note: "Infobox release \"circa 1970\"." }
+    places: [{ institution: University of Cambridge }]
+  creators:
+    - { name: Stephen R. Bourne, role: developer }
+    - { name: Michael Guy, role: developer }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    domain: [computer-algebra]
+  milestones:
+    - { version: "1.3039", year: 2013, summary: "Infobox stable release, 3 March 2013." }
+  summary: >
+    "a dialect of ALGOL 68, that was developed by Stephen R. Bourne and Michael Guy to program the Cambridge
+    Algebra System (CAMAL)." The first compiler was written in the Princeton Syntax Compiler (PSYCO); later
+    ALGOL 68C was used for the CHAOS OS of Cambridge's capability-based CAP computer. It compiled through an
+    intermediate language, ZCODE, and was ported to CMS, TOPS-10 and the Z80; "the code base is still
+    running" on emulated OS/MVT.
+  notes: >
+    The infobox also credits Andrew D. Birrell, Ian Walker, Chris Cheney "et al." Bourne later reused ALGOL
+    68's if ~ fi, case ~ esac and do ~ od clauses in the Bourne shell. Garbage collection was added after
+    Bourne left Cambridge in 1975.
+  relations:
+    - { type: dialect_of, to: algol-68, weight: strong, confidence: high, sources: [wiki-algol-68c], note: "\"a dialect of ALGOL 68\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ALGOL_68C" }
+  sources: [wiki-algol-68c]
+  example:
+    title: "A library module, mylib.a68"
+    language: "ALGOL 68C"
+    note: "From Wikipedia's ALGOL 68C article (caption \"A file called mylib.a68:\"); indentation as extracted."
+    code: |
+      BEGIN
+         INT dim = 3; # a constant #
+         INT a number := 120; # a variable #
+         ENVIRON EXAMPLE1;
+         MODE MATRIX = [dim, dim]REAL; # a type definition #
+         MATRIX m1;
+         a number := ENVIRON EXAMPLE2;
+         print((a number))
+      END
+
+- id: algol-68-r
+  name: ALGOL 68-R
+  aliases: [ALGOL 68R]
+  kind: language
+  category: general
+  cluster: algol
+  origin:
+    first_appeared: { year: 1970, date: "1970-07-20", precision: exact, note: "Infobox release date; presented at the IFIP working conference of 20–24 July 1970." }
+    places: [{ institution: Royal Radar Establishment }]
+  creators:
+    - { name: I. F. Currie, role: co-author }
+    - { name: Susan G. Bond, role: co-author }
+    - { name: J. D. Morrison, role: co-author }
+  summary: >
+    "the first implementation of the Algorithmic Language ALGOL 68", written at the Royal Radar
+    Establishment for the ICL 1907F under George 3. "To allow one pass compiling, ALGOL 68-R implemented a
+    subset of the language defined in the original report". The compiler was first written in "a local
+    dialect of ALGOL 60" and later rewritten in ALGOL 68-R itself.
+  notes: >
+    ALGOL 68-RT added multithreading through the ICL 1900's subprogramming feature. A copy runnable under a
+    George 3 emulator by David Holdsworth (University of Leeds) is available under the GPL. The lead spells
+    "J. D. Morrison", the references "Morison, J. D.".
+  relations:
+    - { type: subset_of, to: algol-68, weight: strong, confidence: high, sources: [wiki-algol-68-r], note: "\"implemented a subset of the language defined in the original report\"." }
+    - { type: implemented_in, to: algol-60, weight: moderate, confidence: high, sources: [wiki-algol-68-r], note: "\"initially written in a local dialect of ALGOL 60\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ALGOL_68-R" }
+  sources: [wiki-algol-68-r]
+  example:
+    title: "Mutually recursive procedures"
+    language: "ALGOL 68-R"
+    note: "From Wikipedia's ALGOL 68-R article (caption \"The standard program:\"); bold markup removed."
+    code: |
+      PROC even = (INT number) BOOL: ( number = 0 | TRUE | odd (ABS (number - 1)));
+      PROC odd = (INT number) BOOL: ( number = 0 | FALSE | even (ABS (number - 1)));
+
+- id: modula
+  name: Modula
+  kind: language
+  category: systems
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 1975, precision: year, note: "Infobox; the report \"Modula. A language for modular multiprogramming\" is dated 1976." }
+    places: [{ institution: ETH Zurich, country: CH }]
+  creators:
+    - { name: Niklaus Wirth, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, structured, modular]
+    typing: [static-typing, strong-typing]
+    features: [modules]
+  summary: >
+    "a descendant of the Pascal language", developed at ETH Zurich in the mid-1970s by Niklaus Wirth. "The
+    main innovation of Modula over Pascal is a module system, used for grouping sets of related
+    declarations into program units; hence the name Modula." Wirth first implemented it on a PDP-11. "The
+    development of Modula was discontinued soon after its publication" in favour of Modula-2.
+  notes: >
+    Other implementations: University of York Modula, and PL Modula at Philips Laboratories for the LSI-11.
+    The infobox also lists Alma-0 and Go as influenced; not stored as edges because neither article was read
+    for it.
+  relations:
+    - { type: influenced_by, to: pascal, weight: strong, confidence: high, sources: [wiki-modula], note: "\"a descendant of the Pascal language\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Modula" }
+  sources: [wiki-modula]
+
+- id: hal-s
+  name: HAL/S
+  aliases: [High-order Assembly Language/Shuttle]
+  kind: language
+  category: domain-specific
+  cluster: algol/ada
+  origin:
+    began: { year: 1972, precision: year, note: "\"designed by Intermetrics in 1972 for NASA\"." }
+    first_appeared: { year: 1973, precision: year, note: "\"delivered in 1973\". The infobox's \"1964\" contradicts the prose and is not used." }
+    places: [{ institution: Intermetrics }]
+  status: legacy
+  tags:
+    paradigm: [procedural, imperative, structured]
+    domain: [embedded, safety-critical]
+  summary: >
+    "a real-time aerospace programming language compiler and cross-compiler for avionics applications used
+    by NASA", designed by Intermetrics. "approximately 85% of the Shuttle software was coded in HAL/S". The
+    name, suggested by Intermetrics founding director Ed Copps, honours Hal Laning of MIT. In 2005 it was
+    maintained by the HAL/S project of United Space Alliance.
+  relations:
+    - { type: implemented_in, to: xpl, weight: strong, confidence: high, sources: [wiki-hal-s], note: "\"HAL/S is written in XPL, a dialect of PL/I.\"" }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/HAL/S" }
+  sources: [wiki-hal-s]
+  example:
+    title: "Area of a circle"
+    language: "HAL/S"
+    note: "From Wikipedia's HAL/S article (\"The following is a simple HAL/S program.\"); indentation as fetched. The C lines are comments."
+    code: |2
+         SIMPLE: PROGRAM;
+      C  CODE IN THIS TYPEFACE IS
+      C  HAL/S SOURCE
+         DECLARE PI CONSTANT (3.14159266);
+         DECLARE R SCALAR;
+         READ(5) R;
+         WRITE(6) PI R**2;
+         CLOSE SIMPLE;
+
+- id: alphard
+  name: Alphard
+  kind: language
+  category: research
+  cluster: algol/adt
+  origin:
+    first_appeared: { year: 1976, precision: circa, note: "No year on the page; the earliest dated reference is Wulf, London and Shaw, December 1976. The old backlog had 1974, unsourced." }
+  creators:
+    - { name: William A. Wulf, role: co-designer }
+    - { name: Ralph L. London, role: co-designer }
+    - { name: Mary Shaw, role: co-designer }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    features: [abstract-data-types, generators]
+  summary: >
+    "a Pascal-like programming language for data abstraction and verification". "Its main innovative
+    feature was the introduction of the 'form' datatype, which combines a specification and a procedural
+    (executable) implementation." It took the generator from IPL-V and generalised Lisp's mapping
+    functions. "The language was the subject of several research publications in the late 1970s, but was
+    never implemented."
+  relations:
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [wiki-alphard], note: "\"a Pascal-like programming language\"." }
+    - { type: influenced_by, to: ipl, weight: weak, confidence: medium, sources: [wiki-alphard], note: "\"took the generator from IPL-V\"." }
+    - { type: influenced_by, to: lisp, weight: weak, confidence: medium, sources: [wiki-alphard], note: "\"the mapping functions from Lisp and made it general case\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Alphard_(programming_language)" }
+  sources: [wiki-alphard]
+
+- id: euclid
+  name: Euclid
+  kind: language
+  category: systems
+  cluster: algol/adt
+  origin:
+    first_appeared: { year: 1977, date: "1977-02", precision: exact, note: "\"Report on the programming language Euclid\", SIGPLAN Notices 12, 2 (February 1977); designed \"in the mid-1970s\"." }
+    places: [{ institution: Xerox PARC }, { institution: University of Toronto }]
+  creators:
+    - { name: Butler Lampson, role: co-designer }
+    - { name: James G. Mitchell, role: co-designer }
+    - { name: Jim Horning, role: co-designer }
+    - { name: Ralph L. London, role: co-designer }
+    - { name: Gerald J. Popek, role: co-designer }
+    - { name: Ric Holt, role: implementer }
+    - { name: James Cordy, role: implementer }
+  status: historical
+  tags:
+    paradigm: [structured, imperative]
+    typing: [static-typing, strong-typing]
+  summary: >
+    "an imperative programming language for writing verifiable programs", designed by Butler Lampson and
+    James G. Mitchell at Xerox PARC with Jim Horning (Toronto), Ralph L. London (USC ISI) and Gerald J. Popek
+    (UCLA). "Functions in Euclid are closed scopes, may not have side effects, and must explicitly declare
+    imports"; it disallows gotos, floating point numbers, global assignments, nested functions and aliases.
+    Ric Holt led the implementation at Toronto with James Cordy as principal programmer, on a DARPA budget of
+    "$2 million budget over 2 years".
+  notes: >
+    Used for a few years at I. P. Sharp Associates, MITRE and SRI International. Gypsy and SUE, also listed
+    as ancestors, are not nodes. Concurrent Euclid, its other named descendant, is not a node yet.
+  relations:
+    - { type: influenced_by, to: pascal, weight: strong, confidence: high, sources: [wiki-euclid], note: "\"Euclid is descended from Pascal, Mesa, Alphard, CLU, Gypsy, BCPL, Modula, LIS, and SUE.\"" }
+    - { type: influenced_by, to: mesa, weight: moderate, confidence: high, sources: [wiki-euclid], note: "Listed among its ancestors." }
+    - { type: influenced_by, to: alphard, weight: moderate, confidence: high, sources: [wiki-euclid], note: "Listed among its ancestors." }
+    - { type: influenced_by, to: clu, weight: moderate, confidence: high, sources: [wiki-euclid], note: "Listed among its ancestors." }
+    - { type: influenced_by, to: bcpl, weight: weak, confidence: high, sources: [wiki-euclid], note: "Listed among its ancestors." }
+    - { type: influenced_by, to: modula, weight: moderate, confidence: high, sources: [wiki-euclid], note: "Listed among its ancestors." }
+    - { type: influenced_by, to: lis, weight: weak, confidence: high, sources: [wiki-euclid], note: "Listed among its ancestors." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Euclid_(programming_language)" }
+  sources: [wiki-euclid]
+
+- id: trs-80-level-ii-basic
+  name: TRS-80 Level II BASIC
+  kind: language
+  category: general
+  cluster: basic/microsoft
+  origin:
+    first_appeared: { year: 1978, precision: year, note: "\"After the Expansion Interface and Level II BASIC were introduced in mid-1978\" (TRS-80 article)." }
+  tags:
+    paradigm: [imperative, procedural]
+    features: [line-numbers]
+  summary: >
+    The Microsoft BASIC of the Tandy TRS-80. The machine first shipped with Level I BASIC, an adaptation of
+    Li-Chen Wang's Tiny BASIC; "within a few months this was replaced by a port of BASIC-80 which
+    incorporated some of Level I BASIC's command set". It "contained some of the features of Extended
+    BASIC", but descriptive error messages had to wait for TRS-80 Disk BASIC.
+  relations:
+    - { type: dialect_of, to: microsoft-basic, weight: strong, confidence: high, sources: [wiki-microsoft-basic], note: "\"a port of BASIC-80\"; listed among the variants of Microsoft BASIC." }
+    - { type: influenced_by, to: tiny-basic, weight: moderate, confidence: high, sources: [wiki-microsoft-basic], note: "\"incorporated some of Level I BASIC's command set\"; Level I was an adaptation of Li-Chen Wang's Tiny BASIC." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Microsoft_BASIC" }
+  sources: [wiki-microsoft-basic, wiki-trs-80]
+
+- id: dg-business-basic
+  name: Data General Business Basic
+  kind: language
+  category: business
+  cluster: basic
+  origin:
+    first_appeared: { year: 1970, precision: decade, note: "\"marketed by Data General for their Nova minicomputer in the 1970s\"; no exact year." }
+    places: [{ institution: Data General }]
+  tags:
+    paradigm: [imperative]
+    domain: [business-data-processing]
+  summary: >
+    "a BASIC interpreter (based on a version from MAI Basic Four) marketed by Data General for their Nova
+    minicomputer in the 1970s", later ported to the Eclipse MV and AViiON. "Most business applications for
+    the Nova were developed in Business Basic." It "was an integer-only language inspired by COBOL"; the MV
+    port shipped "double precision" and "triple precision" copies.
+  notes: >
+    MAI Basic Four's BASIC is not a node.
+  relations:
+    - { type: dialect_of, to: basic, weight: moderate, confidence: medium, sources: [wiki-dg-business-basic], note: "\"a BASIC interpreter (based on a version from MAI Basic Four)\"." }
+    - { type: influenced_by, to: cobol, weight: moderate, confidence: medium, sources: [wiki-dg-business-basic], note: "\"an integer-only language inspired by COBOL\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Data_General_Business_Basic" }
+  sources: [wiki-dg-business-basic]

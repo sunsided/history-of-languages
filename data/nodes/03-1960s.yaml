@@ -2402,3 +2402,99 @@
       GOODBYE))
       ))'
     sources: [wiki-trac]
+
+- id: burroughs-algol
+  name: Burroughs ALGOL
+  aliases: [Burroughs Extended ALGOL]
+  kind: language
+  category: systems
+  cluster: algol
+  origin:
+    first_appeared: { year: 1962, precision: year, note: "Infobox of the ALGOL section of Burroughs Large Systems; the B5000 came in 1961." }
+    places: [{ institution: Burroughs Corporation }]
+  creators:
+    - { name: John McClintock, role: designer }
+  tags:
+    paradigm: [procedural, imperative, structured]
+    features: [string-processing]
+  summary: >
+    The ALGOL of the Burroughs B5000 and its successors, a machine "optimized for compiling ALGOL 60
+    programs extremely well, using single-pass compilers." "The ALGOL used on the B5000 is an extended
+    ALGOL subset" with "powerful string manipulation instructions" that leaves out unspecified formal
+    parameters. Insecure constructs live in two levels of extensions: ESPOL and NEWP for the MCP, and
+    DCALGOL and DMALGOL for specific kinds of system software.
+  notes: >
+    "The ALGOL dialect chosen for the B5000 was Elliott ALGOL, first designed and implemented by C. A. R.
+    Hoare on an Elliott 503." Elliott ALGOL, DCALGOL, DMALGOL and BDMSALGOL are not nodes. The infobox
+    names "John McClintock, others".
+  relations:
+    - { type: dialect_of, to: algol-60, weight: strong, confidence: high, sources: [wiki-burroughs-large-systems], note: "Infobox influenced by ALGOL 60; \"an extended ALGOL subset\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Burroughs_Large_Systems#ALGOL" }
+  sources: [wiki-burroughs-large-systems]
+  example:
+    title: "An array declaration"
+    language: "Burroughs ALGOL"
+    note: "From the ALGOL section of Wikipedia's Burroughs Large Systems article (caption \"The declaration of:\")."
+    code: |
+      ARRAY A [0:99]
+
+- id: espol
+  name: ESPOL
+  aliases: [Executive Systems Problem Oriented Language]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1966, precision: year, note: "Infobox; the prose gives no year. Final release (B6700/B7700) 27 June 1972." }
+    places: [{ institution: Burroughs Corporation }]
+  status: extinct
+  tags:
+    paradigm: [procedural, imperative, structured]
+    typing: [static-typing, strong-typing]
+    domain: [operating-systems]
+  summary: >
+    "Originally, the B5000 MCP operating system was written in an extension of extended ALGOL called
+    ESPOL". This "superset of ALGOL 60" gave what would later be called a system programming language,
+    and was used to write the Master Control Program "from the B5000 to the B6700". Its single-pass
+    compiler "could compile over 250 lines per second". It "was replaced in the mid-to-late 70s by a
+    language called NEWP."
+  notes: >
+    The infobox expands the name as "Executive Systems Problem Oriented Language", the body as
+    "Executive Systems Programming Oriented Language".
+  relations:
+    - { type: superset_of, to: algol-60, weight: strong, confidence: high, sources: [wiki-burroughs-large-systems], note: "\"This superset of ALGOL 60\"." }
+    - { type: influenced_by, to: burroughs-algol, weight: strong, confidence: medium, sources: [wiki-burroughs-large-systems], note: "\"an extension of extended ALGOL\"; the Burroughs ALGOL infobox lists ESPOL as influenced." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Burroughs_Large_Systems#ESPOL_and_NEWP" }
+  sources: [wiki-burroughs-large-systems]
+
+- id: euler
+  name: Euler
+  kind: language
+  category: research
+  cluster: algol/wirth
+  origin:
+    first_appeared: { year: 1965, precision: circa, note: "\"Available sources indicate that Euler was operational by 1965.\" The CACM papers by Wirth and Weber are from 1966." }
+    places: [{ institution: Stanford University }, { institution: ETH Zurich }]
+  creators:
+    - { name: Niklaus Wirth, role: co-designer }
+    - { name: Helmut Weber, role: co-designer }
+  tags:
+    paradigm: [procedural, imperative, structured]
+    typing: [dynamic-typing]
+  summary: >
+    "conceived as an extension and generalization of ALGOL 60" by Niklaus Wirth and Helmut Weber. The
+    goals were a language "Simpler, yet more flexible, than ALGOL 60", efficient to process and
+    "Definable with rigorous formality". It uses dynamic typing.
+  notes: >
+    An external link lists "EULER IV for the Burroughs B5500 from 1965" and an implementation in Icon from
+    2000 to 2001.
+  relations:
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: high, sources: [wiki-euler], note: "\"an extension and generalization of ALGOL 60\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Euler_(programming_language)" }
+  sources: [wiki-euler]

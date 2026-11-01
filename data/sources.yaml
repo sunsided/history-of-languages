@@ -5614,3 +5614,165 @@
   primary: false
   title: "Wikipedia: KRL (programming language)"
   url: https://en.wikipedia.org/wiki/KRL_(programming_language)
+
+- id: wiki-mad
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MAD (programming language)"
+  url: https://en.wikipedia.org/wiki/MAD_(programming_language)
+
+- id: wiki-neliac
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: NELIAC"
+  url: https://en.wikipedia.org/wiki/NELIAC
+
+- id: wiki-algol-68c
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ALGOL 68C"
+  url: https://en.wikipedia.org/wiki/ALGOL_68C
+
+- id: wiki-algol-68-r
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ALGOL 68-R"
+  url: https://en.wikipedia.org/wiki/ALGOL_68-R
+
+- id: wiki-euler
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Euler (programming language)"
+  url: https://en.wikipedia.org/wiki/Euler_(programming_language)
+
+- id: wiki-clascal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Clascal"
+  url: https://en.wikipedia.org/wiki/Clascal
+
+- id: wiki-oxygene
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Oxygene (programming language)"
+  url: https://en.wikipedia.org/wiki/Oxygene_(programming_language)
+
+- id: wiki-alphard
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Alphard (programming language)"
+  url: https://en.wikipedia.org/wiki/Alphard_(programming_language)
+
+- id: wiki-euclid
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Euclid (programming language)"
+  url: https://en.wikipedia.org/wiki/Euclid_(programming_language)
+
+- id: wiki-sather
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Sather"
+  url: https://en.wikipedia.org/wiki/Sather
+
+- id: wiki-spark
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SPARK (programming language)"
+  url: https://en.wikipedia.org/wiki/SPARK_(programming_language)
+
+- id: wiki-hal-s
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: HAL/S"
+  url: https://en.wikipedia.org/wiki/HAL/S
+
+- id: wiki-chill
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CHILL"
+  url: https://en.wikipedia.org/wiki/CHILL
+
+- id: wiki-hpf
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: High Performance Fortran"
+  url: https://en.wikipedia.org/wiki/High_Performance_Fortran
+
+- id: wiki-ironruby
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IronRuby"
+  url: https://en.wikipedia.org/wiki/IronRuby
+
+- id: wiki-opa
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Opa (programming language)"
+  url: https://en.wikipedia.org/wiki/Opa_(programming_language)
+
+- id: wiki-trs-80
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TRS-80"
+  url: https://en.wikipedia.org/wiki/TRS-80
+
+- id: wiki-color-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Color BASIC"
+  url: https://en.wikipedia.org/wiki/Color_BASIC
+
+- id: wiki-msx-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MSX BASIC"
+  url: https://en.wikipedia.org/wiki/MSX_BASIC
+
+- id: wiki-amiga-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Amiga Basic"
+  url: https://en.wikipedia.org/wiki/Amiga_Basic
+
+- id: wiki-atari-microsoft-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Atari Microsoft BASIC"
+  url: https://en.wikipedia.org/wiki/Atari_Microsoft_BASIC
+
+- id: wiki-gfa-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GFA BASIC"
+  url: https://en.wikipedia.org/wiki/GFA_BASIC
+
+- id: wiki-dg-business-basic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Data General Business Basic"
+  url: https://en.wikipedia.org/wiki/Data_General_Business_Basic
+
+- id: wiki-super-expander
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Super Expander"
+  url: https://en.wikipedia.org/wiki/Super_Expander
+
+- id: wiki-super-expander-64
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Super Expander 64"
+  url: https://en.wikipedia.org/wiki/Super_Expander_64
+
+- id: wiki-gwt
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Google Web Toolkit"
+  url: https://en.wikipedia.org/wiki/Google_Web_Toolkit
+
+- id: wiki-ecmascript-version-history
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ECMAScript version history"
+  url: https://en.wikipedia.org/wiki/ECMAScript_version_history
