@@ -2221,3 +2221,143 @@
       65
       q
     sources: [wiki-ed]
+
+- id: language-h
+  name: Language H
+  kind: language
+  category: business
+  cluster: business
+  origin:
+    first_appeared: { year: 1962, precision: exact, note: "\"The first compiler was developed in August 1962 to run on the National-Elliott 405M\"." }
+    places: [{ institution: NCR }]
+  creators:
+    - { name: NCR, role: developer }
+  status: extinct
+  tags:
+    paradigm: [procedural]
+    domain: [business-data-processing]
+  summary: >
+    "a proprietary, procedural programming language created by NCR based on COBOL", compiled on the National-Elliott 405M
+    for the 803B. Programs are a heading followed by "chapters" of statements, with 84 reserved words. "It is believed
+    that the H stands for John C Harwell."
+  relations:
+    - { type: influenced_by, to: cobol, weight: strong, confidence: high, sources: [wiki-language-h], note: "\"created by NCR based on COBOL\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Language_H" }
+  sources: [wiki-language-h]
+
+- id: miis
+  name: MIIS
+  aliases: [Meditech Integrated Information System]
+  kind: language
+  category: business
+  cluster: joss
+  origin:
+    first_appeared: { year: 1964, precision: range, year_end: 1968, note: "\"created by A. Neil Pappalardo and Curt W. Marble at the Massachusetts General Hospital's (MGH) Laboratory of Computer Science between 1964 and 1968\"." }
+    places: [{ institution: Massachusetts General Hospital Laboratory of Computer Science, country: US }]
+  creators:
+    - { name: Neil Pappalardo, role: co-developer }
+    - { name: Curt W. Marble, role: co-developer }
+  status: legacy
+  tags:
+    paradigm: [procedural]
+    typing: [dynamic-typing, weak-typing]
+    domain: [databases]
+  summary: >
+    "a proprietary programming language, integrated database, and operating system environment derived from MUMPS",
+    first on DEC PDP minicomputers. "The evolution of the original MGH MUMPS language took two major directions: MUMPS
+    proper and MIIS." It became the core technology of Meditech, which Pappalardo co-founded in 1969.
+  relations:
+    - { type: dialect_of, to: mumps, weight: strong, confidence: high, sources: [wiki-miis], note: "\"derived from MUMPS\"; one of the two directions of MGH MUMPS." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MIIS_(programming_language)" }
+  sources: [wiki-miis]
+  example:
+    title: Hello, world
+    language: MIIS
+    note: "From Wikipedia; the page says the indent is a tab, shown here as spaces."
+    code: |
+      E  ;Empty current program buffer direct command.
+      HELLO   ; Program begins with a label which is the program's default name.
+              W "Hello, world!" ;Outputs literal string to current I/O stream.
+              Q  ;Terminate program
+    sources: [wiki-miis]
+
+- id: watfor
+  name: WATFOR
+  aliases: [WATFIV, Waterloo FORTRAN, WATFIV-S, WATFOR-77]
+  kind: language
+  category: educational
+  cluster: fortran
+  origin:
+    first_appeared: { year: 1965, precision: year, note: "\"In summer 1965, four undergraduate students of the University of Waterloo ... developed a Fortran compiler for the IBM 7040 computer called WATFOR.\"" }
+    places: [{ institution: University of Waterloo, country: CA }]
+  creators:
+    - { name: Peter Shantz, role: lead }
+    - { name: James G. Mitchell, role: developer }
+    - { name: J. Wesley Graham, role: project leader }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural]
+    domain: [education]
+  milestones:
+    - { version: WATFIV, year: 1968, summary: "Successor with CHARACTER variables, formatted writes to memory and direct-access I/O." }
+    - { version: WATFIV-S, year: 1974, summary: "Structured version." }
+    - { version: WATFOR-77, year: 1984 }
+  summary: >
+    Waterloo's teaching dialects of FORTRAN IV, "a somewhat easier version of FORTRAN IV, with new features including
+    format-free input and output and, in WATFIV, a character string type". Compiling, linking and running "in just one
+    pass" made them popular for teaching; McCracken wrote that "WATFOR revolutionized the use of computers in education".
+  relations:
+    - { type: dialect_of, to: fortran, weight: strong, confidence: high, sources: [wiki-watfiv], note: "\"WATFOR and WATFIV are a programming language dialect\" of FORTRAN IV." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/WATFIV" }
+  sources: [wiki-watfiv]
+
+- id: flex-kay
+  name: FLEX
+  kind: language
+  category: research
+  cluster: oop/simula-smalltalk
+  origin:
+    first_appeared: { year: 1968, precision: circa, note: "\"developed by Alan Kay in the late 1960s\"; the cited source is \"FLEX – A flexible extendable language\" (kay68)." }
+  creators:
+    - { name: Alan Kay, role: designer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented]
+  summary: >
+    The language Alan Kay "developed ... in the late 1960s while exploring ideas that would later evolve into the
+    Smalltalk programming language".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Flex_(programming_language)" }
+  sources: [wiki-flex-kay]
+
+- id: ppl
+  name: PPL
+  aliases: [Polymorphic Programming Language]
+  kind: language
+  category: research
+  cluster: array
+  origin:
+    first_appeared: { year: 1969, precision: year, note: "\"developed in 1969 at Harvard University by Thomas A. Standish\"; Standish, SIGPLAN Notices, August 1969." }
+    places: [{ institution: Harvard University, country: US }]
+  creators:
+    - { name: Thomas A. Standish, role: designer }
+  status: extinct
+  tags:
+    paradigm: [procedural, array-programming]
+    features: [interpreter]
+  summary: >
+    "an interactive, extensible language with a base language similar to the language APL", from Harvard. "The
+    assignment operator <- (or ←) has influenced the language S."
+  relations:
+    - { type: influenced_by, to: apl, weight: strong, confidence: medium, sources: [wiki-ppl], note: "\"a base language similar to the language APL\"; listed among APL dialects." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Polymorphic_Programming_Language" }
+  sources: [wiki-ppl]

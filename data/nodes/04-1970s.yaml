@@ -3283,3 +3283,136 @@
     code: |
       CHGPGM MYPGM OPTIMIZE(*FULL) RMVOBS(*BLKORD *PRCORD) TEXT('My program.')
     sources: [wiki-control-language]
+
+- id: dibol
+  name: DIBOL
+  aliases: [Digital's Business Oriented Language, DIBOL-8, DIBOL-11, DIBOL-32]
+  kind: language
+  category: business
+  cluster: business
+  origin:
+    first_appeared: { year: 1970, precision: year, note: "\"originally marketed by Digital Equipment Corporation (DEC) in 1970\"." }
+    places: [{ institution: Digital Equipment Corporation, country: US }]
+  creators:
+    - { name: Digital Equipment Corporation, role: developer }
+  status: extinct
+  tags:
+    paradigm: [procedural, imperative, structured]
+    typing: [static-typing]
+    features: [decimal-arithmetic, standardization]
+    domain: [business-data-processing]
+  milestones:
+    - { version: ANSI, year: 1983, summary: "First ANSI standard; revised 1988 and 1992 (X3.165-1992)." , introduces: [standardization] }
+  summary: >
+    "a general-purpose, procedural, imperative programming language that was designed for use in Management Information
+    Systems (MIS) software development", first DIBOL-8 for the PDP-8. It "has a syntax similar to FORTRAN and BASIC,
+    along with BCD arithmetic. It shares the COBOL program structure of separate data and procedure divisions." DEC
+    replaced it with DISC's DBL in 1993.
+  relations:
+    - { type: influenced_by, to: cobol, weight: strong, confidence: high, sources: [wiki-dibol], note: "\"shares the COBOL program structure of separate data and procedure divisions\"." }
+    - { type: influenced_by, to: fortran, weight: moderate, confidence: high, sources: [wiki-dibol], note: "\"a syntax similar to FORTRAN and BASIC\"." }
+    - { type: influenced_by, to: basic, weight: moderate, confidence: high, sources: [wiki-dibol] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/DIBOL" }
+  sources: [wiki-dibol]
+
+- id: model-204
+  name: Model 204 User Language
+  aliases: [M204, Model 204]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    began: { year: 1965, precision: year, note: "\"It was announced in 1965\"." }
+    first_appeared: { year: 1972, precision: year, note: "\"first deployed in 1972\"." }
+    places: [{ institution: Computer Corporation of America, country: US }]
+  creators:
+    - { name: Computer Corporation of America, role: developer }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    domain: [databases]
+  summary: >
+    The programming language of Model 204, "a database management system for IBM and compatible mainframe computers"
+    that "incorporates a programming language and an environment for application development". It is one of "the three
+    major inverted-list" database systems with ADABAS and Datacom/DB. In 2014 Australia's social security system and the
+    Pentagon were said to be its last customers.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Model_204" }
+  sources: [wiki-model-204]
+
+- id: sabretalk
+  name: SabreTalk
+  aliases: [PL/TPF]
+  kind: language
+  category: business
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1973, precision: circa, note: "No year given; \"In 1973, Eastern Air Lines' computing division was selling the SabreTalk compiler for US$95,000.\"" }
+  creators:
+    - { name: American Airlines, role: co-developer }
+    - { name: Eastern Air Lines, role: co-developer }
+    - { name: IBM, role: co-developer }
+  status: extinct
+  tags:
+    paradigm: [procedural]
+    domain: [business-data-processing]
+  summary: >
+    "a discontinued dialect of PL/I for the S/360 IBM mainframes running the TPF platform", developed jointly by American
+    Airlines, Eastern Air Lines and IBM for airline reservation systems. British Airways still runs SabreTalk programs
+    through an automatic converter to C.
+  relations:
+    - { type: dialect_of, to: pl-i, weight: strong, confidence: high, sources: [wiki-sabretalk], note: "\"a discontinued dialect of PL/I\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SabreTalk" }
+  sources: [wiki-sabretalk]
+  example:
+    title: Summing an array
+    language: SabreTalk
+    note: "From Wikipedia's code sample, trailing comment lines shortened."
+    code: |
+      SAMPLE: PROCEDURE;
+            DECLARE ARRAY(10) DECIMAL(5) BASED(POINTUR);
+            DECLARE COUNTER BINARY(15) ALIGNED;
+            DECLARE TOTAL BINARY(31) ALIGNED;
+            START(POINTUR=#RG1);
+            TOTAL = 0;
+      LOOP:
+            DO COUNTER = 0 TO 10 BY 2;
+              TOTAL = TOTAL + ARRAY(COUNTER);
+            END LOOP;
+            BACKC(#RAC= TOTAL);
+      END SAMPLE;
+    sources: [wiki-sabretalk]
+
+- id: mapper
+  name: MAPPER
+  aliases: [Business Information Server, BIS, CRT RPS]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    began: { year: 1967, precision: year, note: "\"The concept of MAPPER was conceived by Louis Schlueter in 1967 and presented in a whitepaper in February 1968\"." }
+    first_appeared: { year: 1975, precision: year, note: "\"CRT RPS was renamed MAPPER in 1975\"; general release in 1979." }
+    places: [{ institution: Sperry Univac, city: "Roseville, Minnesota", country: US }]
+  creators:
+    - { name: Louis Schlueter, role: concept }
+    - { name: Bill Grey, role: developer }
+    - { name: Chuck Hanson, role: developer }
+  status: legacy
+  tags:
+    paradigm: [declarative]
+    domain: [business-data-processing]
+  milestones:
+    - { version: general release, year: 1979, summary: "Released for general use on the UNIVAC 1100." }
+  summary: >
+    "a fourth-generation programming language originally from Sperry Univac", now Unisys's Business Information Server.
+    It was "initially called CRT RPS (Report Processing System), to differentiate it from RPG", and was written in
+    assembler. A 1989 Unisys survey found 140 of 224 UNIVAC 1100 customers using it.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MAPPER" }
+  sources: [wiki-mapper]

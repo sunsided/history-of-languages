@@ -684,6 +684,11 @@
 - id: mixins
   name: Mixins
   facet: features
+  summary: Classes that supply methods to be combined into other classes rather than to be instantiated alone.
+  first_seen:
+    node: flavors
+    year: 1980
+    note: "Flavors \"is notable as the first programming language to include mixins\" (Wikipedia: Flavors)."
 - id: module-system
   name: Module system
   facet: features

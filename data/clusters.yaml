@@ -246,8 +246,6 @@
 - id: business
   name: Business and data-processing languages
   research_status: draft
-  backlog:
-    - { name: "ABAP", year: 1983 }
 - id: algol
   name: ALGOL family
   summary: "ALGOL 58/60/68 and the languages defined by agreeing or disagreeing with them."
@@ -421,36 +419,13 @@
   name: Object-oriented lineage
   research_status: draft
   backlog:
-    - { name: "Cobra", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Mirah", hint: "Charles Oliver Nutter's Ruby-syntax JVM language, formerly Duby; infobox influences Ruby, Java, Boo; stable 0.2.1 (26 September 2016). Wikipedia gives no first-appeared year (wiki-mirah not yet added)." }
-    - { name: "Golo", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "OptimJ", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PortablE", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Polymorphic Programming Language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "GNU E", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Subtext", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Umple", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "ArkTS", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "F", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "R++", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Boomerang", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "CEEMAC", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Janus (time-reversible computing programming language)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "ACC", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Flex", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "WATFIV", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "PortablE", hint: "No article (404); a section of the Amiga E article: Christopher Handley's self-hosting meta-compiler for Amiga E targeting C++ and E. No year." }
+    - { name: "ACC", hint: "Wikipedia stub: \"a near-C compiler for the MS-DOS operating system\"; no year or authors (and a mismatched OpenACC reference)." }
 - id: oop/simula-smalltalk
   name: Simula, Smalltalk and their heirs
   parent: oop
   research_status: draft
-  backlog:
-    - { name: "Flavors", year: 1979, hint: "Mixins; leads to CLOS." }
-    - { name: "Strongtalk", year: 1994, hint: "Typed Smalltalk VM; leads to HotSpot." }
-    - { name: "Squeak / Pharo (as dialect nodes)", year: 1996 }
-    - { name: "Beta", year: 1983, hint: "Nygaard's Simula successor." }
-    - { name: "Emerald", year: 1986 }
-    - { name: "Newspeak", year: 2006 }
-    - { name: "NewtonScript / Io", year: 1993, hint: "Prototype languages between Self and JavaScript." }
 - id: oop/apple
   name: Apple platform languages
   parent: oop
@@ -686,25 +661,12 @@
   summary: "Languages designed for teaching programming, from PILOT and TUTOR to block-based Scratch and Snap!."
   research_status: stub
   backlog:
-    - { name: "ScratchJr", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Blockly", year: 2012, hint: "Google (Neil Fraser and others), a JavaScript library for building block languages, not a language itself; Scratch 3.0 blocks use a fork of it (wiki-blockly). Probably a note on Scratch rather than a node." }
-    - { name: "Alice ML", hint: "Not the Carnegie Mellon Alice (now node alice). Check whether this entry belongs in ml-family." }
-    - { name: "Catrobat", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Hopscotch", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Tynker", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "HAGGIS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Ezhil", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Fjölnir", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Qalb", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "EPL (Easy Programming Language)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Language H", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "ObjectLOGO", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Legoscript", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Not eXactly C", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "Hopscotch", hint: "Hopscotch Technologies' iPad visual language, inspired by Scratch (Wikipedia); no first-release year on the page." }
+    - { name: "ObjectLOGO", hint: "Only a bullet in the Logo article: OO extensions and lexical scoping, version 2.7 sold by Digitool, no longer developed. No year." }
+    - { name: "Legoscript", hint: "Redirects to Lego Mindstorms, whose readable text does not describe it. No source yet." }
+    - { name: "Not eXactly C", hint: "Covered in the Lego Mindstorms NXT article: \"a high-level open source language, similar to C and built on the NBC compiler\", \"basically NQC for the NXT\". No year." }
     - { name: "Not Quite C", hint: "Language for the Lego RCX; Wikipedia has no own article (the URL redirects to Lego Mindstorms). Find the NQC homepage or manual for a date." }
-    - { name: "Mohol", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SiMPLE", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Ubercode", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
 - id: visual
   name: Visual and dataflow languages
   summary: "Programs drawn as diagrams or patched dataflow graphs: LabVIEW, Prograph, Max and Pure Data."
@@ -784,33 +746,12 @@
   summary: "Fourth-generation and database application languages: dBase descendants, report writers and vendor languages such as PL/SQL and ABAP's peers."
   research_status: stub
   backlog:
-    - { name: "Uniface", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "LANSA", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "IBM Informix-4GL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "DIBOL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Transact-SQL", hint: "T-SQL; Sybase, then Microsoft SQL Server (announced January 1988 with Ashton-Tate, licensed from Sybase) and SAP ASE; \"an extension of SQL\" (wiki-transact-sql). Needs a release year and a verbatim example." }
-    - { name: "PeopleCode", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "PeopleCode", hint: "Oracle/PeopleSoft's object-oriented business-logic language, part of PeopleTools; \"Object syntax was an important feature of PeopleTools 8\" (Wikipedia). No first year on the page." }
     - { name: "LotusScript", hint: "Object-oriented, \"similar to Visual Basic\", used by Lotus Notes \"since version 4.0\". Wikipedia gives no year; find the Notes 4.0 release date." }
-    - { name: "@Formula", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Magik", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Apex (Salesforce.com, Inc)", hint: "Salesforce's \"proprietary Java-like programming language\", initially designed by Craig Weissman (Wikipedia: Salesforce). en.wikipedia.org/wiki/Apex_(programming_language) redirects to Salesforce; needs a year from Salesforce docs." }
-    - { name: "EGL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "LiveCode", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SenseTalk", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SuperTalk", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Visual Objects", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "MAPPER", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Model 204", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "FOCUS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Powerhouse", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "CorVision", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Topspeed (Clarion)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "AdvPL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "CobolScript", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "LINC", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "JADE", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Pro*C", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "MIIS", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SabreTalk", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Oriel", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Dog", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "EGL", hint: "IBM's Enterprise Generation Language, later Eclipse EDT (archived 2017); EGL Rich UI December 2008; Informix-4GL's infobox lists EGL as influenced (Wikipedia). No first year." }
+    - { name: "SuperTalk", hint: "\"the scripting language used in SuperCard\", \"a descendant of HyperTalk\" (Wikipedia). No year; use SuperCard's release date from another source." }
+    - { name: "Visual Objects", hint: "CA-Visual Objects (code-named Aspen), Nantucket's Clipper for Windows, brought to market by Computer Associates; 2.5 in 1999, last 2.8 sp4 in 2012; successors Vulcan.NET and X# (Wikipedia). No first-release year." }
+    - { name: "FOCUS", hint: "Information Builders' 4GL; Gerald D. Cohen recreated RAMIS as FOCUS after founding Information Builders in October 1975; WebFOCUS 1997 (Wikipedia). No release year for FOCUS itself." }
+    - { name: "Pro*C", hint: "Oracle's embedded-SQL precompiler language for C/C++ (Wikipedia); no year or authors on the page." }

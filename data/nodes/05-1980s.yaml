@@ -188,6 +188,7 @@
     - { version: ANSI Common Lisp, year: 1994, introduces: [standardization] }
   summary: "Unification of MacLisp-descended dialects (Lisp Machine Lisp, NIL, Spice Lisp, S-1 Lisp). CLOS showed OOP built from generic functions rather than message sends, the ancestor of Julia's multiple dispatch."
   relations:
+    - { type: influenced_by, to: flavors, aspects: [mixins], weight: strong, confidence: high, sources: [wiki-flavors], note: "Flavors \"was hugely influential in the development of the Common Lisp Object System (CLOS)\"." }
     - { type: influenced_by, to: nil-lisp, weight: moderate, confidence: medium, sources: [wiki-nil], note: "NIL infobox \"Influenced: Common Lisp, T\"." }
     - { type: dialect_of, to: lisp, weight: strong, confidence: high }
     - { type: influenced_by, to: scheme, aspects: [lexical-scoping], weight: moderate, confidence: high }
@@ -4415,3 +4416,501 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Almquist_shell" }
   sources: [wiki-almquist-shell]
+
+- id: flavors
+  name: Flavors
+  aliases: [New Flavors]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1980, precision: circa, note: "No year in the text; the cited \"Flavors\" technical report (MIT AI Lab) and Weinreb and Moon's AI Memo 602 are from 1980 (the backlog had 1979, unsourced)." }
+    places: [{ institution: MIT Artificial Intelligence Laboratory, country: US }]
+  creators:
+    - { name: Howard Cannon, role: developer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented]
+    features: [mixins, multiple-inheritance]
+  summary: >
+    "an early object-oriented extension to Lisp" for the Lisp machine and Lisp Machine Lisp, "notable as the first
+    programming language to include mixins", with :before and :after daemon methods. Symbolics developed it into New
+    Flavors, and it "was hugely influential in the development of the Common Lisp Object System (CLOS)".
+  relations:
+    - { type: superset_of, to: lisp-machine-lisp, weight: strong, confidence: high, sources: [wiki-flavors], note: "\"an early object-oriented extension to Lisp ... for the Lisp machine and its programming language Lisp Machine Lisp\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Flavors_(programming_language)" }
+  sources: [wiki-flavors]
+
+- id: emerald
+  name: Emerald
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1980, precision: decade, note: "Infobox \"First appeared: 1980s\"; HOPL III paper \"The Development of the Emerald Programming Language\" (2007)." }
+    places: [{ institution: University of Washington, country: US }]
+  creators:
+    - { name: Andrew P. Black, role: co-designer }
+    - { name: Norman C. Hutchinson, role: co-designer }
+    - { name: Eric B. Jul, role: co-designer }
+    - { name: Hank Levy, role: co-designer }
+  status: legacy
+  tags:
+    paradigm: [object-oriented]
+    typing: [static-typing, strong-typing]
+    domain: [distributed-systems]
+  summary: >
+    "a distributed, object-oriented programming language" from the University of Washington, "designed to support high
+    performance distribution, location, and high performance of objects", including objects that move between nodes
+    with move self to. Its infobox lists Java and Singularity among what it influenced.
+  notes: >
+    Levy's Wikipedia article is "Hank Levy (computer scientist)"; the parenthesis is dropped because build.py rejects it.
+  relations:
+    - { type: influenced_by, to: simula, weight: moderate, confidence: medium, sources: [wiki-emerald], note: "Infobox \"Influenced by: Pascal, Simula, Smalltalk\"." }
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: medium, sources: [wiki-emerald] }
+    - { type: influenced_by, to: pascal, weight: weak, confidence: medium, sources: [wiki-emerald] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Emerald_(programming_language)" }
+  sources: [wiki-emerald]
+  example:
+    title: A migrating object
+    language: Emerald
+    note: "From Wikipedia (keywords bold on the page)."
+    code: |
+      const Kilroy ←  object Kilroy
+        process
+        const origin ←  locate self
+        const up ← origin.getActiveNodes
+        for e in up
+         const there ← e.getTheNode
+         move self to there
+        end for
+        move self to origin
+        end process
+      end Kilroy
+    sources: [wiki-emerald]
+
+- id: ceemac
+  name: CEEMAC
+  kind: language
+  category: domain-specific
+  cluster: visual
+  origin:
+    first_appeared: { year: 1980, precision: decade, note: "\"developed in the 1980s for the Apple II family\"." }
+  creators:
+    - { name: Brooke Boering, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    domain: [computer-graphics]
+  summary: >
+    "a visual composition language in which the programmer designs dynamic scores by programmatically controlling color,
+    shape, sound and movement" on the Apple II, then "performs" them from the keyboard or paddles. Its syntax "loosely
+    resembles a combination of BASIC and Pascal"; it was marketed through the free demo Fire Organ.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CEEMAC" }
+  sources: [wiki-ceemac]
+
+- id: fjolnir
+  name: Fjölnir
+  aliases: [Fjolnir]
+  kind: language
+  category: research
+  cluster: algol
+  origin:
+    first_appeared: { year: 1980, precision: decade, note: "Infobox \"First appeared: 1980s\"; \"mostly used in the 1980s\"; Agnarsson and Krishnamoorthy, SIGPLAN Notices 1985." }
+    places: [{ institution: University of Iceland, country: IS }]
+  creators:
+    - { name: Snorri Agnarsson, role: designer }
+  status: extinct
+  tags:
+    paradigm: [procedural, object-oriented]
+    typing: [strong-typing, dynamic-typing]
+    features: [modules]
+  summary: >
+    An Icelandic-keyword language from the University of Iceland "based on the concept of representing programs as
+    trees, and packages by substitutions on trees using algebraic operators", run on MS-DOS.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Fj%C3%B6lnir_(programming_language)" }
+  sources: [wiki-fjolnir]
+  example:
+    title: Hello world
+    language: Fjölnir
+    note: "From Wikipedia."
+    code: |
+      ;; Hello world in Fjölnir
+
+      "hello" < main
+      {
+          main ->
+          stef(;)
+          stofn
+              skrifastreng(;"Hello, world!"),
+          stofnlok
+      }
+      *
+      "GRUNNUR"
+      ;
+    sources: [wiki-fjolnir]
+
+- id: linc
+  name: LINC
+  aliases: [Logic and Information Network Compiler, Unisys EAE, AB Suite]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1982, precision: circa, note: "\"originally developed by two New Zealand computer programmers ... in the early 1980s\"; \"Burroughs purchased rights to sell the product in 1982\"." }
+  creators:
+    - { name: Gil Simpson, role: co-developer }
+    - { name: Peter Hoskins, role: co-developer }
+  status: legacy
+  tags:
+    paradigm: [declarative]
+    domain: [business-data-processing]
+  summary: >
+    "a fourth-generation programming language, used mostly on Unisys computer systems", written by two New Zealanders in
+    Saudi Arabia and sold by Burroughs from 1982; it generates COBOL for ClearPath systems. It became Unisys EAE and then
+    Agile Business Suite and was "sold to over 4000 clients worldwide".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LINC_4GL" }
+  sources: [wiki-linc]
+
+- id: janus-reversible
+  name: Janus
+  kind: language
+  category: research
+  cluster: algol
+  origin:
+    first_appeared: { year: 1982, precision: year, note: "\"written at Caltech in 1982\"; formally specified in 2007." }
+    places: [{ institution: California Institute of Technology, country: US }]
+  creators:
+    - { name: Christopher Lutz, role: designer }
+    - { name: Howard Derby, role: designer }
+    - { name: Tetsuo Yokoyama, role: 2007 specification }
+    - { name: Robert Glück, role: 2007 specification }
+  status: maintained
+  tags:
+    paradigm: [imperative, procedural, structured]
+  milestones:
+    - { version: formal specification, year: 2007, summary: "Specified with a program inverter and invertible self-interpreter." }
+  summary: >
+    "a reversible programming language" that "performs deterministic computations in both forward and backward
+    directions", "a structured imperative programming language that operates on a global store without heap allocation".
+    Loops have entry and exit assertions (from ... until) so they can run backwards.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Janus_(reversible_computing_programming_language)" }
+  sources: [wiki-janus]
+  example:
+    title: Fibonacci
+    language: Janus
+    note: "From Wikipedia."
+    code: |
+      procedure fib
+          from i = n
+          do
+              x1 += x2
+              x1 <=> x2
+              i -= 1
+          until i = 2
+    sources: [wiki-janus]
+
+- id: powerhouse
+  name: PowerHouse
+  aliases: [Quiz, Quick, QTP]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1982, precision: year, note: "\"PowerHouse was introduced in 1982\"." }
+    places: [{ institution: Quasar Corporation }]
+  creators:
+    - { name: Cognos, role: developer }
+  status: legacy
+  tags:
+    paradigm: [declarative]
+    features: [bytecode-vm]
+    domain: [business-data-processing]
+  summary: >
+    "a byte-compiled fourth-generation programming language" by Quasar (later Cognos) for the HP 3000, Data General and
+    VAX/VMS, made of QDD, QDesign, Quick, Quiz and QTP; a screen could be generated "in as few as four lines of source
+    code". IBM bought Cognos in 2008 and UNICOM took PowerHouse over in 2013.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PowerHouse_(programming_language)" }
+  sources: [wiki-powerhouse]
+  example:
+    title: A generated screen
+    language: QUICK
+    note: "From Wikipedia; placeholders in angle brackets."
+    code: |
+      SCREEN <screenname>
+      FILE <filename>
+      GENERATE
+      GO
+    sources: [wiki-powerhouse]
+
+- id: abap
+  name: ABAP
+  aliases: [ABAP/4, Advanced Business Application Programming, ABAP Objects]
+  kind: language
+  category: business
+  cluster: business
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "Infobox \"First appeared: 1983\"." }
+    places: [{ institution: SAP SE, country: DE }]
+  creators:
+    - { name: SAP SE, role: designer }
+  status: active
+  tags:
+    paradigm: [object-oriented, structured, imperative]
+    typing: [static-typing, strong-typing]
+    domain: [business-data-processing]
+  milestones:
+    - { version: ABAP Objects, year: 1999, summary: "Object-oriented extension with R/3 4.6.", introduces: [object-oriented] }
+    - { version: "7.58", year: 2023 }
+  summary: >
+    "a domain-specific high-level programming language created by the German software company SAP SE", "originally the
+    report language for SAP R/2" (Allgemeiner Berichts-Aufbereitungs-Prozessor) and advertised as a 4GL. ABAP Objects
+    added object orientation in 1999; today it stands beside Java on SAP NetWeaver.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ABAP" }
+  sources: [wiki-abap]
+  example:
+    title: Hello, World
+    language: ABAP
+    note: "From Wikipedia."
+    code: |
+      REPORT TEST.
+      WRITE 'Hello, World!'.
+    sources: [wiki-abap]
+
+- id: uniface
+  name: Uniface
+  aliases: [UNIS, Uniface Proc]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1984, precision: year, note: "\"Originally called UNIS, the product was created in The Netherlands in 1984 by Inside Automation\"; Uniface 3 (1986) was \"the first public release\"." }
+    places: [{ institution: Inside Automation, country: NL }]
+  creators:
+    - { name: Bodo Douqué, role: company head }
+    - { name: Frits Kress, role: technical director }
+  status: active
+  tags:
+    paradigm: [declarative, procedural]
+    domain: [business-data-processing, databases]
+  milestones:
+    - { version: "3", year: 1986, summary: "First public release." }
+    - { version: "10", year: 2015 }
+  summary: >
+    "a low-code development and deployment platform for enterprise applications" built "on the principles of the ...
+    ANSI 3-schema architecture", with "a proprietary procedural scripting (fourth generation) language called Uniface
+    Proc". Compuware bought it in 1994 and Rocket Software in 2021.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Uniface_(programming_language)" }
+  sources: [wiki-uniface]
+
+- id: informix-4gl
+  name: Informix-4GL
+  aliases: [I-4GL, IBM Informix-4GL]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    began: { year: 1985, precision: year, note: "\"Development of Informix-4GL began in 1985 at Informix Corporation\"." }
+    first_appeared: { year: 1986, precision: exact, note: "Infobox \"First appeared: February 15, 1986\"." }
+    places: [{ institution: Informix Corporation, country: US }]
+  creators:
+    - { name: Chris Maloney, role: chief architect }
+    - { name: Roy Harrington, role: co-lead }
+  status: maintained
+  tags:
+    paradigm: [procedural, structured, declarative]
+    typing: [static-typing, strong-typing]
+    domain: [databases, business-data-processing]
+  summary: >
+    "a 4GL programming language developed by Informix during the mid-1980s" as "an evolution of its earlier Informix SQL
+    (ISQL) toolset", joining ISQL's forms (Perform) and reports (Ace) with procedural code and embedded SQL. IBM bought
+    Informix in 2001; Genero BDL, Querix4GL and Aubit 4GL are compatible clones, and the infobox lists IBM's EGL as an heir.
+  relations:
+    - { type: influenced_by, to: sql, weight: strong, confidence: high, sources: [wiki-informix-4gl], note: "Infobox \"Influenced by: C, COBOL, SQL, ISQL, Perform, Ace\"." }
+    - { type: influenced_by, to: cobol, weight: weak, confidence: medium, sources: [wiki-informix-4gl] }
+    - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-informix-4gl] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Informix-4GL" }
+  sources: [wiki-informix-4gl]
+  example:
+    title: Hello, world
+    language: Informix-4GL
+    note: "From Wikipedia."
+    code: |
+      MAIN
+          DISPLAY "Hello, Informix 4GL!"
+      END MAIN
+    sources: [wiki-informix-4gl]
+
+- id: corvision
+  name: CorVision
+  aliases: [Application Factory, INFORM]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    began: { year: 1972, precision: year, note: "Its ancestor INFORM was created in 1972 for Standard Information Systems; Application Factory in 1984." }
+    first_appeared: { year: 1986, precision: year, note: "\"In 1986 the name of Application Factory was dropped in favor of the name CorVision.\"" }
+    places: [{ institution: Cortex Corporation, country: US }]
+  creators:
+    - { name: Jim Warner, role: Application Factory }
+  status: legacy
+  tags:
+    paradigm: [declarative]
+    domain: [business-data-processing]
+  milestones:
+    - { version: "5", year: 1992, summary: "Query and Unix support." }
+  summary: >
+    "a fourth generation programming tool (4GL)" developed by Cortex "for the VAX/VMS ISAM environment", grown from the
+    1972 INFORM system, whose PROCESS language became BUILDER. Development ended with the Y2K release 5.12.2; Attunity owns
+    it now.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CorVision" }
+  sources: [wiki-corvision]
+
+- id: beta
+  name: BETA
+  aliases: [gbeta]
+  kind: language
+  category: research
+  cluster: oop/simula-smalltalk
+  origin:
+    began: { year: 1976, precision: year, note: "\"in development since 1976\"." }
+    first_appeared: { year: 1986, precision: circa, note: "\"with implementations known since 1986\"; HOPL III paper 2007." }
+    places: [{ institution: University of Oslo, country: "NO" }]
+  creators:
+    - { name: Kristen Nygaard, role: co-designer }
+    - { name: Bent Bruun Kristensen, role: co-designer }
+    - { name: Ole Lehrmann Madsen, role: co-designer }
+    - { name: Birger Møller-Pedersen, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented]
+    typing: [static-typing]
+  summary: >
+    "a pure object-oriented language originating within the Scandinavian School in object-orientation where the first
+    object-oriented language Simula was developed". It "introduced nested classes, and unified classes with procedures
+    into so called patterns". "The project is inactive as of October 2020."
+  relations:
+    - { type: influenced_by, to: simula, weight: strong, confidence: high, sources: [wiki-beta], note: "Infobox \"Influenced by: Simula\"; Nygaard co-designed both, in the Scandinavian School." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/BETA_(programming_language)" }
+  sources: [wiki-beta]
+  example:
+    title: Hello
+    language: BETA
+    note: "From Wikipedia, which prints \"Hello betas!\" despite its caption."
+    code: |
+      (#
+      do ’Hello betas!’->PutLine
+      #)
+    sources: [wiki-beta]
+
+- id: lansa
+  name: LANSA
+  aliases: [RDML, RDMLX, lambda]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1987, precision: year, note: "\"In its first release in 1987, the product was called lambda\" (tagged citation needed)." }
+  status: active
+  tags:
+    paradigm: [declarative, procedural]
+    domain: [business-data-processing]
+  summary: >
+    An IDE whose "main feature ... is the RDML / RDMLX language–which is classified as a 4GL", running on the IBM AS/400
+    from 1988 and later Windows, Linux and Unix. "RDML closely follows the syntax of IBM CL or Control Language."
+  relations:
+    - { type: influenced_by, to: control-language, weight: moderate, confidence: high, sources: [wiki-lansa], note: "\"RDML closely follows the syntax of IBM CL or Control Language.\"" }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LANSA_(development_environment)" }
+  sources: [wiki-lansa]
+
+- id: magik
+  name: Magik
+  aliases: [Inspirational Magik]
+  kind: language
+  category: domain-specific
+  cluster: oop
+  origin:
+    first_appeared: { year: 1989, precision: disputed, note: "\"designed and implemented in 1989 by Arthur Chance\"; \"originally introduced in 1990\"." }
+    places: [{ institution: Smallworld Systems, country: GB }]
+  creators:
+    - { name: Arthur Chance, role: designer }
+  status: maintained
+  tags:
+    paradigm: [object-oriented]
+    typing: [dynamic-typing]
+    features: [multiple-inheritance, bytecode-vm]
+  milestones:
+    - { version: JVM port, year: 2012, summary: "Ported to the Java virtual machine." }
+  summary: >
+    "an object-oriented programming language that supports multiple inheritance and polymorphism, and it is dynamically
+    typed", part of the Smallworld GIS. It "shares some similarities with Smalltalk", compiling to byte codes for the
+    Magik virtual machine; GE Energy has provided it since 2000.
+  relations:
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: medium, sources: [wiki-magik], note: "\"shares some similarities with Smalltalk in terms of its language features and its architecture\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Magik_(programming_language)" }
+  sources: [wiki-magik]
+
+- id: notes-formula
+  name: "@Formula"
+  aliases: [Formula language, Notes formula language]
+  kind: language
+  category: scripting
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1989, precision: circa, note: "\"created by Ray Ozzie during the early development of Lotus Notes\"; Notes itself was released in 1989." }
+    places: [{ institution: Lotus Development, country: US }]
+  creators:
+    - { name: Ray Ozzie, role: designer }
+    - { name: Damien Katz, role: Notes 6 engine rewrite }
+  status: maintained
+  tags:
+    paradigm: [functional, scripting]
+    features: [string-processing]
+  milestones:
+    - { version: Notes 6, year: 2002, summary: "Engine rewritten by Damien Katz; looping and dynamic execution added (IBM article dated November 2002)." }
+  summary: >
+    "a scripting language used by Lotus Notes", called @Formula "because many language elements start with the
+    @-character". Ozzie "borrowed the compiler and decompiler from the Lotus 1-2-3 spreadsheet", but it was "designed
+    primarily for string and list processing", "inspired by Ray Ozzie's prior use of Icon and Lisp".
+  relations:
+    - { type: influenced_by, to: icon, weight: moderate, confidence: high, sources: [wiki-formula-language], note: "\"inspired by Ray Ozzie's prior use of Icon and Lisp\"." }
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: high, sources: [wiki-formula-language] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Formula_language" }
+  sources: [wiki-formula-language]
+  example:
+    title: A selection formula
+    language: "@Formula"
+    note: "From Wikipedia."
+    code: |
+      SELECT @NoteId = "NT0050D26"
+    sources: [wiki-formula-language]

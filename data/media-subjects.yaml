@@ -129,6 +129,7 @@
   person: Adele Goldberg
   wiki: Adele Goldberg (computer scientist)
   nodes:
+  - squeak
   - smalltalk
 - id: person-alain-colmerauer
   kind: person
@@ -147,6 +148,8 @@
   person: Alan Kay
   wiki: Alan Kay
   nodes:
+  - squeak
+  - flex-kay
   - smalltalk
 - id: person-alan-turing
   kind: person
@@ -326,6 +329,7 @@
   person: Dan Ingalls
   wiki: Dan Ingalls
   nodes:
+  - squeak
   - smalltalk
 - id: person-david-macqueen
   kind: person
@@ -667,6 +671,7 @@
   person: Kristen Nygaard
   wiki: Kristen Nygaard
   nodes:
+  - beta
   - simula
 - id: person-krste-asanovic
   kind: person
@@ -692,6 +697,7 @@
   person: Lars Bak
   wiki: Lars Bak (computer programmer)
   nodes:
+  - strongtalk
   - dart
 - id: person-leo-geurts
   kind: person
@@ -1291,6 +1297,7 @@
   person: Neil Pappalardo
   wiki: Neil Pappalardo
   nodes:
+  - miis
   - mumps
 - id: person-robert-a-greenes
   kind: person
@@ -1789,3 +1796,83 @@
   wiki: Steve Ward (computer scientist)
   nodes:
   - curl-lang
+- id: person-birger-moller-pedersen
+  kind: person
+  person: Birger Møller-Pedersen
+  wiki: Birger Møller-Pedersen
+  nodes:
+  - beta
+- id: person-gilad-bracha
+  kind: person
+  person: Gilad Bracha
+  wiki: Gilad Bracha
+  nodes:
+  - newspeak
+  - strongtalk
+- id: person-james-g-mitchell
+  kind: person
+  person: James G. Mitchell
+  wiki: James G. Mitchell
+  nodes:
+  - watfor
+- id: person-j-wesley-graham
+  kind: person
+  person: J. Wesley Graham
+  wiki: J. Wesley Graham
+  nodes:
+  - watfor
+- id: person-gil-simpson
+  kind: person
+  person: Gil Simpson
+  wiki: Gil Simpson
+  nodes:
+  - jade-lang
+  - linc
+- id: person-ray-ozzie
+  kind: person
+  person: Ray Ozzie
+  wiki: Ray Ozzie
+  nodes:
+  - notes-formula
+- id: person-hank-levy
+  kind: person
+  person: Hank Levy
+  wiki: Hank Levy (computer scientist)
+  nodes:
+  - emerald
+- id: person-timothy-lethbridge
+  kind: person
+  person: Timothy Lethbridge
+  wiki: Timothy Lethbridge
+  nodes:
+  - umple
+- id: person-mitchel-resnick
+  kind: person
+  person: Mitchel Resnick
+  wiki: Mitchel Resnick
+  nodes:
+  - scratchjr
+- id: person-marina-umaschi-bers
+  kind: person
+  person: Marina Umaschi Bers
+  wiki: Marina Umaschi Bers
+  nodes:
+  - scratchjr
+- id: person-paula-bonta
+  kind: person
+  person: Paula Bonta
+  wiki: Paula Bonta
+  nodes:
+  - scratchjr
+- id: person-brian-silverman
+  kind: person
+  person: Brian Silverman
+  wiki: Brian Silverman
+  nodes:
+  - scratchjr
+- id: person-sepandar-kamvar
+  kind: person
+  person: Sepandar Kamvar
+  wiki: Sepandar Kamvar
+  nodes:
+  - dog-lang

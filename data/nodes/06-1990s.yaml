@@ -139,6 +139,8 @@
     typing: [dynamic-typing]
     domain: [statistics]
   summary: "Interactive language for statistics at Bell Labs. R is an open implementation of it with Scheme semantics underneath."
+  relations:
+    - { type: influenced_by, to: ppl, weight: weak, confidence: medium, sources: [wiki-ppl], note: "\"The assignment operator <- (or ←) has influenced the language S.\"" }
   research_status: draft
   confidence: high
   sources: [chambers-2020-s-r]
@@ -408,6 +410,7 @@
     CompletableFuture (2014) to virtual threads (2023) is the explicit decision not to adopt
     async/await.
   relations:
+    - { type: influenced_by, to: emerald, weight: weak, confidence: medium, sources: [wiki-emerald], note: "Emerald infobox \"Influenced: Java, Singularity\"; what travelled is not said." }
     - { type: influenced_by, to: cpp, aspects: [classes], weight: strong, confidence: high }
     - { type: influenced_by, to: objective-c, aspects: [interfaces], weight: moderate, confidence: high, note: "Interfaces from Objective-C protocols." }
     - { type: influenced_by, to: smalltalk, aspects: [bytecode-vm, garbage-collection], weight: moderate, confidence: medium }
@@ -4218,3 +4221,311 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/BeanShell" }
   sources: [wiki-beanshell]
+
+- id: r-plus-plus
+  name: R++
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1990, precision: decade, note: "\"developed by Bell Labs in the 1990s\"." }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: Bell Labs, role: developer }
+  status: extinct
+  tags:
+    paradigm: [logic, object-oriented]
+  summary: >
+    "a rule-based programming language based on C++" whose extension "permits rules to be defined as members of C++
+    classes". After the AT&T–Lucent split it "did not see immediate commercial development while the two companies
+    disputed ownership".
+  relations:
+    - { type: superset_of, to: cpp, weight: strong, confidence: high, sources: [wiki-r-plus-plus], note: "\"The R++ extension permits rules to be defined as members of C++ classes.\"" }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/R%2B%2B" }
+  sources: [wiki-r-plus-plus]
+
+- id: gnu-e
+  name: GNU E
+  kind: language
+  category: research
+  cluster: c-family
+  origin:
+    first_appeared: { year: 1991, precision: year, note: "Infobox \"First appeared: 1991\"; last release 2.3.3, May 28, 1993." }
+  status: extinct
+  tags:
+    paradigm: [object-oriented]
+    typing: [strong-typing]
+    domain: [databases]
+  summary: >
+    "an extension of C++ designed for writing software systems to support persistent applications", built for the
+    Exodus project.
+  relations:
+    - { type: superset_of, to: cpp, weight: strong, confidence: high, sources: [wiki-gnu-e], note: "\"an extension of C++\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GNU_E" }
+  sources: [wiki-gnu-e]
+
+- id: oriel
+  name: Oriel
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1991, precision: year, note: "\"released with the book Windows 3 Power Tools in 1991\"." }
+  creators:
+    - { name: The LeBlond Group, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, scripting]
+  summary: >
+    "a graphics-based batch language" for Windows 3.0 released with the LeBlond Group's Power Tools books (later Windows
+    3.1 and NT editions), named after the oriel bay window.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Oriel_(scripting_language)" }
+  sources: [wiki-oriel]
+  example:
+    title: A message box
+    language: Oriel
+    note: "From Wikipedia."
+    code: |
+      MessageBox(OK, 1, INFORMATION, "Hello, world!", "Oriel Says Hello", responseValue)
+    sources: [wiki-oriel]
+
+- id: sensetalk
+  name: SenseTalk
+  kind: language
+  category: scripting
+  cluster: oop/apple
+  origin:
+    first_appeared: { year: 1992, precision: year, note: "\"first appeared in 1992 as the scripting language in HyperSense, a multimedia authoring application for the NeXTSTEP platform\"." }
+  creators:
+    - { name: Douglas Simons, role: designer }
+  status: active
+  tags:
+    paradigm: [object-oriented, procedural, scripting]
+    features: [english-like-syntax]
+  milestones:
+    - { version: Eggplant, year: 2002, summary: "Redesigned language ships with Eggplant 1.0." }
+    - { version: "1.26", year: 2007, summary: "each expressions, similar to list comprehensions.", introduces: [list-comprehensions] }
+    - { version: "1.67", year: 2014, summary: "Units.", introduces: [units-of-measure] }
+  summary: >
+    "a high-level English-like scripting language in the XTalk family", "derived from HyperTalk", meant to be "largely
+    readable by ordinary people" and hence called "people-oriented". It began in HyperSense on NeXTSTEP and was rebuilt
+    for the Eggplant test tool.
+  relations:
+    - { type: dialect_of, to: hypertalk, weight: strong, confidence: high, sources: [wiki-sensetalk], note: "\"a member of the XTalk family of languages derived from HyperTalk\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SenseTalk" }
+  sources: [wiki-sensetalk]
+  example:
+    title: Case-insensitive names
+    language: SenseTalk
+    note: "From Wikipedia."
+    code: |
+      Put 12 Into Apples
+      put 5 into Bananas
+      PUT "Total Pieces of Fruit: " & apples+bananas --> displays "Total Pieces of Fruit: 17"
+    sources: [wiki-sensetalk]
+
+- id: newtonscript
+  name: NewtonScript
+  kind: language
+  category: general
+  cluster: oop/apple
+  origin:
+    first_appeared: { year: 1993, precision: year, note: "Infobox 1993; the Newton MessagePad was unveiled on August 3, 1993." }
+    places: [{ institution: Apple Computer, country: US }]
+  creators:
+    - { name: Walter Smith, role: designer }
+  status: extinct
+  tags:
+    paradigm: [prototype-based, object-oriented]
+    typing: [dynamic-typing]
+  summary: >
+    "a prototype-based programming language created to write programs for the Newton platform", "heavily influenced by
+    the Self programming language, but modified to be more suited to needs of mobile and embedded devices". It ended with
+    the Newton in 1998, but "the prototype-based object model of Self and NewtonScript was used in JavaScript".
+  relations:
+    - { type: influenced_by, to: self, aspects: [prototype-based], weight: strong, confidence: high, sources: [wiki-newtonscript], note: "\"heavily influenced by the Self programming language\"." }
+    - { type: influenced_by, to: dylan, weight: moderate, confidence: medium, sources: [wiki-newtonscript], note: "Infobox \"Influenced by: Self, Dylan\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/NewtonScript" }
+  sources: [wiki-newtonscript]
+
+- id: simple-lang
+  name: SiMPLE
+  aliases: [Micro-SiMPLE, Pro-SiMPLE, Ultra-SiMPLE]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1995, precision: circa, note: "\"In 1995, Bob Bishop and Rich Whicker ... decided to create a new programming language\"; no release date given." }
+  creators:
+    - { name: Bob Bishop, role: co-creator }
+    - { name: Rich Whicker, role: co-creator }
+  status: extinct
+  tags:
+    paradigm: [procedural]
+    domain: [education]
+  summary: >
+    A "programming development system that was created to provide easy programming capabilities for everybody", by two
+    former Apple engineers, "vaguely reminiscent of the AppleSoft BASIC", in Micro (four keywords), DOS and Windows
+    editions. Its site went offline after Bishop's death.
+  relations:
+    - { type: influenced_by, to: applesoft-basic, weight: weak, confidence: medium, sources: [wiki-simple], note: "\"vaguely reminiscent of the AppleSoft BASIC\"; \"merely inspired by it\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SiMPLE" }
+  sources: [wiki-simple]
+
+- id: squeak
+  name: Squeak
+  kind: language
+  category: general
+  cluster: oop/simula-smalltalk
+  origin:
+    first_appeared: { year: 1996, precision: year, note: "Infobox \"First appeared: 1996\"." }
+    places: [{ institution: Apple Computer }]
+  creators:
+    - { name: Alan Kay, role: co-designer }
+    - { name: Dan Ingalls, role: co-designer }
+    - { name: Adele Goldberg, role: co-designer }
+  status: active
+  tags:
+    paradigm: [object-oriented, reflective]
+    typing: [dynamic-typing]
+    features: [image-based, bytecode-vm]
+  milestones:
+    - { version: "4.0", year: 2010, summary: "MIT and Apache licensed." }
+  summary: >
+    A Smalltalk "derived from Smalltalk-80 by a group that included some of Smalltalk-80's original developers, initially
+    at Apple Computer, then at Walt Disney Imagineering". Etoys, Croquet and the first Scratch were built in it, and Pharo
+    and Cuis forked from it.
+  relations:
+    - { type: dialect_of, to: smalltalk, weight: strong, confidence: high, sources: [wiki-squeak], note: "\"derived from Smalltalk-80\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Squeak_(programming_language)" }
+  sources: [wiki-squeak]
+
+- id: jade-lang
+  name: JADE
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1996, precision: exact, note: "\"The first version of JADE was JADE 3, released September 1996.\"" }
+    places: [{ institution: Jade Software Corporation, country: NZ }]
+  creators:
+    - { name: Gil Simpson, role: originator }
+  status: active
+  tags:
+    paradigm: [object-oriented]
+    typing: [static-typing, strong-typing]
+    memory: [garbage-collection]
+    domain: [databases]
+  summary: >
+    The language of a New Zealand "object-oriented software development and deployment platform" with its own
+    application server and object database. "In syntax, JADE is very similar to Pascal; its syntax is based on the
+    language Modula-2." Gil Simpson's Christchurch team built it after LINC, and it "is able to import and run LINC 4GL
+    programs".
+  notes: >
+    The JADE page names its originator "Sir Gilbert Simpson" and the LINC page "Gil Simpson"; both link the same article.
+  relations:
+    - { type: influenced_by, to: modula-2, weight: strong, confidence: high, sources: [wiki-jade], note: "\"its syntax is based on the language Modula-2\"." }
+    - { type: influenced_by, to: linc, weight: moderate, confidence: high, sources: [wiki-linc], note: "\"Gil Simpsons Christchurch team went on to create the Jade language/database that could import and run LINC code\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/JADE_(programming_language)" }
+  sources: [wiki-jade, wiki-linc]
+  example:
+    title: Hello, World
+    language: JADE
+    note: "From Wikipedia."
+    code: |
+      helloWorld();
+
+      begin
+         app.msgBox("Hello, World!", "Hello, World!", MsgBox_OK_Only + MsgBox_Information_Icon);
+      end;
+    sources: [wiki-jade]
+
+- id: f-lang
+  name: F
+  kind: language
+  category: scientific
+  cluster: fortran
+  origin:
+    first_appeared: { year: 1996, precision: circa, note: "No year in the text; the earliest cited book is \"Programmer's Guide to F\" (Unicomp, 1996)." }
+  creators:
+    - { name: The Fortran Company, role: developer }
+  status: extinct
+  tags:
+    paradigm: [array-programming, procedural, modular]
+    typing: [static-typing]
+    features: [minimalism]
+    domain: [scientific-computing]
+  summary: >
+    "a modular, compiled, numeric programming language" "developed as a modern Fortran, thus making it a subset of
+    Fortran 95", "a minimal subset of Fortran, with only about one hundred intrinsic procedures", on top of NAG, Fujitsu,
+    Salford and Absoft compilers and later g95.
+  relations:
+    - { type: subset_of, to: fortran, from_version: "Fortran 95", weight: strong, confidence: high, sources: [wiki-f-lang], note: "\"a subset of Fortran 95\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/F_(programming_language)" }
+  sources: [wiki-f-lang]
+
+- id: advpl
+  name: AdvPL
+  aliases: [Advanced Protheus Language]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1999, precision: year, note: "\"It was released in 1999\"." }
+    places: [{ institution: TOTVS }]
+  creators:
+    - { name: TOTVS, role: designer }
+  status: active
+  tags:
+    paradigm: [procedural]
+    domain: [business-data-processing]
+  summary: >
+    "a proprietary programming language based on xBase", used for applications in TOTVS's Protheus ERP.
+  relations:
+    - { type: influenced_by, to: dbase, weight: strong, confidence: medium, sources: [wiki-advpl], note: "\"based on xBase\"; dBase is the xBase family's root node here." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/AdvPL" }
+  sources: [wiki-advpl]
+
+- id: cobolscript
+  name: CobolScript
+  kind: language
+  category: scripting
+  cluster: business
+  origin:
+    first_appeared: { year: 1999, precision: year, note: "\"created by Matthew Dean and Charles Schereda of Deskware in 1999\"." }
+  creators:
+    - { name: Matthew Dean, role: co-creator }
+    - { name: Charles Schereda, role: co-creator }
+  status: extinct
+  tags:
+    paradigm: [procedural, scripting]
+    domain: [web, business-data-processing]
+  summary: >
+    "intended to provide web-enabled COBOL, and was targeted at businesses using legacy software written in that
+    language".
+  relations:
+    - { type: influenced_by, to: cobol, weight: strong, confidence: high, sources: [wiki-cobolscript], note: "\"web-enabled COBOL\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CobolScript" }
+  sources: [wiki-cobolscript]

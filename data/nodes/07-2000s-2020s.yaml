@@ -3189,6 +3189,7 @@
     Edges to StarLogo, HyperCard and AgentSheets wait for those nodes (education/ backlog). The Scratch
     Team left the Media Lab on 11 March 2019 for the Scratch Foundation.
   relations:
+    - { type: implemented_in, to: squeak, weight: strong, confidence: high, sources: [wiki-squeak], note: "\"The first version of Scratch was implemented in Squeak.\"" }
     - { type: influenced_by, to: logo, weight: strong, confidence: high, sources: [wiki-scratch], note: "Infobox: influenced by Logo." }
     - { type: influenced_by, to: etoys, weight: moderate, confidence: high, sources: [wiki-scratch, wiki-etoys], note: "Both infoboxes: Etoys influenced Scratch." }
     - { type: implemented_in, to: smalltalk, year: 2007, weight: moderate, confidence: high, sources: [wiki-scratch], note: "\"the 1.x versions were based on Squeak, which itself is based on Smalltalk-80\"" }
@@ -6108,3 +6109,609 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Microsoft_Power_Fx" }
   sources: [wiki-power-fx]
+
+- id: alice-ml
+  name: Alice ML
+  aliases: [Alice]
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 2000, precision: exact, note: "Infobox \"First appeared: June 16, 2000\"." }
+    places: [{ institution: Saarland University, city: Saarbrücken, country: DE }]
+  creators:
+    - { name: Saarland University Programming Systems Lab, role: designer }
+  status: extinct
+  tags:
+    paradigm: [functional, imperative, concurrent]
+    typing: [static-typing, strong-typing, type-inference]
+    features: [lazy-evaluation, constraints]
+    domain: [distributed-systems]
+  milestones:
+    - { version: "1.4", year: 2007 }
+  summary: >
+    "a dialect of Standard ML, augmented with support for lazy evaluation, concurrency (multithreading and distributed
+    computing via remote procedure calls) and constraint programming", from Saarland University. Early versions ran on
+    the Mozart (Oz) virtual machine; later ones on SEAM.
+  relations:
+    - { type: dialect_of, to: standard-ml, weight: strong, confidence: high, sources: [wiki-alice-ml], note: "\"a dialect of Standard ML\"." }
+    - { type: influenced_by, to: oz, weight: moderate, confidence: high, sources: [wiki-alice-ml], note: "Infobox \"Influenced by: ML, Oz\"; early versions ran on the Mozart VM." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Alice_(programming_language)" }
+  sources: [wiki-alice-ml]
+  example:
+    title: Naive Fibonacci
+    language: Alice ML
+    note: "From Wikipedia."
+    code: |
+      fun fib 0 = 0
+        | fib 1 = 1
+        | fib n = fib(n-1) + fib(n-2);
+    sources: [wiki-alice-ml]
+
+- id: strongtalk
+  name: Strongtalk
+  kind: language
+  category: general
+  cluster: oop/simula-smalltalk
+  origin:
+    began: { year: 1994, precision: year, note: "\"Work began in 1994 and they completed an implementation in 1996\"; Bracha and Griswold's paper is from 1993." }
+    first_appeared: { year: 2002, precision: exact, note: "Infobox \"First appeared: 1 July 2002\" (open-source system image); VM released 2006." }
+    places: [{ institution: Animorphic Systems }]
+  creators:
+    - { name: Gilad Bracha, role: co-designer }
+    - { name: David Griswold, role: co-designer }
+    - { name: Lars Bak, role: developer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented]
+    typing: [dynamic-typing, gradual-typing]
+    features: [jit-compilation]
+  milestones:
+    - { version: "2.0", year: 2006, summary: "Virtual machine open-sourced." }
+  summary: >
+    "a Smalltalk environment with optional static typing support", built by Animorphic Systems on the Self team's
+    compiler techniques. Sun bought the company in 1997, released HotSpot, "and work on Strongtalk stalled"; the infobox
+    lists Java HotSpot as its heir.
+  relations:
+    - { type: dialect_of, to: smalltalk, weight: strong, confidence: high, sources: [wiki-strongtalk], note: "\"a Smalltalk environment\"; listed among Smalltalk dialects." }
+    - { type: influenced_by, to: self, aspects: [jit-compilation], weight: strong, confidence: high, sources: [wiki-strongtalk], note: "\"interested in the improvements that the team for the language Self had achieved\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Strongtalk" }
+  sources: [wiki-strongtalk]
+
+- id: io
+  name: Io
+  kind: language
+  category: general
+  cluster: oop/simula-smalltalk
+  origin:
+    first_appeared: { year: 2002, precision: year, note: "\"created by Steve Dekorte in 2002\"." }
+  creators:
+    - { name: Steve Dekorte, role: designer }
+  status: maintained
+  tags:
+    paradigm: [object-oriented, prototype-based]
+    typing: [dynamic-typing, strong-typing]
+    concurrency: [actors]
+    features: [everything-is-an-object]
+  summary: >
+    "a pure object-oriented programming language inspired by Smalltalk, Self, Lua, Lisp, Act1, and NewtonScript", with
+    "a prototype-based object model similar to those in Self and NewtonScript", actors for concurrency and a small
+    portable VM.
+  relations:
+    - { type: influenced_by, to: newtonscript, aspects: [prototype-based], weight: strong, confidence: high, sources: [wiki-io], note: "Infobox \"Influenced by: Smalltalk, NewtonScript, Self, Lua, Lisp, Python, Act1\"." }
+    - { type: influenced_by, to: self, weight: strong, confidence: high, sources: [wiki-io] }
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: high, sources: [wiki-io] }
+    - { type: influenced_by, to: lua, weight: moderate, confidence: high, sources: [wiki-io] }
+    - { type: influenced_by, to: lisp, weight: weak, confidence: high, sources: [wiki-io] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Io_(programming_language)" }
+  sources: [wiki-io]
+  example:
+    title: Factorial
+    language: Io
+    note: "From Wikipedia; the page's Markdown escapes removed."
+    code: |
+      factorial := method(n,
+          if(n == 0, return 1)
+          res := 1
+          Range 1 to(n) foreach(i, res = res * i)
+      )
+    sources: [wiki-io]
+
+- id: epl-chinese
+  name: Easy Programming Language
+  aliases: [EPL, 易语言]
+  kind: language
+  category: general
+  cluster: education
+  origin:
+    first_appeared: { year: 2004, precision: year, note: "Infobox \"First appeared: 2004\"." }
+  creators:
+    - { name: The Easy Programming Language Company, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural, object-oriented]
+  summary: >
+    "a visual compiled multilingual proprietary programming language", "somewhat popular in China because it features a
+    full Chinese environment", with simplified and traditional Chinese, English and Japanese variants and modules in a
+    tabular format.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Easy_Programming_Language" }
+  sources: [wiki-epl]
+  example:
+    title: Hello, world
+    language: EPL (simplified Chinese)
+    note: "From Wikipedia, where the two words are separate links; joined here."
+    code: |
+      调试输出("Hello, world!")
+    sources: [wiki-epl]
+
+- id: subtext
+  name: Subtext
+  aliases: [Coherence]
+  kind: language
+  category: research
+  cluster: visual
+  origin:
+    first_appeared: { year: 2005, precision: year, note: "Edwards's paper \"was accepted as part of the 2005 conference\" (OOPSLA); video previews circa 2006." }
+  creators:
+    - { name: Jonathan Edwards, role: designer }
+  status: historical
+  tags:
+    paradigm: [visual-programming]
+    features: [live-programming]
+  summary: >
+    "a moderately visual programming language and environment", "an experimental, research attempt to develop a new
+    programming model, called Example Centric Programming, by treating copied blocks as first class prototypes". It "uses
+    live text, similar to what occurs in spreadsheets"; its continuation is Coherence.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Subtext_(programming_language)" }
+  sources: [wiki-subtext]
+
+- id: ubercode
+  name: Ubercode
+  kind: language
+  category: general
+  cluster: oop
+  origin:
+    first_appeared: { year: 2005, precision: year, note: "\"released in 2005 for Microsoft Windows\"." }
+  creators:
+    - { name: Ubercode Software, role: designer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented]
+    memory: [garbage-collection]
+    features: [design-by-contract]
+  summary: >
+    A compiled Windows language "influenced by Eiffel and BASIC", with automatic memory management and Eiffel-style pre-
+    and postconditions on functions.
+  relations:
+    - { type: influenced_by, to: eiffel, aspects: [design-by-contract], weight: strong, confidence: high, sources: [wiki-ubercode], note: "\"Ubercode is influenced by Eiffel and BASIC.\"" }
+    - { type: influenced_by, to: basic, weight: moderate, confidence: high, sources: [wiki-ubercode] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ubercode" }
+  sources: [wiki-ubercode]
+
+- id: cobra
+  name: Cobra
+  kind: language
+  category: general
+  cluster: managed
+  origin:
+    first_appeared: { year: 2006, precision: year, note: "Infobox \"First appeared: 2006\"; open-sourced February 29, 2008." }
+  creators:
+    - { name: Charles Esterbrook, role: designer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented]
+    typing: [static-typing, dynamic-typing, type-inference]
+    features: [contracts, offside-rule]
+  milestones:
+    - { version: "0.9.6", year: 2013, summary: "Final release." }
+  summary: >
+    "a discontinued general-purpose, object-oriented programming language" for .NET and Mono, "strongly influenced by
+    Python, C#, Eiffel, Objective-C", supporting "both static and dynamic typing".
+  relations:
+    - { type: influenced_by, to: python, aspects: [offside-rule], weight: strong, confidence: high, sources: [wiki-cobra] }
+    - { type: influenced_by, to: eiffel, aspects: [contracts], weight: strong, confidence: high, sources: [wiki-cobra] }
+    - { type: influenced_by, to: csharp, weight: strong, confidence: high, sources: [wiki-cobra] }
+    - { type: influenced_by, to: objective-c, weight: moderate, confidence: high, sources: [wiki-cobra] }
+    - { type: targets, to: cil, weight: strong, confidence: high, sources: [wiki-cobra] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Cobra_(programming_language)" }
+  sources: [wiki-cobra]
+  example:
+    title: Hello World
+    language: Cobra
+    note: "From Wikipedia."
+    code: |
+      class Hello
+          def main
+              print 'HELLO WORLD'
+    sources: [wiki-cobra]
+
+- id: optimj
+  name: OptimJ
+  kind: language
+  category: scientific
+  cluster: managed
+  origin:
+    first_appeared: { year: 2006, precision: year, note: "Infobox \"First appeared: 2006\"." }
+  creators:
+    - { name: Ateji, role: designer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented, declarative]
+    domain: [mathematical-optimization]
+  summary: >
+    "an extension for Java with language support for writing optimization models and abstractions for bulk data
+    processing", "a conservative extension of Java: every valid Java program is also a valid OptimJ program", translated
+    to Java and solved with lp_solve, glpk, MOSEK or CPLEX. Ateji closed in 2011.
+  relations:
+    - { type: superset_of, to: java, weight: strong, confidence: high, sources: [wiki-optimj], note: "\"every valid Java program is also a valid OptimJ program\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/OptimJ" }
+  sources: [wiki-optimj]
+
+- id: newspeak
+  name: Newspeak
+  kind: language
+  category: research
+  cluster: oop/simula-smalltalk
+  origin:
+    first_appeared: { year: 2006, precision: year, note: "Infobox \"First appeared: 2006\"; Cadence funded it from 2006 to January 2009." }
+    places: [{ institution: Cadence Design Systems, country: US }]
+  creators:
+    - { name: Gilad Bracha, role: designer }
+  status: maintained
+  tags:
+    paradigm: [object-oriented, functional]
+    typing: [dynamic-typing, gradual-typing]
+    features: [modules]
+  summary: >
+    "a programming language and platform in the tradition of Smalltalk and Self" led by Gilad Bracha, "class-based and
+    message-based", where "classes may be nested, as in BETA. This is one of the key differences between Newspeak and
+    Smalltalk."
+  relations:
+    - { type: influenced_by, to: smalltalk, weight: strong, confidence: high, sources: [wiki-newspeak] }
+    - { type: influenced_by, to: self, weight: strong, confidence: high, sources: [wiki-newspeak] }
+    - { type: influenced_by, to: beta, weight: strong, confidence: high, sources: [wiki-newspeak], note: "\"Classes may be nested, as in BETA.\"" }
+    - { type: influenced_by, to: e, weight: moderate, confidence: medium, sources: [wiki-newspeak], note: "Infobox \"Influenced by: Smalltalk, Self, BETA, E\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Newspeak_(programming_language)" }
+  sources: [wiki-newspeak]
+
+- id: ezhil
+  name: Ezhil
+  aliases: [எழில்]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    began: { year: 2007, precision: year, note: "\"developed since late 2007\"." }
+    first_appeared: { year: 2009, precision: exact, note: "\"officially announced in July 2009\"." }
+  creators:
+    - { name: Muthiah Annamalai, role: designer }
+  status: maintained
+  tags:
+    paradigm: [imperative, structured]
+    typing: [dynamic-typing, strong-typing]
+    features: [interpreter]
+    domain: [education]
+  summary: >
+    "a compact, open source, interpreted, programming language" in Tamil, "originally designed to enable native-Tamil
+    speaking students" to learn programming, "the first freely available programming language in the Tamil language". Its
+    syntax "is broadly similar to that of BASIC" and it runs on the Python runtime.
+  relations:
+    - { type: influenced_by, to: basic, weight: moderate, confidence: high, sources: [wiki-ezhil], note: "Infobox \"Influenced by: Logo, BASIC, Python\"." }
+    - { type: influenced_by, to: python, weight: moderate, confidence: high, sources: [wiki-ezhil] }
+    - { type: influenced_by, to: logo, weight: weak, confidence: high, sources: [wiki-ezhil] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ezhil_(programming_language)" }
+  sources: [wiki-ezhil]
+  example:
+    title: Hello world
+    language: Ezhil
+    note: "From Wikipedia."
+    code: |
+      # தமிழில் ஒரு எடுத்துக்காட்டு
+
+      பதிப்பி "வணக்கம் Vijay!"
+      பதிப்பி "உலகே வணக்கம்"
+      exit()
+    sources: [wiki-ezhil]
+
+- id: pharo
+  name: Pharo
+  kind: language
+  category: general
+  cluster: oop/simula-smalltalk
+  origin:
+    first_appeared: { year: 2008, precision: exact, note: "\"Pharo was forked from Squeak v3.9 in March 2008.\"" }
+  creators:
+    - { name: S. Ducasse, role: co-creator }
+    - { name: M. Denker, role: co-creator }
+  status: active
+  tags:
+    paradigm: [object-oriented, reflective]
+    typing: [dynamic-typing]
+    features: [image-based, jit-compilation, traits]
+  milestones:
+    - { version: "1.0", year: 2010, summary: "Real closures; EToys and MVC removed.", introduces: [closures] }
+    - { version: "6.0", year: 2017, summary: "64-bit and Git support." }
+    - { version: "7.0", year: 2019, summary: "Bootstrapping, Calypso browser, stateful traits." }
+    - { version: "13.0", year: 2025 }
+  summary: >
+    "a cross-platform implementation of the classic Smalltalk-80 programming language and runtime system", forked from
+    Squeak in 2008 and "based on general concepts of Smalltalk but seeks to improve on them". It runs on the OpenSmalltalk
+    Cog JIT VM.
+  notes: >
+    The page gives the creators only as "S. Ducasse and M. Denker"; expand the names from a primary source.
+  relations:
+    - { type: fork_of, to: squeak, weight: strong, confidence: high, sources: [wiki-pharo], note: "\"forked from Squeak v3.9 in March 2008\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pharo", homepage: "https://pharo.org" }
+  sources: [wiki-pharo]
+  example:
+    title: A dynamic array literal
+    language: Pharo
+    note: "From Wikipedia's syntax list: elements are evaluated at run time."
+    code: |
+      {1. 2. 1+2}
+    sources: [wiki-pharo]
+
+- id: umple
+  name: Umple
+  kind: language
+  category: research
+  cluster: oop
+  origin:
+    first_appeared: { year: 2008, precision: year, note: "\"The design of Umple started in 2008 at the University of Ottawa.\"" }
+    places: [{ institution: University of Ottawa, country: CA }]
+  creators:
+    - { name: Timothy Lethbridge, role: lead }
+  status: active
+  tags:
+    paradigm: [object-oriented]
+    typing: [static-typing]
+    features: [self-hosting]
+  summary: >
+    "a language for both object-oriented programming and modelling with class diagrams and state diagrams", adding UML
+    constructs to Java, C++ and PHP ("Umple plus Java can therefore be seen as an extension of Java"). It is self-hosted.
+  relations:
+    - { type: superset_of, to: java, weight: strong, confidence: high, sources: [wiki-umple], note: "\"Umple plus Java can therefore be seen as an extension of Java.\"" }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Umple" }
+  sources: [wiki-umple]
+
+- id: boomerang
+  name: Boomerang
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 2008, precision: year, note: "Infobox \"First appeared: 2008\"." }
+  creators:
+    - { name: Nate Foster, role: developer }
+    - { name: Benjamin C. Pierce, role: developer }
+    - { name: Michael Greenberg, role: developer }
+  status: extinct
+  tags:
+    paradigm: [functional]
+  summary: >
+    "a programming language for writing lenses—well-behaved bidirectional transformations—that operate on ad-hoc,
+    textual data formats", grown out of the Harmony synchroniser and the Unison file synchroniser.
+  relations:
+    - { type: influenced_by, to: ocaml, weight: moderate, confidence: medium, sources: [wiki-boomerang], note: "Infobox \"Influenced by: OCaml\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Boomerang_(programming_language)" }
+  sources: [wiki-boomerang]
+
+- id: catrobat
+  name: Catrobat
+  aliases: [Pocket Code, Catroid]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2010, precision: exact, note: "Infobox \"First appeared: 25 September 2010\"." }
+    places: [{ institution: Graz University of Technology, country: AT }]
+  creators:
+    - { name: Wolfgang Slany, role: designer }
+  status: active
+  tags:
+    paradigm: [visual-programming]
+    typing: [dynamic-typing]
+    domain: [education]
+  milestones:
+    - { version: Pocket Code, year: 2013, summary: "First public app on Google Play." }
+    - { version: iOS, year: 2018 }
+  summary: >
+    "a block-based visual programming language" "designed to work on mobile devices", started as Catroid, a name
+    "inspired by Scratch's cat mascot and the Android operating system". It is built by over 1,300 volunteers.
+  relations:
+    - { type: influenced_by, to: scratch, weight: strong, confidence: high, sources: [wiki-catrobat], note: "Infobox \"Influenced by: Scratch\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Catrobat" }
+  sources: [wiki-catrobat]
+
+- id: golo
+  name: Golo
+  kind: language
+  category: research
+  cluster: managed/dynamic
+  origin:
+    first_appeared: { year: 2012, precision: year, note: "\"created in 2012 as part of the research activities of the DynaMid group\" at INSA Lyon." }
+    places: [{ institution: INSA Lyon }]
+  creators:
+    - { name: INSA Lyon, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    typing: [dynamic-typing, weak-typing]
+  summary: >
+    A JVM language "built as a showcase on how to build a language runtime with invokedynamic", with dynamic, weak
+    typing. It became an Eclipse Foundation project in 2015 and "was terminated in September 2022".
+  relations:
+    - { type: targets, to: jvm-bytecode, weight: strong, confidence: high, sources: [wiki-golo] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Golo_(programming_language)" }
+  sources: [wiki-golo]
+
+- id: qalb
+  name: Qalb
+  aliases: [قلب, Qlb, Alb]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 2012, precision: year, note: "\"developed in 2012 by Ramsey Nasser\"." }
+    places: [{ institution: Eyebeam Art + Technology Center, city: New York City, country: US }]
+  creators:
+    - { name: Ramsey Nasser, role: designer }
+  status: legacy
+  tags:
+    paradigm: [functional]
+  summary: >
+    "a functional programming language allowing a programmer to write programs completely in Arabic", made "as both an
+    artistic endeavor and as a response to the Anglophone bias" of programming languages. Its syntax "is like that of Lisp
+    or Scheme"; its name means "heart".
+  relations:
+    - { type: influenced_by, to: scheme, weight: strong, confidence: high, sources: [wiki-qalb], note: "Infobox \"Influenced by: Scheme\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Qalb_(programming_language)" }
+  sources: [wiki-qalb]
+  example:
+    title: Hello world
+    language: Qalb
+    note: "From Wikipedia, with its English rendering."
+    code: |
+      (قول "مرحبا يا عالم!")
+
+      (say "Hello, world!")
+    sources: [wiki-qalb]
+
+- id: dog-lang
+  name: Dog
+  kind: language
+  category: research
+  cluster: scripting
+  origin:
+    first_appeared: { year: 2012, precision: year, note: "\"It was announced in spring 2012\"." }
+    places: [{ institution: MIT Media Lab, country: US }]
+  creators:
+    - { name: Sepandar Kamvar, role: co-creator }
+    - { name: Salman Ahmad, role: co-creator }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [english-like-syntax]
+    domain: [web]
+  summary: >
+    A language from the MIT Media Lab "designed to facilitate easier creation of social computing applications" and
+    "programming in a natural language", born of Kamvar's frustration that existing languages made code handling social
+    interactions "needlessly difficult".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Sepandar_Kamvar" }
+  sources: [wiki-sepandar-kamvar]
+
+- id: tynker
+  name: Tynker
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2013, precision: exact, note: "\"Tynker for Schools was launched in April 2013\"." }
+    places: [{ institution: Tynker, city: "Mountain View, California", country: US }]
+  creators:
+    - { name: Krishna Vedati, role: co-founder }
+    - { name: Srinivas Mandyam, role: co-founder }
+    - { name: Kelvin Chong, role: co-founder }
+  status: active
+  tags:
+    paradigm: [visual-programming]
+    domain: [education]
+  summary: >
+    "an educational programming platform, similar to Scratch, to help children learn coding skills", based on HTML5 and
+    JavaScript. Byju's bought it in 2021 and CodeHS in 2025.
+  relations:
+    - { type: influenced_by, to: scratch, weight: moderate, confidence: medium, sources: [wiki-tynker], note: "\"similar to Scratch\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Tynker" }
+  sources: [wiki-tynker]
+
+- id: scratchjr
+  name: ScratchJr
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2014, precision: exact, note: "\"The initial release was launched in July 2014 for iPad\"." }
+    places: [{ institution: MIT Media Lab, country: US }]
+  creators:
+    - { name: Marina Umaschi Bers, role: co-developer }
+    - { name: Mitchel Resnick, role: co-developer }
+    - { name: Paula Bonta, role: co-developer }
+    - { name: Brian Silverman, role: co-developer }
+  status: active
+  tags:
+    paradigm: [visual-programming]
+    domain: [education]
+  summary: >
+    "a visual programming language designed to introduce programming skills to children ages 5–7", "a derivative of the
+    Scratch language", from Tufts, the MIT Media Lab and the Playful Invention Company.
+  relations:
+    - { type: dialect_of, to: scratch, weight: strong, confidence: high, sources: [wiki-scratchjr], note: "\"a derivative of the Scratch language\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ScratchJr", homepage: "https://www.scratchjr.org" }
+  sources: [wiki-scratchjr]
+
+- id: arkts
+  name: ArkTS
+  aliases: [Ark TypeScript, eTS]
+  kind: language
+  category: general
+  cluster: web
+  origin:
+    began: { year: 2015, precision: year, note: "\"Development of ArkTS started in 2015 by HarmonyOS founder Wang Chenglu\"." }
+    first_appeared: { year: 2021, precision: exact, note: "Infobox \"First appeared: September 30, 2021\" (as eTS 3.0.0.0)." }
+    places: [{ institution: Huawei }]
+  creators:
+    - { name: Wang Chenglu, role: initiator }
+  status: active
+  tags:
+    paradigm: [functional, declarative, object-oriented, generic-programming]
+    typing: [static-typing, structural-typing, gradual-typing]
+    memory: [garbage-collection]
+  summary: >
+    Huawei's HarmonyOS language, "an extension superset of open-source TypeScript", compiled ahead of time by the Ark
+    Compiler, with declarative UI components. It replaced Java on HarmonyOS, which "carried legal baggage but also
+    performance issues".
+  relations:
+    - { type: superset_of, to: typescript, weight: strong, confidence: high, sources: [wiki-arkts], note: "\"an extension superset of open-source TypeScript\"." }
+    - { type: influenced_by, to: swift, weight: moderate, confidence: medium, sources: [wiki-arkts], note: "\"took language ideas from the likes of TypeScript, Swift, Rust, JavaScript\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ArkTS" }
+  sources: [wiki-arkts]
