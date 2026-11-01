@@ -27,7 +27,8 @@ data/lineages/*.yaml         narrative threads through the graph (concurrency, O
 data/claims.yaml             myth-vs-fact checks with quoted evidence
 data/sources.yaml            bibliography; every claim points here
 tools/build.py               validate + derive inverse edges + emit dist/graph.json
-tools/report.py              research to-do: thin clusters, orphans, weak edges, concept dating
+tools/report.py              research to-do: thin clusters, orphans, weak edges, concept dating; `find <x>`
+tools/fetch_media.py         photos and portraits from Wikimedia Commons (see Photos below)
 docs/authoring.md            the format contract, with templates (read before adding data)
 viewer/                      the interactive timeline (SvelteKit), see Viewer below
 .github/workflows/           GitHub Pages deployment, actionlint and zizmor
@@ -99,29 +100,49 @@ Clusters are both the UI's collapsible groups and the unit of research. A cluste
 4. Re-read cited sources; set `checked: <date>` on sources actually verified and raise nodes to `reviewed`.
 5. Run `build.py`, then raise the cluster's status.
 
+When a page gives no usable year, the entry stays in the backlog and its hint says what was found and
+which source would settle it. Compilers that accept a language unchanged become notes on that language;
+named dialects, including product dialects such as Turbo Pascal or Watcom C, are nodes.
+
+## Contributing
+
+Read `CLAUDE.md` (the rules that keep the data trustworthy) and `docs/authoring.md` (the format contract,
+with templates) before adding records. The skills in `.claude/skills/` are the procedures used so far:
+`research-language` (add or deepen a node), `find-missing-languages` (survey gaps and fill backlogs) and
+`map-relations` (influences, dialects, concept origins, lineages and claims). `build.py` must end with
+0 errors before a commit.
+
 `research_status` on nodes: `stub` = name and date; `draft` = filled from secondary sources and memory of
 primary ones; `reviewed` = checked against primary sources.
 
 ## Status Quo
 
-As of 2026-11-01:
+As of 2026-11-01 (`python3 tools/build.py`):
 
-- 284 nodes, 541 edges, 248 concepts, 76 clusters, 444 sources (290 marked `checked`), 163 photos,
-  2 lineages, 6 claims.
-- Only C++ is `reviewed`: Stroustrup's HOPL-II paper was re-read and quoted
-  (`sources.yaml` → `stroustrup-1993-hopl2`). Of the rest, 246 nodes are `draft` and 37 `stub`: dates and
-  edges come from well-established histories and are cited, but not yet re-read line by line.
-- Every node has a code example; 24 of them are marked as illustrative or reconstructed because nothing
-  executable survives.
-- 130 of 248 concepts still need a summary.
-- 14 edges are `confidence: low`: hypotheses to confirm or delete.
+- 637 nodes: 560 languages and dialects, 30 machines, 29 assemblers, 8 formalisms, 6 notations and 4
+  mechanisms, from the Antikythera mechanism (dated 150–60 BC, debated) to Verse (2023); 34 of them are
+  esoterics.
+- 1,000 stored edges, 259 concepts, 91 clusters with 317 backlog entries still to research, 866 sources,
+  4 lineages (assembly, processes, OOP, concurrency), 6 claims, 166 photos for 287 media subjects.
+- How far it is checked: only C++ is `reviewed` (Stroustrup's HOPL-II paper was re-read and quoted).
+  301 nodes are `draft`, filled from well-established histories with cited sources; 335 are `stub`.
+  Most of the recent growth is stubs sourced from a single English Wikipedia article: 586 of the 866
+  sources are Wikipedia pages and 426 nodes cite nothing else. Their facts are quoted from those pages,
+  but nobody has gone back to the primary sources yet. 349 sources are marked `checked`.
+- 470 nodes have a code example; 28 of those are marked as illustrative or reconstructed because nothing
+  executable survives. Examples are wanted, not required: a node without one is better than a backlog line.
+- 21 edges are `confidence: low`, hypotheses with a note saying what would confirm them; 132 of 259
+  concepts still need a summary.
+- `python3 tools/report.py` lists what is thin: clusters by status with backlog sizes, orphans, weak edges
+  and concept-dating contradictions.
 
 ## Viewer
 
 `viewer/` is a SvelteKit app (yarn via corepack) that renders the data as an expandable timeline:
 clusters fold and unfold, clicking a language highlights its ancestry and descendants, a concept or
-lineage can be traced through time, and Ctrl/⌘-K opens a command palette for jumping to any language,
-cluster, concept, lineage or era.
+lineage can be traced through time, a path finder shows the shortest chain of relations between two
+languages, and Ctrl/⌘-K opens a command palette for jumping to any language, cluster, concept, lineage or
+era.
 
 In development it reads `data/**/*.yaml` directly through a Vite plugin and pushes updates to the browser
 on every save, so there's no need to run `build.py` first. That loader is lenient: it reports broken YAML
