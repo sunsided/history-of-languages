@@ -1,8 +1,21 @@
-# History of programming languages: ancestry dataset
+# History of programming languages
 
-The data layer for an interactive timeline and graph of programming languages, from the Antikythera
-mechanism to Zig. Everything is YAML authored by hand (or by research agents) and compiled into one
-`dist/graph.json` for the site.
+A researched, cited dataset of programming-language ancestry, from the Antikythera mechanism and
+Jacquard's loom through machine code and assemblers to Zig, Carbon and the esoterics that make a point,
+plus an interactive timeline to explore it: who descends from whom, which dialects and successors
+branched off where, and when each idea (garbage collection, lambdas, async/await) reached which language.
+
+**[Open the timeline →](https://sunsided.github.io/history-of-languages/)**
+
+![The timeline in dark mode: the C family unfolded with C selected, its ancestry and descendants highlighted, and the detail panel showing creators, the K&R "hello, world" and concept tags](docs/screenshot.png)
+
+The data is the product: every node, strong edge and code example points at a source, every record says
+how thoroughly it has been checked, and what is not verified yet is marked as such (see
+[Honest state](#honest-state)).
+
+## Repository layout
+
+Everything is YAML authored by hand (or by research agents) and compiled into one `dist/graph.json`.
 
 ```
 schema/dataset.schema.json   JSON Schema for every record type
@@ -16,6 +29,8 @@ data/sources.yaml            bibliography; every claim points here
 tools/build.py               validate + derive inverse edges + emit dist/graph.json
 tools/report.py              research to-do: thin clusters, orphans, weak edges, concept dating
 docs/authoring.md            the format contract, with templates (read before adding data)
+viewer/                      the interactive timeline (SvelteKit), see Viewer below
+.github/workflows/           GitHub Pages deployment, actionlint and zizmor
 CLAUDE.md, .claude/skills/   working rules and research procedures for Claude sessions
 ```
 
@@ -87,25 +102,40 @@ Clusters are both the UI's collapsible groups and the unit of research. A cluste
 `research_status` on nodes: `stub` = name and date; `draft` = filled from secondary sources and memory of
 primary ones; `reviewed` = checked against primary sources.
 
-## Honest state of this first batch (2026-11-01)
+## Honest state
 
-- 139 nodes, 260 edges, 239 concepts, 61 clusters, 155 sources, 2 lineages, 6 claims.
-- Only C++ is `reviewed`: Stroustrup's HOPL-II paper was actually re-read and quoted
-  (`sources.yaml` → `stroustrup-1993-hopl2`, `checked`). Everything else is `draft` or `stub`: dates and
-  edges are from well-established histories, cited by bibliography, but not yet re-read line by line.
-- 131 of 239 concepts still need a summary.
-- Edges marked `confidence: low` are hypotheses to confirm or delete.
+As of 2026-11-01:
+
+- 284 nodes, 541 edges, 248 concepts, 76 clusters, 444 sources (290 marked `checked`), 163 photos,
+  2 lineages, 6 claims.
+- Only C++ is `reviewed`: Stroustrup's HOPL-II paper was re-read and quoted
+  (`sources.yaml` → `stroustrup-1993-hopl2`). Of the rest, 246 nodes are `draft` and 37 `stub`: dates and
+  edges come from well-established histories and are cited, but not yet re-read line by line.
+- Every node has a code example; 24 of them are marked as illustrative or reconstructed because nothing
+  executable survives.
+- 130 of 248 concepts still need a summary.
+- 14 edges are `confidence: low`: hypotheses to confirm or delete.
 
 ## Viewer
 
-`viewer/` is a SvelteKit app (yarn via corepack) that renders the data as an expandable timeline. It reads
-`data/**/*.yaml` directly through a Vite plugin and pushes updates to the browser on every save, so there's
-no need to run `build.py` first. That loader is lenient: it reports broken YAML and dangling references in the
-toolbar, but the schema is only checked by `build.py`. The same plugin builds the search index behind the
-Ctrl/⌘-K command palette (languages, clusters, concepts, lineages, eras), so it updates with the data too.
+`viewer/` is a SvelteKit app (yarn via corepack) that renders the data as an expandable timeline:
+clusters fold and unfold, clicking a language highlights its ancestry and descendants, a concept or
+lineage can be traced through time, and Ctrl/⌘-K opens a command palette for jumping to any language,
+cluster, concept, lineage or era.
+
+In development it reads `data/**/*.yaml` directly through a Vite plugin and pushes updates to the browser
+on every save, so there's no need to run `build.py` first. That loader is lenient: it reports broken YAML
+and dangling references in the toolbar, but the schema is only checked by `build.py`.
 
 ```
-task dev          # http://localhost:5173, hot reload for code and data
-task check        # svelte-check
-task data:build   # validate + emit dist/graph.json
+task dev              # http://localhost:5173, hot reload for code and data
+task check            # svelte-check
+task data:build       # validate + emit dist/graph.json
+task build            # static site in viewer/build (BASE_PATH=/sub/path for a sub-path deployment)
+task preview          # serve that build
+task lint:workflows   # actionlint + zizmor over .github/
 ```
+
+The static build bundles the dataset and search index into the app and copies the photos it references.
+`.github/workflows/pages.yml` validates the data, type-checks the viewer and deploys that build to GitHub
+Pages on every push to `main` that touches the data, photos or viewer.
