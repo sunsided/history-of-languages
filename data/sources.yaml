@@ -3373,3 +3373,24 @@
   authors: [Graham Nelson]
   title: "Writing with Inform (the Inform 7 manual), section 3.1 Descriptions"
   url: https://ganelson.github.io/inform-website/book/WI_3_1.html
+- id: wiki-tex
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TeX"
+  url: https://en.wikipedia.org/wiki/TeX
+- id: wiki-latex
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: LaTeX"
+  url: https://en.wikipedia.org/wiki/LaTeX
+- id: plain-tex
+  type: web
+  primary: true
+  authors: [Donald Knuth]
+  title: "plain.tex, the plain TeX format (CTAN systems/knuth/dist/lib)"
+  url: https://mirrors.ctan.org/systems/knuth/dist/lib/plain.tex
+- id: latexref-newcommand
+  type: manual
+  primary: false
+  title: "LaTeX2e unofficial reference manual: \\newcommand & \\renewcommand"
+  url: https://latexref.xyz/_005cnewcommand-_0026-_005crenewcommand.html

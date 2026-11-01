@@ -1809,3 +1809,48 @@
       is obviously deranged and holding his nose.">>)>>
     sources: [mitddc-zork]
 
+- id: tex
+  name: TeX
+  aliases: [TeX78, TeX82, plain TeX]
+  kind: language
+  category: domain-specific
+  cluster: typesetting
+  origin:
+    first_appeared: { year: 1978, precision: year, note: "Wikipedia: \"first released in 1978\"; TeX78 was written in SAIL for Stanford's WAITS system." }
+    places: [{ institution: Stanford University, country: US }]
+  creators:
+    - { name: Donald Knuth, role: designer and implementer }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    features: [macros, recursion]
+  milestones:
+    - { version: "TeX82", year: 1982, summary: "\"A new version of TeX rewritten from scratch\", in WEB, \"a mixture of documentation written in TeX and a Pascal subset\"." }
+    - { version: "3.141592653", year: 2021, summary: "Latest bug-fix release (5 February 2021); \"the version number asymptotically approaches π\"." }
+  summary: >
+    Donald Knuth's typesetting system, whose input is "a real, Turing-complete programming language": a macro-
+    and token-based language in which commands are "expanded on the fly", with if-then-else conditionals and tail
+    recursion that "takes no memory". Users program it through formats, collections of macros such as Knuth's own
+    plain TeX and Lamport's LaTeX.
+  notes: >
+    Places: Wikipedia names Knuth as a Stanford professor and TeX78 as running on Stanford's WAITS system, but does
+    not say the work was done at Stanford in so many words.
+  relations:
+    - { type: implemented_in, to: pascal, year: 1982, weight: moderate, confidence: high, sources: [wiki-tex], note: "TeX82 is written in WEB, \"a mixture of documentation written in TeX and a Pascal subset\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TeX" }
+  sources: [wiki-tex, plain-tex]
+  example:
+    title: A loop written in macros, from plain.tex
+    language: plain TeX
+    note: "Verbatim from Knuth's plain.tex: \\loop...\\repeat is not built in but defined as macros, with the loop as tail recursion through \\iterate. \\multispan then uses it to emit #1 spanned table columns, counting down with \\advance."
+    code: |
+      \def\loop#1\repeat{\def\body{#1}\iterate}
+      \def\iterate{\body \let\next\iterate \else\let\next\relax\fi \next}
+      \let\repeat=\fi % this makes \loop...\if...\repeat skippable
+
+      \def\multispan#1{\omit \mscount#1\relax
+        \loop\ifnum\mscount>\@ne \sp@n\repeat}
+      \def\sp@n{\span\omit\advance\mscount\m@ne}
+    sources: [plain-tex]

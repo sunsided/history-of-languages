@@ -2189,3 +2189,42 @@
                       <RFALSE>)>>
     sources: [historicalsource-zork1]
 
+- id: latex
+  name: LaTeX
+  aliases: [LaTeX2e, LaTeX 2ε]
+  kind: language
+  category: domain-specific
+  cluster: typesetting
+  origin:
+    first_appeared: { year: 1984, precision: year, note: "Wikipedia: written \"in the early 1980s by Leslie Lamport at SRI International\"; \"he released versions of his LaTeX macros in 1984 and 1985\"." }
+    places: [{ institution: SRI International, country: US }]
+  creators:
+    - { name: Leslie Lamport, role: original author }
+  status: active
+  tags:
+    paradigm: [declarative, imperative]
+    features: [macros]
+  milestones:
+    - { version: "LaTeX2e", year: 1994, summary: "The current version, \"first released in 1994\"." }
+    - { version: "LaTeX3 layer", year: 2018, summary: "LaTeX3 stopped being a separate format; \"since 2018, it has been a programming layer within LaTeX2e\"." }
+  summary: >
+    Leslie Lamport's document preparation system: "a set of macros for TeX to interpret", "itself written in the
+    TeX macro language". Authors mark up structure (\documentclass, \section, environments) and let document
+    classes decide the layout, and define their own commands with \newcommand, so a LaTeX document is
+    a TeX program.
+  relations:
+    - { type: implemented_in, to: tex, weight: strong, confidence: high, sources: [wiki-latex], note: "\"itself written in the TeX macro language\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LaTeX", homepage: "https://www.latex-project.org/" }
+  sources: [wiki-latex, latexref-newcommand]
+  example:
+    title: Commands with arguments and an optional default
+    language: LaTeX2e
+    note: "Verbatim from the LaTeX2e reference manual's \\newcommand entry. [3][company] declares three arguments, the first optional with default company; the manual gives the output as 'I employ Dewey, Cheatem, and Howe.'"
+    code: |
+      \newcommand{\student}{Ms~O'Leary}
+      \newcommand{\defref}[1]{Definition~\ref{#1}}
+      \newcommand{\lawyers}[3][company]{#2, #3, and~#1}
+      I employ \lawyers[Howe]{Dewey}{Cheatem}.
+    sources: [latexref-newcommand]

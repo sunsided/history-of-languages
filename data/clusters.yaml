@@ -365,7 +365,7 @@
   name: Stack and concatenative languages
   research_status: stub
   backlog:
-    - { name: "PostScript", year: 1982 }
+    - { name: "PostScript", year: 1982, hint: "Adobe (Warnock, Geschke); Turing-complete stack language for page description. PDF (1993) is its non-programmable descendant: a note here, not a node." }
     - { name: "Joy", year: 2001 }
     - { name: "Factor", year: 2003 }
 - id: string-processing
@@ -393,6 +393,16 @@
     - { name: "ZAP (Z-machine Assembler Program)", hint: "Infocom's assembler between ZILCH and the story file; never released. Would need a .zap listing (historicalsource repos may hold one under COMPILED/)." }
   research_questions:
     - "Who besides Blank and Berez built ZILCH and ZAP, and when? \"Learning ZIL\" (1989) may say."
+- id: typesetting
+  name: Typesetting languages
+  summary: "Document languages that are also programming languages: Knuth's TeX macro language and the macro packages written in it, such as LaTeX."
+  research_status: stub
+  key_sources: [wiki-tex, wiki-latex]
+  backlog:
+    - { name: "METAFONT", year: 1977, hint: "Knuth's companion language for describing fonts; same TeX project." }
+    - { name: "troff / nroff", hint: "Unix typesetter with a macro language (ms, me, man packages). Needs year and creator sources (Joe Ossanna)." }
+    - { name: "ConTeXt", hint: "TeX macro package, Hans Hagen and Ton Otten (PRAGMA ADE). Needs year." }
+    - { name: "expl3 / LaTeX3 programming layer", hint: "Wikipedia: since 2018 \"a programming layer within LaTeX2e\"; a node or a LaTeX milestone?" }
 - id: logic
   name: Logic programming
   research_status: stub
@@ -493,6 +503,7 @@
   backlog:
     - { name: "Squirrel", year: 2003 }
     - { name: "GDScript", year: 2014 }
+    - { name: "Minecraft commands / mcfunction", hint: "Mojang; datapack function files of in-game commands. Redstone circuits are not a language (Turing-complete by accident), so only the command language could be a node. Needs year and a sourced example." }
 - id: web
   name: Web languages
   research_status: draft
