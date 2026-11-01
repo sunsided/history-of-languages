@@ -55,6 +55,8 @@ class Viewer {
 	/** built by the dataset plugin, replaced on every data push */
 	searchIndex = $state.raw<SearchIndex>(initialIndex);
 	paletteOpen = $state(false);
+	/** path-finder toy: shortest chain between two languages (P, or the toolbar button) */
+	pathOpen = $state(false);
 	/** last palette destinations, "type:id", newest first */
 	recent = $state<string[]>(loadRecent());
 	/** bumps on every live data update, for a small "reloaded" flash */
@@ -277,7 +279,13 @@ if (typeof window !== 'undefined') {
 			viewer.paletteOpen = !viewer.paletteOpen;
 			return;
 		}
-		if (viewer.paletteOpen) return; // the palette handles its own keys
+		if (viewer.paletteOpen || viewer.pathOpen) return; // the dialogs handle their own keys
+		const typing = (ev.target as Element | null)?.matches?.('input, select, textarea, [contenteditable]');
+		if (ev.key.toLowerCase() === 'p' && !ev.ctrlKey && !ev.metaKey && !ev.altKey && !typing) {
+			ev.preventDefault();
+			viewer.pathOpen = true;
+			return;
+		}
 		if (ev.key !== 'Escape' || (ev.target as Element | null)?.matches?.('input, select, textarea')) return;
 		if (viewer.selected) viewer.deselect();
 		else viewer.clearFocus();

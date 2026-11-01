@@ -49,6 +49,9 @@
 		<span class="search-text">Go to…</span>
 		<kbd>{isMac ? '⌘' : 'Ctrl'}</kbd><kbd>K</kbd>
 	</button>
+	<button class="path-btn" onclick={() => (viewer.pathOpen = true)} title="How are two languages related? Shortest path between them (P)">
+		<span aria-hidden="true">⇄</span><span class="path-text">Path</span><kbd>P</kbd>
+	</button>
 
 	{#if viewer.narrow.current}
 		<button class="toggle" class:on={viewer.filtersOpen} onclick={() => (viewer.filtersOpen = !viewer.filtersOpen)} aria-expanded={viewer.filtersOpen}>
@@ -241,6 +244,12 @@
 	.search-text {
 		flex: 1;
 	}
+	.path-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 6px;
+		color: var(--fg-muted);
+	}
 	.search-icon {
 		font-size: 15px;
 		line-height: 1;
@@ -267,7 +276,9 @@
 			min-width: 0;
 			width: auto;
 		}
-		.search-btn kbd {
+		.search-btn kbd,
+		.path-btn kbd,
+		.path-text {
 			display: none;
 		}
 		.filters {

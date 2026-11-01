@@ -3,6 +3,7 @@
 	import Timeline from '#lib/components/Timeline.svelte';
 	import DetailPanel from '#lib/components/DetailPanel.svelte';
 	import CommandPalette from '#lib/components/CommandPalette.svelte';
+	import PathFinder from '#lib/components/PathFinder.svelte';
 	import { viewer } from '#lib/viewer.svelte.ts';
 	import '../app.css';
 
@@ -27,6 +28,9 @@
 
 {#if viewer.paletteOpen}
 	<CommandPalette />
+{/if}
+{#if viewer.pathOpen}
+	<PathFinder />
 {/if}
 
 <style>
