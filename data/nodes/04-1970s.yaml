@@ -214,6 +214,8 @@
     - { version: WAM, year: 1983, summary: "Warren Abstract Machine." }
     - { version: ISO Prolog, year: 1995 }
   summary: "Programming in logic: programs are Horn clauses, execution is resolution with unification and backtracking. Basis of Japan's Fifth Generation project; Erlang's first implementation was in Prolog."
+  relations:
+    - { type: influenced_by, to: planner, weight: moderate, confidence: medium, sources: [wiki-planner], note: "Planner's infobox lists Prolog among the languages it influenced; the article also says Roussel implemented Prolog in the fall of 1972." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Prolog" }
@@ -405,6 +407,10 @@
     found that actors and closures were the same thing. Brought closures, guaranteed tail calls
     and first-class continuations into the mainstream of language design. SICP made it a teaching
     language, and JavaScript's semantics borrow from it.
+  notes: >
+    GNU Guile (1993; Aubrey Jaffer, Tom Lord, Miles Bader; GNU's official extension language, from Jaffer's SCM, itself
+    from George Carrette's SIOD; R5RS, most of R6RS and R7RS) and CHICKEN (Felix Winkelmann, 2000; compiles Scheme to C,
+    mostly R5RS) are implementations, so they are notes here rather than nodes (wiki-guile, wiki-chicken).
   relations:
     - { type: dialect_of, to: lisp, weight: strong, confidence: high }
     - { type: influenced_by, to: algol-60, aspects: [lexical-scoping, block-structure], weight: strong, confidence: high }
@@ -2051,3 +2057,203 @@
       # The H2_COUNT macro is redefined every time the H2 macro is used:
       define(`H2',
       `define(`H2_COUNT', incr(H2_COUNT))<h2>H2_COUNT. $1</h2>')
+
+- id: pop-2
+  name: POP-2
+  aliases: [POP-10, WPOP]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1970, precision: year, note: "\"developed around 1970\" (Wikipedia); its predecessor POP-1 (originally COWSEL) dates from 1968." }
+    places: [{ institution: University of Edinburgh, country: GB }]
+  creators:
+    - { name: Robin Popplestone, role: designer }
+    - { name: Rod Burstall, role: designer }
+  status: historical
+  tags:
+    paradigm: [structured, reflective, procedural]
+    typing: [dynamic-typing]
+  summary: >
+    Edinburgh's AI language, developed "around 1970 from the earlier language POP-1 (developed by Robin Popplestone
+    in 1968, originally named COWSEL) by Robin Popplestone and Rod Burstall". It "drew roots from many sources: the
+    languages Lisp and ALGOL 60, and theoretical ideas from Peter J. Landin". "Because of the stack-based paradigm,
+    there is no need to distinguish between statements and expressions". It ran on the Elliott 4130, ICT 1909,
+    BESM-6 and PDP-10 (as POP-10), among others.
+  notes: >
+    COWSEL/POP-1 is in the early/ai backlog. Wikipedia's claim that a 1968 ICT 1909 port preceded POP-2's 1970
+    date looks garbled; it may refer to POP-1.
+  relations:
+    - { type: influenced_by, to: lisp, weight: strong, confidence: high, sources: [wiki-pop-2] }
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: high, sources: [wiki-pop-2] }
+    - { type: influenced_by, to: iswim, weight: weak, confidence: low, sources: [wiki-pop-2], note: "\"theoretical ideas from Peter J. Landin\"; ISWIM is Landin's language, but the article does not name it." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/POP-2" }
+  sources: [wiki-pop-2]
+  example:
+    title: Maximum of two numbers
+    language: POP-2
+    note: "Verbatim from Wikipedia's POP-2 article."
+    sources: [wiki-pop-2]
+    code: |
+      function max x y; if x > y then x else y close end;
+
+- id: pop-11
+  name: POP-11
+  aliases: [Poplog]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1975, precision: year }
+    places: [{ institution: University of Sussex, country: GB }]
+  creators:
+    - { name: Steve Hardy, role: "implementer of the first subset" }
+    - { name: Aaron Sloman, role: designer }
+    - { name: Chris Mellish, role: designer }
+    - { name: John Gibson, role: designer }
+  status: maintained
+  tags:
+    paradigm: [structured, reflective, procedural, functional, declarative]
+    typing: [dynamic-typing]
+    features: [pattern-matching]
+  summary: >
+    "An evolution of the language POP-2", begun when Steve Hardy at the University of Sussex "implemented a subset of
+    POP-2, which he named POP-11". It "features an open stack model (like Forth, among others)", is incrementally
+    compiled, and "supports declarative language constructs, including a pattern matcher". Since about 1999 it has
+    been freely available as part of the open-source Poplog.
+  relations:
+    - { type: successor_of, to: pop-2, weight: strong, confidence: high, sources: [wiki-pop-11, wiki-pop-2] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/POP-11" }
+  sources: [wiki-pop-11, wiki-pop-2]
+  example:
+    title: Doubling, with an output local
+    language: POP-11
+    note: "Verbatim from Wikipedia's POP-11 article; => prints the result, here ** 246."
+    sources: [wiki-pop-11]
+    code: |
+      define Double(Source) -> Result; Source*2 -> Result; enddefine;
+      Double(123) =>
+
+- id: lucid
+  name: Lucid
+  aliases: [pLucid]
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 1976, precision: year }
+  creators:
+    - { name: Edward A. Ashcroft, role: designer }
+    - { name: William W. Wadge, role: designer }
+  status: historical
+  tags:
+    paradigm: [dataflow-programming, declarative]
+  summary: >
+    "A dataflow programming language designed to experiment with non-von Neumann programming models", by Bill Wadge
+    and Ed Ashcroft, described in their 1985 book Lucid, the Dataflow Programming Language. Wikipedia lists ISWIM as its influence and SISAL, Pure Data and Lustre among the
+    languages it influenced.
+  relations:
+    - { type: influenced_by, to: iswim, weight: strong, confidence: high, sources: [wiki-lucid], note: "Infobox: influenced by ISWIM." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lucid_(programming_language)" }
+  sources: [wiki-lucid]
+  example:
+    title: The stream of factorials
+    language: Lucid
+    note: "From Wikipedia's Lucid article; indentation under where is restored, as the fetched copy had none. fby reads followed by: n is the stream 0, 1, 2, ... and fac the matching factorials."
+    sources: [wiki-lucid]
+    code: |
+      fac
+      where
+        n = 0 fby (n + 1);
+        fac = 1 fby ( fac * (n + 1) );
+      end
+
+- id: obj
+  name: OBJ
+  aliases: [OBJ2, OBJ3]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1976, precision: year, note: "\"introduced by Joseph Goguen in 1976\" (Wikipedia)." }
+  creators:
+    - { name: Joseph Goguen, role: designer }
+    - { name: José Meseguer, role: contributor }
+  status: historical
+  tags:
+    paradigm: [declarative]
+  summary: >
+    "A family of declarative 'ultra high-level' languages" introduced by Joseph Goguen in 1976 and developed further
+    with José Meseguer. OBJ2 has "Clear-like parametrised
+    modules and a functional system based on equations"; OBJ3 is "based on order-sorted rewriting". The family includes
+    CafeOBJ, Eqlog, FOOPS and Maude.
+  notes: >
+    No example in the Wikipedia article. Maude (SRI International, rewriting logic, "similar in its general approach to
+    Joseph Goguen's OBJ3") stays in the backlog until it has a year.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/OBJ_(programming_language)" }
+  sources: [wiki-obj, wiki-maude]
+
+- id: fp
+  name: FP
+  aliases: [FP84]
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 1977, precision: year, note: "\"introduced in Backus's 1977 Turing Award paper\" (Can Programming Be Liberated from the von Neumann Style?, CACM, August 1978)." }
+  creators:
+    - { name: John Backus, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional, tacit-programming]
+  summary: >
+    The language John Backus created "to support the function-level programming paradigm", introduced in his
+    Turing Award lecture. It "was
+    heavily influenced by APL". FP84 added infinite sequences, programmer-defined combining forms and lazy evaluation,
+    and Backus's FL succeeded it. Wikipedia lists FL, Haskell and Joy among the languages it influenced.
+  notes: >
+    No program listing:
+    the article shows only notation such as f∘g:x = f:(g:x).
+  relations:
+    - { type: influenced_by, to: apl, weight: strong, confidence: high, sources: [wiki-fp], note: "\"heavily influenced by APL\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FP_(programming_language)" }
+  sources: [wiki-fp]
+
+- id: pcf
+  name: PCF
+  aliases: [Programming Computable Functions]
+  kind: formalism
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 1977, date: "1977-12", precision: exact, note: "Plotkin's paper, December 1977 (Wikipedia infobox)." }
+  creators:
+    - { name: Gordon Plotkin, role: "introduced it, 1977" }
+    - { name: Dana Scott, role: "prior unpublished material" }
+  status: historical
+  tags:
+    paradigm: [functional]
+    typing: [static-typing]
+  summary: >
+    A small typed functional language "introduced by Gordon Plotkin in 1977, based on prior unpublished material by
+    Dana Scott", described as "an extended version of the typed lambda calculus, or a simplified version of modern
+    typed functional languages such as ML or Haskell". A fully abstract model for it "was first given by Robin
+    Milner".
+  notes: >
+    Plotkin: "based on LCF, Scott's logic of computable functions". No code in the article.
+  relations:
+    - { type: influenced_by, to: lambda-calculus, weight: strong, confidence: high, sources: [wiki-pcf] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Programming_Computable_Functions" }
+  sources: [wiki-pcf]

@@ -36,6 +36,7 @@
     monads for effects (after Moggi; Wadler) were exported to the whole industry: Rust traits,
     Swift protocols, Scala implicits, LINQ, promises as monads, async as a monad.
   relations:
+    - { type: influenced_by, to: orwell, weight: moderate, confidence: high, sources: [wiki-orwell], note: "Orwell \"was a forerunner of Haskell\"; its infobox lists Haskell among the languages it influenced." }
     - { type: influenced_by, to: miranda, weight: strong, confidence: high }
     - { type: influenced_by, to: ml, aspects: [type-inference], weight: strong, confidence: high }
     - { type: influenced_by, to: iswim, aspects: [offside-rule], weight: moderate, confidence: high }
@@ -1100,6 +1101,7 @@
     with an ALGOL-like syntax adopted in 1993–94 in place of the original prefix syntax, meant for the
     Newton. Apple dropped it in 1995; Harlequin's implementation lives on as Open Dylan.
   relations:
+    - { type: influenced_by, to: eulisp, weight: moderate, confidence: medium, sources: [wiki-eulisp], note: "EuLisp's infobox lists Dylan among the languages it influenced." }
     - { type: influenced_by, to: scheme, weight: strong, confidence: high, sources: [wiki-dylan], note: "\"Dylan derives from Scheme and Common Lisp and adds an integrated object system\"." }
     - { type: influenced_by, to: common-lisp, aspects: [multiple-dispatch], weight: strong, confidence: high, sources: [wiki-dylan] }
     - { type: influenced_by, to: algol-60, weight: weak, confidence: medium, sources: [wiki-dylan], note: "The infobox lists ALGOL; the link is the infix syntax." }
@@ -1199,6 +1201,7 @@
     same thing, written with Haskell-like syntax, Unicode and mixfix operators. The name alludes to Coq, named
     after Thierry Coquand. Compiles to Haskell (MAlonzo) or JavaScript.
   relations:
+    - { type: influenced_by, to: epigram, year: 2007, aspects: [dependent-types], weight: moderate, confidence: medium, sources: [wiki-epigram], note: "Agda 2 (2007), not Agda 1. Epigram's infobox lists Agda among the languages it influenced." }
     - { type: influenced_by, to: rocq, aspects: [dependent-types], weight: moderate, confidence: medium, sources: [wiki-agda], note: "Infobox; the article also notes the name's allusion to Coq." }
     - { type: influenced_by, to: haskell, weight: moderate, confidence: medium, sources: [wiki-agda], note: "Infobox." }
     - { type: implemented_in, to: haskell, weight: strong, confidence: high, sources: [wiki-agda] }
@@ -2208,3 +2211,329 @@
           ; Return the average rounded to 2 decimal places.
           Return Round($iArraySum / $aArray[0], 2)
       EndFunc ;==>_Find_Average
+
+- id: eulisp
+  name: EuLisp
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    began: { year: 1985, precision: year }
+    first_appeared: { year: 1990, precision: year, note: "Work began at a 1985 meeting in Paris; the complete specification and a first, interpreted implementation appeared in 1990 (Wikipedia)." }
+  status: historical
+  tags:
+    paradigm: [functional, procedural, object-oriented, multi-paradigm]
+    typing: [dynamic-typing, strong-typing]
+  summary: >
+    "A statically and dynamically scoped Lisp dialect developed by a loose formation of industrial and academic Lisp
+    users and developers from around Europe". Its influences span Common Lisp, InterLisp, Le Lisp, Scheme, T and CLOS
+    among others; Wikipedia lists Dylan and ISLISP among the languages it influenced. Implementations include FEEL,
+    Youtoo (University of Bath) and Eu2C (Fraunhofer ISST).
+  relations:
+    - { type: influenced_by, to: common-lisp, weight: strong, confidence: high, sources: [wiki-eulisp] }
+    - { type: influenced_by, to: scheme, weight: strong, confidence: high, sources: [wiki-eulisp] }
+    - { type: influenced_by, to: t, weight: moderate, confidence: high, sources: [wiki-eulisp] }
+    - { type: influenced_by, to: interlisp, weight: weak, confidence: medium, sources: [wiki-eulisp] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/EuLisp" }
+  sources: [wiki-eulisp]
+  example:
+    title: build-tower (fragment of a Towers of Hanoi module)
+    language: EuLisp
+    note: "One definition from the module in Wikipedia's EuLisp article; the fetched copy had lost its indentation, which is restored here. (setter tower-blocks) is EuLisp's generalized setter."
+    sources: [wiki-eulisp]
+    code: |
+      (defun build-tower (x n)
+        (labels ((loop (i res)
+                   (if (= i 0) res
+                     (loop (- i 1) (cons i res)))))
+          ((setter tower-blocks) x (loop n ()))
+          x))
+
+- id: aldor
+  name: Aldor
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1990, precision: year }
+    places: [{ institution: Thomas J. Watson Research Center, country: US }]
+  creators:
+    - { name: Richard Dimick Jenks, role: designer }
+    - { name: Barry Trager, role: designer }
+    - { name: Stephen Watt, role: designer }
+    - { name: James Davenport, role: designer }
+  tags:
+    paradigm: [object-oriented, functional, imperative, multi-paradigm]
+    typing: [dependent-types]
+    features: [offside-rule]
+  summary: >
+    The extension language of the Axiom computer algebra system, "the successor of A#" there, from IBM's Watson
+    Research Center. "It has an elaborate type system, allowing types to be used as first-class values"; its "syntax is
+    heavily influenced by Pascal, but it is optionally indentation-sensitive, using whitespace characters and the
+    off-side rule, like Python".
+  relations:
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: high, sources: [wiki-aldor] }
+    - { type: influenced_by, to: haskell, weight: weak, confidence: medium, sources: [wiki-aldor], note: "Infobox: influenced by A#, Pascal, Haskell." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Aldor" }
+  sources: [wiki-aldor]
+  example:
+    title: Hello, world
+    language: Aldor
+    note: "Verbatim from Wikipedia's Aldor article."
+    sources: [wiki-aldor]
+    code: |
+      #include "aldor"
+      #include "aldorio"
+      stdout << "Hello, world!" << newline;
+
+- id: oz
+  name: Oz
+  aliases: [Mozart]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1991, precision: year }
+  creators:
+    - { name: Gert Smolka, role: designer }
+  status: legacy
+  tags:
+    paradigm: [logic, functional, imperative, object-oriented, concurrent, multi-paradigm]
+    typing: [dynamic-typing]
+    features: [constraints]
+  summary: >
+    A multi-paradigm language "first designed by Gert Smolka and his students in 1991", which "contains most of the
+    concepts of the major programming paradigms": logic, functional, object-oriented, constraint, distributed and
+    concurrent programming. From 1996 it was developed with Seif Haridi and Peter Van Roy at the Swedish Institute of
+    Computer Science, and from 1999 by the Mozart Consortium. Wikipedia lists Alice and Scala among the languages it
+    influenced.
+  relations:
+    - { type: influenced_by, to: prolog, weight: strong, confidence: high, sources: [wiki-oz] }
+    - { type: influenced_by, to: erlang, weight: moderate, confidence: medium, sources: [wiki-oz] }
+    - { type: influenced_by, to: lisp, weight: weak, confidence: medium, sources: [wiki-oz] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Oz_(programming_language)" }
+  sources: [wiki-oz]
+  example:
+    title: Square
+    language: Oz
+    note: "From Wikipedia's Oz article; the body's indentation is restored, as the fetched copy had none. % starts a comment."
+    sources: [wiki-oz]
+    code: |
+      fun {Square N} % A general function
+         N*N
+      end
+
+- id: godel
+  name: Gödel
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1992, precision: year }
+  creators:
+    - { name: John Lloyd, role: designer }
+    - { name: Patricia Hill, role: designer }
+  status: historical
+  tags:
+    paradigm: [logic, declarative]
+    typing: [strong-typing]
+  milestones:
+    - { version: "1.5", year: 1995, date: "1995-08-11" }
+  summary: >
+    "A declarative, general-purpose programming language that adheres to the logic programming paradigm" by John
+    Lloyd and Patricia Hill. "It is a strongly typed language, the type system being based on many-sorted logic with
+    parametric polymorphism."
+  notes: >
+    No example yet: Wikipedia's GCD module came through the fetch on one line. The article states no influences; its
+    relation to Prolog needs a source such as Hill and Lloyd, The Gödel Programming Language (1994).
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/G%C3%B6del_(programming_language)" }
+  sources: [wiki-godel]
+
+- id: xsb
+  name: XSB
+  aliases: [SB-Prolog]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1993, precision: range, note: "\"launched in 1993-4\" (Wikipedia)." }
+    places: [{ institution: Stony Brook University, country: US }]
+  creators:
+    - { name: David S. Warren, role: designer }
+    - { name: Theresa Swift, role: designer }
+    - { name: Kostis Sagonas, role: designer }
+  status: maintained
+  tags:
+    paradigm: [logic]
+  milestones:
+    - { version: "5.0", year: 2022, date: "2022-05-12" }
+  summary: >
+    "A dialect of the Prolog programming language and its implementation", "a compiled dialect of Prolog based on the
+    Warren Abstract Machine". It grew from SB-Prolog (Stony Brook, 1986) and "was the first implementation of tabled
+    resolution".
+  notes: >
+    No code in the article.
+  relations:
+    - { type: dialect_of, to: prolog, weight: strong, confidence: high, sources: [wiki-xsb] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/XSB" }
+  sources: [wiki-xsb]
+
+- id: mercury
+  name: Mercury
+  kind: language
+  category: general
+  cluster: logic
+  origin:
+    first_appeared: { year: 1995, date: "1995-04-08", precision: exact }
+    places: [{ institution: University of Melbourne, country: AU }]
+  creators:
+    - { name: Zoltan Somogyi, role: designer }
+    - { name: Fergus Henderson, role: developer }
+    - { name: Thomas Conway, role: developer }
+  status: active
+  tags:
+    paradigm: [logic, functional]
+    typing: [static-typing, strong-typing]
+  summary: >
+    "A functional logic programming language made for real-world uses" from the University of Melbourne. "It can be
+    viewed as a pure subset of Prolog with strong types and modes", with the same syntax and SLD resolution and "a
+    strong, static, polymorphic type system". Wikipedia
+    lists Prolog, Hope and Haskell as influences.
+  relations:
+    - { type: influenced_by, to: prolog, weight: strong, confidence: high, sources: [wiki-mercury], note: "\"based on the logic programming language Prolog\"." }
+    - { type: influenced_by, to: haskell, weight: moderate, confidence: high, sources: [wiki-mercury] }
+    - { type: influenced_by, to: hope, weight: weak, confidence: medium, sources: [wiki-mercury] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Mercury_(programming_language)", homepage: "https://mercurylang.org/" }
+  sources: [wiki-mercury]
+  example:
+    title: Hello, World
+    language: Mercury
+    note: "From Wikipedia's Mercury article; the clause body's indentation is restored. di and uo are the unique modes that thread the I/O state."
+    sources: [wiki-mercury]
+    code: |
+      :- module hello.
+      :- interface.
+      :- import_module io.
+      :- pred main(io::di, io::uo) is det.
+      :- implementation.
+      main(!IO) :-
+          io.write_string("Hello, World!\n", !IO).
+
+- id: curry
+  name: Curry
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1995, precision: year }
+  creators:
+    - { name: Michael Hanus, role: designer }
+    - { name: Sergio Antoy, role: designer }
+  status: active
+  tags:
+    paradigm: [functional, logic]
+    typing: [static-typing, strong-typing, type-inference]
+    features: [lazy-evaluation]
+  summary: >
+    "An implementation of the functional logic programming paradigm, and based on the Haskell language": "nearly a
+    superset of Haskell". "In contrast to Prolog, which uses
+    backtracking to search for solutions, Curry does not fix a particular search strategy." Implementations compile to
+    Prolog (PAKCS), C (mcc) or Haskell (KiCS2).
+  relations:
+    - { type: influenced_by, to: haskell, weight: strong, confidence: high, sources: [wiki-curry] }
+    - { type: influenced_by, to: prolog, weight: strong, confidence: high, sources: [wiki-curry] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Curry_(programming_language)" }
+  sources: [wiki-curry]
+  example:
+    title: Booleans and not
+    language: Curry
+    note: "Verbatim from Wikipedia's Curry article; it is also valid Haskell."
+    sources: [wiki-curry]
+    code: |
+      data Bool = True | False
+      not True = False
+      not False = True
+
+- id: jess
+  name: Jess
+  kind: language
+  category: domain-specific
+  cluster: logic
+  origin:
+    first_appeared: { year: 1995, precision: year, note: "\"first written in late 1995\" (Wikipedia)." }
+    places: [{ institution: Sandia National Laboratories, country: US }]
+  creators:
+    - { name: Ernest Friedman-Hill, role: developer }
+  status: legacy
+  tags:
+    paradigm: [declarative]
+    domain: [artificial-intelligence]
+  milestones:
+    - { version: 7.1p2, year: 2008, date: "2008-11-05", summary: "Last stable release." }
+  summary: >
+    A rule engine and language for the Java platform by Ernest Friedman-Hill at Sandia. "It is a superset of the CLIPS
+    language", whose rule-based portion it rewrote in Java; "the declarative paradigm used by Jess applies a set of rules
+    to a set of facts continuously by a process named pattern matching".
+  relations:
+    - { type: superset_of, to: clips, weight: strong, confidence: high, sources: [wiki-jess, wiki-clips] }
+    - { type: implemented_in, to: java, weight: moderate, confidence: high, sources: [wiki-jess] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Jess_(programming_language)" }
+  sources: [wiki-jess, wiki-clips]
+  example:
+    title: A template and a fact
+    language: Jess
+    note: "From Wikipedia's Jess article; the slot lines' indentation is restored."
+    sources: [wiki-jess]
+    code: |
+      (deftemplate car
+        (slot color)
+        (slot mileage)
+        (slot value)
+      )
+      (assert (car (color red) (mileage 10000) (value 400)))
+
+- id: islisp
+  name: ISLISP
+  kind: language
+  category: general
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1997, precision: year, note: "ISO/IEC 13816:1997, the first edition of the standard (cited in Wikipedia); republished as ISO/IEC 13816:2007." }
+    places: [{ institution: ISO/IEC JTC 1/SC 22/WG 16 }]
+  status: maintained
+  tags:
+    paradigm: [functional, procedural, object-oriented, reflective, multi-paradigm]
+    features: [standardization]
+  milestones:
+    - { version: "2007", year: 2007, summary: "Updated and republished as ISO/IEC 13816:2007(E)." }
+  summary: >
+    The ISO-standard Lisp. Its goal "was to define a small, core language to help bridge the gap between differing
+    dialects of Lisp", which it did "by studying primarily Common Lisp, EuLisp, Le Lisp, and Scheme and standardizing
+    only those features shared between them". Its object system, ILOS, "is mostly a subset of the Common Lisp Object
+    System (CLOS)".
+  notes: >
+    No code in the Wikipedia article.
+  relations:
+    - { type: influenced_by, to: common-lisp, weight: strong, confidence: high, sources: [wiki-islisp] }
+    - { type: influenced_by, to: eulisp, weight: strong, confidence: high, sources: [wiki-islisp, wiki-eulisp] }
+    - { type: influenced_by, to: scheme, weight: moderate, confidence: high, sources: [wiki-islisp] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ISLISP" }
+  sources: [wiki-islisp]

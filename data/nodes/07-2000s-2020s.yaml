@@ -176,6 +176,7 @@
     - { version: "3.0", year: 2021, summary: "Dotty / DOT calculus: given/using, enums, union types." }
   summary: "Fuses object-oriented and functional programming on the JVM: every value is an object and every function a value. Odersky had earlier built Pizza and GJ, whose generics became Java 5's."
   relations:
+    - { type: influenced_by, to: oz, weight: weak, confidence: medium, sources: [wiki-oz], note: "Oz's infobox lists Scala among the languages it influenced." }
     - { type: influenced_by, to: java, weight: strong, confidence: high }
     - { type: influenced_by, to: haskell, aspects: [type-classes], weight: moderate, confidence: high }
     - { type: influenced_by, to: standard-ml, weight: moderate, confidence: high }
@@ -2498,6 +2499,7 @@
   notes: >
     Idris 2's first release date was not found on the pages read, so it is not a milestone yet.
   relations:
+    - { type: influenced_by, to: epigram, aspects: [dependent-types], weight: moderate, confidence: medium, sources: [wiki-epigram], note: "Epigram's infobox lists Idris among the languages it influenced." }
     - { type: influenced_by, to: agda, aspects: [dependent-types], weight: strong, confidence: medium, sources: [wiki-idris], note: "Infobox, which also lists Clean, Rocq, Epigram, F#, Haskell, ML and Rust." }
     - { type: influenced_by, to: haskell, weight: strong, confidence: high, sources: [wiki-idris], note: "\"similar to Haskell\"." }
     - { type: influenced_by, to: rocq, weight: moderate, confidence: medium, sources: [wiki-idris], note: "Infobox." }
@@ -3540,3 +3542,115 @@
     sources: [wiki-jq]
     code: |
       $ wget -qO- 'https://en.wikipedia.org/w/api.php?action=parse&page=jq_(programming_language)&format=json' | jq '.parse.categories[]."*"'
+
+- id: hume
+  name: Hume
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 2000, precision: year }
+    places: [{ institution: University of St Andrews, country: GB }, { institution: Heriot-Watt University, country: GB }]
+  creators:
+    - { name: Kevin Hammond, role: designer }
+    - { name: Greg Michaelson, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional]
+    typing: [static-typing, strong-typing, type-inference]
+  milestones:
+    - { version: "0.8", year: 2008, date: "2008-04-25" }
+  summary: >
+    A functional language from St Andrews and Heriot-Watt, developed "since the year 2000". "The expression language is
+    Haskell-like", and its message-passing concurrency "remembers JoCaml's join-patterns or Polyphonic C Sharp chords,
+    but with all channels asynchronous".
+  relations:
+    - { type: influenced_by, to: haskell, weight: strong, confidence: high, sources: [wiki-hume] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hume_(programming_language)" }
+  sources: [wiki-hume]
+  example:
+    title: Types for a vending machine
+    language: Hume
+    note: "Verbatim declarations from the vending-machine example in Wikipedia's Hume article."
+    sources: [wiki-hume]
+    code: |
+      data Coins = Nickel | Dime | Fake;
+      data Drinks = Coffee | Tea;
+      data Buttons = BCoffee | BTea | BCancel;
+      type Int = int 32 ;
+
+- id: epigram
+  name: Epigram
+  kind: language
+  category: research
+  cluster: ml-family/proof
+  origin:
+    first_appeared: { year: 2004, precision: year }
+  creators:
+    - { name: Conor McBride, role: designer }
+    - { name: James McKinna, role: designer }
+  status: extinct
+  tags:
+    paradigm: [functional]
+    typing: [dependent-types, static-typing, strong-typing]
+  milestones:
+    - { version: "1", year: 2006, date: "2006-10-11" }
+  summary: >
+    A dependently typed functional language whose prototype "was implemented by Conor McBride based on joint work with
+    James McKinna"; the proof assistant ALF was among its predecessors. Version 2, meant to implement Observational Type
+    Theory, was never officially released. Wikipedia lists Agda and Idris among the languages it influenced.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Epigram_(programming_language)" }
+  sources: [wiki-epigram]
+  example:
+    title: Addition by recursion on x
+    language: Epigram (ASCII form)
+    note: "From Wikipedia's Epigram article; indentation restored, as the fetched copy had none. Epigram is normally typeset two-dimensionally; this is its ASCII rendering."
+    sources: [wiki-epigram]
+    code: |
+      plus x y <= rec x {
+        plus x y <= case x {
+          plus zero y => y
+          plus (suc x) y => suc (plus x y)
+        }
+      }
+
+- id: pure
+  name: Pure
+  kind: language
+  category: general
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 2008, precision: year }
+  creators:
+    - { name: Albert Gräf, role: designer }
+  status: legacy
+  tags:
+    paradigm: [functional, declarative]
+    typing: [dynamic-typing, strong-typing]
+  milestones:
+    - { version: "0.68", year: 2018, date: "2018-04-11", summary: "Last stable release." }
+  summary: >
+    "A dynamically typed, functional programming language based on term rewriting" by Albert Gräf, the successor of
+    his equational language Q (University of Mainz). It uses "explicit delimiters (rather than off-side rule indents)".
+    Wikipedia lists Q, Haskell, Lisp, Alice and MATLAB as influences.
+  relations:
+    - { type: influenced_by, to: haskell, weight: moderate, confidence: high, sources: [wiki-pure] }
+    - { type: influenced_by, to: lisp, weight: weak, confidence: medium, sources: [wiki-pure] }
+    - { type: influenced_by, to: matlab, weight: weak, confidence: medium, sources: [wiki-pure] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pure_(programming_language)" }
+  sources: [wiki-pure]
+  example:
+    title: Fibonacci with an accumulator
+    language: Pure
+    note: "From Wikipedia's Pure article; the local definition's indentation is restored. Layout is not significant in Pure."
+    sources: [wiki-pure]
+    code: |
+      fib n = fibs (0,1) n with
+        fibs (a,b) n = if n<=0 then a else fibs (b,a+b) (n-1);
+      end;

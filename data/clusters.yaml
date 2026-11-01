@@ -247,7 +247,6 @@
   backlog:
     - { name: "FLPL (Fortran List Processing Language)", year: 1958 }
     - { name: "COMIT", year: 1957 }
-    - { name: "Planner / Micro-Planner", year: 1969 }
     - { name: "Conniver", year: 1972 }
     - { name: "COWSEL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "SLIP", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
@@ -404,15 +403,7 @@
   backlog:
     - { name: "Stanford LISP 1.6", year: 1966 }
     - { name: "NIL / Spice Lisp / S-1 Lisp", year: 1980, hint: "MacLisp successors consolidated into Common Lisp." }
-    - { name: "Portable Standard Lisp", year: 1980 }
-    - { name: "XLISP", year: 1983, hint: "David Betz; parent of AutoLISP." }
-    - { name: "T", year: 1982, hint: "Yale Scheme dialect." }
-    - { name: "EuLisp", year: 1990, hint: "Influenced Dylan." }
-    - { name: "ISLISP", year: 1997 }
-    - { name: "GNU Guile", year: 1993 }
-    - { name: "newLISP / PicoLisp", year: 1991 }
     - { name: "Mocklisp", year: 1981, hint: "Gosling Emacs's extension language, before Emacs Lisp." }
-    - { name: "CHICKEN", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Object Lisp", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "EusLisp Robot Programming Language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "LIL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
@@ -471,28 +462,16 @@
   name: Logic programming
   research_status: stub
   backlog:
-    - { name: "Planner", year: 1969 }
-    - { name: "Mercury", year: 1995 }
-    - { name: "miniKanren", year: 2005 }
+    - { name: "miniKanren", year: 2005, hint: "Relational programming, \"first developed by Will Byrd\" (thesis, Indiana University, 2009); canonical implementation embedded in Scheme; microKanren in under 40 lines; inspired Clojure core.logic (wiki-minikanren). The 2005 year needs a source (The Reasoned Schemer?)." }
     - { name: "Answer set programming", year: 1999 }
-    - { name: "Oz", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Curry", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "OPS5", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "CLIPS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Jess", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "OPS5", hint: "Charles Forgy, Carnegie Mellon, \"developed in the late 1970s\"; forward-chaining production system; first implemented in Lisp, later BLISS; OPS4 before, OPS83 after (wiki-ops5). Needs a year; then clips influenced_by ops5." }
     - { name: "KRL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Visual Prolog", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "XSB", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Gödel", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Escher", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "POP-2", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "POP-11", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Constraint Handling Rules", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Alma-0", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Algebraic Logic Functional programming language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Go!", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Maude system", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "OBJ2", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "Maude system", hint: "SRI International; implementation of rewriting logic, \"similar in its general approach to Joseph Goguen's OBJ3\" (wiki-maude). Needs a year; then influenced_by obj." }
     - { name: "Claire", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Agora", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
     - { name: "Tom", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
@@ -500,21 +479,11 @@
   name: ML and typed functional languages
   research_status: draft
   backlog:
-    - { name: "FP", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "FL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "FFP", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Epigram", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
     - { name: "Cayenne (Lennart Augustsson)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Aldor", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Orwell", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Opal", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Lucid", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Pure", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Flix", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PCF", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Cryptol", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Hume", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Napier88", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
+    - { name: "Opal", hint: "OPtimized Applicative Language, TU Berlin, functional (wiki-opal). Needs a year." }
+    - { name: "Flix", hint: "Aarhus University; ML family, syntax inspired by Scala, concurrency by Go; functional, imperative and logic (wiki-flix). Needs a first-appeared year." }
+    - { name: "Cryptol", hint: "Galois, Inc. for the NSA; DSL for cryptography (wiki-cryptol). Wikipedia infobox says first appeared 1980, which looks wrong; needs a real year." }
 - id: ml-family/proof
   name: Proof assistants and dependently typed languages
   parent: ml-family

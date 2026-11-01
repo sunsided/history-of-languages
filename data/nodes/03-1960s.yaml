@@ -1062,3 +1062,30 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/CMS_EXEC" }
   sources: [wiki-cms-exec]
+
+- id: planner
+  name: Planner
+  aliases: [Micro-Planner, PLANNER]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1969, precision: year, note: "\"first published in 1969\" (Wikipedia)." }
+    places: [{ institution: MIT, country: US }]
+  creators:
+    - { name: Carl Hewitt, role: designer }
+  status: historical
+  tags:
+    paradigm: [logic, procedural, multi-paradigm]
+  summary: >
+    Carl Hewitt's AI language at MIT, "a kind of hybrid between the procedural and logical paradigms". Micro-Planner implemented a subset, Julian Davies
+    implemented "essentially the whole language" as Popler in POP-2 at Edinburgh (1973), and derivations such as
+    QA4, Conniver, QLISP and Ether were "important tools in artificial intelligence research in the 1970s".
+    Wikipedia lists Prolog and Smalltalk among the languages it influenced.
+  notes: >
+    No example: Wikipedia gives only rule sketches such as "If assert P, assert Q". QA4, Conniver and QLISP are
+    in the early/ai backlog.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Planner_(programming_language)" }
+  sources: [wiki-planner]

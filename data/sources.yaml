@@ -3744,3 +3744,183 @@
   primary: false
   title: "Wikipedia: EXEC 2"
   url: https://en.wikipedia.org/wiki/EXEC_2
+- id: wiki-planner
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Planner (programming language)"
+  url: https://en.wikipedia.org/wiki/Planner_(programming_language)
+- id: wiki-pop-2
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: POP-2"
+  url: https://en.wikipedia.org/wiki/POP-2
+- id: wiki-pop-11
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: POP-11"
+  url: https://en.wikipedia.org/wiki/POP-11
+- id: wiki-lucid
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lucid (programming language)"
+  url: https://en.wikipedia.org/wiki/Lucid_(programming_language)
+- id: wiki-obj
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: OBJ (programming language)"
+  url: https://en.wikipedia.org/wiki/OBJ_(programming_language)
+- id: wiki-maude
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Maude system"
+  url: https://en.wikipedia.org/wiki/Maude_system
+- id: wiki-fp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: FP (programming language)"
+  url: https://en.wikipedia.org/wiki/FP_(programming_language)
+- id: wiki-pcf
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Programming Computable Functions"
+  url: https://en.wikipedia.org/wiki/Programming_Computable_Functions
+- id: wiki-psl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Portable Standard Lisp"
+  url: https://en.wikipedia.org/wiki/Portable_Standard_Lisp
+- id: wiki-t
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: T (programming language)"
+  url: https://en.wikipedia.org/wiki/T_(programming_language)
+- id: wiki-xlisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: XLISP"
+  url: https://en.wikipedia.org/wiki/XLISP
+- id: wiki-orwell
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Orwell (programming language)"
+  url: https://en.wikipedia.org/wiki/Orwell_(programming_language)
+- id: wiki-clips
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CLIPS"
+  url: https://en.wikipedia.org/wiki/CLIPS
+- id: wiki-ops5
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: OPS5"
+  url: https://en.wikipedia.org/wiki/OPS5
+- id: wiki-visual-prolog
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Visual Prolog"
+  url: https://en.wikipedia.org/wiki/Visual_Prolog
+- id: wiki-napier88
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Napier88"
+  url: https://en.wikipedia.org/wiki/Napier88
+- id: wiki-picolisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PicoLisp"
+  url: https://en.wikipedia.org/wiki/PicoLisp
+- id: wiki-fl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: FL (programming language)"
+  url: https://en.wikipedia.org/wiki/FL_(programming_language)
+- id: wiki-eulisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: EuLisp"
+  url: https://en.wikipedia.org/wiki/EuLisp
+- id: wiki-aldor
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Aldor"
+  url: https://en.wikipedia.org/wiki/Aldor
+- id: wiki-oz
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Oz (programming language)"
+  url: https://en.wikipedia.org/wiki/Oz_(programming_language)
+- id: wiki-godel
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Gödel (programming language)"
+  url: https://en.wikipedia.org/wiki/G%C3%B6del_(programming_language)
+- id: wiki-xsb
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: XSB"
+  url: https://en.wikipedia.org/wiki/XSB
+- id: wiki-mercury
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Mercury (programming language)"
+  url: https://en.wikipedia.org/wiki/Mercury_(programming_language)
+- id: wiki-curry
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Curry (programming language)"
+  url: https://en.wikipedia.org/wiki/Curry_(programming_language)
+- id: wiki-jess
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Jess (programming language)"
+  url: https://en.wikipedia.org/wiki/Jess_(programming_language)
+- id: wiki-islisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ISLISP"
+  url: https://en.wikipedia.org/wiki/ISLISP
+- id: wiki-hume
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Hume (programming language)"
+  url: https://en.wikipedia.org/wiki/Hume_(programming_language)
+- id: wiki-epigram
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Epigram (programming language)"
+  url: https://en.wikipedia.org/wiki/Epigram_(programming_language)
+- id: wiki-pure
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Pure (programming language)"
+  url: https://en.wikipedia.org/wiki/Pure_(programming_language)
+- id: wiki-guile
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GNU Guile"
+  url: https://en.wikipedia.org/wiki/GNU_Guile
+- id: wiki-chicken
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Chicken (Scheme implementation)"
+  url: https://en.wikipedia.org/wiki/Chicken_(Scheme_implementation)
+- id: wiki-flix
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Flix (programming language)"
+  url: https://en.wikipedia.org/wiki/Flix_(programming_language)
+- id: wiki-cryptol
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Cryptol"
+  url: https://en.wikipedia.org/wiki/Cryptol
+- id: wiki-opal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Opal (programming language)"
+  url: https://en.wikipedia.org/wiki/Opal_(programming_language)
+- id: wiki-minikanren
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: miniKanren"
+  url: https://en.wikipedia.org/wiki/MiniKanren

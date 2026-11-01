@@ -1545,7 +1545,8 @@
     draftsmen and engineers the only Lisp they ever wrote. It made AutoCAD scriptable by its users and
     created one of the largest Lisp user bases outside academia.
   relations:
-    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-autolisp], note: "Via XLISP (not yet a node)." }
+    - { type: influenced_by, to: xlisp, weight: strong, confidence: high, sources: [wiki-xlisp], note: "AutoLISP \"is based on a very old version of XLISP\"." }
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-autolisp], note: "Via XLISP." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/AutoLISP" }
@@ -2709,3 +2710,272 @@
       IF event = 1 THEN SAY "Program has ended unexpectedly"
       IF event = 2 THEN SAY "Program has finished its job"
       IF event = 3 THEN SAY "Cannot find data in selected directory"
+
+- id: portable-standard-lisp
+  name: Portable Standard Lisp
+  aliases: [PSL]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1980, precision: year, note: "PSL 3.1, University of Utah (Wikipedia)." }
+    places: [{ institution: University of Utah, country: US }]
+  status: maintained
+  tags:
+    paradigm: [functional, procedural, multi-paradigm]
+    typing: [dynamic-typing, strong-typing]
+  milestones:
+    - { version: "3.3", year: 1982, summary: "Development handed to Hewlett-Packard, which released PSL 3.3 and later." }
+  summary: >
+    "A dialect of the language Lisp" developed at the University of Utah in 1980 and "inspired by its predecessor,
+    Standard Lisp and the Portable Lisp Compiler". It ran on the 68000, DECSYSTEM-20, Cray-1 and VAX. Hewlett-Packard
+    took it over in 1982; today the Zuse Institute Berlin maintains it, mainly as the base of the Reduce computer
+    algebra system.
+  notes: >
+    Standard Lisp and Reduce are not nodes yet. No example in the Wikipedia article.
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-psl] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Portable_Standard_Lisp" }
+  sources: [wiki-psl]
+
+- id: t
+  name: T
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1982, precision: year }
+    places: [{ institution: Yale University, country: US }]
+  creators:
+    - { name: Jonathan A. Rees, role: designer }
+    - { name: Norman I. Adams, role: designer }
+    - { name: Kent M. Pitman, role: developer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented, imperative, functional, multi-paradigm]
+    typing: [dynamic-typing, strong-typing]
+  milestones:
+    - { version: "3.0", year: 1984, date: "1984-08-01", summary: "Final release." }
+  summary: >
+    "A dialect of the Scheme programming language developed in the early 1980s by Jonathan A. Rees, Kent M. Pitman,
+    and Norman I. Adams of Yale University as an experiment in language design and implementation". Its purpose was
+    "to test the thesis developed by Guy L. Steele Jr. and Gerald Jay Sussman in their series of papers about
+    Scheme". Wikipedia lists EuLisp and Joule among the languages it influenced.
+  notes: >
+    No example: the article's only code is a hypothetical implementation of cons with T's object system.
+  relations:
+    - { type: dialect_of, to: scheme, weight: strong, confidence: high, sources: [wiki-t] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/T_(programming_language)" }
+  sources: [wiki-t]
+
+- id: xlisp
+  name: XLISP
+  aliases: [XLISP-PLUS, XLISP-STAT]
+  kind: language
+  category: scripting
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "\"first released in 1983\"; Betz posted it to net.sources on 7 January 1983 (citation in Wikipedia)." }
+  creators:
+    - { name: David Betz, role: author }
+  status: legacy
+  tags:
+    paradigm: [functional, object-oriented]
+  summary: >
+    "A family of Lisp implementations written by David Betz": the first "was a Lisp with object-oriented extensions for
+    computers with limited power", XLISP 2.0 "moved toward Common Lisp", and the last versions follow Scheme (R3RS).
+    Its descendants include AutoLISP ("based on a very old version of XLISP"), XLISP-PLUS, XLISP-STAT and the Nyquist
+    sound-synthesis language.
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-xlisp] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/XLISP" }
+  sources: [wiki-xlisp]
+
+- id: orwell
+  name: Orwell
+  kind: language
+  category: research
+  cluster: ml-family/lazy
+  origin:
+    first_appeared: { year: 1984, precision: year }
+    places: [{ institution: Oxford University Computing Laboratory, country: GB }]
+  creators:
+    - { name: Philip Wadler, role: designer }
+    - { name: Martin Raskovsky, role: principal implementer }
+  status: historical
+  tags:
+    paradigm: [functional, purely-functional]
+    features: [lazy-evaluation, list-comprehensions, pattern-matching]
+  milestones:
+    - { version: "6.00", year: 1990, summary: "January 1990, the last release." }
+  summary: >
+    A lazy functional language from Oxford's Programming Research Group, "developed as a free alternative to Miranda",
+    designed by Philip Wadler and "implemented principally by Martin Raskovsky". It "was a forerunner of Haskell and was
+    one of the first programming languages to support list comprehensions and pattern matching".
+  notes: >
+    No example in the Wikipedia article.
+  relations:
+    - { type: influenced_by, to: miranda, weight: strong, confidence: high, sources: [wiki-orwell] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Orwell_(programming_language)" }
+  sources: [wiki-orwell]
+
+- id: clips
+  name: CLIPS
+  aliases: [NAIL, "NASA's AI Language", COOL]
+  kind: language
+  category: domain-specific
+  cluster: logic
+  origin:
+    first_appeared: { year: 1985, precision: year }
+    places: [{ institution: NASA Johnson Space Center, country: US }]
+  status: maintained
+  tags:
+    paradigm: [declarative, object-oriented, procedural]
+    domain: [artificial-intelligence]
+  summary: >
+    A forward-chaining rule language for expert systems, developed from 1985 at NASA's Johnson Space Center "as an
+    alternative for existing system ART*Inference"; it began as NASA's AI Language (NAIL). "The syntax and name were
+    inspired by Charles Forgy's OPS5." Its object layer COOL "combines the programming paradigms of procedural,
+    object oriented, and logic programming". Descendants include Jess and FuzzyCLIPS.
+  notes: >
+    OPS5 (Charles Forgy, Carnegie Mellon, "late 1970s") is in the logic backlog until it has a year; then add
+    clips influenced_by ops5.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CLIPS" }
+  sources: [wiki-clips, wiki-ops5]
+  example:
+    title: Facts for a car diagnosis
+    language: CLIPS
+    note: "From Wikipedia's CLIPS article; the fetched copy had lost its indentation, which is restored here. A rule in the same article then concludes (status faulty) for the starter."
+    sources: [wiki-clips]
+    code: |
+      (deftemplate car_problem (slot name) (slot status))
+      (deffacts trouble_shooting
+        (car_problem (name ignition_key) (status on))
+        (car_problem (name engine) (status wont_start))
+        (car_problem (name headlights) (status work)))
+
+- id: visual-prolog
+  name: Visual Prolog
+  aliases: [Turbo Prolog, PDC Prolog]
+  kind: language
+  category: general
+  cluster: logic
+  origin:
+    first_appeared: { year: 1986, precision: year, note: "As Borland's Turbo Prolog 1.0 (Wikipedia)." }
+    places: [{ institution: PDC, country: DK }]
+  status: active
+  tags:
+    paradigm: [logic, object-oriented, functional, imperative, multi-paradigm]
+    typing: [static-typing, strong-typing, type-inference]
+  milestones:
+    - { version: Turbo Prolog 2.0, year: 1988 }
+  summary: >
+    "A strongly typed object-oriented extension of Prolog" from the Danish firm PDC, first "marketed by Borland as Turbo
+    Prolog (version 1.0 in 1986 and version 2.0 in 1988)", then as PDC Prolog. "Unlike standard Prolog, programs written
+    in Visual Prolog are statically typed"; since version 6 it is fully object-oriented, and later versions added
+    parametric polymorphism (7.0), anonymous predicates (7.2) and generic classes (7.3).
+  notes: >
+    The version table in Wikipedia has no years after 2.0. No example yet: the article's Towers of Hanoi lost its
+    indentation in the fetch.
+  relations:
+    - { type: dialect_of, to: prolog, weight: strong, confidence: high, sources: [wiki-visual-prolog], note: "\"a strongly typed object-oriented extension of Prolog\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Visual_Prolog", homepage: "https://www.visual-prolog.com/" }
+  sources: [wiki-visual-prolog]
+
+- id: napier88
+  name: Napier88
+  kind: language
+  category: research
+  cluster: algol
+  origin:
+    first_appeared: { year: 1988, precision: year, note: "Infobox 1988; the body says the first implementation was released in 1989." }
+    places: [{ institution: University of St Andrews, country: GB }]
+  creators:
+    - { name: Ron Morrison, role: primary designer }
+    - { name: Fred Brown, role: designer }
+    - { name: Richard Connor, role: designer }
+    - { name: Al Dearle, role: designer }
+  status: historical
+  tags:
+    paradigm: [procedural, imperative, structured]
+  summary: >
+    The third of Ron Morrison's St Andrews languages, "following on from S-algol and PS-algol", and "the first robustly
+    implemented language to combine a polymorphic type system with orthogonal persistence": values outlive the program
+    that made them without being written to files.
+  notes: >
+    S-algol and PS-algol are not nodes yet (Napier88 was implemented in S-algol). No example in the article.
+  relations:
+    - { type: influenced_by, to: algol-60, weight: moderate, confidence: high, sources: [wiki-napier88], note: "Infobox: influenced by ALGOL 60, S-algol, PS-algol." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Napier88" }
+  sources: [wiki-napier88]
+
+- id: picolisp
+  name: PicoLisp
+  aliases: [Ersatz PicoLisp, pil21]
+  kind: language
+  category: general
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1988, precision: year, note: "Wikipedia infobox; the body does not say what happened in 1988." }
+  creators:
+    - { name: Alexander Burger, role: designer }
+  status: active
+  tags:
+    paradigm: [functional, procedural, object-oriented, declarative, reflective]
+    typing: [dynamic-typing, strong-typing]
+  milestones:
+    - { version: C rewrite, year: 1999, summary: "Rewritten from scratch in C; GPL in 2002, MIT/X11 from 2010." }
+    - { version: 64-bit, year: 2009 }
+    - { version: pil21, year: 2021, summary: "Re-implemented in LLVM." }
+  summary: >
+    "A dialect of the language Lisp" by Alexander Burger whose design "is most similar to the first version of MacLisp,
+    Interlisp and mainly Portable Standard Lisp". The first versions were "written in a mix of C and assembly language".
+  relations:
+    - { type: influenced_by, to: portable-standard-lisp, weight: strong, confidence: high, sources: [wiki-picolisp] }
+    - { type: influenced_by, to: maclisp, weight: moderate, confidence: high, sources: [wiki-picolisp] }
+    - { type: influenced_by, to: interlisp, weight: moderate, confidence: high, sources: [wiki-picolisp] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PicoLisp" }
+  sources: [wiki-picolisp]
+
+- id: fl
+  name: FL
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 1989, precision: year, note: "\"documented in a report from 1989\"; designed in the 1980s (Wikipedia)." }
+    places: [{ institution: IBM Research – Almaden, country: US }]
+  creators:
+    - { name: John Backus, role: designer }
+    - { name: John Williams, role: designer }
+    - { name: Edward Wimmers, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional]
+    typing: [dynamic-typing]
+  summary: >
+    Backus's successor to FP, made at IBM Research Almaden "providing specific support for what Backus termed
+    function-level programming"; "a dynamically typed strict functional programming language". PLaSM, a geometry
+    language from 1992, extends a subset of it.
+  relations:
+    - { type: successor_of, to: fp, weight: strong, confidence: high, sources: [wiki-fl] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FL_(programming_language)" }
+  sources: [wiki-fl]
