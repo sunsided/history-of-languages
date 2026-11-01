@@ -62,7 +62,8 @@
     features: [interpreter]
   summary: "Mathematical expressions encoded as two-character codes and interpreted at run time: one of the first languages above machine code to actually run, about 50 times slower than machine code."
   relations:
-    - { type: targets, to: eniac, weight: weak, confidence: low, note: "Mauchly co-designed ENIAC; Short Code itself ran on BINAC and UNIVAC I, which need their own machine nodes." }
+    - { type: targets, to: binac, weight: moderate, confidence: high, sources: [wiki-short-code], note: "\"William Schmitt implemented a version of Brief Code in 1949 for the BINAC computer, though it was never debugged and tested.\"" }
+    - { type: targets, to: univac-i, weight: strong, confidence: high, sources: [wiki-short-code, wiki-univac-i], note: "Schmitt's 1950 version for the UNIVAC I, \"where it was now known as Short Code\"." }
   research_status: draft
   confidence: medium
   sources: [knuth-pardo-1976-early-development]
@@ -95,7 +96,7 @@
     features: [compiler]
   summary: "For the Manchester Mark 1; often cited as the first compiled programming language. 'Autocode' became the generic British term for such languages (Mercury Autocode, Atlas Autocode)."
   relations:
-    - { type: targets, to: manchester-baby, weight: moderate, confidence: medium, note: "Targeted the Manchester Mark 1, the Baby's successor; add a Mark 1 node later." }
+    - { type: targets, to: ferranti-mark-1, weight: strong, confidence: medium, note: "Written for the Mark 1 at Manchester. By 1952 that was the Ferranti Mark 1, which replaced the university's own Manchester Mark 1 in February 1951." }
   research_status: draft
   confidence: medium
   sources: [knuth-pardo-1976-early-development]

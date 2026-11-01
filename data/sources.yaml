@@ -2560,3 +2560,153 @@
   title: 'The Programming Language Oberon-2'
   url: https://ssw.jku.at/Research/Papers/Oberon2.pdf
   checked: '2026-11-01'
+- id: wiki-java-bytecode
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Java bytecode'
+  url: https://en.wikipedia.org/wiki/Java_bytecode
+  checked: '2026-11-01'
+- id: jvms-se21
+  type: standard
+  primary: true
+  authors:
+  - Tim Lindholm
+  - Frank Yellin
+  - Gilad Bracha
+  - Alex Buckley
+  - Daniel Smith
+  title: 'The Java Virtual Machine Specification, Java SE 21 Edition (chapters 1 and 3)'
+  year: 2023
+  url: https://docs.oracle.com/javase/specs/jvms/se21/html/
+  checked: '2026-11-01'
+- id: wiki-cil
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Common Intermediate Language'
+  url: https://en.wikipedia.org/wiki/Common_Intermediate_Language
+  checked: '2026-11-01'
+- id: ecma-335
+  type: standard
+  primary: true
+  title: 'ECMA-335: Common Language Infrastructure (CLI), editions 2001-2012'
+  year: 2001
+  url: https://ecma-international.org/publications-and-standards/standards/ecma-335/
+  checked: '2026-11-01'
+- id: wiki-llvm
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: LLVM'
+  url: https://en.wikipedia.org/wiki/LLVM
+  checked: '2026-11-01'
+- id: llvm-langref
+  type: manual
+  primary: true
+  title: 'LLVM Language Reference Manual'
+  url: https://llvm.org/docs/LangRef.html
+  checked: '2026-11-01'
+- id: lattner-adve-2004-llvm
+  type: paper
+  primary: true
+  authors:
+  - Chris Lattner
+  - Vikram Adve
+  title: 'LLVM: A Compilation Framework for Lifelong Program Analysis & Transformation'
+  venue: CGO 2004
+  year: 2004
+  url: https://llvm.org/pubs/2004-01-30-CGO-LLVM.html
+  checked: '2026-11-01'
+- id: wiki-refal
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Refal'
+  url: https://en.wikipedia.org/wiki/Refal
+  checked: '2026-11-01'
+- id: wiki-rapira
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Rapira'
+  url: https://en.wikipedia.org/wiki/Rapira
+  checked: '2026-11-01'
+- id: wiki-el-76
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: El-76'
+  url: https://en.wikipedia.org/wiki/El-76
+  checked: '2026-11-01'
+- id: wiki-robic
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Robic'
+  url: https://en.wikipedia.org/wiki/Robic
+  checked: '2026-11-01'
+- id: robotrontechnik-kc
+  type: web
+  primary: false
+  title: 'robotrontechnik.de: Kleincomputer aus Mühlhausen (KC 85/2, /3, /4)'
+  url: https://www.robotrontechnik.de/html/computer/kc_muehlhausen.htm
+  checked: '2026-11-01'
+- id: wiki-binac
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: BINAC'
+  url: https://en.wikipedia.org/wiki/BINAC
+  checked: '2026-11-01'
+- id: wiki-univac-i
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: UNIVAC I'
+  url: https://en.wikipedia.org/wiki/UNIVAC_I
+  checked: '2026-11-01'
+- id: wiki-manchester-mark-1
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Manchester Mark 1'
+  url: https://en.wikipedia.org/wiki/Manchester_Mark_1
+  checked: '2026-11-01'
+- id: williams-kilburn-1951-manchester
+  type: paper
+  primary: true
+  authors:
+  - Frederic Calland Williams
+  - Tom Kilburn
+  title: 'The University of Manchester Computing Machine (Inaugural Conference, 1951)'
+  year: 1951
+  url: https://curation.cs.manchester.ac.uk/digital60/www.digital60.org/birth/manchestercomputers/mark1/documents/conf.html
+  checked: '2026-11-01'
+- id: wiki-ferranti-mark-1
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Ferranti Mark 1'
+  url: https://en.wikipedia.org/wiki/Ferranti_Mark_1
+  checked: '2026-11-01'
+- id: wiki-whirlwind-i
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Whirlwind I'
+  url: https://en.wikipedia.org/wiki/Whirlwind_I
+  checked: '2026-11-01'
+- id: chm-2018-whirlwind
+  type: web
+  primary: false
+  authors:
+  - Guy Fedorkow
+  title: 'The Whirlwind Computer at CHM (Computer History Museum blog)'
+  year: 2018
+  url: https://computerhistory.org/blog/the-whirlwind-computer-at-chm/
+  checked: '2026-11-01'
+- id: everett-swain-1947-whirlwind-r127
+  type: report
+  primary: true
+  authors:
+  - Robert Everett
+  - Swain
+  title: 'Whirlwind I Computer Block Diagrams, Volume 1 (MIT Servomechanisms Laboratory Report R-127)'
+  year: 1947
+  url: http://www.bitsavers.org/pdf/mit/whirlwind/R-series/R-127_Whirlwind_I_Computer_Block_Diagrams_Volume_1_Sep47.pdf
+  checked: '2026-11-01'
+- id: wiki-edvac
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: EDVAC'
+  url: https://en.wikipedia.org/wiki/EDVAC
+  checked: '2026-11-01'

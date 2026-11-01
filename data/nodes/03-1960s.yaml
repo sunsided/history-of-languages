@@ -796,3 +796,46 @@
       write "Hello, World!",!
       SET ^Car("Door","Color")="BLUE"
     sources: [wiki-mumps]
+
+- id: refal
+  name: Refal
+  aliases: [REFAL, Recursive Functions Algorithmic Language, Refal-5, Refal+]
+  kind: language
+  category: research
+  cluster: machines/eastern-bloc
+  origin:
+    began: { year: 1966, precision: year, note: "\"first conceived of in 1966 as a theoretical tool\"." }
+    first_appeared: { year: 1968, precision: year, note: "\"with the first implementation appearing in 1968\"." }
+    places: [{ country: SU }]
+  creators:
+    - { name: Valentin Turchin, role: designer }
+    - { name: S. Florentsev, role: developer }
+    - { name: V. Olyunin, role: developer }
+  status: legacy
+  tags:
+    paradigm: [functional, declarative]
+    typing: [dynamic-typing]
+    features: [pattern-matching, recursion, string-processing]
+  summary: >
+    Valentin Turchin's "functional programming language oriented toward symbolic computations": "unlike Lisp of
+    its time, Refal is based on pattern matching" over expressions that can be "built and scanned from both
+    ends", so the basic data structure is a tree rather than a list. It was the vehicle for Turchin's
+    supercompilation research.
+  notes: >
+    The institution is not stated on the page read; the Keldysh Institute is the commonly given home and needs
+    a source (refal.net and ru.wikipedia were unreachable). Versions Refal-2, Refal-5, Refal-6 and Refal+ have
+    no dates here.
+  research_status: draft
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Refal" }
+  sources: [wiki-refal]
+  example:
+    title: Hello world
+    language: Refal-5
+    note: "From Wikipedia, where it appears on one line. $ENTRY Go is the entry function; <Hello> calls a function, and Prout prints. The layout is ours."
+    code: |
+      $ENTRY Go { = <Hello>;}
+      Hello {
+         = <Prout 'Hello world'>;
+      }
+    sources: [wiki-refal]

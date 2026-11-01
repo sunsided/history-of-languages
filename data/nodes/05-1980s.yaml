@@ -2034,3 +2034,46 @@
       LOOP !End the loop
       END !End the program
     sources: [wiki-true-basic]
+
+- id: rapira
+  name: Rapira
+  aliases: [Рапира]
+  kind: language
+  category: educational
+  cluster: machines/eastern-bloc
+  origin:
+    first_appeared: { year: 1982, precision: year, note: "Wikipedia infobox; no release event given." }
+    places: [{ country: SU }]
+  creators: [{ name: Andrey Ershov, role: designer }]
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [dynamic-typing]
+    features: [interpreter, high-level-collections]
+    domain: [education]
+  summary: >
+    "An educational procedural programming language developed in the Soviet Union" for schools, with Russian
+    keywords (English and Romanian ones came later), sets and tuples as built-in types. It ran on the Agat school
+    computer, PDP-11 clones (Electronika, DVK, BK) and 8080/Z80 machines such as the Korvet.
+  notes: >
+    The institution is not stated on the page read; Ershov's Novosibirsk Computing Center is the usual
+    attribution and needs a source (ru.wikipedia and the Ershov archive were unreachable).
+  relations:
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: medium, sources: [wiki-rapira], note: "\"Rapira's ideology was based on languages such as POP-2 and SETL, with strong influences from ALGOL.\" POP-2 and SETL are not yet nodes." }
+  research_status: draft
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Rapira" }
+  sources: [wiki-rapira]
+  example:
+    title: Hello, world in Russian and English keywords
+    language: Rapira
+    note: "From Wikipedia, which prints both versions on one line each; the line breaks are ours. ПРОЦ/КОН ПРОЦ (proc/end proc) delimit a procedure and ВЫВОД: (output:) prints."
+    code: |
+      ПРОЦ СТАРТ()
+        ВЫВОД: 'Привет, мир!!!'
+      КОН ПРОЦ
+
+      proc start()
+        output: 'Hello, world!!!';
+      end proc
+    sources: [wiki-rapira]

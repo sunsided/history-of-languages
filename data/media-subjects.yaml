@@ -223,6 +223,7 @@
   wiki: Betty Holberton
   nodes:
   - eniac
+  - univac-i
 - id: person-bill-mensch
   kind: person
   person: Bill Mensch
@@ -284,6 +285,7 @@
   nodes:
   - swift
   - mojo
+  - llvm-ir
 - id: person-chris-pressey
   kind: person
   person: Chris Pressey
@@ -428,6 +430,8 @@
   wiki: Frederic Calland Williams
   nodes:
   - manchester-baby
+  - manchester-mark-1
+  - ferranti-mark-1
 - id: person-friedrich-l-bauer
   kind: person
   person: Friedrich L. Bauer
@@ -456,6 +460,7 @@
   - a-0
   - flow-matic
   - cobol
+  - univac-i
 - id: person-graydon-hoare
   kind: person
   person: Graydon Hoare
@@ -513,6 +518,9 @@
   wiki: J. Presper Eckert
   nodes:
   - eniac
+  - edvac
+  - binac
+  - univac-i
 - id: person-james-gosling
   kind: person
   person: James Gosling
@@ -577,6 +585,9 @@
   nodes:
   - eniac
   - short-code
+  - edvac
+  - binac
+  - univac-i
 - id: person-john-mccarthy
   kind: person
   person: John McCarthy
@@ -931,6 +942,8 @@
   wiki: Tom Kilburn
   nodes:
   - manchester-baby
+  - manchester-mark-1
+  - ferranti-mark-1
 - id: person-tony-hoare
   kind: person
   person: Tony Hoare
@@ -1377,3 +1390,51 @@
   wiki: Richard T. Russell
   nodes:
   - bbc-basic
+- id: person-john-von-neumann
+  kind: person
+  person: John von Neumann
+  wiki: John von Neumann
+  nodes:
+  - edvac
+- id: person-geoff-tootill
+  kind: person
+  person: Geoff Tootill
+  wiki: Geoff Tootill
+  nodes:
+  - manchester-mark-1
+- id: person-dai-edwards
+  kind: person
+  person: Dai Edwards
+  wiki: Dai Edwards (engineer)
+  nodes:
+  - manchester-mark-1
+- id: person-jay-forrester
+  kind: person
+  person: Jay Forrester
+  wiki: Jay Forrester
+  nodes:
+  - whirlwind
+- id: person-robert-everett
+  kind: person
+  person: Robert Everett
+  wiki: Robert Everett (computer scientist)
+  nodes:
+  - whirlwind
+- id: person-valentin-turchin
+  kind: person
+  person: Valentin Turchin
+  wiki: Valentin Turchin
+  nodes:
+  - refal
+- id: person-andrey-ershov
+  kind: person
+  person: Andrey Ershov
+  wiki: Andrey Ershov
+  nodes:
+  - rapira
+- id: person-vikram-adve
+  kind: person
+  person: Vikram Adve
+  wiki: Vikram Adve
+  nodes:
+  - llvm-ir

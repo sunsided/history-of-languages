@@ -130,6 +130,44 @@
       STP
     sources: [wiki-manchester-baby]
 
+- id: edvac
+  name: EDVAC
+  aliases: [Electronic Discrete Variable Automatic Computer]
+  kind: machine
+  category: scientific
+  cluster: machines/early
+  origin:
+    began: { year: 1945, precision: year, note: "Construction proposed by Mauchly and Eckert (the article says August 1945 in one place and August 1944 in another); von Neumann's First Draft of a Report on the EDVAC is dated 30 June 1945." }
+    first_appeared: { year: 1951, precision: year, note: "Delivered to the Ballistic Research Laboratory in 1949; \"began operation in 1951 although only on a limited basis\"." }
+    places: [{ institution: Moore School of Electrical Engineering, city: Philadelphia, country: US }]
+  creators:
+    - { name: John Mauchly, role: designer }
+    - { name: J. Presper Eckert, role: designer }
+    - { name: John von Neumann, role: "consultant; First Draft (1945)" }
+  status: extinct
+  tags:
+    features: [self-modifying-code]
+  summary: >
+    ENIAC's successor, designed from the start as a binary stored-program computer with 1,024 44-bit words in
+    mercury delay lines. Von Neumann's 1945 First Draft of a Report on the EDVAC, which described its logical
+    design, spread the stored-program idea worldwide, so EDVAC's design shaped EDSAC and the Manchester
+    machines before EDVAC itself ran. Each instruction held four addresses: two operands, the result and the
+    next instruction.
+  relations:
+    - { type: successor_of, to: eniac, weight: strong, confidence: high, sources: [wiki-edvac], note: "\"Along with ORDVAC, it was a successor to the ENIAC.\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/EDVAC" }
+  sources: [wiki-edvac]
+  example:
+    title: A four-address instruction word
+    language: EDVAC order code (illustrative layout)
+    note: "Illustrative. No EDVAC program text was found. Wikipedia: \"the 44-bit word was divided into four 10-bit addresses and four bits to encode the index of an operation\"; only 12 of the 16 operations were used. The order of the fields within the word is not given and is drawn here for clarity."
+    code: |
+      | A1 (10 bits) | A2 (10 bits) | A3 (10 bits) | A4 (10 bits) | op (4 bits) |
+        operand 1      operand 2      result         next order     operation
+    sources: [wiki-edvac]
+
 - id: edsac
   name: EDSAC
   kind: machine
@@ -1059,3 +1097,321 @@
         (export "add" (func $add))
       )
     sources: [mdn-wasm-text-format]
+
+- id: jvm-bytecode
+  name: JVM bytecode
+  aliases: [Java bytecode, class file format]
+  kind: assembly
+  category: systems
+  cluster: assembly/virtual
+  origin:
+    first_appeared: { year: 1996, date: "1996-01", precision: exact, note: "Shipped with JDK 1.0 (January 1996; see the java node); the specification's examples come from JDK 1.0.2. A first prototype emulated the instruction set on a PDA-like handheld." }
+    places: [{ institution: Sun Microsystems, country: US }]
+  creators:
+    - { name: Tim Lindholm, role: "JVM specification" }
+    - { name: Frank Yellin, role: "JVM specification" }
+  status: active
+  tags:
+    paradigm: [imperative, stack-oriented]
+    typing: [static-typing]
+    memory: [garbage-collection]
+    features: [bytecode-vm, intermediate-code, jit-compilation]
+  milestones:
+    - { version: "Java SE 7", year: 2011, summary: "JSR 292 adds invokedynamic for dynamically typed languages." }
+  summary: >
+    The instruction set of "an abstract computing machine" that "knows nothing of the Java programming language,
+    only of a particular binary format, the class file format": typed stack operations, object instructions and
+    verified, garbage-collected memory. Because of that independence it became the target of Scala, Clojure,
+    Kotlin, Groovy and many others. Its specification names "the P-Code machine of UCSD Pascal" as the
+    best-known earlier virtual machine.
+  relations:
+    - { type: influenced_by, to: ucsd-pascal, aspects: [bytecode-vm], weight: moderate, confidence: medium, sources: [jvms-se21, wiki-ucsd-pascal], note: "JVMS 1.2 cites UCSD p-code as the best-known VM; Gosling cites UCSD Pascal as a key influence (Wikipedia: UCSD Pascal)." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Java_bytecode" }
+  sources: [jvms-se21, wiki-java-bytecode]
+  example:
+    title: A while loop, as javac compiles it
+    language: JVM bytecode (javap -c)
+    note: "javac 21 output for void whileInt() { int i = 0; while (i < 100) { i++; } }, disassembled with javap -c. JVMS chapter 3.5 shows the same method as compiled by JDK 1.0.2, with the test at the bottom (goto 8 ... if_icmplt 5); modern javac tests at the top."
+    code: |
+      void whileInt();
+        Code:
+           0: iconst_0
+           1: istore_1
+           2: iload_1
+           3: bipush        100
+           5: if_icmpge     14
+           8: iinc          1, 1
+          11: goto          2
+          14: return
+    sources: [jvms-se21]
+
+- id: cil
+  name: CIL
+  aliases: [Common Intermediate Language, MSIL, Microsoft Intermediate Language, IL]
+  kind: assembly
+  category: systems
+  cluster: assembly/virtual
+  origin:
+    first_appeared: { year: 2001, date: "2001-12", precision: exact, note: "ECMA-335 1st edition (December 2001); called MSIL during the .NET betas; shipped with .NET 1.0 in 2002." }
+    places: [{ institution: Microsoft, country: US }]
+  status: active
+  tags:
+    paradigm: [imperative, stack-oriented, object-oriented]
+    typing: [static-typing]
+    memory: [garbage-collection, pointers]
+    features: [bytecode-vm, intermediate-code, jit-compilation, standardization]
+  milestones:
+    - { version: ECMA-335 6th edition, year: 2012 }
+  summary: >
+    The "object-oriented, stack-based bytecode" of the .NET Common Language Infrastructure, standardised as
+    ECMA-335 and ISO/IEC 23271: the target of C#, VB.NET and F#. Unlike JVM bytecode it includes managed
+    pointers and unmanaged calls (ldind, stind, ldloca) "enough for data/function pointers manipulation needed
+    to compile C/C++ code into CIL", and generics are carried into the runtime.
+  relations:
+    - { type: influenced_by, to: jvm-bytecode, weight: moderate, confidence: medium, sources: [wiki-java-bytecode, wiki-cil], note: "Wikipedia calls CIL \"Microsoft's rival to JVM bytecode\" and compares them throughout." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Common_Intermediate_Language" }
+  sources: [ecma-335, wiki-cil]
+  example:
+    title: Hello, world in IL assembler
+    language: CIL (ilasm)
+    note: "From Wikipedia. .entrypoint marks Main; ldstr pushes a string and call invokes a method by its full signature in mscorlib. Indentation was lost in fetching and is ours."
+    code: |
+      .assembly Hello {}
+      .assembly extern mscorlib {}
+      .method static void Main()
+      {
+          .entrypoint
+          .maxstack 1
+          ldstr "Hello, world!"
+          call void [mscorlib]System.Console::WriteLine(string)
+          ret
+      }
+    sources: [wiki-cil]
+
+- id: llvm-ir
+  name: LLVM IR
+  aliases: [LLVM assembly, LLVM bitcode]
+  kind: assembly
+  category: systems
+  cluster: assembly/virtual
+  origin:
+    began: { year: 2000, precision: year, note: "\"The LLVM project started in 2000 at the University of Illinois Urbana-Champaign, under the direction of Vikram Adve and Chris Lattner.\"" }
+    first_appeared: { year: 2003, precision: year, note: "Infobox release 2003; the CGO 2004 paper describes the representation." }
+    places: [{ institution: University of Illinois Urbana-Champaign, city: Urbana, country: US }]
+  creators:
+    - { name: Chris Lattner, role: designer }
+    - { name: Vikram Adve, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing, strong-typing]
+    memory: [manual-memory, pointers]
+    features: [intermediate-code, jit-compilation, optimizing-compiler]
+  summary: >
+    "A Static Single Assignment (SSA) based representation that provides type safety, low-level operations,
+    flexibility, and the capability of representing 'all' high-level languages cleanly", used in three forms:
+    in-memory IR, on-disk bitcode and a readable assembly language. A typed, RISC-like target behind Clang, Rust,
+    Swift, Julia and many more.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LLVM", homepage: "https://llvm.org" }
+  sources: [llvm-langref, lattner-adve-2004-llvm, wiki-llvm]
+  example:
+    title: Hello, world
+    language: LLVM IR
+    note: "From Wikipedia's LLVM article; runs with lli (prints Hello, world). Globals start with @, SSA registers with %; getelementptr computes an address without touching memory. Indentation is ours."
+    code: |
+      @.str = internal constant [14 x i8] c"Hello, world\0A\00"
+      declare i32 @printf(ptr, ...)
+      define i32 @main(i32 %argc, ptr %argv) nounwind {
+      entry:
+        %tmp1 = getelementptr [14 x i8], ptr @.str, i32 0, i32 0
+        %tmp2 = call i32 (ptr, ...) @printf( ptr %tmp1 ) nounwind
+        ret i32 0
+      }
+    sources: [wiki-llvm]
+
+- id: binac
+  name: BINAC
+  aliases: [Binary Automatic Computer]
+  kind: machine
+  category: scientific
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1949, date: "1949-03", precision: exact, note: "Test programs from 7 February 1949; a 23-instruction test program ran in March 1949; Northrop accepted delivery in September 1949." }
+    places: [{ institution: Eckert-Mauchly Computer Corporation, city: Philadelphia, country: US }]
+  creators:
+    - { name: J. Presper Eckert, role: designer }
+    - { name: John Mauchly, role: designer }
+  status: extinct
+  summary: >
+    Eckert and Mauchly's first product, built for Northrop Aircraft: "the first stored-program computer in the
+    United States", with two bit-serial processors (for checking) and 512 31-bit words of mercury delay-line
+    memory each. Sometimes called the first commercial computer, it "never worked properly after it was
+    delivered". Mauchly's Brief Code, the start of Short Code, was first written for it.
+  relations:
+    - { type: influenced_by, to: edvac, weight: moderate, confidence: medium, sources: [wiki-binac], note: "Eckert and Mauchly had started the EDVAC design at the Moore School before founding their company." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/BINAC" }
+  sources: [wiki-binac]
+  example:
+    title: Entering a program
+    language: BINAC (illustrative)
+    note: "Illustrative. No BINAC order code was found in the sources read. Wikipedia: \"Programs or data were entered manually in octal using an eight-key keypad or were loaded from magnetic tape\"; a 31-bit word needs eleven octal digits. The digits below are placeholders, not real instructions."
+    code: |
+      keypad (8 keys: 0-7) → one octal digit at a time
+      word = 11 octal digits (31 bits) → mercury delay line, 512 words per CPU
+      e.g. 0 1 2 3 4 5 6 7 0 1 2   (placeholder digits)
+    sources: [wiki-binac]
+
+- id: univac-i
+  name: UNIVAC I
+  aliases: [UNIVAC, Universal Automatic Computer I]
+  kind: machine
+  category: business
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1951, date: "1951-03-31", precision: exact, note: "Accepted by the US Census Bureau on 31 March 1951 and dedicated 14 June 1951; not shipped until later (December 1951 or 1952, per different parts of the article)." }
+    places: [{ institution: Eckert-Mauchly Computer Corporation, city: Philadelphia, country: US }]
+  creators:
+    - { name: J. Presper Eckert, role: designer }
+    - { name: John Mauchly, role: designer }
+    - { name: Betty Holberton, role: "C-10 instruction code" }
+    - { name: Grace Hopper, role: programmer }
+  status: extinct
+  summary: >
+    "The first American computer designed at the outset for business and administrative use": 1,000 words of
+    12 characters in mercury delay lines, decimal arithmetic, magnetic tape, and instructions of "six
+    alphanumeric characters, packed two instructions per word". Betty Holberton's C-10 code let it be run from
+    a keyboard. It hosted Short Code, and Grace Hopper's A-0 and FLOW-MATIC were written for the UNIVAC line;
+    46 were built.
+  relations:
+    - { type: influenced_by, to: edvac, weight: moderate, confidence: medium, sources: [wiki-univac-i], note: "Eckert and Mauchly's 1947 instruction code C-1 was for \"their potential successor model to the EDVAC\"." }
+    - { type: influenced_by, to: binac, weight: moderate, confidence: medium, sources: [wiki-univac-i, wiki-binac], note: "Same designers and company; Short Code moved from BINAC to UNIVAC. The articles do not call UNIVAC BINAC's successor." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/UNIVAC_I" }
+  sources: [wiki-univac-i]
+  example:
+    title: Two instructions in a word
+    language: UNIVAC I order code (illustrative layout)
+    note: "Illustrative. No UNIVAC I instruction listing could be fetched (bitsavers directories were unreachable). Shows the layout Wikipedia describes: a 12-character word holds two 6-character instructions. The letters below are placeholders for operation and address characters."
+    code: |
+      word (12 characters) = | instruction 1 (6 chars) | instruction 2 (6 chars) |
+      instruction          = | op | op | addr | addr | addr | addr |   (placeholder layout)
+    sources: [wiki-univac-i]
+
+- id: manchester-mark-1
+  name: Manchester Mark 1
+  aliases: [Manchester Automatic Digital Machine, MADM]
+  kind: machine
+  category: research
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1949, date: "1949-04", precision: exact, note: "Intermediary version operational by April 1949; a Mersenne-prime search ran error-free on 16/17 June 1949; the Final Specification worked by October 1949." }
+    places: [{ institution: Victoria University of Manchester, city: Manchester, country: GB }]
+  creators:
+    - { name: Frederic Calland Williams, role: designer }
+    - { name: Tom Kilburn, role: designer }
+    - { name: Geoff Tootill, role: engineer }
+    - { name: Dai Edwards, role: engineer }
+  status: extinct
+  tags:
+    features: [self-modifying-code]
+  summary: >
+    The Baby grown into a usable machine: 40-bit words holding a number or two 20-bit instructions, Williams-tube
+    main store with a magnetic drum behind it, and "its incorporation of index registers" (B-lines), its most
+    significant innovation. "There was no assembly language defined for the Mark 1": programs were punched in
+    binary as base-32 teleprinter characters. It was the prototype for the Ferranti Mark 1, which replaced it in
+    February 1951.
+  relations:
+    - { type: successor_of, to: manchester-baby, weight: strong, confidence: high, sources: [wiki-manchester-mark-1], note: "\"The Baby's 32-bit word length was increased to 40 bits.\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Manchester_Mark_1" }
+  sources: [wiki-manchester-mark-1, williams-kilburn-1951-manchester]
+  example:
+    title: A 40-bit word as paper tape
+    language: Manchester Mark 1 tape code
+    note: "From Wikipedia's programming section: a 40-bit word was written as eight 5-bit groups, each punched as one teleprinter character in Turing's base-32 code (10010 is D), so programmers read and wrote binary as strings of letters."
+    code: |
+      10001 10010 10100 01001 10001 11001 01010 10110
+      Z     D     S     L     Z     W     R     F
+    sources: [wiki-manchester-mark-1]
+
+- id: ferranti-mark-1
+  name: Ferranti Mark 1
+  aliases: [Manchester Electronic Computer, Ferranti Mark 1*, FERUT]
+  kind: machine
+  category: general
+  cluster: machines/early
+  origin:
+    first_appeared: { year: 1951, date: "1951-02", precision: exact, note: "First machine delivered to Manchester University in February 1951, publicly demonstrated in July." }
+    places: [{ institution: Ferranti, city: Manchester, country: GB }]
+  creators:
+    - { name: Frederic Calland Williams, role: designer }
+    - { name: Tom Kilburn, role: designer }
+  status: extinct
+  summary: >
+    "The world's first commercially available electronic general-purpose stored-program digital computer", the
+    "tidied up and commercialised version of the Manchester Mark I" built by Ferranti: 20-bit words on Williams
+    tubes, eight B-line index registers, an 80-bit accumulator, a 512-page drum and about fifty single-address
+    instructions. Turing wrote its programming manual (1950), Glennie's Autocode ran on it, and one went to
+    Toronto as FERUT.
+  relations:
+    - { type: successor_of, to: manchester-mark-1, weight: strong, confidence: high, sources: [wiki-ferranti-mark-1], note: "\"Based on the Manchester Mark 1 ... the machine was built by Ferranti\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ferranti_Mark_1" }
+  sources: [wiki-ferranti-mark-1]
+  example:
+    title: The 5-bit character code
+    language: Ferranti Mark 1 tape code
+    note: "From Wikipedia: programs were entered as characters each standing for a 5-bit value, from 00000 upwards. The first line is the original Mark 1 mapping; the second, the Mark 1 Star's, which put digits and letters in a more readable order."
+    code: |
+      /E@A:SIU½DRJNFCKTZLWHYPQOBG"MXV£
+      ø£½0@:$ABCDEFGHIJKLMNPQRSTUVWXYZ
+    sources: [wiki-ferranti-mark-1]
+
+- id: whirlwind
+  name: Whirlwind I
+  aliases: [Whirlwind]
+  kind: machine
+  category: research
+  cluster: machines/early
+  origin:
+    began: { year: 1947, precision: year, note: "Design reports such as R-127 (September 1947) planned \"a storage capacity of 2,048 numbers of 16 binary digits each\"." }
+    first_appeared: { year: 1951, date: "1951-04-20", precision: disputed, note: "Wikipedia: interception courses computed on 20 April 1951 (and an equation solved on an oscilloscope in Q3 1949); CHM: \"first brought online at the end of 1949\"." }
+    places: [{ institution: MIT Servomechanisms Laboratory, city: Cambridge MA, country: US }]
+  creators:
+    - { name: Jay Forrester, role: "project leader" }
+    - { name: Robert Everett, role: designer }
+  status: extinct
+  milestones:
+    - { version: core memory, year: 1953, summary: "Electrostatic storage replaced by 1,024 (then 2,048) words of magnetic core, among the first core memories in production use." }
+  summary: >
+    MIT's real-time computer for the Navy and then the Air Force: 16-bit words (11 bits of address for the 2,048
+    words its designers thought the minimum), single-address instructions and, from 1953, magnetic-core memory
+    that the industry then used for decades. It led to Whirlwind II and SAGE, and through TX-0 and TX-2 to DEC's
+    PDP-1. Its programmers built some of the earliest language tools.
+  notes: >
+    The Comprehensive System and the Laning and Zierler algebraic system are in the early backlogs. Wikipedia
+    gives 20,000 operations per second (1951); CHM gives 50,000 additions per second.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Whirlwind_I" }
+  sources: [wiki-whirlwind-i, chm-2018-whirlwind, everett-swain-1947-whirlwind-r127]
+  example:
+    title: Orders from the 1947 design
+    language: Whirlwind I order code (1947 design, illustrative)
+    note: "Illustrative. R-127 (1947) specifies a 16-bit order: 5 bits of operation code (32 possible operations) and 11 bits of register number, and names orders such as ca (clear and add), ad (add) and ts (transfer to storage). This is the design, not the operational order code, and the addresses are placeholders."
+    code: |
+      ca 100    clear accumulator, add register 100
+      ad 101    add register 101
+      ts 102    transfer the sum to storage register 102
+    sources: [everett-swain-1947-whirlwind-r127]

@@ -70,11 +70,6 @@
   backlog:
     - { name: "Atanasoff-Berry Computer", year: 1942 }
     - { name: "Colossus", year: 1944 }
-    - { name: "EDVAC", year: 1949 }
-    - { name: "BINAC", year: 1949, hint: "Short Code first ran here (needs node; fixes the short-code -> eniac placeholder edge)." }
-    - { name: "UNIVAC I", year: 1951, hint: "Target of A-0, Short Code and FLOW-MATIC." }
-    - { name: "Manchester Mark 1 / Ferranti Mark 1", year: 1949, hint: "Target of Glennie's Autocode." }
-    - { name: "Whirlwind", year: 1951 }
     - { name: "ARC2 (Booth)", year: 1948 }
     - { name: "Zuse Z4", year: 1945 }
     - { name: "DYSEAC / UNIVAC 1103A (first hardware interrupts)", year: 1954, hint: "Root of the concurrency lineage." }
@@ -113,14 +108,12 @@
   backlog:
     - { name: "KR580VM80A (K580IK80)", year: 1979, hint: "Soviet Intel 8080 clone, first used in the SM1800 (1979); ran the Radio-86RK and Vector-06C. wikipedia: KR580VM80A." }
     - { name: "HC 900 / KC 85/2, /3, /4", year: 1984, hint: "VEB Mikroelektronik 'Wilhelm Pieck' Mühlhausen; HC 900 (1984) renamed KC 85/2 (1985). KC-BASIC in ROM from the KC 85/3 (1986)." }
-    - { name: "KC-BASIC", year: 1986, hint: "BASIC of the KC 85/3 and /4; check its ancestry (Microsoft BASIC?)." }
+    - { name: "KC-BASIC", year: 1986, hint: "KC 85/3 had BASIC in ROM from 1986; KC 85/2 loaded it from tape or module M006 (robotrontechnik-kc). Origin still unsourced. BASIC of the KC 85/3 and /4; check its ancestry (Microsoft BASIC?)." }
     - { name: "Z 1013", year: 1985, hint: "U880 kit computer from VEB Robotron-Elektronik Riesa; about 25,000 kits 1985-1990. BASIC only with at least 16 KB RAM. de.wikipedia: Z 1013." }
     - { name: "Agat", year: 1983, hint: "Soviet Apple II-inspired school computer, made 1984-1990; ran Rapira and Robic." }
-    - { name: "Rapira", year: 1982, hint: "Educational language by Andrey Ershov for Soviet schools; ran on Agat, PDP-11 clones and Korvet." }
-    - { name: "Robic", year: 1975, hint: "Soviet language for primary-school children (8-11), later in the 'Schoolgirl' package on the Agat." }
+    - { name: "Robic", year: 1975, hint: "Researched 2026-11-01 (wiki-robic): no designers or code on en.wikipedia; ru.wikipedia unreachable. Soviet language for primary-school children (8-11), later in the 'Schoolgirl' package on the Agat." }
     - { name: "Elbrus-1", year: 1979, hint: "Lebedev Institute; Vsevolod Burtsev. Programmed in El-76." }
-    - { name: "El-76", year: 1972, hint: "High-level language of the Elbrus, by Boris Babayan and colleagues (1972-73), Russian keywords." }
-    - { name: "Refal", year: 1966, hint: "Valentin Turchin's pattern-matching, term-rewriting language; first implemented 1968. Belongs in a language cluster, with a link from here." }
+    - { name: "El-76", year: 1972, hint: "Researched 2026-11-01 (wiki-el-76): Babayan et al., Lebedev Institute; the Wikipedia example was flattened in fetch, needs a clean copy. High-level language of the Elbrus, by Boris Babayan and colleagues (1972-73), Russian keywords." }
   research_questions:
     - "Which BASIC dialects ran on GDR machines (KC-BASIC, Z 1013 BASIC), and do they descend from Microsoft BASIC?"
     - "Who designed the U880 and how was it copied? Kieser and Meder (1986) and silirium.ru/fwe-z80.html are leads."
@@ -199,9 +192,6 @@
   key_sources: [wiki-webassembly]
   backlog:
     - { name: "UCSD p-code", year: 1977 }
-    - { name: "JVM bytecode", year: 1995 }
-    - { name: "CIL (Common Intermediate Language)", year: 2002 }
-    - { name: "LLVM IR", year: 2003 }
 
 # ===================== Early languages =====================
 - id: early
