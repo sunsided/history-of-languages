@@ -258,6 +258,22 @@
 - id: statistics
   name: Statistics
   facet: domain
+- id: computer-algebra
+  name: Computer algebra
+  facet: domain
+  summary: Symbolic manipulation of mathematical expressions, as opposed to numerical computation.
+  first_seen:
+    node: formac
+    year: 1964
+    note: "\"the first computer algebra system to have significant use\" (Wikipedia: FORMAC)."
+- id: mathematical-optimization
+  name: Mathematical optimization
+  facet: domain
+  summary: Algebraic modelling languages that state optimisation problems for solvers.
+- id: computer-graphics
+  name: Computer graphics
+  facet: domain
+  summary: Languages for describing, rendering or animating images and scenes.
 - id: telecommunications
   name: Telecommunications
   facet: domain

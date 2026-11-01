@@ -1486,6 +1486,7 @@
     EISPACK were "in C" contradicts Moler (Fortran); Moler is followed.
   relations:
     - { type: influenced_by, to: apl, aspects: [array-programming], weight: moderate, confidence: medium, sources: [wiki-matlab], note: "Listed among MATLAB's predecessors." }
+    - { type: influenced_by, to: speakeasy, weight: moderate, confidence: medium, sources: [wiki-speakeasy], note: "Speakeasy infobox \"Influenced: MATLAB\", citing Moler (2004): \"So APL, Speakeasy, LINPACK, EISPACK, and PL0 were the predecessors to MATLAB.\"" }
     - { type: implemented_in, to: fortran, weight: strong, confidence: high, sources: [moler-2018-matlab-history], note: "\"I wrote the first MATLAB ... in Fortran\"; the commercial version is C." }
   research_status: draft
   confidence: high
@@ -2423,3 +2424,206 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/LSE_(programming_language)" }
   sources: [wiki-lse]
+
+- id: ratfor
+  name: Ratfor
+  aliases: [Rational Fortran]
+  kind: language
+  category: scientific
+  cluster: fortran
+  origin:
+    first_appeared: { year: 1974, precision: year, note: "\"designed and implemented by Brian Kernighan at Bell Telephone Laboratories in 1974, and described in Software—Practice & Experience in 1975\"; used in the 1976 book Software Tools." }
+    places: [{ institution: Bell Telephone Laboratories, country: US }]
+  creators:
+    - { name: Brian Kernighan, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, structured]
+    features: [preprocessor, macros]
+    domain: [scientific-computing]
+  milestones:
+    - { version: Software Tools, year: 1976, summary: "Kernighan and Plauger's book, whose Ratfor is written in Ratfor." }
+    - { version: Mouse4, year: 1977, summary: "Smaller, faster rewrite at Purdue University." }
+    - { version: C port, year: 1985, summary: "\"Initial Ratfor source code was ported to C in 1985\"." }
+  summary: >
+    "a programming language implemented as a preprocessor for Fortran 66" that "provides modern control structures,
+    unavailable in Fortran 66, to replace GOTOs and statement numbers". Kernighan and Plauger said its features were
+    "shamelessly stolen from the language C". Through Software Tools it carried C-style structured programming to
+    Fortran shops; Ratfiv and Purdue's Mouse4 grew from it.
+  relations:
+    - { type: superset_of, to: fortran, weight: strong, confidence: high, sources: [wiki-ratfor], note: "A preprocessor over Fortran 66; infobox \"Influenced by: Fortran, C\"." }
+    - { type: influenced_by, to: c, aspects: [structured, compound-statements], weight: strong, confidence: high, sources: [wiki-ratfor], note: "\"shamelessly stolen from the language C, developed for the UNIX operating system by D.M. Ritchie\" (Software Tools, p. 318)." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ratfor" }
+  sources: [wiki-ratfor]
+
+- id: prose
+  name: PROSE
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1974, precision: year, note: "\"introduced in 1974 on Control Data supercomputers\". The page cites J.M. Thames's papers but names no designer." }
+    places: [{ institution: Control Data Corporation, country: US }]
+  status: extinct
+  tags:
+    paradigm: [procedural, declarative]
+    features: [block-structure]
+    domain: [mathematical-optimization, simulation]
+  summary: >
+    A "mathematical 4GL virtual machine" for modelling, "a successor to the SLANG/CUE simulation and optimization
+    language developed at TRW Systems". It was "the first commercial language to employ automatic differentiation (AD)",
+    tuned for the CDC 6600. Programs blend block-structured procedural code with FIND ... IN ... BY statements that hand a
+    model to a solver for simulation, correlation or optimisation.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PROSE_modeling_language" }
+  sources: [wiki-prose]
+  example:
+    title: The optimization template
+    language: PROSE
+    note: "Illustrative: the operator template as given on Wikipedia, with placeholders, not a runnable program."
+    code: |
+      FIND simultaneous-unknowns IN model-subroutine BY solver-engine
+          [HOLDING inequality-constraint-variables]
+          [MATCHING equality-constraint-variables]
+          TO MAXIMIZE|MINIMIZE objective-variable
+    sources: [wiki-prose]
+
+- id: grass
+  name: GRASS
+  aliases: [GRAphics Symbiosis System, GRASS3, ZGRASS]
+  kind: language
+  category: domain-specific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1974, precision: year, note: "\"developed by Tom DeFanti for his 1974 Ohio State University Ph.D. thesis\"." }
+    places: [{ institution: Ohio State University, country: US }]
+  creators:
+    - { name: Tom DeFanti, role: designer }
+    - { name: Nola Donato, role: GRASS3 redesign }
+  status: extinct
+  tags:
+    paradigm: [procedural]
+    features: [interpreter]
+    domain: [computer-graphics]
+  milestones:
+    - { version: GRASS3, year: 1977, summary: "Nola Donato \"re-designed many of GRASS's control structures into more general forms\" at the University of Illinois, Chicago Circle." }
+  summary: >
+    A language "created to script 2D vector graphics animations", "similar to BASIC in syntax" with instructions for
+    scaling, translation and rotation over time, first on a PDP-11/45 driving a Vector General display. Larry Cuba used
+    it for the Death Star briefing animation in Star Wars (1977). GRASS3 became ZGRASS on the Z Box, and the last version
+    was RT/1.
+  relations:
+    - { type: influenced_by, to: basic, weight: moderate, confidence: medium, sources: [wiki-grass], note: "\"similar to BASIC in syntax\"; Zgrass \"was based on a standard set of BASIC commands\"." }
+    - { type: targets, to: pdp-11, weight: moderate, confidence: high, sources: [wiki-grass], note: "\"a PDP-11/45 driving a Vector General 3DR display\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GRASS_(programming_language)" }
+  sources: [wiki-grass]
+  example:
+    title: A sine-curve macro
+    language: GRASS
+    note: "Wikipedia's SINCURVE example; the one-space indent of the body lines may be a conversion artifact."
+    code: |
+      SINCURVE=[PROMPT "WHAT IS THE OFFSET?"
+       INPUT OFFSET
+       x=-160
+       angle=0
+       POINT OFFSET+x,SIN(angle)*80,3
+       angle=angle+2
+       IF (x=x+1)<159,SKIP -2]
+    sources: [wiki-grass]
+
+- id: idl
+  name: IDL
+  aliases: [Interactive Data Language]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1977, precision: year, note: "\"Stern left LASP to found Research Systems Inc. (RSI) in 1977. The first RSI product was IDL for the PDP-11.\"" }
+    places: [{ institution: Research Systems Inc., country: US }]
+  creators:
+    - { name: David Stern, role: designer }
+  status: active
+  tags:
+    paradigm: [array-programming, imperative, object-oriented]
+    typing: [dynamic-typing]
+    features: [interpreter, operator-overloading, classes]
+    domain: [scientific-computing]
+  milestones:
+    - { version: "2.0", year: 1990, summary: "Array syntax for vectors and multi-dimensional matrices." }
+    - { version: "5.0", year: 1997, summary: "Object-oriented programming (classes, methods).", introduces: [classes, object-oriented] }
+    - { version: "8.0", year: 2010, summary: "List and Hash classes." }
+  summary: >
+    "a programming language used for data analysis", "vectorized, numerical, and interactive", popular in astronomy,
+    atmospheric physics and medical imaging. It grew out of David Stern's FORTRAN-like SOL at the University of
+    Colorado's LASP; "IDL originated from early VMS Fortran, and its syntax still shows its heritage". It shares its
+    codebase origin with PV-Wave, and GNU Data Language reimplements it.
+  relations:
+    - { type: influenced_by, to: fortran, weight: strong, confidence: medium, sources: [wiki-idl], note: "\"The syntax includes many constructs from Fortran and some from C.\"" }
+    - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-idl], note: "\"some from C\"." }
+    - { type: targets, to: pdp-11, weight: moderate, confidence: high, sources: [wiki-idl], note: "\"The first RSI product was IDL for the PDP-11.\"" }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IDL_(programming_language)" }
+  sources: [wiki-idl]
+  example:
+    title: Vectorised plot
+    language: IDL
+    note: "From Wikipedia, as an example of its Fortran heritage."
+    code: |
+      x = findgen(100)/10
+      y = sin(x)/x
+      plot,x,y
+    sources: [wiki-idl]
+
+- id: gams
+  name: GAMS
+  aliases: [General Algebraic Modeling System]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    began: { year: 1976, precision: year, note: "\"1976 GAMS idea is presented at the International Symposium on Mathematical Programming (ISMP), Budapest\"." }
+    first_appeared: { year: 1978, precision: year, note: "\"1978 Phase I: GAMS supports linear programming\"; commercial product in 1987." }
+  creators:
+    - { name: Alex Meeraus, role: initiator }
+  status: active
+  tags:
+    paradigm: [declarative]
+    domain: [mathematical-optimization]
+  milestones:
+    - { version: Phase II, year: 1979, summary: "Nonlinear programming." }
+    - { version: commercial, year: 1987, summary: "GAMS becomes a commercial product." }
+    - { version: GAMSPy, year: 2023, summary: "Python package for algebraic modelling with GAMS as backend." }
+  summary: >
+    "the first algebraic modeling language (AML)", a "high-level modeling system for mathematical optimization"
+    initially aimed at economics and management science. Sets, parameters, variables and equations are declared
+    algebraically, and a Solve statement hands the model to a solver. GAMS Development Corporation maintains it.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/General_algebraic_modeling_system" }
+  sources: [wiki-gams]
+  example:
+    title: Dantzig's transportation problem (excerpt)
+    language: GAMS
+    note: "From Wikipedia's sample model; the Sets, Parameters, Table and Scalar data declarations above these lines are left out."
+    code: |
+      Variables
+           x(i,j)  shipment quantities in cases
+           z       total transportation costs in thousands of dollars ;
+      Positive Variable x ;
+      Equations
+           cost        define objective function
+           supply(i)   observe supply limit at plant i
+           demand(j)   satisfy demand at market j ;
+      cost ..        z  =e=  sum((i,j), c(i,j)*x(i,j)) ;
+      supply(i) ..   sum(j, x(i,j))  =l=  a(i) ;
+      demand(j) ..   sum(i, x(i,j))  =g=  b(j) ;
+      Model transport /all/ ;
+      Solve transport using lp minimizing z ;
+      Display x.l, x.m ;
+    sources: [wiki-gams]

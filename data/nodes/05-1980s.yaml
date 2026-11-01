@@ -2402,7 +2402,7 @@
   tags:
     paradigm: [multi-paradigm, procedural, functional]
     typing: [dynamic-typing]
-    domain: [scientific-computing]
+    domain: [scientific-computing, computer-algebra]
   summary: >
     "A symbolic and numeric computing environment as well as a multi-paradigm programming language", begun at the
     University of Waterloo when researchers who wanted to run "the Lisp-based computer algebra system Macsyma"
@@ -2446,19 +2446,20 @@
     paradigm: [functional, procedural]
     typing: [dynamic-typing]
     memory: [garbage-collection]
-    domain: [scientific-computing]
+    domain: [scientific-computing, computer-algebra]
   summary: >
     The free descendant of MIT's Macsyma computer algebra system, "based on a 1982 version of Macsyma" and kept
     alive by Bill Schelter; it "does not include any of the many modifications and enhancements made to the
     commercial version of Macsyma during 1982–1999". Expressions, function definitions and commands share one
     syntax.
   notes: >
-    Macsyma (MIT Project MAC) is in the scientific backlog; once it is a node, Maxima is a fork_of it. The creator
-    entry assumes Wikipedia's article for Bill Schelter is titled "William Schelter"; check it.
+    The creator entry assumes Wikipedia's article for Bill Schelter is titled "William Schelter"; check it.
+  relations:
+    - { type: fork_of, to: macsyma, from_version: DOE Macsyma, weight: strong, confidence: high, sources: [wiki-macsyma], note: "\"DOE Macsyma formed the basis for the much-later open source Maxima system.\"" }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Maxima_(software)", homepage: "https://maxima.sourceforge.io/" }
-  sources: [wiki-maxima, wiki-maple]
+  sources: [wiki-maxima, wiki-maple, wiki-macsyma]
   example:
     title: Defining, expanding, factoring, solving
     language: Maxima
@@ -3196,3 +3197,403 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Actor_(programming_language)" }
   sources: [wiki-actor]
+
+- id: nial
+  name: Nial
+  aliases: [Nested Interactive Array Language, Q'Nial]
+  kind: language
+  category: research
+  cluster: array
+  origin:
+    first_appeared: { year: 1981, precision: circa, note: "\"developed from about 1981 by Mike Jenkins\"." }
+    places: [{ institution: Queen's University, city: "Kingston, Ontario", country: CA }]
+  creators:
+    - { name: Mike Jenkins, role: designer }
+  status: maintained
+  tags:
+    paradigm: [array-programming, functional, structured]
+    typing: [dynamic-typing]
+    features: [interpreter]
+    domain: [artificial-intelligence]
+  milestones:
+    - { version: Q'Nial, year: 1982, summary: "Jenkins formed Nial Systems Ltd \"to market the language and the Q'Nial implementation\"." }
+    - { version: "7.0", year: 2017 }
+  summary: >
+    A "high-level array programming language" that "combines a functional programming notation for arrays based on an
+    array theory developed by Trenchard More with structured programming concepts for numeric, character, and symbolic
+    data". It is "most often used for prototyping and artificial intelligence". Version 6 modified the array theory of
+    Version 4.
+  relations:
+    - { type: influenced_by, to: apl, aspects: [array-programming], weight: strong, confidence: medium, sources: [wiki-nial], note: "Infobox \"Influenced by: APL, Lisp\"." }
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: medium, sources: [wiki-nial], note: "Infobox \"Influenced by: APL, Lisp\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Nial", homepage: "https://www.nial-array-language.org" }
+  sources: [wiki-nial]
+  example:
+    title: Tacit definitions
+    language: Q'Nial
+    note: "From Wikipedia's examples; lines starting with | are the interpreter's output."
+    code: |
+      Arr := [5, 6, 7, 8, 9]
+      average is / [sum, tally]
+      average Arr
+      |7.
+      fact is recur [ 0 =, 1 first, pass, product, -1 +]
+      fact 4
+      |24
+      primes is sublist [ each (2 = sum eachright (0 = mod) [pass,count]), pass ] rest count
+      primes 10
+      |2 3 5 7
+    sources: [wiki-nial]
+
+- id: ratfiv
+  name: Ratfiv
+  kind: language
+  category: scientific
+  cluster: fortran
+  origin:
+    first_appeared: { year: 1981, precision: circa, note: "\"developed by Bill Wood ... in the early 1980s and released on several DECUS ... SIG tapes\"; no exact year found." }
+    places: [{ institution: Institute for Cancer Research, city: "Philadelphia, PA", country: US }]
+  creators:
+    - { name: Bill Wood, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    features: [preprocessor, macros]
+  summary: >
+    "an enhanced version of the Ratfor programming language", based on Kernighan and Plauger's original "with rewrites
+    and enhancements by David Hanson and friends (U. of Arizona), Joe Sventek and Debbie Scherrer" (LBL). Its name is a
+    pun on "Rat Four". With an /f77 option it emitted readable Fortran 77 (IF ... THEN ... ELSE ... ENDIF) instead of
+    Fortran 66 GOTOs. Ratfiv V2.1 went out on the DECUS RSX82a SIG tape.
+  relations:
+    - { type: successor_of, to: ratfor, weight: strong, confidence: high, sources: [wiki-ratfor], note: "\"With the availability of Fortran 77, a successor named Ratfiv\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ratfor#Ratfiv" }
+  sources: [wiki-ratfor]
+
+- id: sisal
+  name: SISAL
+  aliases: [Streams and Iteration in a Single Assignment Language]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "\"defined in 1983 ... revised in 1985, and the first compiled implementation was made in 1986\"." }
+    places:
+      - { institution: University of Manchester, country: GB }
+      - { institution: Lawrence Livermore National Laboratory, country: US }
+      - { institution: Colorado State University, country: US }
+      - { institution: Digital Equipment Corporation, country: US }
+  creators:
+    - { name: James McGraw, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional, dataflow-programming]
+    typing: [static-typing, strong-typing]
+    concurrency: [data-parallelism]
+    domain: [hpc, scientific-computing]
+  milestones:
+    - { version: 1985 revision, year: 1985, summary: "Revised; \"the first compiled implementation was made in 1986\"." }
+    - { version: SISAL-IS, year: 2018, summary: "Modernised with indent-based syntax, first-class functions, lambdas, closures and lazy semantics." }
+  summary: >
+    "a general-purpose single assignment functional programming language with strict semantics, implicit parallelism,
+    and efficient array handling", with "a Pascal-like syntax", meant as a common language for numerical programs on
+    multiprocessors. It compiles to the IF1 dataflow graph. It "was derived from the Value-oriented Algorithmic Language
+    (VAL), designed by Jack Dennis, and adds recursion and finite streams". Wikipedia lists SAC among its heirs.
+  relations:
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [wiki-sisal], note: "\"a Pascal-like syntax\"; infobox \"Influenced by: VAL, Pascal, C, Fortran\". VAL (Jack Dennis) is not a node yet." }
+    - { type: influenced_by, to: c, weight: weak, confidence: low, sources: [wiki-sisal], note: "Infobox only; what came from C is not said." }
+    - { type: influenced_by, to: fortran, weight: weak, confidence: low, sources: [wiki-sisal], note: "Infobox only; what came from Fortran is not said." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SISAL" }
+  sources: [wiki-sisal]
+
+- id: stata
+  name: Stata
+  kind: language
+  category: scientific
+  cluster: data
+  origin:
+    began: { year: 1984, precision: year, note: "\"The development of Stata began in 1984\"." }
+    first_appeared: { year: 1985, precision: exact, note: "1.0, January 1985, MS-DOS, \"Forty-four commands\"." }
+    places: [{ institution: Computing Resource Center, country: US }]
+  creators:
+    - { name: William Gould, role: original author }
+    - { name: Sean Becketti, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative]
+    domain: [statistics]
+  milestones:
+    - { version: "2.0", year: 1988, summary: "New graphics, string variables, survival analysis." }
+    - { version: "9.0", year: 2005, summary: "Mata matrix programming language." }
+    - { version: "16.0", year: 2019, summary: "Frames (multiple datasets in memory)." }
+    - { version: "19.0", year: 2025 }
+  summary: >
+    "a general-purpose statistical software package ... for data manipulation, visualization, statistics, and
+    automated reporting", driven by a command language. Written in C and released for MS-DOS in 1985, it was meant to
+    compete with SYSTAT and MicroTSP; Stata 9 added the Mata matrix language. StataCorp moved to College Station, Texas
+    in 1993.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Stata", homepage: "https://www.stata.com" }
+  sources: [wiki-stata]
+  example:
+    title: Regression on the bundled auto dataset
+    language: Stata
+    note: "From Wikipedia's examples."
+    code: |
+      sysuse auto                 // Open the included auto dataset
+      summarize                   // Summary information about numerical variables
+      generate wtsq = weight^2                      // Create a new variable for weight squared
+      regress mpg weight wtsq foreign, vce(robust)  // Linear regression of mpg on weight, wtsq, and foreign
+      predict mpghat                                // Create a new variable contained the predicted values of mpg
+    sources: [wiki-stata]
+
+- id: ampl
+  name: AMPL
+  aliases: [A Mathematical Programming Language]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1985, precision: year, note: "\"1985 AMPL was designed and implemented\"; the paper in Management Science followed in 1990." }
+    places: [{ institution: Bell Laboratories, country: US }]
+  creators:
+    - { name: Robert Fourer, role: co-designer }
+    - { name: David Gay, role: co-designer }
+    - { name: Brian Kernighan, role: co-designer }
+  status: active
+  tags:
+    paradigm: [declarative, imperative]
+    domain: [mathematical-optimization]
+  milestones:
+    - { version: nonlinear, year: 1991, summary: "Nonlinear programming and automatic differentiation." }
+    - { version: scripting, year: 1995, summary: "Scripting constructs." }
+    - { version: APIs, year: 2017, summary: "Available within other programming languages through APIs." }
+  summary: >
+    "an algebraic modeling language to describe and solve high-complexity problems for large-scale mathematical
+    computing", written with sets and indexed sums close to textbook notation and handed to dozens of solvers (CPLEX,
+    MINOS, IPOPT, KNITRO and others). Fourer, Gay and Kernighan wrote it at Bell Labs; the infobox lists AWK and C as
+    influences and JuMP and Pyomo as descendants.
+  relations:
+    - { type: influenced_by, to: awk, weight: moderate, confidence: medium, sources: [wiki-ampl], note: "Infobox \"Influenced by: AWK, C\"; Kernighan co-designed both." }
+    - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-ampl], note: "Infobox \"Influenced by: AWK, C\"." }
+    - { type: influenced_by, to: gams, weight: weak, confidence: low, sources: [wiki-gams], note: "Not stated on either page; GAMS (1978) is \"the first algebraic modeling language\". Confirm from Fourer, Gay and Kernighan's 1990 paper." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/AMPL", homepage: "https://ampl.com" }
+  sources: [wiki-ampl]
+  example:
+    title: Dantzig's transportation problem (model part)
+    language: AMPL
+    note: "From Wikipedia's sample; comments and the data section left out."
+    code: |
+      set Plants;
+      set Markets;
+      param Capacity{p in Plants};
+      param Demand{m in Markets};
+      param Distance{Plants, Markets};
+      param Freight;
+      param TransportCost{p in Plants, m in Markets} :=
+          Freight * Distance[p, m] / 1000;
+      var shipment{Plants, Markets} >= 0;
+      minimize cost:
+          sum{p in Plants, m in Markets} TransportCost[p, m] * shipment[p, m];
+      s.t. supply{p in Plants}: sum{m in Markets} shipment[p, m] <= Capacity[p];
+      s.t. demand{m in Markets}: sum{p in Plants} shipment[p, m] >= Demand[m];
+    sources: [wiki-ampl]
+
+- id: pari-gp
+  name: PARI/GP
+  aliases: [GP, PARI]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1985, precision: year, note: "\"originally developed in 1985 by a team led by Henri Cohen at Laboratoire A2X\"; its progenitor Isabelle dates from 1979." }
+    places: [{ institution: Université Bordeaux 1, city: Bordeaux, country: FR }]
+  creators:
+    - { name: Henri Cohen, role: team lead }
+    - { name: Karim Belabas, role: maintainer }
+  status: active
+  tags:
+    paradigm: [procedural]
+    features: [interpreter, repl]
+    domain: [computer-algebra]
+  summary: >
+    "a computer algebra system with the main aim of facilitating number theory computations": PARI is a C library and
+    gp an interactive calculator whose scripting language is GP. Its progenitor was Isabelle, "an interpreter for higher
+    arithmetic, written in 1979 by Henri Cohen and François Dress". The gp calculator was first called GPC, "for Great
+    Programmable Calculator".
+  notes: >
+    Cohen's Wikipedia article is "Henri Cohen (number theorist)"; the parenthesis is dropped because build.py rejects it.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PARI/GP", homepage: "https://pari.math.u-bordeaux.fr" }
+  sources: [wiki-pari-gp]
+  example:
+    title: Series, factoring, class groups
+    language: GP
+    note: "From Wikipedia's gp session; timing lines left out."
+    code: |
+      ? sin(x)
+      %3 = x - 1/6*x^3 + 1/120*x^5 - 1/5040*x^7 + 1/362880*x^9 - 1/39916800*x^11
+      + 1/6227020800*x^13 - 1/1307674368000*x^15 + O(x^17)
+      ? for(z=25,30, print (factor(2^z-1)))
+      [31, 1; 601, 1; 1801, 1]
+      [3, 1; 2731, 1; 8191, 1]
+      ? K = bnfinit(x^2 + 23); K.cyc
+      %4 = [3]
+    sources: [wiki-pari-gp]
+
+- id: gap
+  name: GAP
+  aliases: [Groups, Algorithms and Programming]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1988, precision: year, note: "Infobox \"Release: 1988\"; developed at RWTH Aachen \"from 1986 to 1997\"." }
+    places: [{ institution: "Lehrstuhl D für Mathematik, RWTH Aachen", city: Aachen, country: DE }]
+  creators:
+    - { name: Joachim Neubüser, role: chair of LDFM }
+  status: active
+  tags:
+    paradigm: [procedural]
+    features: [interpreter, repl, packages]
+    domain: [computer-algebra]
+  summary: >
+    "an open-source computer algebra system for computational discrete algebra with particular emphasis on
+    computational group theory", made of "a procedural programming language and a large collection of functions". After
+    Neubüser retired, St Andrews coordinated it, and since 2005 several GAP Centres share it; it is part of SageMath.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GAP_(computer_algebra_system)", homepage: "https://www.gap-system.org" }
+  sources: [wiki-gap]
+  example:
+    title: A group as permutations
+    language: GAP
+    note: "From Wikipedia's permutation-group session."
+    code: |
+      gap> G:=SmallGroup(8,1); # Set G to be the 1st group (in GAP catalogue) of order 8.
+      <pc group of size 8 with 3 generators>
+      gap> i:=IsomorphismPermGroup(G); # Find an isomorphism from G to a group of permutations.
+      <action isomorphism>
+      gap> Image(i,G);
+      Group([ (1,5,3,7,2,6,4,8), (1,3,2,4)(5,7,6,8), (1,2)(3,4)(5,6)(7,8) ])
+    sources: [wiki-gap]
+
+- id: s-plus
+  name: S-PLUS
+  kind: language
+  category: scientific
+  cluster: data
+  origin:
+    first_appeared: { year: 1988, precision: year, note: "\"In 1988, S-PLUS was first developed and released by a Seattle-based start-up company called Statistical Sciences, Inc.\"" }
+    places: [{ institution: "Statistical Sciences, Inc.", city: Seattle, country: US }]
+  creators:
+    - { name: R. Douglas Martin, role: founder of Statistical Sciences }
+  status: extinct
+  tags:
+    paradigm: [functional, object-oriented]
+    typing: [dynamic-typing]
+    domain: [statistics]
+  milestones:
+    - { version: "3.3", year: 1995, summary: "Windows 95/NT, Trellis graphics." }
+    - { version: "8", year: 2007, summary: "New package system and extensions for R package compatibility." }
+    - { version: "8.2", year: 2010, summary: "Last stable release." }
+  summary: >
+    "a commercial implementation of the S programming language", started by R. Douglas Martin, who "originally
+    learned S while working at Bell Laboratories". It passed through MathSoft, Insightful and TIBCO; Insightful bought the
+    S language from Lucent in 2004. Losing ground to R, TIBCO offered an R interpreter (TERR) and "officially retired the
+    product" on 31 January 2026.
+  relations:
+    - { type: dialect_of, to: s, weight: strong, confidence: high, sources: [wiki-s-plus], note: "\"a commercial implementation of the S programming language\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/S-PLUS" }
+  sources: [wiki-s-plus]
+
+- id: a-plus
+  name: A+
+  aliases: [A plus, A]
+  kind: language
+  category: scientific
+  cluster: array
+  origin:
+    first_appeared: { year: 1988, precision: year, note: "\"In 1988, Arthur Whitney began work on the A programming language to replace APL\"; others at Morgan Stanley extended it to A+." }
+    places: [{ institution: Morgan Stanley, country: US }]
+  creators:
+    - { name: Arthur Whitney, role: designer }
+  status: legacy
+  tags:
+    paradigm: [array-programming]
+    typing: [dynamic-typing, strong-typing]
+    features: [interpreter]
+  milestones:
+    - { version: "4.22-1", year: 2008, summary: "Last stable release, GPL." }
+  summary: >
+    "a high-level, interactive, interpreted array programming language designed for numerically intensive
+    applications, especially those found in financial applications". Whitney's A replaced APL at Morgan Stanley; A+ added
+    a GUI whose widgets synchronise with variables, dependencies, semicolon-separated statements and functions of up to
+    nine parameters. Whitney then made K, which drops A+'s statements and dual syntax.
+  notes: >
+    Whitney's Wikipedia article is "Arthur Whitney (computer scientist)"; the parenthesis is dropped because build.py
+    rejects it.
+  relations:
+    - { type: influenced_by, to: apl, aspects: [array-programming], weight: strong, confidence: high, sources: [wiki-a-plus], note: "\"began work on the A programming language to replace APL\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/A%2B_(programming_language)", homepage: "http://www.aplusdev.org" }
+  sources: [wiki-a-plus]
+
+- id: sequencel
+  name: SequenceL
+  kind: language
+  category: general
+  cluster: scientific
+  origin:
+    began: { year: 1989, precision: year, note: "\"initially developed over a 20-year period starting in 1989, mostly at Texas Tech University\"." }
+    first_appeared: { year: 1989, precision: year, note: "Infobox \"First appeared: 1989\"." }
+    places: [{ institution: Texas Tech University, country: US }]
+  creators:
+    - { name: Daniel Cooke, role: principal researcher }
+    - { name: Nelson Rushton, role: co-designer }
+    - { name: Brad Nemanich, role: co-designer }
+  status: historical
+  tags:
+    paradigm: [functional, purely-functional, declarative]
+    typing: [static-typing, type-inference]
+    concurrency: [data-parallelism]
+    domain: [hpc]
+  milestones:
+    - { version: NT semantics, year: 2004, summary: "\"took its more complete form with the addition of the normalize-transpose (NT) semantic\"." }
+    - { version: prototype compiler, year: 2006, summary: "Auto-parallelizing compiler at Texas Tech." }
+    - { version: v3, year: 2017, summary: "Texas Multicore Technologies' Professional and free Community editions." }
+  summary: >
+    "a general purpose functional programming language and auto-parallelizing ... compiler and tool set": programs
+    "can be compiled to multithreaded code that runs in parallel, with no explicit indications from a programmer of how or
+    what to parallelize". Its normalize-transpose semantics apply operations across nested sequences, so definitions read
+    like the mathematics. Texas Tech licensed it to Texas Multicore Technologies in 2009.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SequenceL" }
+  sources: [wiki-sequencel]
+  example:
+    title: Matrix multiply and primes
+    language: SequenceL
+    note: "From Wikipedia; the indentation is as shown there."
+    code: |
+      matmul(A(2), B(2)) [i,j] :=
+          let k := 1...size(B);
+          in sum( A[i,k] * B[k,j] );
+
+      prime(z) := z when none(z mod (2...(z-1)) = 0);
+
+      cmd:>prime(100...200)
+      [101,103,107,109,113,127,131,137,139,149,151,157,163,167,173,179,181,191,193,197,199]
+    sources: [wiki-sequencel]

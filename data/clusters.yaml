@@ -263,7 +263,6 @@
   research_status: draft
   backlog:
     - { name: "High Performance Fortran", year: 1993 }
-    - { name: "Ratfor", year: 1976 }
 - id: business
   name: Business and data-processing languages
   research_status: draft
@@ -869,50 +868,10 @@
   summary: "Computer algebra, numerical, statistical, optimisation and simulation languages outside the Fortran and array families."
   research_status: stub
   backlog:
-    - { name: "Macsyma", hint: "MIT Project MAC computer algebra system, \"Lisp-based\" (wiki-maple); Maxima is \"based on a 1982 version of Macsyma\" (wiki-maxima). Needs year, creators and an example." }
-    - { name: "GAP", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Magma", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "MuPAD", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "PARI/GP", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "FORMAC", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Scilab", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "IDL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Yorick", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Stata", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "S-PLUS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "AMPL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "General Algebraic Modeling System", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "AIMMS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Modelica", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "GPSS", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SIMSCRIPT", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "DYNAMO", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Speakeasy", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Futhark", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "SISAL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "ZPL", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Fortress", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Mortran", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Ratfiv", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Speedcode", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Calcpad", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Seed7", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "A+ (A plus)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Nial", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "PDL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "MIMIC", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SequenceL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Zebra, ZPL, ZPL2", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "PCASTL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SA-C", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Cuneiform", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "PROSE modeling language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Geometric Description Language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "POV-Ray SDL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "MSL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SOPHAEROS", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "APT", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "GRASS", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "Mortran", hint: "Mortran (More Fortran): Fortran extension \"macro-processed into Fortran code\"; MORTRAN2 is written in Fortran 66; SKOL (Charles Zahn, mid-1970s) was built with its macros (Wikipedia: Mortran). Wikipedia gives no year or authors; check Cook (1976) SIGPLAN Notices 11(9) and the MORTRAN 2 user guide." }
+    - { name: "Zebra, ZPL, ZPL2", hint: "Zebra Programming Language is \"a page description language from Zebra Technologies, used primarily for labeling applications\" (Wikipedia), infobox influenced by ANSI BASIC; no year given. Probably out of scope as a printer command format; Markus to decide." }
+    - { name: "SA-C", hint: "Single Assignment C, a C-family language translatable into circuits/FPGAs, no pointers, n-dimensional arrays (Wikipedia: SA-C). No year or designers on the page; read Böhm et al. (Colorado State, cs.colostate.edu/cameron/Publications/bohm_sc02.pdf)." }
+    - { name: "Geometric Description Language", hint: "BASIC-like language of Archicad library parts (Graphisoft). Wikipedia gives no year, designer or versions and cites no sources; needs a Graphisoft source." }
 - id: gpu
   name: Shader and GPU languages
   summary: "Languages for programming graphics processors and accelerators: GLSL, HLSL, WGSL, OpenCL, SYCL."

@@ -3090,3 +3090,381 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/NetLogo" }
   sources: [wiki-netlogo]
+
+- id: scilab
+  name: Scilab
+  aliases: [Psilab]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1990, precision: year, note: "\"created in 1990 by researchers from INRIA and École nationale des ponts et chaussées (ENPC). It was initially named Ψlab (Psilab).\"" }
+    places:
+      - { institution: INRIA, country: FR }
+      - { institution: École nationale des ponts et chaussées, country: FR }
+  status: active
+  tags:
+    paradigm: [array-programming, imperative]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [interpreter]
+    domain: [scientific-computing]
+  milestones:
+    - { version: "5.1", year: 2009, summary: "First release compiled for Mac." }
+    - { version: "6.0.0", year: 2017, summary: "Rewritten on current C++ standards; memory allocation limits lifted." }
+    - { version: "2023.0.0", year: 2023, summary: "Versions named by year from here on." }
+    - { version: "2026.0.0", year: 2026, summary: "Object-oriented programming with classdef.", introduces: [classes] }
+  summary: >
+    "a free and open-source, cross-platform numerical computational package and a high-level, numerically oriented
+    programming language" with matrices as the main data type. "Scilab syntax is largely based on the MATLAB
+    language", and with GNU Octave it is one of "the two major open-source alternatives to MATLAB". Stewardship moved
+    from INRIA to Scilab Enterprises, ESI Group and, in 2022, Dassault Systèmes.
+  relations:
+    - { type: influenced_by, to: matlab, aspects: [array-programming], weight: strong, confidence: high, sources: [wiki-scilab], note: "\"Scilab syntax is largely based on the MATLAB language.\"" }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Scilab", homepage: "https://www.scilab.org" }
+  sources: [wiki-scilab]
+  example:
+    title: A 3D surface
+    language: Scilab
+    note: "From Wikipedia."
+    code: |
+      // A simple plot of z = f(x,y)
+      t=[0:0.3:2*%pi]';
+      // note: t is a column vector, t' is a row vector
+      z=sin(t)*cos(t');
+      // the dyadic product of sin(t) and cos(t') yields matrix z
+      plot3d(t,t',z)
+    sources: [wiki-scilab]
+
+- id: pov-ray-sdl
+  name: POV-Ray SDL
+  aliases: [POV-Ray scene description language, Persistence of Vision Ray Tracer]
+  kind: language
+  category: domain-specific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1991, precision: exact, note: "POV-Ray infobox \"Release: July 29, 1991\"." }
+  creators:
+    - { name: David Kirk Buck, role: original author }
+    - { name: Aaron A. Collins, role: original author }
+    - { name: Alexander Enzmann, role: original author }
+  status: maintained
+  tags:
+    paradigm: [declarative, imperative]
+    features: [macros]
+    domain: [computer-graphics]
+  milestones:
+    - { version: "3.7", year: 2013, summary: "SMP and HDRI support; relicensed AGPL-3.0-or-later." }
+  summary: >
+    The text language in which POV-Ray scenes are written: "a Turing-complete scene description language (SDL) that
+    supports macros and loops", read by a ray tracer that "does not include a modeling feature". POV-Ray "was originally
+    based on DKBTrace, written by David Kirk Buck and Aaron A. Collins for Amiga computers"; in 1991 Buck handed the
+    project to the CompuServe GraphDev team.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/POV-Ray", homepage: "https://www.povray.org" }
+  sources: [wiki-pov-ray]
+  example:
+    title: A loop of rotated boxes
+    language: POV-Ray SDL
+    note: "Wikipedia's while-loop fragment; tabs on the page replaced with spaces and the leading space of each line dropped."
+    code: |
+      #declare the_angle = 0;
+
+      #while (the_angle < 360)
+        box {   <-0.5, -0.5, -0.5>
+                <0.5, 0.5, 0.5>
+                texture { pigment { color Red }
+                          finish  { specular 0.6 }
+                          normal  { agate 0.25 scale 1/2 } }
+                rotate the_angle }
+        #declare the_angle = the_angle + 45;
+      #end
+    sources: [wiki-pov-ray]
+
+- id: zpl
+  name: ZPL
+  aliases: [Z-level Programming Language, Orca C]
+  kind: language
+  category: scientific
+  cluster: array
+  origin:
+    began: { year: 1993, precision: year, note: "\"designed and implemented during 1993–1995 by the Orca Project\"." }
+    first_appeared: { year: 1993, precision: year, note: "Infobox \"First appeared: 1993\"." }
+    places: [{ institution: University of Washington, country: US }]
+  creators:
+    - { name: Brad Chamberlain, role: co-designer }
+    - { name: Sung-Eun Choi, role: co-designer }
+    - { name: E Christopher Lewis, role: co-designer }
+    - { name: Calvin Lin, role: co-designer }
+    - { name: Jason Secosky, role: co-designer }
+    - { name: Larry Snyder, role: co-designer }
+    - { name: W. Derrick Weathersby, role: co-designer }
+  status: historical
+  tags:
+    paradigm: [array-programming]
+    concurrency: [data-parallelism]
+    domain: [hpc, scientific-computing]
+  summary: >
+    "an array programming language designed to replace C and C++ programming languages in engineering and scientific
+    applications", whose programs "run fast on both sequential and parallel computers" because it "exclusively uses
+    implicit parallelism". It "uses the array abstraction to implement a data parallel programming model" and compiles to
+    ANSI C. Wikipedia lists Chapel as the language it influenced.
+  relations:
+    - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-zpl], note: "Infobox \"Influenced by: C\"; originally called Orca C." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Z-level_programming_language" }
+  sources: [wiki-zpl]
+
+- id: magma
+  name: Magma
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1993, precision: exact, note: "\"officially released in August 1993 (version 1.0)\"; its predecessor Cayley ran 1982–1993." }
+    places: [{ institution: University of Sydney, country: AU }]
+  creators:
+    - { name: Computational Algebra Group, role: developer, affiliation: University of Sydney }
+  status: active
+  tags:
+    paradigm: [procedural, functional]
+    domain: [computer-algebra]
+  milestones:
+    - { version: "2.0", year: 1996, summary: "Then roughly yearly 2.x releases." }
+  summary: >
+    "a computer algebra system designed to solve problems in algebra, number theory, geometry and combinatorics", named
+    after the algebraic structure and "used extensively within pure mathematics". The kernel is C and the libraries are
+    written in Magma's own language. It succeeded the Cayley system (1982–1993), named after Arthur Cayley.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Magma_(computer_algebra_system)", homepage: "http://magma.maths.usyd.edu.au" }
+  sources: [wiki-magma]
+
+- id: aimms
+  name: AIMMS
+  aliases: [Advanced Interactive Multidimensional Modeling System]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1993, precision: year, note: "Infobox \"First appeared: 1993\"; the company (Paragon Decision Technology) was founded in 1989." }
+  creators:
+    - { name: Johannes Bisschop, role: designer }
+    - { name: Marcel Roelofs, role: designer }
+  status: active
+  tags:
+    paradigm: [declarative, imperative]
+    domain: [mathematical-optimization]
+  summary: >
+    An algebraic modelling language from the company now called AIMMS B.V., "considered to be one of the five most
+    important algebraic modeling languages", which mixes "declarative and imperative programming styles". It underlies
+    a platform for building optimisation applications for business users; Bisschop received the INFORMS Impact Prize for
+    it.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/AIMMS", homepage: "https://www.aimms.com" }
+  sources: [wiki-aimms]
+
+- id: mirc-script
+  name: mIRC scripting language
+  aliases: [mSL, MSL]
+  kind: language
+  category: scripting
+  cluster: scripting/embedded
+  origin:
+    first_appeared: { year: 1995, precision: year, note: "Infobox \"First appeared: 1995\"." }
+  creators:
+    - { name: Khaled Mardam-Bey, role: designer }
+  status: maintained
+  tags:
+    paradigm: [event-driven, procedural, scripting]
+    typing: [dynamic-typing]
+    features: [embeddable]
+  summary: >
+    "the scripting language embedded in mIRC and Adiirc, IRC clients for Windows": aliases, popups and remote event
+    handlers that react to IRC events, with "all variables ... dynamically typed".
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MIRC_scripting_language" }
+  sources: [wiki-mirc-script]
+  example:
+    title: An alias
+    language: mIRC script
+    note: "Wikipedia's Hello World alias, comment lines shortened."
+    code: |
+      ;Defines the alias 'hello' in the remote script
+      ;Usage: /hello
+      alias hello {
+        ;Displays(/echo) 'Hello World!' into the active window(-a)
+        echo -a Hello World!
+      }
+    sources: [wiki-mirc-script]
+
+- id: pdl
+  name: PDL
+  aliases: [Perl Data Language, perldl]
+  kind: language
+  category: scientific
+  cluster: array
+  origin:
+    first_appeared: { year: 1996, precision: year, note: "Infobox \"First appeared: 1996\"." }
+  creators:
+    - { name: Karl Glazebrook, role: developer }
+    - { name: Jarle Brinchmann, role: developer }
+    - { name: Tuomas Lukka, role: developer }
+    - { name: Christian Soeller, role: developer }
+  status: active
+  tags:
+    paradigm: [array-programming, imperative, functional]
+    features: [operator-overloading, repl]
+    domain: [scientific-computing]
+  summary: >
+    "a set of free software array programming extensions to the Perl programming language" that adds "large
+    multidimensional arrays" manipulated as vector objects, plus image processing and plotting. Wikipedia says it
+    "follows in the footsteps of the APL programming language" and compares it to MATLAB and IDL. Its core is C.
+  relations:
+    - { type: superset_of, to: perl, weight: strong, confidence: high, sources: [wiki-pdl], note: "Extensions to Perl; \"The commands used in the shell are Perl statements\"." }
+    - { type: influenced_by, to: apl, aspects: [array-programming], weight: moderate, confidence: medium, sources: [wiki-pdl], note: "Infobox \"Influenced by: APL, IDL, Perl\"." }
+    - { type: influenced_by, to: idl, weight: moderate, confidence: medium, sources: [wiki-pdl], note: "Infobox \"Influenced by: APL, IDL, Perl\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Perl_Data_Language", homepage: "https://pdl.perl.org" }
+  sources: [wiki-pdl]
+  example:
+    title: Matrix multiplication in perldl
+    language: PDL
+    note: "Wikipedia's perldl session; x is overloaded for matrix multiplication, p prints."
+    code: |
+      perldl> $x = pdl [[1, 2], [3, 4]];
+      perldl> $y = pdl [[5, 6, 7],[8, 9, 0]];
+      perldl> $z = $x x $y;
+      perldl> p $z;
+      [
+       [21 24  7]
+       [47 54 21]
+      ]
+    sources: [wiki-pdl]
+
+- id: yorick
+  name: Yorick
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1996, precision: year, note: "\"created in 1996 by David H. Munro of Lawrence Livermore National Laboratory\"." }
+    places: [{ institution: Lawrence Livermore National Laboratory, country: US }]
+  creators:
+    - { name: David H. Munro, role: designer }
+  status: legacy
+  tags:
+    paradigm: [array-programming, imperative]
+    features: [interpreter]
+    domain: [scientific-computing]
+  milestones:
+    - { version: "2.2.04", year: 2015, summary: "Last stable release." }
+  summary: >
+    "an interpreted programming language designed for numerics, graph plotting, and steering large scientific
+    simulation codes", "quite fast due to array syntax, and extensible via C or Fortran routines". Its index syntax marks
+    the contracted dimension of a tensor product with +.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Yorick_(programming_language)" }
+  sources: [wiki-yorick]
+  example:
+    title: Slices and tensor products
+    language: Yorick
+    note: "Two REPL sessions from Wikipedia joined; > is the prompt."
+    code: |
+      > x=[1,2,3,4,5,6];
+      > x(3:6:2)
+      [3,5]
+      > x=[[1,2,3],[4,5,6]]
+      > y=[[7,8],[9,10],[11,12]]
+      > x(,+)*y(+,)
+      [[39,54,69],[49,68,87],[59,82,105]]
+    sources: [wiki-yorick]
+
+- id: modelica
+  name: Modelica
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    began: { year: 1996, precision: exact, note: "\"The Modelica design effort was initiated in September 1996 by Hilding Elmqvist.\"" }
+    first_appeared: { year: 1997, precision: exact, note: "\"In September 1997, version 1.0 of the Modelica specification was released\"." }
+  creators:
+    - { name: Hilding Elmqvist, role: key architect }
+    - { name: Modelica Association, role: maintainer from 2000 }
+  status: active
+  tags:
+    paradigm: [object-oriented, declarative]
+    features: [standardization, operator-overloading]
+    domain: [simulation]
+  milestones:
+    - { version: "1.0", year: 1997, summary: "Continuous dynamic systems." }
+    - { version: "1.1", year: 1998, summary: "Discrete systems (pre, when)." }
+    - { version: "3.0", year: 2007, summary: "Clean-up: specification rewritten, balanced model concept." }
+    - { version: "3.1", year: 2009, summary: "Stream connectors, operator overloading.", introduces: [operator-overloading] }
+    - { version: "3.3", year: 2012, summary: "Clocked equations and synchronous state machines." }
+    - { version: "3.6", year: 2023 }
+  summary: >
+    "an object-oriented, declarative, multi-domain modeling language for component-oriented modeling of complex
+    systems" (mechanical, electrical, hydraulic, thermal, control). Models are equations, not assignments: "Modelica is a
+    modeling language rather than a conventional programming language". Version 1.0 "is based on the PhD thesis of
+    Hilding Elmqvist and on the experience with the modeling languages Allan, Dymola, NMF, ObjectMath, Omola, SIDOPS+,
+    and Smile".
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Modelica", homepage: "https://modelica.org" }
+  sources: [wiki-modelica]
+  example:
+    title: A first-order system
+    language: Modelica
+    note: "From Wikipedia."
+    code: |
+      model FirstOrder
+        parameter Real c=1 "Time constant";
+        Real x (start=10) "An unknown";
+      equation
+        der(x) = -c*x "A first order differential equation";
+      end FirstOrder;
+    sources: [wiki-modelica]
+
+- id: mupad
+  name: MuPAD
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1997, precision: circa, note: "The page gives no first-release year for the Paderborn system; 1997 is when SciFace took over development (category \"Products introduced in 1997\"). Find the Paderborn group's first release." }
+    places: [{ institution: University of Paderborn, country: DE }]
+  status: historical
+  tags:
+    paradigm: [procedural, object-oriented, functional]
+    domain: [computer-algebra]
+  milestones:
+    - { version: MathWorks, year: 2008, summary: "SciFace bought by MathWorks; MuPAD withdrawn as a product and kept inside the Symbolic Math Toolbox." }
+  summary: >
+    A computer algebra system from "the MuPAD research group at the University of Paderborn", developed by SciFace from
+    1997. "MuPAD's syntax was modeled on that of the Pascal programming language, and is similar to the one used in the
+    Maple computer algebra system"; unlike Maple it supports object-oriented programming. MathCAD 14 used it as its
+    engine, and MATLAB removed the MuPAD notebook in R2020a.
+  relations:
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [wiki-mupad], note: "\"MuPAD's syntax was modeled on that of the Pascal programming language\"." }
+    - { type: influenced_by, to: maple, weight: weak, confidence: low, sources: [wiki-mupad], note: "Only \"similar to the one used in the Maple computer algebra system\"; whether Maple was a model is unconfirmed." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MuPAD" }
+  sources: [wiki-mupad]
+  example:
+    title: Matrix arithmetic
+    language: MuPAD
+    note: "From Wikipedia; all expressions on the second line are valid after the definition."
+    code: |
+      A := matrix( [[1,2],[3,4]] )
+      A+A, -A, 2*A, A*A, A^-1, exp( A ), A.A, A^0, 0*A
+    sources: [wiki-mupad]

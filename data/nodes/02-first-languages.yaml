@@ -275,6 +275,7 @@
     having absorbed modules, array programming, OOP and parallelism over 60 years.
   relations:
     - { type: targets, to: ibm-704, weight: strong, confidence: high }
+    - { type: influenced_by, to: speedcoding, weight: weak, confidence: medium, sources: [wiki-speedcoding], note: "Speedcoding infobox \"Influenced: Fortran ...\"; same designer (Backus) and IBM. What carried over is not stated." }
     - { type: influenced_by, to: sap-704, weight: weak, confidence: low, note: "Shared team member (Roy Nutt) and machine; not a design influence on the language itself." }
     - { type: influenced_by, to: glennie-autocode, weight: weak, confidence: low, note: "Backus later said the team was mostly unaware of earlier work; Laning & Zierler's MIT algebraic system (1954) is the one acknowledged precursor. Add it as a node." }
   research_status: draft
@@ -596,3 +597,114 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/MUSIC-N" }
   sources: [wiki-music-n]
+
+- id: speedcoding
+  name: Speedcoding
+  aliases: [Speedcode, SpeedCo]
+  kind: language
+  category: scientific
+  cluster: early/pioneers
+  origin:
+    first_appeared: { year: 1953, precision: year, note: "\"developed by John W. Backus in 1953 for the IBM 701\"; the IBM manual for the type 701 is dated 1953-09-10 and Backus's JACM paper January 1954." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: John Backus, role: designer, affiliation: IBM }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [interpreter]
+    domain: [scientific-computing]
+  summary: >
+    "the first high-level programming language created for an IBM computer": an interpreter that gave the IBM 701
+    floating-point arithmetic. Backus "and five colleagues" designed it from 1953. It "focused on ease of use at the
+    expense of system resources": programs ran "ten to twenty times" slower than machine code, a trade-off Backus's next
+    project, FORTRAN, set out to remove.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Speedcoding" }
+  sources: [wiki-speedcoding]
+
+- id: apt
+  name: APT
+  aliases: [Automatically Programmed Tool]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1956, precision: year, note: "Infobox \"First appeared: 1956\"; Ross led the effort from 1956 at the MIT Servomechanisms Laboratory. Ross's own history is \"Origins of the APT Language for Automatically Programmed Tools\" (1978)." }
+    places: [{ institution: MIT Servomechanisms Laboratory, country: US }]
+  creators:
+    - { name: Douglas T. Ross, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    features: [standardization]
+    domain: [industrial-automation]
+  summary: >
+    "a high-level computer programming language most commonly used to generate instructions for numerically
+    controlled machine tools", defining geometry (points, lines, circles, planes) and then tool motions relative to it.
+    "The original version was created before even FORTRAN was available"; later versions were rewritten in FORTRAN. It is
+    "the predecessor to modern computer aided manufacturing (CAM) systems" and spawned ADAPT, EXAPT, UNIAPT and the
+    robot language RAPT.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/APT_(programming_language)" }
+  sources: [wiki-apt]
+  example:
+    title: Geometry, then tool motion
+    language: APT
+    note: "Wikipedia's \"Tool path for APT-1 program\", shortened (unit, post-processor and tool-load lines, L3, C2 and the later motion statements left out)."
+    code: |
+      PARTNO APT-1
+      $$ GEOMETRY DEFINITION
+      P1 = POINT / 50, 50, 0
+      P2 = POINT / -50, -50, 0
+      L1 = LINE / P1, PARLEL, (LINE / YAXIS)
+      L2 = LINE / P2, PERPTO, L1
+      L4 = LINE / P1, PERPTO, L1
+      C1 = CIRCLE / XSMALL, L1, YLARGE, L2, RADIUS, 30
+      PLAN1 = PLANE / 0, 0, 1, 0
+      PLAN2 = PLANE / PARLEL, PLAN1, ZSMALL, 16
+      $$ MOTION COMMANDS
+      CUTTER / 20
+      FROM / (STRTPT = POINT / 70, 70, 0)
+      GO / TO, L1, TO, PLAN2, TO, L4
+      TLLFT, GOLFT / L1, TANTO, C1
+      GOFWD / C1, TANTO, L2
+      GOTO / STRTPT
+      FINI
+    sources: [wiki-apt]
+
+- id: dynamo
+  name: DYNAMO
+  aliases: [DYNAmic MOdels]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    began: { year: 1958, precision: year, note: "\"In 1958, Forrester unwittingly instigated DYNAMO's development\"; its precursor was Richard Bennett's SIMPLE." }
+    first_appeared: { year: 1959, precision: circa, note: "Wikipedia gives only \"in the late 1950s\"; no exact first-release year found." }
+    places: [{ institution: M.I.T. Computation Center, country: US }]
+  creators:
+    - { name: Jay Wright Forrester, role: director }
+    - { name: Phyllis Fox, role: developer }
+    - { name: Alexander L. Pugh III, role: developer }
+    - { name: Grace Duren, role: developer }
+  status: extinct
+  tags:
+    paradigm: [declarative]
+    features: [units-of-measure]
+    domain: [simulation]
+  milestones:
+    - { version: "II/F", year: 1971, summary: "Generated portable FORTRAN code." }
+    - { version: IV, year: 1983, summary: "Last of the revisions from DYNAMO II." }
+  summary: >
+    The system-dynamics simulation language, with an accompanying graphical notation, built for Forrester's industrial
+    dynamics and later used for "the system dynamics simulations of global resource depletion reported in the Club of
+    Rome's Limits to Growth". It was "essentially a package for continuous simulation specified through difference
+    equations" and "featured units checking of numerical types". Early versions were IBM 704/709/7090 assembly; DYNAMO II
+    was written in AED-0, an extended ALGOL 60.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/DYNAMO_(programming_language)" }
+  sources: [wiki-dynamo]

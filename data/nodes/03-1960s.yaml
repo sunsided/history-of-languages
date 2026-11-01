@@ -319,6 +319,7 @@
     - { type: superset_of, to: algol-60, weight: strong, confidence: high }
     - { type: influenced_by, to: algol-60, aspects: [block-structure], weight: strong, confidence: high }
     - { type: influenced_by, to: hoare-record-classes, aspects: [classes, records, references], weight: strong, confidence: high, note: "Dahl and Nygaard credit Hoare's 1965-66 record class proposal for the class/subclass concept of Simula 67." }
+    - { type: influenced_by, to: simscript, weight: moderate, confidence: medium, sources: [wiki-simscript], note: "SIMSCRIPT \"influenced Simula\"; reference text: \"The development of … SIMULA I and SIMULA 67 … were influenced by the design of SIMSCRIPT\"." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Simula" }
@@ -1172,3 +1173,246 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/PL/C" }
   sources: [wiki-pl-c]
+
+- id: gpss
+  name: GPSS
+  aliases: [General Purpose Simulation System]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    began: { year: 1960, precision: exact, note: "\"fixed and documented on October 25, 1960 in an internal IBM memorandum\"." }
+    first_appeared: { year: 1961, precision: exact, note: "\"officially released as a supported IBM-label program on September 27, 1961 with 25 block types\"." }
+    places: [{ institution: IBM Advanced Systems Development Division, country: US }]
+  creators:
+    - { name: Geoffrey Gordon, role: designer, affiliation: IBM }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    domain: [simulation]
+  milestones:
+    - { version: II, year: 1963, summary: "32 block types." }
+    - { version: III, year: 1965 }
+    - { version: GPSS/360, year: 1967, summary: "For System/360." }
+    - { version: V, year: 1970, summary: "49 block types." }
+    - { version: GPSS World, year: 2001, summary: "Windows program with new features." }
+  summary: >
+    A discrete-event simulation language "especially useful in the modelling of queuing systems". Models are written
+    in an Assembly-style "block diagram language" of single-purpose Blocks through which Transactions are generated,
+    queue, seize resources and terminate, with statistics collected automatically. IBM shipped it from 1961 through
+    GPSS V; GPSS World and the teaching tool JGPSS carry it on.
+  notes: >
+    The creator's Wikipedia article is "Geoffrey Gordon (computer scientist)"; the parenthesis is dropped here because
+    build.py rejects it, so a portrait needs that title set in media-subjects.yaml.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GPSS" }
+  sources: [wiki-gpss]
+  example:
+    title: Barber shop
+    language: GPSS
+    note: "Wikipedia's \"Hello world!\" of GPSS, \"taken from Simulation using GPSS\"; comment-only lines between segments left out."
+    code: |
+      SIMULATE               ; Define model
+            GENERATE 18,6          ; Customer arrive every 18±6 mn
+            QUEUE    Chairs        ; Enter the line
+            SEIZE    Joe           ; Capture the barber
+            DEPART   Chairs        ; Leave the line
+            ADVANCE  16,4          ; Get a hair cut in 16±4 mn
+            RELEASE  Joe           ; Free the barber
+            TERMINATE              ; Leave the shop
+            GENERATE 480           ; Timer arrives at time = 480 mn
+            TERMINATE 1            ; Shut off the run
+            START     1            ; Start one run
+            END                    ; End model
+    sources: [wiki-gpss]
+
+- id: simscript
+  name: SIMSCRIPT
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1962, precision: year, note: "\"conceived by Harry Markowitz and Bernard Hausner at the RAND Corporation in 1962\"." }
+    places: [{ institution: RAND Corporation, country: US }]
+  creators:
+    - { name: Harry Markowitz, role: co-designer }
+    - { name: Bernard Hausner, role: co-designer }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    features: [english-like-syntax, preprocessor]
+    domain: [simulation]
+  milestones:
+    - { version: I.5, year: 1965, summary: "Proprietary version from CACI." }
+    - { version: II.5, year: 1971, summary: "Released by CACI." }
+    - { version: III Release 4.0, year: 2009, summary: "\"available by 2009\"; SIMSCRIPT III \"has object-oriented features\"." }
+  summary: >
+    "a free-form, English-like general-purpose simulation language" for large discrete-event simulations, first
+    "implemented as a Fortran preprocessor on the IBM 7090". Markowitz's company CACI commercialised it as SIMSCRIPT I.5
+    and II.5. Its design influenced Simula, which makes it an ancestor of object-oriented programming.
+  relations:
+    - { type: implemented_in, to: fortran, weight: strong, confidence: high, sources: [wiki-simscript], note: "\"implemented as a Fortran preprocessor on the IBM 7090\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SIMSCRIPT" }
+  sources: [wiki-simscript]
+
+- id: formac
+  name: FORMAC
+  aliases: [Formula Manipulation Compiler]
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    began: { year: 1962, precision: year, note: "\"Initial development started in 1962\"." }
+    first_appeared: { year: 1964, precision: year, note: "\"complete by April 1964. In November it was released to IBM customers\"." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: Jean Sammet, role: designer, affiliation: IBM }
+  status: extinct
+  tags:
+    paradigm: [procedural]
+    features: [preprocessor]
+    domain: [computer-algebra]
+  summary: >
+    "the first computer algebra system to have significant use", developed by Jean Sammet's IBM team "as an extension of
+    FORTRAN IV". It supported "computation, manipulation, and use of symbolic expressions" and rational arithmetic; a
+    preprocessor turned FORMAC programs into FORTRAN IV.
+  relations:
+    - { type: superset_of, to: fortran, weight: strong, confidence: high, sources: [wiki-formac], note: "\"an extension of FORTRAN IV\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FORMAC" }
+  sources: [wiki-formac]
+
+- id: mimic
+  name: MIMIC
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1964, precision: year, note: "\"developed 1964\"." }
+    places: [{ institution: Air Force Materiel Command Systems Engineering Group, city: "Dayton, Ohio", country: US }]
+  creators:
+    - { name: H. E. Petersen, role: co-designer }
+    - { name: F. J. Sansom, role: co-designer }
+    - { name: L. M. Warshawsky, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [dataflow-programming]
+    features: [compiler]
+    domain: [simulation]
+  summary: >
+    A continuous block-simulation language for ordinary differential equations, "a further development from MIDAS
+    (Modified Integration Digital Analog Simulator), which represented analog computer design". Its core is "a variable
+    step numerical integrator of fourth-order Runge-Kutta method"; programs are compiled, and the package was written as
+    FORTRAN overlay programs. Control Data published a MIMIC reference manual in 1968.
+  relations:
+    - { type: implemented_in, to: fortran, weight: moderate, confidence: medium, sources: [wiki-mimic], note: "\"The MIMIC software package, written as FORTRAN overlay programs\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MIMIC" }
+  sources: [wiki-mimic]
+  example:
+    title: Lotka-Volterra predator-prey model
+    language: MIMIC
+    year: 2002
+    note: "From Wikipedia's code sample (a 2002 Stanford tutorial deck in card columns); header comment cards shortened, data cards left out."
+    code: |
+      * LOTKA–VOLTERRA EQUATION
+                        CON(F0,S0,TMAX)
+                        CON(ALPHA,BETA,GAMMA,EPS)
+                1DF   = ALPHA*F-BETA*F*S
+                F     = INT(1DF,F0)
+                1DS   = EPS*BETA*F*S-GAMMA*S
+                S     = INT(1DS,S0)
+                        HDR(TIME,FISH,SHARK)
+                        OUT(T,F,S)
+                        PLO(F,S)
+                        FIN(T,TMAX)
+                        END
+    sources: [wiki-mimic]
+
+- id: speakeasy
+  name: Speakeasy
+  kind: language
+  category: scientific
+  cluster: array
+  origin:
+    first_appeared: { year: 1964, precision: circa, note: "Infobox \"First appeared: 1964\"; the prose says its core \"Named storage\" was \"developed in the early 1960s\"." }
+    places: [{ institution: Argonne National Laboratory, country: US }]
+  creators:
+    - { name: Stanley Cohen, role: designer, affiliation: Argonne National Laboratory }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    typing: [dynamic-typing]
+    features: [interpreter, interactive-time-sharing]
+    domain: [scientific-computing]
+  milestones:
+    - { version: IV Iota, year: 2006, summary: "Most recent release." }
+  summary: >
+    "a numerical computing interactive environment also featuring an interpreted programming language", written by
+    the physicist Stanley Cohen for the Physics Division of Argonne and later sold by his Speakeasy Computing
+    Corporation. It was among the early interactive numerical environments (CDC 3600, then IBM TSO), with dynamically
+    typed matrix objects and dynamically linked "linkules". Cleve Moler names it among MATLAB's predecessors.
+  notes: >
+    The creator's Wikipedia article is "Stanley Cohen (physicist)"; the parenthesis is dropped because build.py rejects
+    it. The APL edge points two years forward (APL node 1966); Iverson's notation (1962) is the likelier source.
+  relations:
+    - { type: influenced_by, to: apl, weight: strong, confidence: medium, sources: [wiki-speakeasy], note: "Infobox \"Influenced by: APL\", citing \"APL directly inspired Speakeasy\" (Rubinsteyn 2014)." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Speakeasy_(computational_environment)" }
+  sources: [wiki-speakeasy]
+  example:
+    title: Dynamic typing and matrix objects
+    language: Speakeasy
+    note: "Two sessions from Wikipedia's article joined; :_ is the prompt."
+    code: |
+      :_ a=1
+      :_ whatis a
+      A is a REAL SCALAR.
+      :_ a=matrix(2,2:1,2,3,4) ; a
+        A (A 2 by 2 Matrix)
+        1  2
+        3  4
+      :_ a*a
+        A*A (A 2 by 2 Matrix)
+        7   10
+        15  22
+    sources: [wiki-speakeasy]
+
+- id: macsyma
+  name: Macsyma
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1968, precision: year, note: "\"The project was initiated in July, 1968 by Carl Engelman\"; developed at MIT \"from 1968 to 1982\"." }
+    places: [{ institution: MIT Project MAC, country: US }]
+  creators:
+    - { name: Carl Engelman, role: project initiator }
+    - { name: William A. Martin, role: "front end, display, polynomial arithmetic" }
+    - { name: Joel Moses, role: "simplifier, integration" }
+  status: historical
+  tags:
+    paradigm: [functional, procedural]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    domain: [computer-algebra]
+  milestones:
+    - { version: DOE Macsyma, year: 1982, summary: "Copy released into the National Energy Software Center library; the basis of Maxima." }
+    - { version: Symbolics Macsyma, year: 1982, summary: "Licensed to Symbolics and sold commercially; Macsyma, Inc. spun off in 1992." }
+    - { version: "2.0.5", year: 1995 }
+  summary: >
+    "one of the oldest general-purpose computer algebra systems", developed at MIT's Project MAC from 1968 to 1982 and
+    "written in Maclisp", where it was "a key motivator for improving that dialect of Lisp". Symbolics sold it from 1982;
+    the 1982 DOE copy became the GPL system Maxima.
+  relations:
+    - { type: implemented_in, to: maclisp, weight: strong, confidence: high, sources: [wiki-macsyma], note: "\"Macsyma was written in Maclisp\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Macsyma" }
+  sources: [wiki-macsyma]

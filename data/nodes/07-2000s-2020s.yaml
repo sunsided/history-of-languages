@@ -3729,6 +3729,7 @@
     - { type: influenced_by, to: ada, weight: weak, confidence: medium, sources: [wiki-chapel] }
     - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-chapel] }
     - { type: influenced_by, to: java, weight: weak, confidence: medium, sources: [wiki-chapel] }
+    - { type: influenced_by, to: zpl, weight: moderate, confidence: medium, sources: [wiki-zpl], note: "ZPL infobox \"Influenced: Chapel\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Chapel_(programming_language)", homepage: "https://chapel-lang.org/" }
@@ -4397,3 +4398,270 @@
       public function main() {
           io:println("Hello World!");
       }
+
+- id: seed7
+  name: Seed7
+  kind: language
+  category: general
+  cluster: algol
+  origin:
+    began: { year: 1989, precision: year, note: "\"In 1989, development began on an interpreter for MASTER, named HAL\"; MASTER is from Mertes's diploma and doctoral theses." }
+    first_appeared: { year: 2005, precision: year, note: "\"In 2005, the MASTER and HAL projects were released as open source under the Seed7 project name.\"" }
+  creators:
+    - { name: Thomas Mertes, role: designer }
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative, structured, generic-programming, reflective]
+    typing: [static-typing, strong-typing]
+    features: [metaprogramming, operator-overloading]
+  summary: >
+    "an extensible general-purpose programming language" that is "syntactically similar to Pascal and Ada" and
+    "supports introducing new syntax elements and their semantics into the language". Statements and operators are
+    defined in Seed7 itself, an idea carried over from Mertes's thesis language MASTER. Releases have come "every two or
+    three weeks" since 2005.
+  relations:
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [wiki-seed7], note: "\"syntactically similar to Pascal and Ada\"; infobox lists Pascal, Modula-2, Ada, ALGOL 68, C, C++, Java." }
+    - { type: influenced_by, to: ada, weight: moderate, confidence: medium, sources: [wiki-seed7], note: "\"syntactically similar to Pascal and Ada\"." }
+    - { type: influenced_by, to: modula-2, weight: weak, confidence: medium, sources: [wiki-seed7], note: "Infobox only." }
+    - { type: influenced_by, to: algol-68, weight: weak, confidence: medium, sources: [wiki-seed7], note: "Infobox only; ALGOL 68 also had user-defined operators." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Seed7", homepage: "https://seed7.net" }
+  sources: [wiki-seed7]
+  example:
+    title: Defining + for complex numbers
+    language: Seed7
+    note: "From Wikipedia: an operator definition is an ordinary function definition."
+    code: |
+      const func complex: (in complex: summand1) + (in complex: summand2) is func
+        result
+          var complex: sum is complex.value;
+        begin
+          sum.re := summand1.re + summand2.re;
+          sum.im := summand1.im + summand2.im;
+        end func;
+    sources: [wiki-seed7]
+
+- id: fortress
+  name: Fortress
+  kind: language
+  category: scientific
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 2006, precision: year, note: "Infobox \"First appeared: 2006\"; open-sourced January 2007; specification 1.0 April 2008." }
+    places: [{ institution: Sun Labs, country: US }]
+  creators:
+    - { name: Guy L. Steele Jr., role: designer, affiliation: Sun Microsystems }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing]
+    concurrency: [data-parallelism]
+    domain: [hpc]
+  milestones:
+    - { version: open source, year: 2007, summary: "Released as open source." }
+    - { version: "1.0", year: 2008, summary: "Language Specification 1.0 with a JVM implementation." }
+    - { version: end, year: 2012, summary: "Steele announces active development will cease." }
+  summary: >
+    "a discontinued experimental programming language for high-performance computing", created by Sun under DARPA's
+    High Productivity Computing Systems project alongside IBM's X10 and Cray's Chapel. The name meant "a secure
+    Fortran", but "the language was not designed to be similar to Fortran"; "syntactically, it most resembles Scala,
+    Standard ML, and Haskell". DARPA dropped it in 2006 and Steele wound it down in 2012, citing the difficulty of its type
+    system on existing virtual machines.
+  relations:
+    - { type: influenced_by, to: scala, weight: moderate, confidence: medium, sources: [wiki-fortress], note: "Infobox \"Influenced by: Fortran, Scala, Haskell\"; \"most resembles Scala, Standard ML, and Haskell\"." }
+    - { type: influenced_by, to: haskell, weight: moderate, confidence: medium, sources: [wiki-fortress], note: "Infobox and \"most resembles\" sentence." }
+    - { type: influenced_by, to: standard-ml, weight: weak, confidence: medium, sources: [wiki-fortress], note: "\"most resembles Scala, Standard ML, and Haskell\"." }
+    - { type: influenced_by, to: fortran, weight: weak, confidence: medium, sources: [wiki-fortress], note: "Infobox; but \"not designed to be similar to Fortran\", the name and HPC target are what it shares." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Fortress_(programming_language)" }
+  sources: [wiki-fortress]
+  example:
+    title: Hello, World!
+    language: Fortress
+    note: "From the Fortress Reference Card as quoted on Wikipedia; the page shows no indentation, which may have been lost."
+    code: |
+      component hello
+      export Executable
+      run() = println("Hello, World!")
+      end
+    sources: [wiki-fortress]
+
+- id: pcastl
+  name: PCASTL
+  aliases: [Parent and Childset Accessible Syntax Tree Language]
+  kind: language
+  category: research
+  cluster: scripting
+  origin:
+    first_appeared: { year: 2008, precision: year, note: "\"created in 2008 by Philippe Choquette\"." }
+  creators:
+    - { name: Philippe Choquette, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, reflective]
+    features: [interpreter, self-modifying-code]
+  milestones:
+    - { version: "3.5", year: 2018 }
+  summary: >
+    An interpreted language "designed to ease the writing of self-modifying code": the reserved words parent and childset
+    reach the nodes of the syntax tree of the code being run. "The syntax of PCASTL is derived from programming languages
+    C and R"; its grammar and lexer were written after studying the source of R 2.5.1.
+  relations:
+    - { type: influenced_by, to: r, weight: strong, confidence: high, sources: [wiki-pcastl], note: "\"The source of R version 2.5.1 has been studied to write the grammar and the lexer\"." }
+    - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [wiki-pcastl], note: "\"derived from programming languages C and R\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PCASTL" }
+  sources: [wiki-pcastl]
+  example:
+    title: R-style functions, C-style loops
+    language: PCASTL
+    note: "From Wikipedia's examples."
+    code: |
+      for (i = 1; i < 4; i++) print(i)
+      # function definition (comment)
+      a = function()
+      {
+         print("Hello, world!")
+      }
+
+      # function call
+      a()
+    sources: [wiki-pcastl]
+
+- id: cuneiform
+  name: Cuneiform
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 2013, precision: disputed, note: "Infobox \"First appeared: 2013\"; the release table and text date the first draft, 1.0.0, to May 2014." }
+  creators:
+    - { name: Jörgen Brandt, role: designer }
+  status: legacy
+  tags:
+    paradigm: [functional]
+    typing: [static-typing]
+    domain: [scientific-computing, distributed-systems]
+  milestones:
+    - { version: "1.0.0", year: 2014, summary: "First draft, Java implementation, \"closely related to Make\"." }
+    - { version: "2.2", year: 2016, summary: "Implementation language switched from Java to Erlang." }
+    - { version: "3.0", year: 2018, summary: "Distributed execution moved from Hadoop to distributed Erlang." }
+  summary: >
+    "an open-source workflow language for large-scale scientific data analysis" and "a statically typed functional
+    programming language promoting parallel computing". Tasks are written in foreign languages such as Bash and composed
+    functionally, aiming to "close the gap between scientific workflow systems like Taverna, KNIME, or Galaxy and
+    large-scale data analysis programming models like MapReduce". It follows Peter Kelly's proposal of functional
+    programming as a model for workflows.
+  relations:
+    - { type: implemented_in, to: erlang, year: 2016, weight: moderate, confidence: high, sources: [wiki-cuneiform], note: "\"In April 2016, Cuneiform's implementation language switched from Java to Erlang\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Cuneiform_(programming_language)" }
+  sources: [wiki-cuneiform]
+  example:
+    title: A Bash task
+    language: Cuneiform 3
+    note: "Wikipedia's hello-world script."
+    code: |
+      def greet( person : Str ) -> <out : Str>
+      in Bash *{
+        out="Hello $person"
+      }*
+
+      ( greet( person = "world" )|out );
+    sources: [wiki-cuneiform]
+
+- id: calcpad
+  name: Calcpad
+  kind: language
+  category: scientific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 2014, precision: year, note: "\"created by PhD Eng. Nedelcho Ganchovski in 2014\"." }
+    places: [{ institution: Proektsoft EOOD, country: BG }]
+  creators:
+    - { name: Nedelcho Ganchovski, role: original author }
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [interpreter, units-of-measure]
+    domain: [scientific-computing]
+  summary: >
+    Free mathematical software "primarily designed to perform engineering calculations and document the results into
+    calculation notes/reports", with "its own programming language with simplified syntax, suitable for engineers with
+    minimal programming experience". Repeatedly executed code such as functions and loop bodies is partly compiled to .NET IL.
+  relations:
+    - { type: implemented_in, to: csharp, weight: moderate, confidence: high, sources: [wiki-calcpad], note: "Infobox \"Written in: C#\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Calcpad", homepage: "https://calcpad.eu" }
+  sources: [wiki-calcpad]
+  example:
+    title: A simply supported beam
+    language: Calcpad
+    note: "From Wikipedia; the plot-height HTML comment line left out."
+    code: |
+      "Analysis of a simply supported beam"
+      'Length -'L = 6m
+      #if L ≤ 0m
+          '<p class="err">Invalid value:'L'</p>
+          #break
+      #end if
+      'Load -'q = 10kN/m^2
+      'Shear force -'V_0 = q*L/2
+      V(x) = V_0 - q*x
+      $Plot{V(x) @ x = 0m : L}
+      'Bending -'M_max = q*L^2/8
+      M(x) = V_0*x - q*x^2/2
+      $Plot{-M(x) @ x = 0m : L}
+    sources: [wiki-calcpad]
+
+- id: futhark
+  name: Futhark
+  kind: language
+  category: scientific
+  cluster: gpu
+  origin:
+    first_appeared: { year: 2014, precision: year, note: "Infobox \"First appeared: 2014\"." }
+    places: [{ institution: University of Copenhagen, country: DK }]
+  creators:
+    - { name: Troels Henriksen, role: co-designer }
+    - { name: Cosmin Oancea, role: co-designer }
+    - { name: Martin Elsman, role: co-designer }
+  status: active
+  tags:
+    paradigm: [functional, array-programming]
+    typing: [static-typing, strong-typing, type-inference, uniqueness-types]
+    concurrency: [data-parallelism]
+    domain: [hpc, parallel-hardware]
+  summary: >
+    "a multi-paradigm, high-level, functional, data parallel, array programming language", "a dialect of the language
+    ML" from DIKU's HIPERFIT project, compiled for GPUs. It is "strongly inspired by NESL" and uses a variant of
+    flattening, but forbids irregular nested parallelism so the compiler can optimise harder. It is meant for compute
+    kernels, not whole applications.
+  relations:
+    - { type: influenced_by, to: nesl, aspects: [data-parallelism], weight: strong, confidence: high, sources: [wiki-futhark], note: "\"Futhark is strongly inspired by NESL, and its implementation uses a variant of the flattening transformation\"." }
+    - { type: influenced_by, to: standard-ml, weight: moderate, confidence: medium, sources: [wiki-futhark], note: "\"a language in the ML family, with an indentation-insensitive syntax derived from OCaml, Standard ML, and Haskell\"." }
+    - { type: influenced_by, to: haskell, weight: moderate, confidence: medium, sources: [wiki-futhark], note: "Infobox \"Influenced by: APL, Haskell, NESL, Standard ML\"." }
+    - { type: influenced_by, to: ocaml, weight: weak, confidence: medium, sources: [wiki-futhark], note: "Syntax \"derived from OCaml, Standard ML, and Haskell\"." }
+    - { type: influenced_by, to: apl, aspects: [array-programming], weight: moderate, confidence: medium, sources: [wiki-futhark], note: "Infobox \"Influenced by: APL, Haskell, NESL, Standard ML\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Futhark_(programming_language)", homepage: "https://futhark-lang.org" }
+  sources: [wiki-futhark]
+  example:
+    title: Matrix multiplication
+    language: Futhark
+    note: "From Wikipedia. The page's dotprod line ends in an unbalanced \")\", dropped here."
+    code: |
+      def dotprod [n] (xs: [n]f64) (ys: [n]f64) : f64 = f64.sum (map2 (*) xs ys)
+
+      def matmul [n][m][p] (A: [n][m]f64) (B: [m][p]f64) : [n][p]f64 =
+        map (\A_row ->
+               map (\B_col -> dotprod A_row B_col)
+                   (transpose B))
+            A
+    sources: [wiki-futhark]

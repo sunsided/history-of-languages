@@ -4244,3 +4244,198 @@
   primary: false
   title: "Wikipedia: Xtend"
   url: https://en.wikipedia.org/wiki/Xtend
+- id: wiki-speedcoding
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Speedcoding"
+  url: https://en.wikipedia.org/wiki/Speedcoding
+- id: wiki-apt
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: APT (programming language)"
+  url: https://en.wikipedia.org/wiki/APT_(programming_language)
+- id: wiki-dynamo
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: DYNAMO (programming language)"
+  url: https://en.wikipedia.org/wiki/DYNAMO_(programming_language)
+- id: wiki-gpss
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GPSS"
+  url: https://en.wikipedia.org/wiki/GPSS
+- id: wiki-simscript
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SIMSCRIPT"
+  url: https://en.wikipedia.org/wiki/SIMSCRIPT
+- id: wiki-formac
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: FORMAC"
+  url: https://en.wikipedia.org/wiki/FORMAC
+- id: wiki-mimic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MIMIC"
+  url: https://en.wikipedia.org/wiki/MIMIC
+- id: wiki-speakeasy
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Speakeasy (computational environment)"
+  url: https://en.wikipedia.org/wiki/Speakeasy_(computational_environment)
+- id: wiki-macsyma
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Macsyma"
+  url: https://en.wikipedia.org/wiki/Macsyma
+- id: wiki-ratfor
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Ratfor"
+  url: https://en.wikipedia.org/wiki/Ratfor
+- id: wiki-prose
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PROSE modeling language"
+  url: https://en.wikipedia.org/wiki/PROSE_modeling_language
+- id: wiki-grass
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GRASS (programming language)"
+  url: https://en.wikipedia.org/wiki/GRASS_(programming_language)
+- id: wiki-idl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IDL (programming language)"
+  url: https://en.wikipedia.org/wiki/IDL_(programming_language)
+- id: wiki-gams
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: General algebraic modeling system"
+  url: https://en.wikipedia.org/wiki/General_algebraic_modeling_system
+- id: wiki-nial
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Nial"
+  url: https://en.wikipedia.org/wiki/Nial
+- id: wiki-sisal
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SISAL"
+  url: https://en.wikipedia.org/wiki/SISAL
+- id: wiki-stata
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Stata"
+  url: https://en.wikipedia.org/wiki/Stata
+- id: wiki-ampl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: AMPL"
+  url: https://en.wikipedia.org/wiki/AMPL
+- id: wiki-pari-gp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PARI/GP"
+  url: https://en.wikipedia.org/wiki/PARI/GP
+- id: wiki-gap
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GAP (computer algebra system)"
+  url: https://en.wikipedia.org/wiki/GAP_(computer_algebra_system)
+- id: wiki-s-plus
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: S-PLUS"
+  url: https://en.wikipedia.org/wiki/S-PLUS
+- id: wiki-a-plus
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: A+ (programming language)"
+  url: https://en.wikipedia.org/wiki/A%2B_(programming_language)
+- id: wiki-sequencel
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SequenceL"
+  url: https://en.wikipedia.org/wiki/SequenceL
+- id: wiki-scilab
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Scilab"
+  url: https://en.wikipedia.org/wiki/Scilab
+- id: wiki-pov-ray
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: POV-Ray"
+  url: https://en.wikipedia.org/wiki/POV-Ray
+- id: wiki-zpl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Z-level programming language"
+  url: https://en.wikipedia.org/wiki/Z-level_programming_language
+- id: wiki-magma
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Magma (computer algebra system)"
+  url: https://en.wikipedia.org/wiki/Magma_(computer_algebra_system)
+- id: wiki-aimms
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: AIMMS"
+  url: https://en.wikipedia.org/wiki/AIMMS
+- id: wiki-mirc-script
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: mIRC scripting language"
+  url: https://en.wikipedia.org/wiki/MIRC_scripting_language
+- id: wiki-pdl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Perl Data Language"
+  url: https://en.wikipedia.org/wiki/Perl_Data_Language
+- id: wiki-yorick
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Yorick (programming language)"
+  url: https://en.wikipedia.org/wiki/Yorick_(programming_language)
+- id: wiki-modelica
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Modelica"
+  url: https://en.wikipedia.org/wiki/Modelica
+- id: wiki-mupad
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MuPAD"
+  url: https://en.wikipedia.org/wiki/MuPAD
+- id: wiki-seed7
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Seed7"
+  url: https://en.wikipedia.org/wiki/Seed7
+- id: wiki-fortress
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Fortress (programming language)"
+  url: https://en.wikipedia.org/wiki/Fortress_(programming_language)
+- id: wiki-pcastl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PCASTL"
+  url: https://en.wikipedia.org/wiki/PCASTL
+- id: wiki-cuneiform
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Cuneiform (programming language)"
+  url: https://en.wikipedia.org/wiki/Cuneiform_(programming_language)
+- id: wiki-calcpad
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Calcpad"
+  url: https://en.wikipedia.org/wiki/Calcpad
+- id: wiki-futhark
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Futhark (programming language)"
+  url: https://en.wikipedia.org/wiki/Futhark_(programming_language)

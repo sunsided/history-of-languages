@@ -253,6 +253,8 @@
   person: Brian Kernighan
   wiki: Brian Kernighan
   nodes:
+  - ampl
+  - ratfor
   - awk
 - id: person-butler-lampson
   kind: person
@@ -479,6 +481,7 @@
   person: Guy L. Steele Jr.
   wiki: Guy L. Steele Jr.
   nodes:
+  - fortress
   - emacs-lisp
   - scheme
   - common-lisp
@@ -557,6 +560,7 @@
   person: John Backus
   wiki: John Backus
   nodes:
+  - speedcoding
   - fortran
   - algol-58
   - algol-60
@@ -1470,3 +1474,105 @@
   nodes:
   - iota
   - jot
+- id: person-jean-sammet
+  kind: person
+  person: Jean Sammet
+  wiki: Jean E. Sammet
+  nodes:
+  - formac
+- id: person-douglas-t-ross
+  kind: person
+  person: Douglas T. Ross
+  wiki: Douglas T. Ross
+  nodes:
+  - apt
+- id: person-jay-wright-forrester
+  kind: person
+  person: Jay Wright Forrester
+  wiki: Jay Wright Forrester
+  nodes:
+  - dynamo
+- id: person-phyllis-fox
+  kind: person
+  person: Phyllis Fox
+  wiki: Phyllis Fox
+  nodes:
+  - dynamo
+- id: person-geoffrey-gordon
+  kind: person
+  person: Geoffrey Gordon
+  wiki: Geoffrey Gordon (computer scientist)
+  nodes:
+  - gpss
+- id: person-harry-markowitz
+  kind: person
+  person: Harry Markowitz
+  wiki: Harry Markowitz
+  nodes:
+  - simscript
+- id: person-stanley-cohen
+  kind: person
+  person: Stanley Cohen
+  wiki: Stanley Cohen (physicist)
+  nodes:
+  - speakeasy
+- id: person-carl-engelman
+  kind: person
+  person: Carl Engelman
+  wiki: Carl Engelman
+  nodes:
+  - macsyma
+- id: person-william-a-martin
+  kind: person
+  person: William A. Martin
+  wiki: William A. Martin
+  nodes:
+  - macsyma
+- id: person-joel-moses
+  kind: person
+  person: Joel Moses
+  wiki: Joel Moses
+  nodes:
+  - macsyma
+- id: person-tom-defanti
+  kind: person
+  person: Tom DeFanti
+  wiki: Tom DeFanti
+  nodes:
+  - grass
+- id: person-robert-fourer
+  kind: person
+  person: Robert Fourer
+  wiki: Robert Fourer
+  nodes:
+  - ampl
+- id: person-henri-cohen
+  kind: person
+  person: Henri Cohen
+  wiki: Henri Cohen (number theorist)
+  nodes:
+  - pari-gp
+- id: person-arthur-whitney
+  kind: person
+  person: Arthur Whitney
+  wiki: Arthur Whitney (computer scientist)
+  nodes:
+  - a-plus
+- id: person-khaled-mardam-bey
+  kind: person
+  person: Khaled Mardam-Bey
+  wiki: Khaled Mardam-Bey
+  nodes:
+  - mirc-script
+- id: person-karl-glazebrook
+  kind: person
+  person: Karl Glazebrook
+  wiki: Karl Glazebrook
+  nodes:
+  - pdl
+- id: person-david-h-munro
+  kind: person
+  person: David H. Munro
+  wiki: David H. Munro
+  nodes:
+  - yorick
