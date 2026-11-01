@@ -11,7 +11,7 @@ branched off where, and when each idea (garbage collection, lambdas, async/await
 
 The data is the product: every node, strong edge and code example points at a source, every record says
 how thoroughly it has been checked, and what is not verified yet is marked as such (see
-[Honest state](#honest-state)).
+[Status Quo](#status-quo)).
 
 ## Repository layout
 
@@ -102,7 +102,7 @@ Clusters are both the UI's collapsible groups and the unit of research. A cluste
 `research_status` on nodes: `stub` = name and date; `draft` = filled from secondary sources and memory of
 primary ones; `reviewed` = checked against primary sources.
 
-## Honest state
+## Status Quo
 
 As of 2026-11-01:
 
