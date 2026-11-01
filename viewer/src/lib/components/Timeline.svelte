@@ -7,6 +7,7 @@
 		FAMILY_OF,
 		FORWARD_LABEL,
 		conceptArrival,
+		branchYear,
 		endYear,
 		firstYear,
 		narrowerConcepts,
@@ -113,7 +114,7 @@
 			if (a.row === b.row && !a.own) continue; // both folded into the same cluster row
 			const older = g.node.get(e.to)!;
 			const newer = g.node.get(e.from)!;
-			const x1 = scale.x(firstYear(older));
+			const x1 = scale.x(branchYear(e, older, newer));
 			const x2 = scale.x(Math.max(e.year ?? firstYear(newer), firstYear(newer)));
 			const key = `${family}|${a.row}:${a.own ? e.to : Math.round(x1)}|${b.row}:${b.own ? e.from : Math.round(x2)}`;
 			const prev = byKey.get(key);
@@ -312,7 +313,7 @@
 		const from = g.node.get(e.to)?.name ?? e.to;
 		const to = g.node.get(e.from)?.name ?? e.from;
 		const aspects = e.aspects?.length ? `aspects: ${e.aspects.join(', ')}` : '';
-		const meta = [e.weight, e.confidence && `${e.confidence} confidence`, e.year && `in ${e.year}`].filter(Boolean).join(' · ');
+		const meta = [e.weight, e.confidence && `${e.confidence} confidence`, e.from_version && `from ${e.from_version}`, e.year && `in ${e.year}`].filter(Boolean).join(' · ');
 		return { example: undefined, title: `${from} → ${to}`, sub: `${FORWARD_LABEL[e.type]}${meta ? ' · ' + meta : ''}`, body: [aspects, e.note].filter(Boolean).join('\n') };
 	});
 

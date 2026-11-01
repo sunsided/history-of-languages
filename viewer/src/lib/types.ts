@@ -44,6 +44,8 @@ export interface Relation {
 	note?: string;
 	sources?: string[];
 	year?: number;
+	/** milestone version of the target this edge branches from */
+	from_version?: string;
 }
 
 export interface Milestone {

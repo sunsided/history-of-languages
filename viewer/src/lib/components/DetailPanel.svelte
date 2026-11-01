@@ -116,7 +116,7 @@
 					<li>
 						{@render nodeLink(other)}
 						<span class="muted">
-							{firstYear(g.node.get(other)!)}{e.year ? ` · in ${e.year}` : ''}{e.weight ? ` · ${e.weight}` : ''}{e.confidence ? ` · ${e.confidence} conf.` : ''}
+							{firstYear(g.node.get(other)!)}{e.from_version ? ` · from ${e.from_version}` : ''}{e.year ? ` · in ${e.year}` : ''}{e.weight ? ` · ${e.weight}` : ''}{e.confidence ? ` · ${e.confidence} conf.` : ''}
 						</span>
 						{#if e.aspects?.length}
 							<div class="tags small">{#each e.aspects as a (a)}{@render conceptChip(a)}{/each}</div>
@@ -371,7 +371,7 @@
 				<li><b>Dot</b>: first appearance. Hollow = stub, ringed = reviewed.</li>
 				<li><b>Faint bar</b> before it: design period (<code>origin.began</code>).</li>
 				<li><b>Line</b> after it: alive to now (active / maintained), else to the last milestone. Ticks are milestones.</li>
-				<li><b>Arrows</b> run forward in time, older → newer. Dashed = low confidence. Thickness = weight.</li>
+				<li><b>Arrows</b> run forward in time, older → newer, leaving the older line where the branch happened (the named version, else the year). Dashed = low confidence. Thickness = weight.</li>
 				<li><b>Dashed circles</b> on cluster rows: backlog items not yet researched.</li>
 				<li>Pick a <b>concept</b> to see when each language acquired it (◆), or a <b>lineage</b> to walk its story.</li>
 			</ul>

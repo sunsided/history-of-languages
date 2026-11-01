@@ -85,6 +85,18 @@ export function endYear(n: LangNode): number {
 	return last;
 }
 
+/**
+ * Where an edge leaves the older node's timeline: the `from_version` milestone if named, else the
+ * branch year (the relation's `year`, then the newer node's began / first_appeared), clamped to the
+ * older node's span.
+ */
+export function branchYear(e: Edge, older: LangNode, newer: LangNode): number {
+	const m = e.from_version ? older.milestones?.find((m) => String(m.version) === e.from_version) : undefined;
+	if (m) return m.year;
+	const y = e.year ?? (newer.origin.began ?? newer.origin.first_appeared).year;
+	return Math.min(Math.max(y, firstYear(older)), endYear(older));
+}
+
 export function buildGraph(data: Dataset): Graph {
 	const node = new Map(data.nodes.map((n) => [n.id, n]));
 	const concept = new Map(data.concepts.map((c) => [c.id, c]));
