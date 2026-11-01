@@ -421,7 +421,7 @@
     title: "English-like arithmetic (fragment)"
     language: "COBOL (illustrative)"
     note: "Arithmetic verbs instead of formulas, so that managers could read the code. A full program also needs IDENTIFICATION, ENVIRONMENT and DATA divisions."
-    code: |
+    code: |2
              PROCEDURE DIVISION.
                  MULTIPLY HOURS-WORKED BY HOURLY-RATE GIVING GROSS-PAY.
                  IF GROSS-PAY IS GREATER THAN 1000

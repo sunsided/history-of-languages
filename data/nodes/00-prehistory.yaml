@@ -88,10 +88,10 @@
     language: punched card (illustrative)
     note: Each card is one pass of the shuttle. A hole lets a hooked needle through and lifts its warp thread; no hole leaves it down. The chain of laced cards is the program, read in order and looped for repeating patterns.
     code: |
-      card 001:  ● ○ ○ ● ● ○ ○ ● ● ○ ○ ●     ● hole → lift warp thread
-      card 002:  ○ ● ● ○ ○ ● ● ○ ○ ● ● ○     ○ blank → leave it down
-      card 003:  ● ○ ○ ● ● ○ ○ ● ● ○ ○ ●
-      …          (chain loops back to card 001)
+      card 001:  # . . # # . . # # . . #     # hole → lift warp thread
+      card 002:  . # # . . # # . . # # .     . blank → leave it down
+      card 003:  # . . # # . . # # . . #
+      ...        (chain loops back to card 001)
 
 - id: analytical-engine
   name: Analytical Engine
@@ -194,10 +194,15 @@
     language: punched card (illustrative)
     note: Each hole position means a fact about one person (sex, age group, birthplace). Electrical pins dropping through holes into mercury cups advanced counters. The 'program' was the wiring of which holes fed which counters, later done with plugboards.
     code: |
-      ┌──────────────────────────────────────┐
-      │ M ●  F ○ │ 20-29 ● │ native ○ foreign ● │ …
-      └──────────────────────────────────────┘
-      pin through hole ⇒ circuit closes ⇒ counter[male]++ , counter[20-29]++ …
+      +-----------------------------------------------+
+      | sex      [#] male     [ ] female              |
+      | age      [ ] 0-9      [ ] 10-19     [#] 20-29 |
+      | born     [ ] native   [#] foreign             |
+      +-----------------------------------------------+
+        [#] punched hole   [ ] intact
+
+      pin drops through a hole -> mercury cup -> circuit closes:
+        dial[male] += 1    dial[20-29] += 1    dial[foreign] += 1
 
 - id: combinatory-logic
   name: Combinatory logic
