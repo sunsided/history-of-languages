@@ -419,6 +419,7 @@
   person: Betty Holberton
   nodes:
   - eniac
+  - univac-i
   caption: Betty Holberton, circa 1955date QS:P571,+1955-00-00T00:00
   date: circa 1955date QS:P571,+1955-00-00T00:00
   credit: Unknown photographer
@@ -531,6 +532,7 @@
   nodes:
   - swift
   - mojo
+  - llvm-ir
   caption: Chris Lattner, 2021-03-30
   date: '2021-03-30'
   credit: Waldyrious
@@ -795,6 +797,7 @@
   - a-0
   - flow-matic
   - cobol
+  - univac-i
   caption: Grace Hopper, 1984-01-20
   date: '1984-01-20'
   credit: James S. Davis
@@ -919,6 +922,9 @@
   person: J. Presper Eckert
   nodes:
   - eniac
+  - edvac
+  - binac
+  - univac-i
   caption: J. Presper Eckert, 1949
   date: '1949'
   credit: Unknown, dedicated to Bettmann Archive
@@ -1019,6 +1025,9 @@
   nodes:
   - eniac
   - short-code
+  - edvac
+  - binac
+  - univac-i
   caption: John Mauchly, 1945
   date: '1945'
   credit: Unknown authorUnknown author
@@ -1480,6 +1489,7 @@
   person: Sophie Wilson
   nodes:
   - arm
+  - bbc-basic
   caption: Sophie Wilson, 2013-03-11 17:25:03
   date: '2013-03-11 17:25:03'
   credit: Chris Monk
@@ -2034,4 +2044,224 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.5
   source_url: https://commons.wikimedia.org/wiki/File:Philip_Woodward_and_his_W5_Clock.jpg
   commons_file: File:Philip_Woodward_and_his_W5_Clock.jpg
+  checked: '2026-11-01'
+- id: person-cleve-moler
+  file: assets/media/person-cleve-moler.png
+  kind: person
+  person: Cleve Moler
+  nodes:
+  - matlab
+  caption: Cleve Moler, 2022-09-13
+  date: '2022-09-13'
+  credit: MrAlanKoh
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Cleve_B_Moler_in_2017_Argonne_Seminars_GPU_Computing_(cropped).png
+  commons_file: File:Cleve_B_Moler_in_2017_Argonne_Seminars_GPU_Computing_(cropped).png
+  checked: '2026-11-01'
+- id: person-stephen-wolfram
+  file: assets/media/person-stephen-wolfram.jpg
+  kind: person
+  person: Stephen Wolfram
+  nodes:
+  - wolfram-language
+  caption: Stephen Wolfram, 2008-07-23
+  date: '2008-07-23'
+  credit: Stephen Wolfram's PR team/Stephen Faust
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Stephen_Wolfram_PR_(cropped).jpg
+  commons_file: File:Stephen_Wolfram_PR_(cropped).jpg
+  checked: '2026-11-01'
+- id: person-theodore-gray
+  file: assets/media/person-theodore-gray.jpg
+  kind: person
+  person: Theodore Gray
+  nodes:
+  - wolfram-language
+  caption: Theodore Gray, 20 December 2007 (original upload date)
+  date: 20 December 2007 (original upload date)
+  credit: Pleasantville at English Wikipedia
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Theodore_Gray.jpg
+  commons_file: File:Theodore_Gray.jpg
+  checked: '2026-11-01'
+- id: person-anthony-james-barr
+  file: assets/media/person-anthony-james-barr.jpg
+  kind: person
+  person: Anthony James Barr
+  nodes:
+  - sas
+  caption: Anthony James Barr, 2008-02-26
+  date: '2008-02-26'
+  credit: Anthony James Barr
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:TonyBarr.jpg
+  commons_file: File:TonyBarr.jpg
+  checked: '2026-11-01'
+- id: person-james-goodnight
+  file: assets/media/person-james-goodnight.jpg
+  kind: person
+  person: James Goodnight
+  nodes:
+  - sas
+  caption: James Goodnight, 2022-06-25
+  date: '2022-06-25'
+  credit: SAS Institute
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Dr._Jim_Goodnight.jpg
+  commons_file: File:Dr._Jim_Goodnight.jpg
+  checked: '2026-11-01'
+- id: person-john-sall
+  file: assets/media/person-john-sall.jpg
+  kind: person
+  person: John Sall
+  nodes:
+  - sas
+  caption: John Sall, 2022-06-25
+  date: '2022-06-25'
+  credit: SAS Institute
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:John_Sall,_SAS.jpg
+  commons_file: File:John_Sall,_SAS.jpg
+  checked: '2026-11-01'
+- id: person-michael-stonebraker
+  file: assets/media/person-michael-stonebraker.jpg
+  kind: person
+  person: Michael Stonebraker
+  nodes:
+  - quel
+  caption: Michael Stonebraker, 2015-06-14 18:33:21
+  date: '2015-06-14 18:33:21'
+  credit: David.Monniaux
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Michael_Stonebraker_P1120062.jpg
+  commons_file: File:Michael_Stonebraker_P1120062.jpg
+  checked: '2026-11-01'
+- id: person-eugene-wong
+  file: assets/media/person-eugene-wong.jpg
+  kind: person
+  person: Eugene Wong
+  nodes:
+  - quel
+  caption: Eugene Wong, 1990-07-26
+  date: '1990-07-26'
+  credit: David Valdez
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Eugene_Wong_with_President_George_H.W._Bush.jpg
+  commons_file: File:Eugene_Wong_with_President_George_H.W._Bush.jpg
+  checked: '2026-11-01'
+- id: person-jack-minker
+  file: assets/media/person-jack-minker.jpg
+  kind: person
+  person: Jack Minker
+  nodes:
+  - datalog
+  caption: Jack Minker, 2009-05-15
+  date: '2009-05-15'
+  credit: WolfgangFaber
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Jack_Minker_Giving_Invited_Talk_LPNMR_2007.JPG
+  commons_file: File:Jack_Minker_Giving_Invited_Talk_LPNMR_2007.JPG
+  checked: '2026-11-01'
+- id: person-michael-howard-kay
+  file: assets/media/person-michael-howard-kay.jpg
+  kind: person
+  person: Michael Howard Kay
+  nodes:
+  - xslt
+  caption: Michael Howard Kay, 2008-11-04
+  date: '2008-11-04'
+  credit: Mhkay (talk)
+  license: CC BY 3.0
+  license_url: https://creativecommons.org/licenses/by/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Michael_kay_nov_2008.jpg
+  commons_file: File:Michael_kay_nov_2008.jpg
+  checked: '2026-11-01'
+- id: person-li-chen-wang
+  file: assets/media/person-li-chen-wang.png
+  kind: person
+  person: Li-Chen Wang
+  nodes:
+  - tiny-basic
+  caption: Li-Chen Wang, 23 August 2007 (original upload date)
+  date: 23 August 2007 (original upload date)
+  credit: The original uploader was Swtpc6800 at English Wikipedia.
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Copyleft_All_Wrongs_Reserved.png
+  commons_file: File:Copyleft_All_Wrongs_Reserved.png
+  checked: '2026-11-01'
+- id: person-steve-vickers
+  file: assets/media/person-steve-vickers.jpg
+  kind: person
+  person: Steve Vickers
+  nodes:
+  - sinclair-basic
+  caption: Steve Vickers, 2007-12-24
+  date: '2007-12-24'
+  credit: Harriet Vickers
+  license: CC BY 3.0
+  license_url: https://creativecommons.org/licenses/by/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Steve_Vickers_2007_(cropped).JPG
+  commons_file: File:Steve_Vickers_2007_(cropped).JPG
+  checked: '2026-11-01'
+- id: person-john-von-neumann
+  file: assets/media/person-john-von-neumann.gif
+  kind: person
+  person: John von Neumann
+  nodes:
+  - edvac
+  caption: John von Neumann, 01/20/08
+  date: 01/20/08
+  credit: LANL
+  license: Attribution
+  source_url: https://commons.wikimedia.org/wiki/File:JohnvonNeumann-LosAlamos.gif
+  commons_file: File:JohnvonNeumann-LosAlamos.gif
+  checked: '2026-11-01'
+- id: person-dai-edwards
+  file: assets/media/person-dai-edwards.jpg
+  kind: person
+  person: Dai Edwards
+  nodes:
+  - manchester-mark-1
+  caption: Dai Edwards, 1999-01-01
+  date: '1999-01-01'
+  credit: The Department of Computer Science, the University of Manchester, UK
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Dai-Edwards-Engineer.jpg
+  commons_file: File:Dai-Edwards-Engineer.jpg
+  checked: '2026-11-01'
+- id: person-valentin-turchin
+  file: assets/media/person-valentin-turchin.jpg
+  kind: person
+  person: Valentin Turchin
+  nodes:
+  - refal
+  caption: Valentin Turchin, 1977-10-31
+  date: '1977-10-31'
+  credit: Bert Verhoeff for Anefo
+  license: CC BY-SA 3.0 nl
+  license_url: https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en
+  source_url: https://commons.wikimedia.org/wiki/File:Valentin_Toertsjin_(1977).jpg
+  commons_file: File:Valentin_Toertsjin_(1977).jpg
+  checked: '2026-11-01'
+- id: person-john-horton-conway
+  file: assets/media/person-john-horton-conway.jpg
+  kind: person
+  person: John Horton Conway
+  nodes:
+  - fractran
+  caption: John Horton Conway, "June 19, 2005"
+  date: '"June 19, 2005"'
+  credit: '"Thane Plambeck"'
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:John_H_Conway_2005_(cropped).jpg
+  commons_file: File:John_H_Conway_2005_(cropped).jpg
   checked: '2026-11-01'
