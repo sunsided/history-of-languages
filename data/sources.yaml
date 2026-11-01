@@ -3066,3 +3066,15 @@
   title: "TIC-80 wiki: Hello World"
   url: https://github.com/nesbox/TIC-80/wiki/hello-world
   checked: '2026-11-01'
+- id: wiki-pico-8
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PICO-8"
+  url: https://en.wikipedia.org/wiki/Pico-8
+  checked: '2026-11-01'
+- id: pico-8-manual
+  type: manual
+  primary: true
+  title: "Joseph White: PICO-8 User Manual (v0.2.7, Lexaloffle Games)"
+  url: https://www.lexaloffle.com/dl/docs/pico-8_manual.html
+  checked: '2026-11-01'

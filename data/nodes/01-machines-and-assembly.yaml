@@ -1558,6 +1558,48 @@
       :crash        SET PC, crash            ; 7dc1 001a [*]
     sources: [dcpu-16-spec-1-1, sunsided-dcpu-16]
 
+- id: pico-8
+  name: PICO-8
+  kind: machine
+  category: domain-specific
+  cluster: machines/fantasy
+  origin:
+    began: { year: 2014, date: "2014-05-09", precision: exact, note: "Shown as PICO-BASIC v0.0 at Pico Pico Cafe on 9 May 2014; Joseph White then switched from BASIC to Lua syntax and renamed it." }
+    first_appeared: { year: 2015, precision: year, note: "\"PICO-8 was released in 2015\"; the copyright line reads 2014-15. Exact release day not found." }
+    places: [{ institution: Lexaloffle Games }]
+  creators: [{ name: Joseph White, role: designer (\"zep\") }]
+  status: active
+  tags:
+    paradigm: [imperative]
+    domain: [game-scripting]
+  summary: >
+    The first "fantasy console" (Joseph White coined the term): a commercial virtual machine with deliberately
+    tight limits, a 128x128 16-colour display, 4-channel sound, 32k cartridges saved as PNG images and at most 8192
+    tokens of code, written in its own Lua dialect. Its release spurred TIC-80 and other fantasy consoles; its
+    successor is the less constrained Picotron.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pico-8", homepage: "https://www.lexaloffle.com/pico-8.php" }
+  sources: [wiki-pico-8, pico-8-manual]
+  example:
+    title: Move a circle with the cursor keys
+    language: PICO-8 Lua
+    note: "From the PICO-8 manual's Hello World section: _UPDATE runs at 30 frames per second and _DRAW once per visible frame. PICO-8 shows only upper-case letters. Line breaks reconstructed; the fetched manual text joined the lines."
+    code: |
+      X = 64  Y = 64
+      FUNCTION _UPDATE()
+        IF (BTN(0)) THEN X=X-1 END
+        IF (BTN(1)) THEN X=X+1 END
+        IF (BTN(2)) THEN Y=Y-1 END
+        IF (BTN(3)) THEN Y=Y+1 END
+      END
+
+      FUNCTION _DRAW()
+        CLS(5)
+        CIRCFILL(X,Y,7,14)
+      END
+    sources: [pico-8-manual]
+
 - id: tic-80
   name: TIC-80
   kind: machine
@@ -1578,6 +1620,8 @@
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/TIC-80", homepage: "https://tic80.com" }
+  relations:
+    - { type: influenced_by, to: pico-8, weight: moderate, confidence: medium, sources: [wiki-pico-8], note: "PICO-8's release \"spurred the development of similar game engines with intentionally similar limitations ... Among these are the TIC-80, which styles itself as a 'fantasy computer'\"." }
   sources: [wiki-tic-80, tic-80-github]
   example:
     title: The default Hello World cart

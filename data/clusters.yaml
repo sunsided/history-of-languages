@@ -107,7 +107,9 @@
   research_status: draft
   key_sources: [wiki-0x10c, wiki-tic-80]
   backlog:
-    - { name: "PICO-8", year: 2015, hint: "Lexaloffle's closed-source fantasy console, scripted in a Lua dialect; Wikipedia's TIC-80 article compares the two. A Lua dialect, so likely a node." }
+    - { name: "CHIP-8", year: 1977, hint: "Joseph Weisbecker's interpreted virtual machine for the COSMAC VIP; Wikipedia's PICO-8 navbox calls it \"a predecessor to PICO-8 and other fantasy consoles\"." }
+    - { name: "Picotron", hint: "Lexaloffle's \"fantasy workstation\" successor to PICO-8 with fewer constraints (Wikipedia: PICO-8). Year not yet read." }
+    - { name: "Pixel Vision 8", hint: "Named by Wikipedia's PICO-8 article among the fantasy consoles PICO-8 spurred." }
     - { name: "DCPU-16 spec 1.7", year: 2012, hint: "Later revision of the 0x10c CPU (dcpu.com); add as a milestone once a copy can be read (Wayback is blocked from the sandbox)." }
 - id: machines/eastern-bloc
   name: Eastern Bloc computers
