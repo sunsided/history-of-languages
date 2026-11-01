@@ -3191,3 +3191,81 @@
   title: "Wikipedia: Multiuser DOS (Concurrent DOS)"
   url: https://en.wikipedia.org/wiki/Multiuser_DOS
   checked: '2026-11-01'
+- id: wiki-automath
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Automath"
+  url: https://en.wikipedia.org/wiki/Automath
+  checked: '2026-11-01'
+- id: aut-4-1-manual
+  type: manual
+  primary: true
+  title: "Freek Wiedijk: aut 4.1 manual (Automath checker)"
+  url: https://www.cs.ru.nl/~freek/aut/aut-4.1-manual.pdf
+  checked: '2026-11-01'
+- id: wiki-lcf
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Logic for Computable Functions"
+  url: https://en.wikipedia.org/wiki/Logic_for_Computable_Functions
+  checked: '2026-11-01'
+- id: wiki-hol
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: HOL (proof assistant)"
+  url: https://en.wikipedia.org/wiki/HOL_(proof_assistant)
+  checked: '2026-11-01'
+- id: hol-light-tutorial
+  type: manual
+  primary: true
+  title: "HOL Light Tutorial"
+  url: https://hol-light.github.io/tutorial/HTML/tutorial.html
+  checked: '2026-11-01'
+- id: wiki-isabelle
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Isabelle (proof assistant)"
+  url: https://en.wikipedia.org/wiki/Isabelle_(proof_assistant)
+  checked: '2026-11-01'
+- id: isabelle-prog-prove
+  type: manual
+  primary: true
+  title: "Tobias Nipkow: Programming and Proving in Isabelle/HOL"
+  url: https://isabelle.in.tum.de/doc/prog-prove.pdf
+  checked: '2026-11-01'
+- id: wiki-nqthm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Nqthm"
+  url: https://en.wikipedia.org/wiki/Nqthm
+  checked: '2026-11-01'
+- id: wiki-twelf
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Twelf"
+  url: https://en.wikipedia.org/wiki/Twelf
+  checked: '2026-11-01'
+- id: wiki-metamath
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Metamath"
+  url: https://en.wikipedia.org/wiki/Metamath
+  checked: '2026-11-01'
+- id: wiki-dafny
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Dafny"
+  url: https://en.wikipedia.org/wiki/Dafny
+  checked: '2026-11-01'
+- id: dafny-guide
+  type: manual
+  primary: true
+  title: "Dafny Documentation: Getting Started with Dafny (guide)"
+  url: https://dafny.org/latest/OnlineTutorial/guide
+  checked: '2026-11-01'
+- id: wiki-tla-plus
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TLA+"
+  url: https://en.wikipedia.org/wiki/TLA%2B
+  checked: '2026-11-01'

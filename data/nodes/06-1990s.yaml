@@ -1420,3 +1420,102 @@
         S.Free;
       end.
     sources: [wiki-free-pascal]
+
+- id: metamath
+  name: Metamath
+  kind: language
+  category: research
+  cluster: verification
+  origin:
+    first_appeared: { year: 1992, precision: year, note: "\"the first proofs in set.mm are dated September 1992\"; program release 0.07 in June 2005." }
+  creators:
+    - { name: Norman Megill, role: designer }
+  status: active
+  tags:
+    paradigm: [declarative]
+    domain: [theorem-proving]
+  summary: >
+    \"A formal language and an associated computer program (a proof assistant) for archiving and verifying
+    mathematical proofs\", with almost no built-in logic: axioms and inference rules are declared in the
+    database (set.mm builds set theory this way) and the checker only substitutes symbols, so independent
+    verifiers can be very small.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Metamath" }
+  sources: [wiki-metamath]
+  example:
+    title: An axiom about equality
+    language: Metamath
+    note: "From Wikipedia's Metamath article: $( ... $) is a comment and $a declares the axiom a1, written as a string of symbols; |- marks it as provable."
+    code: |
+      $( Axiom a1: substituting in equations $)
+      a1 $a |- ( t = r -> ( t = s -> r = s ) ) $.
+    sources: [wiki-metamath]
+
+- id: twelf
+  name: Twelf
+  kind: language
+  category: research
+  cluster: ml-family/proof
+  origin:
+    first_appeared: { year: 1999, date: "1999-07", precision: year, note: "System description at CADE-16, July 1999; an earlier release date was not found." }
+    places: [{ institution: Carnegie Mellon University, city: Pittsburgh, country: US }]
+  creators:
+    - { name: Frank Pfenning, role: designer }
+    - { name: Carsten Schürmann, role: designer }
+  status: active
+  tags:
+    paradigm: [logic, declarative]
+    typing: [dependent-types]
+    domain: [theorem-proving]
+  summary: >
+    An implementation of the logical framework LF, developed at Carnegie Mellon and written in Standard ML:
+    the syntax and rules of a logic are declared as constants with dependent types. Wikipedia calls it
+    closely related to Rocq and Isabelle/HOL.
+  relations:
+    - { type: implemented_in, to: standard-ml, weight: moderate, confidence: high, sources: [wiki-twelf] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Twelf" }
+  sources: [wiki-twelf]
+  example:
+    title: Natural numbers in LF
+    language: Twelf
+    note: "The opening of the example in Wikipedia's Twelf article: a type nat with constructors z and s, each declared as a constant of an LF type."
+    code: |
+      nat : type.
+      z : nat.
+      s : nat -> nat.
+    sources: [wiki-twelf]
+
+- id: tla-plus
+  name: TLA+
+  kind: language
+  category: domain-specific
+  cluster: verification
+  origin:
+    first_appeared: { year: 1999, date: "1999-04-23", precision: exact }
+  creators:
+    - { name: Leslie Lamport, role: designer }
+  status: active
+  tags:
+    paradigm: [declarative]
+    domain: [theorem-proving]
+  summary: >
+    Leslie Lamport's \"formal specification language ... used for designing, modelling, documentation, and
+    verification of programs\", especially concurrent and distributed systems. Built on TLA, the Temporal Logic
+    of Actions: a system is an initial-state predicate plus a next-state relation.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TLA%2B", homepage: "https://lamport.azurewebsites.net/tla/tla.html" }
+  sources: [wiki-tla-plus]
+  example:
+    title: A one-bit clock
+    language: TLA+
+    note: "From Wikipedia's TLA+ article. Init allows either start value, Tick relates each state to the next (clock' is the next value), and Spec says Init holds and every step is a Tick or leaves clock unchanged."
+    code: |
+      VARIABLE clock
+      Init == clock \in {0, 1}
+      Tick == IF clock = 0 THEN clock' = 1 ELSE clock' = 0
+      Spec == Init /\ [][Tick]_<<clock>>
+    sources: [wiki-tla-plus]

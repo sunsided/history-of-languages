@@ -2934,3 +2934,42 @@
       ?0x11      -- 17
       ?0x11.4000 -- 17.25
     sources: [pico-8-manual]
+
+- id: dafny
+  name: Dafny
+  kind: language
+  category: research
+  cluster: verification
+  origin:
+    first_appeared: { year: 2009, precision: year }
+    places: [{ institution: Microsoft Research, country: US }]
+  creators:
+    - { name: K. Rustan M. Leino, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, functional, object-oriented]
+    typing: [static-typing]
+    domain: [theorem-proving]
+  summary: >
+    A verification-aware programming language: methods carry requires/ensures contracts, loops carry
+    invariants, and the verifier proves them before Dafny compiles the program to other languages. Rustan Leino created it at Microsoft Research after ESC/Modula-3,
+    ESC/Java and Spec#.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Dafny", homepage: "https://dafny.org" }
+  sources: [wiki-dafny, dafny-guide]
+  example:
+    title: A verified absolute value
+    language: Dafny
+    note: "From the Dafny guide. The ensures clause is a postcondition the verifier proves for every path through the body; no test is run."
+    code: |
+      method Abs(x: int) returns (y: int)
+        ensures 0 <= y
+      {
+        if x < 0 {
+          return -x;
+        } else {
+          return x;
+        }
+      }
+    sources: [dafny-guide]

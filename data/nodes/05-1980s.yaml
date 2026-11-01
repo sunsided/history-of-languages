@@ -1781,8 +1781,8 @@
     sources: [wiki-clean]
 
 - id: rocq
-  name: Rocq
-  aliases: [Coq, The Rocq Prover, Gallina, CoC]
+  name: Coq / Rocq
+  aliases: [Coq, Rocq, The Rocq Prover, Gallina, CoC]
   kind: language
   category: research
   cluster: ml-family/proof
@@ -1803,7 +1803,7 @@
   milestones:
     - { version: "4.10", year: 1989, introduces: [dependent-types], summary: "First release, of the Calculus of Constructions (CoC)." }
     - { version: Coq, year: 1991, summary: "Christine Paulin extends it to the Calculus of Inductive Constructions; the name changes from CoC to Coq." }
-    - { version: "Rocq 9.0", year: 2025, summary: "Official renaming to The Rocq Prover (announced 11 October 2023)." }
+    - { version: "Rocq 9.0", year: 2025, summary: "Rebranded: Coq becomes The Rocq Prover (renaming announced 11 October 2023)." }
   summary: >
     The interactive theorem prover of the Calculus of (Inductive) Constructions, whose specification
     language Gallina is a dependently typed functional language: programs and proofs share one syntax, and
@@ -2078,3 +2078,73 @@
         output: 'Hello, world!!!';
       end proc
     sources: [wiki-rapira]
+
+- id: isabelle
+  name: Isabelle
+  kind: language
+  category: research
+  cluster: ml-family/proof
+  origin:
+    first_appeared: { year: 1986, precision: year, note: "Infobox release 1986; Paulson, \"Natural deduction as higher-order resolution\" (1986)." }
+    places: [{ institution: University of Cambridge, country: GB }]
+  creators:
+    - { name: Lawrence Paulson, role: original author }
+    - { name: Tobias Nipkow, role: developer }
+  status: active
+  tags:
+    paradigm: [functional, declarative]
+    domain: [theorem-proving]
+  summary: >
+    A generic LCF-style theorem prover from Cambridge and TU Munich, best known as Isabelle/HOL. Proofs are
+    written in Isar (\"intelligible semi-automated reasoning\"), a structured proof language \"inspired by the
+    Mizar system\", or as apply-scripts of tactics.
+  relations:
+    - { type: influenced_by, to: ml, weight: moderate, confidence: medium, sources: [wiki-isabelle, wiki-lcf], note: "Isabelle is an LCF-style prover; LCF \"introduced the general-purpose programming language ML to allow users to write theorem-proving tactics\". Implementation language not checked here." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Isabelle_(proof_assistant)", homepage: "https://isabelle.in.tum.de" }
+  sources: [wiki-isabelle, isabelle-prog-prove]
+  example:
+    title: A lemma proved by induction
+    language: Isabelle/HOL
+    note: "From Programming and Proving in Isabelle/HOL, where add is defined on natural numbers just before. induction splits the goal into base and step cases and auto discharges both."
+    code: |
+      lemma add_02: "add m 0 = m"
+      apply(induction m)
+      apply(auto)
+      done
+    sources: [isabelle-prog-prove]
+
+- id: hol
+  name: HOL
+  aliases: [HOL88, HOL4, HOL Light]
+  kind: language
+  category: research
+  cluster: ml-family/proof
+  origin:
+    first_appeared: { year: 1988, precision: year, note: "Gordon, \"HOL: A Proof Generating System for Higher-Order Logic\" (1988), the HOL88 system; an exact first release was not found." }
+    places: [{ institution: University of Cambridge, country: GB }]
+  creators:
+    - { name: Michael J. C. Gordon, role: designer }
+  status: active
+  tags:
+    paradigm: [functional]
+    domain: [theorem-proving]
+  summary: >
+    A family of interactive provers for higher-order logic that \"follow the LCF approach as they are
+    implemented as a library\" in ML: theorems are an abstract type that only the logic's inference rules can
+    build. HOL4 continues HOL88; HOL Light is a minimalist variant, first in Caml Light and now in OCaml.
+  relations:
+    - { type: influenced_by, to: ml, weight: strong, confidence: high, sources: [wiki-hol], note: "\"ML was originally developed along with LCF as a meta-language for theorem proving systems\"; HOL systems are libraries in ML." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/HOL_(proof_assistant)" }
+  sources: [wiki-hol, hol-light-tutorial]
+  example:
+    title: A theorem from an inference rule
+    language: HOL Light (OCaml toplevel)
+    note: "From the HOL Light tutorial. REFL is the primitive rule t = t; the answer is a value of the abstract type thm, which can only be produced by the logic's rules. Backquotes enclose HOL terms."
+    code: |
+      # let th1 = REFL `x + 1`;;
+      val th1 : thm = |- x + 1 = x + 1
+    sources: [hol-light-tutorial]

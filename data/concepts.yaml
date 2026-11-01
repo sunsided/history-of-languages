@@ -215,6 +215,10 @@
   name: Theorem proving
   facet: domain
   summary: Interactive proof assistants and languages for machine-checked mathematics and program verification.
+  first_seen:
+    node: automath
+    year: 1967
+    note: "\"the first practical system that exploited the Curry-Howard correspondence\" (Wikipedia: Automath)."
 - id: education
   name: Education
   facet: domain

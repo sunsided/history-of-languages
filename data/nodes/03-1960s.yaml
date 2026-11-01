@@ -839,3 +839,40 @@
          = <Prout 'Hello world'>;
       }
     sources: [wiki-refal]
+
+- id: automath
+  name: Automath
+  kind: language
+  category: research
+  cluster: verification
+  origin:
+    first_appeared: { year: 1967, precision: year, note: "\"devised by Nicolaas Govert de Bruijn starting in 1967\"." }
+  creators:
+    - { name: Nicolaas Govert de Bruijn, role: designer }
+  status: historical
+  tags:
+    paradigm: [declarative]
+    typing: [dependent-types]
+    domain: [theorem-proving]
+  summary: >
+    "A formal language ... for expressing complete mathematical theories in such a way that an included
+    automated proof checker can verify their correctness", and \"the first practical system that exploited the
+    Curry-Howard correspondence\": propositions are types and proofs are terms. It shaped later logical frameworks
+    and proof assistants; Mizar was influenced by it.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Automath" }
+  sources: [wiki-automath, aut-4-1-manual]
+  example:
+    title: Propositions, proofs and negation in AUT-68
+    language: Automath (AUT-68)
+    note: "From the aut 4.1 manual's section on formats, labelled \"old-fashioned AUT-68\". Each line is context * name := definition ; type. PN marks a primitive notion and --- a variable; Prop is a type, Proof(p) the type of proofs of p, con is falsity, and not(p) is defined as imp(p,con)."
+    code: |
+      * Prop := PN ; TYPE
+      * p := --- ; Prop
+      p * Proof := PN ; TYPE
+      * con := PN ; Prop
+      p * q := --- ; Prop
+      q * imp := PN ; Prop
+      p * not := imp(p,con) ; Prop
+    sources: [aut-4-1-manual]

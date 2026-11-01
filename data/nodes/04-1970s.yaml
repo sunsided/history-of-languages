@@ -1723,3 +1723,38 @@
         END;
       END.
     sources: [wiki-ucsd-pascal]
+
+- id: nqthm
+  name: Nqthm
+  aliases: [Boyer-Moore theorem prover]
+  kind: language
+  category: research
+  cluster: verification
+  origin:
+    began: { year: 1971, precision: year, note: "\"They began work on the system in 1971 in Edinburgh, Scotland.\"" }
+    first_appeared: { year: 1971, precision: circa, note: "Release year not found; dated by the start of work." }
+  creators:
+    - { name: Robert S. Boyer, role: designer }
+    - { name: J Strother Moore, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional]
+    domain: [theorem-proving]
+  summary: >
+    The Boyer-Moore theorem prover: an automatic prover whose logic is \"a variant of Pure LISP\", built on
+    top of Lisp, proving theorems about recursive functions largely by induction and rewriting. Started in
+    Edinburgh in 1971 and continued at the University of Texas at Austin; the precursor of ACL2.
+  relations:
+    - { type: influenced_by, to: lisp, weight: strong, confidence: high, sources: [wiki-nqthm], note: "\"They used a variant of Pure LISP as the working logic.\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Nqthm" }
+  sources: [wiki-nqthm]
+  example:
+    title: Commutativity of multiplication
+    language: Nqthm
+    note: "From Wikipedia's Nqthm article: a lemma stated in Lisp syntax and handed to the prover, which finds the proof itself; (rewrite) tells it to use the proved lemma as a rewrite rule afterwards."
+    code: |
+      (prove-lemma commutativity-of-times (rewrite)
+        (equal (times x z) (times z x)))
+    sources: [wiki-nqthm]
