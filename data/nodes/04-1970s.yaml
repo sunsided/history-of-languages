@@ -31,6 +31,29 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Pascal_(programming_language)" }
   sources: [wirth-1993-recollections-pascal]
+  example:
+    title: Records, procedures, structured control
+    language: Pascal
+    note: Strong typing, records and nested procedures with no gotos needed, which is why it was the teaching language of choice for 20 years. var marks a by-reference parameter.
+    code: |
+      program Shapes;
+      type
+        Point = record x, y: real end;
+      var
+        p: Point;
+
+      procedure Move(var q: Point; dx, dy: real);
+      begin
+        q.x := q.x + dx;
+        q.y := q.y + dy
+      end;
+
+      begin
+        p.x := 0; p.y := 0;
+        Move(p, 3, 4);
+        writeln('(', p.x:0:1, ', ', p.y:0:1, ')')
+      end.
+    sources: [wirth-1993-recollections-pascal]
 
 - id: c
   name: C
@@ -151,6 +174,17 @@
   research_status: draft
   confidence: high
   sources: [kay-1993-early-history-smalltalk]
+  example:
+    title: Masters and instances
+    language: pseudocode (illustrative)
+    note: 'Sketchpad was operated with a light pen, not programmed in text. The pseudocode describes its idea: instances are linked to a master drawing, so changing the master changes every instance, and constraints keep relationships true while you edit.'
+    code: |
+      master Hexagon = { 6 lines, constraint: all sides equal }
+      a = instance of Hexagon at (10, 10), scale 1
+      b = instance of Hexagon at (40, 10), scale 2
+      edit Hexagon: make one corner rounded
+      → a and b redraw with the change
+    sources: [kay-1993-early-history-smalltalk]
 
 - id: prolog
   name: Prolog
@@ -217,6 +251,14 @@
   research_status: draft
   confidence: high
   sources: [macqueen-harper-reppy-2020-history-sml, milner-1978-type-polymorphism]
+  example:
+    title: Inferred polymorphic types
+    language: Edinburgh LCF ML
+    note: 'Approximate LCF ML syntax. No type is written, yet the system infers the most general one: map works for functions from any type * to any type **. Hindley-Milner inference is ML''s lasting gift.'
+    code: |
+      letrec map f l = if null l then [] else f (hd l) . map f (tl l);;
+      map = - : ((* -> **) -> (* list -> ** list))
+    sources: [milner-1978-type-polymorphism, macqueen-harper-reppy-2020-history-sml]
 
 - id: iswim
   name: ISWIM
@@ -239,6 +281,15 @@
   research_status: draft
   confidence: high
   sources: [landin-1966-next-700]
+  example:
+    title: where-clauses
+    language: ISWIM
+    year: 1966
+    note: From Landin's 'The Next 700 Programming Languages'. The where clause and the use of indentation (the 'offside rule') to delimit it reappear in Miranda, Haskell and, in spirit, Python.
+    code: |
+      f(b + 2c) + f(2b − c)
+        where f(x) = x(x + a)
+    sources: [landin-1966-next-700]
 
 - id: sql
   name: SQL
@@ -271,6 +322,19 @@
   research_status: draft
   confidence: high
   sources: [chamberlin-boyce-1974-sequel, codd-1970-relational]
+  example:
+    title: Declarative aggregation
+    language: SQL
+    note: 'Says what the result is, not how to get it: the database chooses join order and indexes. GROUP BY and HAVING arrived early; window functions came in SQL:2003.'
+    code: |
+      SELECT   d.name, COUNT(*) AS staff, AVG(e.salary) AS avg_salary
+      FROM     employee e
+      JOIN     department d ON d.id = e.dept_id
+      WHERE    e.active
+      GROUP BY d.name
+      HAVING   COUNT(*) > 5
+      ORDER BY avg_salary DESC;
+    sources: [chamberlin-boyce-1974-sequel]
 
 - id: codd-relational-model
   name: Relational model (Codd)
@@ -286,6 +350,14 @@
   research_status: draft
   confidence: high
   sources: [codd-1970-relational]
+  example:
+    title: Relational algebra
+    language: relational algebra
+    year: 1970
+    note: Selection (σ), projection (π) and join (⋈) over relations. SQL is a more English-like surface over these operations.
+    code: |
+      π name, salary ( σ salary > 50000 ( Employee ⋈ Department ) )
+    sources: [codd-1970-relational]
 
 - id: scheme
   name: Scheme
@@ -324,6 +396,22 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Scheme_(programming_language)" }
   sources: [sussman-steele-1975-scheme, steele-gabriel-1993-evolution-lisp]
+  example:
+    title: Closures and tail calls
+    language: Scheme (R7RS)
+    note: 'make-counter returns a closure that keeps its own count: state without objects. The named let loop is a tail call, which Scheme guarantees runs in constant space, so loops are just recursion.'
+    code: |
+      (define (make-counter)
+        (let ((n 0))
+          (lambda () (set! n (+ n 1)) n)))
+
+      (define c (make-counter))
+      (c) (c)                ; => 1, 2
+
+      (let loop ((i 0) (acc 1))
+        (if (= i 10) acc
+            (loop (+ i 1) (* acc 2))))   ; => 1024
+    sources: [sussman-steele-1975-scheme]
 
 - id: actor-model
   name: Actor model
@@ -347,6 +435,17 @@
   research_status: draft
   confidence: medium
   sources: [hewitt-1973-actor, armstrong-2007-history-erlang]
+  example:
+    title: An actor
+    language: pseudocode (illustrative)
+    note: An actor has private state and a mailbox. On each message it may send messages, create actors, and decide how to handle the next message. There is no shared memory and no reply unless one is sent.
+    code: |
+      actor Counter(count):
+        on Increment:
+          become Counter(count + 1)
+        on Get(replyTo):
+          send replyTo ! Value(count)
+    sources: [hewitt-1973-actor]
 
 - id: clu
   name: CLU
@@ -371,6 +470,22 @@
   research_status: draft
   confidence: high
   sources: [liskov-1993-history-clu]
+  example:
+    title: An iterator
+    language: CLU
+    note: 'iter ... yields defines a generator that suspends at each yield and resumes on the next loop pass: the ancestor of iterators in Python, C# and Ruby. Note also multiple assignment, a, b := b, a + b.'
+    code: |
+      fib = iter () yields (int)
+          a: int := 0
+          b: int := 1
+          while true do
+              yield(a)
+              a, b := b, a + b
+              end
+          end fib
+
+      % for x: int in fib() do ... end
+    sources: [liskov-1993-history-clu]
 
 - id: concurrent-pascal
   name: Concurrent Pascal
@@ -393,6 +508,31 @@
   research_status: draft
   confidence: high
   sources: [brinch-hansen-1993-monitors]
+  example:
+    title: A one-slot buffer monitor
+    language: Concurrent Pascal
+    note: Only one process at a time can be inside a monitor's entry procedures. delay suspends the caller on a queue and releases the monitor; continue wakes the waiting process. Java's synchronized/wait/notify is the same idea.
+    code: |
+      type buffer = monitor
+        var contents: char; full: boolean;
+            sender, receiver: queue;
+
+        procedure entry send(c: char);
+        begin
+          if full then delay(sender);
+          contents := c; full := true;
+          continue(receiver)
+        end;
+
+        procedure entry receive(var c: char);
+        begin
+          if not full then delay(receiver);
+          c := contents; full := false;
+          continue(sender)
+        end;
+
+      begin full := false end
+    sources: [brinch-hansen-1993-monitors]
 
 - id: mesa
   name: Mesa
@@ -416,6 +556,26 @@
   research_status: draft
   confidence: medium
   sources: [lampson-redell-1980-mesa, wirth-2007-modula2-oberon]
+  example:
+    title: Monitor with a condition variable
+    language: Mesa
+    note: 'Approximate. ENTRY procedures hold the monitor lock. WAIT re-checks its condition in a loop because NOTIFY is only a hint: these ''Mesa semantics'' are what Java and POSIX condition variables use today.'
+    code: |
+      Buffer: MONITOR =
+      BEGIN
+        nonEmpty: CONDITION;
+        count: CARDINAL ← 0;
+
+        Put: PUBLIC ENTRY PROC [c: CHARACTER] =
+          BEGIN store[c]; count ← count + 1; NOTIFY nonEmpty END;
+
+        Get: PUBLIC ENTRY PROC RETURNS [c: CHARACTER] =
+          BEGIN
+            WHILE count = 0 DO WAIT nonEmpty ENDLOOP;
+            count ← count - 1; RETURN[fetch[]]
+          END;
+      END.
+    sources: [lampson-redell-1980-mesa]
 
 - id: icon
   name: Icon
@@ -437,6 +597,16 @@
   research_status: draft
   confidence: high
   sources: [griswold-1993-history-icon, pep-255]
+  example:
+    title: Generators and goal-directed evaluation
+    language: Icon
+    note: 'find generates every position where "o" occurs; every drives a generator to exhaustion. In the second line, the comparison simply fails for odd numbers, and failure skips the write: no booleans needed.'
+    code: |
+      procedure main()
+        every write(find("o", "hello world"))      # 5, 8
+        every write((i := 1 to 10) % 2 = 0 & i)    # 2, 4, 6, 8, 10
+      end
+    sources: [griswold-1993-history-icon]
 
 - id: awk
   name: AWK
@@ -462,6 +632,14 @@
   research_status: draft
   confidence: high
   sources: [aho-kernighan-weinberger-1988]
+  example:
+    title: Word frequencies
+    language: AWK
+    note: The main block runs for every input line, with fields in $1..$NF. Associative arrays (count[word]) are built in. Tested with POSIX awk.
+    code: |
+      { for (i = 1; i <= NF; i++) count[tolower($i)]++ }
+      END { for (w in count) print count[w], w }
+    sources: [aho-kernighan-weinberger-1988]
 
 - id: csp
   name: CSP (Communicating Sequential Processes)
@@ -481,6 +659,16 @@
   research_status: draft
   confidence: high
   sources: [hoare-1978-csp]
+  example:
+    title: Processes and channels
+    language: CSP (Hoare, 1978)
+    year: 1978
+    note: 'From Hoare''s paper: COPY repeatedly (*) inputs a character from process west (west?c) and outputs it to east (east!c). Both sides must be ready for the communication to happen. The parallel command || runs processes side by side.'
+    code: |
+      COPY :: *[c: character; west?c → east!c]
+
+      [ west :: DISASSEMBLE || X :: COPY || east :: ASSEMBLE ]
+    sources: [hoare-1978-csp]
 
 - id: dijkstra-guarded-commands
   name: Guarded Command Language
@@ -498,6 +686,16 @@
   research_status: draft
   confidence: high
   sources: [dijkstra-1975-guarded]
+  example:
+    title: Euclid's algorithm with guards
+    language: Guarded Command Language
+    note: do ... od repeats while any guard is true; if several are true, any of them may be chosen. Go's select statement descends from this nondeterministic choice via CSP.
+    code: |
+      do x > y → x := x − y
+       ▯ y > x → y := y − x
+      od
+      { x = y = gcd(X, Y) }
+    sources: [dijkstra-1975-guarded]
 
 - id: modula-2
   name: Modula-2
@@ -521,6 +719,23 @@
   research_status: draft
   confidence: high
   sources: [wirth-2007-modula2-oberon]
+  example:
+    title: Modules with explicit imports
+    language: Modula-2
+    note: A definition module declares the interface; the implementation module and its clients import exactly what they use. Separate compilation is type-checked across modules.
+    code: |
+      DEFINITION MODULE Stack;
+        PROCEDURE Push(x: INTEGER);
+        PROCEDURE Pop(): INTEGER;
+      END Stack.
+
+      MODULE Main;
+        FROM Stack IMPORT Push, Pop;
+        FROM InOut IMPORT WriteInt, WriteLn;
+      BEGIN
+        Push(42); WriteInt(Pop(), 0); WriteLn
+      END Main.
+    sources: [wirth-2007-modula2-oberon]
 
 - id: bourne-shell
   name: Bourne shell
@@ -543,6 +758,21 @@
   research_status: draft
   confidence: high
   sources: [wiki-bourne-shell]
+  example:
+    title: Loops, tests and case/esac
+    language: Bourne shell (POSIX sh)
+    note: Keywords closed by their reversal (case/esac, if/fi) come from ALGOL 68. Pipes and command substitution make other programs the shell's functions. Tested with POSIX sh.
+    code: |
+      for f in *.c; do
+        case "$f" in
+          test_*) kind=test ;;
+          *)      kind=source ;;
+        esac
+        if [ -s "$f" ]; then
+          echo "$kind: $f ($(wc -l < "$f") lines)"
+        fi
+      done
+    sources: [wiki-bourne-shell]
 
 - id: ada
   name: Ada
@@ -582,3 +812,25 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Ada_(programming_language)" }
   sources: [whitaker-1993-ada]
+  example:
+    title: Tasks and rendezvous
+    language: Ada
+    note: 'A task is a thread declared in the language. Greet is an entry: the caller blocks until the task reaches its accept statement, and both proceed after the rendezvous, as in CSP.'
+    code: |
+      with Ada.Text_IO; use Ada.Text_IO;
+
+      procedure Main is
+         task Greeter is
+            entry Greet (Name : String);
+         end Greeter;
+
+         task body Greeter is
+         begin
+            accept Greet (Name : String) do
+               Put_Line ("Hello, " & Name);
+            end Greet;
+         end Greeter;
+      begin
+         Greeter.Greet ("world");
+      end Main;
+    sources: [whitaker-1993-ada]

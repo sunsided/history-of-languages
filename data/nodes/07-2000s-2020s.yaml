@@ -40,6 +40,29 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)" }
   sources: [wiki-csharp, syme-2020-early-history-fsharp]
+  example:
+    title: async/await and LINQ
+    language: C# 12
+    note: await suspends the method and returns a Task to the caller; the compiler turns the method into a state machine (C# 5, 2012). The LINQ query is a monad comprehension in SQL-like clothes (C# 3, 2007).
+    code: |
+      using System;
+      using System.Linq;
+      using System.Net.Http;
+      using System.Threading.Tasks;
+
+      var http = new HttpClient();
+      string[] urls = ["https://example.com", "https://example.org"];
+
+      var lengths = await Task.WhenAll(urls.Select(async url =>
+          (url, length: (await http.GetStringAsync(url)).Length)));
+
+      var big = from r in lengths
+                where r.length > 1000
+                orderby r.length descending
+                select r.url;
+
+      Console.WriteLine(string.Join(", ", big));
+    sources: [syme-2020-early-history-fsharp]
 
 - id: d
   name: D
@@ -65,6 +88,20 @@
   research_status: draft
   confidence: high
   sources: [bright-2020-origins-d]
+  example:
+    title: Compile-time function evaluation
+    language: D
+    note: enum forces fib(20) to be computed by the compiler, running ordinary D code at compile time (CTFE). static if and templates use the same mechanism; C++'s constexpr later grew in the same direction.
+    code: |
+      import std.stdio;
+
+      ulong fib(uint n) { return n < 2 ? n : fib(n - 1) + fib(n - 2); }
+
+      enum f20 = fib(20);          // evaluated at compile time
+      static assert(f20 == 6765);
+
+      void main() { writeln(f20); }
+    sources: [bright-2020-origins-d]
 
 - id: cyclone
   name: Cyclone
@@ -88,6 +125,19 @@
   research_status: draft
   confidence: high
   sources: [jim-2002-cyclone]
+  example:
+    title: Safe pointers and regions
+    language: Cyclone
+    note: Approximate. @ marks a never-null pointer, ? a bounds-checked 'fat' pointer, and `r names a region; the compiler rejects pointers that could outlive their region. Rust's lifetimes ('a) descend from these regions.
+    code: |
+      int sum(int *@fat a, int n) {
+        int s = 0;
+        for (int i = 0; i < n; i++) s += a[i];   // bounds-checked
+        return s;
+      }
+
+      int *`r keep(int *`r p) { return p; }      // result lives in p's region
+    sources: [jim-2002-cyclone]
 
 - id: scala
   name: Scala
@@ -120,6 +170,28 @@
   research_status: draft
   confidence: high
   sources: [wiki-scala]
+  example:
+    title: Case classes, pattern matching, futures
+    language: Scala 3
+    note: An enum (algebraic data type) matched exhaustively, objects and functions mixed freely, and Futures composed with a for-comprehension, the monadic style Scala brought to the JVM.
+    code: |
+      import scala.concurrent.*, ExecutionContext.Implicits.global, duration.*
+
+      enum Shape:
+        case Circle(r: Double)
+        case Rect(w: Double, h: Double)
+
+      def area(s: Shape): Double = s match
+        case Shape.Circle(r)  => math.Pi * r * r
+        case Shape.Rect(w, h) => w * h
+
+      val total = for
+        a <- Future(area(Shape.Circle(1)))
+        b <- Future(area(Shape.Rect(2, 3)))
+      yield a + b
+
+      @main def run() = println(Await.result(total, 1.second))
+    sources: [wiki-scala]
 
 - id: fsharp
   name: F#
@@ -151,6 +223,25 @@
   research_status: draft
   confidence: high
   sources: [syme-2020-early-history-fsharp, syme-2011-fsharp-async]
+  example:
+    title: Asynchronous workflows (2007)
+    language: F#
+    note: async { ... } is a computation expression; let! awaits another async without blocking a thread. This is the design C# 5's async/await was based on, five years later.
+    code: |
+      open System.Net.Http
+
+      let fetchLength (url: string) = async {
+          use client = new HttpClient()
+          let! body = client.GetStringAsync(url) |> Async.AwaitTask
+          return url, body.Length
+      }
+
+      [ "https://example.com"; "https://example.org" ]
+      |> List.map fetchLength
+      |> Async.Parallel
+      |> Async.RunSynchronously
+      |> Array.iter (fun (u, n) -> printfn "%s: %d" u n)
+    sources: [syme-2020-early-history-fsharp, syme-2011-fsharp-async]
 
 - id: clojure
   name: Clojure
@@ -177,6 +268,20 @@
   research_status: draft
   confidence: high
   sources: [hickey-2020-history-clojure]
+  example:
+    title: Immutable data and atoms
+    language: Clojure
+    note: assoc and update return new maps that share structure with the old one; nothing is mutated. Shared state lives in an atom, changed by applying a pure function with swap!.
+    code: |
+      (def inventory (atom {:apples 3}))
+
+      (swap! inventory update :apples inc)
+      (swap! inventory assoc :pears 2)
+
+      @inventory                          ;; => {:apples 4, :pears 2}
+
+      (->> (range 10) (filter even?) (map #(* % %)) (reduce +))  ;; => 120
+    sources: [hickey-2020-history-clojure]
 
 - id: go
   name: Go
@@ -312,6 +417,27 @@
   research_status: draft
   confidence: high
   sources: [wiki-kotlin]
+  example:
+    title: Suspend functions and structured concurrency
+    language: Kotlin (kotlinx.coroutines)
+    note: 'suspend functions are async without an await keyword: calling one is a suspension point. coroutineScope does not return until both async children finish, which is structured concurrency.'
+    code: |
+      import kotlinx.coroutines.*
+
+      suspend fun fetch(name: String, ms: Long): String {
+          delay(ms)
+          return "$name done"
+      }
+
+      fun main() = runBlocking {
+          val results = coroutineScope {
+              val a = async { fetch("a", 200) }
+              val b = async { fetch("b", 100) }
+              listOf(a.await(), b.await())
+          }
+          println(results)   // [a done, b done]
+      }
+    sources: [wiki-kotlin]
 
 - id: groovy
   name: Groovy
@@ -332,6 +458,19 @@
   research_status: stub
   confidence: high
   sources: [wiki-groovy]
+  example:
+    title: Scripting the JVM
+    language: Groovy
+    note: Closures, optional types and parentheses, GStrings and native list/map literals on top of Java's libraries. Gradle build files are Groovy programs written this way.
+    code: |
+      def languages = [
+          [name: 'Java',   year: 1995],
+          [name: 'Groovy', year: 2003],
+          [name: 'Kotlin', year: 2011],
+      ]
+      languages.findAll { it.year > 2000 }
+               .each { println "${it.name} (${it.year})" }
+    sources: [wiki-groovy]
 
 - id: dart
   name: Dart
@@ -362,6 +501,25 @@
   research_status: draft
   confidence: high
   sources: [wiki-dart]
+  example:
+    title: Futures, async/await and streams
+    language: Dart 3
+    note: Dart's single-threaded event loop runs async functions; await suspends on a Future, await for on a Stream. Real parallelism uses isolates, which share no memory.
+    code: |
+      Future<String> fetch(String name, int ms) async {
+        await Future.delayed(Duration(milliseconds: ms));
+        return '$name done';
+      }
+
+      Stream<int> countdown(int n) async* {
+        for (var i = n; i > 0; i--) yield i;
+      }
+
+      Future<void> main() async {
+        print(await Future.wait([fetch('a', 200), fetch('b', 100)]));
+        await for (final i in countdown(3)) print(i);
+      }
+    sources: [wiki-dart]
 
 - id: elixir
   name: Elixir
@@ -387,6 +545,21 @@
   research_status: draft
   confidence: high
   sources: [wiki-elixir]
+  example:
+    title: Pipes and processes on the BEAM
+    language: Elixir
+    note: The pipe operator |> threads a value through functions. Task.async_stream runs each item in its own BEAM process, preemptively scheduled across cores, so no async/await is needed.
+    code: |
+      "the quick brown fox jumps over the lazy dog"
+      |> String.split()
+      |> Enum.frequencies_by(&String.length/1)
+      |> IO.inspect()
+
+      1..5
+      |> Task.async_stream(fn n -> Process.sleep(100); n * n end)
+      |> Enum.map(fn {:ok, v} -> v end)
+      |> IO.inspect()          # [1, 4, 9, 16, 25] after ~100 ms
+    sources: [wiki-elixir]
 
 - id: julia
   name: Julia
@@ -416,6 +589,25 @@
   research_status: draft
   confidence: high
   sources: [bezanson-2017-julia]
+  example:
+    title: Multiple dispatch
+    language: Julia
+    note: Methods are chosen by the types of all arguments, as in CLOS, and the JIT compiles a specialized version for each combination of types, which is how Julia gets speed from dynamic code.
+    code: |
+      abstract type Shape end
+      struct Circle <: Shape; r::Float64 end
+      struct Square <: Shape; s::Float64 end
+
+      area(c::Circle) = π * c.r^2
+      area(s::Square) = s.s^2
+
+      overlap(::Circle, ::Circle) = "circle-circle test"
+      overlap(::Circle, ::Square) = "circle-square test"
+      overlap(a::Square, b::Circle) = overlap(b, a)
+
+      println(sum(area, [Circle(1), Square(2)]))   # 7.14159…
+      println(overlap(Square(1), Circle(1)))
+    sources: [bezanson-2017-julia]
 
 - id: typescript
   name: TypeScript
@@ -438,6 +630,28 @@
   research_status: draft
   confidence: high
   sources: [wiki-typescript]
+  example:
+    title: Structural types over JavaScript
+    language: TypeScript
+    note: 'Types describe shapes, not class names: any object with the right fields fits. The discriminated union is checked exhaustively, and all types are erased when compiling to JavaScript. Type-checked with tsc.'
+    code: |
+      type Shape =
+        | { kind: "circle"; r: number }
+        | { kind: "rect"; w: number; h: number };
+
+      function area(s: Shape): number {
+        switch (s.kind) {
+          case "circle": return Math.PI * s.r ** 2;
+          case "rect":   return s.w * s.h;
+        }
+      }
+
+      async function main(): Promise<void> {
+        const shapes: Shape[] = [{ kind: "circle", r: 1 }, { kind: "rect", w: 2, h: 3 }];
+        console.log(shapes.map(area));
+      }
+      main();
+    sources: [wiki-typescript]
 
 - id: swift
   name: Swift
@@ -470,6 +684,30 @@
   research_status: draft
   confidence: high
   sources: [lattner-swift-homepage, swift-se-0296]
+  example:
+    title: Actors and async/await
+    language: Swift 5.5+
+    note: An actor serializes access to its state; calls from outside must await. async let starts child tasks that the enclosing function waits for (structured concurrency).
+    code: |
+      actor Counter {
+          private var value = 0
+          func increment() -> Int { value += 1; return value }
+      }
+
+      func fetch(_ name: String, ms: UInt64) async -> String {
+          try? await Task.sleep(nanoseconds: ms * 1_000_000)
+          return "\(name) done"
+      }
+
+      @main struct App {
+          static func main() async {
+              let counter = Counter()
+              async let a = fetch("a", ms: 200)
+              async let b = fetch("b", ms: 100)
+              print(await [a, b], await counter.increment())
+          }
+      }
+    sources: [swift-se-0296]
 
 - id: zig
   name: Zig
@@ -495,3 +733,27 @@
   research_status: draft
   confidence: medium
   sources: [wiki-zig]
+  example:
+    title: comptime generics
+    language: Zig
+    note: 'Types are values at compile time: Stack is an ordinary function that takes a type and returns a new struct type. One mechanism (comptime) covers generics, macros and conditional compilation.'
+    code: |
+      const std = @import("std");
+
+      fn Stack(comptime T: type, comptime n: usize) type {
+          return struct {
+              items: [n]T = undefined,
+              len: usize = 0,
+              fn push(self: *@This(), x: T) void {
+                  self.items[self.len] = x;
+                  self.len += 1;
+              }
+          };
+      }
+
+      pub fn main() void {
+          var s = Stack(i32, 8){};
+          s.push(42);
+          std.debug.print("{d}\n", .{s.items[0]});
+      }
+    sources: [wiki-zig]

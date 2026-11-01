@@ -17,6 +17,20 @@
   research_status: draft
   confidence: high
   sources: [bohm-1964-p-prime-prime]
+  example:
+    title: Böhm's three operations
+    language: P′′
+    year: 1964
+    note: P′′ has only R (move the head right), λ (increment the current symbol modulo the alphabet, then move left) and (q) (repeat q while the current symbol is not blank). Böhm proved this Turing-complete using only composition and iteration. Brainfuck maps onto it almost one to one.
+    code: |
+      P′′        brainfuck
+      R          >
+      λ          +<
+      (q)        [q]
+
+      R(λRR)     move right; then, while the cell is non-blank,
+                 increment it, step back left, and move right twice
+    sources: [bohm-1964-p-prime-prime]
 
 - id: intercal
   name: INTERCAL
@@ -66,6 +80,13 @@
   research_status: draft
   confidence: high
   sources: [esolangs-false]
+  example:
+    title: A stack-based countdown
+    language: 'FALSE'
+    note: $ duplicates the top of the stack, . prints a number, % drops. [condition][body]# is a while loop. Prints 10 9 8 … 1. Brainfuck and Befunge both started from this 1024-byte language.
+    code: |
+      10[$0>][$." "1-]#%
+    sources: [esolangs-false]
 
 - id: brainfuck
   name: Brainfuck
@@ -115,6 +136,13 @@
   research_status: draft
   confidence: high
   sources: [esolangs-befunge]
+  example:
+    title: Hello, World!
+    language: Befunge-93
+    note: 'The string mode (") pushes the characters in reverse; > sends the instruction pointer right; : duplicates; # skips the next cell; , prints; _ goes right if the top is zero, left otherwise; @ ends. The pointer bounces back and forth along this one line.'
+    code: |
+      "!dlroW ,olleH">:#,_@
+    sources: [esolangs-befunge]
 
 - id: malbolge
   name: Malbolge
@@ -134,6 +162,17 @@
   research_status: draft
   confidence: high
   sources: [esolangs-malbolge]
+  example:
+    title: How a Malbolge instruction is decoded
+    language: pseudocode of the Malbolge machine
+    note: 'Illustrative: real Malbolge programs are unreadable by design (see esolangs.org for the ''Hello World'' found by a beam search in 2000). The instruction executed depends on the code byte plus its own address, and every instruction is scrambled after it runs, so the same byte never means the same thing twice.'
+    code: |
+      loop:
+        op = (mem[c] + c) mod 94
+        execute one of: j  i  *  p  <  /  v  o   (by op)
+        mem[c] = encrypt[mem[c]]       -- self-modifying, every step
+        c = c + 1; d = d + 1
+    sources: [esolangs-malbolge]
 
 - id: unlambda
   name: Unlambda
@@ -155,6 +194,13 @@
   research_status: draft
   confidence: high
   sources: [esolangs-unlambda]
+  example:
+    title: Hello world
+    language: Unlambda 2
+    note: Backquote ` is function application, .x is a function that prints x, r prints a newline, i is the identity. The output is a side effect of applying the printing functions to each other.
+    code: |
+      `r```````````.H.e.l.l.o. .w.o.r.l.di
+    sources: [esolangs-unlambda]
 
 - id: shakespeare
   name: Shakespeare Programming Language
@@ -173,6 +219,27 @@
   research_status: stub
   confidence: high
   sources: [esolangs-shakespeare]
+  example:
+    title: Juliet says 'H'
+    language: Shakespeare Programming Language
+    note: Characters are variables. A noun is worth 1 and each adjective doubles it, so 'a big big big big big big cat' is 64 and 'a big big big cat' is 8. Juliet sets Romeo to their sum, 72, and 'Speak your mind!' makes Romeo print it as the character H.
+    code: |
+      The Letter H.
+
+      Romeo, a listener.
+      Juliet, a speaker.
+
+                          Act I: The only act.
+                          Scene I: The only scene.
+
+      [Enter Romeo and Juliet]
+
+      Juliet:
+        You are as lovely as the sum of a big big big big big big cat
+        and a big big big cat. Speak your mind!
+
+      [Exeunt]
+    sources: [esolangs-shakespeare]
 
 - id: piet
   name: Piet
@@ -193,6 +260,15 @@
   research_status: stub
   confidence: high
   sources: [esolangs-piet]
+  example:
+    title: A program is a picture
+    language: Piet (described in pseudocode)
+    note: Piet source is an image, so it cannot be shown as text. The interpreter moves between blocks of colour; the change in hue and lightness from one block to the next selects the command, and the size of the block just left is the number pushed. The pseudocode describes a picture that prints 'H'.
+    code: |
+      block of 72 red codels      → (step to next hue)       = push 72
+      lightness one step darker   → (step to next block)     = out(char)   prints "H"
+      a block boxed in by black   → no way out               = program ends
+    sources: [esolangs-piet]
 
 - id: whitespace
   name: Whitespace
@@ -210,6 +286,15 @@
   research_status: stub
   confidence: high
   sources: [esolangs-whitespace]
+  example:
+    title: Printing 'H', made visible
+    language: Whitespace
+    note: Only space (S), tab (T) and line feed (L) count; everything else is a comment. Shown here with the invisible characters spelled out. S S pushes a number written in binary with S as 0 and T as 1 (the first S is the + sign); T L S S prints a character; L L L ends.
+    code: |
+      S S  S T S S T S S S L     push +1001000 (72, 'H')
+      T L  S S                   output character
+      L L  L                     end program
+    sources: [esolangs-whitespace]
 
 - id: lolcode
   name: LOLCODE

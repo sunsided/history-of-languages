@@ -46,6 +46,30 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/C%2B%2B", homepage: "https://isocpp.org" }
   sources: [stroustrup-1993-hopl2, stroustrup-1994-design-evolution, stroustrup-2007-hopl3, stroustrup-2020-hopl4]
+  example:
+    title: Classes, virtual functions, RAII
+    language: C++ (C++17)
+    note: 'Simula''s class/virtual pair, statically typed, at C''s cost: no garbage collector, objects can live on the stack, and the destructor runs deterministically at scope exit (RAII). unique_ptr frees the Circle without a delete. Tested with g++ -std=c++17.'
+    code: |
+      #include <iostream>
+      #include <memory>
+
+      struct Shape {
+          virtual ~Shape() = default;
+          virtual double area() const = 0;
+      };
+
+      struct Circle : Shape {
+          double r;
+          explicit Circle(double r) : r(r) {}
+          double area() const override { return 3.14159265 * r * r; }
+      };
+
+      int main() {
+          std::unique_ptr<Shape> s = std::make_unique<Circle>(2.0);
+          std::cout << s->area() << '\n';   // 12.5664
+      }                                     // s freed here
+    sources: [stroustrup-1993-hopl2]
 
 - id: objective-c
   name: Objective-C
@@ -78,6 +102,30 @@
   research_status: draft
   confidence: high
   sources: [cox-naroff-hsu-2020-objc]
+  example:
+    title: Smalltalk messages on C
+    language: Objective-C
+    note: 'Square brackets send a message, resolved at run time by name (selector), as in Smalltalk; respondsToSelector: asks an object whether it understands a message. Compare the C++ sample: same goal, opposite design.'
+    code: |
+      #import <Foundation/Foundation.h>
+
+      @interface Greeter : NSObject
+      - (void)greet:(NSString *)name;
+      @end
+
+      @implementation Greeter
+      - (void)greet:(NSString *)name {
+          NSLog(@"Hello, %@", name);
+      }
+      @end
+
+      int main(void) {
+          id g = [[Greeter alloc] init];
+          if ([g respondsToSelector:@selector(greet:)])
+              [g greet:@"world"];
+          return 0;
+      }
+    sources: [cox-naroff-hsu-2020-objc]
 
 - id: occam
   name: occam
@@ -101,6 +149,21 @@
   research_status: draft
   confidence: high
   sources: [wiki-occam]
+  example:
+    title: PAR, channels, indentation
+    language: occam 2
+    note: SEQ and PAR say whether the indented processes run in sequence or in parallel; ! sends and ? receives on a channel, synchronously, as in CSP. Indentation is the syntax.
+    code: |
+      CHAN OF INT c:
+      PAR
+        SEQ i = 0 FOR 10
+          c ! i * i
+        INT x:
+        SEQ i = 0 FOR 10
+          SEQ
+            c ? x
+            out ! x
+    sources: [wiki-occam]
 
 - id: common-lisp
   name: Common Lisp
@@ -128,6 +191,22 @@
   research_status: draft
   confidence: high
   sources: [steele-gabriel-1993-evolution-lisp]
+  example:
+    title: Generic functions and multiple dispatch (CLOS)
+    language: Common Lisp (CLOS)
+    note: Methods belong to generic functions, not to classes, and dispatch on the classes of all arguments, so collide can specialize on both the asteroid and the ship. Julia's multiple dispatch descends from this.
+    code: |
+      (defclass asteroid () ())
+      (defclass ship () ())
+
+      (defgeneric collide (a b))
+      (defmethod collide ((a asteroid) (b ship))     "ship destroyed")
+      (defmethod collide ((a ship)     (b asteroid)) (collide b a))
+      (defmethod collide ((a asteroid) (b asteroid)) "asteroids bounce")
+
+      (collide (make-instance 'ship) (make-instance 'asteroid))
+      ;; => "ship destroyed"
+    sources: [steele-gabriel-1993-evolution-lisp]
 
 - id: miranda
   name: Miranda
@@ -151,6 +230,16 @@
   research_status: draft
   confidence: high
   sources: [hudak-2007-history-haskell]
+  example:
+    title: Lazy lists and guards
+    language: Miranda
+    note: primes is an infinite list, computed only as far as it is used. List comprehensions, guards and offside layout went almost unchanged into Haskell.
+    code: |
+      primes = sieve [2..]
+      sieve (p:xs) = p : sieve [x | x <- xs; x mod p ~= 0]
+
+      take 10 primes
+    sources: [hudak-2007-history-haskell]
 
 - id: eiffel
   name: Eiffel
@@ -174,6 +263,28 @@
   research_status: draft
   confidence: high
   sources: [meyer-1988-oosc]
+  example:
+    title: Design by Contract
+    language: Eiffel
+    note: require (precondition), ensure (postcondition) and invariant are part of the class interface and checked at run time. old balance refers to the value on entry.
+    code: |
+      class ACCOUNT
+      feature
+          balance: INTEGER
+
+          withdraw (amount: INTEGER)
+              require
+                  positive: amount > 0
+                  covered: amount <= balance
+              do
+                  balance := balance - amount
+              ensure
+                  decreased: balance = old balance - amount
+              end
+      invariant
+          non_negative: balance >= 0
+      end
+    sources: [meyer-1988-oosc]
 
 - id: erlang
   name: Erlang
@@ -213,6 +324,25 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Erlang_(programming_language)" }
   sources: [armstrong-2007-history-erlang]
+  example:
+    title: Processes and messages
+    language: Erlang
+    note: spawn starts a lightweight process; ! sends a message to its mailbox; receive pattern-matches messages. Processes share nothing, so a crash in one cannot corrupt another, which is what supervision trees build on.
+    code: |
+      -module(counter).
+      -export([start/0, loop/1]).
+
+      start() -> spawn(counter, loop, [0]).
+
+      loop(N) ->
+          receive
+              increment     -> loop(N + 1);
+              {get, From}   -> From ! {count, N}, loop(N)
+          end.
+
+      %% Pid = counter:start(), Pid ! increment,
+      %% Pid ! {get, self()}, receive {count, C} -> C end.
+    sources: [armstrong-2007-history-erlang]
 
 - id: self
   name: Self
@@ -237,6 +367,17 @@
   research_status: draft
   confidence: high
   sources: [ungar-smith-2007-self]
+  example:
+    title: Objects without classes
+    language: Self
+    note: Approximate syntax. An object is a set of slots; parent* marks a parent slot to which unknown messages are delegated. New objects are made by copying a prototype, not instantiating a class. JavaScript's prototypes come from here.
+    code: |
+      point = (| parent* = traits clonable.
+                 x <- 0. y <- 0.
+                 + p = ( (copy x: x + p x) y: y + p y ) |).
+
+      (point copy x: 3) + (point copy y: 4)
+    sources: [ungar-smith-2007-self]
 
 - id: perl
   name: Perl
@@ -265,6 +406,19 @@
   research_status: draft
   confidence: high
   sources: [wiki-perl]
+  example:
+    title: Regexes and hashes
+    language: Perl 5
+    note: Sigils give the kind of variable ($ scalar, % hash), regex matching is an operator, and the hash autovivifies. Tested with perl 5.
+    code: |
+      my %count;
+      while (my $line = <STDIN>) {
+          $count{lc $1}++ while $line =~ /(\w+)/g;
+      }
+      for my $w (sort { $count{$b} <=> $count{$a} } keys %count) {
+          printf "%4d %s\n", $count{$w}, $w;
+      }
+    sources: [wiki-perl]
 
 - id: abc
   name: ABC
@@ -289,6 +443,19 @@
   research_status: draft
   confidence: high
   sources: [van-rossum-2009-history-python]
+  example:
+    title: Indentation and high-level types
+    language: ABC
+    note: Approximate. HOW TO defines a command; blocks are indented; tables are built-in associative types. Python kept the indentation and the colon, but not the upper-case keywords.
+    code: |
+      HOW TO COUNT WORDS IN text:
+         PUT {} IN count
+         FOR word IN split text:
+            SELECT:
+               word in keys count: PUT count[word] + 1 IN count[word]
+               ELSE: PUT 1 IN count[word]
+         WRITE count
+    sources: [van-rossum-2009-history-python]
 
 - id: standard-ml
   name: Standard ML
@@ -320,6 +487,22 @@
   research_status: draft
   confidence: high
   sources: [macqueen-harper-reppy-2020-history-sml]
+  example:
+    title: Datatypes, pattern matching, modules
+    language: Standard ML
+    note: A datatype declares a sum type, and functions are defined by cases over its constructors. The compiler warns if a case is missing. The signature describes the structure's interface.
+    code: |
+      signature SHAPE = sig
+        datatype shape = Circle of real | Rect of real * real
+        val area : shape -> real
+      end
+
+      structure Shape :> SHAPE = struct
+        datatype shape = Circle of real | Rect of real * real
+        fun area (Circle r)    = Math.pi * r * r
+          | area (Rect (w, h)) = w * h
+      end
+    sources: [macqueen-harper-reppy-2020-history-sml]
 
 - id: modula-3
   name: Modula-3
@@ -345,6 +528,24 @@
   research_status: draft
   confidence: medium
   sources: [wiki-modula-3]
+  example:
+    title: Objects, exceptions, safe by default
+    language: Modula-3
+    note: 'Approximate. OBJECT types with methods, TRY/EXCEPT exceptions and garbage collection, while unsafe operations are only allowed in modules marked UNSAFE: the arrangement Rust revived.'
+    code: |
+      MODULE Main;
+      IMPORT IO;
+
+      TYPE Counter = OBJECT n := 0 METHODS inc() := Inc END;
+
+      PROCEDURE Inc(self: Counter) = BEGIN INC(self.n) END Inc;
+
+      VAR c := NEW(Counter);
+      BEGIN
+        c.inc(); c.inc();
+        IO.PutInt(c.n); IO.Put("\n")
+      END Main.
+    sources: [wiki-modula-3]
 
 - id: oberon
   name: Oberon
@@ -369,6 +570,21 @@
   research_status: draft
   confidence: high
   sources: [wirth-2007-modula2-oberon]
+  example:
+    title: Type extension and receivers
+    language: Oberon-2
+    note: 'Oberon extends records instead of declaring classes. Oberon-2''s type-bound procedure syntax PROCEDURE (c: Circle) Area is where Go''s method receivers come from.'
+    code: |
+      TYPE
+        Shape = POINTER TO ShapeDesc;
+        ShapeDesc = RECORD END;
+        Circle = POINTER TO CircleDesc;
+        CircleDesc = RECORD (ShapeDesc) r: REAL END;
+
+      PROCEDURE (c: Circle) Area(): REAL;
+      BEGIN RETURN 3.14159 * c.r * c.r
+      END Area;
+    sources: [wirth-2007-modula2-oberon]
 
 - id: newsqueak
   name: Newsqueak
@@ -391,3 +607,17 @@
   research_status: draft
   confidence: high
   sources: [pike-go-history-talk]
+  example:
+    title: Channels as values
+    language: Newsqueak
+    note: Approximate. begin starts a process, mk makes a channel, c <-= v sends, <-c receives. A prime sieve built from a chain of processes was Pike's classic demo, later redone in Go.
+    code: |
+      counter := prog(end: int, c: chan of int) {
+          i: int;
+          for(i = 2; i < end; i++) c <-= i;
+      };
+
+      c := mk(chan of int);
+      begin counter(100, c);
+      print(<-c, "\n");
+    sources: [pike-go-history-talk]

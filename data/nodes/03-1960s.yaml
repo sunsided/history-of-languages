@@ -70,6 +70,16 @@
   research_status: draft
   confidence: high
   sources: [griswold-1978-snobol]
+  example:
+    title: Words from input, with success/failure gotos
+    language: SNOBOL4
+    note: A statement has a subject, a pattern and an optional replacement. Each statement succeeds or fails, and the :S()/:F() labels branch on it. BREAK(' ') . WORD matches up to the first space and assigns the match to WORD.
+    code: |
+      LOOP   LINE = INPUT                       :F(END)
+             LINE BREAK(' ') . WORD             :F(LOOP)
+             OUTPUT = WORD                      :(LOOP)
+      END
+    sources: [griswold-1978-snobol]
 
 - id: apl
   name: APL
@@ -128,6 +138,13 @@
   research_status: draft
   confidence: high
   sources: [ritchie-1993-development-c]
+  example:
+    title: Recursive factorial
+    language: CPL
+    note: Approximate. CPL used square brackets for function arguments and the conditional expression a → b, c, notation that BCPL kept. Never fully implemented in the 1960s.
+    code: |
+      let rec Fact[x] = (x = 0) → 1, x × Fact[x − 1]
+    sources: [ritchie-1993-development-c]
 
 - id: basic
   name: BASIC
@@ -201,6 +218,24 @@
   research_status: draft
   confidence: high
   sources: [radin-1978-pl1]
+  example:
+    title: Exceptions as ON-conditions
+    language: PL/I
+    note: 'ON ZERODIVIDE registers a handler that runs when the condition is raised anywhere below in the call chain: an early form of exception handling (1964). PL/I mixed FORTRAN-style arithmetic, COBOL-style decimal data and ALGOL-style blocks.'
+    code: |
+      DIVIDE: PROCEDURE OPTIONS(MAIN);
+         DECLARE (A, B, C) FIXED DECIMAL(7,2);
+         ON ZERODIVIDE BEGIN;
+            PUT LIST('Division by zero, using 0');
+            C = 0;
+            GO TO DONE;
+         END;
+         GET LIST(A, B);
+         C = A / B;
+      DONE:
+         PUT LIST(C);
+      END DIVIDE;
+    sources: [radin-1978-pl1]
 
 - id: algol-w
   name: ALGOL W
@@ -224,6 +259,18 @@
   research_status: draft
   confidence: high
   sources: [wirth-1993-recollections-pascal]
+  example:
+    title: Records and references
+    language: ALGOL W
+    note: 'Records with typed references, from Hoare''s record-handling proposal. Fields are accessed as functions of the reference: val(head). null is where Hoare''s ''billion-dollar mistake'' enters.'
+    code: |
+      begin
+        record node (integer val; reference(node) next);
+        reference(node) head;
+        head := node(1, node(2, null));
+        write(val(head), val(next(head)))
+      end.
+    sources: [wirth-1993-recollections-pascal, hoare-2009-billion-dollar]
 
 - id: simula
   name: Simula
@@ -262,6 +309,29 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Simula" }
   sources: [nygaard-dahl-1978-simula, dahl-2002-birth-oo, stroustrup-1993-hopl2]
+  example:
+    title: Class, subclass, virtual procedure
+    language: Simula 67
+    year: 1967
+    note: 'Shape declares a virtual procedure that the subclass Circle binds; S.Draw dispatches at run time on the actual class. Subclassing is written as a prefix: Shape Class Circle. :- assigns references, := values.'
+    code: |
+      Begin
+         Class Shape;
+            Virtual: Procedure Draw;
+         Begin
+         End;
+
+         Shape Class Circle(R); Real R;
+         Begin
+            Procedure Draw;
+            Begin OutText("Circle, radius "); OutFix(R, 1, 4); OutImage End;
+         End;
+
+         Ref(Shape) S;
+         S :- New Circle(2.0);
+         S.Draw;
+      End;
+    sources: [nygaard-dahl-1978-simula]
 
 - id: hoare-record-classes
   name: Hoare's record handling (record classes)
@@ -281,6 +351,17 @@
   research_status: draft
   confidence: medium
   sources: [nygaard-dahl-1978-simula, hoare-2009-billion-dollar]
+  example:
+    title: Record classes with references
+    language: Hoare's proposed ALGOL notation (approximate)
+    year: 1965
+    note: Approximate; check the wording against 'Record Handling' (1965/66). A record class declares fields; a reference variable may only point to records of its class. Simula 67 generalized record classes into classes with procedures and subclasses.
+    code: |
+      record class person (integer age; reference father, mother (person));
+      reference p (person);
+      p := person(30, null, null);
+      age(p) := age(p) + 1
+    sources: [nygaard-dahl-1978-simula]
 
 - id: bcpl
   name: BCPL
@@ -306,6 +387,21 @@
   research_status: draft
   confidence: high
   sources: [ritchie-1993-development-c, stroustrup-1993-hopl2]
+  example:
+    title: Factorials
+    language: BCPL
+    note: Everything is a word, so there are no types. $( and $) are BCPL's braces (later {}), VALOF/RESULTIS make a block into an expression, and *N is the newline escape that became \n in C.
+    code: |
+      GET "LIBHDR"
+
+      LET START() = VALOF
+      $( FOR I = 1 TO 5 DO
+            WRITEF("%N! = %I4*N", I, FACT(I))
+         RESULTIS 0
+      $)
+
+      AND FACT(N) = N = 0 -> 1, N * FACT(N - 1)
+    sources: [ritchie-1993-development-c]
 
 - id: logo
   name: Logo
@@ -331,6 +427,19 @@
   research_status: draft
   confidence: high
   sources: [solomon-2020-history-logo]
+  example:
+    title: Turtle graphics
+    language: Logo
+    note: TO defines a new procedure; :SIZE is a parameter. The turtle draws as it moves, which made recursion and geometry something children could watch.
+    code: |
+      TO SQUARE :SIZE
+        REPEAT 4 [FORWARD :SIZE RIGHT 90]
+      END
+
+      TO FLOWER
+        REPEAT 36 [SQUARE 50 RIGHT 10]
+      END
+    sources: [solomon-2020-history-logo]
 
 - id: algol-68
   name: ALGOL 68
@@ -359,6 +468,21 @@
   research_status: draft
   confidence: high
   sources: [lindsey-1993-history-algol68, ritchie-1993-development-c, stroustrup-1993-hopl2]
+  example:
+    title: Modes, operators, expressions everywhere
+    language: ALGOL 68
+    note: User-defined modes (types) and operator overloading, which Stroustrup cites as the source of C++'s. (a | b | c) is a conditional expression, and every construct yields a value.
+    code: |
+      BEGIN
+        MODE VEC = STRUCT (REAL x, y);
+        OP + = (VEC a, b) VEC: (x OF a + x OF b, y OF a + y OF b);
+
+        PROC fact = (INT n) INT: (n = 0 | 1 | n * fact(n - 1));
+
+        VEC v := (1.0, 2.0) + (3.0, 4.0);
+        print((fact(10), x OF v, newline))
+      END
+    sources: [lindsey-1993-history-algol68, stroustrup-1993-hopl2]
 
 - id: b
   name: B
