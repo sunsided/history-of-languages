@@ -460,6 +460,7 @@
   person: Grace Hopper
   wiki: Grace Hopper
   nodes:
+  - math-matic
   - harvard-mark-i
   - a-0
   - flow-matic
@@ -482,6 +483,7 @@
   person: Guy L. Steele Jr.
   wiki: Guy L. Steele Jr.
   nodes:
+  - nil-lisp
   - fortress
   - emacs-lisp
   - scheme
@@ -491,6 +493,7 @@
   person: Heinz Rutishauser
   wiki: Heinz Rutishauser
   nodes:
+  - superplan
   - algol-58
   - algol-60
 - id: person-herbert-a-simon
@@ -531,6 +534,7 @@
   person: James Gosling
   wiki: James Gosling
   nodes:
+  - mocklisp
   - java
 - id: person-jean-bartik
   kind: person
@@ -882,6 +886,7 @@
   person: Robin Milner
   wiki: Robin Milner
   nodes:
+  - lcf
   - ml
   - standard-ml
 - id: person-ross-ihaka
@@ -914,6 +919,7 @@
   person: Simon Peyton Jones
   wiki: Simon Peyton Jones
   nodes:
+  - c-minus-minus
   - haskell
 - id: person-sophie-wilson
   kind: person
@@ -1212,12 +1218,14 @@
   person: Rod Burstall
   wiki: Rod Burstall
   nodes:
+  - cowsel
   - hope
 - id: person-lennart-augustsson
   kind: person
   person: Lennart Augustsson
   wiki: Lennart Augustsson
   nodes:
+  - cayenne
   - lazy-ml
 - id: person-damien-doligez
   kind: person
@@ -1651,3 +1659,101 @@
   wiki: Roger Hui
   nodes:
   - j
+- id: person-j-halcombe-laning
+  kind: person
+  person: J. Halcombe Laning
+  wiki: J. Halcombe Laning
+  nodes:
+  - laning-zierler
+- id: person-corrado-bohm
+  kind: person
+  person: Corrado Böhm
+  wiki: Corrado Böhm
+  nodes:
+  - bohm-language
+- id: person-kateryna-yushchenko
+  kind: person
+  person: Kateryna Yushchenko
+  wiki: Kateryna Yushchenko (scientist)
+  nodes:
+  - address-language
+- id: person-charles-leonard-hamblin
+  kind: person
+  person: Charles Leonard Hamblin
+  wiki: Charles Leonard Hamblin
+  nodes:
+  - george-hamblin
+- id: person-charles-katz
+  kind: person
+  person: Charles Katz
+  wiki: Charles Katz
+  nodes:
+  - math-matic
+- id: person-bob-bemer
+  kind: person
+  person: Bob Bemer
+  wiki: Bob Bemer
+  nodes:
+  - comtran
+- id: person-victor-yngve
+  kind: person
+  person: Victor Yngve
+  wiki: Victor Yngve
+  nodes:
+  - comit
+- id: person-tony-brooker
+  kind: person
+  person: Tony Brooker
+  wiki: Tony Brooker
+  nodes:
+  - atlas-autocode
+  - mercury-autocode
+- id: person-joseph-weizenbaum
+  kind: person
+  person: Joseph Weizenbaum
+  wiki: Joseph Weizenbaum
+  nodes:
+  - slip
+- id: person-robin-popplestone
+  kind: person
+  person: Robin Popplestone
+  wiki: Robin Popplestone
+  nodes:
+  - cowsel
+- id: person-p-j-plauger
+  kind: person
+  person: P. J. Plauger
+  wiki: P. J. Plauger
+  nodes:
+  - lil
+- id: person-richard-p-gabriel
+  kind: person
+  person: Richard P. Gabriel
+  wiki: Richard P. Gabriel
+  nodes:
+  - s-1-lisp
+  - nil-lisp
+- id: person-scott-fahlman
+  kind: person
+  person: Scott Fahlman
+  wiki: Scott Fahlman
+  nodes:
+  - spice-lisp
+- id: person-robert-lee-constable
+  kind: person
+  person: Robert Lee Constable
+  wiki: Robert Lee Constable
+  nodes:
+  - nuprl
+- id: person-terry-a-davis
+  kind: person
+  person: Terry A. Davis
+  wiki: Terry A. Davis
+  nodes:
+  - holyc
+- id: person-david-rosenboom
+  kind: person
+  person: David Rosenboom
+  wiki: David Rosenboom
+  nodes:
+  - foil-music

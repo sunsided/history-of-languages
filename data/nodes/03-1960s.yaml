@@ -78,6 +78,8 @@
   milestones:
     - { version: SNOBOL4, year: 1967, summary: "Patterns as first-class values." }
   summary: "String-manipulation language with patterns as first-class values and success/failure-driven control flow. Ancestor of Icon."
+  relations:
+    - { type: influenced_by, to: comit, aspects: [string-processing, pattern-matching], weight: strong, confidence: high, sources: [wiki-comit], note: "\"The creation of COMIT led to the creation of SNOBOL\"." }
   research_status: draft
   confidence: high
   sources: [griswold-1978-snobol]
@@ -1588,9 +1590,9 @@
     into the 1990s.
   notes: >
     The infobox also lists designers "Bratley" and "Whitfield" without first names; they are left out. Unrelated
-    to Edgar T. Irons's extensible IMP for the CDC 6600. Atlas Autocode is in the early/pioneers backlog; add an edge
-    when it is a node.
+    to Edgar T. Irons's extensible IMP for the CDC 6600.
   relations:
+    - { type: successor_of, to: atlas-autocode, weight: strong, confidence: high, sources: [wiki-edinburgh-imp, wiki-atlas-autocode], note: "\"Edinburgh IMP is a development of Atlas Autocode\"." }
     - { type: influenced_by, to: algol-60, aspects: [block-structure], weight: strong, confidence: high, sources: [wiki-edinburgh-imp], note: "Infobox \"Influenced by: ALGOL 60, Atlas Autocode\"; \"highly similar to ALGOL\"." }
   research_status: stub
   confidence: high
@@ -1926,3 +1928,176 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/SPSS" }
   sources: [wiki-spss]
+
+- id: atlas-autocode
+  name: Atlas Autocode
+  aliases: [AA, AB, ABC]
+  kind: language
+  category: scientific
+  cluster: early/pioneers
+  origin:
+    first_appeared: { year: 1963, precision: circa, note: "\"developed around 1963 at the University of Manchester\"; reference manual (Brooker and Rohl) 1965." }
+    places: [{ institution: University of Manchester, country: GB }]
+  creators:
+    - { name: Tony Brooker, role: co-designer }
+    - { name: Derrick Morris, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [procedural, imperative, structured]
+    typing: [static-typing, strong-typing]
+    features: [block-structure]
+    domain: [scientific-computing]
+  summary: >
+    "A variant of the language ALGOL" for the Manchester Atlas, whose first compilers were built with the Brooker–Morris
+    compiler-compiler. It could range-check array accesses and size arrays at run time. It was ported to the KDF9 and
+    "later evolved into the language Edinburgh IMP", which dropped its complex type.
+  relations:
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: high, sources: [wiki-atlas-autocode], note: "Infobox \"Influenced by: ALGOL 60\"; \"A variant of the language ALGOL\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Atlas_Autocode" }
+  sources: [wiki-atlas-autocode]
+
+- id: slip
+  name: SLIP
+  aliases: [Symmetric LIst Processor]
+  kind: language
+  category: research
+  cluster: early/ai
+  origin:
+    first_appeared: { year: 1963, precision: circa, note: "\"invented by Joseph Weizenbaum in the 1960s\"; Weizenbaum's CACM paper \"Symmetric List Processor\" is from 1963." }
+  creators:
+    - { name: Joseph Weizenbaum, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [linked-lists, subroutine-library]
+    domain: [artificial-intelligence, natural-language-processing]
+  summary: >
+    A list-processing language "first implemented as an extension to the Fortran programming language, and later embedded
+    into MAD and ALGOL": Fortran accessor functions over "circular doubly linked lists with fixed-size data fields". Its
+    best-known program is ELIZA.
+  relations:
+    - { type: superset_of, to: fortran, weight: strong, confidence: high, sources: [wiki-slip], note: "\"first implemented as an extension to the Fortran programming language\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SLIP_(programming_language)" }
+  sources: [wiki-slip]
+
+- id: cowsel
+  name: COWSEL
+  aliases: [POP-1, COntrolled Working SpacE Language]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    began: { year: 1964, precision: year, note: "\"designed between 1964 and 1966 by Robin Popplestone\"." }
+    first_appeared: { year: 1964, precision: year, note: "Infobox \"First appeared: 1964\"." }
+    places:
+      - { institution: University of Leeds, country: GB }
+      - { institution: Bradford Institute of Technology, country: GB }
+      - { institution: University of Edinburgh, country: GB }
+  creators:
+    - { name: Robin Popplestone, role: designer }
+    - { name: Rod Burstall, role: Edinburgh implementation }
+  status: extinct
+  tags:
+    paradigm: [procedural, structured, reflective]
+    typing: [dynamic-typing]
+  milestones:
+    - { version: POP-1, year: 1966, summary: "Renamed POP-1 in summer 1966." }
+  summary: >
+    "based on a reverse Polish notation (RPN) form of the language Lisp, combined with some ideas from Combined
+    Programming Language (CPL)", first on a Ferranti Pegasus at Leeds and a Stantec Zebra at Bradford, then on Rod
+    Burstall's Elliott 4120 at Edinburgh. Renamed POP-1, it is the start of the POP line that led to POP-2 and POP-11.
+    Popplestone underlined keywords on a Flexowriter, an early form of syntax highlighting.
+  relations:
+    - { type: influenced_by, to: lisp, weight: strong, confidence: high, sources: [wiki-cowsel], note: "\"a reverse Polish notation (RPN) form of the language Lisp\"." }
+    - { type: influenced_by, to: cpl, weight: moderate, confidence: high, sources: [wiki-cowsel], note: "\"combined with some ideas from Combined Programming Language (CPL)\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/COWSEL" }
+  sources: [wiki-cowsel]
+  example:
+    title: List membership
+    language: COWSEL
+    note: "From Wikipedia; keywords were underlined in the original printouts."
+    code: |
+      function member
+      lambda x y
+      comment Is x a member of list y;
+      define      y atom then *0 end
+                  y hd x equal then *1 end
+                  y tl -> y repeat up
+    sources: [wiki-cowsel]
+
+- id: klerer-may
+  name: Klerer–May System
+  aliases: [Klerer-May System]
+  kind: language
+  category: scientific
+  cluster: early/pioneers
+  origin:
+    first_appeared: { year: 1965, precision: circa, note: "\"developed in the mid-1960s\"; Klerer and May, \"A user oriented programming language\", The Computer Journal 8(2), 1965." }
+    places: [{ institution: Columbia University Hudson Laboratories, city: "Dobbs Ferry, New York", country: US }]
+  creators:
+    - { name: Melvin Klerer, role: co-designer }
+    - { name: Jack May, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [procedural]
+    domain: [scientific-computing]
+  summary: >
+    A numerical language "whose most notable feature is its two-dimensional syntax based on traditional mathematical
+    notation", typed on a Friden Flexowriter modified for half-line subscripts and superscripts and run on GE-200 series
+    computers for the Office of Naval Research. It was meant to forgive input mistakes; "its reference manual was only two
+    pages".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Klerer%E2%80%93May_System" }
+  sources: [wiki-klerer-may]
+
+- id: foil
+  name: FOIL
+  aliases: [File-Oriented Interpretive Language]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1967, precision: year, note: "\"a CAI language developed at the University of Michigan in 1967\"." }
+    places: [{ institution: University of Michigan, country: US }]
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [interpreter]
+    domain: [education]
+  summary: >
+    A computer-assisted instruction language, like COURSEWRITER and PILOT, that "tried to make the language somewhat
+    block-structured using whitespace, which ended up making the language vaguely similar to BASIC or ABC". A later,
+    unrelated FOIL (1979) is a music language.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FOIL_(programming_language)" }
+  sources: [wiki-foil]
+  example:
+    title: A counting loop
+    language: FOIL
+    note: "From Wikipedia; the page's one-space indent of every line dropped."
+    code: |
+      :START COUNT=0
+      TY Enter the number of times you want to repeat the statement:
+      ACCEPT
+      MAX=NUMBER.(1)
+      :LOOP
+      TY This loop has run #COUNT times it will terminate when it runs #MAX times
+      IF COUNT<MAX,
+         COUNT=COUNT+1
+         GO TO :LOOP
+      TY Do you want to do this again?
+      ACCEPT
+      IF 'yes', GO TO START
+      IF 'no' GO TO FINISH
+      :FINISH
+      TY Goodbye!
+      STOP
+    sources: [wiki-foil]

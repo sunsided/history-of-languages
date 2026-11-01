@@ -384,8 +384,9 @@
   facet: features
   summary: Translates source to machine code ahead of time.
   first_seen:
-    node: glennie-autocode
-    year: 1952
+    node: bohm-language
+    year: 1951
+    note: "Böhm's 1951 dissertation \"defined for the first time that compiler in its own language\"; History of compiler construction calls it \"the first practical compiler\". Glennie's Autocode (1952) is the first implemented on a machine in this dataset."
 - id: compound-statements
   name: Compound statements
   facet: features
@@ -1102,8 +1103,9 @@
   - object-oriented
   summary: Objects inherit directly from other objects, without classes.
   first_seen:
-    node: self
-    year: 1987
+    node: object-lisp
+    year: 1985
+    note: "Object Lisp was \"an early example of prototype-based programming\" (Wikipedia), dated only by 1985 documents; Self (1987) is the language that defined the style."
 - id: purely-functional
   name: Purely functional
   facet: paradigm

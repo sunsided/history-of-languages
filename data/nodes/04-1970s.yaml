@@ -256,6 +256,7 @@
     features: [exceptions, first-class-functions]
   summary: "Built as the scripting language for a theorem prover, it introduced Hindley-Milner type inference: static types without annotations, with parametric polymorphism. Root of Standard ML, Caml/OCaml, F#, and (with Miranda) Haskell; its types reach Rust, Swift and Scala."
   relations:
+    - { type: influenced_by, to: lcf, weight: strong, confidence: high, sources: [wiki-lcf], note: "\"Work on the LCF system introduced the general-purpose programming language ML to allow users to write theorem-proving tactics\"." }
     - { type: influenced_by, to: lisp, weight: strong, confidence: high }
     - { type: influenced_by, to: iswim, weight: strong, confidence: high }
   research_status: draft
@@ -2092,6 +2093,7 @@
     COWSEL/POP-1 is in the early/ai backlog. Wikipedia's claim that a 1968 ICT 1909 port preceded POP-2's 1970
     date looks garbled; it may refer to POP-1.
   relations:
+    - { type: influenced_by, to: cowsel, weight: strong, confidence: high, sources: [wiki-cowsel], note: "COWSEL infobox \"Influenced: POP-2\"; COWSEL was renamed POP-1." }
     - { type: influenced_by, to: lisp, weight: strong, confidence: high, sources: [wiki-pop-2] }
     - { type: influenced_by, to: algol-60, weight: strong, confidence: high, sources: [wiki-pop-2] }
     - { type: influenced_by, to: iswim, weight: weak, confidence: low, sources: [wiki-pop-2], note: "\"theoretical ideas from Peter J. Landin\"; ISWIM is Landin's language, but the article does not name it." }
@@ -3045,3 +3047,115 @@
       DTR> FOR FAMILIES WITH NUMBER_KIDS = 2
       CON> PRINT KID_NAME, AGE OF KIDS WITH AGE GT 20
     sources: [wiki-datatrieve]
+
+- id: lcf
+  name: LCF
+  aliases: [Logic for Computable Functions, Edinburgh LCF, Cambridge LCF]
+  kind: language
+  category: research
+  cluster: ml-family/proof
+  origin:
+    first_appeared: { year: 1972, precision: exact, note: "Milner, \"Logic for Computable Functions: description of a machine implementation\", Stanford, May 1972; \"developed at Stanford and Edinburgh ... in early 1970s\"." }
+    places:
+      - { institution: Stanford University, country: US }
+      - { institution: University of Edinburgh, country: GB }
+  creators:
+    - { name: Robin Milner, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional]
+    domain: [theorem-proving]
+  milestones:
+    - { version: Edinburgh LCF, year: 1979, summary: "Gordon, Milner and Wadsworth, \"Edinburgh LCF: A Mechanised Logic of Computation\"." }
+  summary: >
+    "an interactive automated theorem prover" built on Dana Scott's logic of computable functions. "Work on the LCF system
+    introduced the general-purpose programming language ML to allow users to write theorem-proving tactics", with
+    algebraic data types, parametric polymorphism, abstract types and exceptions. Cambridge LCF followed, and simplified
+    descendants became HOL, HOL Light and Isabelle.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Logic_for_Computable_Functions" }
+  sources: [wiki-lcf]
+
+- id: lil
+  name: LIL
+  aliases: [Little Implementation Language]
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    first_appeared: { year: 1974, precision: year, note: "\"The LIL compiler \"lc\" was part of Fifth Edition Unix (1974), but was dropped by Sixth Edition Unix (1975).\"" }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: P. J. Plauger, role: designer }
+  status: extinct
+  tags:
+    paradigm: [procedural, structured]
+    features: [assembly-language]
+    domain: [operating-systems]
+  summary: >
+    An early-Unix system language that "attempted to fill the gap between assemblers and machine-independent system
+    implementation languages (such as the C programming language), by basically adding structured programming to the
+    PDP-11 assembly language". It "resembled PL360 with C-like flow control syntax". Plauger himself judged: "LIL is,
+    however, a failure."
+  relations:
+    - { type: influenced_by, to: pl360, weight: moderate, confidence: medium, sources: [wiki-lil], note: "\"LIL resembled PL360 with C-like flow control syntax.\"" }
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-lil], note: "\"C-like flow control syntax\"." }
+    - { type: targets, to: pdp-11, weight: strong, confidence: high, sources: [wiki-lil] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Little_Implementation_Language" }
+  sources: [wiki-lil]
+
+- id: nil-lisp
+  name: NIL
+  aliases: [New Implementation of LISP]
+  kind: language
+  category: general
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1979, precision: year, note: "Infobox \"First appeared: 1979\"; developed \"in the mid to late 1970s\"." }
+    places: [{ institution: Massachusetts Institute of Technology, country: US }]
+  creators:
+    - { name: Jon L White, role: designer }
+    - { name: Guy L. Steele Jr., role: developer }
+    - { name: Richard P. Gabriel, role: developer }
+  status: extinct
+  tags:
+    paradigm: [functional, procedural]
+    typing: [dynamic-typing, strong-typing]
+    memory: [garbage-collection]
+  summary: >
+    A 32-bit Lisp for the VAX "intended to be the successor to the language Maclisp", "with a stated goal of maintaining
+    compatibility with MacLisp while fixing many of its problems". "Although unsuccessful in meeting its goals as a used
+    language, NIL was important in several ways": its infobox lists Common Lisp and T as languages it influenced.
+  relations:
+    - { type: successor_of, to: maclisp, weight: strong, confidence: high, sources: [wiki-nil], note: "\"intended to be the successor to the language Maclisp\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/NIL_(programming_language)" }
+  sources: [wiki-nil]
+
+- id: foil-music
+  name: FOIL (music)
+  aliases: [Far Out Instrument Language, MetaFOIL, FOIL-83]
+  kind: language
+  category: domain-specific
+  cluster: audio
+  origin:
+    first_appeared: { year: 1979, precision: year, note: "\"a music generation language for the Touché computer instrument in 1979\"." }
+  creators:
+    - { name: David Rosenboom, role: developer }
+  status: extinct
+  tags:
+    paradigm: [stack-oriented]
+    domain: [music-audio]
+  summary: >
+    A music generation language for the Touché computer instrument that "was based on Forth" and "was succeeded by
+    MetaFOIL and FOIL-83". It shares its name, not its design, with the 1967 CAI language FOIL.
+  relations:
+    - { type: influenced_by, to: forth, weight: strong, confidence: high, sources: [wiki-foil], note: "\"was based on Forth\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FOIL_(programming_language)" }
+  sources: [wiki-foil]

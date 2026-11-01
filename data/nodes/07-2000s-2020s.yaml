@@ -5527,3 +5527,160 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/XOD_(programming_language)" }
   sources: [wiki-xod]
+
+- id: adenine
+  name: Adenine
+  kind: language
+  category: research
+  cluster: scripting
+  origin:
+    first_appeared: { year: 2002, precision: circa, note: "No year on the page; the earliest cited source is Quan, Huynh, Sinha and Karger, \"Adenine: a metadata programming language\" (2002)." }
+    places: [{ institution: Massachusetts Institute of Technology, country: US }]
+  status: extinct
+  tags:
+    paradigm: [scripting]
+    typing: [dynamic-typing]
+    features: [homoiconicity]
+  summary: >
+    "the RDF-aware dynamic language Adenine which was created for" MIT's Haystack personal-information project, "perhaps
+    the earliest example of a homoiconic general graph (rather than list/tree) programming language", with native RDF
+    support. "The language constructs of Adenine are derived from Python and Lisp."
+  relations:
+    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [wiki-haystack], note: "\"The language constructs of Adenine are derived from Python and Lisp.\"" }
+    - { type: influenced_by, to: lisp, weight: strong, confidence: high, sources: [wiki-haystack], note: "\"derived from Python and Lisp\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Haystack_(MIT_project)#Adenine" }
+  sources: [wiki-haystack]
+
+- id: little-b
+  name: Little b
+  kind: language
+  category: scientific
+  cluster: lisp
+  origin:
+    first_appeared: { year: 2004, precision: year, note: "Infobox \"First appeared: 2004\"." }
+    places: [{ institution: Harvard Medical School, country: US }]
+  creators:
+    - { name: Aneil Mallavarapu, role: designer }
+  status: extinct
+  tags:
+    paradigm: [functional]
+    typing: [dynamic-typing, strong-typing]
+    domain: [simulation]
+  milestones:
+    - { version: "1.6.0", year: 2008 }
+  summary: >
+    "a domain-specific programming language, more specifically, a modeling language, designed to build modular
+    mathematical models of biological systems", "based on Lisp" with conveniences from object-oriented languages. It came
+    from the Virtual Cell Program at Harvard Medical School; it was renamed from b to little b to avoid confusion with B
+    and "to pay homage to Smalltalk".
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-little-b], note: "\"This language is based on Lisp\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Little_b_(programming_language)" }
+  sources: [wiki-little-b]
+
+- id: holyc
+  name: HolyC
+  aliases: [C+]
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    first_appeared: { year: 2005, precision: circa, note: "Not dated itself; TempleOS was \"First released in 2005 as J Operating System\" and renamed in 2013." }
+  creators:
+    - { name: Terry A. Davis, role: designer }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing]
+    features: [jit-compilation, classes, inheritance]
+    domain: [operating-systems]
+  summary: >
+    "a middle ground between the C and C++ programming languages with some unique differences, designed by Terry A.
+    Davis specifically for TempleOS". The just-in-time compiled language of TempleOS, it "functions as both a
+    general-purpose language for application development and a scripting language", runs top-level statements during
+    compilation without a main(), and has class declarations with inheritance.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [wiki-templeos], note: "Infobox \"Influenced by: C, C++\"." }
+    - { type: influenced_by, to: cpp, weight: moderate, confidence: high, sources: [wiki-templeos], note: "Infobox \"Influenced by: C, C++\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/TempleOS#HolyC", homepage: "https://templeos.org" }
+  sources: [wiki-templeos]
+
+- id: ats
+  name: ATS
+  aliases: [Applied Type System, ATS2]
+  kind: language
+  category: research
+  cluster: c-family/safe
+  origin:
+    first_appeared: { year: 2006, precision: year, note: "\"The first implementation, ATS/Proto (ATS0), was written in OCaml and was released in 2006.\"" }
+    places: [{ institution: Boston University, country: US }]
+  creators:
+    - { name: Hongwei Xi, role: designer }
+  status: legacy
+  tags:
+    paradigm: [functional, imperative, concurrent, modular]
+    typing: [static-typing, dependent-types]
+  milestones:
+    - { version: ATS1 (Anairiats), year: 2008 }
+    - { version: ATS2 (Postiats), year: 2013 }
+  summary: >
+    "a dialect of the programming language ML, designed by Hongwei Xi to unify computer programming with formal
+    specification", combining theorem proving with practical programming through advanced type systems. It "is derived
+    mostly from the languages ML and OCaml" and absorbed Xi's earlier Dependent ML. "As of 2024, ATS is used mostly for
+    research."
+  relations:
+    - { type: dialect_of, to: ml, weight: strong, confidence: high, sources: [wiki-ats], note: "\"a dialect of the programming language ML\"." }
+    - { type: influenced_by, to: ocaml, weight: strong, confidence: high, sources: [wiki-ats], note: "\"derived mostly from the languages ML and OCaml\"." }
+    - { type: influenced_by, to: cpp, weight: weak, confidence: medium, sources: [wiki-ats], note: "Infobox \"Influenced by: Dependent ML, ML, OCaml, C++\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/ATS_(programming_language)" }
+  sources: [wiki-ats]
+
+- id: vlang
+  name: V
+  aliases: [vlang]
+  kind: language
+  category: general
+  cluster: c-family
+  origin:
+    first_appeared: { year: 2019, precision: exact, note: "Infobox \"First appeared: 20 June 2019\" (GitHub tag v0.0.12)." }
+  creators:
+    - { name: Alexander Medvednikov, role: designer }
+  status: active
+  tags:
+    paradigm: [functional, imperative, structured, concurrent]
+    typing: [static-typing, strong-typing, type-inference]
+    features: [self-hosting]
+  milestones:
+    - { version: "0.5.2", year: 2026 }
+  summary: >
+    "an in-development statically typed, compiled programming language created by Alexander Medvednikov in early
+    2019", first to write the messaging client Volt. "It was inspired by Go, and other programming languages including
+    Oberon, Swift, and Rust"; its compiler was self-hosting at public release.
+  relations:
+    - { type: influenced_by, to: go, weight: strong, confidence: high, sources: [wiki-vlang], note: "\"It was inspired by Go\"." }
+    - { type: influenced_by, to: oberon, weight: moderate, confidence: high, sources: [wiki-vlang] }
+    - { type: influenced_by, to: swift, weight: moderate, confidence: high, sources: [wiki-vlang] }
+    - { type: influenced_by, to: rust, weight: moderate, confidence: high, sources: [wiki-vlang] }
+    - { type: influenced_by, to: kotlin, weight: weak, confidence: medium, sources: [wiki-vlang], note: "Infobox only." }
+    - { type: influenced_by, to: python, weight: weak, confidence: medium, sources: [wiki-vlang], note: "Infobox only." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/V_(programming_language)", homepage: "https://vlang.io" }
+  sources: [wiki-vlang]
+  example:
+    title: Hello, World!
+    language: V
+    note: "From Wikipedia; the page's tab indent shown as four spaces."
+    code: |
+      fn main() {
+          println("Hello, World!")
+      }
+    sources: [wiki-vlang]

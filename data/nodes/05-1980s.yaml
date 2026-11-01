@@ -188,6 +188,7 @@
     - { version: ANSI Common Lisp, year: 1994, introduces: [standardization] }
   summary: "Unification of MacLisp-descended dialects (Lisp Machine Lisp, NIL, Spice Lisp, S-1 Lisp). CLOS showed OOP built from generic functions rather than message sends, the ancestor of Julia's multiple dispatch."
   relations:
+    - { type: influenced_by, to: nil-lisp, weight: moderate, confidence: medium, sources: [wiki-nil], note: "NIL infobox \"Influenced: Common Lisp, T\"." }
     - { type: dialect_of, to: lisp, weight: strong, confidence: high }
     - { type: influenced_by, to: scheme, aspects: [lexical-scoping], weight: moderate, confidence: high }
     - { type: successor_of, to: maclisp, weight: strong, confidence: high, sources: [wiki-lisp], note: "\"a consolidation of several divergent attempts (ZetaLisp, Spice Lisp, NIL, and S-1 Lisp) to create successor dialects to Maclisp\"." }
@@ -2767,6 +2768,7 @@
   notes: >
     No example: the article's only code is a hypothetical implementation of cons with T's object system.
   relations:
+    - { type: influenced_by, to: nil-lisp, weight: weak, confidence: medium, sources: [wiki-nil], note: "NIL infobox \"Influenced: Common Lisp, T\"." }
     - { type: dialect_of, to: scheme, weight: strong, confidence: high, sources: [wiki-t] }
   research_status: stub
   confidence: medium
@@ -3911,3 +3913,255 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/SQR" }
   sources: [wiki-sqr]
+
+- id: spice-lisp
+  name: Spice Lisp
+  kind: language
+  category: general
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1980, precision: year, note: "Infobox \"First appeared: 1980\"; final release 1985." }
+    places: [{ institution: Carnegie Mellon University, country: US }]
+  creators:
+    - { name: Scott Fahlman, role: designer }
+  status: extinct
+  tags:
+    paradigm: [functional, procedural, object-oriented, reflective]
+    typing: [dynamic-typing, strong-typing]
+    memory: [garbage-collection]
+  summary: >
+    "a dialect of Lisp" from CMU's Spice Lisp Group, whose implementation "targeted the microcode of the 16-bit
+    workstation PERQ, and its operating system Accent". It "evolved into an implementation of Common Lisp, and was renamed
+    CMU Common Lisp (CMUCL)".
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-spice-lisp], note: "\"a dialect of Lisp\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Spice_Lisp" }
+  sources: [wiki-spice-lisp]
+
+- id: mocklisp
+  name: Mocklisp
+  kind: language
+  category: scripting
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1981, precision: year, note: "Extension language of Gosling Emacs, \"written in 1981 by James Gosling\"." }
+    places: [{ institution: Carnegie Mellon University, country: US }]
+  creators:
+    - { name: James Gosling, role: designer }
+  status: extinct
+  tags:
+    paradigm: [scripting]
+    features: [embeddable, interpreter]
+  summary: >
+    The extension language of Gosling Emacs, which "has a syntax that appears similar to Lisp, but Mocklisp does not have
+    lists, only strings and arrays". GNU Emacs replaced its interpreter with a full Lisp interpreter, Emacs Lisp.
+  relations:
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: high, sources: [wiki-gosling-emacs], note: "\"a syntax that appears similar to Lisp\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Gosling_Emacs" }
+  sources: [wiki-gosling-emacs]
+
+- id: s-1-lisp
+  name: S-1 Lisp
+  aliases: [S-1 Common Lisp]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1982, precision: circa, note: "No year on the page; the earliest dated source is Brooks, Gabriel and Steele, \"S-1 Common Lisp implementation\" (ACM LISP conference, August 1982)." }
+    places:
+      - { institution: Stanford University, country: US }
+      - { institution: Lawrence Livermore National Laboratory, country: US }
+  creators:
+    - { name: Richard P. Gabriel, role: research lead }
+  status: extinct
+  tags:
+    paradigm: [functional]
+    features: [optimizing-compiler]
+  summary: >
+    "a Lisp implementation written in Lisp for the 36-bit pipelined S-1 Mark IIA supercomputer". It "was never fully
+    functional, but was a test bed for implementing advanced compiler methods in a Lisp" (NIL article).
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: high, sources: [wiki-s-1-lisp] }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/S-1_Lisp" }
+  sources: [wiki-s-1-lisp, wiki-nil]
+
+- id: kee
+  name: KEE
+  aliases: [Knowledge Engineering Environment]
+  kind: language
+  category: research
+  cluster: early/ai
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "\"developed and sold by IntelliCorp, and was first released in 1983\"." }
+    places: [{ institution: IntelliCorp, city: "Menlo Park, California", country: US }]
+  creators:
+    - { name: IntelliCorp, role: developer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented, logic]
+    features: [multiple-inheritance]
+    domain: [artificial-intelligence]
+  summary: >
+    "a frame-based development tool for expert systems" that "provided a full Frame language with multiple inheritance,
+    slots, triggers, default values, and a rule engine that supported backward and forward chaining", running on Lisp
+    machines and later Lucid Common Lisp. The Planner article counts it among the commercial developments influenced by
+    Planner's derivatives.
+  relations:
+    - { type: influenced_by, to: planner, weight: weak, confidence: medium, sources: [wiki-planner], note: "Planner derivatives \"influenced commercial developments such as Knowledge Engineering Environment (KEE)\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Knowledge_Engineering_Environment" }
+  sources: [wiki-kee, wiki-planner]
+
+- id: microsoft-c
+  name: Microsoft C/C++
+  aliases: [Microsoft C, MSVC, Visual C++]
+  kind: language
+  category: systems
+  cluster: c-family/compilers
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "\"Microsoft C 1.0, based on Lattice C, was Microsoft's first C product in 1983. It was not K&R C compliant.\"" }
+    places: [{ institution: Microsoft, country: US }]
+  creators:
+    - { name: Microsoft, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing, weak-typing]
+    memory: [manual-memory, pointers]
+  milestones:
+    - { version: "6.0", year: 1989, summary: "Tiny memory model; close to ANSI C89." }
+    - { version: "7.0", year: 1992, summary: "Built-in C++ and MFC.", introduces: [classes] }
+    - { version: Visual C++ 1.0, year: 1993 }
+  summary: >
+    Microsoft's C (and from 7.0, C++) compiler and the dialect it defines; the predecessor of Visual C++, whose compiler
+    "is still known as Microsoft C/C++". It began from Lattice C, added DOS memory models (huge, tiny) and for years
+    supported C89 but not C99.
+  notes: >
+    C 5.0 (undated on the page) added loop optimisations and the huge memory model. Extensions such as __declspec,
+    SEH and near/far keywords are not described on the page.
+  relations:
+    - { type: dialect_of, to: c, weight: strong, confidence: high, sources: [wiki-msvc] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B" }
+  sources: [wiki-msvc]
+
+- id: nuprl
+  name: Nuprl
+  aliases: [FDL]
+  kind: language
+  category: research
+  cluster: ml-family/proof
+  origin:
+    first_appeared: { year: 1984, precision: year, note: "\"Nuprl was first released in 1984, and was first described in detail in the book Implementing Mathematics with the Nuprl Proof Development System, published in 1986.\"" }
+    places: [{ institution: Cornell University, country: US }]
+  creators:
+    - { name: Robert Lee Constable, role: designer }
+  status: maintained
+  tags:
+    paradigm: [functional]
+    typing: [dependent-types]
+    domain: [theorem-proving]
+  milestones:
+    - { version: Nuprl 5, year: 2000, summary: "Architecture proposed in a 2000 conference paper; reference manual 2002. Also called FDL (Formal Digital Library)." }
+  summary: >
+    "a proof development system" using "a type system based on Martin-Löf intuitionistic type theory", controlled
+    "with a variant of ML" and maintained by Cornell's PRL Project. Nuprl 4 was used to verify cache-coherency protocols;
+    JonPRL and RedPRL build on the same computational type theory.
+  relations:
+    - { type: influenced_by, to: ml, weight: moderate, confidence: medium, sources: [wiki-nuprl], note: "\"The overall system is controlled with a variant of ML.\"" }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Nuprl" }
+  sources: [wiki-nuprl]
+
+- id: object-lisp
+  name: Object Lisp
+  aliases: [ObjectLISP]
+  kind: language
+  category: general
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1985, precision: circa, note: "No year on the page; the ObjectLISP User Manual (G. Drescher, LMI) and a USENET post are from 1985." }
+    places: [{ institution: "Lisp Machines, Inc.", country: US }]
+  creators:
+    - { name: Lisp Machines, role: designer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented, prototype-based]
+  summary: >
+    "an object-oriented extension for the Lisp dialect Lisp Machine Lisp, designed by Lisp Machines, Inc." and "an early
+    example of prototype-based programming", competing with Flavors, HP's Common Objects and Xerox's CommonLoops. Early
+    Macintosh Common Lisp used it.
+  relations:
+    - { type: superset_of, to: lisp-machine-lisp, weight: strong, confidence: high, sources: [wiki-object-lisp], note: "\"an object-oriented extension for the Lisp dialect Lisp Machine Lisp\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Object_Lisp" }
+  sources: [wiki-object-lisp]
+
+- id: euslisp
+  name: EusLisp
+  aliases: [EusLisp Robot Programming Language]
+  kind: language
+  category: domain-specific
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1986, precision: year, note: "\"The first version of it ran in 1986 on Unix-System5/Ustation-E20.\"" }
+  status: maintained
+  tags:
+    paradigm: [object-oriented]
+    domain: [industrial-automation]
+  summary: >
+    "a Lisp-based programming system. Built on the basis of object orientation, it is designed specifically for
+    developing robotics software."
+  notes: >
+    The page relies on one source and names no designer; its external link points to AIST.
+  relations:
+    - { type: dialect_of, to: lisp, weight: strong, confidence: medium, sources: [wiki-euslisp], note: "\"a Lisp-based programming system\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/EusLisp_Robot_Programming_Language" }
+  sources: [wiki-euslisp]
+
+- id: watcom-c
+  name: Watcom C/C++
+  aliases: [Watcom C, Open Watcom, Waterloo C]
+  kind: language
+  category: systems
+  cluster: c-family/compilers
+  origin:
+    first_appeared: { year: 1988, precision: year, note: "Watcom C 6.0, 1988 (infobox release); the table's first row is \"1984 Waterloo C for S/370\"." }
+    places: [{ institution: Watcom International Corporation }]
+  creators:
+    - { name: Watcom International Corporation, role: developer }
+  status: maintained
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing, weak-typing]
+    memory: [manual-memory, pointers]
+  milestones:
+    - { version: "7.0/386", year: 1989, summary: "First 32-bit version." }
+    - { version: "9.0", year: 1992, summary: "Based pointer support." }
+    - { version: "9.5", year: 1993, summary: "C++ compiler added.", introduces: [classes] }
+    - { version: "10.6", year: 1996, summary: "Structured exception handling in C." }
+    - { version: Open Watcom 1.0, year: 2003 }
+  summary: >
+    Watcom's C (later C/C++) compiler for DOS, OS/2, Windows and Linux, open-sourced as Open Watcom after Sybase stopped
+    selling it in 2000. Its dialect accepts "many conventions introduced by other compilers, such as Microsoft's and
+    Borland's", adds based pointers and structured exception handling in C, and bundles C++ comments, flexible array
+    members and trailing enum commas as C90 extensions.
+  relations:
+    - { type: dialect_of, to: c, weight: strong, confidence: high, sources: [wiki-watcom] }
+    - { type: influenced_by, to: microsoft-c, weight: weak, confidence: medium, sources: [wiki-watcom], note: "Supports \"many conventions introduced by other compilers, such as Microsoft's and Borland's\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Watcom_C/C%2B%2B" }
+  sources: [wiki-watcom]

@@ -1882,3 +1882,43 @@
       .ascii "Hello, world!\n" # inline ascii string
       len = . - msg # assign (current address - address of msg start) to symbol "len"
     sources: [wiki-gas]
+
+- id: babbage-gec
+  name: Babbage
+  kind: assembly
+  category: systems
+  cluster: assembly
+  origin:
+    first_appeared: { year: 1971, precision: year, note: "\"It appeared in 1971.\"" }
+    places: [{ institution: GEC Computers, country: GB }]
+  creators:
+    - { name: GEC Computers, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    features: [assembly-language]
+  summary: >
+    "the high level assembly language for the GEC 4000 series minicomputers", named after Charles Babbage, with
+    structured WHILE and REPEAT loops, routines, and assignments written left to
+    right (VALUE => RESULT).
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GEC_4000_series#Babbage" }
+  sources: [wiki-gec-4000]
+  example:
+    title: Factorial routine
+    language: Babbage
+    note: "The FACT routine from Wikipedia's factorial program."
+    code: |
+      ROUTINE FACT(VALUE)
+      // return factorial of RA.
+
+      VALUE => RESULT
+
+      WHILE DECREMENT VALUE GT //0// DO
+      <<
+           RESULT * VALUE => RESULT
+      >>
+      RETURN(RESULT)
+      END
+    sources: [wiki-gec-4000]

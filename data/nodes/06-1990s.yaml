@@ -3735,3 +3735,102 @@
   confidence: low
   links: { wikipedia: "https://en.wikipedia.org/wiki/Dink_Smallwood#DinkC" }
   sources: [wiki-dink-smallwood]
+
+- id: plan9-c
+  name: Plan 9 C
+  kind: language
+  category: systems
+  cluster: c-family/compilers
+  origin:
+    first_appeared: { year: 1992, precision: year, note: "Plan 9 first edition, released to universities in 1992; the page gives no separate date for its C dialect." }
+    places: [{ institution: Bell Labs Computing Science Research Center, country: US }]
+  status: maintained
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing, weak-typing]
+    memory: [manual-memory, pointers]
+    domain: [operating-systems]
+  summary: >
+    The C of Plan 9 from Bell Labs: "a dialect of C (ANSI C with some extensions and some other features left out)" in
+    which the bulk of the system is written. Its compilers were built for portability and, in their author's words,
+    "compile quickly, load slowly, and produce medium quality object code".
+  notes: >
+    The page does not name the compilers' author or list the extensions (the backlog hint mentioned anonymous struct
+    members); Thompson's "A new C Compiler" (1992) is the source to read.
+  relations:
+    - { type: dialect_of, to: c, weight: strong, confidence: high, sources: [wiki-plan-9], note: "\"ANSI C with some extensions and some other features left out\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Plan_9_from_Bell_Labs" }
+  sources: [wiki-plan-9]
+
+- id: c-minus-minus
+  name: C--
+  aliases: [C minus minus, Cmm]
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    first_appeared: { year: 1998, precision: exact, note: "\"The first version of C-- was released in April 1998 as an MSRA paper\" (the backlog had 1997)." }
+  creators:
+    - { name: Simon Peyton Jones, role: co-designer }
+    - { name: Norman Ramsey, role: co-designer }
+  status: legacy
+  tags:
+    paradigm: [imperative]
+    typing: [weak-typing]
+    features: [intermediate-code, multiple-return-values, tail-call-optimization]
+  milestones:
+    - { version: "2.0", year: 2005, summary: "Final version of the original branch (May 2005)." }
+  summary: >
+    "a C-like programming language, designed to be generated mainly by compilers for high-level languages rather than
+    written by human programmers": a "portable assembly language" in plain ASCII, with multiple results and explicit tail
+    calls via jump. The original branch ended with 2.0 in 2005; its fork Cmm is the intermediate representation of GHC.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [wiki-c-minus-minus], note: "Infobox \"Influenced by: C\"; the name says it is \"a reduced form of C\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/C--" }
+  sources: [wiki-c-minus-minus]
+  example:
+    title: Multiple results and explicit tail calls
+    language: C--
+    note: "From Wikipedia."
+    code: |
+      /* Tail recursion */
+      export sp;
+      sp(bits32 n) {
+          jump sp_help(n, 1, 1);
+      }
+
+      sp_help(bits32 n, bits32 s, bits32 p) {
+          if n == 1 {
+              return(s, p);
+          } else {
+              jump sp_help(n - 1, s + n, p * n);
+          }
+      }
+    sources: [wiki-c-minus-minus]
+
+- id: cayenne
+  name: Cayenne
+  kind: language
+  category: research
+  cluster: ml-family/lazy
+  origin:
+    first_appeared: { year: 1998, precision: circa, note: "Only dated source on the page: Augustsson, \"Cayenne – a language with dependent types\", ICFP '98." }
+  creators:
+    - { name: Lennart Augustsson, role: designer }
+  status: extinct
+  tags:
+    paradigm: [functional]
+    typing: [dependent-types, static-typing]
+  summary: >
+    One of the languages Lennart Augustsson developed, presented at ICFP 1998 as "a language with dependent types". The
+    Wikipedia page gives it only a bullet in Augustsson's biography.
+  notes: >
+    Nothing on the page states its relation to Haskell; add an edge when a primary source (the ICFP paper) is read.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lennart_Augustsson" }
+  sources: [wiki-lennart-augustsson]

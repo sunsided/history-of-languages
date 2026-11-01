@@ -4784,3 +4784,178 @@
   primary: false
   title: "Wikipedia: XOD (programming language)"
   url: https://en.wikipedia.org/wiki/XOD_(programming_language)
+- id: wiki-superplan
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Superplan"
+  url: https://en.wikipedia.org/wiki/Superplan
+- id: wiki-corrado-bohm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Corrado Böhm"
+  url: https://en.wikipedia.org/wiki/Corrado_B%C3%B6hm
+- id: wiki-history-of-compiler-construction
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: History of compiler construction"
+  url: https://en.wikipedia.org/wiki/History_of_compiler_construction
+- id: wiki-laning-zierler
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Laning and Zierler system"
+  url: https://en.wikipedia.org/wiki/Laning_and_Zierler_system
+- id: wiki-a-0
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: A-0 System"
+  url: https://en.wikipedia.org/wiki/A-0_System
+- id: wiki-address-language
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Address programming language"
+  url: https://en.wikipedia.org/wiki/Address_programming_language
+- id: wiki-pact
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PACT (compiler)"
+  url: https://en.wikipedia.org/wiki/PACT_(compiler)
+- id: wiki-george
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GEORGE (programming language)"
+  url: https://en.wikipedia.org/wiki/GEORGE_(programming_language)
+- id: wiki-math-matic
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MATH-MATIC"
+  url: https://en.wikipedia.org/wiki/MATH-MATIC
+- id: wiki-comtran
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: COMTRAN"
+  url: https://en.wikipedia.org/wiki/COMTRAN
+- id: wiki-comit
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: COMIT"
+  url: https://en.wikipedia.org/wiki/COMIT
+- id: wiki-atlas-autocode
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Atlas Autocode"
+  url: https://en.wikipedia.org/wiki/Atlas_Autocode
+- id: wiki-slip
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SLIP (programming language)"
+  url: https://en.wikipedia.org/wiki/SLIP_(programming_language)
+- id: wiki-cowsel
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: COWSEL"
+  url: https://en.wikipedia.org/wiki/COWSEL
+- id: wiki-klerer-may
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Klerer–May System"
+  url: https://en.wikipedia.org/wiki/Klerer%E2%80%93May_System
+- id: wiki-foil
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: FOIL (programming language)"
+  url: https://en.wikipedia.org/wiki/FOIL_(programming_language)
+- id: wiki-gec-4000
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: GEC 4000 series"
+  url: https://en.wikipedia.org/wiki/GEC_4000_series
+- id: wiki-lil
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Little Implementation Language"
+  url: https://en.wikipedia.org/wiki/Little_Implementation_Language
+- id: wiki-nil
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: NIL (programming language)"
+  url: https://en.wikipedia.org/wiki/NIL_(programming_language)
+- id: wiki-spice-lisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Spice Lisp"
+  url: https://en.wikipedia.org/wiki/Spice_Lisp
+- id: wiki-gosling-emacs
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Gosling Emacs"
+  url: https://en.wikipedia.org/wiki/Gosling_Emacs
+- id: wiki-s-1-lisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: S-1 Lisp"
+  url: https://en.wikipedia.org/wiki/S-1_Lisp
+- id: wiki-kee
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Knowledge Engineering Environment"
+  url: https://en.wikipedia.org/wiki/Knowledge_Engineering_Environment
+- id: wiki-msvc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Microsoft Visual C++"
+  url: https://en.wikipedia.org/wiki/Microsoft_Visual_C%2B%2B
+- id: wiki-nuprl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Nuprl"
+  url: https://en.wikipedia.org/wiki/Nuprl
+- id: wiki-object-lisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Object Lisp"
+  url: https://en.wikipedia.org/wiki/Object_Lisp
+- id: wiki-euslisp
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: EusLisp Robot Programming Language"
+  url: https://en.wikipedia.org/wiki/EusLisp_Robot_Programming_Language
+- id: wiki-watcom
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Watcom C/C++"
+  url: https://en.wikipedia.org/wiki/Watcom_C/C%2B%2B
+- id: wiki-plan-9
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Plan 9 from Bell Labs"
+  url: https://en.wikipedia.org/wiki/Plan_9_from_Bell_Labs
+- id: wiki-c-minus-minus
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: C--"
+  url: https://en.wikipedia.org/wiki/C--
+- id: wiki-haystack
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Haystack (MIT project)"
+  url: https://en.wikipedia.org/wiki/Haystack_(MIT_project)
+- id: wiki-little-b
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Little b (programming language)"
+  url: https://en.wikipedia.org/wiki/Little_b_(programming_language)
+- id: wiki-templeos
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: TempleOS"
+  url: https://en.wikipedia.org/wiki/TempleOS
+- id: wiki-ats
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: ATS (programming language)"
+  url: https://en.wikipedia.org/wiki/ATS_(programming_language)
+- id: wiki-vlang
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: V (programming language)"
+  url: https://en.wikipedia.org/wiki/V_(programming_language)

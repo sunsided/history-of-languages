@@ -274,10 +274,11 @@
     code could compete with hand-written assembly. Still a leading language for numerical HPC,
     having absorbed modules, array programming, OOP and parallelism over 60 years.
   relations:
+    - { type: influenced_by, to: laning-zierler, aspects: [compiler], weight: moderate, confidence: high, sources: [wiki-laning-zierler], note: "Backus: \"For many years I believed that we had gotten the idea for using algebraic notation in FORTRAN from seeing a demonstration of the Laning and Zierler system at MIT.\"" }
     - { type: targets, to: ibm-704, weight: strong, confidence: high }
     - { type: influenced_by, to: speedcoding, weight: weak, confidence: medium, sources: [wiki-speedcoding], note: "Speedcoding infobox \"Influenced: Fortran ...\"; same designer (Backus) and IBM. What carried over is not stated." }
     - { type: influenced_by, to: sap-704, weight: weak, confidence: low, note: "Shared team member (Roy Nutt) and machine; not a design influence on the language itself." }
-    - { type: influenced_by, to: glennie-autocode, weight: weak, confidence: low, note: "Backus later said the team was mostly unaware of earlier work; Laning & Zierler's MIT algebraic system (1954) is the one acknowledged precursor. Add it as a node." }
+    - { type: influenced_by, to: glennie-autocode, weight: weak, confidence: low, note: "Backus later said the team was mostly unaware of earlier work; Laning & Zierler's MIT algebraic system is the one acknowledged precursor (now its own edge)." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Fortran", homepage: "https://fortran-lang.org" }
@@ -374,6 +375,7 @@
     features: [compound-statements]
   summary: "First transatlantic committee language. Introduced compound statements (begin...end). Its dialects JOVIAL, MAD and NELIAC were used for years."
   relations:
+    - { type: influenced_by, to: superplan, weight: moderate, confidence: medium, sources: [wiki-superplan], note: "Superplan infobox \"Influenced: ALGOL 58\"; Rutishauser was on the ALGOL 58 committee is not stated there." }
     - { type: influenced_by, to: fortran, weight: strong, confidence: high }
     - { type: influenced_by, to: plankalkul, weight: weak, confidence: low, note: "Indirect, via Rutishauser and Bauer's awareness of Zuse." }
   research_status: draft
@@ -428,6 +430,7 @@
     the CODASYL committee drawing on FLOW-MATIC, IBM's COMTRAN and Honeywell's FACT. Still runs much
     of banking and government.
   relations:
+    - { type: influenced_by, to: comtran, weight: strong, confidence: high, sources: [wiki-comtran], note: "\"Several elements of COMTRAN were incorporated into COBOL\": picture clause, paragraphs, AT END, HIGH-VALUE, RETURN-CODE." }
     - { type: influenced_by, to: flow-matic, aspects: [english-like-syntax], weight: strong, confidence: high }
   research_status: draft
   confidence: high
@@ -708,3 +711,331 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/DYNAMO_(programming_language)" }
   sources: [wiki-dynamo]
+
+- id: superplan
+  name: Superplan
+  kind: language
+  category: scientific
+  cluster: early/pioneers
+  origin:
+    began: { year: 1949, precision: year, note: "\"developed between 1949 and 1951 by Heinz Rutishauser\"." }
+    first_appeared: { year: 1951, precision: year, note: "Described in Rutishauser's 1951 publication \"Über automatische Rechenplanfertigung bei programmgesteuerten Rechenmaschinen\"." }
+  creators:
+    - { name: Heinz Rutishauser, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [compiler]
+  summary: >
+    "a high-level programming language developed between 1949 and 1951 by Heinz Rutishauser", named after Zuse's term
+    Rechenplan for a single Plankalkül program, and proposed together with an automatic translator. It "introduced the
+    keyword für as for loop"; its infobox lists ALGOL 58 as
+    influenced by it.
+  relations:
+    - { type: influenced_by, to: plankalkul, weight: strong, confidence: high, sources: [wiki-superplan], note: "Infobox \"Influenced by: Plankalkül\"; the name refers to Zuse's Rechenplan." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Superplan" }
+  sources: [wiki-superplan]
+
+- id: bohm-language
+  name: Böhm's language
+  aliases: [Böhm's compiler]
+  kind: language
+  category: research
+  cluster: early/pioneers
+  origin:
+    first_appeared: { year: 1951, precision: year, note: "PhD dissertation at ETH Zurich, 1951, published 1954." }
+    places: [{ institution: ETH Zurich, city: Zürich, country: CH }]
+  creators:
+    - { name: Corrado Böhm, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [compiler, self-hosting]
+  summary: >
+    The language, machine and translation method in Corrado Böhm's 1951 ETH dissertation, which "describes for the first
+    time a full meta-circular compiler, that is a translation mechanism of a programming language, written in that same
+    language". History of compiler construction calls it "the first practical compiler".
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Corrado_B%C3%B6hm" }
+  sources: [wiki-corrado-bohm, wiki-history-of-compiler-construction]
+
+- id: laning-zierler
+  name: Laning and Zierler system
+  aliases: [George (Whirlwind)]
+  kind: language
+  category: scientific
+  cluster: early/pioneers
+  origin:
+    first_appeared: { year: 1952, precision: year, note: "\"implemented in 1952 for the MIT WHIRLWIND\"; the program description is dated January 1954 (the backlog had 1954)." }
+    places: [{ institution: Massachusetts Institute of Technology, country: US }]
+  creators:
+    - { name: J. Halcombe Laning, role: co-designer }
+    - { name: Neal Zierler, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [compiler]
+    domain: [scientific-computing]
+  summary: >
+    "the first operating algebraic compiler, that is, a system capable of accepting mathematical formulas in algebraic
+    notation and producing equivalent machine code", on Whirlwind; its users called it "George". Backus wrote: "For many
+    years I believed that we had gotten the idea for using algebraic notation in FORTRAN from seeing a demonstration of
+    the Laning and Zierler system at MIT."
+  relations:
+    - { type: targets, to: whirlwind, weight: strong, confidence: high, sources: [wiki-laning-zierler] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Laning_and_Zierler_system" }
+  sources: [wiki-laning-zierler]
+
+- id: a-2
+  name: A-2
+  kind: language
+  category: scientific
+  cluster: early/hopper
+  origin:
+    first_appeared: { year: 1953, precision: year, note: "\"developed at the UNIVAC division of Remington Rand in 1953 and released to customers by the end of that year\"." }
+    places: [{ institution: Remington Rand UNIVAC division, country: US }]
+  creators:
+    - { name: Remington Rand, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [compiler, subroutine-library]
+  summary: >
+    The successor of Grace Hopper's A-0 and A-1 at Remington Rand's UNIVAC division. "Customers were provided the source
+    code for A-2 and invited to send their improvements back to UNIVAC", so it "could be considered an example of the
+    result of an early philosophy similar to free and open-source software". A-3 (ARITH-MATIC), AT-3 (MATH-MATIC) and B-0
+    (FLOW-MATIC) followed.
+  relations:
+    - { type: successor_of, to: a-0, weight: strong, confidence: high, sources: [wiki-a-0], note: "\"The A-0 system was followed by the A-1, A-2, A-3 ...\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/A-0_System" }
+  sources: [wiki-a-0]
+
+- id: address-language
+  name: Address programming language
+  aliases: [Адресный язык программирования, Адресна мова програмування]
+  kind: language
+  category: general
+  cluster: early/pioneers
+  origin:
+    first_appeared: { year: 1955, precision: year, note: "\"It was created in 1955 by Kateryna Yushchenko.\"" }
+  creators:
+    - { name: Kateryna Yushchenko, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    memory: [pointers]
+  summary: >
+    "one of the world's first high-level programming languages", created in the Soviet Union by Kateryna Yushchenko. It
+    "made possible indirect addressing and addresses of the highest rank – analogous to pointers", which Fortran and
+    ALGOL 60 lacked. It was implemented on all first- and second-generation Soviet computers and "influenced the
+    architecture of the Kyiv, M-20, Dnipro, Ural, Promin and Minsk computers".
+  notes: >
+    Yushchenko's Wikipedia article is "Kateryna Yushchenko (scientist)"; the parenthesis is dropped because build.py
+    rejects it.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Address_programming_language" }
+  sources: [wiki-address-language]
+
+- id: pact-i
+  name: PACT I
+  aliases: [PACT, PACT IA]
+  kind: language
+  category: scientific
+  cluster: early/pioneers
+  origin:
+    began: { year: 1954, precision: year, note: "\"Their development was conducted jointly by IBM and a committee of customers starting in 1954.\"" }
+    first_appeared: { year: 1956, precision: circa, note: "No release year on the page; the J. ACM papers on the \"PACT I Coding System for the IBM Type 701\" are from 1956." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: IBM, role: developer with a customer committee }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [compiler]
+    domain: [scientific-computing]
+  summary: >
+    "a series of compilers for the IBM 701 and IBM 704 scientific computers" (PACT I and PACT IA), built jointly by IBM
+    and its customers; their emphasis was "minimization of the memory footprint". The 1956 papers called it an
+    "(automatic) coding system", as the word compiler was not yet common.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PACT_(compiler)" }
+  sources: [wiki-pact]
+
+- id: george-hamblin
+  name: GEORGE
+  aliases: [General Order Generator]
+  kind: language
+  category: scientific
+  cluster: stack
+  origin:
+    first_appeared: { year: 1957, precision: year, note: "\"invented by Charles Leonard Hamblin in 1957\"; \"running by May 1957 on an English Electric DEUCE\"." }
+    places: [{ institution: New South Wales University of Technology, country: AU }]
+  creators:
+    - { name: Charles Leonard Hamblin, role: designer }
+  status: extinct
+  tags:
+    paradigm: [stack-oriented]
+    domain: [scientific-computing]
+  milestones:
+    - { version: second version, year: 1958, summary: "Floating-point values, one per word." }
+  summary: >
+    A language "designed around a push-down pop-up stack for arithmetic operations" that "employed reverse Polish
+    notation", with loops, subroutines, conditionals, vectors and matrices, on the DEUCE. Beard's retrospective "The KDF9 Computer — 30 Years On"
+    says the English Electric team were first drawn to the zero-address concept through contact with GEORGE.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/GEORGE_(programming_language)" }
+  sources: [wiki-george]
+  example:
+    title: Sum eight values
+    language: GEORGE
+    note: "From Wikipedia: reads eight values and forms their sum."
+    code: |
+      0,
+      1, 8 rep (j)
+         R +
+      ]
+      (P)
+    sources: [wiki-george]
+
+- id: math-matic
+  name: MATH-MATIC
+  aliases: [AT-3, Algebraic Translator 3]
+  kind: language
+  category: scientific
+  cluster: early/hopper
+  origin:
+    began: { year: 1955, precision: circa, note: "\"written beginning around 1955\"." }
+    first_appeared: { year: 1957, precision: year, note: "\"A preliminary manual was produced in 1957 and a final manual the following year.\"" }
+    places: [{ institution: Remington Rand, country: US }]
+  creators:
+    - { name: Charles Katz, role: team lead }
+    - { name: Grace Hopper, role: director }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [compiler]
+    domain: [scientific-computing]
+  summary: >
+    The marketing name of the AT-3 compiler for the UNIVAC I and II. "Syntactically, MATH-MATIC was similar to Univac's
+    contemporaneous business-oriented language, FLOW-MATIC, differing in providing algebraic-style expressions and
+    floating-point arithmetic, and arrays rather than record structures." The GAMM considered it "the closest available
+    language to its own proposal" when proposing the collaboration that led to ALGOL 58.
+  relations:
+    - { type: influenced_by, to: flow-matic, weight: strong, confidence: high, sources: [wiki-math-matic], note: "Infobox \"Influenced by: FLOW-MATIC\"; syntactically similar." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MATH-MATIC" }
+  sources: [wiki-math-matic]
+  example:
+    title: Numbered sentences
+    language: MATH-MATIC
+    note: "Start of Wikipedia's sample program. In line (5) the page shows \"103\" and a trailing \"3\" that are probably lost superscripts (10³, cubed)."
+    code: |
+      (2)  TYPE-IN ALPHA .
+      (2A) READ A B C SERVO 4 STORAGE A IF SENTINEL JUMP TO SENTENCE 8 .
+      (3)  READ D F SERVO 5 .
+      (4)  VARY Y 1 (0.1) 3 SENTENCE 5 THRU 6 .
+      (5)  X1 = (7*103*Y*A*SIN ALPHA)3 / (B POW D+C POW E) .
+      (6)  WRITE AND EDIT A Y D E X1 SERVO 6 .
+      (7)  JUMP TO SENTENCE 2A .
+    sources: [wiki-math-matic]
+
+- id: comtran
+  name: COMTRAN
+  aliases: [Commercial Translator]
+  kind: language
+  category: business
+  cluster: early/hopper
+  origin:
+    first_appeared: { year: 1957, precision: year, note: "\"Developed by Bob Bemer, in 1957\"; the IBM General Reference Manual is dated June 1960." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: Bob Bemer, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    domain: [business-data-processing]
+  summary: >
+    "intended as the business programming equivalent of the scientific programming language FORTRAN" and "the first to
+    feature the programming language element known as a picture clause". COBOL took over its picture clause, paragraphs
+    and paragraph names, AT END clauses, HIGH-VALUE and RETURN-CODE.
+  relations:
+    - { type: influenced_by, to: flow-matic, weight: moderate, confidence: medium, sources: [wiki-comtran], note: "Infobox \"Influenced by: FLOW-MATIC\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/COMTRAN" }
+  sources: [wiki-comtran]
+  example:
+    title: Payroll (opening lines)
+    language: COMTRAN
+    note: "First statements of Wikipedia's payroll program; leading spaces of the page dropped."
+    code: |
+      01009 START. OPEN ALL FILES.
+      01010 GET.MASTER. GET MASTER, AT END DO END.OF.MASTERS.
+      01011 GET.DETAIL. GET DETAIL, AT END GO TO END.OF.DETAILS.
+      01012 COMPARE.EMPLOYEE.NUMBERS. GO TO COMPUTE.PAY WHEN DETAIL EMPLOYNO
+      01013       IS EQUAL TO MASTER EMPLOYNO, LOW.DETAIL WHEN DETAIL
+      01014       EMPLOYNO IS LESS THAN MASTER EMPLOYNO.
+      02012 COMPUTE.PAY. IF DETAIL HOURS IS GREATER THAN 40 THEN SET DETAIL
+      02013        GROSS = (DETAIL HOURS - 40) * MASTER RATE * 1.5.
+    sources: [wiki-comtran]
+
+- id: comit
+  name: COMIT
+  aliases: [COMIT II]
+  kind: language
+  category: research
+  cluster: string-processing
+  origin:
+    first_appeared: { year: 1957, precision: year, note: "Infobox 1957; developed \"from 1957 to 1965\"." }
+    places:
+      - { institution: University of Chicago, country: US }
+      - { institution: Massachusetts Institute of Technology, country: US }
+  creators:
+    - { name: Victor Yngve, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [string-processing, pattern-matching]
+    domain: [natural-language-processing]
+  summary: >
+    "the first string processing language", built on the IBM 700/7000 series to support "computerized research in the
+    field of linguistics, and more specifically, the area of machine translation". "The creation of COMIT led to the
+    creation of SNOBOL." Bob Fabry made COMIT II for CTSS.
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/COMIT" }
+  sources: [wiki-comit]
+
+- id: mercury-autocode
+  name: Mercury Autocode
+  kind: language
+  category: scientific
+  cluster: early/pioneers
+  origin:
+    first_appeared: { year: 1950, precision: decade, note: "\"Brooker also developed an autocode for the Ferranti Mercury in the 1950s\"; no exact year (the backlog had 1958, unsourced)." }
+    places: [{ institution: University of Manchester, country: GB }]
+  creators:
+    - { name: Tony Brooker, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    domain: [scientific-computing]
+  summary: >
+    Brooker's autocode for the Ferranti Mercury, with "a limited repertoire of variables a-z and a'-z'", which "in some
+    ways resembled early versions of the later Dartmouth BASIC". It "pre-dated ALGOL, having no concept of stacks and hence
+    no recursion". Dialects ran on the Ferranti Atlas and the ICT 1300 and 1900, and EDSAC 2 Autocode (1961) grew from it.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Autocode" }
+  sources: [wiki-autocode]

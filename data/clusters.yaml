@@ -219,43 +219,23 @@
   parent: early
   research_status: draft
   backlog:
-    - { name: "Laning and Zierler system (MIT Whirlwind)", year: 1954, hint: "First algebraic compiler; the precursor Backus acknowledged." }
-    - { name: "Haskell Curry's composition notation", year: 1948 }
-    - { name: "Rutishauser's automatic programming (Superplan)", year: 1951 }
-    - { name: "Böhm's self-compiling compiler", year: 1951 }
-    - { name: "Mercury Autocode / Atlas Autocode", year: 1958 }
-    - { name: "Kateryna Yushchenko's Address programming language", year: 1955, hint: "Soviet; higher-order pointers. Good counterweight to the US/UK-centric story." }
-    - { name: "PACT I", year: 1954 }
-    - { name: "MATH-MATIC / AT-3", year: 1957 }
-    - { name: "Superplan", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Klerer-May System", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "GEORGE", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "GOTRAN (IBM 1620)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Babbage", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "Haskell Curry's composition notation", year: 1948, hint: "Wikipedia's Haskell Curry article has no 1948 notation; it says \"In 1947 Curry also described one of the first high-level programming languages\" (citing Knuth & Trabb Pardo 1976, p. 22). Read Knuth & Trabb Pardo for the name and year." }
+    - { name: "GOTRAN (IBM 1620)", hint: "No article (GOTRAN is 404); the IBM 1620 article lists \"GOTRAN – simplified, interpreted version of FORTRAN for load and go operation\" with no year. Needs an IBM 1620 manual date." }
 - id: early/hopper
   name: Hopper's compilers
   parent: early
   research_status: draft
   backlog:
-    - { name: "A-2", year: 1953 }
-    - { name: "COMTRAN (IBM, Bob Bemer)", year: 1957, hint: "COBOL ancestor." }
-    - { name: "FACT (Honeywell)", year: 1959, hint: "COBOL ancestor." }
+    - { name: "FACT (Honeywell)", year: 1959, hint: "No Wikipedia article or section found (FACT_(programming_language) is 404; Honeywell and Honeywell 200 pages do not mention it). Needs Sammet 1969 or a Honeywell manual." }
 - id: early/ai
   name: Early AI languages
   parent: early
   research_status: stub
   backlog:
-    - { name: "FLPL (Fortran List Processing Language)", year: 1958 }
-    - { name: "COMIT", year: 1957 }
-    - { name: "Conniver", year: 1972 }
-    - { name: "COWSEL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SLIP", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "KEE", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "KRYPTON", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "FOIL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "LISA", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Adenine (Haystack)", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "Little b", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "FLPL (Fortran List Processing Language)", year: 1958, hint: "No Wikipedia article (FLPL is 404) and not in the Fortran article's verbatim part. Gelernter, Hansen and Gerberich (1960, JACM) is the primary source to find." }
+    - { name: "Conniver", year: 1972, hint: "No article (Conniver is a racehorse page); the Planner article lists it as a Planner dialect and cites McDermott and Sussman, The Conniver Reference Manual, MIT AI Memo 259A, January 1974. Read the memo for the year." }
+    - { name: "KRYPTON", hint: "KRYPTON redirects to KL-ONE, whose article does not mention it; needs Brachman, Fikes and Levesque's KRYPTON papers (early 1980s)." }
+    - { name: "LISA", hint: "Lisp-based Intelligent Software Agents: a CLIPS/Jess-influenced production-rule system in CLOS (Wikipedia), with no year or authors. Note the list's LISA link may point to the Language for Instruction Set Architecture instead." }
 
 # ===================== Language families =====================
 - id: fortran
@@ -337,37 +317,24 @@
   summary: "B, C and the languages that kept C's model of the machine."
   research_status: draft
   backlog:
-    - { name: "HolyC", hint: "Terry A. Davis's C dialect for TempleOS, used both as the system language and the shell. Needs year, sources and an example." }
-    - { name: "Objective-C++", year: 2000 }
-    - { name: "C--", year: 1997 }
-    - { name: "V", year: 2019 }
+    - { name: "Objective-C++", year: 2000, hint: "Only a model summary of Wikipedia's Objective-C section was available (NeXT for Lotus Improv, 1989); verify the section text verbatim before making the node." }
 - id: c-family/compilers
   name: Compiler-defined C and C++ dialects
   parent: c-family
   summary: C and C++ as extended by particular compilers and products (Borland, GNU, Microsoft), whose extensions shaped real-world code and sometimes later standards.
   research_status: stub
   key_sources: [wiki-turbo-c, wiki-borland-cpp, gcc-manual-c-extensions]
-  backlog:
-    - { name: "Microsoft C/C++ (MSVC dialect)", year: 1983, hint: "__declspec, SEH, near/far pointers." }
-    - { name: "Watcom C", year: 1988, hint: "DOS extender era; Open Watcom." }
-    - { name: "Plan 9 C", year: 1992, hint: "Ken Thompson's dialect; anonymous struct members later in C11." }
 - id: c-family/safe
   name: Safe systems languages
   parent: c-family
   research_status: draft
   backlog:
-    - { name: "Vale / Austral / Hylo", year: 2020, hint: "Post-Rust ownership designs." }
-    - { name: "ATS", year: 2006 }
+    - { name: "Vale / Austral / Hylo", year: 2020, hint: "None has a Wikipedia article (all three 404). Use the languages' own sites (vale.dev, austral-lang.org, hylo-lang.org) as sources." }
 - id: lisp
   name: Lisp family
   research_status: draft
   backlog:
-    - { name: "Stanford LISP 1.6", year: 1966 }
-    - { name: "NIL / Spice Lisp / S-1 Lisp", year: 1980, hint: "MacLisp successors consolidated into Common Lisp." }
-    - { name: "Mocklisp", year: 1981, hint: "Gosling Emacs's extension language, before Emacs Lisp." }
-    - { name: "Object Lisp", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "EusLisp Robot Programming Language", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "LIL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
+    - { name: "Stanford LISP 1.6", year: 1966, hint: "Lisp article: \"A successor to LISP 1.5 developed at the Stanford AI Lab, and widely distributed to PDP-10 systems running the TOPS-10 operating system. It was rendered obsolete by Maclisp and InterLisp.\" No year; read the Stanford LISP 1.6 Manual (Quam and Diffie)." }
 - id: array
   name: Array languages
   research_status: stub
@@ -437,19 +404,15 @@
   name: ML and typed functional languages
   research_status: draft
   backlog:
-    - { name: "FFP", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Cayenne (Lennart Augustsson)", hint: "From the Wikipedia list sweep (2026-11-01); needs year, sources and an example." }
-    - { name: "Opal", hint: "OPtimized Applicative Language, TU Berlin, functional (wiki-opal). Needs a year." }
-    - { name: "Flix", hint: "Aarhus University; ML family, syntax inspired by Scala, concurrency by Go; functional, imperative and logic (wiki-flix). Needs a first-appeared year." }
+    - { name: "FFP", hint: "Only mentioned in the FP article as \"another one of Backus' own variations on FP\"; no year. Backus's 1978 Turing lecture / FFP papers are the source." }
+    - { name: "Opal", hint: "Wikipedia stub gives no year or designers (TU Berlin; github.com/TU-Berlin/opal); find the first OPAL report." }
+    - { name: "Flix", hint: "Aarhus University; influenced by F#, Go, Haskell, OCaml, Scala (infobox); no first-release year on the page. Use flix.dev release history." }
     - { name: "Cryptol", hint: "Galois, Inc. for the NSA; DSL for cryptography (wiki-cryptol). Wikipedia infobox says first appeared 1980, which looks wrong; needs a real year." }
 - id: ml-family/proof
   name: Proof assistants and dependently typed languages
   parent: ml-family
   research_status: stub
   summary: "LCF-style provers and dependently typed languages: tactics in ML (HOL, Isabelle) and type theories where proofs are programs (Rocq, Agda, Lean)."
-  backlog:
-    - { name: "LCF (Logic for Computable Functions)", year: 1972, hint: "Milner, Stanford (May 1972) then Edinburgh; \"Work on the LCF system introduced the general-purpose programming language ML to allow users to write theorem-proving tactics\". Needs a real LCF session (PPLAMBDA); Gordon's HOL history has none." }
-    - { name: "Nuprl", year: 1984, hint: "Constable, Cornell; first released 1984; Martin-Löf type theory. nuprl.org is robots-blocked; needs a code sample." }
 - id: ml-family/lazy
   name: Lazy functional languages
   parent: ml-family
