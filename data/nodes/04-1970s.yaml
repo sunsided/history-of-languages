@@ -3936,3 +3936,30 @@
   confidence: low
   links: { wikipedia: "https://en.wikipedia.org/wiki/Data_General_Business_Basic" }
   sources: [wiki-dg-business-basic]
+
+- id: isp
+  name: ISP
+  aliases: [Instruction Set Processor notation, ISPL, ISPS]
+  kind: notation
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1971, precision: year, note: "Described in Bell and Newell's text Computer Structures (1971). An earlier AFIPS 1970 paper on the PMS and ISP descriptive systems is reported but was not read." }
+  creators:
+    - { name: Gordon Bell, role: co-author }
+    - { name: Allen Newell, role: co-author }
+  status: historical
+  tags:
+    domain: [hardware-design]
+  summary: >
+    The register-transfer notation of C. Gordon Bell and Allen Newell's Computer Structures, the first hardware
+    description language "that had a lasting effect". The text "introduced the concept of register transfer level, first
+    used in the ISP language to describe the behavior of the Digital Equipment Corporation (DEC) PDP-8". Its implementations
+    ISPL and ISPS followed; ISPS was taken up at DEC and later fed into VHDL.
+  notes: >
+    "The first hardware description languages appeared in the late 1960s" (Wikipedia: HDL); Yaohan Chu's CDL is in the
+    hardware backlog. ISPS is recorded as an alias until its own dating is found.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hardware_description_language#History" }
+  sources: [wiki-hardware-description-language]

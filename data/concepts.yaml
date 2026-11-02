@@ -229,6 +229,15 @@
 - id: game-scripting
   name: Game scripting
   facet: domain
+- id: hardware-design
+  name: Hardware design
+  facet: domain
+  summary: Languages that describe the structure and behaviour of digital (and analog) circuits for simulation and synthesis.
+  first_seen:
+    node: isp
+    year: 1971
+    note: "\"The first that had a lasting effect was described in 1971 in C. Gordon Bell and Allen Newell's text Computer Structures\" (Wikipedia: Hardware description language)."
+  sources: [wiki-hardware-description-language]
 - id: music-audio
   name: Music and audio
   facet: domain

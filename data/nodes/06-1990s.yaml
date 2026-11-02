@@ -5004,3 +5004,138 @@
                  [BEGIN StatementSeq]
                  [CLOSE StatementSeq]
                END ident ".".
+
+- id: lola
+  name: Lola
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1991, precision: disputed, note: "The Niklaus Wirth article: \"in 1991 he published the hardware description language Lola\". The Lola article's infobox: June 1995, the year of Wirth's textbook Digital Circuit Design." }
+    places: [{ institution: ETH Zurich, city: Zurich, country: CH }]
+  creators:
+    - { name: Niklaus Wirth, role: designer }
+  status: historical
+  tags:
+    domain: [hardware-design, education]
+  summary: >
+    Niklaus Wirth's "hardware description language for describing synchronous, digital circuits", made "to teach
+    digital design on field-programmable gate arrays (FPGAs) to computer science students" at ETH Zurich. It is the
+    hardware member of the Oberon family: implemented in Oberon, with Wirthian MODULE ... END syntax, and described in his
+    book Digital Circuit Design (1995).
+  notes: >
+    Infobox influences: ALGOL, Pascal, Modula. "ALGOL" is not specific, so no edge is drawn to an ALGOL node.
+  relations:
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [wiki-lola], note: "Infobox \"Influenced by: ALGOL, Pascal, Modula\"; same designer." }
+    - { type: influenced_by, to: modula, weight: moderate, confidence: medium, sources: [wiki-lola], note: "Infobox \"Influenced by: ALGOL, Pascal, Modula\"." }
+    - { type: implemented_in, to: oberon, weight: moderate, confidence: medium, sources: [wiki-lola], note: "Infobox implementation language: Oberon." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lola_(computing)" }
+  sources: [wiki-lola, wiki-niklaus-wirth]
+  example:
+    title: an 8-bit ripple-carry adder from a composite Cell type
+    language: Lola
+    note: "From Wikipedia's Lola article, as printed there. The sum is written z:=x-y-ci; the page does not say what \"-\" denotes (exclusive or would make it a full adder). Check against Wirth's Digital Circuit Design."
+    code: |
+      MODULE Adder;
+
+      TYPE Cell; (* Composite Type *)
+        IN x,y,ci:BIT; (* input signals *)
+        OUT z,co:BIT; (* output signals *)
+      BEGIN
+        z:=x-y-ci;
+        co:=x*y+x*ci+y*ci;
+      END Cell;
+
+      CONST N:=8;
+      IN X,Y:[N]BIT; ci:BIT; (* input signals *)
+      OUT Z:[N]BIT; co:BIT; (* output signals *)
+      VAR S:[N]Cell; (* composite type instances *)
+      BEGIN
+        S.0(X.0, Y.0, ci); (* inputs in cell 0 *)
+        FOR i:=1..N-1 DO
+          S.i(X.i,Y.i,S[i-1].co); (* inputs in cell i *)
+        END;
+        FOR i:=0..N-1 DO
+          Z.i:=S.i.z;
+      END;
+        co:=S.7.co;
+      END Adder.
+    sources: [wiki-lola]
+
+- id: ahdl
+  name: AHDL
+  aliases: [Altera Hardware Description Language]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1995, precision: circa, note: "No first-release year on the page. Its cited manual, MAX+PLUS II AHDL (6.0 ed.), is dated November 1995, so 1995 is the latest possible year; earlier editions imply an earlier start." }
+    places: [{ institution: Altera Corporation, country: US }]
+  creators:
+    - { name: Altera, role: developer }
+  status: maintained
+  tags:
+    domain: [hardware-design]
+  summary: >
+    "A proprietary hardware description language (HDL) developed by Altera Corporation" for its MAX+PLUS and Quartus
+    design software. "AHDL has an Ada-like syntax, while its feature set is comparable to the synthesizable portions of
+    the Verilog and VHDL hardware description languages." Source files are Text Design Files (.tdf).
+  relations:
+    - { type: influenced_by, to: ada, weight: weak, confidence: low, sources: [wiki-ahdl], note: "\"AHDL has an Ada-like syntax\": a resemblance, not a stated derivation. Confirm from an Altera manual." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Altera_Hardware_Description_Language" }
+  sources: [wiki-ahdl]
+
+- id: handel-c
+  name: Handel-C
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1996, precision: year, note: "\"Handel HDL evolved into Handel-C around early 1996\"; spun off to Embedded Solutions Limited (ESL) in 1996." }
+    places: [{ institution: Oxford University Computing Laboratory, city: Oxford, country: GB }]
+  creators:
+    - { name: Oxford University Computing Laboratory, role: hardware compilation group }
+  status: legacy
+  tags:
+    paradigm: [concurrent]
+    concurrency: [channels]
+    domain: [hardware-design]
+  summary: >
+    A high-level hardware description language from Oxford's hardware compilation group: "a turing-complete rich subset
+    of the C programming language, with an emphasis on parallel computing". For parallelism it borrows CSP keywords (par,
+    seq, channels with ! and ?) and "the general file structure of the Occam programming language". It passed through
+    ESL, Celoxica, Agility and Mentor Graphics to Siemens EDA.
+  relations:
+    - { type: subset_of, to: c, weight: strong, confidence: medium, sources: [wiki-handel-c], note: "\"a turing-complete rich subset of the C programming language\"." }
+    - { type: influenced_by, to: csp, aspects: [channels], weight: strong, confidence: medium, sources: [wiki-handel-c], note: "\"some of the communicating sequential processes (CSP) keywords are used\"." }
+    - { type: influenced_by, to: occam, weight: moderate, confidence: medium, sources: [wiki-handel-c], note: "\"along with the general file structure of the Occam programming language\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Handel-C" }
+  sources: [wiki-handel-c]
+  example:
+    title: a synchronous channel between two parallel threads
+    language: Handel-C
+    note: "From Wikipedia's Handel-C article."
+    code: |
+      par {
+          chan int a; // declare a synchronous channel
+          int x;
+
+          // begin sending thread
+          seq (i = 0; i < 10; i++) {
+              a ! i;  // send the values 0 to 9 sequentially into the channel
+          }
+
+          // begin receiving thread
+          seq (j = 0; j < 10; j++) {
+              a ? x;  // perform a sequence of 10 reads from the channel into variable x
+              delay;  // introduce a delay of 1 clock cycle between successive reads
+                      // this has the effect of blocking the sending thread between writes
+          }
+      }
+    sources: [wiki-handel-c]

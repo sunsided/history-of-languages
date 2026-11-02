@@ -34,6 +34,12 @@
     simulator during his Cambridge PhD, with BCPL/C-level efficiency, since Simula's implementation had
     nearly sunk that project. He knew Smalltalk and deliberately chose Simula's statically typed model.
     C++ then grew into the main vehicle for zero-overhead abstraction and generic programming.
+  notes: >
+    SystemC, the hardware and system-level modelling standard, is "a set of C++ classes and macros which provide an
+    event-driven simulation interface" and "strictly a C++ class library", so it is a note here rather than a node. It
+    grew from the Scenic work (DAC 1997); ARM, CoWare, Synopsys and CynApps launched it (Open SystemC Initiative
+    announced 1999-09-27, V1.0 on 2000-03-28), and it is IEEE 1666 (2005, 2011, 2023; SystemC AMS as 1666.1-2016).
+    Source: Wikipedia, SystemC (wiki-systemc).
   relations:
     - { type: superset_of, to: c, weight: strong, confidence: high, note: "Nearly a superset; C and C++ have diverged in details." }
     - { type: influenced_by, to: simula, aspects: [classes, inheritance, virtual-dispatch, static-typing], weight: strong, confidence: high, note: "'C++ was designed to provide Simula's facilities for program organization together with C's efficiency and flexibility for systems programming.' (HOPL-II, §1)" }
@@ -46,7 +52,7 @@
   research_status: reviewed
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/C%2B%2B", homepage: "https://isocpp.org" }
-  sources: [stroustrup-1993-hopl2, stroustrup-1994-design-evolution, stroustrup-2007-hopl3, stroustrup-2020-hopl4]
+  sources: [stroustrup-1993-hopl2, stroustrup-1994-design-evolution, stroustrup-2007-hopl3, stroustrup-2020-hopl4, wiki-systemc]
   example:
     title: Classes, virtual functions, RAII
     language: C++ (C++17)
@@ -5574,3 +5580,173 @@
     note: "Inline example from Wikipedia's Super Expander 64 article, which says it \"played a rising scale\"."
     code: |
       PRINT CHR$(6);"CDEFGAB"
+
+- id: palasm
+  name: PALASM
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1983, precision: circa, note: "\"developed by John Birkner in the early 1980s\"; \"By 1983, MMI customers ran versions on the DEC PDP-11, Data General NOVA, Hewlett-Packard HP 2100, MDS800 and others\", so 1983 is the latest possible year." }
+    places: [{ institution: Monolithic Memories, country: US }]
+  creators:
+    - { name: John Birkner, role: designer }
+  status: historical
+  tags:
+    domain: [hardware-design]
+  summary: >
+    A language for programming the PAL (programmable array logic) chips introduced by Monolithic Memories, Inc. The
+    compiler "was written by MMI in FORTRAN IV on an IBM 370/168", and MMI gave the source code away, so it ran on
+    many minicomputers and later MS-DOS. One of the PLD languages of the early 1980s with ABEL and CUPL.
+  notes: >
+    Not case-sensitive. A Windows front-end came later. No code on the Wikipedia page.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PALASM" }
+  sources: [wiki-palasm]
+
+- id: abel
+  name: ABEL
+  aliases: [Advanced Boolean Expression Language, ABEL-HDL]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    began: { year: 1981, precision: year, note: "\"The ABEL concept and original compiler were created by Russell de Pina of Data I/O's Applied Research Group in 1981.\"" }
+    first_appeared: { year: 1983, precision: year, note: "\"It was created in 1983 by Data I/O Corporation\"; \"By 1983 Data I/O introduced ABEL\" (Wikipedia: HDL)." }
+    places: [{ institution: Data I/O Corporation, city: Redmond, country: US }]
+  creators:
+    - { name: Russell de Pina, role: designer of the concept and original compiler }
+    - { name: Kyu Y. Lee, role: led the product development team }
+    - { name: Walter Bright, role: product development team }
+  status: legacy
+  tags:
+    domain: [hardware-design]
+  milestones:
+    - { version: "Xilinx ISE 11", year: 2010, summary: "\"Xilinx discontinued support for ABEL in its ISE Design Suite starting with version 11 (released in 2010).\"" }
+  summary: >
+    "An obsolete hardware description language" for programmable logic devices, created at Data I/O in Redmond. It
+    includes "a preprocessor with syntax loosely based on Digital Equipment Corporation's MACRO-11 assembly language".
+    After several acquisitions the toolchain ended up at Xilinx.
+  notes: >
+    The team also included Mary Bailey, Bjorn Benson, Michael Holley, Charles Olivier and David Pellerin. The Wikipedia
+    page shows its 4-bit counter example only as an image.
+  relations:
+    - { type: influenced_by, to: macro-11, weight: weak, confidence: medium, sources: [wiki-abel], note: "Only its preprocessor: \"syntax loosely based on Digital Equipment Corporation's MACRO-11 assembly language\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Advanced_Boolean_Expression_Language" }
+  sources: [wiki-abel, wiki-hardware-description-language]
+
+- id: verilog
+  name: Verilog
+  aliases: [Verilog HDL, IEEE 1364]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    began: { year: 1983, precision: circa, note: "\"created by Prabhu Goel, Phil Moorby and Chi-Lai Huang between late 1983 and early 1984\"." }
+    first_appeared: { year: 1984, precision: disputed, note: "Infobox: 1984. Wikipedia's HDL article: \"In 1985 ... Gateway Design Automation introduced Verilog\"." }
+    places: [{ institution: Gateway Design Automation, country: US }]
+  creators:
+    - { name: Prabhu Goel, role: co-designer }
+    - { name: Phil Moorby, role: co-designer }
+    - { name: Chi-Lai Huang, role: co-designer }
+  status: active
+  tags:
+    domain: [hardware-design]
+  milestones:
+    - { version: "Verilog-95", year: 1995, summary: "\"submitted to IEEE and became IEEE Standard 1364-1995\"." }
+    - { version: "Verilog-2001", year: 2001, summary: "IEEE Standard 1364-2001." }
+    - { version: "Verilog 2005", year: 2005, summary: "IEEE 1364-2005: \"minor corrections, spec clarifications, and a few new language features\"." }
+    - { version: "IEEE 1800-2009", year: 2009, summary: "\"the Verilog standard (IEEE 1364-2005) was merged into the SystemVerilog standard\"." }
+  summary: >
+    One of the two dominant HDLs, from Gateway Design Automation. "The designers of Verilog wanted a language with syntax
+    similar to the C programming language"; like C it is case-sensitive and has a preprocessor. Cadence bought Gateway
+    for Verilog-XL, which became the de facto standard simulator. Since 2009 its standard lives inside SystemVerilog.
+  notes: >
+    Infobox influences: Pascal, Ada, C, Fortran; only the C link has prose behind it, so only that edge is recorded.
+    Verilog-AMS, "a derivative of the Verilog hardware description language that includes Analog and Mixed-Signal
+    extensions", stayed at Accellera while Verilog went to the IEEE; Verilog-A is its analog subset. Neither has a date
+    on its page, so they are kept here rather than as nodes.
+  relations:
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-verilog], note: "\"wanted a language with syntax similar to the C programming language\"; \"Like C, Verilog is case-sensitive and has a basic preprocessor\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Verilog" }
+  sources: [wiki-verilog, wiki-hardware-description-language, wiki-verilog-ams]
+  example:
+    title: a D flip-flop
+    language: Verilog
+    note: "From Wikipedia's Verilog article: a non-blocking assignment on every rising clock edge."
+    code: |
+      reg q;
+      always @(posedge clk)
+        q <= d;
+    sources: [wiki-verilog]
+
+- id: vhdl
+  name: VHDL
+  aliases: [VHSIC Hardware Description Language, IEEE 1076]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    began: { year: 1983, precision: year, note: "\"developed under contract F33615-83-C-1003 from the United States Air Force awarded in 1983 to a team of Intermetrics, Inc. ..., Texas Instruments ... and IBM\"." }
+    first_appeared: { year: 1985, precision: year, note: "\"In 1985 ... Intermetrics released the first completed version of the VHSIC Hardware Description Language\" (Wikipedia: HDL)." }
+    places: [{ institution: Intermetrics, country: US }]
+  creators:
+    - { name: US Department of Defense, role: sponsor (VHSIC program) }
+    - { name: Intermetrics, role: language experts and prime contractor }
+    - { name: Texas Instruments, role: chip design experts }
+    - { name: IBM, role: computer-system design experts }
+  status: active
+  tags:
+    typing: [strong-typing]
+    domain: [hardware-design]
+  milestones:
+    - { version: "1076-1987", year: 1987, summary: "\"First standardized revision of version 7.2 of the language from the United States Air Force\", approved December 1987." }
+    - { version: "1076-1993", year: 1993, summary: "\"Probably the most widely used version with the greatest vendor tool support.\"" }
+    - { version: "1076-2000", year: 2000, summary: "\"Introduces the use of protected types.\"" }
+    - { version: "1076-2002", year: 2002, summary: "Minor revision; buffer port rules relaxed." }
+    - { version: "1076-2008", year: 2009, summary: "Major revision (VHDL-2008), released 2009-01-26; Accellera had approved VHDL 4.0 in February 2008." }
+    - { version: "1076-2019", year: 2019, summary: "Major revision, 23 December 2019." }
+  summary: >
+    The US Department of Defense's hardware description language from the VHSIC program, the other dominant HDL with
+    Verilog. Because the DoD required "as much of the syntax as possible to be based on Ada", "VHDL borrows heavily from
+    the Ada programming language in both concept and syntax": strongly typed and not case-sensitive. It also drew on
+    "the experience gained with the earlier development of ISPS".
+  notes: >
+    VHDL-AMS, "a derivative of the hardware description language VHDL (IEEE 1076-2002)" with analog and mixed-signal
+    extensions, is IEEE 1076.1 (current revision 1076.1-2017); its first date is not on the page, so it is a note here.
+    Related standards: 1076.2 math, 1076.3 synthesis, 1076.4 VITAL, 1164 std_logic.
+  relations:
+    - { type: influenced_by, to: ada, aspects: [strong-typing], weight: strong, confidence: medium, sources: [wiki-vhdl, wiki-hardware-description-language], note: "\"VHDL borrows heavily from the Ada programming language in both concept and syntax\", by DoD requirement." }
+    - { type: influenced_by, to: isp, weight: moderate, confidence: medium, sources: [wiki-hardware-description-language], note: "\"based on the Ada programming language, and on the experience gained with the earlier development of ISPS\"." }
+    - { type: influenced_by, to: pascal, weight: weak, confidence: low, sources: [wiki-vhdl], note: "Infobox lists Pascal; no prose. Confirm from Coelho 1989 or the IEEE 1076 rationale." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/VHDL" }
+  sources: [wiki-vhdl, wiki-hardware-description-language, wiki-vhdl-ams]
+  example:
+    title: an AND gate as entity and architecture
+    language: VHDL
+    note: "From Wikipedia's VHDL article."
+    code: |
+      library IEEE;
+      use IEEE.std_logic_1164.all;
+
+      -- this is the entity
+      entity ANDGATE is
+        port (
+          I1 : in std_logic;
+          I2 : in std_logic;
+          O  : out std_logic);
+      end entity ANDGATE;
+
+      -- this is the architecture
+      architecture RTL of ANDGATE is
+      begin
+        O <= I1 and I2;
+      end architecture RTL;
+    sources: [wiki-vhdl]

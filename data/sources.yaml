@@ -6094,3 +6094,152 @@
   primary: false
   title: "Wikipedia: Wheeler Jump"
   url: https://en.wikipedia.org/wiki/Wheeler_Jump
+
+- id: wiki-hardware-description-language
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Hardware description language"
+  url: https://en.wikipedia.org/wiki/Hardware_description_language
+  checked: '2026-11-02'
+- id: wiki-vhdl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: VHDL"
+  url: https://en.wikipedia.org/wiki/VHDL
+  checked: '2026-11-02'
+- id: wiki-vhdl-ams
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: VHDL-AMS"
+  url: https://en.wikipedia.org/wiki/VHDL-AMS
+  checked: '2026-11-02'
+- id: wiki-verilog
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Verilog"
+  url: https://en.wikipedia.org/wiki/Verilog
+  checked: '2026-11-02'
+- id: wiki-verilog-ams
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Verilog-AMS"
+  url: https://en.wikipedia.org/wiki/Verilog-AMS
+  checked: '2026-11-02'
+- id: wiki-systemverilog
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SystemVerilog"
+  url: https://en.wikipedia.org/wiki/SystemVerilog
+  checked: '2026-11-02'
+- id: wiki-systemc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: SystemC"
+  url: https://en.wikipedia.org/wiki/SystemC
+  checked: '2026-11-02'
+- id: wiki-palasm
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PALASM"
+  url: https://en.wikipedia.org/wiki/PALASM
+  checked: '2026-11-02'
+- id: wiki-abel
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Advanced Boolean Expression Language"
+  url: https://en.wikipedia.org/wiki/Advanced_Boolean_Expression_Language
+  checked: '2026-11-02'
+- id: wiki-ahdl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Altera Hardware Description Language"
+  url: https://en.wikipedia.org/wiki/Altera_Hardware_Description_Language
+  checked: '2026-11-02'
+- id: wiki-lola
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lola (computing)"
+  url: https://en.wikipedia.org/wiki/Lola_(computing)
+  checked: '2026-11-02'
+- id: wiki-niklaus-wirth
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Niklaus Wirth"
+  url: https://en.wikipedia.org/wiki/Niklaus_Wirth
+  checked: '2026-11-02'
+- id: wiki-handel-c
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Handel-C"
+  url: https://en.wikipedia.org/wiki/Handel-C
+  checked: '2026-11-02'
+- id: wiki-bluespec
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Bluespec"
+  url: https://en.wikipedia.org/wiki/Bluespec
+  checked: '2026-11-02'
+- id: wiki-chisel
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Chisel (programming language)"
+  url: https://en.wikipedia.org/wiki/Chisel_(programming_language)
+  checked: '2026-11-02'
+- id: bachrach-2012-chisel
+  type: paper
+  primary: true
+  authors:
+  - Jonathan Bachrach
+  - Huy Vo
+  - Brian Richards
+  - Yunsup Lee
+  - Andrew Waterman
+  - Rimas Avižienis
+  - John Wawrzynek
+  - Krste Asanović
+  title: "Chisel: constructing hardware in a Scala embedded language"
+  venue: Proceedings of the 49th Annual Design Automation Conference (DAC 2012)
+  year: 2012
+- id: spinalhdl-docs
+  type: manual
+  primary: true
+  title: SpinalHDL documentation (introduction, FAQ and simple example)
+  url: https://spinalhdl.github.io/SpinalDoc-RTD/master/index.html
+  checked: '2026-11-02'
+- id: spinalhdl-github
+  type: web
+  primary: true
+  title: SpinalHDL repository README
+  url: https://github.com/SpinalHDL/SpinalHDL
+  checked: '2026-11-02'
+- id: clash-homepage
+  type: web
+  primary: true
+  title: Clash homepage and publications list
+  url: https://clash-lang.org/
+  checked: '2026-11-02'
+- id: baaij-2010-clash
+  type: paper
+  primary: true
+  authors:
+  - C. P. R. Baaij
+  - M. Kooijman
+  - J. Kuper
+  - W. A. Boeijink
+  - M. E. T. Gerards
+  title: "CλaSH: Structural Descriptions of Synchronous Hardware using Haskell"
+  venue: Proceedings of the 13th Conference on Digital System Design (DSD), Lille, pages 714-721
+  year: 2010
+  url: http://doc.utwente.nl/73124/
+- id: wiki-myhdl
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: MyHDL"
+  url: https://en.wikipedia.org/wiki/MyHDL
+  checked: '2026-11-02'
+- id: myhdl-pypi
+  type: web
+  primary: true
+  title: "myhdl on PyPI: release history"
+  url: https://pypi.org/project/myhdl/#history
+  checked: '2026-11-02'

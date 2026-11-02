@@ -7428,3 +7428,257 @@
           <h1>Hello, World</h1>
         }
       )
+
+- id: bluespec
+  name: Bluespec
+  aliases: [Bluespec SystemVerilog, BSV, Bluespec Haskell, BH, Bluespec Classic]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 2000, precision: circa, note: "No first-release year on the page. Arvind founded Sandburst in 2000 and the page is in \"Programming languages created in 2000\"; Bluespec Inc. was co-founded in June 2003." }
+    places: [{ institution: Massachusetts Institute of Technology, country: US }]
+  creators:
+    - { name: Lennart Augustsson, role: main designer and implementor }
+  status: active
+  tags:
+    paradigm: [functional]
+    domain: [hardware-design]
+  milestones:
+    - { version: "BSC open source", year: 2020, summary: "The Bluespec Compiler was \"opensourced by Bluespec inc. in 2020 under New BSD License terms\"." }
+  summary: >
+    "A high-level functional programming hardware description programming language which was essentially Haskell
+    extended to handle chip design". Designs are partially evaluated and compiled to a term rewriting system, then to
+    Verilog RTL. It comes in two syntaxes: Bluespec SystemVerilog (BSV) and the Haskell-like Bluespec Classic (BH).
+  notes: >
+    Company co-founders: Arvind Mithal (MIT) and Joe Stoy (Oxford). First Bluespec workshop at MIT on 13 August 2007.
+    The Wikipedia article is mostly about the company. The BSV syntax must postdate SystemVerilog (2002), so the
+    SystemVerilog edge belongs to a later version, not to the first year.
+  relations:
+    - { type: influenced_by, to: haskell, aspects: [functional], weight: strong, confidence: medium, sources: [wiki-bluespec], note: "\"essentially Haskell extended to handle chip design\"; the BH dialect keeps Haskell syntax." }
+    - { type: influenced_by, to: systemverilog, weight: moderate, confidence: medium, sources: [wiki-bluespec], note: "\"It comes with a SystemVerilog frontend\" (BSV); infobox family \"Verilog, Haskell\". Year of the BSV frontend not found." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Bluespec", homepage: "http://bluespec.com" }
+  sources: [wiki-bluespec]
+
+- id: systemverilog
+  name: SystemVerilog
+  aliases: [IEEE 1800]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 2002, precision: year, note: "\"SystemVerilog started with the donation of the Superlog language to Accellera in 2002 by the startup company Co-Design Automation.\"" }
+    places: [{ institution: Accellera }]
+  creators:
+    - { name: Co-Design Automation, role: donated Superlog }
+    - { name: Synopsys, role: donated OpenVera (verification features) }
+  status: active
+  tags:
+    paradigm: [object-oriented]
+    domain: [hardware-design]
+  milestones:
+    - { version: "1800-2005", year: 2005, summary: "\"adopted as IEEE Standard 1800-2005\"." }
+    - { version: "1800-2009", year: 2009, summary: "Merged with the base Verilog standard (IEEE 1364-2005)." }
+    - { version: "1800-2012", year: 2012, summary: "Revision." }
+    - { version: "1800-2017", year: 2017, summary: "Revision." }
+    - { version: "1800-2023", year: 2023, summary: "Current standard, December 2023." }
+  summary: >
+    "An extension of Verilog" for both design and verification, begun from Co-Design Automation's Superlog, with "the
+    bulk of the verification functionality ... based on the OpenVera language donated by Synopsys". Its verification side
+    "uses extensive object-oriented programming techniques and is more closely related to Java than Verilog". Since 2009
+    the Verilog standard is part of IEEE 1800.
+  relations:
+    - { type: superset_of, to: verilog, weight: strong, confidence: medium, sources: [wiki-systemverilog], note: "\"SystemVerilog for register-transfer level (RTL) design is an extension of Verilog-2005\"." }
+    - { type: successor_of, to: verilog, from_version: "Verilog 2005", year: 2009, weight: strong, confidence: medium, sources: [wiki-systemverilog, wiki-verilog], note: "\"In 2009, the standard was merged with the base Verilog (IEEE 1364-2005) standard, creating IEEE Standard 1800-2009.\"" }
+    - { type: influenced_by, to: java, aspects: [object-oriented], weight: moderate, confidence: medium, sources: [wiki-systemverilog], note: "Verification side \"more closely related to Java than Verilog\"; infobox lists Java and OpenVera for verification." }
+    - { type: influenced_by, to: cpp, weight: weak, confidence: low, sources: [wiki-systemverilog], note: "Infobox lists C++ for design; no prose." }
+    - { type: influenced_by, to: vhdl, weight: weak, confidence: low, sources: [wiki-systemverilog], note: "Infobox lists VHDL for design; no prose." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SystemVerilog" }
+  sources: [wiki-systemverilog]
+  example:
+    title: an always_ff block
+    language: SystemVerilog
+    note: "From Wikipedia's SystemVerilog article: always_ff tells tools the block must infer flip-flops."
+    code: |
+      always_ff @(posedge clk)
+          count <= count + 4'd1;
+    sources: [wiki-systemverilog]
+
+- id: myhdl
+  name: MyHDL
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 2003, precision: circa, note: "Earliest release on PyPI is 0.3, uploaded 8 September 2003; no page states the first public release." }
+  creators:
+    - { name: Jan Decaluwe, role: developer }
+  status: maintained
+  tags:
+    domain: [hardware-design]
+  milestones:
+    - { version: "0.3", year: 2003, date: "2003-09-08", summary: "Earliest version on PyPI." }
+    - { version: "0.11", year: 2019, date: "2019-05-31", summary: "MyHDL 0.11.0 released." }
+  summary: >
+    "A Python-based hardware description language": it "turns Python into a hardware description and verification
+    language, providing hardware engineers with the power of the Python ecosystem". Designs can be converted to VHDL
+    and Verilog.
+  relations:
+    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [wiki-myhdl, myhdl-pypi], note: "\"MyHDL turns Python into a hardware description and verification language\" (myhdl.org)." }
+    - { type: implemented_in, to: python, weight: strong, confidence: high, sources: [wiki-myhdl], note: "A Python library: designs are Python code." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/MyHDL", homepage: "https://www.myhdl.org/" }
+  sources: [wiki-myhdl, myhdl-pypi]
+  example:
+    title: a Gray encoder
+    language: MyHDL
+    note: "From Wikipedia's MyHDL article."
+    code: |
+      def bin2gray(B, G, width: int):
+          """Gray encoder.
+
+          B -- input intbv signal, binary encoded
+          G -- output intbv signal, gray encoded
+          width -- bit width
+          """
+
+          @always_comb
+          def logic():
+              Bext = intbv(0)[width + 1 :]
+              Bext[:] = B
+              for i in range(width):
+                  G.next[i] = Bext[i + 1] ^ Bext[i]
+
+          return logic
+    sources: [wiki-myhdl]
+
+- id: clash
+  name: Clash
+  aliases: [CλaSH, CLaSH]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 2009, date: "2009-12", precision: exact, note: "Baaij's MSc thesis \"CλasH: from Haskell to hardware\", University of Twente, December 2009; the DSD paper followed in 2010." }
+    places: [{ institution: University of Twente, city: Enschede, country: NL }]
+  status: active
+  tags:
+    paradigm: [functional]
+    domain: [hardware-design]
+  summary: >
+    "A functional hardware description language that borrows both its syntax and semantics from the functional
+    programming language Haskell". The compiler turns Haskell descriptions into synthesizable VHDL, Verilog or
+    SystemVerilog. It began as C. P. R. Baaij's Twente thesis and is maintained by QBayLogic.
+  notes: >
+    No individual creator is named on clash-lang.org; C. P. R. Baaij is the author of the earliest publication listed.
+    BSD-2 licence.
+  relations:
+    - { type: influenced_by, to: haskell, aspects: [functional], weight: strong, confidence: high, sources: [clash-homepage], note: "\"borrows both its syntax and semantics from the functional programming language Haskell\"." }
+  research_status: stub
+  confidence: high
+  links: { homepage: "https://clash-lang.org/" }
+  sources: [clash-homepage, baaij-2010-clash]
+  example:
+    title: an FIR filter in three lines
+    language: Clash
+    note: "From the clash-lang.org homepage."
+    code: |
+      fir coeffs x = dotp coeffs (window x)
+        where
+          dotp as bs = sum (zipWith (*) as bs)
+    sources: [clash-homepage]
+
+- id: chisel
+  name: Chisel
+  aliases: [Chisel 3]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 2012, date: "2012-06", precision: exact, note: "The DAC 2012 paper \"Chisel: constructing hardware in a Scala embedded language\"." }
+    places: [{ institution: University of California Berkeley, city: Berkeley, country: US }]
+  status: active
+  tags:
+    paradigm: [object-oriented, functional]
+    domain: [hardware-design]
+  summary: >
+    A hardware description language from UC Berkeley, "based on Scala as a domain-specific language". It "inherits the
+    object-oriented and functional programming aspects of Scala for describing digital hardware", and its circuits are
+    converted through the FIRRTL intermediate form to Verilog for synthesis and simulation.
+  notes: >
+    Authors of the 2012 paper: Jonathan Bachrach, Huy Vo, Brian Richards, Yunsup Lee, Andrew Waterman, Rimas Avižienis,
+    John Wawrzynek and Krste Asanović; Wikipedia names no individual designer, so no creators are listed. Apache 2.0.
+  relations:
+    - { type: influenced_by, to: scala, aspects: [object-oriented, functional], weight: strong, confidence: high, sources: [wiki-chisel, bachrach-2012-chisel], note: "\"a Scala embedded language\" (paper title); \"inherits the object-oriented and functional programming aspects of Scala\"." }
+    - { type: implemented_in, to: scala, weight: strong, confidence: high, sources: [wiki-chisel], note: "An embedded DSL: Chisel designs are Scala programs." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Chisel_(programming_language)", homepage: "https://www.chisel-lang.org" }
+  sources: [wiki-chisel, bachrach-2012-chisel]
+  example:
+    title: an 8-bit adder module
+    language: Chisel 3
+    note: "From Wikipedia's Chisel article."
+    code: |
+      class Add extends Module {
+        val io = IO(new Bundle {
+          val a = Input(UInt(8.W))
+          val b = Input(UInt(8.W))
+          val y = Output(UInt(8.W))
+        })
+
+        io.y := io.a + io.b
+      }
+    sources: [wiki-chisel]
+
+- id: spinalhdl
+  name: SpinalHDL
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    began: { year: 2014, date: "2014-12", precision: exact, note: "FAQ: \"Between December 2014 and April 2016, it was as a personal hobby project. But since April 2016 one person is working full time on it.\"" }
+    first_appeared: { year: 2014, precision: circa, note: "First public release not dated in the sources read; the project's start (December 2014) is used." }
+  status: active
+  tags:
+    domain: [hardware-design]
+  summary: >
+    A "Scala based HDL" that generates VHDL or Verilog: "SpinalHDL is simply a set of Scala libraries". Like Chisel it is
+    a hardware description embedded in Scala, with Component, Bundle, Reg and when as library constructs.
+  notes: >
+    The FAQ does not name the person who started it. Core LGPL3, libraries MIT.
+  relations:
+    - { type: influenced_by, to: scala, weight: strong, confidence: high, sources: [spinalhdl-github], note: "\"SpinalHDL is simply a set of Scala libraries.\"" }
+    - { type: implemented_in, to: scala, weight: strong, confidence: high, sources: [spinalhdl-github], note: "Scala libraries included into a Scala project." }
+  research_status: stub
+  confidence: medium
+  links: { homepage: "https://spinalhdl.github.io/SpinalDoc-RTD/master/index.html" }
+  sources: [spinalhdl-docs, spinalhdl-github]
+  example:
+    title: a counter with a flag
+    language: SpinalHDL
+    note: "From the SpinalHDL documentation's \"A simple example\" (the getting-started template)."
+    code: |
+      case class MyTopLevel() extends Component {
+        val io = new Bundle {
+          val cond0 = in port Bool()
+          val cond1 = in port Bool()
+          val flag  = out port Bool()
+          val state = out port UInt(8 bits)
+        }
+
+        val counter = Reg(UInt(8 bits)) init 0
+
+        when(io.cond0) {
+          counter := counter + 1
+        }
+
+        io.state := counter
+        io.flag  := (counter === 0) | io.cond1
+      }
+    sources: [spinalhdl-docs]

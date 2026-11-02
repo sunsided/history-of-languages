@@ -568,6 +568,30 @@
     - { name: "Promela", hint: "Gerard J. Holzmann's verification modelling language for the SPIN model checker (Wikipedia). No year on the page." }
     - { name: "RSL", hint: "The list's RSL link points to a Robot Battle section that no longer exists (redirects to GarageGames). Unresolved." }
     - { name: "S2", hint: "S2 redirects to LiveJournal, where it is the journal-template language; no year or authors." }
+- id: hardware
+  name: Hardware description languages
+  summary: "Languages for describing digital and analog circuits: register-transfer notations, PLD languages, VHDL and Verilog, and HDLs embedded in Scala, Haskell and Python."
+  collapsed: true
+  research_status: stub
+  key_sources: [wiki-hardware-description-language]
+  backlog:
+    - { name: "CDL (Computer Design Language)", year: 1965, hint: "Yaohan Chu's ALGOL-like register-transfer language, CACM 1965. Neither a Wikipedia page nor dblp (blocked) could be read; find the CACM paper." }
+    - { name: "ISPS", hint: "\"At least two implementations of the basic ISP language (ISPL and ISPS) followed\"; ISPS was adopted at DEC and by NATO research teams (Wikipedia: Hardware description language). No year; probably a milestone or dialect of isp." }
+    - { name: "KARL", year: 1979, hint: "\"Separate work done about 1979 at the University of Kaiserslautern produced a language named KAiserslautern Register Transfer Language (KARL)\" (Wikipedia: Hardware description language)." }
+    - { name: "ABL", hint: "\"ABL was implemented in the early 1980s by the Centro Studi e Laboratori Telecomunicazioni (CSELT) in Torino\" (Wikipedia: Hardware description language). Needs a source of its own." }
+    - { name: "CUPL", hint: "PLD language named with ABEL and PALASM as \"originating in the same era\" (Wikipedia: ABEL). No page read yet." }
+    - { name: "LALSD", hint: "S. Y. H. Su's HDL, on which Verilog co-designer Chi-Lai Huang had worked for his PhD (Wikipedia: Verilog). No date." }
+    - { name: "Superlog", year: 2002, hint: "Co-Design Automation's language, donated to Accellera in 2002 as the start of SystemVerilog (Wikipedia: SystemVerilog). Needs its own dating." }
+    - { name: "OpenVera", hint: "Synopsys's verification language, donated as the basis of SystemVerilog's verification features (Wikipedia: SystemVerilog). No date." }
+    - { name: "Lava", hint: "Haskell-embedded HDL from Chalmers (\"Hardware description EDSL\", Hackage chalmers-lava2000, author Koen Claessen). Hackage chalmers-lava2000 copyright \"2000-2008 Koen Claessen\"; the founding paper \"Lava: Hardware Design in Haskell\" could not be read (dblp blocked)." }
+    - { name: "Amaranth (nMigen)", hint: "\"Amaranth HDL (previously nMigen)\", Python toolchain, BSD-2. PyPI amaranth starts Dec 2021, docs copyright from 2020; nMigen and its predecessor Migen (M-Labs, \"A Python toolbox for building complex digital hardware\") are undated so far." }
+    - { name: "Hardcaml", hint: "\"an embedded DSL for designing and simulating hardware in OCaml\" (opam), Jane Street, MIT licence. CHANGES.md opens with \"v0.11 Initial Jane Street public release\"; no dates found. Earlier non-Jane-Street 1.x versions exist." }
+  research_questions:
+    - "Lola: Wikipedia's Lola article dates it June 1995 (Wirth's book Digital Circuit Design), the Niklaus Wirth article says he published it in 1991. Find Wirth's 1990s ETH reports."
+    - "Bluespec: the Wikipedia article gives no first-release year (company 2003, category 'created in 2000'). Find Augustsson's or Arvind's own account."
+    - "Verilog: 1984 (infobox, design late 1983 to early 1984) or 1985 (Gateway's introduction, Wikipedia: HDL)? Find Moorby's own history."
+    - "VHDL-AMS and Verilog-AMS are kept as notes on vhdl and verilog. Promote to nodes if a dated defining standard is read (IEEE 1076.1-1999?)."
+    - "SystemC is a C++ class library (Wikipedia: \"strictly a C++ class library\"), recorded as a note on cpp. Revisit if the hardware cluster needs it as a node."
 - id: quantum
   name: Quantum programming languages
   summary: "Languages for quantum circuits and algorithms."
