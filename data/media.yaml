@@ -14,7 +14,7 @@
   license_url: https://creativecommons.org/licenses/by/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Antikythera_Fragment_A_(Front).webp
   commons_file: File:Antikythera_Fragment_A_(Front).webp
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: jacquard-loom
   file: assets/media/jacquard-loom.jpg
   kind: machine
@@ -26,7 +26,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:A_la_m%C3%A9moire_de_J.M._Jacquard.jpg
   commons_file: File:A_la_mémoire_de_J.M._Jacquard.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: analytical-engine
   file: assets/media/analytical-engine.jpg
   kind: machine
@@ -40,7 +40,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Babbages_Analytical_Engine,_1834-1871._(9660574685).jpg
   commons_file: File:Babbages_Analytical_Engine,_1834-1871._(9660574685).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: lovelace-note-g
   file: assets/media/lovelace-note-g.jpg
   kind: document
@@ -53,7 +53,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Diagram_for_the_computation_of_Bernoulli_numbers.jpg
   commons_file: File:Diagram_for_the_computation_of_Bernoulli_numbers.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: hollerith-tabulator
   file: assets/media/hollerith-tabulator.jpg
   kind: machine
@@ -66,7 +66,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:HollerithMachine.CHM.jpg
   commons_file: File:HollerithMachine.CHM.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: zuse-z3
   file: assets/media/zuse-z3.jpg
   kind: machine
@@ -79,7 +79,7 @@
   license_url: http://creativecommons.org/licenses/by-sa/3.0/
   source_url: https://commons.wikimedia.org/wiki/File:Z3_Deutsches_Museum_b.jpg
   commons_file: File:Z3_Deutsches_Museum_b.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: harvard-mark-i
   file: assets/media/harvard-mark-i.jpg
   kind: machine
@@ -92,7 +92,7 @@
   license_url: http://creativecommons.org/licenses/by-sa/3.0/
   source_url: https://commons.wikimedia.org/wiki/File:Harvard_Mark_I_Computer_-_Input-Output_Details.jpg
   commons_file: File:Harvard_Mark_I_Computer_-_Input-Output_Details.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: eniac
   file: assets/media/eniac.jpg
   kind: machine
@@ -106,7 +106,7 @@
   license_url: http://creativecommons.org/licenses/by-sa/3.0/
   source_url: https://commons.wikimedia.org/wiki/File:ENIAC_Penn1.jpg
   commons_file: File:ENIAC_Penn1.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: manchester-baby
   file: assets/media/manchester-baby.webp
   kind: machine
@@ -119,7 +119,7 @@
   license_url: https://creativecommons.org/licenses/by/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Manchester_Baby_Replica.webp
   commons_file: File:Manchester_Baby_Replica.webp
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: edsac
   file: assets/media/edsac.jpg
   kind: machine
@@ -131,7 +131,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:EDSAC_(19).jpg
   commons_file: File:EDSAC_(19).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: ibm-650
   file: assets/media/ibm-650.jpg
   kind: machine
@@ -144,7 +144,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:IBM_650_EMMA.jpg
   commons_file: File:IBM_650_EMMA.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: ibm-704
   file: assets/media/ibm-704.jpg
   kind: machine
@@ -156,7 +156,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:IBM_Electronic_Data_Processing_Machine_-_GPN-2000-001881.jpg
   commons_file: File:IBM_Electronic_Data_Processing_Machine_-_GPN-2000-001881.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: ibm-system-360
   file: assets/media/ibm-system-360.jpg
   kind: machine
@@ -169,7 +169,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:IBM_System_360_model_30_profile.agr.jpg
   commons_file: File:IBM_System_360_model_30_profile.agr.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: pdp-11
   file: assets/media/pdp-11.jpg
   kind: machine
@@ -182,7 +182,7 @@
   license_url: http://creativecommons.org/licenses/by-sa/3.0/
   source_url: https://commons.wikimedia.org/wiki/File:Pdp-11-40.jpg
   commons_file: File:Pdp-11-40.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: intel-8086
   file: assets/media/intel-8086.jpg
   kind: machine
@@ -195,7 +195,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Intel_C8086.jpg
   commons_file: File:Intel_C8086.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: mos-6502
   file: assets/media/mos-6502.jpg
   kind: machine
@@ -207,7 +207,7 @@
   license_url: http://creativecommons.org/licenses/by-sa/3.0/
   source_url: https://commons.wikimedia.org/wiki/File:MOS_6502AD_4585_top.jpg
   commons_file: File:MOS_6502AD_4585_top.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: zilog-z80
   file: assets/media/zilog-z80.jpg
   kind: machine
@@ -221,7 +221,7 @@
   license_url: https://creativecommons.org/licenses/by/2.5
   source_url: https://commons.wikimedia.org/wiki/File:Zilog_Z80.jpg
   commons_file: File:Zilog_Z80.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: motorola-68000
   file: assets/media/motorola-68000.jpg
   kind: machine
@@ -234,7 +234,7 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Motorola_68000_die.JPG
   commons_file: File:Motorola_68000_die.JPG
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: arm
   file: assets/media/arm.png
   kind: machine
@@ -247,7 +247,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:AArch64_logo.svg
   commons_file: File:AArch64_logo.svg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: risc-v
   file: assets/media/risc-v.png
   kind: machine
@@ -259,7 +259,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:RISC-V-logo-square.svg
   commons_file: File:RISC-V-logo-square.svg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: banu-musa-flute-player
   file: assets/media/banu-musa-flute-player.jpg
   kind: document
@@ -271,7 +271,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Banu_musa_mechanical.jpg
   commons_file: File:Banu_musa_mechanical.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-ada-lovelace
   file: assets/media/person-ada-lovelace.png
   kind: person
@@ -284,12 +284,13 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Ada_Lovelace_daguerreotype_by_Antoine_Claudet_1843_-_cropped.png
   commons_file: File:Ada_Lovelace_daguerreotype_by_Antoine_Claudet_1843_-_cropped.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-adele-goldberg
   file: assets/media/person-adele-goldberg.jpg
   kind: person
   person: Adele Goldberg
   nodes:
+  - squeak
   - smalltalk
   caption: Adele Goldberg, 2007
   date: '2007'
@@ -298,7 +299,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.5
   source_url: https://commons.wikimedia.org/wiki/File:Adele_Goldberg_at_PyCon_2007.jpg
   commons_file: File:Adele_Goldberg_at_PyCon_2007.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-alain-colmerauer
   file: assets/media/person-alain-colmerauer.jpg
   kind: person
@@ -312,7 +313,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:A-Colmerauer_web-800x423.jpg
   commons_file: File:A-Colmerauer_web-800x423.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-alan-edelman
   file: assets/media/person-alan-edelman.jpg
   kind: person
@@ -326,12 +327,14 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Alan_Edelman_1999_(headshot).jpg
   commons_file: File:Alan_Edelman_1999_(headshot).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-alan-kay
   file: assets/media/person-alan-kay.jpg
   kind: person
   person: Alan Kay
   nodes:
+  - squeak
+  - flex-kay
   - smalltalk
   caption: Alan Kay, 2008-11-05 05:31
   date: 2008-11-05 05:31
@@ -340,7 +343,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Alan_Kay_and_the_prototype_of_the_Dynabook_(3009206205).jpg
   commons_file: File:Alan_Kay_and_the_prototype_of_the_Dynabook_(3009206205).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-alan-turing
   file: assets/media/person-alan-turing.jpg
   kind: person
@@ -353,7 +356,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Alan_turing_header.jpg
   commons_file: File:Alan_turing_header.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-anders-hejlsberg
   file: assets/media/person-anders-hejlsberg.jpg
   kind: person
@@ -370,7 +373,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Anders_Hejlsberg.jpg
   commons_file: File:Anders_Hejlsberg.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-andrei-alexandrescu
   file: assets/media/person-andrei-alexandrescu.jpg
   kind: person
@@ -384,7 +387,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:AndreiAlexandrescu.jpg
   commons_file: File:AndreiAlexandrescu.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-barbara-liskov
   file: assets/media/person-barbara-liskov.jpg
   kind: person
@@ -398,7 +401,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Barbara_Liskov_MIT_computer_scientist_2010.jpg
   commons_file: File:Barbara_Liskov_MIT_computer_scientist_2010.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-bertrand-meyer
   file: assets/media/person-bertrand-meyer.jpg
   kind: person
@@ -412,7 +415,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Bertrand_Meyer_recent.jpg
   commons_file: File:Bertrand_Meyer_recent.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-betty-holberton
   file: assets/media/person-betty-holberton.jpg
   kind: person
@@ -426,7 +429,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Betty-Holbeton-circa-1950s-600dpi.jpg
   commons_file: File:Betty-Holbeton-circa-1950s-600dpi.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-bill-mensch
   file: assets/media/person-bill-mensch.jpg
   kind: person
@@ -440,7 +443,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Bill_Mensch_-_Western_Design_Center_(12924524534).jpg
   commons_file: File:Bill_Mensch_-_Western_Design_Center_(12924524534).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-bjarne-stroustrup
   file: assets/media/person-bjarne-stroustrup.jpg
   kind: person
@@ -454,7 +457,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Bjarne_Stroustrup_(2013).jpg
   commons_file: File:Bjarne_Stroustrup_(2013).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-brendan-eich
   file: assets/media/person-brendan-eich.jpg
   kind: person
@@ -468,12 +471,14 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Brendan_Eich_Mozilla_Foundation_official_photo.jpg
   commons_file: File:Brendan_Eich_Mozilla_Foundation_official_photo.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-brian-kernighan
   file: assets/media/person-brian-kernighan.jpg
   kind: person
   person: Brian Kernighan
   nodes:
+  - ampl
+  - ratfor
   - awk
   caption: Brian Kernighan, 2025-04-05 17:47:21
   date: '2025-04-05 17:47:21'
@@ -482,13 +487,15 @@
   license_url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
   source_url: https://commons.wikimedia.org/wiki/File:Brian_Kernighan_at_VCF_East_2.jpg
   commons_file: File:Brian_Kernighan_at_VCF_East_2.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-butler-lampson
   file: assets/media/person-butler-lampson.jpg
   kind: person
   person: Butler Lampson
   nodes:
+  - cal
   - mesa
+  - euclid
   caption: Butler Lampson, 2018-07-13 13:37:44
   date: '2018-07-13 13:37:44'
   credit: Duncan.Hull
@@ -496,7 +503,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Butler_Lampson_Royal_Society_(cropped).jpg
   commons_file: File:Butler_Lampson_Royal_Society_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-carl-hewitt
   file: assets/media/person-carl-hewitt.jpg
   kind: person
@@ -511,20 +518,21 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Hewitt-Carl-2008.jpg
   commons_file: File:Hewitt-Carl-2008.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-charles-babbage
   file: assets/media/person-charles-babbage.jpg
   kind: person
   person: Charles Babbage
   nodes:
   - analytical-engine
+  - difference-engine
   caption: Charles Babbage, 1860
   date: '1860'
   credit: Unknown authorUnknown author
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Charles_Babbage_-_1860.jpg
   commons_file: File:Charles_Babbage_-_1860.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-chris-lattner
   file: assets/media/person-chris-lattner.jpg
   kind: person
@@ -540,7 +548,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Chris_Lattner_at_FOSDEM_2011_(colorized).jpg
   commons_file: File:Chris_Lattner_at_FOSDEM_2011_(colorized).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-chuck-peddle
   file: assets/media/person-chuck-peddle.jpg
   kind: person
@@ -554,7 +562,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Chuck_Peddle_(cropped).jpg
   commons_file: File:Chuck_Peddle_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-cynthia-solomon
   file: assets/media/person-cynthia-solomon.jpg
   kind: person
@@ -568,12 +576,13 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Cynthia_Solomon.jpg
   commons_file: File:Cynthia_Solomon.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-dan-ingalls
   file: assets/media/person-dan-ingalls.jpg
   kind: person
   person: Dan Ingalls
   nodes:
+  - squeak
   - smalltalk
   caption: Dan Ingalls
   credit: Friend of Dan Ingalls, copyright transferred to subject
@@ -581,20 +590,21 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Dan_Ingalls.jpg
   commons_file: File:Dan_Ingalls.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-david-patterson
   file: assets/media/person-david-patterson.jpg
   kind: person
   person: David Patterson
   nodes:
   - risc-v
+  - berkeley-risc
   caption: David Patterson
   credit: Peg Skorpinski
   license: CC BY-SA 3.0
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:David_A_Patterson_(cropped).jpg
   commons_file: File:David_A_Patterson_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-david-ungar
   file: assets/media/person-david-ungar.jpg
   kind: person
@@ -607,7 +617,7 @@
   license_url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
   source_url: https://commons.wikimedia.org/wiki/File:David_Ungar.jpg
   commons_file: File:David_Ungar.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-david-wheeler
   file: assets/media/person-david-wheeler.jpg
   kind: person
@@ -620,12 +630,13 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:EDSAC_(14)_(cropped).jpg
   commons_file: File:EDSAC_(14)_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-dennis-ritchie
   file: assets/media/person-dennis-ritchie.jpg
   kind: person
   person: Dennis Ritchie
   nodes:
+  - ed
   - b
   - c
   caption: Dennis Ritchie
@@ -634,7 +645,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Dennis_Ritchie_2011.jpg
   commons_file: File:Dennis_Ritchie_2011.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-don-syme
   file: assets/media/person-don-syme.jpg
   kind: person
@@ -648,7 +659,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Don_Syme.jpg
   commons_file: File:Don_Syme.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-don-woods
   file: assets/media/person-don-woods.jpg
   kind: person
@@ -662,7 +673,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Don_Woods.jpg
   commons_file: File:Don_Woods.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-donald-d-chamberlin
   file: assets/media/person-donald-d-chamberlin.jpg
   kind: person
@@ -676,7 +687,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Don_Chamberlin_(cropped).jpg
   commons_file: File:Don_Chamberlin_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-edsger-w-dijkstra
   file: assets/media/person-edsger-w-dijkstra.jpg
   kind: person
@@ -690,7 +701,7 @@
   license_url: http://creativecommons.org/licenses/by-sa/3.0/
   source_url: https://commons.wikimedia.org/wiki/File:Edsger_Wybe_Dijkstra.jpg
   commons_file: File:Edsger_Wybe_Dijkstra.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-edwin-brady
   file: assets/media/person-edwin-brady.jpg
   kind: person
@@ -704,13 +715,16 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:E._J._Brady_(cropped).jpg
   commons_file: File:E._J._Brady_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-federico-faggin
   file: assets/media/person-federico-faggin.jpg
   kind: person
   person: Federico Faggin
   nodes:
   - zilog-z80
+  - intel-4004
+  - intel-8008
+  - intel-8080
   caption: Federico Faggin, 2011-09-01 20:17
   date: 2011-09-01 20:17
   credit: Intel Free Press
@@ -718,7 +732,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Federico_Faggin_(cropped).jpg
   commons_file: File:Federico_Faggin_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-frances-spence
   file: assets/media/person-frances-spence.png
   kind: person
@@ -731,7 +745,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Frances_Bilas_Spence_feeding_punch_cards_into_ENIAC,_Feb_1946.png
   commons_file: File:Frances_Bilas_Spence_feeding_punch_cards_into_ENIAC,_Feb_1946.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-fred-brooks
   file: assets/media/person-fred-brooks.jpg
   kind: person
@@ -745,7 +759,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Fred_Brooks_(cropped_square).jpg
   commons_file: File:Fred_Brooks_(cropped_square).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-friedrich-l-bauer
   file: assets/media/person-friedrich-l-bauer.jpg
   kind: person
@@ -760,7 +774,7 @@
   license_url: http://creativecommons.org/licenses/by-sa/3.0/
   source_url: https://commons.wikimedia.org/wiki/File:FriedrichLudwigBauer.jpg
   commons_file: File:FriedrichLudwigBauer.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-gene-amdahl
   file: assets/media/person-gene-amdahl.jpg
   kind: person
@@ -774,7 +788,7 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Amdahl_march_13_2008.jpg
   commons_file: File:Amdahl_march_13_2008.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-gerald-jay-sussman
   file: assets/media/person-gerald-jay-sussman.jpg
   kind: person
@@ -787,12 +801,13 @@
   license_url: https://creativecommons.org/licenses/by-sa/1.0
   source_url: https://commons.wikimedia.org/wiki/File:Jerry_Sussman.jpg
   commons_file: File:Jerry_Sussman.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-grace-hopper
   file: assets/media/person-grace-hopper.jpg
   kind: person
   person: Grace Hopper
   nodes:
+  - math-matic
   - harvard-mark-i
   - a-0
   - flow-matic
@@ -804,7 +819,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Commodore_Grace_M._Hopper,_USN_(covered)_head_and_shoulders_crop.jpg
   commons_file: File:Commodore_Grace_M._Hopper,_USN_(covered)_head_and_shoulders_crop.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-graydon-hoare
   file: assets/media/person-graydon-hoare.png
   kind: person
@@ -818,7 +833,7 @@
   license_url: https://creativecommons.org/licenses/by/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Rust_programming_language_black_logo.svg
   commons_file: File:Rust_programming_language_black_logo.svg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-guido-van-rossum
   file: assets/media/person-guido-van-rossum.jpg
   kind: person
@@ -832,12 +847,14 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Guido_van_Rossum_in_PyConUS24_(cropped).jpg
   commons_file: File:Guido_van_Rossum_in_PyConUS24_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-guy-l-steele-jr
   file: assets/media/person-guy-l-steele-jr.jpg
   kind: person
   person: Guy L. Steele Jr.
   nodes:
+  - nil-lisp
+  - fortress
   - emacs-lisp
   - scheme
   - common-lisp
@@ -848,12 +865,13 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Guy_Steele.jpg
   commons_file: File:Guy_Steele.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-heinz-rutishauser
   file: assets/media/person-heinz-rutishauser.jpg
   kind: person
   person: Heinz Rutishauser
   nodes:
+  - superplan
   - algol-58
   - algol-60
   caption: Heinz Rutishauser, circa 1960date QS:P571,+1960-00-00T00:00
@@ -863,7 +881,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:ETH-BIB-Rutishauser,_Heinz_(1918-1970)-Portr_10843.tif
   commons_file: File:ETH-BIB-Rutishauser,_Heinz_(1918-1970)-Portr_10843.tif
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-herbert-a-simon
   file: assets/media/person-herbert-a-simon.jpg
   kind: person
@@ -876,7 +894,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Herbert_Simon,_RIT_NandE_Vol13Num11_1981_Mar19_Complete.jpg
   commons_file: File:Herbert_Simon,_RIT_NandE_Vol13Num11_1981_Mar19_Complete.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-herman-hollerith
   file: assets/media/person-herman-hollerith.jpg
   kind: person
@@ -889,7 +907,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Hollerith.jpg
   commons_file: File:Hollerith.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-howard-aiken
   file: assets/media/person-howard-aiken.jpeg
   kind: person
@@ -901,7 +919,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Aiken.jpeg
   commons_file: File:Aiken.jpeg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-ivan-sutherland
   file: assets/media/person-ivan-sutherland.jpg
   kind: person
@@ -915,7 +933,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Ivan_Sutherland_at_CHM.jpg
   commons_file: File:Ivan_Sutherland_at_CHM.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-j-presper-eckert
   file: assets/media/person-j-presper-eckert.png
   kind: person
@@ -931,12 +949,13 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Computer_Engineer_J._Presper_Eckert.png
   commons_file: File:Computer_Engineer_J._Presper_Eckert.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-james-gosling
   file: assets/media/person-james-gosling.jpg
   kind: person
   person: James Gosling
   nodes:
+  - mocklisp
   - java
   caption: James Gosling, 2010-03-06
   date: '2010-03-06'
@@ -945,12 +964,13 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:James_Gosling_2008.jpg
   commons_file: File:James_Gosling_2008.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-jean-ichbiah
   file: assets/media/person-jean-ichbiah.jpg
   kind: person
   person: Jean Ichbiah
   nodes:
+  - lis
   - ada
   caption: Jean Ichbiah, between 1989 and 1990date QS:P,+1950-00-
   date: between 1989 and 1990date QS:P,+1950-00-
@@ -959,7 +979,7 @@
   license_url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
   source_url: https://commons.wikimedia.org/wiki/File:Photo_jean_ichbiah.jpg
   commons_file: File:Photo_jean_ichbiah.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-jeff-bezanson
   file: assets/media/person-jeff-bezanson.jpg
   kind: person
@@ -973,7 +993,7 @@
   license_url: https://creativecommons.org/licenses/by/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Jeff_Bezanson.jpg
   commons_file: File:Jeff_Bezanson.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-joe-armstrong
   file: assets/media/person-joe-armstrong.jpg
   kind: person
@@ -987,12 +1007,13 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:An_erlang_expert_and_some_guy_named_Joe_(4133214882).jpg
   commons_file: File:An_erlang_expert_and_some_guy_named_Joe_(4133214882).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-john-backus
   file: assets/media/person-john-backus.jpg
   kind: person
   person: John Backus
   nodes:
+  - speedcoding
   - fortran
   - algol-58
   - algol-60
@@ -1003,7 +1024,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:John_Backus_2.jpg
   commons_file: File:John_Backus_2.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-john-l-hennessy
   file: assets/media/person-john-l-hennessy.jpg
   kind: person
@@ -1017,7 +1038,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:John_L._Hennessy_by_Christopher_Michel_in_2024_01.jpg
   commons_file: File:John_L._Hennessy_by_Christopher_Michel_in_2024_01.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-john-mauchly
   file: assets/media/person-john-mauchly.jpg
   kind: person
@@ -1034,7 +1055,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:John_Mauchly.jpg
   commons_file: File:John_Mauchly.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-john-mccarthy
   file: assets/media/person-john-mccarthy.jpg
   kind: person
@@ -1049,7 +1070,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.0
   source_url: https://commons.wikimedia.org/wiki/File:John_McCarthy_Stanford.jpg
   commons_file: File:John_McCarthy_Stanford.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-joseph-marie-jacquard
   file: assets/media/person-joseph-marie-jacquard.jpg
   kind: person
@@ -1062,7 +1083,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:LW_SCMU_1921_1078-001.jpg
   commons_file: File:LW_SCMU_1921_1078-001.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-jose-valim
   file: assets/media/person-jose-valim.png
   kind: person
@@ -1075,7 +1096,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Elixir_logo_(light_background).svg
   commons_file: File:Elixir_logo_(light_background).svg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-kathleen-antonelli
   file: assets/media/person-kathleen-antonelli.jpg
   kind: person
@@ -1088,12 +1109,13 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:KayMcNulty_maturitn%C3%AD_fotografie.jpg
   commons_file: File:KayMcNulty_maturitní_fotografie.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-ken-thompson
   file: assets/media/person-ken-thompson.jpg
   kind: person
   person: Ken Thompson
   nodes:
+  - ed
   - thompson-shell
   - b
   - c
@@ -1105,12 +1127,13 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Ken_Thompson,_2019.jpg
   commons_file: File:Ken_Thompson,_2019.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-kenneth-e-iverson
   file: assets/media/person-kenneth-e-iverson.png
   kind: person
   person: Kenneth E. Iverson
   nodes:
+  - j
   - apl
   caption: Kenneth E. Iverson, 1989
   date: '1989'
@@ -1119,7 +1142,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:KEI_with_ATW_NY_Aug_1989_(cropped)_-_Ken_Iverson.png
   commons_file: File:KEI_with_ATW_NY_Aug_1989_(cropped)_-_Ken_Iverson.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-konrad-zuse
   file: assets/media/person-konrad-zuse.jpg
   kind: person
@@ -1127,6 +1150,7 @@
   nodes:
   - zuse-z3
   - plankalkul
+  - zuse-z4
   caption: Konrad Zuse, 1992-06
   date: 1992-06
   credit: Wolfgang Hunscher, Dortmund
@@ -1134,12 +1158,13 @@
   license_url: http://creativecommons.org/licenses/by-sa/3.0/
   source_url: https://commons.wikimedia.org/wiki/File:Konrad_Zuse_(1992).jpg
   commons_file: File:Konrad_Zuse_(1992).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-kristen-nygaard
   file: assets/media/person-kristen-nygaard.png
   kind: person
   person: Kristen Nygaard
   nodes:
+  - beta
   - simula
   caption: Kristen Nygaard, circa 1997date QS:P,+1997-00-00T00:00:00
   date: circa 1997date QS:P,+1997-00-00T00:00:00
@@ -1147,7 +1172,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Kristen-Nygaard-SBLP-1997-head.png
   commons_file: File:Kristen-Nygaard-SBLP-1997-head.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-krste-asanovic
   file: assets/media/person-krste-asanovic.jpg
   kind: person
@@ -1161,7 +1186,7 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Krste-SiFive.jpg
   commons_file: File:Krste-SiFive.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-lambert-meertens
   file: assets/media/person-lambert-meertens.png
   kind: person
@@ -1175,7 +1200,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Lambert_Meertens_%C4%B0stanbul%27da.png
   commons_file: File:Lambert_Meertens_İstanbul'da.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-larry-wall
   file: assets/media/person-larry-wall.jpg
   kind: person
@@ -1190,12 +1215,13 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Larry_Wall_YAPC_2007.jpg
   commons_file: File:Larry_Wall_YAPC_2007.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-lars-bak
   file: assets/media/person-lars-bak.png
   kind: person
   person: Lars Bak
   nodes:
+  - strongtalk
   - dart
   caption: Lars Bak, 2020-08-02
   date: '2020-08-02'
@@ -1204,7 +1230,7 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Lars_Bak.png
   commons_file: File:Lars_Bak.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-markus-persson
   file: assets/media/person-markus-persson.jpg
   kind: person
@@ -1218,7 +1244,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:GDC_2016_awards_16-20_42_56-01-7D2_0739_(cropped).jpg
   commons_file: File:GDC_2016_awards_16-20_42_56-01-7D2_0739_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-marlyn-meltzer
   file: assets/media/person-marlyn-meltzer.png
   kind: person
@@ -1231,7 +1257,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Reprogramming_ENIAC.png
   commons_file: File:Reprogramming_ENIAC.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-martin-odersky
   file: assets/media/person-martin-odersky.jpg
   kind: person
@@ -1245,13 +1271,15 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Mark_Odersky_photo_by_Linda_Poeng.jpg
   commons_file: File:Mark_Odersky_photo_by_Linda_Poeng.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-masatoshi-shima
   file: assets/media/person-masatoshi-shima.jpg
   kind: person
   person: Masatoshi Shima
   nodes:
   - zilog-z80
+  - intel-4004
+  - intel-8080
   caption: Masatoshi Shima, 20 October 2009, 18:20:37
   date: 20 October 2009, 18:20:37
   credit: Dicklyon
@@ -1259,7 +1287,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Masatoshi_Shima_(cropped).jpg
   commons_file: File:Masatoshi_Shima_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-maurice-wilkes
   file: assets/media/person-maurice-wilkes.jpg
   kind: person
@@ -1273,7 +1301,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0/uk/deed.en
   source_url: https://commons.wikimedia.org/wiki/File:Maurice_Vincent_Wilkes_1980_(3,_cropped).jpg
   commons_file: File:Maurice_Vincent_Wilkes_1980_(3,_cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-paul-hudak
   file: assets/media/person-paul-hudak.jpg
   kind: person
@@ -1287,7 +1315,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Paul_Hudak_in_2013.jpg
   commons_file: File:Paul_Hudak_in_2013.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-per-brinch-hansen
   file: assets/media/person-per-brinch-hansen.jpg
   kind: person
@@ -1299,7 +1327,7 @@
   license: Attribution
   source_url: https://commons.wikimedia.org/wiki/File:Per_Brinch_Hansen_-_1999.jpg
   commons_file: File:Per_Brinch_Hansen_-_1999.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-peter-naur
   file: assets/media/person-peter-naur.jpg
   kind: person
@@ -1313,7 +1341,7 @@
   license_url: http://creativecommons.org/licenses/by-sa/3.0/
   source_url: https://commons.wikimedia.org/wiki/File:Peternaur.JPG
   commons_file: File:Peternaur.JPG
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-philip-wadler
   file: assets/media/person-philip-wadler.jpg
   kind: person
@@ -1327,7 +1355,7 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Wadler2.JPG
   commons_file: File:Wadler2.JPG
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-andi-gutmans
   file: assets/media/person-andi-gutmans.jpg
   kind: person
@@ -1341,7 +1369,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:AndiGutmans18045.commons.jpg
   commons_file: File:AndiGutmans18045.commons.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-zeev-suraski
   file: assets/media/person-zeev-suraski.jpg
   kind: person
@@ -1355,7 +1383,7 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:ZeevSuraski.jpg
   commons_file: File:ZeevSuraski.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-rasmus-lerdorf
   file: assets/media/person-rasmus-lerdorf.jpg
   kind: person
@@ -1369,7 +1397,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Rasmus_Lerdorf_August_2014_(cropped).JPG
   commons_file: File:Rasmus_Lerdorf_August_2014_(cropped).JPG
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-raymond-f-boyce
   file: assets/media/person-raymond-f-boyce.png
   kind: person
@@ -1382,7 +1410,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Raymond_F_Boyce_age_25.png
   commons_file: File:Raymond_F_Boyce_age_25.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-rich-hickey
   file: assets/media/person-rich-hickey.jpg
   kind: person
@@ -1397,12 +1425,14 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Rich_Hickey.jpg
   commons_file: File:Rich_Hickey.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-rob-pike
   file: assets/media/person-rob-pike.jpg
   kind: person
   person: Rob Pike
   nodes:
+  - squeak-cardelli
+  - sawzall
   - newsqueak
   - limbo
   - go
@@ -1413,7 +1443,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Rob-pike-oscon.jpg
   commons_file: File:Rob-pike-oscon.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-robert-gentleman
   file: assets/media/person-robert-gentleman.jpg
   kind: person
@@ -1427,7 +1457,7 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Robert_Gentleman_on_R_Consortium.jpg
   commons_file: File:Robert_Gentleman_on_R_Consortium.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-robert-griesemer
   file: assets/media/person-robert-griesemer.jpg
   kind: person
@@ -1441,7 +1471,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Robert_Griesemer.jpg
   commons_file: File:Robert_Griesemer.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-robert-kowalski
   file: assets/media/person-robert-kowalski.jpg
   kind: person
@@ -1455,7 +1485,7 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Robert_Kowalski_(cropped).jpg
   commons_file: File:Robert_Kowalski_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-roberto-ierusalimschy
   file: assets/media/person-roberto-ierusalimschy.png
   kind: person
@@ -1469,7 +1499,7 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Roberto_Ierusalimschy.png
   commons_file: File:Roberto_Ierusalimschy.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-ross-ihaka
   file: assets/media/person-ross-ihaka.jpg
   kind: person
@@ -1483,7 +1513,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Ross_Ihaka_(5189180796).jpg
   commons_file: File:Ross_Ihaka_(5189180796).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-ruth-teitelbaum
   file: assets/media/person-ruth-teitelbaum.png
   kind: person
@@ -1496,7 +1526,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Reprogramming_ENIAC.png
   commons_file: File:Reprogramming_ENIAC.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-seymour-papert
   file: assets/media/person-seymour-papert.jpg
   kind: person
@@ -1510,12 +1540,13 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Seymour_Papert.jpg
   commons_file: File:Seymour_Papert.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-simon-peyton-jones
   file: assets/media/person-simon-peyton-jones.jpg
   kind: person
   person: Simon Peyton Jones
   nodes:
+  - c-minus-minus
   - haskell
   caption: Simon Peyton Jones, 2016-07-15 13:53:06
   date: '2016-07-15 13:53:06'
@@ -1524,7 +1555,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Professor_Simon_Peyton_Jones_FRS_(cropped).jpg
   commons_file: File:Professor_Simon_Peyton_Jones_FRS_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-sophie-wilson
   file: assets/media/person-sophie-wilson.jpg
   kind: person
@@ -1539,7 +1570,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Sophie_Wilson.jpg
   commons_file: File:Sophie_Wilson.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-stefan-karpinski
   file: assets/media/person-stefan-karpinski.jpg
   kind: person
@@ -1553,20 +1584,21 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Stefan_Karpinski_at_ODSC_East_2016_01.jpg
   commons_file: File:Stefan_Karpinski_at_ODSC_East_2016_01.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-stephen-r-bourne
   file: assets/media/person-stephen-r-bourne.jpg
   kind: person
   person: Stephen R. Bourne
   nodes:
   - bourne-shell
+  - algol-68c
   caption: Stephen R. Bourne
   credit: unknown
   license: CC BY-SA 3.0
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Steve_Bourne_at_SDWest2005.hires.jpg
   commons_file: File:Steve_Bourne_at_SDWest2005.hires.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-steve-furber
   file: assets/media/person-steve-furber.jpg
   kind: person
@@ -1580,7 +1612,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Steve_Furber.jpg
   commons_file: File:Steve_Furber.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-steven-pemberton
   file: assets/media/person-steven-pemberton.jpg
   kind: person
@@ -1594,7 +1626,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Steven_Pemberton_2017.jpg
   commons_file: File:Steven_Pemberton_2017.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-tony-hoare
   file: assets/media/person-tony-hoare.jpg
   kind: person
@@ -1610,7 +1642,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en
   source_url: https://commons.wikimedia.org/wiki/File:Sir_Tony_Hoare_IMG_5125.jpg
   commons_file: File:Sir_Tony_Hoare_IMG_5125.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-viral-b-shah
   file: assets/media/person-viral-b-shah.jpg
   kind: person
@@ -1624,7 +1656,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Viral_B_Shah_.jpg
   commons_file: File:Viral_B_Shah_.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-wally-feurzeig
   file: assets/media/person-wally-feurzeig.jpg
   kind: person
@@ -1638,12 +1670,13 @@
   license_url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
   source_url: https://commons.wikimedia.org/wiki/File:Wally_Feurzig.jpg
   commons_file: File:Wally_Feurzig.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-walter-bright
   file: assets/media/person-walter-bright.jpg
   kind: person
   person: Walter Bright
   nodes:
+  - abel
   - d
   caption: Walter Bright, 2009-04-23
   date: '2009-04-23'
@@ -1652,7 +1685,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:WalterBright.jpg
   commons_file: File:WalterBright.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-xavier-leroy
   file: assets/media/person-xavier-leroy.jpg
   kind: person
@@ -1667,7 +1700,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Xavier_Leroy.jpg
   commons_file: File:Xavier_Leroy.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-yukihiro-matsumoto
   file: assets/media/person-yukihiro-matsumoto.jpg
   kind: person
@@ -1681,7 +1714,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Yukihiro_Matsumoto_(2018).jpg
   commons_file: File:Yukihiro_Matsumoto_(2018).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: u880
   file: assets/media/u880.jpg
   kind: artifact
@@ -1694,7 +1727,7 @@
   license_url: http://creativecommons.org/licenses/by-sa/3.0/
   source_url: https://commons.wikimedia.org/wiki/File:KL_KME_U880D.jpg
   commons_file: File:KL_KME_U880D.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: lc80
   file: assets/media/lc80.jpg
   kind: machine
@@ -1707,7 +1740,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Lc80offen.jpg
   commons_file: File:Lc80offen.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: poly880
   file: assets/media/poly880.jpg
   kind: machine
@@ -1720,13 +1753,14 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Poly-computer880.jpg
   commons_file: File:Poly-computer880.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-bill-gates
   file: assets/media/person-bill-gates.jpg
   kind: person
   person: Bill Gates
   nodes:
   - microsoft-basic
+  - color-basic
   caption: Bill Gates, 2025-06-25
   date: '2025-06-25'
   credit: Bogdan Hoyaux / European Union
@@ -1734,7 +1768,7 @@
   license_url: https://creativecommons.org/licenses/by/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Bill_Gates_at_the_European_Commission_-_P067383-987995_(cropped)_5.jpg
   commons_file: File:Bill_Gates_at_the_European_Commission_-_P067383-987995_(cropped)_5.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-paul-allen
   file: assets/media/person-paul-allen.jpg
   kind: person
@@ -1748,7 +1782,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Paul_G._Allen_(cropped).jpg
   commons_file: File:Paul_G._Allen_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-jim-hugunin
   file: assets/media/person-jim-hugunin.jpg
   kind: person
@@ -1763,7 +1797,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Jim_hugunin_headshot.jpg
   commons_file: File:Jim_hugunin_headshot.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-carol-shaw
   file: assets/media/person-carol-shaw.jpg
   kind: person
@@ -1777,7 +1811,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Carol_Shaw_Holding_Gold_River_Raid_Cartridge_(cropped).jpg
   commons_file: File:Carol_Shaw_Holding_Gold_River_Raid_Cartridge_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-larry-tesler
   file: assets/media/person-larry-tesler.jpeg
   kind: person
@@ -1791,7 +1825,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Larry_Tesler_Smiles_at_Whisper.jpeg
   commons_file: File:Larry_Tesler_Smiles_at_Whisper.jpeg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-richard-stallman
   file: assets/media/person-richard-stallman.jpg
   kind: person
@@ -1807,7 +1841,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Richard_Stallman_Bologna_2024_abc1_(3x4,_rule_of_thirdscropped).jpg
   commons_file: File:Richard_Stallman_Bologna_2024_abc1_(3x4,_rule_of_thirdscropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-jeremy-ashkenas
   file: assets/media/person-jeremy-ashkenas.jpg
   kind: person
@@ -1822,7 +1856,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Jeremy_Ashkenas_(4575590175).jpg
   commons_file: File:Jeremy_Ashkenas_(4575590175).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-bill-atkinson
   file: assets/media/person-bill-atkinson.jpeg
   kind: person
@@ -1836,7 +1870,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Bill_Atkinson_at_25_years_of_HyperCard_event_(cropped).jpeg
   commons_file: File:Bill_Atkinson_at_25_years_of_HyperCard_event_(cropped).jpeg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-jeremy-allaire
   file: assets/media/person-jeremy-allaire.jpg
   kind: person
@@ -1850,7 +1884,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Jeremy_Allaire_at_MoneyConf_2018_(2)_(cropped).jpg
   commons_file: File:Jeremy_Allaire_at_MoneyConf_2018_(2)_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-bill-joy
   file: assets/media/person-bill-joy.jpg
   kind: person
@@ -1864,7 +1898,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Bill_Joy_at_World_Economic_Forum_(Davos),_2003-01_(cropped).jpg
   commons_file: File:Bill_Joy_at_World_Economic_Forum_(Davos),_2003-01_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-mike-cowlishaw
   file: assets/media/person-mike-cowlishaw.jpg
   kind: person
@@ -1878,7 +1912,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Mike_Cowlishaw_2005.jpg
   commons_file: File:Mike_Cowlishaw_2005.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-tom-duff
   file: assets/media/person-tom-duff.jpg
   kind: person
@@ -1892,7 +1926,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Tom-Duff-in-his-office.jpg
   commons_file: File:Tom-Duff-in-his-office.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-jeffrey-snover
   file: assets/media/person-jeffrey-snover.jpg
   kind: person
@@ -1906,7 +1940,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Professional_Developers_Conference_2009_Technical_Leaders_Panel_1_(Jeffrey_Snover).jpg
   commons_file: File:Professional_Developers_Conference_2009_Technical_Leaders_Panel_1_(Jeffrey_Snover).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-lee-e-mcmahon
   file: assets/media/person-lee-e-mcmahon.jpg
   kind: person
@@ -1919,7 +1953,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Bell_telephone_magazine_(1922)_(14756062432).jpg
   commons_file: File:Bell_telephone_magazine_(1922)_(14756062432).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-richard-greenblatt
   file: assets/media/person-richard-greenblatt.jpg
   kind: person
@@ -1933,7 +1967,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Greenblattrpg-6cropped.jpg
   commons_file: File:Greenblattrpg-6cropped.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-richard-fateman
   file: assets/media/person-richard-fateman.jpg
   kind: person
@@ -1947,7 +1981,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Richard_Fateman_1981_(headshot).jpg
   commons_file: File:Richard_Fateman_1981_(headshot).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-matthias-felleisen
   file: assets/media/person-matthias-felleisen.jpg
   kind: person
@@ -1961,7 +1995,7 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Matthias_Felleisen.jpg
   commons_file: File:Matthias_Felleisen.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-paul-graham
   file: assets/media/person-paul-graham.jpg
   kind: person
@@ -1973,7 +2007,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Paulgraham_240x320.jpg
   commons_file: File:Paulgraham_240x320.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-robert-tappan-morris
   file: assets/media/person-robert-tappan-morris.jpg
   kind: person
@@ -1987,7 +2021,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Robert_Tappan_Morris.jpg
   commons_file: File:Robert_Tappan_Morris.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-damien-doligez
   file: assets/media/person-damien-doligez.jpg
   kind: person
@@ -2002,7 +2036,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Damien-Doligez-portrait-March2023.jpg
   commons_file: File:Damien-Doligez-portrait-March2023.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-gerard-huet
   file: assets/media/person-gerard-huet.jpg
   kind: person
@@ -2017,7 +2051,7 @@
   license_url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
   source_url: https://commons.wikimedia.org/wiki/File:GH_1978.jpg
   commons_file: File:GH_1978.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-thierry-coquand
   file: assets/media/person-thierry-coquand.jpg
   kind: person
@@ -2031,7 +2065,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.5/si/deed.en
   source_url: https://commons.wikimedia.org/wiki/File:Thierry_Coquand_(cropped).jpg
   commons_file: File:Thierry_Coquand_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-christine-paulin-mohring
   file: assets/media/person-christine-paulin-mohring.jpg
   kind: person
@@ -2045,7 +2079,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Christine_Paulin-Mohring_P1220212.jpg
   commons_file: File:Christine_Paulin-Mohring_P1220212.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-leonardo-de-moura
   file: assets/media/person-leonardo-de-moura.jpg
   kind: person
@@ -2059,12 +2093,13 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Leo_de_Moura_P1210629.jpg
   commons_file: File:Leo_de_Moura_P1210629.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-gary-kildall
   file: assets/media/person-gary-kildall.jpg
   kind: person
   person: Gary Kildall
   nodes:
+  - plus
   - pl-m
   caption: Gary Kildall, 2024-04-01 18:01:50
   date: '2024-04-01 18:01:50'
@@ -2072,7 +2107,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Kildall_801lighthouse.jpg
   commons_file: File:Kildall_801lighthouse.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-philip-woodward
   file: assets/media/person-philip-woodward.jpg
   kind: person
@@ -2086,7 +2121,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.5
   source_url: https://commons.wikimedia.org/wiki/File:Philip_Woodward_and_his_W5_Clock.jpg
   commons_file: File:Philip_Woodward_and_his_W5_Clock.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-cleve-moler
   file: assets/media/person-cleve-moler.png
   kind: person
@@ -2100,7 +2135,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Cleve_B_Moler_in_2017_Argonne_Seminars_GPU_Computing_(cropped).png
   commons_file: File:Cleve_B_Moler_in_2017_Argonne_Seminars_GPU_Computing_(cropped).png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-stephen-wolfram
   file: assets/media/person-stephen-wolfram.jpg
   kind: person
@@ -2114,7 +2149,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Stephen_Wolfram_PR_(cropped).jpg
   commons_file: File:Stephen_Wolfram_PR_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-theodore-gray
   file: assets/media/person-theodore-gray.jpg
   kind: person
@@ -2128,7 +2163,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Theodore_Gray.jpg
   commons_file: File:Theodore_Gray.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-anthony-james-barr
   file: assets/media/person-anthony-james-barr.jpg
   kind: person
@@ -2141,7 +2176,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:TonyBarr.jpg
   commons_file: File:TonyBarr.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-james-goodnight
   file: assets/media/person-james-goodnight.jpg
   kind: person
@@ -2155,7 +2190,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Dr._Jim_Goodnight.jpg
   commons_file: File:Dr._Jim_Goodnight.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-john-sall
   file: assets/media/person-john-sall.jpg
   kind: person
@@ -2169,7 +2204,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:John_Sall,_SAS.jpg
   commons_file: File:John_Sall,_SAS.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-michael-stonebraker
   file: assets/media/person-michael-stonebraker.jpg
   kind: person
@@ -2183,7 +2218,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Michael_Stonebraker_P1120062.jpg
   commons_file: File:Michael_Stonebraker_P1120062.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-eugene-wong
   file: assets/media/person-eugene-wong.jpg
   kind: person
@@ -2196,7 +2231,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Eugene_Wong_with_President_George_H.W._Bush.jpg
   commons_file: File:Eugene_Wong_with_President_George_H.W._Bush.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-jack-minker
   file: assets/media/person-jack-minker.jpg
   kind: person
@@ -2210,7 +2245,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Jack_Minker_Giving_Invited_Talk_LPNMR_2007.JPG
   commons_file: File:Jack_Minker_Giving_Invited_Talk_LPNMR_2007.JPG
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-michael-howard-kay
   file: assets/media/person-michael-howard-kay.jpg
   kind: person
@@ -2224,7 +2259,7 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Michael_kay_nov_2008.jpg
   commons_file: File:Michael_kay_nov_2008.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-li-chen-wang
   file: assets/media/person-li-chen-wang.png
   kind: person
@@ -2237,7 +2272,7 @@
   license: Public domain
   source_url: https://commons.wikimedia.org/wiki/File:Copyleft_All_Wrongs_Reserved.png
   commons_file: File:Copyleft_All_Wrongs_Reserved.png
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-steve-vickers
   file: assets/media/person-steve-vickers.jpg
   kind: person
@@ -2251,7 +2286,7 @@
   license_url: https://creativecommons.org/licenses/by/3.0
   source_url: https://commons.wikimedia.org/wiki/File:Steve_Vickers_2007_(cropped).JPG
   commons_file: File:Steve_Vickers_2007_(cropped).JPG
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-john-von-neumann
   file: assets/media/person-john-von-neumann.gif
   kind: person
@@ -2264,7 +2299,7 @@
   license: Attribution
   source_url: https://commons.wikimedia.org/wiki/File:JohnvonNeumann-LosAlamos.gif
   commons_file: File:JohnvonNeumann-LosAlamos.gif
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-dai-edwards
   file: assets/media/person-dai-edwards.jpg
   kind: person
@@ -2278,7 +2313,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/4.0
   source_url: https://commons.wikimedia.org/wiki/File:Dai-Edwards-Engineer.jpg
   commons_file: File:Dai-Edwards-Engineer.jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-valentin-turchin
   file: assets/media/person-valentin-turchin.jpg
   kind: person
@@ -2292,7 +2327,7 @@
   license_url: https://creativecommons.org/licenses/by-sa/3.0/nl/deed.en
   source_url: https://commons.wikimedia.org/wiki/File:Valentin_Toertsjin_(1977).jpg
   commons_file: File:Valentin_Toertsjin_(1977).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
 - id: person-john-horton-conway
   file: assets/media/person-john-horton-conway.jpg
   kind: person
@@ -2306,4 +2341,1306 @@
   license_url: https://creativecommons.org/licenses/by/2.0
   source_url: https://commons.wikimedia.org/wiki/File:John_H_Conway_2005_(cropped).jpg
   commons_file: File:John_H_Conway_2005_(cropped).jpg
-  checked: '2026-11-01'
+  checked: '2026-11-02'
+- id: person-jean-sammet
+  file: assets/media/person-jean-sammet.jpg
+  kind: person
+  person: Jean Sammet
+  nodes:
+  - formac
+  caption: Jean Sammet, 2017-06-04
+  date: '2017-06-04'
+  credit: Ben Shneiderman
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Jean_Sammet_UMD_1979.jpg
+  commons_file: File:Jean_Sammet_UMD_1979.jpg
+  checked: '2026-11-02'
+- id: person-william-a-martin
+  file: assets/media/person-william-a-martin.jpg
+  kind: person
+  person: William A. Martin
+  nodes:
+  - macsyma
+  caption: William A. Martin, 2017-10-25
+  date: '2017-10-25'
+  credit: Susanfmartin66
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Bill-Age43.jpg
+  commons_file: File:Bill-Age43.jpg
+  checked: '2026-11-02'
+- id: person-henri-cohen
+  file: assets/media/person-henri-cohen.jpg
+  kind: person
+  person: Henri Cohen
+  nodes:
+  - pari-gp
+  caption: Henri Cohen, 2007
+  date: '2007'
+  credit: Schmid, Renate
+  license: CC BY-SA 2.0 de
+  license_url: https://creativecommons.org/licenses/by-sa/2.0/de/deed.en
+  source_url: https://commons.wikimedia.org/wiki/File:Henri_Cohen.jpg
+  commons_file: File:Henri_Cohen.jpg
+  checked: '2026-11-02'
+- id: person-arthur-whitney
+  file: assets/media/person-arthur-whitney.jpg
+  kind: person
+  person: Arthur Whitney
+  nodes:
+  - q-kx
+  - k
+  - a-plus
+  caption: Arthur Whitney, 2019-03-11 14:31:39
+  date: '2019-03-11 14:31:39'
+  credit: Grace Huang
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Arthur_Whitney_2019Wiki1.jpg
+  commons_file: File:Arthur_Whitney_2019Wiki1.jpg
+  checked: '2026-11-02'
+- id: person-bob-sproull
+  file: assets/media/person-bob-sproull.jpg
+  kind: person
+  person: Bob Sproull
+  nodes:
+  - sail
+  caption: Bob Sproull, 2008-12-09 14:12
+  date: 2008-12-09 14:12
+  credit: Marcin Wichary from San Francisco, U.S.A.
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Bob_Sproull_in_2008.jpg
+  commons_file: File:Bob_Sproull_in_2008.jpg
+  checked: '2026-11-02'
+- id: person-andy-gavin
+  file: assets/media/person-andy-gavin.jpg
+  kind: person
+  person: Andy Gavin
+  nodes:
+  - goal
+  caption: Andy Gavin, 21 May 2009 (original upload date)
+  date: 21 May 2009 (original upload date)
+  credit: Jkay747 (talk)
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:AGHeadshot.jpg
+  commons_file: File:AGHeadshot.jpg
+  checked: '2026-11-02'
+- id: person-douglas-mcilroy
+  file: assets/media/person-douglas-mcilroy.jpeg
+  kind: person
+  person: Douglas McIlroy
+  nodes:
+  - tmg
+  - darwin-game
+  caption: Douglas McIlroy, 2011-05-19 12:11:23
+  date: '2011-05-19 12:11:23'
+  credit: Denise Panyik-Dale
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Douglas_McIlroy.jpeg
+  commons_file: File:Douglas_McIlroy.jpeg
+  checked: '2026-11-02'
+- id: person-roger-hui
+  file: assets/media/person-roger-hui.jpg
+  kind: person
+  person: Roger Hui
+  nodes:
+  - j
+  caption: Roger Hui, 6 November 2017 (according to Exif data)
+  date: 6 November 2017 (according to Exif data)
+  credit: own work by the original uploader
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:KEI%26Hui_(cropped)_-_Roger_Hui.jpg
+  commons_file: File:KEI&Hui_(cropped)_-_Roger_Hui.jpg
+  checked: '2026-11-02'
+- id: person-j-halcombe-laning
+  file: assets/media/person-j-halcombe-laning.gif
+  kind: person
+  person: J. Halcombe Laning
+  nodes:
+  - laning-zierler
+  caption: J. Halcombe Laning, 1983-01-01
+  date: '1983-01-01'
+  credit: The Charles Stark Draper Laboratory, Inc.
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:J._Halcombe_Laning.gif
+  commons_file: File:J._Halcombe_Laning.gif
+  checked: '2026-11-02'
+- id: person-corrado-bohm
+  file: assets/media/person-corrado-bohm.jpg
+  kind: person
+  person: Corrado Böhm
+  nodes:
+  - bohm-language
+  caption: Corrado Böhm, 2013-03-22 10:33:36
+  date: '2013-03-22 10:33:36'
+  credit: Carbonem
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:CorradoBoemETAPS2013_2013-03-22_0.33.36.jpg
+  commons_file: File:CorradoBoemETAPS2013_2013-03-22_0.33.36.jpg
+  checked: '2026-11-02'
+- id: person-kateryna-yushchenko
+  file: assets/media/person-kateryna-yushchenko.jpg
+  kind: person
+  person: Kateryna Yushchenko
+  nodes:
+  - address-language
+  caption: Kateryna Yushchenko, 1960
+  date: '1960'
+  credit: Samoylen
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Kateryna_Lohvynivna_Yushchenko.jpg
+  commons_file: File:Kateryna_Lohvynivna_Yushchenko.jpg
+  checked: '2026-11-02'
+- id: person-joseph-weizenbaum
+  file: assets/media/person-joseph-weizenbaum.jpg
+  kind: person
+  person: Joseph Weizenbaum
+  nodes:
+  - slip
+  caption: Joseph Weizenbaum, 1982-10-28
+  date: '1982-10-28'
+  credit: Rochester Institute of Technology
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Weizenbaum_1982.jpg
+  commons_file: File:Weizenbaum_1982.jpg
+  checked: '2026-11-02'
+- id: person-robin-popplestone
+  file: assets/media/person-robin-popplestone.jpg
+  kind: person
+  person: Robin Popplestone
+  nodes:
+  - cowsel
+  caption: Robin Popplestone, 1969-08
+  date: 1969-08
+  credit: Murfas
+  license: CC BY 3.0
+  license_url: https://creativecommons.org/licenses/by/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Robin_Popplestone,_Firth_of_Forth,_Aug_1969.jpg
+  commons_file: File:Robin_Popplestone,_Firth_of_Forth,_Aug_1969.jpg
+  checked: '2026-11-02'
+- id: person-scott-fahlman
+  file: assets/media/person-scott-fahlman.jpg
+  kind: person
+  person: Scott Fahlman
+  nodes:
+  - spice-lisp
+  caption: Scott Fahlman, 2007
+  date: '2007'
+  credit: Scott E. Fahlman's wife
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:SEF2007a.jpg
+  commons_file: File:SEF2007a.jpg
+  checked: '2026-11-02'
+- id: person-terry-a-davis
+  file: assets/media/person-terry-a-davis.jpg
+  kind: person
+  person: Terry A. Davis
+  nodes:
+  - holyc
+  caption: Terry A. Davis, 1985+
+  date: 1985+
+  credit: Terry A. Davis
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Terry_A._Davis_(cropped).jpg
+  commons_file: File:Terry_A._Davis_(cropped).jpg
+  checked: '2026-11-02'
+- id: person-jacob-t-schwartz
+  file: assets/media/person-jacob-t-schwartz.jpg
+  kind: person
+  person: Jacob T. Schwartz
+  nodes:
+  - setl
+  caption: Jacob T. Schwartz, 1987-11-10
+  date: '1987-11-10'
+  credit: Russell F. Roederer
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Portrait_of_Jacob_T._Schwartz,_Director,_Information_Science_and_Technology_Office.jpg
+  commons_file: File:Portrait_of_Jacob_T._Schwartz,_Director,_Information_Science_and_Technology_Office.jpg
+  checked: '2026-11-02'
+- id: person-robert-dewar
+  file: assets/media/person-robert-dewar.jpg
+  kind: person
+  person: Robert Dewar
+  nodes:
+  - setl
+  caption: Robert Dewar, 2010-01-22
+  date: '2010-01-22'
+  credit: Lambert Meertens
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Robert_Dewar.jpg
+  commons_file: File:Robert_Dewar.jpg
+  checked: '2026-11-02'
+- id: person-john-mashey
+  file: assets/media/person-john-mashey.png
+  kind: person
+  person: John Mashey
+  nodes:
+  - pwb-shell
+  caption: John Mashey, 2024-10-23
+  date: '2024-10-23'
+  credit: Rosiestep
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:John_Mashey_(2024)_(cropped).png
+  commons_file: File:John_Mashey_(2024)_(cropped).png
+  checked: '2026-11-02'
+- id: person-mark-burgess
+  file: assets/media/person-mark-burgess.jpg
+  kind: person
+  person: Mark Burgess
+  nodes:
+  - cfengine
+  caption: Mark Burgess, 2020-01-16
+  date: '2020-01-16'
+  credit: MarkBurgess
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Mark_Burgess,_2020,_Oslo.jpg
+  commons_file: File:Mark_Burgess,_2020,_Oslo.jpg
+  checked: '2026-11-02'
+- id: person-birger-moller-pedersen
+  file: assets/media/person-birger-moller-pedersen.jpg
+  kind: person
+  person: Birger Møller-Pedersen
+  nodes:
+  - beta
+  caption: Birger Møller-Pedersen, 2017-09-12 12:58:39
+  date: '2017-09-12 12:58:39'
+  credit: Gunhild M . Haugnes/UiO
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Birger_Moller-Pedersen.jpg
+  commons_file: File:Birger_Moller-Pedersen.jpg
+  checked: '2026-11-02'
+- id: person-gilad-bracha
+  file: assets/media/person-gilad-bracha.jpg
+  kind: person
+  person: Gilad Bracha
+  nodes:
+  - newspeak
+  - strongtalk
+  caption: Gilad Bracha, 2006-08-01
+  date: '2006-08-01'
+  credit: Dennis Hamilton
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Gilad_Bracha_lang.NET_2006.jpg
+  commons_file: File:Gilad_Bracha_lang.NET_2006.jpg
+  checked: '2026-11-02'
+- id: person-j-wesley-graham
+  file: assets/media/person-j-wesley-graham.jpg
+  kind: person
+  person: J. Wesley Graham
+  nodes:
+  - watfor
+  caption: J. Wesley Graham, 1964-03-26
+  date: '1964-03-26'
+  credit: Kitchener-Waterloo Record
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Wes_Graham_(right)_University_of_Waterloo_IBM_(cropped).jpg
+  commons_file: File:Wes_Graham_(right)_University_of_Waterloo_IBM_(cropped).jpg
+  checked: '2026-11-02'
+- id: person-ray-ozzie
+  file: assets/media/person-ray-ozzie.jpg
+  kind: person
+  person: Ray Ozzie
+  nodes:
+  - notes-formula
+  caption: Ray Ozzie
+  credit: unknown
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Ray_Ozzie,_Web_2.0_Conference.jpg
+  commons_file: File:Ray_Ozzie,_Web_2.0_Conference.jpg
+  checked: '2026-11-02'
+- id: person-hank-levy
+  file: assets/media/person-hank-levy.jpg
+  kind: person
+  person: Hank Levy
+  nodes:
+  - emerald
+  caption: Hank Levy, 2008-12-30
+  date: '2008-12-30'
+  credit: Mary Levin
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Hml2f.jpg
+  commons_file: File:Hml2f.jpg
+  checked: '2026-11-02'
+- id: person-timothy-lethbridge
+  file: assets/media/person-timothy-lethbridge.jpg
+  kind: person
+  person: Timothy Lethbridge
+  nodes:
+  - umple
+  caption: Timothy Lethbridge, 2013-08-05 16:34:10
+  date: '2013-08-05 16:34:10'
+  credit: Timothyclethbridge
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:TimothyLethbridge-August2013sm.jpg
+  commons_file: File:TimothyLethbridge-August2013sm.jpg
+  checked: '2026-11-02'
+- id: person-mitchel-resnick
+  file: assets/media/person-mitchel-resnick.jpg
+  kind: person
+  person: Mitchel Resnick
+  nodes:
+  - scratchjr
+  caption: Mitchel Resnick, 2011-05-05 18:01:38
+  date: '2011-05-05 18:01:38'
+  credit: Joi Ito
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Mitchel_Resnick.jpg
+  commons_file: File:Mitchel_Resnick.jpg
+  checked: '2026-11-02'
+- id: person-sepandar-kamvar
+  file: assets/media/person-sepandar-kamvar.jpg
+  kind: person
+  person: Sepandar Kamvar
+  nodes:
+  - dog-lang
+  caption: Sepandar Kamvar, 2012-11-27 15:16:11
+  date: '2012-11-27 15:16:11'
+  credit: Joi
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Sep_Kamvar_(1).jpg
+  commons_file: File:Sep_Kamvar_(1).jpg
+  checked: '2026-11-02'
+- id: person-terry-winograd
+  file: assets/media/person-terry-winograd.jpg
+  kind: person
+  person: Terry Winograd
+  nodes:
+  - krl
+  caption: Terry Winograd, 2006-04-26
+  date: '2006-04-26'
+  credit: boltron
+  license: CC BY-SA 2.0
+  license_url: https://creativecommons.org/licenses/by-sa/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:WinogradSkeleton.jpg
+  commons_file: File:WinogradSkeleton.jpg
+  checked: '2026-11-02'
+- id: person-andrzej-trybulec
+  file: assets/media/person-andrzej-trybulec.jpg
+  kind: person
+  person: Andrzej Trybulec
+  nodes:
+  - mizar
+  caption: Andrzej Trybulec, circa 1974date QS:P,+1974-00-00T00:00:00
+  date: circa 1974date QS:P,+1974-00-00T00:00:00
+  credit: Krystyna Kuperberg
+  license: GFDL
+  license_url: http://www.gnu.org/copyleft/fdl.html
+  source_url: https://commons.wikimedia.org/wiki/File:AndrzejTrybulec.jpg
+  commons_file: File:AndrzejTrybulec.jpg
+  checked: '2026-11-02'
+- id: person-donald-knuth
+  file: assets/media/person-donald-knuth.jpg
+  kind: person
+  person: Donald Knuth
+  nodes:
+  - metafont
+  caption: Donald Knuth, 2011-01-11 13:46:52
+  date: '2011-01-11 13:46:52'
+  credit: Alex Handy
+  license: CC BY-SA 2.0
+  license_url: https://creativecommons.org/licenses/by-sa/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Donald_Ervin_Knuth_(cropped).jpg
+  commons_file: File:Donald_Ervin_Knuth_(cropped).jpg
+  checked: '2026-11-02'
+- id: person-john-warnock
+  file: assets/media/person-john-warnock.jpg
+  kind: person
+  person: John Warnock
+  nodes:
+  - postscript
+  caption: John Warnock, 2008
+  date: '2008'
+  credit: Marvalous
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:John_Warnock_2008.jpg
+  commons_file: File:John_Warnock_2008.jpg
+  checked: '2026-11-02'
+- id: person-charles-geschke
+  file: assets/media/person-charles-geschke.png
+  kind: person
+  person: Charles Geschke
+  nodes:
+  - postscript
+  caption: Charles Geschke, 2015-06-20
+  date: '2015-06-20'
+  credit: Schmiebel
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Charles_Geschke_photo.png
+  commons_file: File:Charles_Geschke_photo.png
+  checked: '2026-11-02'
+- id: person-gerard-berry
+  file: assets/media/person-gerard-berry.jpg
+  kind: person
+  person: Gérard Berry
+  nodes:
+  - esterel
+  caption: Gérard Berry, 2009-11-19
+  date: '2009-11-19'
+  credit: David.Monniaux
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Gerard_Berry_lecon_inaugurale_20091119.jpg
+  commons_file: File:Gerard_Berry_lecon_inaugurale_20091119.jpg
+  checked: '2026-11-02'
+- id: person-luca-cardelli
+  file: assets/media/person-luca-cardelli.jpg
+  kind: person
+  person: Luca Cardelli
+  nodes:
+  - squeak-cardelli
+  caption: Luca Cardelli, 2026-10-03 18:37:29
+  date: '2026-10-03 18:37:29'
+  credit: EntirelyLikely
+  license: CC0
+  license_url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+  source_url: https://commons.wikimedia.org/wiki/File:2026-10-03_Selfie_London.jpg
+  commons_file: File:2026-10-03_Selfie_London.jpg
+  checked: '2026-11-02'
+- id: person-ron-gilbert
+  file: assets/media/person-ron-gilbert.jpg
+  kind: person
+  person: Ron Gilbert
+  nodes:
+  - scumm
+  caption: Ron Gilbert, 30 August 2013 (original upload date)
+  date: 30 August 2013 (original upload date)
+  credit: Brian_McInnis (talk) (Uploads)
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Ron_Gilbert,_July_2013.jpg
+  commons_file: File:Ron_Gilbert,_July_2013.jpg
+  checked: '2026-11-02'
+- id: person-chip-morningstar
+  file: assets/media/person-chip-morningstar.jpg
+  kind: person
+  person: Chip Morningstar
+  nodes:
+  - scumm
+  caption: Chip Morningstar, 2025-11-07 14:59:26
+  date: '2025-11-07 14:59:26'
+  credit: Kspiers
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:ChipMorningstar.jpg
+  commons_file: File:ChipMorningstar.jpg
+  checked: '2026-11-02'
+- id: person-jayadev-misra
+  file: assets/media/person-jayadev-misra.jpg
+  kind: person
+  person: Jayadev Misra
+  nodes:
+  - unity-cm
+  caption: Jayadev Misra, 2022-06-07
+  date: '2022-06-07'
+  credit: DavidGries
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:NAEfullView.jpg
+  commons_file: File:NAEfullView.jpg
+  checked: '2026-11-02'
+- id: person-j-strother-moore
+  file: assets/media/person-j-strother-moore.jpg
+  kind: person
+  person: J Strother Moore
+  nodes:
+  - acl2
+  caption: J Strother Moore, 2006-08-15
+  date: '2006-08-15'
+  credit: Dennis Hamilton
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:J_Strother_Moore_FLoC_2006.jpg
+  commons_file: File:J_Strother_Moore_FLoC_2006.jpg
+  checked: '2026-11-02'
+- id: person-matt-kaufmann
+  file: assets/media/person-matt-kaufmann.jpg
+  kind: person
+  person: Matt Kaufmann
+  nodes:
+  - acl2
+  caption: Matt Kaufmann, 2006-08-15
+  date: '2006-08-15'
+  credit: Dennis Hamilton
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:J_Strother_Moore,_Matt_Kaufmann_FLoC_2006.jpg
+  commons_file: File:J_Strother_Moore,_Matt_Kaufmann_FLoC_2006.jpg
+  checked: '2026-11-02'
+- id: person-jan-nieuwenhuizen
+  file: assets/media/person-jan-nieuwenhuizen.png
+  kind: person
+  person: Jan Nieuwenhuizen
+  nodes:
+  - lilypond
+  caption: Jan Nieuwenhuizen, 2009-09-05 16:34
+  date: 2009-09-05 16:34
+  credit: 'LilyPond-logo.png: Han-Wen Nienhuys, Jan Nieuwenhuizen, John Mandereau, Francisco Vila derivative work: Pacovila (talk)'
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:LilyPond-logo-with-music.png
+  commons_file: File:LilyPond-logo-with-music.png
+  checked: '2026-11-02'
+- id: person-daniel-p-friedman
+  file: assets/media/person-daniel-p-friedman.jpg
+  kind: person
+  person: Daniel P. Friedman
+  nodes:
+  - minikanren
+  caption: Daniel P. Friedman, 2020-12-25
+  date: '2020-12-25'
+  credit: Reclojure
+  license: CC BY 3.0
+  license_url: https://creativecommons.org/licenses/by/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Dan-friedman-2.jpg
+  commons_file: File:Dan-friedman-2.jpg
+  checked: '2026-11-02'
+- id: person-gavin-wood
+  file: assets/media/person-gavin-wood.jpg
+  kind: person
+  person: Gavin Wood
+  nodes:
+  - solidity
+  caption: Gavin Wood, 2017-12-05 09:26:18
+  date: '2017-12-05 09:26:18'
+  credit: TechCrunch
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Gavin_Wood_in_2017.jpg
+  commons_file: File:Gavin_Wood_in_2017.jpg
+  checked: '2026-11-02'
+- id: person-krysta-svore
+  file: assets/media/person-krysta-svore.jpg
+  kind: person
+  person: Krysta Svore
+  nodes:
+  - q-sharp
+  caption: Krysta Svore, 2014-10-14
+  date: '2014-10-14'
+  credit: Ndq123
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Krysta_Svore.jpg
+  commons_file: File:Krysta_Svore.jpg
+  checked: '2026-11-02'
+- id: person-bernard-galler
+  file: assets/media/person-bernard-galler.jpg
+  kind: person
+  person: Bernard Galler
+  nodes:
+  - mad
+  caption: Bernard Galler, 2004-09-10
+  date: '2004-09-10'
+  credit: Jeff Ogden
+  license: CC0
+  license_url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+  source_url: https://commons.wikimedia.org/wiki/File:GallerBernard-10Sep2004.jpg
+  commons_file: File:GallerBernard-10Sep2004.jpg
+  checked: '2026-11-02'
+- id: person-bruce-arden
+  file: assets/media/person-bruce-arden.jpg
+  kind: person
+  person: Bruce Arden
+  nodes:
+  - mad
+  caption: Bruce Arden, 2004-09-10
+  date: '2004-09-10'
+  credit: Jeff Ogden
+  license: CC0
+  license_url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+  source_url: https://commons.wikimedia.org/wiki/File:ArdenBruceW-10Sep2004.jpg
+  commons_file: File:ArdenBruceW-10Sep2004.jpg
+  checked: '2026-11-02'
+- id: person-harry-huskey
+  file: assets/media/person-harry-huskey.jpg
+  kind: person
+  person: Harry Huskey
+  nodes:
+  - neliac
+  caption: Harry Huskey, 2012-12-08 17:46:03
+  date: '2012-12-08 17:46:03'
+  credit: James Duncan
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Harry_Huskey_2011.jpg
+  commons_file: File:Harry_Huskey_2011.jpg
+  checked: '2026-11-02'
+- id: person-mary-shaw
+  file: assets/media/person-mary-shaw.png
+  kind: person
+  person: Mary Shaw
+  nodes:
+  - alphard
+  caption: Mary Shaw, Taken on 20 November 2014
+  date: Taken on 20 November 2014
+  credit: U.S. White House
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Mary-shaw.png
+  commons_file: File:Mary-shaw.png
+  checked: '2026-11-02'
+- id: person-steve-omohundro
+  file: assets/media/person-steve-omohundro.jpg
+  kind: person
+  person: Steve Omohundro
+  nodes:
+  - sather
+  caption: Steve Omohundro, 2010-09-26
+  date: '2010-09-26'
+  credit: Pat Chan
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Steve_Omohundro.jpg
+  commons_file: File:Steve_Omohundro.jpg
+  checked: '2026-11-02'
+- id: person-ken-kennedy
+  file: assets/media/person-ken-kennedy.jpg
+  kind: person
+  person: Ken Kennedy
+  nodes:
+  - hpf
+  caption: Ken Kennedy, 2013-04-21 19:08:58
+  date: '2013-04-21 19:08:58'
+  credit: ServiceAT
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:KenKennedy2001.jpg
+  commons_file: File:KenKennedy2001.jpg
+  checked: '2026-11-02'
+- id: schickard-calculating-clock
+  file: assets/media/schickard-calculating-clock.jpg
+  kind: machine
+  nodes:
+  - schickard-calculating-clock
+  caption: Portrait of Wilhelm Schickard at Tübingen University
+  date: 1632date QS:P571,+1632-00-00T00:00:00Z/9
+  credit: Conrad Melperger
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:C_Melperger_-_Wilhelm_Schickard_1632.jpg
+  commons_file: File:C_Melperger_-_Wilhelm_Schickard_1632.jpg
+  checked: '2026-11-02'
+- id: pascaline
+  file: assets/media/pascaline.jpg
+  kind: machine
+  nodes:
+  - pascaline
+  caption: Pascaline
+  date: Taken on 13 November 2016, 16:36 (accord
+  credit: Rama
+  license: CC BY-SA 3.0 fr
+  license_url: https://creativecommons.org/licenses/by-sa/3.0/fr/deed.en
+  source_url: https://commons.wikimedia.org/wiki/File:Pascaline-CnAM_823-1-IMG_1506-black.jpg
+  commons_file: File:Pascaline-CnAM_823-1-IMG_1506-black.jpg
+  checked: '2026-11-02'
+- id: stepped-reckoner
+  file: assets/media/stepped-reckoner.jpg
+  kind: machine
+  nodes:
+  - stepped-reckoner
+  caption: The Staffelwalze, or Stepped Reckoner, a digital calculating machine invented by Gottfried Wilhelm Leibniz around 1672 and built around 1700, on display in the Technische Sammlungen museum in
+    Dresden, Germany. It was the first known calcula…
+  credit: User:Kolossos
+  license: CC BY-SA 3.0
+  license_url: http://creativecommons.org/licenses/by-sa/3.0/
+  source_url: https://commons.wikimedia.org/wiki/File:Leibnitzrechenmaschine.jpg
+  commons_file: File:Leibnitzrechenmaschine.jpg
+  checked: '2026-11-02'
+- id: bouchon-loom
+  file: assets/media/bouchon-loom.jpg
+  kind: machine
+  nodes:
+  - bouchon-loom
+  caption: Photograph of a Basile Bouchon automated loom from 1725, displayed at the Musée des arts et métiers, Paris.
+  date: '2010-11-18'
+  credit: Dogcow
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Basile_Bouchon_1725_loom.jpg
+  commons_file: File:Basile_Bouchon_1725_loom.jpg
+  checked: '2026-11-02'
+- id: difference-engine
+  file: assets/media/difference-engine.jpg
+  kind: machine
+  nodes:
+  - difference-engine
+  caption: A photo of the Difference Engine constructed by the Science Museum based on the plans for Charles Babbage's Difference Engine No. 2
+  date: 2008-09
+  credit: User:geni
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Babbage_Difference_Engine.jpg
+  commons_file: File:Babbage_Difference_Engine.jpg
+  checked: '2026-11-02'
+- id: vaucanson-automata
+  file: assets/media/vaucanson-automata.jpg
+  kind: machine
+  nodes:
+  - vaucanson-automata
+  caption: Jacques de Vaucanson (1709-1782), French artist and inventor, renowned for his mechanical automata, as painted by Joseph Boze
+  date: '1784'
+  credit: Joseph Boze
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Jacques_de_Vaucanson_rectangular.jpg
+  commons_file: File:Jacques_de_Vaucanson_rectangular.jpg
+  checked: '2026-11-02'
+- id: al-jazari-automata
+  file: assets/media/al-jazari-automata.png
+  kind: machine
+  nodes:
+  - al-jazari-automata
+  caption: The elephant clock from Al-Jazari's manuscript.
+  date: '1315'
+  credit: Al-Jazari
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Al-jazari_elephant_clock.png
+  commons_file: File:Al-jazari_elephant_clock.png
+  checked: '2026-11-02'
+- id: korsakov-homeoscope
+  file: assets/media/korsakov-homeoscope.jpg
+  kind: machine
+  nodes:
+  - korsakov-homeoscope
+  caption: Semen Korsakov
+  date: 1 June 2008 (upload date)
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Korsakov01.jpg
+  commons_file: File:Korsakov01.jpg
+  checked: '2026-11-02'
+- id: atanasoff-berry-computer
+  file: assets/media/atanasoff-berry-computer.jpg
+  kind: machine
+  nodes:
+  - atanasoff-berry-computer
+  caption: Atanasoff-Berry Computer at Durham Center, Iowa State University
+  date: 2006-06
+  credit: User:Manop
+  license: CC BY-SA 3.0
+  license_url: http://creativecommons.org/licenses/by-sa/3.0/
+  source_url: https://commons.wikimedia.org/wiki/File:Atanasoff-Berry_Computer_at_Durhum_Center.jpg
+  commons_file: File:Atanasoff-Berry_Computer_at_Durhum_Center.jpg
+  checked: '2026-11-02'
+- id: colossus
+  file: assets/media/colossus.jpg
+  kind: machine
+  nodes:
+  - colossus
+  caption: A Colossus Mark 2 codebreaking computer being operated by Dorothy Du Boisson (left) and Elsie Booker (right), 1943
+  date: '1943'
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Colossus.jpg
+  commons_file: File:Colossus.jpg
+  checked: '2026-11-02'
+- id: zuse-z4
+  file: assets/media/zuse-z4.jpg
+  kind: machine
+  nodes:
+  - zuse-z4
+  caption: 'Der einzige Zuse Z4Standort: Deutsches Museum, München'
+  date: 2025-01-31 20:45
+  credit: 'File:Zuse-Z4-Totale deutsches-museum.jpg: Clemens PFEIFFER derivative work: Georgfotoart'
+  license: CC BY 2.5
+  license_url: https://creativecommons.org/licenses/by/2.5
+  source_url: https://commons.wikimedia.org/wiki/File:Zuse-Z4-Totale_deutsches-museum_b.jpg
+  commons_file: File:Zuse-Z4-Totale_deutsches-museum_b.jpg
+  checked: '2026-11-02'
+- id: dyseac
+  file: assets/media/dyseac.jpg
+  kind: machine
+  nodes:
+  - dyseac
+  caption: 'Diagram of the DYSEAC "movable computer". From the original document: Figure 3.4. Sectional drawing of computer van.'
+  date: '1955-01-25'
+  credit: National Bureau of Standards
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:DYSEAC_van_2.jpg
+  commons_file: File:DYSEAC_van_2.jpg
+  checked: '2026-11-02'
+- id: univac-1103
+  file: assets/media/univac-1103.jpg
+  kind: machine
+  nodes:
+  - univac-1103
+  caption: UNIVAC 1103
+  credit: unknown
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:UNIVAC-1103-BRL61-0905.jpg
+  commons_file: File:UNIVAC-1103-BRL61-0905.jpg
+  checked: '2026-11-02'
+- id: ibm-701
+  file: assets/media/ibm-701.jpg
+  kind: machine
+  nodes:
+  - ibm-701
+  caption: IBM 701 operator's console. The 701 was introduced in 1952. [1]
+  date: '2009-04-07 18:02:57'
+  credit: Dan
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:IBM_701console.jpg
+  commons_file: File:IBM_701console.jpg
+  checked: '2026-11-02'
+- id: ibm-709
+  file: assets/media/ibm-709.jpg
+  kind: machine
+  nodes:
+  - ibm-709
+  caption: w:IBM 709 front panel on display at the Computer History Museum.
+  date: '2012-01-28'
+  credit: ArnoldReinhold
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:IBM_709_front_panel_at_CHM.agr.jpg
+  commons_file: File:IBM_709_front_panel_at_CHM.agr.jpg
+  checked: '2026-11-02'
+- id: ibm-7090
+  file: assets/media/ibm-7090.jpg
+  kind: machine
+  nodes:
+  - ibm-7090
+  caption: Screen shot from a US Government (NASA) video clip about Project Mercury. The console is part of an IBM 7090 installation at the Goddard Spaceflight Center in Maryland. It can be distinguished
+    from an IBM 7094 console because it lacks the s…
+  credit: NASA
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:IBM_7090_console.nasa.jpg
+  commons_file: File:IBM_7090_console.nasa.jpg
+  checked: '2026-11-02'
+- id: ibm-1401
+  file: assets/media/ibm-1401.jpg
+  kind: machine
+  nodes:
+  - ibm-1401
+  caption: The IBM 1401 demo room at the Computer History Museum.
+  date: '2025-04-05'
+  credit: Lucaseverini66
+  license: CC0
+  license_url: http://creativecommons.org/publicdomain/zero/1.0/deed.en
+  source_url: https://commons.wikimedia.org/wiki/File:CHM_Demo_Room.jpg
+  commons_file: File:CHM_Demo_Room.jpg
+  checked: '2026-11-02'
+- id: pdp-1
+  file: assets/media/pdp-1.jpg
+  kind: machine
+  nodes:
+  - pdp-1
+  caption: DEC PDP-1 Demo Lab at Mountain View's Computer History Museum
+  date: Taken on 9 June 2014, 01:50:00
+  credit: Alexey Komarov
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:DEC_PDP-1_Demo_Lab_at_Mountain_View%27s_Computer_History_Museum.jpg
+  commons_file: File:DEC_PDP-1_Demo_Lab_at_Mountain_View's_Computer_History_Museum.jpg
+  checked: '2026-11-02'
+- id: pdp-10
+  file: assets/media/pdp-10.jpg
+  kind: machine
+  nodes:
+  - pdp-10
+  caption: DEC (Digital Equipment Corporation) PDP-10 CPU, model KI-10
+  date: '2015-02-25 13:47:09'
+  credit: Gah4
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:DEC_PDP-10_(from_ca._1970_named_decsystem-10)_mainframe_computer_system,_1970s_(edited,_white_background).jpg
+  commons_file: File:DEC_PDP-10_(from_ca._1970_named_decsystem-10)_mainframe_computer_system,_1970s_(edited,_white_background).jpg
+  checked: '2026-11-02'
+- id: vax
+  file: assets/media/vax.png
+  kind: machine
+  nodes:
+  - vax
+  caption: Logo of VAX mainframe computers
+  date: circa 1982date QS:P,+1982-00-00T00:00:00
+  credit: Digital Equipment Corporation
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:VAX_logo.svg
+  commons_file: File:VAX_logo.svg
+  checked: '2026-11-02'
+- id: intel-4004
+  file: assets/media/intel-4004.jpg
+  kind: machine
+  nodes:
+  - intel-4004
+  caption: A processor Intel C4004 with grey traces (no gray trace version).
+  date: '2016-08-10'
+  credit: Thomas Nguyen
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Intel_C4004.jpg
+  commons_file: File:Intel_C4004.jpg
+  checked: '2026-11-02'
+- id: intel-8008
+  file: assets/media/intel-8008.jpg
+  kind: machine
+  nodes:
+  - intel-8008
+  caption: CPU Intel C8008-1
+  date: '2009-01-11'
+  credit: Konstantin Lanzet
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:KL_Intel_C8008-1.jpg
+  commons_file: File:KL_Intel_C8008-1.jpg
+  checked: '2026-11-02'
+- id: intel-8080
+  file: assets/media/intel-8080.jpg
+  kind: machine
+  nodes:
+  - intel-8080
+  caption: Two Intel 8080 microprocessor chips
+  date: Unknown date
+  credit: The Science Museum UK
+  license: CC BY 4.0
+  license_url: https://creativecommons.org/licenses/by/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Intel_8080_open-closed.jpg
+  commons_file: File:Intel_8080_open-closed.jpg
+  checked: '2026-11-02'
+- id: motorola-6800
+  file: assets/media/motorola-6800.jpg
+  kind: machine
+  nodes:
+  - motorola-6800
+  caption: The Motorola MC6800 8-bit microprocessor was announced in March 1974 and shipments of the M6800 family of MPU, RAM, ROM and peripherals began in December 1974. The L suffix indicates a ceramic
+    package; the P suffix was for a plastic package…
+  date: '2010-04-30'
+  credit: Swtpc6800 en:User:Swtpc6800 Michael Holley
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Motorola_MC6800_microprocessor.jpg
+  commons_file: File:Motorola_MC6800_microprocessor.jpg
+  checked: '2026-11-02'
+- id: motorola-6809
+  file: assets/media/motorola-6809.jpg
+  kind: machine
+  nodes:
+  - motorola-6809
+  caption: CPU Motorola MC6809
+  date: '2009-05-03'
+  credit: Konstantin Lanzet
+  license: CC BY-SA 3.0
+  license_url: http://creativecommons.org/licenses/by-sa/3.0/
+  source_url: https://commons.wikimedia.org/wiki/File:KL_Motorola_MC6809.jpg
+  commons_file: File:KL_Motorola_MC6809.jpg
+  checked: '2026-11-02'
+- id: mpf-1
+  file: assets/media/mpf-1.jpg
+  kind: machine
+  nodes:
+  - mpf-1
+  caption: Microprofessor I taken at the National Chiao Tung University, Taiwan by Toytoy 00:26, Jun 26, 2005 (UTC)
+  date: 00:26, Jun 26, 2005 (UTC)
+  credit: User Toytoy on en.wikipedia
+  license: CC BY-SA 2.0
+  license_url: https://creativecommons.org/licenses/by-sa/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Mpf-I.jpg
+  commons_file: File:Mpf-I.jpg
+  checked: '2026-11-02'
+- id: sparc
+  file: assets/media/sparc.jpg
+  kind: machine
+  nodes:
+  - sparc
+  caption: SPARC
+  credit: unknown
+  license: CC BY-SA 3.0
+  license_url: http://creativecommons.org/licenses/by-sa/3.0/
+  source_url: https://commons.wikimedia.org/wiki/File:Sun_UltraSPARCII.jpg
+  commons_file: File:Sun_UltraSPARCII.jpg
+  checked: '2026-11-02'
+- id: powerpc
+  file: assets/media/powerpc.jpg
+  kind: machine
+  nodes:
+  - powerpc
+  caption: PowerPC
+  credit: unknown
+  license: CC BY-SA 3.0
+  license_url: http://creativecommons.org/licenses/by-sa/3.0/
+  source_url: https://commons.wikimedia.org/wiki/File:IBM_PowerPC601_PPC601FD-080-2_top.jpg
+  commons_file: File:IBM_PowerPC601_PPC601FD-080-2_top.jpg
+  checked: '2026-11-02'
+- id: person-ismail-al-jazari
+  file: assets/media/person-ismail-al-jazari.png
+  kind: person
+  person: Ismail al-Jazari
+  nodes:
+  - al-jazari-automata
+  caption: Ismail al-Jazari, 1315
+  date: '1315'
+  credit: Al-Jazari
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Al-jazari_elephant_clock.png
+  commons_file: File:Al-jazari_elephant_clock.png
+  checked: '2026-11-02'
+- id: person-wilhelm-schickard
+  file: assets/media/person-wilhelm-schickard.jpg
+  kind: person
+  person: Wilhelm Schickard
+  nodes:
+  - schickard-calculating-clock
+  caption: Wilhelm Schickard, 1632date QS:P571,+1632-00-00T00:00:00Z/9
+  date: 1632date QS:P571,+1632-00-00T00:00:00Z/9
+  credit: Conrad Melperger
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:C_Melperger_-_Wilhelm_Schickard_1632.jpg
+  commons_file: File:C_Melperger_-_Wilhelm_Schickard_1632.jpg
+  checked: '2026-11-02'
+- id: person-blaise-pascal
+  file: assets/media/person-blaise-pascal.jpg
+  kind: person
+  person: Blaise Pascal
+  nodes:
+  - pascaline
+  caption: Blaise Pascal, circa 1690date QS:P571,+1690-00-00T00:00
+  date: circa 1690date QS:P571,+1690-00-00T00:00
+  credit: unknown; a copy of the painting of François II Quesnel, which was made for Gérard Edelinck en 1691[réf. nécessaire].
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Blaise_Pascal_Versailles,_circa_1690.JPG
+  commons_file: File:Blaise_Pascal_Versailles,_circa_1690.JPG
+  checked: '2026-11-02'
+- id: person-gottfried-wilhelm-leibniz
+  file: assets/media/person-gottfried-wilhelm-leibniz.jpg
+  kind: person
+  person: Gottfried Wilhelm Leibniz
+  nodes:
+  - stepped-reckoner
+  caption: Gottfried Wilhelm Leibniz, 1695
+  date: '1695'
+  credit: Christoph Bernhard Francke
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Christoph_Bernhard_Francke_-_Bildnis_des_Philosophen_Leibniz_(ca._1695).jpg
+  commons_file: File:Christoph_Bernhard_Francke_-_Bildnis_des_Philosophen_Leibniz_(ca._1695).jpg
+  checked: '2026-11-02'
+- id: person-basile-bouchon
+  file: assets/media/person-basile-bouchon.jpg
+  kind: person
+  person: Basile Bouchon
+  nodes:
+  - bouchon-loom
+  caption: Basile Bouchon, 2010-11-18
+  date: '2010-11-18'
+  credit: Dogcow
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Basile_Bouchon_1725_loom.jpg
+  commons_file: File:Basile_Bouchon_1725_loom.jpg
+  checked: '2026-11-02'
+- id: person-jacques-de-vaucanson
+  file: assets/media/person-jacques-de-vaucanson.jpg
+  kind: person
+  person: Jacques de Vaucanson
+  nodes:
+  - vaucanson-automata
+  caption: Jacques de Vaucanson, 1784
+  date: '1784'
+  credit: Joseph Boze
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Jacques_de_Vaucanson_rectangular.jpg
+  commons_file: File:Jacques_de_Vaucanson_rectangular.jpg
+  checked: '2026-11-02'
+- id: person-semyon-korsakov
+  file: assets/media/person-semyon-korsakov.jpg
+  kind: person
+  person: Semyon Korsakov
+  nodes:
+  - korsakov-homeoscope
+  caption: Semyon Korsakov, 1 June 2008 (upload date)
+  date: 1 June 2008 (upload date)
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Korsakov01.jpg
+  commons_file: File:Korsakov01.jpg
+  checked: '2026-11-02'
+- id: person-percy-ludgate
+  file: assets/media/person-percy-ludgate.jpg
+  kind: person
+  person: Percy Ludgate
+  nodes:
+  - ludgate-analytical-machine
+  caption: Percy Ludgate, 1922-10-16
+  date: '1922-10-16'
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Percy_Ludgate.jpg
+  commons_file: File:Percy_Ludgate.jpg
+  checked: '2026-11-02'
+- id: person-gottlob-frege
+  file: assets/media/person-gottlob-frege.jpg
+  kind: person
+  person: Gottlob Frege
+  nodes:
+  - begriffsschrift
+  caption: Gottlob Frege, circa 1879date QS:P,+1879-00-00T00:00:00
+  date: circa 1879date QS:P,+1879-00-00T00:00:00
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Young_frege.jpg
+  commons_file: File:Young_frege.jpg
+  checked: '2026-11-02'
+- id: person-walter-pitts
+  file: assets/media/person-walter-pitts.jpg
+  kind: person
+  person: Walter Pitts
+  nodes:
+  - mcculloch-pitts-neuron
+  caption: Walter Pitts, 1954-05-05
+  date: '1954-05-05'
+  credit: Creator:Francis Bello (1917-1987)
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:1954_Walter_Pitts_and_a_blackboard.jpg
+  commons_file: File:1954_Walter_Pitts_and_a_blackboard.jpg
+  checked: '2026-11-02'
+- id: person-emil-post
+  file: assets/media/person-emil-post.jpg
+  kind: person
+  person: Emil Post
+  nodes:
+  - post-canonical-system
+  caption: Emil Post
+  credit: unknown
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Emil_Leon_Post.jpg
+  commons_file: File:Emil_Leon_Post.jpg
+  checked: '2026-11-02'
+- id: person-john-vincent-atanasoff
+  file: assets/media/person-john-vincent-atanasoff.jpg
+  kind: person
+  person: John Vincent Atanasoff
+  nodes:
+  - atanasoff-berry-computer
+  caption: John Vincent Atanasoff, 2011-08-07 10:56
+  date: 2011-08-07 10:56
+  credit: Eye Steel Film from Canada
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:ATANASOFF_Pic%5E5_-_Flickr_-_Eye_Steel_Film_(cropped).jpg
+  commons_file: File:ATANASOFF_Pic^5_-_Flickr_-_Eye_Steel_Film_(cropped).jpg
+  checked: '2026-11-02'
+- id: person-tommy-flowers
+  file: assets/media/person-tommy-flowers.jpg
+  kind: person
+  person: Tommy Flowers
+  nodes:
+  - colossus
+  caption: Tommy Flowers, circa 1940date QS:P,+1940-00-00T00:00:00
+  date: circa 1940date QS:P,+1940-00-00T00:00:00
+  credit: UnknownUnknown
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Tommy_Flowers.jpg
+  commons_file: File:Tommy_Flowers.jpg
+  checked: '2026-11-02'
+- id: person-seymour-cray
+  file: assets/media/person-seymour-cray.jpg
+  kind: person
+  person: Seymour Cray
+  nodes:
+  - univac-1103
+  caption: Seymour Cray, unknown
+  date: unknown
+  credit: unknown
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Seymour_R._Cray.JPG
+  commons_file: File:Seymour_R._Cray.JPG
+  checked: '2026-11-02'
+- id: person-jerrier-a-haddad
+  file: assets/media/person-jerrier-a-haddad.png
+  kind: person
+  person: Jerrier A. Haddad
+  nodes:
+  - ibm-701
+  caption: Jerrier A. Haddad, 2020-11-27
+  date: '2020-11-27'
+  credit: Kmhaddad
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Jerrier_A_Haddad.png
+  commons_file: File:Jerrier_A_Haddad.png
+  checked: '2026-11-02'
+- id: person-marcian-hoff
+  file: assets/media/person-marcian-hoff.jpg
+  kind: person
+  person: Marcian Hoff
+  nodes:
+  - intel-4004
+  - intel-8008
+  caption: Marcian Hoff, 2009-10-20 18:35:35
+  date: '2009-10-20 18:35:35'
+  credit: Dicklyon
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Marcian_Ted_Hoff_(cropped).jpg
+  commons_file: File:Marcian_Ted_Hoff_(cropped).jpg
+  checked: '2026-11-02'
+- id: person-stanley-mazor
+  file: assets/media/person-stanley-mazor.jpg
+  kind: person
+  person: Stanley Mazor
+  nodes:
+  - intel-4004
+  - intel-8008
+  - intel-8080
+  caption: Stanley Mazor, 2009-10-20 18:20:48
+  date: '2009-10-20 18:20:48'
+  credit: Dicklyon
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Shima_and_Mazor_(cropped).jpg
+  commons_file: File:Shima_and_Mazor_(cropped).jpg
+  checked: '2026-11-02'
+- id: person-yale-patt
+  file: assets/media/person-yale-patt.jpg
+  kind: person
+  person: Yale Patt
+  nodes:
+  - lc-3
+  caption: Yale Patt, 2010-07-09
+  date: '2010-07-09'
+  credit: Adonis Nafeh
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Yale_Patt.jpg
+  commons_file: File:Yale_Patt.jpg
+  checked: '2026-11-02'
+- id: person-douglas-hofstadter
+  file: assets/media/person-douglas-hofstadter.jpg
+  kind: person
+  person: Douglas Hofstadter
+  nodes:
+  - bloop
+  - floop
+  caption: Douglas Hofstadter, 2006-05-13
+  date: '2006-05-13'
+  credit: '"null0"'
+  license: CC BY-SA 2.0
+  license_url: https://creativecommons.org/licenses/by-sa/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Douglas_Hofstadter,_Stanford_2006_(crop).jpg
+  commons_file: File:Douglas_Hofstadter,_Stanford_2006_(crop).jpg
+  checked: '2026-11-02'
+- id: person-gordon-bell
+  file: assets/media/person-gordon-bell.jpg
+  kind: person
+  person: Gordon Bell
+  nodes:
+  - isp
+  caption: Gordon Bell
+  credit: Queensland University of Technology
+  license: Attribution
+  source_url: https://commons.wikimedia.org/wiki/File:Gordon_Bell_(cropped).jpg
+  commons_file: File:Gordon_Bell_(cropped).jpg
+  checked: '2026-11-02'
