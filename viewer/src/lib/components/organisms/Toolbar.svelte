@@ -2,6 +2,11 @@
 	import { viewer } from '#lib/viewer.svelte.ts';
 	import { FAMILIES } from '#lib/graph.ts';
 	import { NOW } from '#lib/scale.ts';
+	import Button from '../atoms/Button.svelte';
+	import IconButton from '../atoms/IconButton.svelte';
+	import Kbd from '../atoms/Kbd.svelte';
+	import ToggleChip from '../atoms/ToggleChip.svelte';
+	import FilterGroup from '../molecules/FilterGroup.svelte';
 
 	const KINDS = ['mechanism', 'machine', 'machine-code', 'formalism', 'notation', 'assembly', 'language'];
 
@@ -42,106 +47,90 @@
 </script>
 
 <header class="toolbar">
-	<div class="brand">History of languages</div>
+	<h1 class="brand">History of languages</h1>
 
-	<button class="search-btn" onclick={() => (viewer.paletteOpen = true)} title="Go to a language, cluster, concept, lineage or era">
+	<Button class="search-btn" onclick={() => (viewer.paletteOpen = true)} title="Go to a language, cluster, concept, lineage or era" aria-keyshortcuts={isMac ? 'Meta+K' : 'Control+K'}>
 		<span class="search-icon" aria-hidden="true">⌕</span>
 		<span class="search-text">Go to…</span>
-		<kbd>{isMac ? '⌘' : 'Ctrl'}</kbd><kbd>K</kbd>
-	</button>
-	<button class="path-btn" onclick={() => (viewer.pathOpen = true)} title="How are two languages related? Shortest path between them (P)">
-		<span aria-hidden="true">⇄</span><span class="path-text">Path</span><kbd>P</kbd>
-	</button>
+		<span class="keys" aria-hidden="true"><Kbd>{isMac ? '⌘' : 'Ctrl'}</Kbd><Kbd>K</Kbd></span>
+	</Button>
+	<Button class="path-btn" onclick={() => (viewer.pathOpen = true)} title="How are two languages related? Shortest path between them (P)" aria-label="Path finder" aria-keyshortcuts="P">
+		<span aria-hidden="true">⇄</span><span class="path-text">Path</span>
+		<span class="keys" aria-hidden="true"><Kbd>P</Kbd></span>
+	</Button>
 
 	{#if viewer.narrow.current}
-		<button class="toggle" class:on={viewer.filtersOpen} onclick={() => (viewer.filtersOpen = !viewer.filtersOpen)} aria-expanded={viewer.filtersOpen}>
-			Filters{focusActive ? ' •' : ''}
-		</button>
+		<Button onclick={() => (viewer.filtersOpen = !viewer.filtersOpen)} aria-expanded={viewer.filtersOpen} aria-controls="filters">
+			Filters{#if focusActive}<span aria-hidden="true"> •</span><span class="sr-only">(highlight active)</span>{/if}
+		</Button>
 	{/if}
 
 	{#if showFilters}
-	<div class="filters">
-	<fieldset class="group">
-		<legend>Edges</legend>
-		{#each FAMILIES as f (f.id)}
-			<label class="chip fam-{f.id}" title={f.hint}>
-				<input type="checkbox" checked={viewer.families.has(f.id)} onchange={() => viewer.toggle(viewer.families, f.id)} />
-				<span class="swatch"></span>{f.label}
-			</label>
-		{/each}
-	</fieldset>
+		<div class="filters" id="filters">
+			<FilterGroup legend="Edges">
+				{#each FAMILIES as f (f.id)}
+					<ToggleChip family={f.id} title={f.hint} checked={viewer.families.has(f.id)} onchange={() => viewer.toggle(viewer.families, f.id)}>{f.label}</ToggleChip>
+				{/each}
+			</FilterGroup>
 
-	<fieldset class="group">
-		<legend>Kinds</legend>
-		{#each presentKinds as k (k)}
-			<label class="chip kind-{k}">
-				<input type="checkbox" checked={!viewer.hiddenKinds.has(k)} onchange={() => viewer.toggle(viewer.hiddenKinds, k)} />
-				<span class="swatch round"></span>{k}
-			</label>
-		{/each}
-	</fieldset>
+			<FilterGroup legend="Kinds">
+				{#each presentKinds as k (k)}
+					<ToggleChip kind={k} checked={!viewer.hiddenKinds.has(k)} onchange={() => viewer.toggle(viewer.hiddenKinds, k)}>{k}</ToggleChip>
+				{/each}
+			</FilterGroup>
 
-	<fieldset class="group">
-		<legend>Highlight</legend>
-		<select
-			value={viewer.concept ?? ''}
-			onchange={(e) => viewer.setConcept(e.currentTarget.value || null)}
-			title="Highlight nodes that have a concept (or a narrower one) and mark when it arrived"
-		>
-			<option value="">concept…</option>
-			{#each conceptGroups as [facet, items] (facet)}
-				<optgroup label={facet}>
-					{#each items as c (c.id)}<option value={c.id}>{c.name}</option>{/each}
-				</optgroup>
-			{/each}
-		</select>
-		<select
-			value={viewer.lineage ?? ''}
-			onchange={(e) => viewer.setLineage(e.currentTarget.value || null)}
-			title="Highlight a narrative lineage"
-		>
-			<option value="">lineage…</option>
-			{#each g.data.lineages as l (l.id)}<option value={l.id}>{l.title}</option>{/each}
-		</select>
-		<label class="chip" title="On selection, follow edges transitively or only one hop">
-			<input type="checkbox" checked={viewer.depth === 'full'} onchange={() => (viewer.depth = viewer.depth === 'full' ? 'direct' : 'full')} />
-			transitive
-		</label>
-	</fieldset>
+			<FilterGroup legend="Highlight">
+				<select
+					value={viewer.concept ?? ''}
+					onchange={(e) => viewer.setConcept(e.currentTarget.value || null)}
+					aria-label="Highlight a concept"
+					title="Highlight nodes that have a concept (or a narrower one) and mark when it arrived"
+				>
+					<option value="">concept…</option>
+					{#each conceptGroups as [facet, items] (facet)}
+						<optgroup label={facet}>
+							{#each items as c (c.id)}<option value={c.id}>{c.name}</option>{/each}
+						</optgroup>
+					{/each}
+				</select>
+				<select value={viewer.lineage ?? ''} onchange={(e) => viewer.setLineage(e.currentTarget.value || null)} aria-label="Highlight a lineage" title="Highlight a narrative lineage">
+					<option value="">lineage…</option>
+					{#each g.data.lineages as l (l.id)}<option value={l.id}>{l.title}</option>{/each}
+				</select>
+				<ToggleChip title="On selection, follow edges transitively or only one hop" checked={viewer.depth === 'full'} onchange={() => (viewer.depth = viewer.depth === 'full' ? 'direct' : 'full')}>transitive</ToggleChip>
+			</FilterGroup>
 
-	<fieldset class="group">
-		<legend>View</legend>
-		<button onclick={() => viewer.expandAll()} title="Expand all clusters">expand</button>
-		<button onclick={() => viewer.collapseAll()} title="Collapse all clusters">collapse</button>
-		<button onclick={() => viewer.setZoom(viewer.effectiveZoom / 1.4)} title="Zoom out">−</button>
-		<span class="zoom">{viewer.effectiveZoom.toFixed(2)}×</span>
-		<button onclick={() => viewer.setZoom(viewer.effectiveZoom * 1.4)} title="Zoom in">+</button>
-		{#if focusActive}
-			<button onclick={() => viewer.clearFocus()} title="Clear selection and highlights">clear</button>
-		{/if}
-	</fieldset>
-	</div>
+			<FilterGroup legend="View">
+				<Button onclick={() => viewer.expandAll()} title="Expand all clusters">expand</Button>
+				<Button onclick={() => viewer.collapseAll()} title="Collapse all clusters">collapse</Button>
+				<IconButton variant="bordered" label="Zoom out" onclick={() => viewer.setZoom(viewer.effectiveZoom / 1.4)}>−</IconButton>
+				<output class="zoom" aria-label="Zoom level">{viewer.effectiveZoom.toFixed(2)}×</output>
+				<IconButton variant="bordered" label="Zoom in" onclick={() => viewer.setZoom(viewer.effectiveZoom * 1.4)}>+</IconButton>
+				{#if focusActive}
+					<Button onclick={() => viewer.clearFocus()} title="Clear selection and highlights (Esc)">clear</Button>
+				{/if}
+			</FilterGroup>
+		</div>
 	{/if}
 
 	<div class="status" class:flash>
+		<span class="sr-only" role="status">{flash ? 'Data reloaded' : ''}</span>
 		{#if g.data.problems.length}
-			<button class="problems" onclick={() => (showProblems = !showProblems)}>
-				⚠ {g.data.problems.length} problem{g.data.problems.length === 1 ? '' : 's'}
-			</button>
+			<Button class="problems" onclick={() => (showProblems = !showProblems)} aria-expanded={showProblems}>
+				<span aria-hidden="true">⚠</span> {g.data.problems.length} problem{g.data.problems.length === 1 ? '' : 's'}
+			</Button>
 		{:else}
 			<span class="ok" title="Lenient load OK. Run `task data:build` for full schema validation.">data ok</span>
 		{/if}
 		<span class="loaded" title="Last loaded from data/">{new Date(g.data.loadedAt).toLocaleTimeString()}</span>
-		<button
-			class="toggle panel-toggle"
-			class:on={viewer.panelOpen}
+		<Button
 			onclick={() => (viewer.panelOpen = !viewer.panelOpen)}
 			aria-expanded={viewer.panelOpen}
 			title={viewer.panelOpen ? 'Fold the detail panel' : 'Open the detail panel'}
 		>
 			{viewer.panelOpen ? 'Hide details' : 'Details'}
-		</button>
-		<a class="repo" href="https://github.com/sunsided/history-of-languages" target="_blank" rel="noreferrer" title="Source and dataset on GitHub" aria-label="GitHub repository">
+		</Button>
+		<a class="repo" href="https://github.com/sunsided/history-of-languages" target="_blank" rel="noreferrer" title="Source and dataset on GitHub" aria-label="GitHub repository (opens in a new tab)">
 			<!-- Octicons mark-github (MIT) -->
 			<svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
 				<path
@@ -154,20 +143,26 @@
 
 	<nav class="eras" aria-label="Jump to era">
 		{#each eras as e (e.id)}
-			<button class:active={activeEra === e.id} onclick={() => viewer.jump(e.id)} title="{e.name} ({e.start < 0 ? `${-e.start} BC` : e.start}–{e.end ?? 'now'}){e.summary ? '\n' + e.summary : ''}">
+			<Button
+				variant="pill"
+				class="era"
+				aria-current={activeEra === e.id ? 'true' : undefined}
+				onclick={() => viewer.jump(e.id)}
+				title="{e.name} ({e.start < 0 ? `${-e.start} BC` : e.start}–{e.end ?? 'now'}){e.summary ? '\n' + e.summary : ''}"
+			>
 				<span class="era-year">{e.start < 0 ? `${-e.start} BC` : e.start}</span>
 				<span class="era-name">{e.name}</span>
-			</button>
+			</Button>
 		{/each}
-		<button class="now" class:active={activeEra === 'now'} onclick={() => viewer.jump('now')} title="Scroll to the present">Now →</button>
+		<Button variant="pill" class="era now" aria-current={activeEra === 'now' ? 'true' : undefined} onclick={() => viewer.jump('now')} title="Scroll to the present">Now →</Button>
 	</nav>
 </header>
 
 {#if showProblems && g.data.problems.length}
-	<div class="problem-list">
+	<div class="problem-list" role="region" aria-label="Load problems">
 		<div class="pl-head">
 			<span>Load problems (lenient loader; run <code>task data:build</code> for full schema validation)</span>
-			<button onclick={() => (showProblems = false)}>close</button>
+			<Button onclick={() => (showProblems = false)}>close</Button>
 		</div>
 		<ul>
 			{#each g.data.problems as p, i (i)}<li>{p}</li>{/each}
@@ -180,199 +175,49 @@
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		gap: 6px 14px;
-		padding: 6px 12px;
+		gap: var(--space-3) var(--space-5);
+		padding: var(--space-3) var(--space-5);
 		border-bottom: 1px solid var(--line);
 		background: var(--bg-raised);
 		font-size: var(--text-sm);
 	}
-	.filters {
-		display: contents;
-	}
-	.toggle.on {
-		background: var(--accent-soft);
-		border-color: var(--accent);
-	}
-	.eras {
-		flex-basis: 100%;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 4px;
-		scrollbar-width: thin;
-		padding-bottom: 2px;
-	}
-	.eras button {
-		flex: none;
-		display: inline-flex;
-		align-items: baseline;
-		gap: 5px;
-		max-width: 220px;
-		border-radius: var(--radius-pill);
-		padding: 2px 9px;
-		white-space: nowrap;
-	}
-	.eras button.active {
-		background: var(--accent-soft);
-		border-color: var(--accent);
-	}
-	.era-year {
-		color: var(--fg-subtle);
-		font-variant-numeric: tabular-nums;
-		font-size: var(--text-xs);
-	}
-	.era-name {
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-	.eras .now {
-		margin-left: auto;
-		font-weight: 600;
-	}
 	.brand {
+		margin: 0;
 		font-weight: 700;
 		font-size: var(--text-base);
 		letter-spacing: -0.01em;
 	}
-	.search-btn {
-		display: inline-flex;
-		align-items: center;
-		gap: 6px;
+	.filters {
+		display: contents;
+	}
+	.toolbar :global(.search-btn) {
 		width: 220px;
 		color: var(--fg-subtle);
-		text-align: left;
 	}
 	.search-text {
 		flex: 1;
+		text-align: left;
 	}
-	.path-btn {
-		display: inline-flex;
-		align-items: center;
-		gap: 6px;
+	.toolbar :global(.path-btn) {
 		color: var(--fg-muted);
 	}
 	.search-icon {
 		font-size: var(--text-lg);
 		line-height: 1;
 	}
-	kbd {
-		font-family: var(--mono);
-		font-size: var(--text-2xs);
-		padding: 0 4px;
-		border: 1px solid var(--line);
-		border-bottom-width: 2px;
-		border-radius: var(--radius-sm);
-		color: var(--fg-muted);
+	.keys {
+		display: inline-flex;
+		gap: var(--space-1);
 	}
-	@media (max-width: 899px) {
-		.toolbar {
-			gap: 6px 8px;
-			padding: 6px 10px;
-		}
-		.brand {
-			display: none;
-		}
-		.search-btn {
-			flex: 1;
-			min-width: 0;
-			width: auto;
-		}
-		.search-btn kbd,
-		.path-btn kbd,
-		.path-text {
-			display: none;
-		}
-		.filters {
-			display: flex;
-			flex-direction: column;
-			gap: 8px;
-			flex-basis: 100%;
-			order: 5;
-			padding: 6px 0;
-			border-top: 1px solid var(--line);
-		}
-		.group {
-			flex-wrap: wrap;
-		}
-		.status {
-			margin-left: 0;
-			gap: 6px;
-		}
-		.loaded {
-			display: none;
-		}
-		.eras {
-			order: 6;
-			flex-wrap: nowrap;
-			overflow-x: auto;
-		}
-		.era-name {
-			display: none;
-		}
-		.eras button:hover .era-name,
-		.eras button.active .era-name {
-			display: inline;
-		}
-	}
-	select,
-	button {
+	select {
+		max-width: 180px;
+		min-height: var(--target-min);
 		font: inherit;
 		color: var(--fg);
 		background: var(--bg);
 		border: 1px solid var(--line);
 		border-radius: var(--radius-md);
-		padding: 3px 7px;
-	}
-	button {
-		cursor: pointer;
-	}
-	button:hover {
-		background: var(--hover);
-	}
-	select {
-		max-width: 180px;
-	}
-	.group {
-		display: flex;
-		align-items: center;
-		gap: 4px;
-		border: none;
-		margin: 0;
-		padding: 0;
-	}
-	legend {
-		float: left;
-		padding: 0 4px 0 0;
-		color: var(--fg-subtle);
-		font-size: var(--text-xs);
-		text-transform: uppercase;
-		letter-spacing: 0.05em;
-	}
-	.chip {
-		display: inline-flex;
-		align-items: center;
-		gap: 4px;
-		padding: 2px 6px;
-		border: 1px solid var(--line);
-		border-radius: var(--radius-pill);
-		cursor: pointer;
-		user-select: none;
-	}
-	.chip:has(input:not(:checked)) {
-		opacity: 0.45;
-	}
-	.chip input {
-		display: none;
-	}
-	.swatch {
-		width: 14px;
-		height: 3px;
-		background: var(--fam, var(--kind, var(--fg-muted)));
-		border-radius: 2px;
-	}
-	.swatch.round {
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
+		padding: 0 var(--space-3);
 	}
 	.zoom {
 		min-width: 40px;
@@ -384,8 +229,8 @@
 		margin-left: auto;
 		display: flex;
 		align-items: center;
-		gap: 8px;
-		padding: 2px 6px;
+		gap: var(--space-4);
+		padding: var(--space-1) var(--space-3);
 		border-radius: var(--radius-md);
 		transition: background var(--duration-slow);
 	}
@@ -393,7 +238,7 @@
 		background: var(--accent-soft);
 		transition: none;
 	}
-	.problems {
+	.status :global(.problems) {
 		color: var(--warn);
 		border-color: var(--warn);
 	}
@@ -407,7 +252,9 @@
 	.repo {
 		display: inline-flex;
 		align-items: center;
-		padding: 3px;
+		justify-content: center;
+		min-width: var(--target-min);
+		min-height: var(--target-min);
 		border-radius: var(--radius-md);
 		color: var(--fg-muted);
 	}
@@ -415,14 +262,42 @@
 		color: var(--fg);
 		background: var(--hover);
 	}
-	.repo:focus-visible {
-		outline: 2px solid var(--accent);
-		outline-offset: 1px;
+	.eras {
+		flex-basis: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space-2);
+		scrollbar-width: thin;
+		padding-bottom: var(--space-1);
+	}
+	.eras :global(.era) {
+		flex: none;
+		align-items: baseline;
+		max-width: 220px;
+		white-space: nowrap;
+		padding-top: 3px;
+	}
+	.eras :global(.era[aria-current='true']) {
+		background: var(--accent-soft);
+		border-color: var(--accent);
+	}
+	.era-year {
+		color: var(--fg-subtle);
+		font-variant-numeric: tabular-nums;
+		font-size: var(--text-xs);
+	}
+	.era-name {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.eras :global(.now) {
+		margin-left: auto;
+		font-weight: 600;
 	}
 	.problem-list {
 		position: absolute;
-		z-index: 40;
-		right: 12px;
+		z-index: var(--z-popover);
+		right: var(--space-5);
 		top: 46px;
 		width: min(720px, calc(100vw - 24px));
 		max-height: 60vh;
@@ -437,8 +312,8 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		gap: 8px;
-		padding: 8px 10px;
+		gap: var(--space-4);
+		padding: var(--space-4) 10px;
 		border-bottom: 1px solid var(--line);
 		position: sticky;
 		top: 0;
@@ -446,8 +321,60 @@
 	}
 	.problem-list ul {
 		margin: 0;
-		padding: 8px 10px 10px 28px;
+		padding: var(--space-4) 10px 10px 28px;
 		font-family: var(--mono);
 		font-size: var(--text-sm);
+	}
+	@media (max-width: 899px) {
+		.toolbar {
+			gap: var(--space-3) var(--space-4);
+			padding: var(--space-3) 10px;
+		}
+		/* the title stays in the accessibility tree as the page heading */
+		.brand {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
+		}
+		.toolbar :global(.search-btn) {
+			flex: 1;
+			min-width: 0;
+			width: auto;
+		}
+		.keys,
+		.path-text {
+			display: none;
+		}
+		.filters {
+			display: flex;
+			flex-direction: column;
+			gap: var(--space-4);
+			flex-basis: 100%;
+			order: 5;
+			padding: var(--space-3) 0;
+			border-top: 1px solid var(--line);
+		}
+		.status {
+			margin-left: 0;
+			gap: var(--space-3);
+		}
+		.loaded {
+			display: none;
+		}
+		.eras {
+			order: 6;
+			flex-wrap: nowrap;
+			overflow-x: auto;
+		}
+		.era-name {
+			display: none;
+		}
+		.eras :global(.era:hover .era-name),
+		.eras :global(.era[aria-current='true'] .era-name) {
+			display: inline;
+		}
 	}
 </style>

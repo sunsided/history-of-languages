@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { viewer } from '#lib/viewer.svelte.ts';
 	import { querySearch, type SearchEntry, type SearchHit } from '#lib/search.ts';
+	import Dialog from '../molecules/Dialog.svelte';
+	import Kbd from '../atoms/Kbd.svelte';
+	import KindDot from '../atoms/KindDot.svelte';
 
 	let query = $state('');
 	let active = $state(0);
@@ -49,15 +52,9 @@
 			active = Math.max(0, active - 8);
 		} else if (ev.key === 'Enter') {
 			choose(flat[active]);
-		} else if (ev.key === 'Escape') {
-			close();
 		} else return;
 		ev.preventDefault();
 		requestAnimationFrame(() => list?.querySelector('[aria-selected="true"]')?.scrollIntoView({ block: 'nearest' }));
-	}
-
-	function focusOnMount(el: HTMLInputElement) {
-		el.focus();
 	}
 
 	const TYPE_LABEL: Record<SearchEntry['type'], string> = {
@@ -69,14 +66,11 @@
 	};
 </script>
 
-<!-- svelte-ignore a11y_click_events_have_key_events -->
-<!-- svelte-ignore a11y_no_static_element_interactions -->
-<div class="backdrop" onclick={close}>
-	<div class="palette" role="dialog" tabindex="-1" aria-modal="true" aria-label="Go to" onclick={(e) => e.stopPropagation()}>
+<Dialog label="Go to" onclose={close}>
 		<div class="input-row">
 			<span class="icon" aria-hidden="true">⌕</span>
 			<input
-				{@attach focusOnMount}
+				data-autofocus
 				bind:value={query}
 				oninput={() => (active = 0)}
 				onkeydown={onKey}
@@ -86,10 +80,11 @@
 				aria-activedescendant={flat[active] ? `pal-${active}` : undefined}
 				role="combobox"
 				aria-expanded="true"
+				aria-autocomplete="list"
 				autocomplete="off"
 				spellcheck="false"
 			/>
-			<kbd>Esc</kbd>
+			<Kbd>Esc</Kbd>
 		</div>
 
 		<ul class="results" id="palette-results" role="listbox" bind:this={list}>
@@ -107,7 +102,7 @@
 						onpointermove={() => (active = i)}
 						onclick={() => choose(hit)}
 					>
-						<span class="kind-dot kind-{e.kind ?? e.type}"></span>
+						<KindDot kind={e.kind ?? e.type} />
 						<span class="label">
 							{#if hit.range}
 								{e.label.slice(0, hit.range[0])}<mark>{e.label.slice(hit.range[0], hit.range[1])}</mark>{e.label.slice(hit.range[1])}
@@ -131,37 +126,17 @@
 			{/if}
 		</ul>
 
+		<p class="sr-only" role="status">{query.trim() ? `${flat.length} result${flat.length === 1 ? '' : 's'}` : ''}</p>
+
 		<div class="footer">
-			<span><kbd>↑</kbd><kbd>↓</kbd> move</span>
-			<span><kbd>Enter</kbd> go</span>
-			<span><kbd>Ctrl</kbd><kbd>K</kbd> toggle</span>
+			<span><Kbd>↑</Kbd><Kbd>↓</Kbd> move</span>
+			<span><Kbd>Enter</Kbd> go</span>
+			<span><Kbd>Ctrl</Kbd><Kbd>K</Kbd> toggle</span>
 			<span class="count">{viewer.searchIndex.entries.length} entries indexed</span>
 		</div>
-	</div>
-</div>
+</Dialog>
 
 <style>
-	.backdrop {
-		position: fixed;
-		inset: 0;
-		z-index: 100;
-		background: var(--scrim);
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		padding: 12vh 16px 16px;
-	}
-	.palette {
-		width: min(640px, 100%);
-		max-height: 70vh;
-		display: flex;
-		flex-direction: column;
-		background: var(--bg-raised);
-		border: 1px solid var(--line);
-		border-radius: var(--radius-lg);
-		box-shadow: var(--shadow-dialog);
-		overflow: hidden;
-	}
 	.input-row {
 		display: flex;
 		align-items: center;
@@ -198,6 +173,13 @@
 		border-radius: var(--radius-md);
 		cursor: pointer;
 		font-size: var(--text-md);
+	}
+	.results :global(.kind-dot) {
+		align-self: center;
+	}
+	.results :global(.kind-cluster),
+	.results :global(.kind-era) {
+		border-radius: 2px;
 	}
 	.results li.active {
 		background: var(--accent-soft);
@@ -258,6 +240,9 @@
 		color: var(--fg-muted);
 		text-align: center;
 	}
+	.footer :global(kbd) {
+		margin-right: var(--space-1);
+	}
 	.footer {
 		display: flex;
 		gap: 14px;
@@ -269,36 +254,8 @@
 	.footer .count {
 		margin-left: auto;
 	}
-	kbd {
-		font-family: var(--mono);
-		font-size: var(--text-xs);
-		padding: 0 4px;
-		margin-right: 2px;
-		border: 1px solid var(--line);
-		border-bottom-width: 2px;
-		border-radius: var(--radius-sm);
-		background: var(--bg);
-		color: var(--fg-muted);
-	}
-	.kind-dot {
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		align-self: center;
-		background: var(--kind, var(--fg-faint));
-	}
-	.kind-cluster,
-	.kind-era {
-		border-radius: 2px;
-	}
 
 	@media (max-width: 899px) {
-		.backdrop {
-			padding: 8px;
-		}
-		.palette {
-			max-height: calc(100dvh - 16px);
-		}
 		.results li[role='option'] {
 			grid-template-columns: 10px minmax(0, 1fr) auto;
 		}

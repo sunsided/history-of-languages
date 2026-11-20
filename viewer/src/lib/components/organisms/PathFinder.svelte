@@ -4,6 +4,9 @@
 	import { querySearch, type SearchHit } from '#lib/search.ts';
 	import { firstYear, FAMILY_OF } from '#lib/graph.ts';
 	import { shortestPath, type Hop, type Via } from '#lib/path.ts';
+	import Dialog from '../molecules/Dialog.svelte';
+	import IconButton from '../atoms/IconButton.svelte';
+	import KindDot from '../atoms/KindDot.svelte';
 
 	const g = $derived(viewer.graph);
 
@@ -53,13 +56,6 @@
 		ev.preventDefault();
 	}
 
-	function onWindowKey(ev: KeyboardEvent) {
-		if (ev.key === 'Escape') {
-			ev.preventDefault();
-			close();
-		}
-	}
-
 	const [a, b] = $derived(picks);
 	const path = $derived(a && b && a !== b ? shortestPath(g, a, b) : null);
 
@@ -69,9 +65,7 @@
 	}
 
 	/** on open, focus the first side still to pick */
-	const focusFirstEmpty = (side: 0 | 1) => (el: HTMLInputElement) => {
-		if (untrack(() => side === (picks[0] ? 1 : 0))) el.focus();
-	};
+	const firstEmpty = untrack(() => (picks[0] ? 1 : 0));
 
 	const name = (id: string) => g.node.get(id)?.name ?? id;
 	const viaText = (v: Via) =>
@@ -84,12 +78,10 @@
 	};
 </script>
 
-<svelte:window onkeydown={onWindowKey} />
-
 {#snippet nodeRow(id: string)}
 	{@const n = g.node.get(id)}
 	<button class="node" onclick={() => goTo(id)} title="Show {name(id)} on the timeline">
-		<span class="kind-dot kind-{n?.kind}"></span>
+		<KindDot kind={n?.kind ?? ''} />
 		<span class="node-name">{name(id)}</span>
 		<span class="node-year">{year(id)}</span>
 	</button>
@@ -121,11 +113,16 @@
 		{#if id}
 			<div class="chosen">
 				{@render nodeRow(id)}
-				<button class="clear" onclick={() => clear(side)} title="Pick another language" aria-label="Clear">×</button>
+				<IconButton label="Pick another language" onclick={() => clear(side)}>×</IconButton>
 			</div>
 		{:else}
 			<input
-				{@attach focusFirstEmpty(side)}
+				data-autofocus={side === firstEmpty ? '' : undefined}
+				role="combobox"
+				aria-expanded={results[side].length > 0}
+				aria-controls="pf-results-{side}"
+				aria-autocomplete="list"
+				aria-activedescendant={results[side][active[side]] ? `pf-${side}-${active[side]}` : undefined}
 				bind:this={inputs[side]}
 				bind:value={queries[side]}
 				oninput={() => (active[side] = 0)}
@@ -136,17 +133,18 @@
 				spellcheck="false"
 			/>
 			{#if results[side].length}
-				<ul class="results" role="listbox">
+				<ul class="results" id="pf-results-{side}" role="listbox" aria-label={side === 0 ? 'From language' : 'To language'}>
 					{#each results[side] as h, i (h.entry.id)}
 						<!-- svelte-ignore a11y_click_events_have_key_events -->
 						<li
+							id="pf-{side}-{i}"
 							role="option"
 							aria-selected={i === active[side]}
 							class:active={i === active[side]}
 							onpointermove={() => (active[side] = i)}
 							onclick={() => pick(side, h.entry.id)}
 						>
-							<span class="kind-dot kind-{h.entry.kind}"></span>
+							<KindDot kind={h.entry.kind ?? ''} />
 							<span class="node-name">{h.entry.label}</span>
 							<span class="node-year">{h.entry.year !== undefined ? (h.entry.year < 0 ? `${-h.entry.year} BC` : h.entry.year) : ''}</span>
 						</li>
@@ -157,18 +155,15 @@
 	</div>
 {/snippet}
 
-<!-- svelte-ignore a11y_click_events_have_key_events -->
-<!-- svelte-ignore a11y_no_static_element_interactions -->
-<div class="backdrop" onclick={close}>
-	<div class="dialog" role="dialog" tabindex="-1" aria-modal="true" aria-label="Path between two languages" onclick={(e) => e.stopPropagation()}>
+<Dialog label="Path between two languages" width="760px" top="10vh" maxHeight="80vh" onclose={close}>
 		<header>
 			<h2>How are they related?</h2>
-			<button class="close" onclick={close} title="Close (Esc)" aria-label="Close">×</button>
+			<IconButton label="Close" title="Close (Esc)" onclick={close}>×</IconButton>
 		</header>
 
 		<div class="pickers">
 			{@render picker(0)}
-			<button class="swap" onclick={swap} title="Swap" aria-label="Swap the two languages" disabled={!a && !b}>⇄</button>
+			<IconButton variant="bordered" class="swap" label="Swap the two languages" onclick={swap} disabled={!a && !b}>⇄</IconButton>
 			{@render picker(1)}
 		</div>
 
@@ -191,31 +186,9 @@
 				</p>
 			{/if}
 		</div>
-	</div>
-</div>
+</Dialog>
 
 <style>
-	.backdrop {
-		position: fixed;
-		inset: 0;
-		z-index: 100;
-		background: var(--scrim);
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
-		padding: 10vh 16px 16px;
-	}
-	.dialog {
-		width: min(760px, 100%);
-		max-height: 80vh;
-		display: flex;
-		flex-direction: column;
-		background: var(--bg-raised);
-		border: 1px solid var(--line);
-		border-radius: var(--radius-lg);
-		box-shadow: var(--shadow-dialog);
-		overflow: hidden;
-	}
 	header {
 		display: flex;
 		align-items: center;
@@ -226,22 +199,6 @@
 		margin: 0;
 		font-size: var(--text-lg);
 		flex: 1;
-	}
-	.close,
-	.clear {
-		border: none;
-		background: none;
-		color: var(--fg-muted);
-		font-size: 18px;
-		line-height: 1;
-		cursor: pointer;
-		padding: 2px 6px;
-		border-radius: var(--radius-sm);
-	}
-	.close:hover,
-	.clear:hover {
-		background: var(--hover);
-		color: var(--fg);
 	}
 	.pickers {
 		display: grid;
@@ -307,19 +264,10 @@
 	.chosen .node {
 		flex: 1;
 	}
-	.swap {
-		margin-top: 4px;
-		font-size: 16px;
-		padding: 3px 8px;
-		border: 1px solid var(--line);
-		border-radius: var(--radius-md);
-		background: var(--bg);
-		color: var(--fg-muted);
-		cursor: pointer;
-	}
-	.swap:disabled {
-		opacity: 0.4;
-		cursor: default;
+	.pickers :global(.swap) {
+		margin-top: var(--space-1);
+		min-height: 32px;
+		font-size: var(--text-lg);
 	}
 	.body {
 		overflow-y: auto;
@@ -400,25 +348,12 @@
 	.muted {
 		color: var(--fg-subtle);
 	}
-	.kind-dot {
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		flex: none;
-		background: var(--kind, var(--fg-faint));
-	}
 
 	@media (max-width: 899px) {
-		.backdrop {
-			padding: 8px;
-		}
-		.dialog {
-			max-height: calc(100dvh - 16px);
-		}
 		.pickers {
 			grid-template-columns: minmax(0, 1fr);
 		}
-		.swap {
+		.pickers :global(.swap) {
 			justify-self: center;
 			margin: 0;
 			transform: rotate(90deg);

@@ -12,6 +12,10 @@
 		narrowerConcepts
 	} from '#lib/graph.ts';
 	import type { Dating, Edge, MediaItem } from '#lib/types.ts';
+	import Button from '../atoms/Button.svelte';
+	import IconButton from '../atoms/IconButton.svelte';
+	import KindDot from '../atoms/KindDot.svelte';
+	import FamilyLine from '../atoms/FamilyLine.svelte';
 
 	const g = $derived(viewer.graph);
 	const node = $derived(viewer.selected?.type === 'node' ? g.node.get(viewer.selected.id) : undefined);
@@ -77,13 +81,13 @@
 {/snippet}
 
 {#snippet nodeLink(id: string)}
-	<button class="link" onclick={() => viewer.selectNode(id)}>{name(id)}</button>
+	<Button variant="link" onclick={() => viewer.selectNode(id)}>{name(id)}</Button>
 {/snippet}
 
 {#snippet conceptChip(id: string)}
-	<button class="tag" class:active={viewer.concept === id} onclick={() => viewer.setConcept(viewer.concept === id ? null : id)} title={g.concept.get(id)?.summary ?? id}>
+	<Button variant="tag" aria-pressed={viewer.concept === id} onclick={() => viewer.setConcept(viewer.concept === id ? null : id)} title={g.concept.get(id)?.summary ?? id}>
 		{conceptName(id)}
-	</button>
+	</Button>
 {/snippet}
 
 {#snippet sourceList(ids: string[] | undefined)}
@@ -109,7 +113,7 @@
 {#snippet edgeGroups(edges: Edge[], dir: 'out' | 'in')}
 	{#each groupEdges(edges, dir) as [label, list] (label)}
 		<div class="edge-group">
-			<div class="edge-label fam-{FAMILY_OF[list[0].type]}"><span class="swatch"></span>{label}</div>
+			<div class="edge-label"><FamilyLine family={FAMILY_OF[list[0].type]} />{label}</div>
 			<ul>
 				{#each list as e, i (i)}
 					{@const other = dir === 'out' ? e.to : e.from}
@@ -130,16 +134,16 @@
 	{/each}
 {/snippet}
 
-<aside class="panel">
+<aside class="panel" id="detail-panel" aria-label="Details">
 	{#if node}
 		<header>
 			<div class="kicker">
-				<span class="kind-dot kind-{node.kind}"></span>{node.kind}{node.category ? ` · ${node.category}` : ''}{node.status ? ` · ${node.status}` : ''}
+				<KindDot kind={node.kind} size={9} />{node.kind}{node.category ? ` · ${node.category}` : ''}{node.status ? ` · ${node.status}` : ''}
 			</div>
 			<h2>{node.name}</h2>
 			{#if node.aliases?.length}<div class="muted">{node.aliases.join(' · ')}</div>{/if}
-			<button class="deselect" onclick={() => viewer.deselect()} title="Clear the selection (Esc, or click it again)">Deselect</button>
-			<button class="close" onclick={() => (viewer.panelOpen = false)} title="Fold panel">×</button>
+			<Button class="deselect" onclick={() => viewer.deselect()} title="Clear the selection (Esc, or click it again)">Deselect</Button>
+			<IconButton class="close" label="Fold the detail panel" onclick={() => (viewer.panelOpen = false)}>×</IconButton>
 		</header>
 
 		{#each images as m (m.id)}
@@ -165,7 +169,7 @@
 						{@const photo = g.personMedia.get(c.name)}
 						<div class="creator">
 							{#if photo}
-								<img class="avatar" src={mediaUrl(photo)} alt={c.name} loading="lazy" title="{c.name} · {cleanCommons(photo.credit)} · {photo.license}" />
+								<img class="avatar" src={mediaUrl(photo)} alt="" loading="lazy" title="{c.name} · {cleanCommons(photo.credit)} · {photo.license}" />
 							{/if}
 							<span>{c.name}{c.role ? ` (${c.role})` : ''}{c.affiliation ? `, ${c.affiliation}` : ''}</span>
 						</div>
@@ -177,7 +181,7 @@
 				<dd>{node.origin.places.map((p) => [p.institution, p.city, p.country].filter(Boolean).join(', ')).join('; ')}</dd>
 			{/if}
 			<dt>cluster</dt>
-			<dd><button class="link" onclick={() => viewer.selectCluster(node.cluster)}>{node.cluster}</button></dd>
+			<dd><Button variant="link" onclick={() => viewer.selectCluster(node.cluster)}>{node.cluster}</Button></dd>
 			<dt>research</dt>
 			<dd><span class="rs rs-{node.research_status}">{node.research_status}</span>{node.confidence ? ` · ${node.confidence} confidence` : ''} <span class="muted">· {node._file}</span></dd>
 		</dl>
@@ -235,7 +239,7 @@
 		{#if rivals.length}
 			<h3>Contemporaries <span class="muted">(same kind & category, ±5 y, unlinked)</span></h3>
 			<div class="tags">
-				{#each rivals as r (r.id)}<button class="tag" onclick={() => viewer.selectNode(r.id)}>{r.name} <span class="muted">{firstYear(r)}</span></button>{/each}
+				{#each rivals as r (r.id)}<Button variant="tag" onclick={() => viewer.selectNode(r.id)}>{r.name} <span class="muted">{firstYear(r)}</span></Button>{/each}
 			</div>
 		{/if}
 
@@ -267,7 +271,7 @@
 		<header>
 			<div class="kicker">cluster · {c.id}</div>
 			<h2>{c.name}</h2>
-			<button class="close" onclick={() => (viewer.panelOpen = false)} title="Fold panel">×</button>
+			<IconButton class="close" label="Fold the detail panel" onclick={() => (viewer.panelOpen = false)}>×</IconButton>
 		</header>
 		{#if c._synthetic}<p class="warn">Not defined in clusters.yaml; referenced only.</p>{/if}
 		<dl class="facts">
@@ -277,14 +281,14 @@
 			<dd>{isFinite(cluster.start) ? `${cluster.start}–${cluster.end}` : '—'}</dd>
 			<dt>members</dt>
 			<dd>{cluster.allNodes.length} ({cluster.nodes.length} direct)</dd>
-			{#if c.parent}<dt>parent</dt><dd><button class="link" onclick={() => viewer.selectCluster(c.parent!)}>{c.parent}</button></dd>{/if}
+			{#if c.parent}<dt>parent</dt><dd><Button variant="link" onclick={() => viewer.selectCluster(c.parent!)}>{c.parent}</Button></dd>{/if}
 		</dl>
 		{#if c.summary}<p class="summary">{c.summary}</p>{/if}
 		{#if cluster.children.length}
 			<h3>Sub-clusters</h3>
 			<div class="tags">
 				{#each cluster.children as ch (ch)}
-					<button class="tag" onclick={() => viewer.selectCluster(ch)}>{g.clusters.get(ch)?.cluster.name}</button>
+					<Button variant="tag" onclick={() => viewer.selectCluster(ch)}>{g.clusters.get(ch)?.cluster.name}</Button>
 				{/each}
 			</div>
 		{/if}
@@ -314,7 +318,7 @@
 		<header>
 			<div class="kicker">lineage · {lineage.research_status ?? ''}</div>
 			<h2>{lineage.title}</h2>
-			<button class="close" onclick={() => (viewer.panelOpen = false)} title="Fold panel">×</button>
+			<IconButton class="close" label="Fold the detail panel" onclick={() => (viewer.panelOpen = false)}>×</IconButton>
 		</header>
 		{#if lineage.thesis}<p class="summary">{lineage.thesis}</p>{/if}
 		{#if lineage.concepts?.length}<div class="tags">{#each lineage.concepts as c (c)}{@render conceptChip(c)}{/each}</div>{/if}
@@ -323,7 +327,7 @@
 				<li>
 					<button
 						class="step"
-						class:active={s.nodes?.length && viewer.stepNodes.join() === s.nodes.join()}
+						aria-pressed={!!s.nodes?.length && viewer.stepNodes.join() === s.nodes.join()}
 						onclick={() => {
 							viewer.stepNodes = s.nodes ?? [];
 							if (s.nodes?.[0]) viewer.reveal(s.nodes[0]);
@@ -344,7 +348,7 @@
 		<header>
 			<div class="kicker">concept · {concept.facet ?? ''}</div>
 			<h2>{concept.name}</h2>
-			<button class="close" onclick={() => (viewer.panelOpen = false)} title="Fold panel">×</button>
+			<IconButton class="close" label="Fold the detail panel" onclick={() => (viewer.panelOpen = false)}>×</IconButton>
 		</header>
 		{#if concept.summary}<p class="summary">{concept.summary}</p>{:else}<p class="warn">No summary yet.</p>{/if}
 		{#if concept.broader?.length}<div class="facet"><span class="facet-name">broader</span><div class="tags">{#each concept.broader as b (b)}{@render conceptChip(b)}{/each}</div></div>{/if}
@@ -364,7 +368,7 @@
 		<div class="empty">
 			<header>
 				<h2>Timeline</h2>
-				<button class="close" onclick={() => (viewer.panelOpen = false)} title="Fold panel">×</button>
+				<IconButton class="close" label="Fold the detail panel" onclick={() => (viewer.panelOpen = false)}>×</IconButton>
 			</header>
 			<p>Click a language to see its ancestry and descendants; click it again, click empty space or press Esc to deselect. Click a cluster row to unfold it; its ⓘ opens the cluster's research notes.</p>
 			<ul>
@@ -417,29 +421,13 @@
 		color: var(--fg-muted);
 		font-size: var(--text-sm);
 	}
-	.deselect {
-		margin-top: 6px;
-		font: inherit;
-		font-size: var(--text-sm);
-		padding: 2px 8px;
-		border: 1px solid var(--line);
-		border-radius: var(--radius-md);
-		background: var(--bg);
-		color: var(--fg);
-		cursor: pointer;
+	.panel :global(.deselect) {
+		margin-top: var(--space-3);
 	}
-	.deselect:hover {
-		background: var(--hover);
-	}
-	.close {
+	.panel :global(.close) {
 		position: absolute;
 		top: -4px;
 		right: -6px;
-		border: none;
-		background: none;
-		font-size: var(--text-xl);
-		color: var(--fg-muted);
-		cursor: pointer;
 	}
 	.muted {
 		color: var(--fg-subtle);
@@ -536,14 +524,6 @@
 	a {
 		color: var(--accent);
 	}
-	.link {
-		all: unset;
-		color: var(--accent);
-		cursor: pointer;
-	}
-	.link:hover {
-		text-decoration: underline;
-	}
 	.tags {
 		display: flex;
 		flex-wrap: wrap;
@@ -554,23 +534,10 @@
 		gap: 3px 6px;
 	}
 	.tag {
-		font: inherit;
 		font-size: var(--text-sm);
-		padding: 1px 7px;
+		padding: 1px var(--space-4);
 		border-radius: var(--radius-pill);
 		border: 1px solid var(--line);
-		background: var(--bg);
-		color: var(--fg);
-		cursor: pointer;
-	}
-	.tags.small .tag {
-		font-size: var(--text-xs);
-		padding: 0 6px;
-	}
-	.tag.active {
-		background: var(--warn);
-		border-color: var(--warn);
-		color: var(--bg);
 	}
 	.tag.system {
 		cursor: default;
@@ -618,7 +585,11 @@
 		cursor: pointer;
 		display: block;
 	}
-	.step.active strong,
+	.step:focus-visible {
+		outline: var(--focus-ring);
+		outline-offset: 2px;
+	}
+	.step[aria-pressed='true'] strong,
 	.step:hover strong {
 		color: var(--warn);
 	}
@@ -638,12 +609,6 @@
 		gap: 6px;
 		font-weight: 600;
 		font-size: var(--text-sm);
-	}
-	.swatch {
-		width: 14px;
-		height: 3px;
-		border-radius: 2px;
-		background: var(--fam);
 	}
 	.sources {
 		margin: 3px 0;
@@ -693,12 +658,6 @@
 	}
 	.verdict-true {
 		color: var(--rs-reviewed);
-	}
-	.kind-dot {
-		width: 9px;
-		height: 9px;
-		border-radius: 50%;
-		background: var(--kind);
 	}
 	.empty ul {
 		padding-left: 18px;

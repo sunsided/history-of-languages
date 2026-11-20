@@ -81,6 +81,7 @@ class Viewer {
 	/** responsive breakpoints */
 	narrow = new MediaQuery('max-width: 899px');
 	coarse = new MediaQuery('pointer: coarse');
+	reducedMotion = new MediaQuery('prefers-reduced-motion: reduce');
 	/** narrow screens: filter bar is toggled */
 	filtersOpen = $state(false);
 	/** detail sidebar: folded by default, opens on selection or via the toolbar toggle */
@@ -280,13 +281,14 @@ if (typeof window !== 'undefined') {
 			return;
 		}
 		if (viewer.paletteOpen || viewer.pathOpen) return; // the dialogs handle their own keys
-		const typing = (ev.target as Element | null)?.matches?.('input, select, textarea, [contenteditable]');
+		// checkboxes (the filter chips) don't take text, so shortcuts still apply there
+		const typing = (ev.target as Element | null)?.matches?.('input:not([type=checkbox]), select, textarea, [contenteditable]');
 		if (ev.key.toLowerCase() === 'p' && !ev.ctrlKey && !ev.metaKey && !ev.altKey && !typing) {
 			ev.preventDefault();
 			viewer.pathOpen = true;
 			return;
 		}
-		if (ev.key !== 'Escape' || (ev.target as Element | null)?.matches?.('input, select, textarea')) return;
+		if (ev.key !== 'Escape' || (typing && !(ev.target as Element).matches('[contenteditable]'))) return;
 		if (viewer.selected) viewer.deselect();
 		else viewer.clearFocus();
 	});
