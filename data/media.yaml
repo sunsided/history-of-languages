@@ -479,6 +479,7 @@
   - ampl
   - ratfor
   - awk
+  - troff
   caption: Brian Kernighan, 2025-04-05 17:47:21
   date: '2025-04-05 17:47:21'
   credit: Jw12321
@@ -794,6 +795,7 @@
   person: Gerald Jay Sussman
   nodes:
   - scheme
+  - conniver
   caption: Gerald Jay Sussman
   credit: Massachusetts Institute of Technology, Department of Electrical Engineering and Computer Science
   license: CC BY-SA 1.0
@@ -856,6 +858,7 @@
   - fortress
   - emacs-lisp
   - scheme
+  - conniver
   - common-lisp
   caption: Guy L. Steele Jr., 2015-12-01 13:08:30
   date: '2015-12-01 13:08:30'
@@ -1012,6 +1015,7 @@
   kind: person
   person: John Backus
   nodes:
+  - ffp
   - speedcoding
   - fortran
   - algol-58
@@ -1263,6 +1267,8 @@
   person: Martin Odersky
   nodes:
   - scala
+  - pizza
+  - gj
   caption: Martin Odersky, 2009-05-06
   date: '2009-05-06'
   credit: LindaPoengPhotography
@@ -1347,6 +1353,8 @@
   person: Philip Wadler
   nodes:
   - haskell
+  - pizza
+  - gj
   caption: 'Philip Wadler, 2 December 2008, 12:05:36 (according to '
   date: '2 December 2008, 12:05:36 (according to '
   credit: Clq
@@ -1789,6 +1797,7 @@
   nodes:
   - jython
   - ironpython
+  - numpy
   caption: Jim Hugunin, 2018-09-19
   date: '2018-09-19'
   credit: Jeskeca
@@ -2626,6 +2635,7 @@
   nodes:
   - newspeak
   - strongtalk
+  - gj
   caption: Gilad Bracha, 2006-08-01
   date: '2006-08-01'
   credit: Dennis Hamilton
@@ -2917,6 +2927,7 @@
   kind: person
   person: Gavin Wood
   nodes:
+  - lll
   - solidity
   caption: Gavin Wood, 2017-12-05 09:26:18
   date: '2017-12-05 09:26:18'
@@ -3679,6 +3690,7 @@
   person: Thorsten Altenkirch
   nodes:
   - qml
+  - qio
   caption: Thorsten Altenkirch, 2023-07-31
   date: '2023-07-31'
   credit: Olabertawe
@@ -3758,4 +3770,315 @@
   license_url: https://creativecommons.org/licenses/by-sa/2.0
   source_url: https://commons.wikimedia.org/wiki/File:Kurt_Akeley_at_SIGGRAPH_2012.jpg
   commons_file: File:Kurt_Akeley_at_SIGGRAPH_2012.jpg
+  checked: '2026-11-20'
+- id: kr580vm80a
+  file: assets/media/kr580vm80a.jpg
+  kind: artifact
+  nodes:
+  - kr580vm80a
+  caption: CPU KP580VM80 (= Intel i8080)
+  date: '2009-06-14'
+  credit: Konstantin Lanzet
+  license: CC BY-SA 3.0
+  license_url: http://creativecommons.org/licenses/by-sa/3.0/
+  source_url: https://commons.wikimedia.org/wiki/File:KL_USSR_KP580BM80A_i8080_clone.jpg
+  commons_file: File:KL_USSR_KP580BM80A_i8080_clone.jpg
+  checked: '2026-11-20'
+- id: elbrus-1
+  file: assets/media/elbrus-1.png
+  kind: machine
+  nodes:
+  - elbrus-1
+  - elbrus-2
+  caption: Elbrus processor logo, with black vertical inscription "Elbrus" in Russian.
+  date: '2020-01-01'
+  credit: МЦСТ / MCST
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Elbrus_logo_rus_vertikalny.svg
+  commons_file: File:Elbrus_logo_rus_vertikalny.svg
+  checked: '2026-11-20'
+- id: agat
+  file: assets/media/agat.jpg
+  kind: machine
+  nodes:
+  - agat
+  caption: Soviet microcomputer AGAT-7
+  date: '2017-08-26'
+  credit: Sergei Frolov, Soviet Digital Electronics Museum, http://www.leningrad.su/museum/
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Soviet_microcomputer_AGAT-7.jpg
+  commons_file: File:Soviet_microcomputer_AGAT-7.jpg
+  checked: '2026-11-20'
+- id: kc-85
+  file: assets/media/kc-85.jpg
+  kind: machine
+  nodes:
+  - kc-85
+  caption: The KC 85/4, a home computer which was manufactured in the GDR (East Germany) by the VEB Mikroelektronik "Wilhelm Pieck" Mühlhausen. First introduced in 1988.
+  date: '2007-01-14'
+  credit: Grandy02
+  license: CC BY-SA 3.0
+  license_url: http://creativecommons.org/licenses/by-sa/3.0/
+  source_url: https://commons.wikimedia.org/wiki/File:KC85-4.jpg
+  commons_file: File:KC85-4.jpg
+  checked: '2026-11-20'
+- id: z-1013
+  file: assets/media/z-1013.jpg
+  kind: machine
+  nodes:
+  - z-1013
+  caption: East German single-board home computer Z 1013 (EN) produced by VEB Robotron. It is model Z 1013.16 as printed on the bottom right gray connector, with 16KB of DRAM in 8 pink Soviet К565РУ3 integrated
+    chips. Some black Soviet chips with logo…
+  date: Unknown date
+  credit: Holger Krull (Krulli)
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Z1013_Hauptplatine.jpg
+  commons_file: File:Z1013_Hauptplatine.jpg
+  checked: '2026-11-20'
+- id: person-boris-babayan
+  file: assets/media/person-boris-babayan.jpg
+  kind: person
+  person: Boris Babayan
+  nodes:
+  - el-76
+  caption: Boris Babayan, 2007-09-21
+  date: '2007-09-21'
+  credit: Ggbabayan
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Boris_bababayn.jpg
+  commons_file: File:Boris_bababayn.jpg
+  checked: '2026-11-20'
+- id: person-vladimir-pentkovski
+  file: assets/media/person-vladimir-pentkovski.jpg
+  kind: person
+  person: Vladimir Pentkovski
+  nodes:
+  - el-76
+  caption: Vladimir Pentkovski, 2006-03-02 10:27:13
+  date: '2006-03-02 10:27:13'
+  credit: Thebeatles84
+  license: CC BY-SA 3.0
+  license_url: https://creativecommons.org/licenses/by-sa/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Pentkovskiy.jpg
+  commons_file: File:Pentkovskiy.jpg
+  checked: '2026-11-20'
+- id: person-kurt-godel
+  file: assets/media/person-kurt-godel.jpg
+  kind: person
+  person: Kurt Gödel
+  nodes:
+  - general-recursive-functions
+  caption: Kurt Gödel, circa 1926date QS:P,+1926-00-00T00:00:00
+  date: circa 1926date QS:P,+1926-00-00T00:00:00
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Kurt_g%C3%B6del.jpg
+  commons_file: File:Kurt_gödel.jpg
+  checked: '2026-11-20'
+- id: person-jacques-herbrand
+  file: assets/media/person-jacques-herbrand.jpg
+  kind: person
+  person: Jacques Herbrand
+  nodes:
+  - general-recursive-functions
+  caption: Jacques Herbrand, 1931
+  date: '1931'
+  credit: Natascha Artin-Brunswick
+  license: CC BY 3.0
+  license_url: https://creativecommons.org/licenses/by/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:J_Herbrand_1931.jpg
+  commons_file: File:J_Herbrand_1931.jpg
+  checked: '2026-11-20'
+- id: person-stephen-kleene
+  file: assets/media/person-stephen-kleene.jpg
+  kind: person
+  person: Stephen Cole Kleene
+  nodes:
+  - general-recursive-functions
+  caption: Stephen Cole Kleene, circa 1963date QS:P,+1963-00-00T00:00:00
+  date: circa 1963date QS:P,+1963-00-00T00:00:00
+  credit: Harold N. Hone
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Stephen_Cole_Kleene_circa_1963.tif
+  commons_file: File:Stephen_Cole_Kleene_circa_1963.tif
+  checked: '2026-11-20'
+- id: person-hero-of-alexandria
+  file: assets/media/person-hero-of-alexandria.jpg
+  kind: person
+  person: Hero of Alexandria
+  nodes:
+  - hero-programmable-cart
+  caption: Hero of Alexandria, 9th centurydate QS:P,+850-00-00T00:00:00
+  date: 9th centurydate QS:P,+850-00-00T00:00:00
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Heron_Alexandrie.jpg
+  commons_file: File:Heron_Alexandrie.jpg
+  checked: '2026-11-20'
+- id: person-justin-frankel
+  file: assets/media/person-justin-frankel.jpg
+  kind: person
+  person: Justin Frankel
+  nodes:
+  - nsis
+  caption: Justin Frankel, Published on 2 March 2022
+  date: Published on 2 March 2022
+  credit: IDDQD Sound
+  license: CC BY 3.0
+  license_url: https://creativecommons.org/licenses/by/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Geeking_out_with_Justin_Frankel_screenshot_(cropped).jpg
+  commons_file: File:Geeking_out_with_Justin_Frankel_screenshot_(cropped).jpg
+  checked: '2026-11-20'
+- id: person-vitalik-buterin
+  file: assets/media/person-vitalik-buterin.jpg
+  kind: person
+  person: Vitalik Buterin
+  nodes:
+  - serpent
+  - vyper
+  caption: Vitalik Buterin, 2015-12-08 15:37:52
+  date: '2015-12-08 15:37:52'
+  credit: John Phillips
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Vitalik_Buterin_TechCrunch_London_2015_(3%C3%974_cropped).jpg
+  commons_file: File:Vitalik_Buterin_TechCrunch_London_2015_(3×4_cropped).jpg
+  checked: '2026-11-20'
+- id: person-john-wainwright
+  file: assets/media/person-john-wainwright.jpg
+  kind: person
+  person: John Wainwright
+  nodes:
+  - maxscript
+  caption: John Wainwright, 2022-11-15
+  date: '2022-11-15'
+  credit: Ewigkeits
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Mr.John_Wainwright.jpg
+  commons_file: File:Mr.John_Wainwright.jpg
+  checked: '2026-11-20'
+- id: person-john-launchbury
+  file: assets/media/person-john-launchbury.jpg
+  kind: person
+  person: John Launchbury
+  nodes:
+  - cryptol
+  caption: John Launchbury, 2016-10-25 10:20:12
+  date: '2016-10-25 10:20:12'
+  credit: Official DARPA photographer
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Headshot_of_Dr._John_Launchbury.jpg
+  commons_file: File:Headshot_of_Dr._John_Launchbury.jpg
+  checked: '2026-11-20'
+- id: person-whitfield-diffie
+  file: assets/media/person-whitfield-diffie.jpg
+  kind: person
+  person: Whitfield Diffie
+  nodes:
+  - stanford-lisp-1-6
+  caption: Whitfield Diffie, 2017-07-14 14:38:12
+  date: '2017-07-14 14:38:12'
+  credit: Duncan.Hull
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Whitfield_Diffie_Royal_Society.jpg
+  commons_file: File:Whitfield_Diffie_Royal_Society.jpg
+  checked: '2026-11-20'
+- id: person-richard-fikes
+  file: assets/media/person-richard-fikes.jpg
+  kind: person
+  person: Richard Fikes
+  nodes:
+  - krypton
+  caption: Richard Fikes, 2017-02-16
+  date: '2017-02-16'
+  credit: Dougfairbairn
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Richard_Fikes_with_IEEE_Shakey_Team.jpg
+  commons_file: File:Richard_Fikes_with_IEEE_Shakey_Team.jpg
+  checked: '2026-11-20'
+- id: person-randall-hyde
+  file: assets/media/person-randall-hyde.jpg
+  kind: person
+  person: Randall Hyde
+  nodes:
+  - hla
+  caption: Randall Hyde, 2010-07-07
+  date: '2010-07-07'
+  credit: Eugene Zelenko
+  license: CC BY-SA 4.0
+  license_url: https://creativecommons.org/licenses/by-sa/4.0
+  source_url: https://commons.wikimedia.org/wiki/File:Randall_Hyde.jpg
+  commons_file: File:Randall_Hyde.jpg
+  checked: '2026-11-20'
+- id: person-samantha-john
+  file: assets/media/person-samantha-john.png
+  kind: person
+  person: Samantha John
+  nodes:
+  - hopscotch
+  caption: Samantha John, 2014-07-15
+  date: '2014-07-15'
+  credit: confreaks
+  license: CC BY 3.0
+  license_url: https://creativecommons.org/licenses/by/3.0
+  source_url: https://commons.wikimedia.org/wiki/File:Samantha_John_programmer_03.png
+  commons_file: File:Samantha_John_programmer_03.png
+  checked: '2026-11-20'
+- id: person-gerard-j-holzmann
+  file: assets/media/person-gerard-j-holzmann.jpg
+  kind: person
+  person: Gerard J. Holzmann
+  nodes:
+  - promela
+  caption: Gerard J. Holzmann, 2006-08-15
+  date: '2006-08-15'
+  credit: Dennis Hamilton
+  license: CC BY 2.0
+  license_url: https://creativecommons.org/licenses/by/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Gerard_J._Holzmann_FLoC_2006_(cropped).jpg
+  commons_file: File:Gerard_J._Holzmann_FLoC_2006_(cropped).jpg
+  checked: '2026-11-20'
+- id: person-len-shustek
+  file: assets/media/person-len-shustek.jpg
+  kind: person
+  person: Len Shustek
+  nodes:
+  - mortran
+  caption: Len Shustek, 2011-01-11 13:14
+  date: 2011-01-11 13:14
+  credit: vonguard from Oakland, Nmibia
+  license: CC BY-SA 2.0
+  license_url: https://creativecommons.org/licenses/by-sa/2.0
+  source_url: https://commons.wikimedia.org/wiki/File:Len_Shustek,_CHM_2011.jpg
+  commons_file: File:Len_Shustek,_CHM_2011.jpg
+  checked: '2026-11-20'
+- id: person-brad-fitzpatrick
+  file: assets/media/person-brad-fitzpatrick.jpg
+  kind: person
+  person: Brad Fitzpatrick
+  nodes:
+  - s2-livejournal
+  caption: Brad Fitzpatrick
+  credit: Brad Fitzpatrick
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Bradfitz-sunglasses.jpg
+  commons_file: File:Bradfitz-sunglasses.jpg
+  checked: '2026-11-20'
+- id: person-robert-l-cook
+  file: assets/media/person-robert-l-cook.png
+  kind: person
+  person: Robert L. Cook
+  nodes:
+  - shade-trees
+  caption: Robert L. Cook, 2016-12-22
+  date: '2016-12-22'
+  credit: U.S. General Services Administration
+  license: Public domain
+  source_url: https://commons.wikimedia.org/wiki/File:Rob_Cook.png
+  commons_file: File:Rob_Cook.png
   checked: '2026-11-20'
