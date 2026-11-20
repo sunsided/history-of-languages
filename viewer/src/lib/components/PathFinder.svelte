@@ -3,7 +3,7 @@
 	import { viewer } from '../viewer.svelte.ts';
 	import { querySearch, type SearchHit } from '../search.ts';
 	import { firstYear, FAMILY_OF } from '../graph.ts';
-	import { shortestPath, type Hop } from '../path.ts';
+	import { shortestPath, type Hop, type Via } from '../path.ts';
 
 	const g = $derived(viewer.graph);
 
@@ -74,6 +74,8 @@
 	};
 
 	const name = (id: string) => g.node.get(id)?.name ?? id;
+	const viaText = (v: Via) =>
+		v.kind === 'concept' ? `concept: ${g.concept.get(v.value)?.name ?? v.value}` : v.kind === 'person' ? v.value : `institution: ${v.value}`;
 	const year = (id: string) => {
 		const n = g.node.get(id);
 		if (!n) return '';
@@ -99,9 +101,11 @@
 		<ol>
 			<li>{@render nodeRow(start)}</li>
 			{#each hops as h, i (i)}
-				<li class="hop fam-{FAMILY_OF[h.edge.type]}" class:weak={h.edge.confidence === 'low'}>
+				<li class="hop fam-{h.edge ? FAMILY_OF[h.edge.type] : 'derived'}" class:weak={h.edge?.confidence === 'low'} class:derived={!h.edge}>
 					<span class="rel">{name(h.from)} <b>{h.label}</b> {name(h.to)}</span>
-					{#if h.edge.weight || h.edge.confidence}
+					{#if h.via}
+						<span class="muted">{viaText(h.via)}</span>
+					{:else if h.edge && (h.edge.weight || h.edge.confidence)}
 						<span class="muted">{[h.edge.weight, h.edge.confidence && `${h.edge.confidence} confidence`].filter(Boolean).join(' · ')}</span>
 					{/if}
 				</li>
@@ -404,6 +408,12 @@
 	}
 	.fam-reaction {
 		--fam: var(--fam-reaction);
+	}
+	.fam-derived {
+		--fam: var(--fg-muted);
+	}
+	.hop.derived {
+		border-left-style: dotted;
 	}
 	.muted {
 		color: var(--fg-faint);
