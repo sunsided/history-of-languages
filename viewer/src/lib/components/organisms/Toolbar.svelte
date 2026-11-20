@@ -47,6 +47,11 @@
 		<span class="keys" aria-hidden="true"><Kbd>P</Kbd></span>
 	</Button>
 
+	<div class="views" role="group" aria-label="View">
+		<Button variant="pill" aria-pressed={viewer.view === 'timeline'} onclick={() => (viewer.view = 'timeline')} title="Every language on a year axis">Timeline</Button>
+		<Button variant="pill" aria-pressed={viewer.view === 'network'} onclick={() => (viewer.view = 'network')} title="Ancestors and descendants of the selected language">Network</Button>
+	</div>
+
 	<div class="actions">
 		{#if dev}
 			<div class="status" class:flash>
@@ -127,6 +132,10 @@
 {/if}
 
 <style>
+	.views {
+		display: inline-flex;
+		gap: var(--space-1);
+	}
 	.toolbar {
 		display: flex;
 		flex-wrap: wrap;

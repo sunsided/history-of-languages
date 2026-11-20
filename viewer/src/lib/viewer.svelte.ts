@@ -32,6 +32,8 @@ interface Persisted {
 	/** detail panel width in px, null = responsive default */
 	panelWidth: number | null;
 	depth: 'direct' | 'full';
+	view: View;
+	hops: number;
 }
 
 function loadPersisted(): Partial<Persisted> {
@@ -54,6 +56,9 @@ function loadRecent(): string[] {
 /** narrow screens: snap heights of the detail sheet, as a fraction of the area under the bars */
 export const SHEET = { peek: 0.3, half: 0.55, full: 1 } as const;
 export type SheetSnap = keyof typeof SHEET;
+
+/** timeline = everything on a year axis; network = the selected node's neighbourhood */
+export type View = 'timeline' | 'network';
 
 export type Selection = { type: 'node' | 'cluster'; id: string } | null;
 export type Hover = { type: 'node'; id: string } | { type: 'edge'; from: string; to: string; idx: number } | null;
@@ -80,6 +85,9 @@ class Viewer {
 	/** never narrower than the viewport, so there is no dead strip on the right */
 	effectiveZoom = $derived(Math.max(this.zoom, this.minZoom));
 	depth = $state<'direct' | 'full'>('full');
+	view = $state<View>('timeline');
+	/** network view: how many hops out from the selected node */
+	hops = $state(2);
 	legendOpen = $state(true);
 	/** narrow screens: the key covers the plot, so it starts closed every visit */
 	legendOpenNarrow = $state(false);
@@ -122,6 +130,8 @@ class Viewer {
 		this.legendOpen = p.legend ?? !this.narrow.current;
 		this.panelWidth = p.panelWidth ?? null;
 		this.depth = p.depth ?? 'full';
+		this.view = p.view === 'network' ? 'network' : 'timeline';
+		this.hops = [1, 2, 3].includes(p.hops ?? 0) ? p.hops! : 2;
 	}
 
 	/** edge families and kinds that differ from the defaults (toolbar badge) */
@@ -149,7 +159,9 @@ class Viewer {
 			zoom: this.zoom,
 			legend: this.legendOpen,
 			panelWidth: this.panelWidth,
-			depth: this.depth
+			depth: this.depth,
+			view: this.view,
+			hops: this.hops
 		};
 		try {
 			localStorage.setItem(STORAGE_KEY, JSON.stringify(p));

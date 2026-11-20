@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Toolbar from '#lib/components/organisms/Toolbar.svelte';
 	import Timeline from '#lib/components/organisms/Timeline.svelte';
+	import Network from '#lib/components/organisms/Network.svelte';
 	import DetailPanel from '#lib/components/organisms/DetailPanel.svelte';
 	import CommandPalette from '#lib/components/organisms/CommandPalette.svelte';
 	import PathFinder from '#lib/components/organisms/PathFinder.svelte';
@@ -86,12 +87,12 @@
 		onclick={(e) => {
 			e.preventDefault();
 			document.getElementById('timeline')?.focus();
-		}}>Skip to timeline</a
+		}}>Skip to {viewer.view}</a
 	>
 	<Toolbar />
 	<FocusBar />
 	<main bind:this={mainEl} class:narrow={viewer.narrow.current} class:open={viewer.panelOpen} style:--panel-w={viewer.panelWidth ? `${viewer.panelWidth}px` : null}>
-		<Timeline />
+		{#if viewer.view === 'network'}<Network />{:else}<Timeline />{/if}
 		{#if viewer.panelOpen}
 			<div class="panel-slot" class:dragging={dragH !== null} style:height={viewer.narrow.current ? (dragH !== null ? `${dragH}px` : `${SHEET[viewer.sheet] * 100}%`) : null}>
 				{#if viewer.narrow.current}
