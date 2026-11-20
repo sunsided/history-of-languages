@@ -106,6 +106,8 @@ class Viewer {
 	pinnedEra = $state<string | null>(null);
 	/** ask the timeline to scroll to an era ('now' = right edge) */
 	jumpTarget = $state<{ era: string; tick: number } | null>(null);
+	/** zoom before an era jump zoomed in, so clicking the current era again can go back to it */
+	zoomBeforeEra = $state<number | null>(null);
 
 	/** set to ask the timeline to scroll a node into view */
 	scrollTarget = $state<{ id: string; type: 'node' | 'cluster'; tick: number } | null>(null);

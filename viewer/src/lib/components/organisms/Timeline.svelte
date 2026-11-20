@@ -292,7 +292,11 @@
 		const tail1 = s1.width - PAD - mid1; // zoom-scaled distance from midpoint to the right end
 		const needed = tail1 > 0 ? (view / 2 - PAD) / tail1 : 1;
 		const current = untrack(() => viewer.effectiveZoom);
-		if (needed > current) untrack(() => viewer.setZoom(needed * 1.02));
+		if (needed > current)
+			untrack(() => {
+				viewer.zoomBeforeEra ??= current;
+				viewer.setZoom(needed * 1.02);
+			});
 		tick().then(() => {
 			const sc = timeScale(viewer.effectiveZoom);
 			const mid = (sc.x(era.start) + sc.x((era.end ?? NOW) + 1)) / 2;
@@ -300,10 +304,21 @@
 		});
 	});
 
+	const zoomedIn = $derived(viewer.effectiveZoom > viewer.minZoom * 1.05);
+	/** an era click zooms in when needed; clicking the current era again zooms back out */
+	function onEraClick(id: string) {
+		if (viewer.activeEra === id && zoomedIn) {
+			zoomCentre(viewer.zoomBeforeEra ?? viewer.minZoom);
+			viewer.zoomBeforeEra = null;
+		} else viewer.jump(id);
+	}
+
 	const scrollBehavior = (): ScrollBehavior => (viewer.reducedMotion.current ? 'auto' : 'smooth');
 
 	/** user-initiated scrolling (not our smooth scrollTo) releases the pinned era highlight */
-	function unpinEra() {
+	function unpinEra(ev?: Event) {
+		// a press on the era band is not manual scrolling: keep the clicked era (it decides "click again")
+		if ((ev?.target as Element | null)?.closest?.('.era-nav')) return;
 		viewer.pinnedEra = null;
 	}
 
@@ -418,7 +433,7 @@
 </script>
 
 <div class="timeline">
-<div class="mini" style:grid-template-columns="{GUTTER}px minmax(0, 1fr)">
+<div class="mini" style:grid-template-columns="{GUTTER}px minmax(0, 1fr) auto">
 	<span class="counts">{g.data.nodes.length} nodes · {g.data.edges.length} edges</span>
 	<Minimap
 		{scrollX}
@@ -429,6 +444,18 @@
 			if (scroller) scroller.scrollLeft = x;
 		}}
 		onzoom={(f) => zoomCentre(viewer.effectiveZoom * f)}
+	/>
+	<!-- next to the overview and the era band, where zooming in happens -->
+	<ZoomControl
+		level={viewer.effectiveZoom}
+		hint={viewer.coarse.current ? 'Pinch to zoom' : 'Ctrl + wheel zooms'}
+		onzoomin={() => zoomCentre(viewer.effectiveZoom * 1.4)}
+		onzoomout={() => zoomCentre(viewer.effectiveZoom / 1.4)}
+		onfit={() => {
+			viewer.zoomBeforeEra = null;
+			viewer.setZoom(viewer.minZoom);
+		}}
+		onnow={() => viewer.jump('now')}
 	/>
 </div>
 <!-- A focusable region, so keyboard users can scroll it with the arrow keys. -->
@@ -470,8 +497,8 @@
 						style:left="{era.x1}px"
 						style:width="{Math.max(0, era.x2 - era.x1)}px"
 						aria-current={viewer.activeEra === era.id ? 'true' : undefined}
-						onclick={() => viewer.jump(era.id)}
-						title="{era.name} ({span}){era.summary ? '\n' + era.summary : ''}"
+						onclick={() => onEraClick(era.id)}
+						title="{era.name} ({span}){era.summary ? '\n' + era.summary : ''}{viewer.activeEra === era.id && zoomedIn ? '\nClick again to zoom back out' : ''}"
 						><span class="era-label" style:left="{GUTTER + 4}px" aria-hidden="true">{label}</span><span class="sr-only">{era.name}, {span}</span></button
 					>
 				{/each}
@@ -700,16 +727,6 @@
 </div>
 
 	<div class="overlay key" style:left="{GUTTER + 12}px"><Legend /></div>
-	<div class="overlay zoom-ctl">
-		<ZoomControl
-			level={viewer.effectiveZoom}
-			hint={viewer.coarse.current ? 'Pinch to zoom' : 'Ctrl + wheel zooms'}
-			onzoomin={() => zoomCentre(viewer.effectiveZoom * 1.4)}
-			onzoomout={() => zoomCentre(viewer.effectiveZoom / 1.4)}
-			onfit={() => viewer.setZoom(viewer.minZoom)}
-			onnow={() => viewer.jump('now')}
-		/>
-	</div>
 </div>
 
 {#if tooltip && pointer.mouse}
@@ -768,9 +785,6 @@
 		position: absolute;
 		bottom: 22px;
 		z-index: 5;
-	}
-	.zoom-ctl {
-		right: 22px;
 	}
 	@media (max-width: 899px) {
 		.overlay.key {

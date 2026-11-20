@@ -25,11 +25,11 @@
 <style>
 	.zoom {
 		display: flex;
+		align-items: center;
 		gap: var(--space-1);
-		padding: var(--space-1);
+		padding: var(--space-1) var(--space-2);
 		background: var(--bg-raised);
-		border: 1px solid var(--line);
-		border-radius: var(--radius-md);
-		box-shadow: var(--shadow-tooltip);
+		border-bottom: 1px solid var(--line);
+		border-left: 1px solid var(--line);
 	}
 </style>
