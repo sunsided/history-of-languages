@@ -8058,3 +8058,40 @@
   title: "The end of an era for automation: how Siemens SIMATIC S5 transformed manufacturing"
   year: 2020
   url: https://news.siemens.co.uk/news/the-end-of-an-era-for-automation-how-siemens-simatic-s5-transformed-manufacturing
+- id: ludgate-1909-proposed-analytical-machine
+  type: paper
+  primary: true
+  authors: [Percy E. Ludgate]
+  title: On a Proposed Analytical Machine
+  venue: Scientific Proceedings of the Royal Dublin Society 12(9), pp. 77-91
+  year: 1909
+  url: https://treasures.scss.tcd.ie/miscellany/TCD-SCSS-X.20121208.002/McQuillan-OCR-PercyLudgate-On-A-Proposed-Analytical-Machine-19090428.pdf
+- id: mcculloch-pitts-1943-logical-calculus
+  type: paper
+  primary: true
+  authors: [Warren S. McCulloch, Walter Pitts]
+  title: A Logical Calculus of the Ideas Immanent in Nervous Activity
+  venue: Bulletin of Mathematical Biophysics 5, pp. 115-133
+  year: 1943
+  url: https://www.cs.cmu.edu/~./epxing/Class/10715/reading/McCulloch.and.Pitts.pdf
+- id: davis-king-1977-production-systems
+  type: paper
+  primary: false
+  authors: [Randall Davis, Jonathan J. King]
+  title: An Overview of Production Systems
+  venue: Stanford AIM-271 (1975); Machine Intelligence 8 (1977)
+  year: 1977
+  url: https://people.dbmi.columbia.edu/~ehs7001/Buchanan-Shortliffe-1984/Chapter-02.pdf
+- id: ameslab-eniac-patent-trial
+  type: web
+  primary: false
+  authors: [Ames Laboratory]
+  title: The ENIAC Patent Trial
+  url: https://web.archive.org/web/20121025030709/http://www.scl.ameslab.gov/Projects/ABC/Trial.html
+- id: rand-pact-1956
+  type: web
+  primary: true
+  authors: [RAND Corporation]
+  title: The PACT I coding system papers (RAND publication record EP19561001)
+  year: 1956
+  url: https://www.rand.org/pubs/external_publications/EP19561001.html

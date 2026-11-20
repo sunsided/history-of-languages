@@ -767,6 +767,8 @@
     The language, machine and translation method in Corrado Böhm's 1951 ETH dissertation, which "describes for the first
     time a full meta-circular compiler, that is a translation mechanism of a programming language, written in that same
     language". History of compiler construction calls it "the first practical compiler".
+  relations:
+    - { type: influenced_by, to: plankalkul, weight: weak, confidence: medium, sources: [knuth-pardo-1976-early-development], note: "Böhm worked \"knowing only of [Goldstine and von Neumann 1947] and [Zuse 1948]\", the latter on the Plankalkül." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Corrado_B%C3%B6hm" }
@@ -875,6 +877,9 @@
     "a series of compilers for the IBM 701 and IBM 704 scientific computers" (PACT I and PACT IA), built jointly by IBM
     and its customers; their emphasis was "minimization of the memory footprint". The 1956 papers called it an
     "(automatic) coding system", as the word compiler was not yet common.
+  relations:
+    - { type: targets, to: ibm-701, weight: strong, confidence: high, sources: [rand-pact-1956], note: "\"the joint effort of a group of West Coast computer users to develop an efficient means of preparing programs for their IBM Type 701 computers\"." }
+    - { type: targets, to: ibm-704, weight: moderate, confidence: medium, sources: [wiki-pact], note: "\"a series of compilers for the IBM 701 and IBM 704\" (PACT IA)." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/PACT_(compiler)" }

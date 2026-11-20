@@ -531,6 +531,10 @@
   notes: >
     In 1960 a patent lawyer working for IBM used Ludgate's paper to defeat a 1941 patent application by
     Konrad Zuse.
+  relations:
+    - { type: influenced_by, to: jacquard-loom, weight: moderate, confidence: high, sources: [ludgate-1909-proposed-analytical-machine], note: "\"An eminently satisfactory answer to that question (and one utilised by both Babbage and myself) is suggested by the Jacquard loom\"; his perforated roll \"exactly corresponds to a set of Jacquard-cards\"." }
+    - { type: influenced_by, to: analytical-engine, weight: weak, confidence: high, sources: [ludgate-1909-proposed-analytical-machine], note: "Only after his first design: \"my work was not based on Babbage's results ... I have since been greatly assisted in the more advanced stages of the problem by ... the writings of that accomplished scholar\"." }
+    - { type: influenced_by, to: lovelace-note-g, weight: weak, confidence: high, sources: [ludgate-1909-proposed-analytical-machine], note: "Refers readers to \"the Countess of Lovelace's translation of an article on Babbage's Engine, which, together with copious notes by the translator\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Percy_Ludgate" }
@@ -576,6 +580,8 @@
     unit. "Any finite state machine can be simulated by a MCP neural network", and "Furnished with an
     infinite tape, MCP neural networks can simulate any Turing machine." A single unit can represent AND,
     OR and NOR "but not, for example, XOR."
+  relations:
+    - { type: influenced_by, to: turing-machine, weight: weak, confidence: high, sources: [mcculloch-pitts-1943-logical-calculus], note: "\"every net, if furnished with a tape ... can compute only such numbers as can a Turing machine\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Artificial_neuron" }

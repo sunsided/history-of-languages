@@ -2065,7 +2065,7 @@
     - { name: Jack May, role: co-designer }
   status: extinct
   tags:
-    paradigm: [procedural]
+    paradigm: [procedural, two-dimensional]
     domain: [scientific-computing]
   summary: >
     A numerical language "whose most notable feature is its two-dimensional syntax based on traditional mathematical

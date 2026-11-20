@@ -3608,6 +3608,7 @@
     match phase. It was first written in Lisp, later in BLISS; OPS4 preceded and OPS83 followed it.
   relations:
     - { type: implemented_in, to: lisp, weight: moderate, confidence: high, sources: [wiki-ops5], note: "\"The first implementation of OPS5 was written in Lisp, and later rewritten in BLISS\"." }
+    - { type: influenced_by, to: post-canonical-system, weight: weak, confidence: medium, sources: [davis-king-1977-production-systems], note: "Origin of the production-system idea, not a design influence: \"production systems (PS's) were first proposed by Post (1943)\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/OPS5" }

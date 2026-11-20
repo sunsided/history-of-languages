@@ -13,6 +13,8 @@
   collapsed: true
   summary: "Mechanisms, punched cards, notations and formalisms from antiquity to 1945."
   research_status: draft
+  research_questions:
+    - "Antikythera mechanism, Schickard calculating clock and the Begriffsschrift have no documented relation: Pascal \"would not have known of Schickard\u2019s machine\" (Williams 1997); the Frege ideas Schönfinkel and Church used come from the Grundgesetze, not the Begriffsschrift."
 - id: prehistory/mechanisms
   name: Calculating and automatic mechanisms
   parent: prehistory
@@ -49,6 +51,8 @@
   collapsed: true
   summary: "Each machine node stands for its instruction set. Assembly languages target them."
   research_status: stub
+  research_questions:
+    - "Missing machines that would connect isolated ones: SEAC (DYSEAC, \"Based on EDVAC\"), UNIVAC 1101/ERA Atlas (UNIVAC 1103), Heath Robinson (Colossus), Intel 4040 and the Datapoint 2200 (the 8008 is not a descendant of the 4004), Ferranti Mercury, DEUCE, KDF9, MESM and the Kiev computer, GEC 4000. Colossus \"had little direct influence on the development of later computers\". DCPU-16 has no stated ancestor."
 - id: machines/early
   name: First electronic and electromechanical computers
   parent: machines
@@ -156,6 +160,8 @@
   name: First programming languages (1942-1958)
   collapsed: true
   research_status: draft
+  research_questions:
+    - "Missing ancestors for early languages: Brooker\u2019s Mark I Autocode (Mercury Autocode is \"Brooker\u2019s next Autocode\", Knuth), the Ferranti Mercury, MESM and the Kiev computer (Address language), and the DEUCE (Hamblin). LC-3 replaced LC-2 (Patt and Patel, 2nd edition preface, 2003); LC-2 is not a node."
 - id: early/pioneers
   name: Pioneers
   parent: early

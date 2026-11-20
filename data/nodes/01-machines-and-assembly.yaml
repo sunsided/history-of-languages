@@ -82,6 +82,8 @@
     - { name: Ruth Teitelbaum, role: "first programmer (then Ruth Lichterman)" }
   status: extinct
   summary: "First programmable general-purpose electronic computer. Originally programmed by setting switches and plugging cables; converted in 1948 to run a fixed set of stored instructions selected from function tables."
+  relations:
+    - { type: influenced_by, to: atanasoff-berry-computer, weight: moderate, confidence: medium, sources: [ameslab-eniac-patent-trial], note: "Judge Larson (1973): Eckert and Mauchly \"derived that subject matter from one Dr. John Vincent Atanasoff\"; contested by Mauchly, and historians call the evidence conflicting." }
   research_status: stub
   confidence: high
   sources: [wiki-eniac]
@@ -155,6 +157,7 @@
     next instruction.
   relations:
     - { type: successor_of, to: eniac, weight: strong, confidence: high, sources: [wiki-edvac], note: "\"Along with ORDVAC, it was a successor to the ENIAC.\"" }
+    - { type: influenced_by, to: mcculloch-pitts-neuron, weight: moderate, confidence: high, sources: [von-neumann-1945-edvac], note: "First Draft, 4.2: \"Following W.S. MacCulloch and W. Pitts ... we ignore the more complicated aspects of neuron functioning\"; its switching elements are modelled on their neurons." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/EDVAC" }
@@ -1965,7 +1968,8 @@
   notes: >
     Goldstine on Mauchly's visit: "The discussion greatly influenced Mauchly and through him the entire
     history of electronic computers"; a court found "the ENIAC patent was a derivative of John Atanasoff's
-    invention". Not stored as an edge on ENIAC until the influence is sourced from an ENIAC history.
+    invention". Stored on ENIAC at medium confidence: the court ruling is clear, the historical influence is contested
+    (Mauchly denied it).
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Atanasoff%E2%80%93Berry_computer" }
