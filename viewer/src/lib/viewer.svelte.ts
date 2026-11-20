@@ -29,6 +29,8 @@ interface Persisted {
 	zoom: number;
 	/** the timeline key is open */
 	legend: boolean;
+	/** detail panel width in px, null = responsive default */
+	panelWidth: number | null;
 	depth: 'direct' | 'full';
 }
 
@@ -75,6 +77,7 @@ class Viewer {
 	effectiveZoom = $derived(Math.max(this.zoom, this.minZoom));
 	depth = $state<'direct' | 'full'>('full');
 	legendOpen = $state(true);
+	panelWidth = $state<number | null>(null);
 
 	selected = $state<Selection>(null);
 	hover = $state<Hover>(null);
@@ -107,6 +110,7 @@ class Viewer {
 		this.zoom = p.zoom ?? 1;
 		// open on first visit on wide screens, so the marks are explained where they are used
 		this.legendOpen = p.legend ?? !this.narrow.current;
+		this.panelWidth = p.panelWidth ?? null;
 		this.depth = p.depth ?? 'full';
 	}
 
@@ -134,6 +138,7 @@ class Viewer {
 			hiddenKinds: [...this.hiddenKinds],
 			zoom: this.zoom,
 			legend: this.legendOpen,
+			panelWidth: this.panelWidth,
 			depth: this.depth
 		};
 		try {

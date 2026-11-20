@@ -45,9 +45,6 @@
 		border-radius: var(--radius-pill);
 		padding: 0 var(--space-4);
 	}
-	.tag {
-		min-height: 22px;
-	}
 	.tag[aria-pressed='true'] {
 		background: var(--warn);
 		border-color: var(--warn);

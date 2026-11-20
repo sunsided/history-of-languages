@@ -10,6 +10,7 @@
 <!-- The key explains every mark on the timeline, and its edge and kind entries are the filters:
      the swatch you read is the control you press. -->
 <section class="legend" aria-labelledby="legend-toggle">
+	<h2 class="head-wrap">
 	<button
 		id="legend-toggle"
 		class="head"
@@ -21,6 +22,7 @@
 		Key
 		{#if viewer.filterCount}<span class="badge">{viewer.filterCount}<span class="sr-only"> filters changed</span></span>{/if}
 	</button>
+	</h2>
 
 	{#if viewer.legendOpen}
 		<div class="body" id="legend-body">
@@ -92,7 +94,12 @@
 		box-shadow: var(--shadow-tooltip);
 		font-size: var(--text-sm);
 	}
+	.head-wrap {
+		margin: 0;
+		font-size: inherit;
+	}
 	.head {
+		width: 100%;
 		display: flex;
 		align-items: center;
 		gap: var(--space-3);

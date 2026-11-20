@@ -7,6 +7,7 @@
 		conceptArrival,
 		cleanCommons,
 		contemporaries,
+		endYear,
 		firstYear,
 		mediaUrl,
 		narrowerConcepts
@@ -42,6 +43,23 @@
 	const portraits = $derived(
 		node ? (node.creators ?? []).map((c) => g.personMedia.get(c.name)).filter((m): m is MediaItem => !!m) : []
 	);
+
+	// relations strip: unique neighbours, ancestry first; the full grouped lists stay further down
+	const STRIP = 6;
+	const parents = $derived(node ? [...new Set((g.outgoing.get(node.id) ?? []).map((e) => e.to))] : []);
+	const children = $derived(node ? [...new Set((g.incoming.get(node.id) ?? []).map((e) => e.from))] : []);
+	const span = $derived.by(() => {
+		if (!node) return '';
+		const a = firstYear(node);
+		const fmt = (y: number) => (y < 0 ? `${-y} BC` : String(y));
+		if (node.status === 'active' || node.status === 'maintained') return `${fmt(a)}–today`;
+		const b = endYear(node);
+		return b > a ? `${fmt(a)}–${fmt(b)}` : fmt(a);
+	});
+	/** node whose full creator list is open; resets when another node is shown */
+	let creatorsOpen = $state<string | null>(null);
+	const CREATORS = 3;
+	const showAllCreators = $derived(!node?.creators || creatorsOpen === node.id || node.creators.length <= CREATORS + 1);
 
 	const claims = $derived(node ? g.data.claims.filter((c) => c.nodes?.includes(node.id)) : []);
 	const rivals = $derived(node ? contemporaries(g, node.id) : []);
@@ -142,9 +160,46 @@
 			</div>
 			<h2>{node.name}</h2>
 			{#if node.aliases?.length}<div class="muted">{node.aliases.join(' · ')}</div>{/if}
-			<Button class="deselect" onclick={() => viewer.deselect()} title="Clear the selection (Esc, or click it again)">Deselect</Button>
-			<IconButton class="close" label="Fold the detail panel" onclick={() => (viewer.panelOpen = false)}>×</IconButton>
+			<div class="meta">
+				<span class="span">{span}</span>
+				<span class="rs-badge rs-{node.research_status}" title="research status{node.confidence ? `, ${node.confidence} confidence` : ''}">{node.research_status}</span>
+			</div>
+			<IconButton
+				class="close"
+				label="Close and deselect"
+				title="Close and deselect (Esc deselects, keeping the panel)"
+				onclick={() => {
+					viewer.deselect();
+					viewer.panelOpen = false;
+				}}>×</IconButton
+			>
 		</header>
+
+		<p class="summary">{node.summary}</p>
+		{#if node.notes}<p class="note">{node.notes}</p>{/if}
+
+		{#if parents.length || children.length}
+			<div class="strip">
+				{#if parents.length}
+					<div class="facet">
+						<span class="facet-name">comes from</span>
+						<div class="tags">
+							{#each parents.slice(0, STRIP) as id (id)}<Button variant="tag" onclick={() => viewer.selectNode(id)}>{name(id)}</Button>{/each}
+							{#if parents.length > STRIP}<span class="muted">+{parents.length - STRIP} below</span>{/if}
+						</div>
+					</div>
+				{/if}
+				{#if children.length}
+					<div class="facet">
+						<span class="facet-name">led to</span>
+						<div class="tags">
+							{#each children.slice(0, STRIP) as id (id)}<Button variant="tag" onclick={() => viewer.selectNode(id)}>{name(id)}</Button>{/each}
+							{#if children.length > STRIP}<span class="muted">+{children.length - STRIP} below</span>{/if}
+						</div>
+					</div>
+				{/if}
+			</div>
+		{/if}
 
 		{#each images as m (m.id)}
 			<figure class="hero">
@@ -165,7 +220,7 @@
 			{#if node.creators?.length}
 				<dt>creators</dt>
 				<dd>
-					{#each node.creators as c, i (i)}
+					{#each showAllCreators ? node.creators : node.creators.slice(0, CREATORS) as c, i (i)}
 						{@const photo = g.personMedia.get(c.name)}
 						<div class="creator">
 							{#if photo}
@@ -174,6 +229,9 @@
 							<span>{c.name}{c.role ? ` (${c.role})` : ''}{c.affiliation ? `, ${c.affiliation}` : ''}</span>
 						</div>
 					{/each}
+					{#if !showAllCreators}
+						<Button variant="link" onclick={() => (creatorsOpen = node.id)}>+{node.creators.length - CREATORS} more</Button>
+					{/if}
 				</dd>
 			{/if}
 			{#if node.origin.places?.length}
@@ -186,8 +244,6 @@
 			<dd><span class="rs rs-{node.research_status}">{node.research_status}</span>{node.confidence ? ` · ${node.confidence} confidence` : ''} <span class="muted">· {node._file}</span></dd>
 		</dl>
 
-		<p class="summary">{node.summary}</p>
-		{#if node.notes}<p class="note">{node.notes}</p>{/if}
 		{#if node.links}
 			<p class="links">
 				{#if node.links.wikipedia}<a href={node.links.wikipedia} target="_blank" rel="noreferrer">Wikipedia</a>{/if}
@@ -254,17 +310,21 @@
 		{/if}
 
 		{#if node.sources?.length}
-			<h3>Sources</h3>
-			{@render sourceList(node.sources)}
+			<details class="more">
+				<summary>Sources <span class="muted">({node.sources.length})</span></summary>
+				{@render sourceList(node.sources)}
+			</details>
 		{/if}
 
 		{#if portraits.length}
-			<h3>Image credits</h3>
-			<ul class="sources">
-				{#each portraits as m (m.id)}
-					<li>{m.person}: {@render attribution(m)}</li>
-				{/each}
-			</ul>
+			<details class="more">
+				<summary>Image credits <span class="muted">({portraits.length})</span></summary>
+				<ul class="sources">
+					{#each portraits as m (m.id)}
+						<li>{m.person}: {@render attribution(m)}</li>
+					{/each}
+				</ul>
+			</details>
 		{/if}
 	{:else if cluster}
 		{@const c = cluster.cluster}
@@ -421,8 +481,40 @@
 		color: var(--fg-muted);
 		font-size: var(--text-sm);
 	}
-	.panel :global(.deselect) {
-		margin-top: var(--space-3);
+	.meta {
+		display: flex;
+		align-items: center;
+		gap: var(--space-4);
+		margin-top: var(--space-2);
+	}
+	.span {
+		font-variant-numeric: tabular-nums;
+		color: var(--fg-muted);
+	}
+	.rs-badge {
+		padding: 0 var(--space-3);
+		border: 1px solid currentColor;
+		border-radius: var(--radius-pill);
+		font-size: var(--text-xs);
+		font-weight: 600;
+	}
+	.strip {
+		display: grid;
+		gap: var(--space-2);
+		margin: var(--space-5) 0;
+		padding: var(--space-4) 0;
+		border-block: 1px solid var(--line);
+	}
+	.more {
+		margin-top: var(--space-6);
+	}
+	.more summary {
+		cursor: pointer;
+		font-size: var(--text-xs);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-caps);
+		color: var(--fg-muted);
+		font-weight: 600;
 	}
 	.panel :global(.close) {
 		position: absolute;
