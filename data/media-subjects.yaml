@@ -2589,3 +2589,40 @@
   wiki: Mark Kilgard
   nodes:
   - cg
+- id: kr580vm80a
+  kind: artifact
+  wiki: KR580VM80A
+  nodes:
+  - kr580vm80a
+- id: elbrus-1
+  kind: machine
+  wiki: Elbrus (computer)
+  nodes:
+  - elbrus-1
+- id: agat
+  kind: machine
+  wiki: Agat (computer)
+  nodes:
+  - agat
+- id: kc-85
+  kind: machine
+  wiki: KC 85
+  nodes:
+  - kc-85
+- id: z-1013
+  kind: machine
+  wiki: Robotron Z1013
+  nodes:
+  - z-1013
+- id: person-boris-babayan
+  kind: person
+  person: Boris Babayan
+  wiki: Boris Babayan
+  nodes:
+  - el-76
+- id: person-vladimir-pentkovski
+  kind: person
+  person: Vladimir Pentkovski
+  wiki: Vladimir Pentkovski
+  nodes:
+  - el-76

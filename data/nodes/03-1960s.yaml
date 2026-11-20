@@ -1918,6 +1918,55 @@
       02.20 TYPE "RATE",RATE,"   ","INTEREST",INTEREST,!
     sources: [wiki-focal]
 
+- id: aid
+  name: AID
+  aliases: [Algebraic Interpretive Dialogue, Algebraic Interpretive Dialog]
+  kind: language
+  category: scientific
+  cluster: joss
+  origin:
+    first_appeared: { year: 1968, date: "1968-10", precision: exact, note: "DEC manual \"AID (Algebraic Interpretive Dialogue)\", DEC-10-AJBO-D, dated October 1968 (Manx catalogue; no copy online). The surviving TOPS-20 binary announces itself as AID (14-MAR-69)." }
+    places: [{ institution: Digital Equipment Corporation, country: US }]
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [interactive-time-sharing, interpreter, english-like-syntax]
+  summary: >
+    "a PDP-10 adaptation of language elements of JOSS": DEC's conversational calculator language for its
+    timesharing systems, meant like JOSS for scientists and engineers solving numerical problems. Users
+    typed numbered steps grouped into parts ("1.3 Do part 2."), single-letter variables and arrays,
+    propositions, one-line functions and "forms" that lay out printed results. It is "restricted to
+    numeric calculations" with little symbolic manipulation.
+  notes: >
+    DEC's later documentation is "PDP-10 timesharing handbook. Book 4: Conversational Programming with AID"
+    (c1970). The University of Queensland issued an adapted manual (Technical Manual No. 10, December 1970);
+    its bitsavers copy could not be fetched. The designers at DEC are not named in the sources read.
+  relations:
+    - { type: dialect_of, to: joss, weight: strong, confidence: high, note: "\"AID ... is a PDP-10 adaptation of language elements of JOSS\" (twenex.org); the Manx catalogue tags the DEC manual JOSS.", sources: [twenex-aid, manx-dec-10-ajbo-d] }
+    - { type: targets, to: pdp-10, weight: strong, confidence: high, sources: [twenex-aid, manx-dec-10-ajbo-d] }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://wiki.twenex.org/aid" }
+  sources: [twenex-aid, manx-dec-10-ajbo-d]
+  example:
+    title: Parts, steps and a form
+    language: AID (TOPS-20 version of 14-MAR-69)
+    note: "The first lines of a session on the TOPS-20 user wiki (twenex.org), run on the surviving AID binary; * is AID's prompt. The functions f, g, h and the second form are defined further on in the original; the excerpt stops before them."
+    code: |
+      *1.1 Demand m as "Lower limit".
+      *1.2 Demand n as "Upper limit".
+      *1.3 Do part 2.
+      *
+      *2.1 Type "X VALUES".
+      *2.2 Type form 1.
+      *2.3 Do step 2.5 for I = m(1)n.
+      *2.4 Done.
+      *2.5 Type I, f(I), g(I), h(I) in form 2.
+      *
+      *Form 1:
+      *    X      X*2    X/2     X^2
+    sources: [twenex-aid]
+
 - id: spss
   name: SPSS
   aliases: [Statistical Package for the Social Sciences, IBM SPSS Statistics, PASW]

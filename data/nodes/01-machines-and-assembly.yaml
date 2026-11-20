@@ -501,6 +501,146 @@
       20F  01 00 00 00 00 41 10 FE ED 52 20 F6 C9
     sources: [denkes-1986-lc80-morse]
 
+- id: kr580vm80a
+  name: KR580VM80A
+  aliases: [K580IK80, KR580IK80A, К580ИК80, КР580ВМ80А]
+  kind: machine
+  category: general
+  cluster: machines/eastern-bloc
+  origin:
+    first_appeared: { year: 1979, precision: circa, note: "\"manufactured beginning in the late 1970s, the earliest known use being in the SM1800 computer in 1979\"." }
+    places: [{ country: SU }]
+  status: historical
+  milestones:
+    - { version: KR580VM80A, year: 1986, summary: "\"In 1986 this CPU received a new part number to conform with the 1980 Soviet integrated circuit designation\"; the PDIP-40 KR580IK80A became KR580VM80A (5 μm process, up to 2.5 MHz)." }
+  summary: >
+    The Soviet Intel 8080: "a clone of the Intel 8080 CPU", "fully software-compatible with Intel 8080A",
+    first as the K580IK80 in a 48-pin metal-ceramic package, then as the KR580IK80A with the 8080A's
+    pinout. It was the processor of the SM1800 minicomputer, the amateur Micro-80 and Radio-86RK, the
+    Orion-128, Specialist, Vector-06C and the Korvet school computer, which made it the base of much
+    Soviet hobby and school computing.
+  notes: >
+    One difference: when a CALL is supplied during an interrupt-acknowledge cycle and INT stays asserted,
+    it "does not clear its internal Interrupt Enable flag". The page names no factory or designers.
+  relations:
+    - { type: dialect_of, to: intel-8080, weight: strong, confidence: high, note: "Clone; \"fully software-compatible with Intel 8080A\".", sources: [wiki-kr580vm80a] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/KR580VM80A" }
+  sources: [wiki-kr580vm80a]
+
+- id: elbrus-1
+  name: Elbrus-1
+  aliases: [Эльбрус-1, Elbrus 1, MVK Elbrus-1]
+  kind: machine
+  category: general
+  cluster: machines/eastern-bloc
+  origin:
+    began: { year: 1973, precision: year, note: "\"разработан в 1973—1979 годах\" (ru.wikipedia)." }
+    first_appeared: { year: 1979, precision: disputed, note: "en.wikipedia: \"Elbrus 1 (1979) was the first in the line\"; ru.wikipedia: developed 1973-1979, \"сдан государственной комиссии в 1980 году\" (accepted by the state commission in 1980)." }
+    places: [{ institution: Lebedev Institute of Precision Mechanics and Computer Engineering, city: Moscow, country: SU }]
+  creators:
+    - { name: Vsevolod Burtsev, role: chief designer of the series }
+  status: historical
+  summary: >
+    The first of the Soviet Elbrus multiprocessor computers from the Lebedev Institute (ITMiVT), whose
+    early line was "heavily influenced by the Burroughs large systems". Every memory word carried a tag
+    that drove type checking, and there was no assembler: system software was written in the high-level
+    El-76, "an ALGOL-68 variant" in the English article's words.
+  notes: >
+    Elbrus-2 followed (en: 1984; ru: developed 1977-1984, delivered 1985, up to 200 built), with a
+    zero-address stack instruction set. Boris Babayan led the later VLIW Elbrus line, not this machine.
+    No Burroughs machine node exists yet to carry the influence edge.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Elbrus_(computer)" }
+  sources: [wiki-elbrus, ruwiki-elbrus-1, ruwiki-el-76]
+
+- id: agat
+  name: Agat
+  aliases: [Агат, Agat-7, Agat-9]
+  kind: machine
+  category: educational
+  cluster: machines/eastern-bloc
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "Introduced at a Moscow trade fair in 1983; \"primarily produced between 1984 and 1990\"." }
+    places: [{ institution: Lianozovsky Electromechanical Plant (LEMZ), city: Moscow, country: SU }]
+  status: historical
+  milestones:
+    - { version: Agat-7, year: 1984, summary: "\"The first mass-produced model\", 96 KB of RAM." }
+    - { version: Agat-9, year: 1986, summary: "\"The final mass-produced model\", 128 or 256 KB of RAM and \"improved compatibility with the Apple II + 64K\"." }
+  summary: >
+    A Soviet 8-bit school computer, inspired mainly by the Apple II but "largely different from it in
+    design", built on a 6502 at 1 MHz (early pre-production units used a 588-series processor emulating
+    the 6502 instruction set). It ran a BASIC interpreter, and the Schoolgirl (Школьница) software package
+    with the children's language Robic; Rapira also ran on it.
+  notes: >
+    Production moved from LEMZ to the Volzhsky plant and the Zagorsk Electromechanical Plant; a few may
+    have been made as late as 1993. No designers are named in the source read. No Apple II machine node
+    exists yet for an influence edge.
+  relations:
+    - { type: targets, to: mos-6502, weight: strong, confidence: high, note: "Infobox CPU: \"MCS6502 and compatibles\".", sources: [wiki-agat] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Agat_(computer)" }
+  sources: [wiki-agat]
+
+- id: kc-85
+  name: KC 85 (HC 900, KC 85/2, /3, /4)
+  aliases: [HC 900, KC 85/2, KC 85/3, KC 85/4, KC85, Kleincomputer KC 85]
+  kind: machine
+  category: educational
+  cluster: machines/eastern-bloc
+  origin:
+    first_appeared: { year: 1984, precision: year, note: "HC 900 presented in 1984 (de.wikipedia); \"Dieser Computer wurde 1984 entwickelt\" (robotrontechnik.de)." }
+    places: [{ institution: "VEB Mikroelektronik \"Wilhelm Pieck\" Mühlhausen", city: Mühlhausen, country: DD }]
+  status: historical
+  milestones:
+    - { version: HC 900, year: 1984, summary: "U880 at 1.75 MHz, 4 KB ROM with the CAOS operating system and no BASIC." }
+    - { version: KC 85/2, year: 1985, summary: "The HC 900 renamed: meant for schools and training, not as a home computer. BASIC from cassette or the M006 module." }
+    - { version: KC 85/3, year: 1986, summary: "16 KB ROM: CAOS 3.1 plus KC-BASIC built in (\"kam 1986 in den Handel\")." }
+    - { version: KC 85/4, year: 1988, summary: "CAOS 4.2 in 20 KB ROM, again with BASIC (\"kam 1988 in den Handel\")." }
+  summary: >
+    The modular GDR Kleincomputer from Mühlhausen, built around the U880 (the East German Z80) and
+    expanded by plug-in modules. Launched as the HC 900 in 1984 and renamed KC 85/2 in 1985 for schools
+    and training, it was followed by the KC 85/3 (1986), which put KC-BASIC in ROM, and the KC 85/4
+    (1988).
+  notes: >
+    robotrontechnik.de estimates about 40,000 to 45,000 KC machines in all; exact figures are unknown.
+  relations:
+    - { type: targets, to: u880, weight: strong, confidence: high, note: "\"Prozessor U880 mit 1,75 MHz Taktfrequenz\".", sources: [robotrontechnik-kc] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://de.wikipedia.org/wiki/KC_85/2" }
+  sources: [dewiki-kc-85-2, robotrontechnik-kc]
+
+- id: z-1013
+  name: Z 1013
+  aliases: [Robotron Z 1013, Z1013]
+  kind: machine
+  category: educational
+  cluster: machines/eastern-bloc
+  origin:
+    began: { year: 1984, precision: year, note: "Development and production assigned to VEB Robotron in Riesa in early 1984." }
+    first_appeared: { year: 1985, date: "1985-11", precision: exact, note: "Z 1013.01 released November 1985." }
+    places: [{ institution: VEB Robotron-Elektronik Riesa, city: Riesa, country: DD }]
+  status: historical
+  summary: >
+    A single-board U880 computer sold as a kit to private buyers in the GDR: "Zwischen Ende 1985 und
+    Mitte 1990 wurden insgesamt etwa 25.000 Bausätze ausgeliefert." Models ranged from 1 KB SRAM to
+    64 KB DRAM at 1 or 2 MHz. BASIC was only possible with at least 16 KB RAM, and came as a machine-code
+    listing to type in: a 3 KB Tiny BASIC or the 10 KB Kleincomputer BASIC taken from the KC 87, both
+    then loaded from cassette.
+  notes: >
+    Developed by a "Jugendforscherkollektiv" of young engineers at Robotron Riesa; no individuals are
+    named. The Kleincomputer BASIC of the KC 87 is not yet a node.
+  relations:
+    - { type: targets, to: u880, weight: strong, confidence: high, note: "\"UD880 @ 1 MHz\" on the Z 1013.01; 2 MHz on later models.", sources: [dewiki-z-1013] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://de.wikipedia.org/wiki/Z_1013" }
+  sources: [dewiki-z-1013]
+
 - id: motorola-68000
   name: Motorola 68000
   kind: machine

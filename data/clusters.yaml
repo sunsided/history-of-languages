@@ -84,18 +84,15 @@
   name: Eastern Bloc computers
   parent: machines
   summary: "Clones and original machines from the GDR, the USSR and Comecon, and the languages taught on them."
-  research_status: stub
+  research_status: draft
   backlog:
-    - { name: "KR580VM80A (K580IK80)", year: 1979, hint: "Soviet Intel 8080 clone, first used in the SM1800 (1979); ran the Radio-86RK and Vector-06C. wikipedia: KR580VM80A." }
-    - { name: "HC 900 / KC 85/2, /3, /4", year: 1984, hint: "VEB Mikroelektronik 'Wilhelm Pieck' Mühlhausen; HC 900 (1984) renamed KC 85/2 (1985). KC-BASIC in ROM from the KC 85/3 (1986)." }
-    - { name: "KC-BASIC", year: 1986, hint: "KC 85/3 had BASIC in ROM from 1986; KC 85/2 loaded it from tape or module M006 (robotrontechnik-kc). Origin still unsourced. BASIC of the KC 85/3 and /4; check its ancestry (Microsoft BASIC?)." }
-    - { name: "Z 1013", year: 1985, hint: "U880 kit computer from VEB Robotron-Elektronik Riesa; about 25,000 kits 1985-1990. BASIC only with at least 16 KB RAM. de.wikipedia: Z 1013." }
-    - { name: "Agat", year: 1983, hint: "Soviet Apple II-inspired school computer, made 1984-1990; ran Rapira and Robic." }
-    - { name: "Robic", year: 1975, hint: "Researched 2026-11-01 (wiki-robic): no designers or code on en.wikipedia; ru.wikipedia unreachable. Soviet language for primary-school children (8-11), later in the 'Schoolgirl' package on the Agat." }
-    - { name: "Elbrus-1", year: 1979, hint: "Lebedev Institute; Vsevolod Burtsev. Programmed in El-76." }
-    - { name: "El-76", year: 1972, hint: "Researched 2026-11-01 (wiki-el-76): Babayan et al., Lebedev Institute; the Wikipedia example was flattened in fetch, needs a clean copy. High-level language of the Elbrus, by Boris Babayan and colleagues (1972-73), Russian keywords." }
+    - { name: "Kleincomputer BASIC (KC 87 / Z 9001)", hint: "The 10 KB BASIC of the Robotron KC 87, which Z 1013 owners typed in from a listing (dewiki-z-1013). Is it the same interpreter as the Mühlhausen KC-BASIC?" }
+    - { name: "Elbrus-2", year: 1984, hint: "en.wikipedia 1984; ru.wikipedia developed 1977-1984, delivered 1985, up to 200 built, zero-address stack instruction set. Likely a milestone or successor node of elbrus-1." }
   research_questions:
-    - "Which BASIC dialects ran on GDR machines (KC-BASIC, Z 1013 BASIC), and do they descend from Microsoft BASIC?"
+    - "Which BASIC dialects ran on GDR machines (KC-BASIC, Z 1013 BASIC), and do they descend from Microsoft BASIC? de.wikipedia and robotrontechnik.de (read 2026-11-20) are silent on KC-BASIC's origin and authors; HC/Funkamateur articles or René Meyer's book on GDR computers are leads."
+    - "Robic: no program longer than the command ОТКРЫТЬ ОКНО found; Ershov and Zvenigorodsky's 1979 Kvant article would give real code."
+    - "Agat: who designed it, and is the Apple II influence documented beyond resemblance? Needed for an edge once an Apple II node exists."
+    - "El-76: add ALMIR-65 and Analitik as nodes to carry the infobox influences."
     - "Who designed the U880 and how was it copied? Kieser and Meder (1986) and silirium.ru/fwe-z80.html are leads."
   key_sources: [wiki-u880, kieser-meder-1986-u880]
 - id: machines/risc
@@ -442,8 +439,8 @@
   name: JOSS and its descendants
   summary: "RAND's conversational JOSS and the interactive languages that followed it: TELCOMP, CAL, FOCAL, AID, MUMPS."
   research_status: stub
-  backlog:
-    - { name: "AID (Algebraic Interpretive Dialogue)", year: 1968, hint: "Only named in the JOSS article (\"Algebraic Interpretive Dialogue (AID, on PDP-10)\", infobox Influenced list); no article, year or designer. Needs a DEC PDP-10 AID manual." }
+  research_questions:
+    - "AID: read DEC-10-AJBO-D (1968, no copy online) or the University of Queensland adaptation (MNT-10, 1970, on bitsavers) to name its designers and confirm whether it followed JOSS or JOSS-2."
 - id: basic
   name: BASIC family
   summary: "Dartmouth BASIC and its descendants: the home-computer interpreters, Microsoft's DOS and Windows line, and machine-specific extensions."
@@ -461,7 +458,7 @@
   summary: "Atari 8-bit BASIC, the rare non-Microsoft home-computer BASIC, and its faster replacements."
   research_status: draft
   backlog:
-    - { name: "BASIC XL / BASIC XE (OSS)", hint: "Optimized Systems Software article: both \"based on Atari BASIC\", BASIC XL a bank-selected cartridge that replaced BASIC A+, XE an enhanced XL for 64KB machines; no release years stated." }
+    - { name: "BASIC A+ (OSS)", hint: "Disk-based OSS interpreter \"compatible with Atari BASIC\" with PRINT USING, trace, DOS commands, player/missile graphics; predecessor of basic-xl (wiki-optimized-systems-software). No year in that article; en.wikipedia has a BASIC A+ page." }
 - id: basic/pc-compilers
   name: Third-party BASIC compilers for the PC
   parent: basic
@@ -472,8 +469,8 @@
   parent: basic
   summary: "Microsoft 6502 BASIC on Commodore machines, and the cartridges that added what it lacked."
   research_status: draft
-  backlog:
-    - { name: "Commodore BASIC 3.5 / 7.0 as nodes or milestones", hint: "7.0 is a milestone (1985). Wikipedia gives no years for 3.5 or 4.0 (checked 2026-11-01); they stay notes on commodore-basic." }
+  research_questions:
+    - "Commodore BASIC 4.0: date it from a period source (PET/CBM 4000/8000) so it can become a milestone."
 - id: concurrency
   name: Concurrency models and languages
   summary: "Formalisms and languages that made concurrency a first-class concern. See the concurrency lineage for the narrative thread."

@@ -8238,3 +8238,84 @@
   year: 2022
   url: https://arxiv.org/abs/2204.13041
   checked: '2026-11-20'
+- id: wiki-kr580vm80a
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: KR580VM80A'
+  url: https://en.wikipedia.org/wiki/KR580VM80A
+  checked: '2026-11-20'
+- id: dewiki-kc-85-2
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia (de): KC 85/2'
+  url: https://de.wikipedia.org/wiki/KC_85/2
+  checked: '2026-11-20'
+- id: dewiki-z-1013
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia (de): Z 1013'
+  url: https://de.wikipedia.org/wiki/Z_1013
+  checked: '2026-11-20'
+- id: wiki-agat
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Agat (computer)'
+  url: https://en.wikipedia.org/wiki/Agat_(computer)
+  checked: '2026-11-20'
+- id: ruwiki-robik
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia (ru): Робик'
+  url: https://ru.wikipedia.org/wiki/Робик
+  checked: '2026-11-20'
+- id: wiki-elbrus
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Elbrus (computer)'
+  url: https://en.wikipedia.org/wiki/Elbrus_(computer)
+  checked: '2026-11-20'
+- id: ruwiki-elbrus-1
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia (ru): Эльбрус-1'
+  url: https://ru.wikipedia.org/wiki/Эльбрус-1
+  checked: '2026-11-20'
+- id: ruwiki-el-76
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia (ru): Эль-76'
+  url: https://ru.wikipedia.org/wiki/Эль-76
+  checked: '2026-11-20'
+- id: wiki-optimized-systems-software
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Optimized Systems Software'
+  url: https://en.wikipedia.org/wiki/Optimized_Systems_Software
+  checked: '2026-11-20'
+- id: riggs-1985-basic-xe
+  type: web
+  primary: true
+  authors: [Robert L. Riggs]
+  title: 'BASIC XE For Atari XL & XE (review)'
+  venue: COMPUTE! 67, December 1985, p. 84
+  year: 1985
+  url: https://www.atarimagazines.com/compute/issue67/318_1_Reviews_BASIC_XE_For_Atari_XL_XE.php
+  checked: '2026-11-20'
+- id: twenex-aid
+  type: web
+  primary: false
+  title: 'TOPS-20 User Wiki: AID'
+  url: https://wiki.twenex.org/aid
+  checked: '2026-11-20'
+- id: manx-dec-10-ajbo-d
+  type: web
+  primary: false
+  title: 'Manx catalogue: AID (Algebraic Interpretive Dialogue), DEC-10-AJBO-D, 1968-10'
+  url: https://vt100.net/manx/details/1,10833
+  checked: '2026-11-20'
+- id: wiki-commodore-plus-4
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Commodore Plus/4'
+  url: https://en.wikipedia.org/wiki/Commodore_Plus/4
+  checked: '2026-11-20'

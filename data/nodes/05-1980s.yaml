@@ -5565,6 +5565,95 @@
       ' Hello World for Amiga Basic
       PRINT "Hello world!"
 
+- id: basic-xl
+  name: BASIC XL
+  aliases: [OSS BASIC XL]
+  kind: language
+  category: general
+  cluster: basic/atari
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "Reference manual, 1st edition, copyright 1983 (title of the atariwiki.org scan; the scan itself could not be fetched). COMPUTE! in December 1985: \"About two years ago, Optimized Systems Software brought out an extended BASIC cartridge\"." }
+    places: [{ institution: Optimized Systems Software, country: US }]
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    features: [line-numbers, interpreter, repl]
+  summary: >
+    Optimized Systems Software's "bank-selected cartridge version of the language that replaced BASIC
+    A+", itself based on Atari BASIC, which OSS's founders had written at Shepardson Microsystems. It
+    fixed bugs and added features; its FAST command replaced constant GOTO, GOSUB and NEXT targets with
+    addresses, which made loops as fast as Microsoft BASIC. Antic (1984) called it "the fastest and most
+    powerful version of BASIC available for Atari computers".
+  notes: >
+    Bill Wilkinson put sales at about 12,000 copies before the merger with ICD, 2.5 to 3 times those of
+    Action!. After FAST, editing a running program invalidates the stored addresses, so CONT is blocked.
+    BASIC A+, the disk-based predecessor, is not yet a node and has no year in the sources read.
+  relations:
+    - { type: dialect_of, to: atari-basic, weight: strong, confidence: high, note: "\"BASIC A+, BASIC XL, and BASIC XE are based on Atari BASIC.\"", sources: [wiki-optimized-systems-software] }
+    - { type: targets, to: mos-6502, weight: strong, confidence: high }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Optimized_Systems_Software" }
+  sources: [wiki-optimized-systems-software, riggs-1985-basic-xe]
+
+- id: basic-xe
+  name: BASIC XE
+  aliases: [OSS BASIC XE]
+  kind: language
+  category: general
+  cluster: basic/atari
+  origin:
+    first_appeared: { year: 1985, precision: circa, note: "Reviewed in COMPUTE! 67 (December 1985), for the 130XE released earlier that year; no release date found." }
+    places: [{ institution: Optimized Systems Software, country: US }]
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    features: [line-numbers, interpreter, repl]
+  summary: >
+    "an enhanced BASIC XL cartridge" with extra functions and high-speed maths, which "because it requires
+    64KB, it only runs on an XL/XE systems". Its XTEND command moved the program into the 130XE's second
+    64 KB bank, leaving "about 35K free for data and strings"; FAST "tells BASIC XE to precompile the
+    program", and it kept XL's ELSE, WHILE, ENDIF and ENDWHILE, with an indenting LIST. It "sold poorly and
+    lost money".
+  notes: >
+    A program saved after XTEND cannot be loaded back into BASIC XL or Atari BASIC. No runtime package was
+    released. The COMPUTE! review (Robert L. Riggs) gives a price of $79.
+  relations:
+    - { type: successor_of, to: basic-xl, weight: strong, confidence: high, note: "\"an enhanced BASIC XL cartridge\" from the same company.", sources: [wiki-optimized-systems-software, riggs-1985-basic-xe] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Optimized_Systems_Software" }
+  sources: [wiki-optimized-systems-software, riggs-1985-basic-xe]
+
+- id: kc-basic
+  name: KC-BASIC
+  aliases: [KC BASIC, HC-BASIC]
+  kind: language
+  category: educational
+  cluster: machines/eastern-bloc
+  origin:
+    first_appeared: { year: 1986, precision: year, note: "Built into the ROM of the KC 85/3, which \"kam 1986 in den Handel\". Before that the KC 85/2 loaded it from cassette or from the M006 BASIC module; no date found for those." }
+    places: [{ institution: "VEB Mikroelektronik \"Wilhelm Pieck\" Mühlhausen", city: Mühlhausen, country: DD }]
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [line-numbers, interpreter, repl]
+    domain: [education]
+  summary: >
+    The BASIC interpreter of the Mühlhausen KC 85 school computers, about 10.5 KB, in ROM from the KC 85/3
+    (1986) and KC 85/4 (1988), and on cassette or the M006 module for the KC 85/2. It was the BASIC most
+    GDR pupils met in school computer rooms.
+  notes: >
+    Who wrote it and whether it derives from Microsoft BASIC is not stated in any source read (de.wikipedia,
+    robotrontechnik.de); there is deliberately no edge to microsoft-basic. The KC compact's BASIC 1.1 is a
+    different interpreter on a different machine.
+  relations:
+    - { type: targets, to: kc-85, weight: strong, confidence: high, note: "\"die Programmiersprache BASIC in ROM-Form bereits fest im Rechner eingebaut\" (KC 85/3).", sources: [robotrontechnik-kc, dewiki-kc-85-2] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://de.wikipedia.org/wiki/KC_85/2" }
+  sources: [dewiki-kc-85-2, robotrontechnik-kc]
+
 - id: gfa-basic
   name: GFA BASIC
   kind: language

@@ -472,6 +472,92 @@
           send replyTo ! Value(count)
     sources: [hewitt-1973-actor]
 
+- id: el-76
+  name: El-76
+  aliases: [Эль-76, Автокод Эльбрус, Elbrus autocode, Autocode Elbrus]
+  kind: language
+  category: systems
+  cluster: machines/eastern-bloc
+  origin:
+    first_appeared: { year: 1972, precision: range, year_end: 1973, note: "\"developed in 1972–1973\" (en.wikipedia; ru.wikipedia: \"разработан в 1972–1973 годах\"). Originally called \"Автокод Эльбрус\"." }
+    places: [{ institution: Lebedev Institute of Precision Mechanics and Computer Engineering, city: Moscow, country: SU }]
+  creators:
+    - { name: Vladimir Pentkovski, role: "author (ru.wikipedia); with a group of developers" }
+    - { name: Boris Babayan, role: "team lead (en.wikipedia: \"Boris Babayan & Co.\")" }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+  summary: >
+    The high-level language of the Soviet Elbrus multiprocessors, with Russian keywords (процедура, если,
+    иначе, все). It was called an autocode because the Elbrus had no lower-level language: there was no
+    assembler, and the system software was written in El-76. Its distinctive feature was keeping the type
+    of a variable in memory with its value, matching the machine's tagged words.
+  notes: >
+    en.wikipedia lists V. M. Pentkovskii, S. V. Semenikhin, S. V. Veretennikov, V. Y. Volkonsky, S. M.
+    Zotov and others as participants. Both Wikipedias list ALMIR-65 and Analitik(-74) as influences;
+    neither is a node yet.
+  relations:
+    - { type: influenced_by, to: algol-68, weight: moderate, confidence: medium, note: "ru.wikipedia notes its similarity to ALGOL 68; en.wikipedia's Elbrus article calls the system language \"an ALGOL-68 variant\". No designer statement read.", sources: [ruwiki-el-76, wiki-elbrus] }
+    - { type: targets, to: elbrus-1, weight: strong, confidence: high, note: "\"Базовый язык — Автокод «Эльбрус» Эль-76\".", sources: [ruwiki-elbrus-1, wiki-el-76] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/El-76" }
+  sources: [wiki-el-76, ruwiki-el-76, ruwiki-elbrus-1]
+  example:
+    title: Greetings from a procedure
+    language: El-76
+    note: "From ru.wikipedia's El-76 article (bold keywords shown plain). It prints \"Привет просто так!\" and then, from the procedure, that the world was sent 100 greetings; инес is else-if, все closes the if, % starts a comment."
+    code: |2
+       программа
+         процедура передатьпривет = проц(ф32 числоприветов)
+         начало
+           если числоприветов = 0 то
+             печатьмс(стр8 "МИР не получил ни одного привета!")
+           инес числоприветов = 1 то
+             печатьмс(стр8 "В МИР был отправлен всего один привет!")
+           иначе
+             печатьмс(стр8 "МИРУ передали несколько приветов. А если точно, то их было");
+             печать(числоприветов)
+           все
+         конец;
+
+         печатьмс(стр8 "Привет просто так!"); % такой привет мартышка точно не потеряет
+         печатькс();                          % разрыв строки
+         передатьпривет(100)                  % привет из процедуры
+       конец
+    sources: [ruwiki-el-76]
+
+- id: robic
+  name: Robic
+  aliases: [Robik, Робик]
+  kind: language
+  category: educational
+  cluster: machines/eastern-bloc
+  origin:
+    first_appeared: { year: 1975, precision: year, note: "Developed \"в 1975 году\" (ru.wikipedia; en.wikipedia agrees)." }
+    places: [{ country: SU }]
+  creators:
+    - { name: Gennady Zvenigorodsky, role: main developer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    domain: [education]
+  summary: >
+    A Soviet language "для обучения основам программирования школьников младших классов (8—11 лет)":
+    programming for primary-school children, with Russian commands such as ОТКРЫТЬ ОКНО. It was taught in
+    tandem with the more developed Rapira, which pupils moved on to, and was later reworked for the
+    Schoolgirl (Школьница) software package on the Agat school computer.
+  notes: >
+    Andrey Ershov co-authored a 1979 Kvant article on Robic; E. V. Nalimov implemented it in Schoolgirl,
+    published by the Novosibirsk Computing Center. The original institution is not named, and no program
+    longer than one command has been found.
+  relations:
+    - { type: targets, to: agat, year: 1984, weight: moderate, confidence: high, note: "Later version in the Schoolgirl package for the Agat; the year is the Agat's mass production, not a documented port date.", sources: [ruwiki-robik, wiki-agat] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Robic" }
+  sources: [ruwiki-robik, wiki-robic]
+
 - id: clu
   name: CLU
   kind: language
@@ -949,6 +1035,7 @@
   milestones:
     - { version: "1.0", year: 1977, summary: "PET 2001." }
     - { version: "2.0 (VIC-20, C64)", year: 1982, summary: "The C64's BASIC: no commands for its graphics or sound chips, so everything was PEEK and POKE." }
+    - { version: "3.5", year: 1984, introduces: [structured], summary: "C16 and Plus/4 (introduced June 1984): BASIC 4.0's disk commands plus sound and graphics for the TED chip, DO/LOOP/WHILE/UNTIL/EXIT, MONITOR." }
     - { version: "7.0", year: 1985, summary: "C128: sprite commands, BEGIN/BEND blocks, FAST/SLOW." }
   summary: >
     Microsoft's 6502 BASIC as adapted by Commodore for the PET, VIC-20, C64, C16, Plus/4 and C128.
@@ -958,16 +1045,16 @@
     such as Simons' BASIC filled the gap.
   notes: >
     Easter egg: WAIT 6502,1 on a PET with BASIC 2 prints MICROSOFT!. Microsoft's copyright notice appeared
-    on screen only from V7.0 (C128). Not yet dated from a source, so not milestones: 4.0 (PET/CBM
-    4000/8000, 15 disk commands such as DLOAD and SCRATCH) and 3.5 (C16 and Plus/4: graphics and sound
-    commands, DO/LOOP/WHILE/UNTIL/EXIT, MONITOR).
+    on screen only from V7.0 (C128). Not yet dated from a source, so not a milestone: 4.0 (PET/CBM
+    4000/8000, 15 disk commands such as DLOAD and SCRATCH). The 3.5 milestone takes its year from the
+    Plus/4's introduction (June 1984); the C16 shipped alongside it.
   relations:
     - { type: dialect_of, to: microsoft-basic, weight: strong, confidence: high, note: "Licensed 6502 Microsoft BASIC, developed further by Commodore.", sources: [wiki-commodore-basic] }
     - { type: targets, to: mos-6502, weight: strong, confidence: high }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Commodore_BASIC" }
-  sources: [wiki-commodore-basic, wiki-commodore-64]
+  sources: [wiki-commodore-basic, wiki-commodore-64, wiki-commodore-plus-4]
   example:
     title: "BASIC V2 as people really typed it"
     language: "Commodore BASIC V2 (C64)"
