@@ -50,6 +50,7 @@
 	<div class="views" role="group" aria-label="View">
 		<Button variant="pill" aria-pressed={viewer.view === 'timeline'} onclick={() => (viewer.view = 'timeline')} title="Every language on a year axis">Timeline</Button>
 		<Button variant="pill" aria-pressed={viewer.view === 'network'} onclick={() => (viewer.view = 'network')} title="Ancestors and descendants of the selected language">Network</Button>
+		<Button variant="pill" aria-pressed={viewer.view === 'map'} onclick={() => (viewer.view = 'map')} title="Every language placed by similarity: t-SNE or a self-organising map">Map</Button>
 	</div>
 
 	<div class="actions">

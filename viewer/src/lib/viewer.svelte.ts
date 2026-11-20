@@ -34,6 +34,7 @@ interface Persisted {
 	depth: 'direct' | 'full';
 	view: View;
 	hops: number;
+	mapMethod: MapMethod;
 }
 
 function loadPersisted(): Partial<Persisted> {
@@ -57,8 +58,12 @@ function loadRecent(): string[] {
 export const SHEET = { peek: 0.3, half: 0.55, full: 1 } as const;
 export type SheetSnap = keyof typeof SHEET;
 
-/** timeline = everything on a year axis; network = the selected node's neighbourhood */
-export type View = 'timeline' | 'network';
+/** timeline = everything on a year axis; network = the selected node's neighbourhood;
+ * map = every node placed by similarity of its relations, concepts and cluster */
+export type View = 'timeline' | 'network' | 'map';
+export type MapMethod = 'tsne2' | 'tsne3' | 'som';
+const VIEWS: View[] = ['timeline', 'network', 'map'];
+const MAP_METHODS: MapMethod[] = ['tsne2', 'tsne3', 'som'];
 
 export type Selection = { type: 'node' | 'cluster'; id: string } | null;
 export type Hover = { type: 'node'; id: string } | { type: 'edge'; from: string; to: string; idx: number } | null;
@@ -88,6 +93,7 @@ class Viewer {
 	view = $state<View>('timeline');
 	/** network view: how many hops out from the selected node */
 	hops = $state(2);
+	mapMethod = $state<MapMethod>('tsne2');
 	legendOpen = $state(true);
 	/** narrow screens: the key covers the plot, so it starts closed every visit */
 	legendOpenNarrow = $state(false);
@@ -130,7 +136,8 @@ class Viewer {
 		this.legendOpen = p.legend ?? !this.narrow.current;
 		this.panelWidth = p.panelWidth ?? null;
 		this.depth = p.depth ?? 'full';
-		this.view = p.view === 'network' ? 'network' : 'timeline';
+		this.view = VIEWS.includes(p.view!) ? p.view! : 'timeline';
+		this.mapMethod = MAP_METHODS.includes(p.mapMethod!) ? p.mapMethod! : 'tsne2';
 		this.hops = [1, 2, 3].includes(p.hops ?? 0) ? p.hops! : 2;
 	}
 
@@ -161,7 +168,8 @@ class Viewer {
 			panelWidth: this.panelWidth,
 			depth: this.depth,
 			view: this.view,
-			hops: this.hops
+			hops: this.hops,
+			mapMethod: this.mapMethod
 		};
 		try {
 			localStorage.setItem(STORAGE_KEY, JSON.stringify(p));
