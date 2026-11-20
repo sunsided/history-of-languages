@@ -2308,6 +2308,7 @@
 - id: powerpc
   kind: machine
   wiki: PowerPC
+  commons_file: File:IBM_PowerPC601_PPC601FD-080-2_top.jpg
   nodes:
   - powerpc
 - id: person-ismail-al-jazari

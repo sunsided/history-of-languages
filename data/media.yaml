@@ -3364,6 +3364,18 @@
   source_url: https://commons.wikimedia.org/wiki/File:Sun_UltraSPARCII.jpg
   commons_file: File:Sun_UltraSPARCII.jpg
   checked: '2026-11-20'
+- id: powerpc
+  file: assets/media/powerpc.jpg
+  kind: machine
+  nodes:
+  - powerpc
+  caption: PowerPC
+  credit: unknown
+  license: CC BY-SA 3.0
+  license_url: http://creativecommons.org/licenses/by-sa/3.0/
+  source_url: https://commons.wikimedia.org/wiki/File:IBM_PowerPC601_PPC601FD-080-2_top.jpg
+  commons_file: File:IBM_PowerPC601_PPC601FD-080-2_top.jpg
+  checked: '2026-11-20'
 - id: person-ismail-al-jazari
   file: assets/media/person-ismail-al-jazari.png
   kind: person
