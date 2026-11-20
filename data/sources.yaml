@@ -6688,3 +6688,53 @@
   title: "Verus examples: guide/getting_started.rs"
   url: https://github.com/verus-lang/verus/blob/8707ef26789e8b734c2d5bfe6d866356314bd859/examples/guide/getting_started.rs
   checked: '2026-11-20'
+- id: astrauskas-2019-prusti
+  type: paper
+  primary: true
+  authors: [Vytautas Astrauskas, Peter Müller, Federico Poli, Alexander J. Summers]
+  title: Leveraging Rust types for modular specification and verification
+  venue: Proceedings of the ACM on Programming Languages 3(OOPSLA)
+  year: 2019
+  doi: 10.1145/3360573
+  url: https://doi.org/10.1145/3360573
+- id: prusti-readme
+  type: manual
+  primary: true
+  authors: [ETH Zurich Programming Methodology Group]
+  title: Prusti README
+  url: https://github.com/viperproject/prusti-dev
+  checked: '2026-11-20'
+- id: denis-2022-creusot
+  type: paper
+  primary: true
+  authors: [Xavier Denis, Jacques-Henri Jourdan, Claude Marché]
+  title: "Creusot: A Foundry for the Deductive Verification of Rust Programs"
+  venue: ICFEM 2022, Lecture Notes in Computer Science
+  year: 2022
+  doi: 10.1007/978-3-031-17244-1_6
+  url: https://hal.inria.fr/hal-03737878/file/main.pdf
+- id: creusot-readme
+  type: manual
+  primary: true
+  authors: [Creusot contributors]
+  title: Creusot README
+  url: https://github.com/creusot-rs/creusot
+  checked: '2026-11-20'
+- id: ho-2022-aeneas
+  type: paper
+  primary: true
+  authors: [Son Ho, Jonathan Protzenko]
+  title: "Aeneas: Rust verification by functional translation"
+  venue: Proceedings of the ACM on Programming Languages 6(ICFP)
+  year: 2022
+  doi: 10.1145/3547647
+  url: https://arxiv.org/abs/2206.07185
+- id: lehmann-2023-flux
+  type: paper
+  primary: true
+  authors: [Nico Lehmann, Adam T. Geller, Niki Vazou, Ranjit Jhala]
+  title: "Flux: Liquid Types for Rust"
+  venue: Proceedings of the ACM on Programming Languages 7(PLDI)
+  year: 2023
+  doi: 10.1145/3591283
+  url: https://arxiv.org/abs/2207.04034

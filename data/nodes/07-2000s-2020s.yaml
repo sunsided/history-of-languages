@@ -8593,3 +8593,121 @@
 
       } // verus!
     sources: [verus-repo-examples]
+
+- id: prusti
+  name: Prusti
+  kind: language
+  category: research
+  cluster: verification
+  origin:
+    first_appeared: { year: 2019, precision: year, note: "Astrauskas, Müller, Poli and Summers, OOPSLA 2019 (PACMPL, October 2019); repository created May 2019." }
+    places: [{ institution: ETH Zurich, city: Zurich, country: CH }]
+  creators:
+    - { name: Vytautas Astrauskas, role: designer }
+    - { name: Peter Müller, role: designer }
+    - { name: Federico Poli, role: designer }
+    - { name: Alexander J. Summers, role: designer }
+  status: maintained
+  tags:
+    features: [contracts]
+    domain: [theorem-proving]
+  summary: >
+    "A prototype verifier for Rust that makes it possible to formally prove absence of bugs and correctness of code
+    contracts", built on ETH's Viper infrastructure. Preconditions, postconditions and loop invariants are written as
+    annotations on Rust functions, and the technique "leverages Rust's type system to greatly simplify the
+    specification and verification of system software".
+  relations:
+    - { type: dialect_of, to: rust, weight: strong, confidence: medium, sources: [astrauskas-2019-prusti, prusti-readme], note: "Rust with specification annotations; arguably a verifier for annotated Rust rather than a dialect." }
+  research_status: stub
+  confidence: high
+  links: { homepage: "https://www.pm.inf.ethz.ch/research/prusti.html" }
+  sources: [astrauskas-2019-prusti, prusti-readme]
+
+- id: creusot
+  name: Creusot
+  kind: language
+  category: research
+  cluster: verification
+  origin:
+    began: { year: 2021, date: "2021-01-25", precision: exact, note: "Repository creusot-rs/creusot created 25 January 2021." }
+    first_appeared: { year: 2022, precision: year, note: "Denis, Jourdan and Marché, ICFEM 2022." }
+    places: [{ institution: Inria, country: FR }]
+  creators:
+    - { name: Xavier Denis, role: designer }
+    - { name: Jacques-Henri Jourdan, role: designer }
+    - { name: Claude Marché, role: designer }
+  status: active
+  tags:
+    features: [contracts]
+    domain: [theorem-proving]
+  summary: >
+    "A deductive verifier for Rust code" that checks code is "safe from panics, overflows, and assertion failures" and,
+    with annotations, that it does "the correct thing". It translates Rust to Coma, an intermediate verification
+    language of the Why3 platform, whose provers discharge the verification conditions.
+  relations:
+    - { type: dialect_of, to: rust, weight: strong, confidence: medium, sources: [denis-2022-creusot, creusot-readme], note: "Annotated Rust; arguably a verifier rather than a dialect." }
+  research_status: stub
+  confidence: high
+  links: { homepage: "https://github.com/creusot-rs/creusot" }
+  sources: [denis-2022-creusot, creusot-readme]
+
+- id: aeneas
+  name: Aeneas
+  aliases: [LLBC, Low-Level Borrow Calculus]
+  kind: language
+  category: research
+  cluster: verification
+  origin:
+    first_appeared: { year: 2022, date: "2022-06-14", precision: exact, note: "Ho and Protzenko, arXiv:2206.07185 (14 June 2022); ICFP 2022." }
+  creators:
+    - { name: Son Ho, role: designer }
+    - { name: Jonathan Protzenko, role: designer }
+  status: active
+  tags:
+    paradigm: [functional]
+    memory: [ownership-borrowing]
+    domain: [theorem-proving]
+  summary: >
+    "A new verification toolchain for Rust programs based on a lightweight functional translation": safe Rust without
+    interior mutability is translated into pure functional code for proof assistants, so proofs need no memory
+    reasoning. Its core is LLBC, "a Low-Level Borrow Calculus that captures a large subset of Rust programs", with a
+    value-based, ownership-centric semantics.
+  notes: >
+    Aeneas checks unmodified safe Rust, so by the dataset's scope rule it is a tool rather than a dialect; it is mapped
+    as a node for its LLBC calculus and on request. No dialect edge is stored.
+  relations:
+    - { type: influenced_by, to: rust, aspects: [ownership-borrowing], weight: strong, confidence: high, sources: [ho-2022-aeneas] }
+  research_status: stub
+  confidence: high
+  links: { homepage: "https://github.com/AeneasVerif/aeneas" }
+  sources: [ho-2022-aeneas]
+
+- id: flux
+  name: Flux
+  aliases: [Liquid types for Rust]
+  kind: language
+  category: research
+  cluster: verification
+  origin:
+    first_appeared: { year: 2022, date: "2022-07-08", precision: exact, note: "Lehmann, Geller, Vazou and Jhala, arXiv:2207.04034 (8 July 2022); PLDI 2023." }
+    places: [{ institution: University of California San Diego, city: San Diego, country: US }]
+  creators:
+    - { name: Nico Lehmann, role: designer }
+    - { name: Adam T. Geller, role: designer }
+    - { name: Niki Vazou, role: designer }
+    - { name: Ranjit Jhala, role: designer }
+  status: active
+  tags:
+    typing: [refinement-types]
+    memory: [ownership-borrowing]
+    domain: [theorem-proving]
+  summary: >
+    Liquid (refinement) types for Rust: "logical refinements can work hand in glove with Rust's ownership mechanisms to
+    yield ergonomic type-based verification of low-level pointer manipulating programs". Implemented as "a plug-in to
+    the Rust compiler", it indexes mutable locations by pure values and relies on Rust's aliasing guarantees.
+  relations:
+    - { type: dialect_of, to: rust, weight: strong, confidence: high, sources: [lehmann-2023-flux], note: "Rust with refinement-type annotations, checked by a compiler plug-in." }
+  research_status: stub
+  confidence: high
+  links: { homepage: "https://github.com/flux-rs/flux" }
+  sources: [lehmann-2023-flux]
