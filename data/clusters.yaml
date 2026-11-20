@@ -554,10 +554,15 @@
     - { name: "Geometric Description Language", hint: "BASIC-like language of Archicad library parts (Graphisoft). Wikipedia gives no year, designer or versions and cites no sources; needs a Graphisoft source." }
 - id: gpu
   name: Shader and GPU languages
-  summary: "Languages for programming graphics processors and accelerators: GLSL, HLSL, WGSL, OpenCL, SYCL."
-  research_status: stub
+  summary: "Languages for programming graphics processors and accelerators: the shading line from RenderMan SL through Stanford RTSL to Cg, HLSL, GLSL, Metal and WGSL, and GPU computing from Brook to CUDA, OpenCL and SYCL."
+  research_status: draft
+  key_sources: [hanrahan-1990-shading-language, mark-2003-cg, buck-2004-brookgpu, nickolls-2008-cuda]
   backlog:
-    - { name: "High Level Shader Language", hint: "Microsoft's shading language for Direct3D 9, developed alongside Nvidia's Cg; influenced GLSL (Wikipedia). No year on the page; use the Direct3D 9 release date from another source." }
+    - { name: "Shade trees", year: 1984, hint: "Robert L. Cook, \"Shade Trees\", SIGGRAPH '84 (doi:10.1145/964965.808602); the inspiration for RenderMan SL. Possibly a notation node." }
+    - { name: "3Dlabs shading language (3DLSL)", year: 2002, hint: "Named by the Cg paper as a contemporaneous C-like shading language; the proposal behind GLSL." }
+  research_questions:
+    - "Did CUDA grow out of Brook? NVIDIA's 2008 Queue paper treats Brook only as related work; the Brook-to-CUDA story comes from Wikipedia citing Business Insider (2025). An interview with Ian Buck or an NVIDIA history would settle the low-confidence edge."
+    - "GLSL, HLSL and Cg were designed at the same time and \"drew ideas from and contributed ideas to\" each other (Cg paper); no directed edge between GLSL and the other two is recorded."
 - id: industrial
   name: Industrial, real-time and synchronous languages
   summary: "PLC languages of IEC 61131-3, robot and machine-tool languages, telecom switching languages and synchronous languages such as Esterel and Lustre."

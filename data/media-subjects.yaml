@@ -2567,3 +2567,23 @@
   wiki: John A. Smolin
   nodes:
   - openqasm
+- id: person-pat-hanrahan
+  kind: person
+  person: Pat Hanrahan
+  wiki: Pat Hanrahan
+  nodes:
+  - renderman-sl
+  - rtsl
+  - brook
+- id: person-kurt-akeley
+  kind: person
+  person: Kurt Akeley
+  wiki: Kurt Akeley
+  nodes:
+  - cg
+- id: person-mark-kilgard
+  kind: person
+  person: Mark Kilgard
+  wiki: Mark Kilgard
+  nodes:
+  - cg

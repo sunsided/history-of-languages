@@ -2935,3 +2935,56 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/S/SL_programming_language" }
   sources: [wiki-s-sl]
+
+- id: spir-v
+  name: SPIR-V
+  aliases: [SPIR, Standard Portable Intermediate Representation]
+  kind: assembly
+  category: domain-specific
+  cluster: assembly/virtual
+  origin:
+    first_appeared: { year: 2015, date: "2015-03-03", precision: exact, note: "Revealed with Vulkan at GDC, 3 March 2015; SPIR-V 1.0 ratified 16 November 2015; adopted by Vulkan 1.0, 16 February 2016." }
+    places: [{ institution: Khronos Group, country: US }]
+  creators:
+    - { name: John Kessenich, role: specification editor }
+  status: active
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing]
+    features: [intermediate-code, standardization]
+    domain: [computer-graphics, parallel-hardware]
+  milestones:
+    - { version: "1.0", year: 2015, date: "2015-11-16", summary: "Ratified with OpenCL 2.1: \"an intermediate language fully defined by Khronos with unique, native support for graphics shaders and computational kernels\".", sources: [khronos-2015-spirv-1-0] }
+  summary: >
+    "A simple binary intermediate language for graphical shaders and compute kernels" in static single-assignment form,
+    shared by Vulkan and OpenCL so that "high-level language front-ends ... emit programs in a standardized intermediate
+    form". It replaced Khronos's earlier SPIR, which was "a specialization of LLVM 3.2 IR" for OpenCL; GLSL, HLSL and
+    other languages compile to it, and Microsoft announced in 2024 that DirectX Shader Model 7 will adopt it.
+  relations:
+    - { type: successor_of, to: llvm-ir, weight: weak, confidence: medium, sources: [khronos-2014-spir-1-2, khronos-2015-vulkan-reveal], note: "SPIR 1.2 (January 2014) was \"a specialization of LLVM 3.2 IR\"; SPIR-V is \"a revolution\" of SPIR, \"now fully defined by Khronos\". The earlier SPIR has no node of its own." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Standard_Portable_Intermediate_Representation", homepage: "https://registry.khronos.org/SPIR-V/" }
+  sources: [khronos-2015-vulkan-reveal, khronos-2015-spirv-1-0, khronos-spirv-spec, kessenich-2015-spirv-intro, khronos-2014-spir-1-2, ms-2024-directx-spirv]
+  example:
+    title: A disassembled fragment shader (excerpt)
+    language: SPIR-V 1.0
+    note: "Excerpt from the SPIR-V specification's example (section 1.10), a disassembled GLSL fragment shader; debug-name and decoration lines omitted."
+    code: |
+      ; Magic:     0x07230203 (SPIR-V)
+      ; Version:   0x00010000 (Version: 1.0.0)
+      ; Generator: 0x00080001 (Khronos Glslang Reference Front End; 1)
+      ; Bound:     63
+      ; Schema:    0
+                     OpCapability Shader
+                %1 = OpExtInstImport "GLSL.std.450"
+                     OpMemoryModel Logical GLSL450
+                     OpEntryPoint Fragment %4 "main" %31 %33 %42 %57
+                     OpExecutionMode %4 OriginLowerLeft
+                     OpSource GLSL 450
+                     OpName %4 "main"
+                %2 = OpTypeVoid
+                %3 = OpTypeFunction %2                      ; void ()
+                %6 = OpTypeFloat 32                         ; 32-bit float
+                %7 = OpTypeVector %6 4                      ; vec4
+    sources: [khronos-spirv-spec]

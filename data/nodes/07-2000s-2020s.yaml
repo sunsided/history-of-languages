@@ -2150,8 +2150,6 @@
   tags:
     paradigm: [imperative, scripting]
     features: [interpreter]
-  milestones:
-    - { version: "4.0", year: 2025, summary: "Rewritten in Rust (released 27 February 2025); earlier C++ and, before 1.8, C." }
   summary: >
     A shell that deliberately breaks POSIX compatibility for a simpler, more uniform syntax: set instead of
     =, no then or fi, functions instead of aliases, and no subshells for language features. Known for
@@ -8857,3 +8855,166 @@
           oDecalCoord = decalCoord;
       }
     sources: [mark-2003-cg]
+
+- id: brook
+  name: Brook
+  aliases: [BrookGPU, Brook for GPUs]
+  kind: language
+  category: research
+  cluster: gpu
+  origin:
+    first_appeared: { year: 2003, date: "2003-10-31", precision: exact, note: "Brook Spec v0.2 (Ian Buck, 31 October 2003), the earliest dated document found; the GPU version was published at SIGGRAPH 2004." }
+    places: [{ institution: Stanford University, city: Stanford, country: US }]
+  creators:
+    - { name: Ian Buck, role: designer }
+    - { name: Pat Hanrahan, role: co-author }
+  status: historical
+  tags:
+    paradigm: [imperative, procedural]
+    concurrency: [data-parallelism]
+    domain: [parallel-hardware, hpc]
+  milestones:
+    - { version: "BrookGPU", year: 2004, date: "2004-08", summary: "\"Brook for GPUs\": Brook \"adapted to the capabilities of graphics hardware\", using the GPU \"as a streaming coprocessor\"; release 0.4 followed in October 2004.", sources: [buck-2004-brookgpu] }
+  summary: >
+    A stream-programming language from Stanford: "an extension of standard ANSI C ... designed to incorporate the ideas
+    of data parallel computing and arithmetic intensity". Data lives in streams, and kernel functions run on every
+    element, with reductions for many-to-one results. Written first for streaming processors such as Stanford's
+    Merrimac, it was adapted to graphics hardware as BrookGPU, one of the first general-purpose languages for GPUs.
+  notes: >
+    Paper authors are Buck, Foley, Horn, Sugerman, Fatahalian, Houston and Hanrahan. Ian Buck later managed GPU-compute
+    software at NVIDIA; that Brook was transformed into CUDA rests on secondary sources (see the cuda node).
+  relations:
+    - { type: dialect_of, to: c, weight: strong, confidence: high, sources: [buck-2003-brook-spec, buck-2004-brookgpu], note: "\"Brook extends C to include simple data-parallel constructs\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/BrookGPU", homepage: "https://graphics.stanford.edu/projects/brookgpu/" }
+  sources: [buck-2003-brook-spec, buck-2004-brookgpu]
+  example:
+    title: SAXPY as a stream kernel
+    language: BrookGPU
+    year: 2004
+    note: "From Buck et al. 2004, section 3; trailing comments rejoined to their lines after text extraction."
+    code: |
+      kernel void saxpy (float a, float4 x<>, float4 y<>,
+                         out float4 result<>) {
+        result = a*x + y;
+      }
+      void main (void) {
+        float a;
+        float4 X[100], Y[100], Result[100];
+        float4 x<100>, y<100>, result<100>;
+        ... initialize a, X, Y ...
+        streamRead(x, X);            // copy data from mem to stream
+        streamRead(y, Y);
+        saxpy(a, x, y, result);      // execute kernel on all elements
+        streamWrite(result, Result); // copy data from stream to mem
+      }
+    sources: [buck-2004-brookgpu]
+
+- id: cuda
+  name: CUDA
+  aliases: [CUDA C, CUDA C++]
+  kind: language
+  category: general
+  cluster: gpu
+  origin:
+    first_appeared: { year: 2006, date: "2006-11-08", precision: exact, note: "Unveiled with the GeForce 8800 on 8 November 2006 (NVIDIA press release); public beta SDK 16 February 2007; CUDA 1.0 in June 2007." }
+    places: [{ institution: NVIDIA, city: Santa Clara, country: US }]
+  creators:
+    - { name: Ian Buck, role: GPU-compute software manager }
+    - { name: John Nickolls, role: director of architecture for GPU computing }
+  status: active
+  tags:
+    paradigm: [imperative, procedural]
+    concurrency: [data-parallelism]
+    memory: [manual-memory, pointers]
+    domain: [parallel-hardware, hpc]
+  milestones:
+    - { version: "1.0", year: 2007, date: "2007-06", summary: "First toolkit release; Programming Guide 1.0 dated 23 June 2007: \"an extension to the C programming language\".", sources: [nvidia-2007-cuda-guide-1, nvidia-cuda-toolkit-archive] }
+    - { version: "6.0", year: 2014, date: "2014-04", summary: "Unified Memory, \"one of the most dramatic programming model improvements in the history of the CUDA platform\".", sources: [harris-2013-unified-memory, nvidia-cuda-toolkit-archive] }
+    - { version: "9.0", year: 2017, date: "2017-09", summary: "Cooperative Groups let kernels \"dynamically organize groups of threads\".", sources: [harris-2017-cooperative-groups, nvidia-cuda-toolkit-archive] }
+  summary: >
+    NVIDIA's GPU computing platform and its language, "a minimal extension of the C and C++ programming languages".
+    Kernels marked __global__ run as grids of thread blocks; threads in a block cooperate through barriers and shared
+    memory, which NVIDIA presented as going beyond "traditional GPU stream computing". Announced as "the industry's first
+    C-compiler development environment for the GPU", it became the dominant language for GPU computing and machine
+    learning.
+  notes: >
+    The 2008 ACM Queue paper treats Brook as related work and does not say CUDA derives from it; the story that Buck and
+    Nickolls "began transforming Brook into CUDA" comes from Wikipedia citing Business Insider (2025), not read. The
+    year C++ support arrived was not dated. The November 2006 release was read in a reprint (HEXUS).
+  relations:
+    - { type: dialect_of, to: c, weight: strong, confidence: high, sources: [nickolls-2008-cuda], note: "\"CUDA is a minimal extension of the C and C++ programming languages\"." }
+    - { type: influenced_by, to: cpp, weight: moderate, confidence: high, sources: [nickolls-2008-cuda] }
+    - { type: influenced_by, to: brook, weight: strong, confidence: low, sources: [nickolls-2008-cuda, wiki-cuda], note: "Ian Buck, Brook's designer, led CUDA's software at NVIDIA; Wikipedia (citing Business Insider 2025) says Brook was transformed into CUDA. A primary NVIDIA or Buck statement would confirm it." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CUDA", homepage: "https://developer.nvidia.com/cuda-toolkit" }
+  sources: [nvidia-2006-cuda, nvidia-2007-cuda-beta, nvidia-2007-cuda-guide-1, nickolls-2008-cuda, nvidia-cuda-toolkit-archive, harris-2013-unified-memory, harris-2017-cooperative-groups, wiki-cuda]
+  example:
+    title: A SAXPY kernel and its launch
+    language: CUDA C
+    year: 2008
+    note: "Verbatim from Nickolls et al. 2008, Fig. 1; indentation restored after text extraction."
+    code: |
+      __global__
+      void saxpy_parallel(int n, float alpha, float *x, float *y)
+      {
+          int i = blockIdx.x*blockDim.x + threadIdx.x;
+          if( i<n ) y[i] = alpha*x[i] + y[i];
+      }
+      // Invoke parallel SAXPY kernel (256 threads per block)
+      int nblocks = (n + 255) / 256;
+      saxpy_parallel<<<nblocks, 256>>>(n, 2.0, x, y);
+    sources: [nickolls-2008-cuda]
+
+- id: metal-sl
+  name: Metal Shading Language
+  aliases: [MSL, Metal]
+  kind: language
+  category: domain-specific
+  cluster: gpu
+  origin:
+    first_appeared: { year: 2014, date: "2014-06-02", precision: exact, note: "Metal announced with the iOS 8 SDK, 2 June 2014; language version ios-metal1.0 targets iOS 8." }
+    places: [{ institution: Apple, city: Cupertino, country: US }]
+  creators:
+    - { name: Apple, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural, generic-programming]
+    typing: [static-typing]
+    concurrency: [data-parallelism]
+    domain: [computer-graphics, parallel-hardware]
+  milestones:
+    - { version: "4.0", year: 2025, summary: "\"In Metal 4 and later, the Metal programming language is a C++17-based specification\"; earlier versions were C++14-based (and the first guide described C++11). Targets iOS 26 / macOS 26.", sources: [apple-msl-spec] }
+  summary: >
+    Apple's language for the Metal API: "a C++ based programming language that developers can use to write code that
+    is executed on the GPU for graphics and general-purpose data-parallel computations", compiled with clang and LLVM.
+    Shaders and compute kernels are C++ functions with address-space qualifiers and attributes such as
+    [[thread_position_in_grid]].
+  notes: >
+    The first guide described the language against C++11; the current specification says versions before Metal 4 are
+    C++14-based and "In Metal 4 and later, the Metal programming language is a C++17-based specification". Metal 4
+    targets iOS 26 / macOS 26; the spec gives OS versions, not dates, so it is not yet a dated milestone. The version
+    that moved from C++11 to C++14 was not identified.
+  relations:
+    - { type: dialect_of, to: cpp, weight: strong, confidence: high, sources: [apple-2015-msl-guide, apple-msl-spec], note: "\"a C++ based programming language\"; \"a C++17-based specification with extensions and restrictions\" since Metal 4." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://developer.apple.com/metal/" }
+  sources: [apple-2014-ios8-sdk, apple-2015-msl-guide, apple-msl-spec]
+  example:
+    title: A compute kernel over a grid
+    language: Metal Shading Language
+    note: "Verbatim from Apple's \"Performing Calculations on a GPU\" sample."
+    code: |
+      kernel void add_arrays(device const float* inA,
+                             device const float* inB,
+                             device float* result,
+                             uint index [[thread_position_in_grid]])
+      {
+          // the for-loop is replaced with a collection of threads, each of which
+          // calls this function.
+          result[index] = inA[index] + inB[index];
+      }
+    sources: [apple-metal-gpu-calculations]

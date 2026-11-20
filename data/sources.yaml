@@ -6848,3 +6848,148 @@
   authors: [NVIDIA]
   title: Cg Toolkit
   url: https://developer.nvidia.com/cg-toolkit
+- id: buck-2003-brook-spec
+  type: standard
+  primary: true
+  authors: [Ian Buck]
+  title: Brook Spec v0.2
+  year: 2003
+  url: http://web.archive.org/web/20110726144611/http://merrimac.stanford.edu/brook/brookspec-v0.2.pdf
+  checked: '2026-11-20'
+- id: buck-2004-brookgpu
+  type: paper
+  primary: true
+  authors: [Ian Buck, Tim Foley, Daniel Horn, Jeremy Sugerman, Kayvon Fatahalian, Mike Houston, Pat Hanrahan]
+  title: "Brook for GPUs: Stream Computing on Graphics Hardware"
+  venue: ACM Transactions on Graphics 23(3) (SIGGRAPH 2004), pp. 777-786
+  year: 2004
+  doi: 10.1145/1015706.1015800
+  url: https://graphics.stanford.edu/papers/brookgpu/brookgpu.pdf
+  checked: '2026-11-20'
+- id: nvidia-2006-cuda
+  type: web
+  primary: true
+  authors: [NVIDIA]
+  title: NVIDIA Unveils CUDA - The GPU Computing Revolution Begins (press release, reprinted by HEXUS)
+  year: 2006
+  url: https://hexus.net/qaha5
+- id: nvidia-2007-cuda-beta
+  type: web
+  primary: true
+  authors: [NVIDIA]
+  title: NVIDIA CUDA Unleashes Power of GPU Computing
+  year: 2007
+  url: https://web.archive.org/web/20070329144655/http://www.nvidia.com/object/IO_39918.html
+- id: nvidia-2007-cuda-guide-1
+  type: manual
+  primary: true
+  authors: [NVIDIA]
+  title: NVIDIA CUDA Programming Guide, Version 1.0
+  year: 2007
+  url: http://developer.download.nvidia.com/compute/cuda/1.0/NVIDIA_CUDA_Programming_Guide_1.0.pdf
+- id: nickolls-2008-cuda
+  type: paper
+  primary: true
+  authors: [John Nickolls, Ian Buck, Michael Garland, Kevin Skadron]
+  title: Scalable Parallel Programming with CUDA
+  venue: ACM Queue 6(2), pp. 40-53
+  year: 2008
+  doi: 10.1145/1365490.1365500
+  url: https://queue.acm.org/detail.cfm?id=1365500
+  checked: '2026-11-20'
+- id: nvidia-cuda-toolkit-archive
+  type: web
+  primary: true
+  authors: [NVIDIA]
+  title: CUDA Toolkit Archive
+  url: https://developer.nvidia.com/cuda-toolkit-archive
+- id: harris-2013-unified-memory
+  type: web
+  primary: true
+  authors: [Mark Harris]
+  title: Unified Memory in CUDA 6
+  year: 2013
+  url: https://developer.nvidia.com/blog/unified-memory-in-cuda-6/
+- id: harris-2017-cooperative-groups
+  type: web
+  primary: true
+  authors: [Mark Harris, Kyrylo Perelygin]
+  title: "Cooperative Groups: Flexible CUDA Thread Programming"
+  year: 2017
+  url: https://developer.nvidia.com/blog/cooperative-groups/
+- id: wiki-cuda
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CUDA"
+  url: https://en.wikipedia.org/wiki/CUDA
+- id: apple-2014-ios8-sdk
+  type: web
+  primary: true
+  authors: [Apple]
+  title: Apple Releases iOS 8 SDK With Over 4,000 New APIs
+  year: 2014
+  url: https://www.apple.com/newsroom/2014/06/02Apple-Releases-iOS-8-SDK-With-Over-4-000-New-APIs/
+- id: apple-2015-msl-guide
+  type: manual
+  primary: true
+  authors: [Apple]
+  title: Metal Shading Language Guide (archived March 2015)
+  year: 2015
+  url: http://web.archive.org/web/20150317024649/https://developer.apple.com/library/ios/documentation/Metal/Reference/MetalShadingLanguageGuide/Introduction/Introduction.html
+- id: apple-msl-spec
+  type: standard
+  primary: true
+  authors: [Apple]
+  title: Metal Shading Language Specification, Version 4.1
+  year: 2026
+  url: https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf
+  checked: '2026-11-20'
+- id: apple-metal-gpu-calculations
+  type: manual
+  primary: true
+  authors: [Apple]
+  title: Performing Calculations on a GPU
+  url: https://developer.apple.com/documentation/metal/performing-calculations-on-a-gpu
+- id: khronos-2014-spir-1-2
+  type: web
+  primary: true
+  authors: [Khronos Group]
+  title: Khronos Releases SPIR 1.2 Specification for Portable Encoding of OpenCL Device Programs
+  year: 2014
+  url: https://www.khronos.org/news/press/khronos-releases-spir-1.2-specification-for-portable-encoding-of-opencl-dev
+- id: khronos-2015-vulkan-reveal
+  type: web
+  primary: true
+  authors: [Khronos Group]
+  title: Khronos Reveals Vulkan API for High-efficiency Graphics and Compute on GPUs
+  year: 2015
+  url: https://www.khronos.org/news/press/khronos-reveals-vulkan-api-for-high-efficiency-graphics-and-compute-on-gpus
+- id: khronos-2015-spirv-1-0
+  type: web
+  primary: true
+  authors: [Khronos Group]
+  title: Khronos Releases OpenCL 2.1 and SPIR-V 1.0 Specifications for Heterogeneous Parallel Programming
+  year: 2015
+  url: https://www.khronos.org/news/press/khronos-releases-opencl-2.1-and-spir-v-1.0-specifications-for-heterogeneous
+- id: khronos-spirv-spec
+  type: standard
+  primary: true
+  authors: [Khronos SPIR Working Group]
+  title: SPIR-V Specification, version 1.6
+  url: https://registry.khronos.org/SPIR-V/specs/unified1/SPIRV.html
+  checked: '2026-11-20'
+- id: kessenich-2015-spirv-intro
+  type: paper
+  primary: true
+  authors: [John Kessenich]
+  title: "An Introduction to SPIR-V: A Khronos-Defined Intermediate Language for Native Representation of Graphical Shaders and Compute Kernels"
+  venue: LunarG white paper
+  year: 2015
+  url: https://registry.khronos.org/SPIR-V/papers/WhitePaper.pdf
+- id: ms-2024-directx-spirv
+  type: web
+  primary: true
+  authors: [Chris Bieneman]
+  title: DirectX Adopting SPIR-V as the Interchange Format of the Future
+  year: 2024
+  url: https://devblogs.microsoft.com/directx/directx-adopting-spir-v/
