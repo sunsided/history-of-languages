@@ -24,7 +24,7 @@ python3 tools/build.py --missing    # ids referenced but not defined
 python3 tools/report.py             # research to-do: thin clusters, orphans, weak edges, concept dating
 python3 tools/report.py find <x>    # is it already a node, alias, backlog item or concept?
 python3 tools/fetch_media.py        # photos from Wikimedia Commons (needs network to Wikimedia)
-task dev                            # viewer on :5173      task check   # type-check the viewer
+task dev                            # viewer on :5173      task check   # build.py + viewer type-check
 ```
 
 Needs `pyyaml` and `jsonschema`.

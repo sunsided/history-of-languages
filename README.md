@@ -152,12 +152,15 @@ on every save, so there's no need to run `build.py` first. That loader is lenien
 and dangling references in the toolbar, but the schema is only checked by `build.py`.
 
 ```
+task                  # list all tasks
 task dev              # http://localhost:5173, hot reload for code and data
-task check            # svelte-check
+task check            # data:build + svelte-check: everything that must pass before a commit
 task data:build       # validate + emit dist/graph.json
 task build            # static site in viewer/build (BASE_PATH=/sub/path for a sub-path deployment)
 task preview          # serve that build
-task lint:workflows   # actionlint + zizmor over .github/
+task lint             # actionlint + zizmor over .github/
+task ci               # check + lint
+task clean            # remove dist/, viewer/build, viewer/.svelte-kit
 ```
 
 The static build bundles the dataset and search index into the app and copies the photos it references.

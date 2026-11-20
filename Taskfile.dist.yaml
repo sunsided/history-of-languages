@@ -10,13 +10,19 @@ env:
 
 tasks:
   default:
-    desc: Start the viewer dev server
+    desc: List the available tasks
     cmds:
-      - task: dev
+      - task --list --sort=none
+    silent: true
+
+  # ---------------------------------------------------------------- viewer
 
   install:
     desc: Install viewer dependencies (yarn via corepack)
     dir: '{{.VIEWER}}'
+    preconditions:
+      - sh: command -v corepack
+        msg: 'corepack not found: install Node.js (it ships corepack), or run: npm install --global corepack'
     sources:
       - package.json
       - yarn.lock
@@ -31,14 +37,6 @@ tasks:
     deps: [install]
     cmds:
       - corepack yarn dev {{.CLI_ARGS}}
-
-  check:
-    desc: Type-check the viewer (svelte-check)
-    dir: '{{.VIEWER}}'
-    deps: [install]
-    cmds:
-      - corepack yarn svelte-kit sync
-      - corepack yarn check
 
   build:
     desc: 'Static build of the viewer into viewer/build (as GitHub Pages does); BASE_PATH sets the URL prefix'
@@ -57,25 +55,63 @@ tasks:
     cmds:
       - corepack yarn preview {{.CLI_ARGS}}
 
-  lint:workflows:
+  clean:
+    desc: Remove build output (dist/, viewer/build, viewer/.svelte-kit, .task)
+    cmds:
+      - rm -rf dist '{{.VIEWER}}/build' '{{.VIEWER}}/.svelte-kit' .task
+
+  # ---------------------------------------------------------------- checks
+
+  check:
+    desc: Everything that must pass before a commit (data validation and viewer type-check)
+    aliases: [verify]
+    cmds:
+      - task: data:build
+      - task: check:viewer
+
+  check:viewer:
+    desc: Type-check the viewer (svelte-check)
+    dir: '{{.VIEWER}}'
+    deps: [install]
+    cmds:
+      - corepack yarn svelte-kit sync
+      - corepack yarn check
+
+  lint:
     desc: Lint GitHub Actions workflows with actionlint and zizmor (as CI does)
+    aliases: [lint:workflows]
+    preconditions:
+      - sh: command -v docker
+        msg: 'docker not found (runs actionlint): install from https://docs.docker.com/get-docker/'
+      - sh: docker info >/dev/null 2>&1
+        msg: 'docker daemon not running: start Docker'
+      - sh: command -v zizmor
+        msg: 'zizmor not found: pipx install zizmor (or brew install zizmor)'
     cmds:
       - docker run --rm -v "$PWD:/repo" -w /repo rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 -color
       - zizmor --persona pedantic .
 
-  verify:
-    desc: Everything that must pass before a commit (data validation and viewer type-check)
+  ci:
+    desc: Full local CI sequence (check, then lint)
     cmds:
-      - task: data:build
       - task: check
+      - task: lint
+
+  # ---------------------------------------------------------------- data
 
   data:build:
     desc: Validate data/ against the schema and emit dist/graph.json
+    preconditions: &python-deps
+      - sh: command -v python3
+        msg: 'python3 not found: install Python 3'
+      - sh: python3 -c 'import yaml, jsonschema'
+        msg: 'Python packages missing: pip install pyyaml jsonschema'
     cmds:
       - python3 tools/build.py
 
   data:missing:
     desc: List referenced-but-undefined ids
+    preconditions: *python-deps
     cmds:
       - python3 tools/build.py --missing
 
@@ -83,6 +119,7 @@ tasks:
     desc: 'Research to-do list; pass sections after --, e.g. task data:report -- clusters orphans'
     summary: |
       Sections: clusters, orphans, edges, concepts, sources, decades, people (all when none are given).
+    preconditions: *python-deps
     cmds:
       - python3 tools/report.py {{.CLI_ARGS}}
 
@@ -91,18 +128,24 @@ tasks:
     preconditions:
       - sh: '{{if .CLI_ARGS}}true{{else}}false{{end}}'
         msg: 'Name what to look for: task data:find -- <name>'
+      - sh: python3 -c 'import yaml'
+        msg: 'Python package missing: pip install pyyaml'
     cmds:
       - python3 tools/report.py find {{.CLI_ARGS}}
+
+  # ---------------------------------------------------------------- media
 
   media:fetch:
     desc: Download portraits and machine photos from Wikimedia Commons into assets/media/ and data/media.yaml
     summary: |
       Reads data/media-subjects.yaml. Pass -- --refresh to re-download existing files.
       Needs network access to Wikimedia, so it runs on a local machine, not in the cloud sandbox.
+    preconditions: *python-deps
     cmds:
       - python3 tools/fetch_media.py {{.CLI_ARGS}}
 
   media:dry-run:
     desc: Show which photos media:fetch would download, without writing anything
+    preconditions: *python-deps
     cmds:
       - python3 tools/fetch_media.py --dry-run
