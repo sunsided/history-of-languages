@@ -2059,6 +2059,7 @@
   wiki: Krysta Svore
   nodes:
   - q-sharp
+  - liquid
 - id: person-bill-paxton
   kind: person
   person: Bill Paxton
@@ -2512,3 +2513,57 @@
   wiki: Prabhu Goel
   nodes:
   - verilog
+- id: person-margaret-martonosi
+  kind: person
+  person: Margaret Martonosi
+  wiki: Margaret Martonosi
+  nodes:
+  - scaffold
+- id: person-frederic-t-chong
+  kind: person
+  person: Frederic T. Chong
+  wiki: Frederic T. Chong
+  nodes:
+  - scaffold
+- id: person-massoud-pedram
+  kind: person
+  person: Massoud Pedram
+  wiki: Massoud Pedram
+  nodes:
+  - scaffold
+- id: person-todd-brun
+  kind: person
+  person: Todd Brun
+  wiki: Todd Brun
+  nodes:
+  - scaffold
+- id: person-thorsten-altenkirch
+  kind: person
+  person: Thorsten Altenkirch
+  wiki: Thorsten Altenkirch
+  nodes:
+  - qml
+- id: person-martin-vechev
+  kind: person
+  person: Martin Vechev
+  wiki: Martin Vechev
+  nodes:
+  - silq
+- id: person-isaac-chuang
+  kind: person
+  person: Isaac Chuang
+  wiki: Isaac Chuang
+  nodes:
+  - qasm
+- id: person-jay-gambetta
+  kind: person
+  person: Jay Gambetta
+  wiki: Jay Gambetta
+  nodes:
+  - openqasm
+- id: person-john-a-smolin
+  kind: person
+  person: John A. Smolin
+  wiki: John A. Smolin
+  nodes:
+  - openqasm

@@ -221,6 +221,12 @@
 - id: distributed-systems
   name: Distributed systems
   facet: domain
+- id: quantum-computing
+  name: Quantum computing
+  facet: domain
+  summary: Programs for machines that operate on qubits through state preparation, unitary gates and measurement.
+  first_seen: { node: quantum-pseudocode, year: 1996, note: "Knill's conventions for quantum pseudocode and the QRAM model." }
+  sources: [knill-1996-quantum-pseudocode]
 - id: theorem-proving
   name: Theorem proving
   facet: domain
@@ -299,6 +305,12 @@
 - id: web
   name: Web
   facet: domain
+- id: uncomputation
+  name: Uncomputation
+  facet: features
+  summary: Running a reversible computation backwards to return scratch qubits to a clean state so they can be discarded without disturbing the result.
+  first_seen: { node: qcl, year: 1998, note: "QCL's inverse calls and scratch-space management for qufunct routines." }
+  sources: [oemer-1998-procedural-formalism, bichsel-2020-silq]
 - id: abstract-data-types
   name: Abstract data types
   facet: features

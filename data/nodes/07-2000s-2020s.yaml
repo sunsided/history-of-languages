@@ -6756,41 +6756,6 @@
       }
     sources: [wiki-join-pattern]
 
-- id: qcl
-  name: QCL
-  aliases: [Quantum Computation Language]
-  kind: language
-  category: research
-  cluster: quantum
-  origin:
-    first_appeared: { year: 2000, precision: circa, note: "No year in the text; the earliest cited source is Ömer's thesis \"Quantum Programming in QCL\" (2000-01-20, TU Wien)." }
-    places: [{ institution: Vienna University of Technology, city: Vienna, country: AT }]
-  creators:
-    - { name: Bernhard Ömer, role: author }
-  status: legacy
-  tags:
-    paradigm: [imperative]
-  summary: >
-    "one of the first implemented quantum programming languages", "created to explore programming concepts for quantum
-    computers" before multi-qubit machines existed; its syntax "resembles the syntax of the C programming language", and
-    its only implementation simulates the quantum computer classically.
-  relations:
-    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-qcl], note: "\"Its syntax resembles the syntax of the C programming language\"." }
-  research_status: stub
-  confidence: low
-  links: { wikipedia: "https://en.wikipedia.org/wiki/Quantum_Computation_Language" }
-  sources: [wiki-qcl]
-  example:
-    title: Quantum registers
-    language: QCL
-    note: "From Wikipedia."
-    code: |
-      qureg x1[2]; // 2-qubit quantum register x1
-      qureg x2[2]; // 2-qubit quantum register x2
-      H(x1); // Hadamard operation on x1
-      H(x2[1]); // Hadamard operation on the first qubit of the register x2
-    sources: [wiki-qcl]
-
 - id: joy
   name: Joy
   kind: language
@@ -6927,29 +6892,6 @@
     code: |
       : factorial ( n -- n! ) dup 1 > [ [1..b] product ] [ drop 1 ] if ;
     sources: [wiki-factor]
-
-- id: qpl
-  name: QPL
-  aliases: [QFC]
-  kind: language
-  category: research
-  cluster: quantum
-  origin:
-    first_appeared: { year: 2004, precision: year, note: "Selinger, \"Towards a quantum programming language\", Mathematical Structures in Computer Science 14(4), 2004." }
-  creators:
-    - { name: Peter Selinger, role: designer }
-  status: historical
-  tags:
-    paradigm: [functional]
-    features: [formal-semantics]
-  summary: >
-    One of "two closely related quantum programming languages defined by Peter Selinger" (with the flow-chart QFC) that
-    "have classical control flow but can operate on quantum or classical data", with "a denotational semantics ... in a
-    category of superoperators".
-  research_status: stub
-  confidence: medium
-  links: { wikipedia: "https://en.wikipedia.org/wiki/Quantum_programming" }
-  sources: [wiki-quantum-programming]
 
 - id: minikanren
   name: miniKanren
@@ -7205,65 +7147,6 @@
           }
       }
     sources: [wiki-solidity]
-
-- id: q-sharp
-  name: Q#
-  aliases: [Q Sharp]
-  kind: language
-  category: domain-specific
-  cluster: quantum
-  origin:
-    first_appeared: { year: 2017, precision: exact, note: "\"On December 11, 2017, Microsoft released Q# as a part of the Quantum Development Kit.\"" }
-    places: [{ institution: Microsoft Research QuArC, city: "Redmond, Washington", country: US }]
-  creators:
-    - { name: Krysta Svore, role: team director }
-  status: active
-  tags:
-    paradigm: [functional, imperative]
-    typing: [static-typing, strong-typing]
-  milestones:
-    - { version: open source, year: 2019, summary: "QDK and Q# compilers open-sourced (Build 2019)." }
-  summary: >
-    "a domain-specific programming language used for expressing quantum algorithms", released with Microsoft's Quantum
-    Development Kit and working "in conjunction with classical languages such as C#, Python and F#".
-  relations:
-    - { type: influenced_by, to: csharp, weight: moderate, confidence: high, sources: [wiki-q-sharp], note: "Infobox \"Influenced by: C#, F#, Python\"." }
-    - { type: influenced_by, to: fsharp, weight: moderate, confidence: high, sources: [wiki-q-sharp] }
-    - { type: influenced_by, to: python, weight: weak, confidence: high, sources: [wiki-q-sharp] }
-  research_status: stub
-  confidence: high
-  links: { wikipedia: "https://en.wikipedia.org/wiki/Q_Sharp" }
-  sources: [wiki-q-sharp]
-
-- id: openqasm
-  name: OpenQASM
-  aliases: [Open Quantum Assembly Language]
-  kind: language
-  category: domain-specific
-  cluster: quantum
-  origin:
-    first_appeared: { year: 2017, precision: exact, note: "\"first described in a paper published in July 2017\" (Cross, Bishop, Smolin, Gambetta)." }
-    places: [{ institution: IBM, country: US }]
-  creators:
-    - { name: Andrew W. Cross, role: co-author }
-    - { name: Lev S. Bishop, role: co-author }
-    - { name: John A. Smolin, role: co-author }
-    - { name: Jay M. Gambetta, role: co-author }
-  status: active
-  tags:
-    paradigm: [imperative]
-    features: [intermediate-code]
-  milestones:
-    - { version: "3.1.0", year: 2024, summary: "Infobox stable release (May 15, 2024)." }
-  summary: >
-    "a programming language designed for describing quantum circuits and algorithms for execution on quantum
-    computers", meant as "an intermediate representation that can be used by higher-level compilers to communicate with
-    quantum hardware", with "similar qualities to traditional hardware description languages such as Verilog"; IBM's Qiskit
-    shipped its reference implementation.
-  research_status: stub
-  confidence: high
-  links: { wikipedia: "https://en.wikipedia.org/wiki/OpenQASM" }
-  sources: [wiki-openqasm]
 
 - id: wgsl
   name: WGSL
@@ -7825,3 +7708,821 @@
 
       total([{ price: 250, qty: 2 }, { price: 100, qty: 1 }]) # 600
     sources: [vibescript-readme]
+
+- id: qpl
+  name: QPL
+  aliases: [QFC, Quantum flow charts, Block QPL]
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    began: { year: 2002, precision: exact, date: "2002-11-13", note: "Paper received by the journal 13 November 2002, revised 7 July 2003." }
+    first_appeared: { year: 2004, precision: year, note: "Selinger, \"Towards a quantum programming language\", Mathematical Structures in Computer Science 14(4), August 2004." }
+    places: [{ institution: University of Ottawa, city: Ottawa, country: CA }]
+  creators:
+    - { name: Peter Selinger, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional, structured]
+    typing: [static-typing]
+    features: [formal-semantics]
+    domain: [quantum-computing]
+  summary: >
+    Selinger's quantum flow charts (QFC) and their textual form QPL, summed up by the slogan "quantum data, classical
+    control". The language is "functional in nature, statically typed, free of run-time errors", with "a denotational
+    semantics in terms of complete partial orders of superoperators", and no-cloning "is enforced by the syntax". It
+    runs on Knill's QRAM model and set the agenda for the typed functional quantum languages that followed, including
+    Selinger's own Quipper.
+  notes: >
+    The paper contrasts QPL with earlier proposals (Knill 1996, Ömer 1998, Sanders and Zuliani 2000, Bettelli et al.
+    2001) rather than naming them as influences. It contains a grammar and flow-chart examples but no complete textual
+    program, so no example is given here.
+  relations:
+    - { type: influenced_by, to: pascal, aspects: [structured], weight: weak, confidence: medium, sources: [selinger-2004-qpl], note: "QPL is \"more 'structured' in the sense of structured programming languages such as Pascal\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Quantum_programming" }
+  sources: [selinger-2004-qpl, wiki-quantum-programming]
+
+- id: q-sharp
+  name: Q#
+  aliases: [Q Sharp, QDK]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2017, date: "2017-12-11", precision: exact, note: "Released as a preview in the Microsoft Quantum Development Kit, announced 11 December 2017. Wikipedia dates the announcement of the language to the Ignite keynote of 26 September 2017 (not checked)." }
+    places: [{ institution: Microsoft Research QuArC, city: Redmond, country: US }]
+  creators:
+    - { name: Krysta Svore, role: team director }
+  status: active
+  tags:
+    paradigm: [functional, imperative]
+    typing: [static-typing, strong-typing]
+    features: [functors, first-class-functions]
+    domain: [quantum-computing]
+  milestones:
+    - { version: "open source", year: 2019, summary: "QDK and Q# compilers open-sourced (Build 2019)." }
+    - { version: "1.0", year: 2024, date: "2024-01-12", summary: "The \"Modern QDK\": the toolchain \"rewrote ... (mostly) in Rust\", compiling to WebAssembly for VS Code and the web and to native binaries for Python; previewed 19 September 2023. The earlier kit became the \"Classic QDK\".", sources: [msqdk-2023-preview, msqdk-2024-v1] }
+  summary: >
+    Microsoft's stand-alone quantum language, "a bone fide stand-alone language" rather than an embedded DSL like
+    Quipper, LIQUi|> or Quil. Programs separate classical functions from quantum operations, and Adjoint and Controlled
+    are functors whose variants the compiler can generate. Its syntax is "structurally very similar to familiar
+    languages such as C# and Java". It ships with the Quantum Development Kit and is called from Python or C#.
+  relations:
+    - { type: influenced_by, to: csharp, weight: moderate, confidence: high, sources: [svore-2018-qsharp, wiki-q-sharp], note: "\"structurally very similar to familiar languages such as C# and Java\"; \"C#-style string interpolation\". Infobox: influenced by C#, F#, Python." }
+    - { type: influenced_by, to: fsharp, weight: moderate, confidence: medium, sources: [wiki-q-sharp], note: "Wikipedia infobox only; the 2018 paper names F# only as LIQUi|>'s host language." }
+    - { type: influenced_by, to: python, weight: weak, confidence: medium, sources: [wiki-q-sharp], note: "Wikipedia infobox only." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Q_Sharp", homepage: "https://github.com/microsoft/qdk" }
+  sources: [svore-2018-qsharp, msqdk-2017-announce, msqdk-2023-preview, msqdk-2024-v1, wiki-q-sharp]
+  example:
+    title: An operation with generated adjoint and controlled variants
+    language: Q# (2018)
+    year: 2018
+    note: "From Svore et al. 2018 (the CCNOT listing); the PDF's letter-spaced text was re-joined. Modern Q# drops the body/adjoint blocks for `is Adj + Ctl`."
+    code: |
+      operation CCNOT (control1 : Qubit, control2 : Qubit, target : Qubit) : ()
+      {
+          body
+          {
+              (Controlled X) ([control1; control2], target);
+          }
+          adjoint self
+          controlled auto
+          adjoint controlled auto
+      }
+    sources: [svore-2018-qsharp]
+
+- id: openqasm
+  name: OpenQASM
+  aliases: [Open Quantum Assembly Language, OpenQASM 2, OpenQASM 3]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2017, date: "2017-07-11", precision: exact, note: "arXiv:1707.03429 v1, 11 July 2017; the document's title page is dated 10 January 2017 and describes version 2.0 as used by the IBM Q Experience." }
+    places: [{ institution: IBM Research, city: Yorktown Heights, country: US }]
+  creators:
+    - { name: Andrew W. Cross, role: co-author }
+    - { name: Lev S. Bishop, role: co-author }
+    - { name: John A. Smolin, role: co-author }
+    - { name: Jay Gambetta, role: co-author }
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [intermediate-code]
+    domain: [quantum-computing]
+  milestones:
+    - { version: "2.0", year: 2017, summary: "Circuits over \"arbitrary single-qubit gates and a two-qubit entangling gate (CNOT)\", gate definitions, measurement and a classically conditioned if.", sources: [cross-2017-openqasm] }
+    - { version: "3.0", year: 2021, date: "2021-04-30", summary: "\"A broader and deeper quantum assembly language\": arbitrary classical control flow, extern classical functions, timing, pulse-level control and gate modifiers; published in ACM Transactions on Quantum Computing in 2022 and governed by a technical steering committee.", sources: [cross-2022-openqasm3] }
+    - { version: "3.1.0", year: 2024, summary: "Infobox stable release (May 15, 2024).", sources: [wiki-openqasm] }
+  summary: >
+    IBM's quantum circuit language, "an imperative programming language for quantum circuits based on earlier QASM
+    dialects", written to be "an intermediate representation that can be used by higher-level compilers to communicate
+    with quantum hardware". Version 2 was the input language of the IBM Q Experience and became "something of a de facto
+    standard"; version 3 added real-time classical control and pulse-level timing.
+  relations:
+    - { type: successor_of, to: qasm, weight: strong, confidence: high, sources: [cross-2017-openqasm, cross-2022-openqasm3], note: "\"The human-readable form of our quantum circuit IR is based on 'quantum assembly language' ... or QASM\"." }
+    - { type: influenced_by, to: quil, year: 2021, weight: weak, confidence: high, sources: [cross-2022-openqasm3], note: "OpenQASM 3 takes a keyword \"borrowed from the recently proposed QUIL-T extension of the Quil language\"." }
+    - { type: influenced_by, to: haskell, year: 2021, weight: weak, confidence: high, sources: [cross-2022-openqasm3], note: "Overload resolution \"loosely inspired by Haskell's pattern matching\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/OpenQASM", homepage: "https://openqasm.com/" }
+  sources: [cross-2017-openqasm, cross-2022-openqasm3, wiki-openqasm]
+  example:
+    title: Teleportation with classically conditioned gates
+    language: OpenQASM 2.0
+    year: 2017
+    note: "Verbatim from Cross et al. 2017, Fig. 8, without its optional post-rotation gate."
+    code: |
+      // quantum teleportation example
+      OPENQASM 2.0;
+      include "qelib1.inc";
+      qreg q[3];
+      creg c0[1];
+      creg c1[1];
+      creg c2[1];
+      u3(0.3,0.2,0.1) q[0];
+      h q[1];
+      cx q[1],q[2];
+      barrier q;
+      cx q[0],q[1];
+      h q[0];
+      measure q[0] -> c0[0];
+      measure q[1] -> c1[0];
+      if(c0==1) z q[2];
+      if(c1==1) x q[2];
+      measure q[2] -> c2[0];
+    sources: [cross-2017-openqasm]
+
+- id: qasm
+  name: QASM
+  aliases: [Quantum assembly language, qasm2circ]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2005, precision: circa, note: "The OpenQASM paper cites QASM to Chuang's qasm2circ and Cross's qasm-tools (both 2005) and to Svore, Cross, Aho, Chuang and Markov, IEEE Computer, January 2006." }
+    places: [{ institution: MIT Media Lab, city: Cambridge, country: US }]
+  creators:
+    - { name: Isaac Chuang, role: qasm2circ author }
+    - { name: Andrew W. Cross, role: qasm-tools author }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    features: [intermediate-code]
+    domain: [quantum-computing]
+  summary: >
+    A simple text format for quantum circuits used by mid-2000s design tools, such as Chuang's qasm2circ circuit drawer
+    and the layered quantum design-tool architecture of Svore et al. (2006). It is the "quantum assembly language" that
+    OpenQASM, Quil and cQASM later took as their model.
+  research_status: stub
+  confidence: medium
+  sources: [svore-2006-layered-architecture, cross-2017-openqasm]
+
+- id: quantum-lambda-calculus
+  name: Quantum lambda calculus
+  aliases: [van Tonder's quantum lambda calculus, Selinger-Valiron quantum lambda calculus]
+  kind: formalism
+  category: research
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2003, date: "2003-07-21", precision: exact, note: "van Tonder, arXiv quant-ph/0307150 (21 July 2003); SIAM Journal on Computing 33(5), 2004." }
+    places: [{ institution: Brown University, city: Providence, country: US }]
+  creators:
+    - { name: André van Tonder, role: designer }
+    - { name: Peter Selinger, role: designer of the classical-control calculus }
+    - { name: Benoît Valiron, role: designer of the classical-control calculus }
+  status: historical
+  tags:
+    paradigm: [functional]
+    typing: [linear-types, affine-types, type-inference]
+    domain: [quantum-computing]
+  milestones:
+    - { version: "classical control", year: 2004, date: "2004-04-27", summary: "Selinger and Valiron's call-by-value calculus with measurement, \"a type system using affine intuitionistic linear logic\" and type inference, running on Knill's QRAM; TLCA 2005, MSCS 2006.", sources: [selinger-valiron-2006-qlc] }
+  summary: >
+    Lambda calculi for quantum computation. Van Tonder's (2003) is an untyped linear calculus without measurement,
+    "closely related to the linear lambda calculi used in the study of Linear Logic". Selinger and Valiron's (2004)
+    added measurement and classical control with an affine type system in which "a quantum bit cannot be duplicated".
+    It is the core that Quipper describes as an "ML-style language" predecessor, and the source of the linear typing
+    used by QWIRE and later languages.
+  relations:
+    - { type: influenced_by, to: lambda-calculus, weight: strong, confidence: high, sources: [vantonder-2004-lambda-quantum] }
+    - { type: influenced_by, to: qpl, year: 2004, weight: moderate, confidence: high, sources: [selinger-valiron-2006-qlc], note: "Selinger and Valiron: \"following the first author's work on quantum flow-charts\"." }
+    - { type: influenced_by, to: quantum-pseudocode, year: 2004, weight: moderate, confidence: high, sources: [selinger-valiron-2006-qlc], note: "\"the so-called QRAM model of Knill\"." }
+  research_status: draft
+  confidence: high
+  sources: [vantonder-2004-lambda-quantum, selinger-valiron-2006-qlc]
+  example:
+    title: Teleportation with classical control
+    language: Selinger-Valiron quantum lambda calculus
+    year: 2004
+    note: "From Selinger and Valiron, section 4.3; angle brackets restored from the PDF's text extraction."
+    code: |
+      EPR         = λx.CNOT ⟨H(new 0), new 0⟩,
+      BellMeasure = λq2.λq1.(let ⟨x, y⟩ = CNOT ⟨q1, q2⟩ in ⟨meas(Hx), meas y⟩,
+      U           = λq.λ⟨x, y⟩.if x then (if y then U11 q else U10 q)
+                               else (if y then U01 q else U00 q),
+    sources: [selinger-valiron-2006-qlc]
+
+- id: qml
+  name: QML
+  aliases: [Quantum ML]
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2004, date: "2004-09-11", precision: exact, note: "arXiv quant-ph/0409065 (11 September 2004); LICS 2005." }
+    places: [{ institution: University of Nottingham, city: Nottingham, country: GB }]
+  creators:
+    - { name: Thorsten Altenkirch, role: designer }
+    - { name: Jonathan Grattage, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional]
+    typing: [linear-types]
+    domain: [quantum-computing]
+  summary: >
+    A first-order functional quantum language that aims at "quantum control and quantum data": besides a measuring if,
+    its if° branches on a qubit without measuring it. It uses "first order strict linear logic to make weakenings
+    explicit" and models contraction by sharing rather than copying, and compiles to quantum circuits. Its compiler was
+    written in Haskell.
+  relations:
+    - { type: influenced_by, to: quantum-lambda-calculus, weight: weak, confidence: medium, sources: [altenkirch-2005-qml], note: "Defines itself against Selinger and Valiron: \"they use an affine type system (no contraction), while we use a strict system (no weakening)\"." }
+  research_status: draft
+  confidence: high
+  sources: [altenkirch-2005-qml]
+  example:
+    title: Hadamard by quantum control
+    language: QML
+    year: 2004
+    note: "Verbatim from Altenkirch and Grattage, page 1."
+    code: |
+      had : Q2 ⊸ Q2
+      had x = if ◦ x
+              then {qfalse | (−1) qtrue}
+              else {qfalse | qtrue}
+    sources: [altenkirch-2005-qml]
+
+- id: quipper
+  name: Quipper
+  aliases: [Proto-Quipper]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    began: { year: 2011, precision: year, note: "Copyright notice 2011-2019; developed for IARPA's Quantum Computer Science program." }
+    first_appeared: { year: 2013, date: "2013-04-11", precision: exact, note: "arXiv:1304.3390 (11 April 2013), PLDI 2013; first public software release 0.4 on 19 June 2013." }
+    places: [{ institution: Dalhousie University, city: Halifax, country: CA }]
+  creators:
+    - { name: Alexander S. Green, role: designer }
+    - { name: Peter LeFanu Lumsdaine, role: designer }
+    - { name: Neil J. Ross, role: designer }
+    - { name: Peter Selinger, role: designer }
+    - { name: Benoît Valiron, role: designer }
+  status: legacy
+  tags:
+    paradigm: [functional]
+    typing: [static-typing, strong-typing]
+    features: [monads, uncomputation]
+    domain: [quantum-computing]
+  milestones:
+    - { version: "0.4", year: 2013, date: "2013-06-19", summary: "First public release (beta).", sources: [quipper-site] }
+    - { version: "Proto-Quipper-M", year: 2017, summary: "Rios and Selinger's stand-alone, type-safe core: \"Unlike its parent Quipper, this language is type-safe ... Haskell is unable to enforce linearity\".", sources: [rios-2018-proto-quipper-m] }
+    - { version: "0.9.0.0", year: 2019, summary: "Released 29 December 2019, first as Cabal packages.", sources: [quipper-site] }
+  summary: >
+    "A scalable quantum programming language" embedded in Haskell, built to describe the very large circuits of real
+    algorithms. Circuits are built in the Circ monad, with scoped ancillas, circuit reversal, oracles synthesised from
+    classical code and dynamic lifting of measurement results. Its authors name QCL, the Selinger-Valiron quantum lambda
+    calculus and the Quantum IO Monad as its predecessors, and wished Haskell had linear and dependent types, which the
+    stand-alone Proto-Quipper line then added.
+  relations:
+    - { type: influenced_by, to: haskell, weight: strong, confidence: high, sources: [green-2013-quipper], note: "Embedded in Haskell: \"Both Haskell and Quipper are strongly-typed functional programming languages\"." }
+    - { type: influenced_by, to: quantum-lambda-calculus, aspects: [linear-types], weight: strong, confidence: high, sources: [green-2013-quipper], note: "Named as a predecessor: \"an ML-style language ... designed to run on Knill's QRAM model\"." }
+    - { type: influenced_by, to: qcl, weight: moderate, confidence: high, sources: [green-2013-quipper], note: "Named as a predecessor and \"a milestone\"." }
+    - { type: influenced_by, to: quantum-pseudocode, weight: moderate, confidence: high, sources: [green-2013-quipper], note: "\"known as Knill's QRAM model for quantum computation\"." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://www.mathstat.dal.ca/~selinger/quipper/" }
+  sources: [green-2013-quipper, quipper-site, rios-2018-proto-quipper-m]
+  example:
+    title: A circuit in the Circ monad
+    language: Quipper
+    year: 2013
+    note: "Verbatim from Green et al. 2013, section 4.4.1."
+    code: |
+      mycirc :: Qubit -> Qubit -> Circ (Qubit, Qubit)
+      mycirc a b = do
+        a <- hadamard a
+        b <- hadamard b
+        (a,b) <- controlled_not a b
+        return (a,b)
+    sources: [green-2013-quipper]
+
+- id: qwire
+  name: QWIRE
+  aliases: [Qwire]
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2017, precision: year, note: "POPL 2017 (January 2017); the preprint is dated 8 November 2016." }
+    places: [{ institution: University of Pennsylvania, city: Philadelphia, country: US }]
+  creators:
+    - { name: Jennifer Paykin, role: designer }
+    - { name: Robert Rand, role: designer }
+    - { name: Steve Zdancewic, role: designer }
+  status: legacy
+  tags:
+    paradigm: [functional]
+    typing: [linear-types, dependent-types]
+    domain: [quantum-computing, theorem-proving]
+  milestones:
+    - { version: "QWIRE in Coq", year: 2017, summary: "\"An embedding of the QWIRE quantum circuit language in the Coq proof assistant\" for verifying circuits (QPL 2017).", sources: [rand-2018-qwire-practice] }
+  summary: >
+    "A core language for quantum circuits": a small linearly typed circuit language meant as "an interface for
+    manipulating them inside of an arbitrary classical host language", "inspired by the symmetry between the QRAM model
+    and Benton's Linear/Non-Linear (LNL) logic". Circuits are first-class classical values that are boxed and unboxed.
+    Its embedding in Coq made it a basis for verified quantum circuits.
+  relations:
+    - { type: influenced_by, to: quantum-lambda-calculus, aspects: [linear-types], weight: moderate, confidence: high, sources: [paykin-2017-qwire], note: "\"The quantum lambda-calculus popularized the use of linear types for quantum systems\"." }
+    - { type: influenced_by, to: quantum-pseudocode, weight: moderate, confidence: high, sources: [paykin-2017-qwire], note: "\"The QRAM model of quantum computing (Knill 1996)\"." }
+    - { type: influenced_by, to: quipper, weight: weak, confidence: high, sources: [paykin-2017-qwire], note: "Its teleport example is \"adapted from Green et al.'s introduction to the Quipper language\"." }
+    - { type: implemented_in, to: rocq, year: 2017, weight: moderate, confidence: high, sources: [rand-2018-qwire-practice] }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://github.com/inQWIRE/QWIRE" }
+  sources: [paykin-2017-qwire, rand-2018-qwire-practice]
+  example:
+    title: Teleportation from boxed circuits
+    language: QWIRE
+    year: 2017
+    note: "Verbatim from Paykin et al. 2017, Fig. 1."
+    code: |
+      teleport : Circ(qubit,qubit) =
+        box q =>
+          (a,b) <- unbox bell00 ();
+          (x,y) <- unbox alice (q,a);
+          unbox bob (x,y,b)
+    sources: [paykin-2017-qwire]
+
+- id: silq
+  name: Silq
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2020, date: "2020-06-11", precision: exact, note: "PLDI 2020 paper published 11 June 2020; ETH announced it on 15 June 2020. The implementation forks the PSI probabilistic language, whose history goes back to 2015." }
+    places: [{ institution: ETH Zurich, city: Zurich, country: CH }]
+  creators:
+    - { name: Benjamin Bichsel, role: designer }
+    - { name: Maximilian Baader, role: designer }
+    - { name: Timon Gehr, role: designer }
+    - { name: Martin Vechev, role: designer }
+  status: maintained
+  tags:
+    typing: [static-typing, linear-types, dependent-types]
+    features: [uncomputation]
+    domain: [quantum-computing]
+  summary: >
+    A high-level quantum language whose headline is "safe, automatic uncomputation": temporary values are uncomputed by
+    the compiler instead of by hand. It keeps a linear type system but "reduces notational overhead by treating constant
+    variables non-linearly", with annotations such as qfree, mfree, const and lifted. Its paper reports programs
+    "significantly shorter than equivalent programs in other quantum languages (on average -46% for Q#, -38% for
+    Quipper)".
+  notes: >
+    The paper compares Silq with Q#, Quipper, QPL and QWIRE but does not call any of them an influence, so no
+    influence edges are recorded. Implemented in D.
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://silq.ethz.ch/" }
+  sources: [bichsel-2020-silq]
+  example:
+    title: Automatic and explicit uncomputation
+    language: Silq
+    year: 2020
+    note: "Verbatim from the Silq examples page (Codeforces 2018 problem A2)."
+    code: |
+      def solve[n:!ℕ](bits:!𝔹^n){
+        // prepare superposition between 0 and 1
+        x:=H(0:𝔹);
+        // prepare superposition between bits and 0
+        qs := if x then bits else (0:int[n]) as 𝔹^n;
+        // uncompute x
+        forget(x=qs[0]); // valid because `bits[0]==1`
+        return qs;
+      }
+    sources: [silq-site]
+
+- id: qunity
+  name: Qunity
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2022, date: "2022-04-26", precision: exact, note: "arXiv:2204.12384 (26 April 2022); POPL 2023." }
+    places: [{ institution: University of Maryland, city: College Park, country: US }]
+  creators:
+    - { name: Finn Voichick, role: designer }
+    - { name: Liyi Li, role: designer }
+    - { name: Robert Rand, role: designer }
+    - { name: Michael Hicks, role: designer }
+  status: active
+  tags:
+    paradigm: [functional]
+    features: [uncomputation, pattern-matching]
+    domain: [quantum-computing]
+  summary: >
+    A language that unifies quantum and classical constructs: sum types act as direct sums of operators, exception
+    syntax expresses projective measurement, and garbage is uncomputed. It compiles to OpenQASM. Its authors say it
+    "was inspired by" Silq, QML, the symmetric pattern-matching language, Quipper and QuGcl.
+  relations:
+    - { type: influenced_by, to: silq, weight: moderate, confidence: high, sources: [voichick-2023-qunity], note: "\"Qunity's design was inspired by several existing languages ...: Silq, Qml, the symmetric pattern matching language, Quipper, and QuGcl\"." }
+    - { type: influenced_by, to: qml, weight: moderate, confidence: high, sources: [voichick-2023-qunity] }
+    - { type: influenced_by, to: quipper, weight: moderate, confidence: high, sources: [voichick-2023-qunity] }
+    - { type: targets, to: openqasm, weight: moderate, confidence: high, sources: [voichick-2023-qunity] }
+  research_status: draft
+  confidence: high
+  sources: [voichick-2023-qunity]
+
+- id: scaffold
+  name: Scaffold
+  aliases: [ScaffCC]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2012, date: "2012-07-24", precision: exact, note: "Princeton technical report TR-934-12, dated 24 July 2012; IARPA-funded." }
+    places: [{ institution: Princeton University, city: Princeton, country: US }]
+  creators:
+    - { name: Ali Javadi-Abhari, role: lead author }
+    - { name: Frederic T. Chong, role: co-author }
+    - { name: Margaret Martonosi, role: co-author }
+    - { name: Massoud Pedram, role: co-author }
+    - { name: Todd Brun, role: co-author }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+    domain: [quantum-computing]
+  milestones:
+    - { version: "ScaffCC", year: 2015, summary: "\"A scalable compilation and analysis framework based on LLVM\" that \"outputs a quantum assembly (QASM) representation\".", sources: [javadiabhari-2015-scaffcc] }
+  summary: >
+    An imperative quantum language whose "syntax was chosen to be very similar to C (and to some extent Verilog HDL.)".
+    Programs are built from modules over qreg registers, with forall loops and C2QG modules that turn classical code
+    into reversible quantum gate sequences. Its ScaffCC compiler, built on LLVM, made it a vehicle for compiler research
+    on large quantum programs.
+  notes: >
+    The report credits 15 authors (Abhari, Faruque, Dousti, Svec, Catu, Chakrabati, Chiang, Vanderwilt, Black, Chong,
+    Martonosi, Suchara, Brown, Pedram, Brun); only the lead author and those with Wikipedia articles are listed as creators.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [abhari-2012-scaffold], note: "\"Languages that influenced the design of Scaffold included popular classical high-level imperative programming languages (C/C++, Java), hardware description languages (Verilog), C-to-hardware languages (System-C) and existing quantum programming languages (QCL)\"." }
+    - { type: influenced_by, to: verilog, weight: moderate, confidence: high, sources: [abhari-2012-scaffold] }
+    - { type: influenced_by, to: qcl, weight: moderate, confidence: high, sources: [abhari-2012-scaffold] }
+    - { type: targets, to: qasm, year: 2015, weight: moderate, confidence: high, sources: [javadiabhari-2015-scaffcc] }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://github.com/epiqc/ScaffCC" }
+  sources: [abhari-2012-scaffold, javadiabhari-2015-scaffcc]
+  example:
+    title: A module over quantum registers
+    language: Scaffold
+    year: 2012
+    note: "Verbatim from TR-934-12, Program 1, without line numbers."
+    code: |
+      #include "gates.h"
+      module main ( ) {
+      int i=0;
+      qreg extarget[4];
+      qreg excontrol[4];
+      forall(i=0; i<4; i++) {
+         CNOT(extarget[i],excontrol[i]);
+         }
+      }
+    sources: [abhari-2012-scaffold]
+
+- id: liquid
+  name: LIQUi|>
+  aliases: [Liquid, LIQUi|⟩, "Language-Integrated Quantum Operations"]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2014, date: "2014-02-18", precision: exact, note: "Wecker and Svore, arXiv:1402.4467 (18 February 2014)." }
+    places: [{ institution: Microsoft Research QuArC, city: Redmond, country: US }]
+  creators:
+    - { name: Dave Wecker, role: designer }
+    - { name: Krysta Svore, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional, object-oriented]
+    domain: [quantum-computing]
+  summary: >
+    Microsoft Research's quantum software architecture, which "contains an embedded, domain-specific language designed
+    for programming quantum algorithms, with F# as the host language", chosen because F# "supports both object-oriented
+    and functional programming". It has no built-in gates, compiles and exports circuits, and ships large simulators.
+    It was designed "explicitly with quantum hardware in mind", in contrast to Quipper, and preceded Microsoft's Q#.
+  relations:
+    - { type: influenced_by, to: fsharp, weight: strong, confidence: high, sources: [wecker-2014-liquid], note: "Embedded in F#." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://github.com/StationQ/Liquid" }
+  sources: [wecker-2014-liquid, liquid-repo]
+  example:
+    title: Teleportation as an F# function
+    language: LIQUi|>
+    note: "Verbatim from StationQ/Liquid Samples/Teleport.fsx, lines 18-33 (the paper's version is garbled in its PDF)."
+    code: |
+      // Define an EPR function
+      let EPR (qs:Qubits) =
+          H qs; CNOT qs
+
+      let teleport (qs:Qubits) =
+          let q0,q1,q2    = qs.[0],qs.[1],qs.[2]      // Extract 3 qubits
+
+          // Give names to the first three qubits
+          LabelL "Src" [q0]
+          LabelL "\\ket{0}" [q1]
+          LabelL "\\ket{0}" [q2]
+
+          EPR[q1;q2]; CNOT qs; H qs               // EPR 1,2, then CNOT 0,1 and H 0
+          M[q1]; BC X [q1;q2]                     // Conditionally apply X
+          M[q0]; BC Z [q0;q2]                     // Conditionally apply Z
+          LabelR "Dest" [q2]                      // Label output
+    sources: [liquid-repo]
+
+- id: quil
+  name: Quil
+  aliases: [Quantum Instruction Language, pyQuil]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2016, date: "2016-08-11", precision: exact, note: "Smith, Curtis and Zeng, arXiv:1608.03355 v1 (11 August 2016)." }
+    places: [{ institution: Rigetti Computing, city: Berkeley, country: US }]
+  creators:
+    - { name: Robert S. Smith, role: designer }
+    - { name: Michael J. Curtis, role: designer }
+    - { name: William J. Zeng, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [intermediate-code]
+    domain: [quantum-computing]
+  summary: >
+    Rigetti's quantum instruction language, defined together with a Quantum Abstract Machine that shares a classical
+    memory with the quantum processor. Unlike QASM, which "does not have any notion of classical control", Quil "is
+    considered a low-level quantum IR with classical control", with DEFGATE, DEFCIRCUIT, measurement into classical
+    addresses and conditional jumps, aimed at hybrid algorithms such as VQE. pyQuil (2017) generates it from Python.
+  relations:
+    - { type: influenced_by, to: qasm, weight: weak, confidence: medium, sources: [smith-2016-quil], note: "Positions itself against QASM, \"the most well-known example of a low-level quantum IR\", by adding classical control; contrast rather than stated influence." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://github.com/quil-lang/quil" }
+  sources: [smith-2016-quil]
+  example:
+    title: A random number from measurement
+    language: Quil
+    year: 2016
+    note: "Verbatim from Smith et al. 2016, Example 10: \"Producing a random number between 0 and 3 inclusive\"."
+    code: |
+      H 0
+      H 1
+      MEASURE 0 [0]
+      MEASURE 1 [1]
+    sources: [smith-2016-quil]
+
+- id: blackbird
+  name: Blackbird
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2018, date: "2018-04-09", precision: exact, note: "Introduced in the Strawberry Fields paper, arXiv:1804.03159 v1 (9 April 2018); Quantum 3, 129 (2019)." }
+    places: [{ institution: Xanadu, city: Toronto, country: CA }]
+  creators:
+    - { name: Nathan Killoran, role: co-author }
+    - { name: Josh Izaac, role: co-author }
+    - { name: Christian Weedbrook, role: co-author }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    domain: [quantum-computing]
+  summary: >
+    "A standalone domain specific language (DSL) for continuous-variable quantum computation", the language of Xanadu's
+    photonic Strawberry Fields platform. Operations are applied to qumodes with the | operator; its "syntax is modeled
+    after that of ProjectQ", and it exists both as a grammar with Python and C++ parsers and embedded in Python 3.
+  notes: >
+    ProjectQ, its stated model, is a Python framework rather than a language and is not a node. Paper authors also
+    include Nicolás Quesada, Ville Bergholm and Matthew Amy.
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://github.com/XanaduAI/blackbird" }
+  sources: [killoran-2019-strawberry-fields]
+  example:
+    title: Preparing continuous-variable states
+    language: Blackbird
+    year: 2018
+    note: "Verbatim from Killoran et al., Codeblock 1."
+    code: |
+      # Create the vacuum state in qumode 0
+      Vac | q[0]
+
+      # Create a coherent state in qumode 1
+      alpha = 2.0 + 1j
+      Coherent(alpha) | q[1]
+
+      # Create squeezed states in qumodes 0 & 1
+      S = Squeezed(2.0)
+      S | q[0]
+      S | q[1]
+
+      # Create a Fock state in qumode 1
+      Fock(4) | q[1]
+    sources: [killoran-2019-strawberry-fields]
+
+- id: cqasm
+  name: cQASM
+  aliases: [Common QASM]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2018, date: "2018-05-24", precision: exact, note: "Khammassi et al., arXiv:1805.09607 (24 May 2018)." }
+    places: [{ institution: QuTech, city: Delft, country: NL }]
+  creators:
+    - { name: Nader Khammassi, role: designer }
+    - { name: Koen Bertels, role: co-author }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    features: [intermediate-code]
+    domain: [quantum-computing]
+  summary: >
+    QuTech and Intel's "common QASM syntax definition", meant to "abstract away qubit technology details" across the
+    QASM dialects then in use. It is the compile target for ScaffCC, ProjectQ, LIQUi|> and OpenQL in QuTech's stack and
+    lowers to the executable eQASM.
+  relations:
+    - { type: dialect_of, to: qasm, weight: strong, confidence: high, sources: [khammassi-2018-cqasm], note: "\"QASM first appeared in 2005 in a set of software tools from MIT\"; cQASM proposes a common syntax for its dialects, naming OpenQASM among them." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://github.com/QuTech-Delft/cQASM-spec" }
+  sources: [khammassi-2018-cqasm]
+  example:
+    title: A Bell pair
+    language: cQASM 1.0
+    year: 2018
+    note: "Verbatim from Khammassi et al., Code Example 1, without line numbers."
+    code: |
+      version 1.0
+      # define a quantum register of 2 qubits
+      qubits 2
+
+      # create a Bell pair via a Hadamard rotation
+      h q[0]
+      # followed by a CNOT gate
+      # q[0]: control qubit, q[1]: target qubit
+      cnot q[0],q[1]
+
+      # measure both qubits to test correlations
+      measure q[0]
+      measure q[1]
+    sources: [khammassi-2018-cqasm]
+
+- id: twist
+  name: Twist
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2022, precision: year, note: "POPL 2022 (Proc. ACM Program. Lang. 6, January 2022); artifact repository created 30 September 2021." }
+    places: [{ institution: MIT CSAIL, city: Cambridge, country: US }]
+  creators:
+    - { name: Charles Yuan, role: designer }
+    - { name: Christopher McNally, role: designer }
+    - { name: Michael Carbin, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional]
+    typing: [static-typing, linear-types]
+    domain: [quantum-computing]
+  summary: >
+    "The first language that features a type system for sound reasoning about purity": types mark whether qubits are
+    pure or entangled, and purity assertions are checked by "a combination of static analysis and runtime
+    verification". Its core calculus is "a functional language featuring classical control and quantum data, in the
+    style of the linear quantum lambda-calculus of Selinger and Valiron". The interpreter is written in OCaml.
+  relations:
+    - { type: influenced_by, to: quantum-lambda-calculus, weight: moderate, confidence: high, sources: [yuan-2022-twist] }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://github.com/psg-mit/twist-popl22" }
+  sources: [yuan-2022-twist]
+  example:
+    title: Teleportation with purity types
+    language: Twist
+    year: 2022
+    note: "Verbatim from Yuan et al., Fig. 5. The paper uses it to show a program the analysis rejects; the cast on the last line is the unchecked assertion."
+    code: |
+      fun teleport (q1 : qubit<P>) : qubit<P> =
+        let q23 : (qubit & qubit)<P> = bell_pair () in
+        let (q2 : qubit<M>, q3 : qubit<M>) = q23 in
+        let (q1 : qubit<M>, q2 : qubit<M>) = CNOT (q1, q2) in
+        let q1 : qubit<M> = H (q1) in
+        let (q2 : qubit<M>, q3 : qubit<M>) = CNOT (q2, q3) in
+        let (q1 : qubit<M>, q3 : qubit<M>) = CZ (q1, q3) in
+        let _ : bool * bool = measure (q1, q2) in
+        cast<P>(q3) (* direct assertion of q3 as pure *)
+    sources: [yuan-2022-twist]
+
+- id: guppy
+  name: Guppy
+  aliases: [guppylang]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2024, date: "2024-01-19", precision: exact, note: "guppylang 0.1.0 on PyPI, 19 January 2024; presented at PLanQC 2024 (paper posted to arXiv in October 2025)." }
+    places: [{ institution: Quantinuum, city: Cambridge, country: GB }]
+  creators:
+    - { name: Mark Koch, role: designer }
+    - { name: Alan Lawrence, role: designer }
+    - { name: Kartik Singhal, role: designer }
+    - { name: Seyon Sivarajah, role: designer }
+    - { name: Ross Duncan, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing, linear-types]
+    memory: [ownership-borrowing]
+    domain: [quantum-computing]
+  milestones:
+    - { version: "ownership and borrowing", year: 2025, introduces: [ownership-borrowing], summary: "PLanQC 2025 paper on imperative quantum programming with ownership and borrowing, drawing on Rust.", sources: [koch-2025-guppy-ownership] }
+  summary: >
+    Quantinuum's "domain-specific language embedded in Python that allows users to write high-level hybrid quantum
+    programs with complex control flow in Pythonic syntax". Functions marked @guppy are type-checked, "Qubits in Guppy
+    are linear, i.e., they cannot be copied", and programs compile to the Hugr intermediate representation. A 2025
+    follow-up added ownership and borrowing modelled on Rust.
+  relations:
+    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [koch-2024-guppy], note: "Embedded in Python with \"Pythonic syntax\"." }
+    - { type: influenced_by, to: rust, aspects: [ownership-borrowing], year: 2025, weight: moderate, confidence: high, sources: [koch-2025-guppy-ownership], note: "\"we draw inspiration from classical systems-level programming ... The most prominent example is Rust\"." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://github.com/CQCL/guppylang" }
+  sources: [koch-2024-guppy, koch-2025-guppy-ownership, guppylang-pypi]
+  example:
+    title: A typed quantum function
+    language: Guppy
+    year: 2024
+    note: "Verbatim from Koch et al., Fig. 1(a)."
+    code: |
+      @guppy
+      def rx(q: Qubit, a: float) -> Qubit:
+        # Implement Rx via Rz rotation
+        return h(rz(h(q), a))
+    sources: [koch-2024-guppy]
+
+- id: qmod
+  name: Qmod
+  aliases: [Quantum Modeling Language, Classiq Qmod]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2024, date: "2024-07-23", precision: exact, note: "General availability announced by Classiq on 23 July 2024; the Classiq Python SDK has been on PyPI since June 2021." }
+    places: [{ institution: Classiq Technologies, city: Tel Aviv, country: IL }]
+  creators:
+    - { name: Classiq Technologies, role: developer }
+  status: active
+  tags:
+    paradigm: [declarative]
+    domain: [quantum-computing]
+  summary: >
+    Classiq's "Quantum Modeling Language", a high-level language with "two alternative input formats: an external
+    domain-specific language (DSL) with its dedicated syntax, and an embedded DSL with Python as host language". Programs
+    describe quantum functions over typed quantum variables, including fixed-point numeric types and arithmetic, and a
+    synthesis engine chooses the circuit implementation.
+  relations:
+    - { type: influenced_by, to: python, weight: moderate, confidence: high, sources: [vax-2025-qmod], note: "Python is the host language of its embedded form." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://www.classiq.io/" }
+  sources: [classiq-2024-qmod, vax-2025-qmod]
+  example:
+    title: A Bell pair in the Python-embedded form
+    language: Qmod
+    year: 2025
+    note: "Verbatim from Vax et al. 2025, Fig. 1, with the import line printed above it."
+    code: |
+      from classiq.qmod import *
+
+      @qfunc
+      def bell(pair: QArray[QBit, 2]):
+        H(pair[0])
+        CX(pair[0], pair[1])
+
+      @qfunc
+      def main(res: Output[QArray[QBit, 2]]):
+        allocate(res)
+        bell(res)
+    sources: [vax-2025-qmod]

@@ -594,8 +594,20 @@
     - "SystemC is a C++ class library (Wikipedia: \"strictly a C++ class library\"), recorded as a note on cpp. Revisit if the hardware cluster needs it as a node."
 - id: quantum
   name: Quantum programming languages
-  summary: "Languages for quantum circuits and algorithms."
-  research_status: stub
+  summary: "Languages for quantum circuits and algorithms: Knill's QRAM pseudocode, QCL, Selinger's QPL and the typed functional line (quantum lambda calculus, Quipper, QWIRE, Silq), and the industry languages and assembly formats (QASM, OpenQASM, Quil, Q#, Guppy)."
+  research_status: draft
+  key_sources: [knill-1996-quantum-pseudocode, selinger-2004-qpl, green-2013-quipper, cross-2022-openqasm3]
+  backlog:
+    - { name: "Quantum IO Monad (QIO)", year: 2008, hint: "Green and Altenkirch, Haskell-embedded; named by the Quipper paper as a predecessor. Find the original paper." }
+    - { name: "Q language (Bettelli, Calarco, Serafini)", year: 2001, hint: "C++ library-language cited by Selinger 2004 among early proposals." }
+    - { name: "qGCL", year: 2000, hint: "Sanders and Zuliani's quantum guarded-command language, cited by Selinger 2004." }
+    - { name: "QuGcl", year: 2016, hint: "Mingsheng Ying's quantum GCL with quantum case; Qunity names it as an influence." }
+    - { name: "eQASM", year: 2019, hint: "QuTech's executable QASM, the target cQASM lowers to." }
+    - { name: "OpenQL", hint: "QuTech's C++/Python quantum programming framework compiling to cQASM; check whether it is a language or a library." }
+    - { name: "Proto-Quipper-Dyn", year: 2022, hint: "Fu, Kishida, Ross, Selinger, \"Proto-Quipper with dynamic lifting\", arXiv:2204.13041. Currently folded into the quipper node." }
+  research_questions:
+    - "Did Q# replace LIQUi|> by design? The LIQUi|> README announces the QDK on 11 December 2017; a Microsoft statement calling Q# its successor would justify a successor_of edge."
+    - "Qiskit, Cirq, ProjectQ and PennyLane describe themselves as SDKs, frameworks or libraries rather than languages, so they are not nodes; ProjectQ is Blackbird's stated syntactic model."
 - id: smart-contracts
   name: Smart-contract languages
   summary: "Languages for programs that run on blockchains."

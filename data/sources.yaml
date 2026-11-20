@@ -6362,3 +6362,305 @@
   title: "hvm on crates.io: version history"
   url: https://crates.io/crates/hvm/versions
   checked: '2026-11-20'
+- id: oemer-1998-procedural-formalism
+  type: report
+  primary: true
+  authors: [Bernhard Ömer]
+  title: A Procedural Formalism for Quantum Computing
+  venue: Master's thesis, Department of Theoretical Physics, Technical University of Vienna
+  year: 1998
+  url: http://tph.tuwien.ac.at/~oemer/doc/qcldoc.pdf
+  checked: '2026-11-20'
+- id: oemer-2000-quantum-programming-qcl
+  type: report
+  primary: true
+  authors: [Bernhard Ömer]
+  title: Quantum Programming in QCL
+  venue: Master's thesis, Institute of Information Systems, Technical University of Vienna
+  year: 2000
+  url: http://tph.tuwien.ac.at/~oemer/doc/quprog.pdf
+- id: oemer-2003-structured-quantum-programming
+  type: report
+  primary: true
+  authors: [Bernhard Ömer]
+  title: Structured Quantum Programming
+  venue: PhD dissertation, Technical University of Vienna
+  year: 2003
+  url: http://tph.tuwien.ac.at/~oemer/doc/structquprog.pdf
+- id: oemer-qcl-page
+  type: web
+  primary: true
+  authors: [Bernhard Ömer]
+  title: QCL - A Programming Language for Quantum Computers
+  url: http://tph.tuwien.ac.at/~oemer/qcl.html
+- id: selinger-2004-qpl
+  type: paper
+  primary: true
+  authors: [Peter Selinger]
+  title: Towards a quantum programming language
+  venue: Mathematical Structures in Computer Science 14(4), pp. 527-586
+  year: 2004
+  doi: 10.1017/S0960129504004256
+  url: https://www.mathstat.dal.ca/~selinger/papers/qpl.pdf
+  checked: '2026-11-20'
+- id: svore-2018-qsharp
+  type: paper
+  primary: true
+  authors: [Krysta Svore, Alan Geller, Matthias Troyer, John Azariah, Christopher Granade, Bettina Heim, Vadym Kliuchnikov, Mariia Mykhailova, Andres Paz, Martin Roetteler]
+  title: "Q#: Enabling scalable quantum computing and development with a high-level domain-specific language"
+  venue: Real World Domain Specific Languages Workshop (RWDSL 2018), pp. 1-10
+  year: 2018
+  doi: 10.1145/3183895.3183901
+  url: https://arxiv.org/abs/1803.00652
+  checked: '2026-11-20'
+- id: msqdk-2017-announce
+  type: web
+  primary: true
+  authors: [Microsoft]
+  title: Announcing the Microsoft Quantum Development Kit
+  year: 2017
+  url: https://azure.microsoft.com/en-us/blog/quantum/2017/12/11/announcing-microsoft-quantum-development-kit/
+- id: msqdk-2023-preview
+  type: web
+  primary: true
+  authors: [Microsoft]
+  title: Introducing the Microsoft Quantum Development Kit Preview
+  year: 2023
+  url: https://quantum.microsoft.com/en-us/insights/blogs/introducing-the-microsoft-quantum-development-kit-preview
+- id: msqdk-2024-v1
+  type: web
+  primary: true
+  authors: [Microsoft]
+  title: Announcing v1.0 of the Microsoft Quantum Development Kit
+  year: 2024
+  url: https://quantum.microsoft.com/en-us/insights/blogs/announcing-v1-0-of-the-microsoft-quantum-development-kit
+- id: cross-2017-openqasm
+  type: paper
+  primary: true
+  authors: [Andrew W. Cross, Lev S. Bishop, John A. Smolin, Jay M. Gambetta]
+  title: Open Quantum Assembly Language
+  venue: arXiv:1707.03429 [quant-ph]
+  year: 2017
+  doi: 10.48550/arXiv.1707.03429
+  url: https://arxiv.org/abs/1707.03429
+  checked: '2026-11-20'
+- id: cross-2022-openqasm3
+  type: paper
+  primary: true
+  authors: [Andrew Cross, Ali Javadi-Abhari, Thomas Alexander, Niel de Beaudrap, Lev S. Bishop, Steven Heidel, Colm A. Ryan, Prasahnt Sivarajah, John Smolin, Jay M. Gambetta, Blake R. Johnson]
+  title: "OpenQASM 3: A broader and deeper quantum assembly language"
+  venue: ACM Transactions on Quantum Computing 3(3), pp. 1-50
+  year: 2022
+  doi: 10.1145/3505636
+  url: https://arxiv.org/abs/2104.14722
+  checked: '2026-11-20'
+- id: svore-2006-layered-architecture
+  type: paper
+  primary: true
+  authors: [Krysta M. Svore, Andrew W. Cross, Alfred V. Aho, Isaac L. Chuang, Igor L. Markov]
+  title: A layered software architecture for quantum computing design tools
+  venue: IEEE Computer 39(1), pp. 74-83
+  year: 2006
+  doi: 10.1109/MC.2006.4
+  url: https://doi.org/10.1109/MC.2006.4
+- id: knill-1996-quantum-pseudocode
+  type: report
+  primary: true
+  authors: [E. Knill]
+  title: Conventions for Quantum Pseudocode
+  venue: Los Alamos National Laboratory technical report LAUR-96-2724
+  year: 1996
+  url: https://arxiv.org/abs/2211.02559
+- id: vantonder-2004-lambda-quantum
+  type: paper
+  primary: true
+  authors: [André van Tonder]
+  title: A Lambda Calculus for Quantum Computation
+  venue: SIAM Journal on Computing 33(5), pp. 1109-1135
+  year: 2004
+  doi: 10.1137/S0097539703432165
+  url: https://arxiv.org/abs/quant-ph/0307150
+- id: selinger-valiron-2006-qlc
+  type: paper
+  primary: true
+  authors: [Peter Selinger, Benoît Valiron]
+  title: A lambda calculus for quantum computation with classical control
+  venue: Mathematical Structures in Computer Science 16(3), pp. 527-552 (TLCA 2005 version, arXiv cs/0404056)
+  year: 2006
+  doi: 10.1017/S0960129506005238
+  url: https://arxiv.org/abs/cs/0404056
+- id: altenkirch-2005-qml
+  type: paper
+  primary: true
+  authors: [Thorsten Altenkirch, Jonathan Grattage]
+  title: A Functional Quantum Programming Language
+  venue: LICS 2005, pp. 249-258
+  year: 2005
+  doi: 10.1109/LICS.2005.1
+  url: https://arxiv.org/abs/quant-ph/0409065
+- id: green-2013-quipper
+  type: paper
+  primary: true
+  authors: [Alexander S. Green, Peter LeFanu Lumsdaine, Neil J. Ross, Peter Selinger, Benoît Valiron]
+  title: "Quipper: A Scalable Quantum Programming Language"
+  venue: PLDI 2013, pp. 333-342
+  year: 2013
+  doi: 10.1145/2491956.2462177
+  url: https://arxiv.org/abs/1304.3390
+- id: quipper-site
+  type: web
+  primary: true
+  authors: [Peter Selinger]
+  title: The Quipper Language
+  url: https://www.mathstat.dal.ca/~selinger/quipper/
+- id: rios-2018-proto-quipper-m
+  type: paper
+  primary: true
+  authors: [Francisco Rios, Peter Selinger]
+  title: A Categorical Model for a Quantum Circuit Description Language (Extended Abstract)
+  venue: QPL 2017, EPTCS 266, pp. 164-178
+  year: 2018
+  doi: 10.4204/EPTCS.266.11
+  url: https://arxiv.org/abs/1706.02630
+- id: paykin-2017-qwire
+  type: paper
+  primary: true
+  authors: [Jennifer Paykin, Robert Rand, Steve Zdancewic]
+  title: "QWIRE: a core language for quantum circuits"
+  venue: POPL 2017, pp. 846-858
+  year: 2017
+  doi: 10.1145/3009837.3009894
+  url: https://doi.org/10.1145/3009837.3009894
+- id: rand-2018-qwire-practice
+  type: paper
+  primary: true
+  authors: [Robert Rand, Jennifer Paykin, Steve Zdancewic]
+  title: "QWIRE Practice: Formal Verification of Quantum Circuits in Coq"
+  venue: QPL 2017, EPTCS 266, pp. 119-132
+  year: 2018
+  doi: 10.4204/EPTCS.266.8
+  url: https://arxiv.org/abs/1803.00699
+- id: bichsel-2020-silq
+  type: paper
+  primary: true
+  authors: [Benjamin Bichsel, Maximilian Baader, Timon Gehr, Martin Vechev]
+  title: "Silq: A High-Level Quantum Language with Safe Uncomputation and Intuitive Semantics"
+  venue: PLDI 2020, pp. 286-300
+  year: 2020
+  doi: 10.1145/3385412.3386007
+  url: https://files.sri.inf.ethz.ch/website/papers/pldi20-silq.pdf
+- id: silq-site
+  type: web
+  primary: true
+  title: Silq (official site and examples)
+  url: https://silq.ethz.ch/
+- id: voichick-2023-qunity
+  type: paper
+  primary: true
+  authors: [Finn Voichick, Liyi Li, Robert Rand, Michael Hicks]
+  title: "Qunity: A Unified Language for Quantum and Classical Computing"
+  venue: Proceedings of the ACM on Programming Languages 7(POPL), pp. 921-951
+  year: 2023
+  doi: 10.1145/3571225
+  url: https://arxiv.org/abs/2204.12384
+- id: abhari-2012-scaffold
+  type: report
+  primary: true
+  authors: [Ali Javadi Abhari, Arvin Faruque, Mohammad Javad Dousti, Lukas Svec, Oana Catu, Amlan Chakrabati, Chen-Fu Chiang, Seth Vanderwilt, John Black, Fred Chong, Margaret Martonosi, Martin Suchara, Ken Brown, Massoud Pedram, Todd Brun]
+  title: "Scaffold: Quantum Programming Language"
+  venue: Princeton University Department of Computer Science, Technical Report TR-934-12
+  year: 2012
+  url: https://www.cs.princeton.edu/techreports/2012/934.pdf
+- id: javadiabhari-2015-scaffcc
+  type: paper
+  primary: true
+  authors: [Ali JavadiAbhari, Shruti Patil, Daniel Kudrow, Jeff Heckey, Alexey Lvov, Frederic T. Chong, Margaret Martonosi]
+  title: "ScaffCC: Scalable Compilation and Analysis of Quantum Programs"
+  venue: Parallel Computing
+  year: 2015
+  doi: 10.1016/j.parco.2014.12.001
+  url: https://arxiv.org/abs/1507.01902
+- id: wecker-2014-liquid
+  type: paper
+  primary: true
+  authors: [Dave Wecker, Krysta M. Svore]
+  title: "LIQUi|>: A Software Design Architecture and Domain-Specific Language for Quantum Computing"
+  venue: arXiv:1402.4467
+  year: 2014
+  url: https://arxiv.org/abs/1402.4467
+- id: liquid-repo
+  type: web
+  primary: true
+  authors: [Microsoft Research]
+  title: StationQ/Liquid repository
+  url: https://github.com/StationQ/Liquid
+- id: smith-2016-quil
+  type: paper
+  primary: true
+  authors: [Robert S. Smith, Michael J. Curtis, William J. Zeng]
+  title: A Practical Quantum Instruction Set Architecture
+  venue: arXiv:1608.03355
+  year: 2016
+  url: https://arxiv.org/abs/1608.03355
+- id: killoran-2019-strawberry-fields
+  type: paper
+  primary: true
+  authors: [Nathan Killoran, Josh Izaac, Nicolás Quesada, Ville Bergholm, Matthew Amy, Christian Weedbrook]
+  title: "Strawberry Fields: A Software Platform for Photonic Quantum Computing"
+  venue: Quantum 3, 129 (arXiv:1804.03159, 2018)
+  year: 2019
+  doi: 10.22331/q-2019-03-11-129
+  url: https://arxiv.org/abs/1804.03159
+- id: khammassi-2018-cqasm
+  type: paper
+  primary: true
+  authors: [N. Khammassi, G. G. Guerreschi, I. Ashraf, J. W. Hogaboam, C. G. Almudever, K. Bertels]
+  title: "cQASM v1.0: Towards a Common Quantum Assembly Language"
+  venue: arXiv:1805.09607
+  year: 2018
+  url: https://arxiv.org/abs/1805.09607
+- id: yuan-2022-twist
+  type: paper
+  primary: true
+  authors: [Charles Yuan, Christopher McNally, Michael Carbin]
+  title: "Twist: Sound Reasoning for Purity and Entanglement in Quantum Programs"
+  venue: Proceedings of the ACM on Programming Languages 6(POPL), Article 30
+  year: 2022
+  doi: 10.1145/3498691
+  url: https://arxiv.org/abs/2205.02287
+- id: koch-2024-guppy
+  type: paper
+  primary: true
+  authors: [Mark Koch, Alan Lawrence, Kartik Singhal, Seyon Sivarajah, Ross Duncan]
+  title: "GUPPY: Pythonic Quantum-Classical Programming"
+  venue: PLanQC 2024 (arXiv:2510.12582)
+  year: 2024
+  url: https://arxiv.org/abs/2510.12582
+- id: koch-2025-guppy-ownership
+  type: paper
+  primary: true
+  authors: [Mark Koch, Agustín Borgna, Craig Roy, Alan Lawrence, Kartik Singhal, Seyon Sivarajah, Ross Duncan]
+  title: Imperative Quantum Programming with Ownership and Borrowing in Guppy
+  venue: PLanQC 2025 (arXiv:2510.13082)
+  year: 2025
+  url: https://arxiv.org/abs/2510.13082
+- id: guppylang-pypi
+  type: web
+  primary: true
+  title: "guppylang on PyPI: release history"
+  url: https://pypi.org/project/guppylang/#history
+- id: classiq-2024-qmod
+  type: web
+  primary: true
+  authors: [Classiq Technologies]
+  title: Classiq Transforms Quantum Computing with Qmod, the First High-Level Language for Quantum Programming
+  year: 2024
+  url: https://www.classiq.io/insights/classiq-transforms-quantum-computing-with-qmod-the-first-high-level-language-for-quantum-programming
+- id: vax-2025-qmod
+  type: paper
+  primary: true
+  authors: [Matan Vax, Peleg Emanuel, Eyal Cornfeld, Israel Reichental, Ori Opher, Ori Roth, Tal Michaeli, Lior Preminger, Lior Gazit, Amir Naveh, Yehuda Naveh]
+  title: "Qmod: Expressive High-Level Quantum Modeling"
+  venue: arXiv:2502.19368
+  year: 2025
+  url: https://arxiv.org/abs/2502.19368
