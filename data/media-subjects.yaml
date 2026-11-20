@@ -738,6 +738,8 @@
   wiki: Martin Odersky
   nodes:
   - scala
+  - pizza
+  - gj
 - id: person-martin-richards
   kind: person
   person: Martin Richards
@@ -822,6 +824,8 @@
   wiki: Philip Wadler
   nodes:
   - haskell
+  - pizza
+  - gj
 - id: person-randall-smith
   kind: person
   person: Randall Smith
@@ -1105,6 +1109,7 @@
   wiki: Charles Oliver Nutter
   nodes:
   - jruby
+  - mirah
 - id: person-carol-shaw
   kind: person
   person: Carol Shaw
@@ -1835,6 +1840,7 @@
   nodes:
   - newspeak
   - strongtalk
+  - gj
 - id: person-james-g-mitchell
   kind: person
   person: James G. Mitchell

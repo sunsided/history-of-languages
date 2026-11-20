@@ -324,12 +324,9 @@
 - id: oop
   name: Object-oriented lineage
   research_status: draft
-  backlog:
-    - { name: "Mirah", hint: "Charles Oliver Nutter's Ruby-syntax JVM language, formerly Duby; infobox influences Ruby, Java, Boo; stable 0.2.1 (26 September 2016). Wikipedia gives no first-appeared year (wiki-mirah not yet added)." }
-    - { name: "PortablE", hint: "No article (404); a section of the Amiga E article: Christopher Handley's self-hosting meta-compiler for Amiga E targeting C++ and E. No year." }
-    - { name: "ACC", hint: "Wikipedia stub: \"a near-C compiler for the MS-DOS operating system\"; no year or authors (and a mismatched OpenACC reference)." }
   research_questions:
     - "Kaleidoscope adopts Cecil\u2019s multiple dispatch and optional static typing (Freeman-Benson and Borning, ECOOP 1992), but Kaleidoscope is dated 1990 and Cecil 1992; Cecil\u2019s earliest date needs settling before the edge can be stored. Lithe has no documented ancestor (POPL 1982 paper unreadable). ThingLab, META II and the Burroughs B5000 (FLEX) are not nodes."
+    - "ACC (deferred, and misfiled here: it belongs in c-family): Dave Ashley's near-C compiler for MS-DOS on the 386, with its own assembler, linker and PMODE DOS extender, GPL'd on SourceForge (accompiler) on 11 December 2009. Its original release year is unknown; find a dated DOS-era release (Simtel, a BBS listing or the author's page) before making it a node."
 - id: oop/simula-smalltalk
   name: Simula, Smalltalk and their heirs
   parent: oop
@@ -341,19 +338,15 @@
 - id: managed
   name: Managed-runtime languages (JVM and .NET)
   research_status: draft
-  backlog:
-    - { name: "Pizza / GJ", year: 1996, hint: "Wikipedia (Pizza): \"an open-source superset of Java 1.4\" with generics, function pointers and algebraic types; last version January 2002; gives no first year and does not name Odersky or Wadler as designers. Needs the 1997 POPL paper." }
-    - { name: "C++/CX", year: 2012, hint: "Wikipedia (C++/CX): a C++ language extension for the Windows Runtime borrowing syntax from C++/CLI, superseded by C++/WinRT; no year or designers stated." }
 - id: managed/dynamic
   name: Dynamic languages on the JVM and .NET
   parent: managed
   summary: "Python and Ruby re-implemented on managed runtimes, which pushed those runtimes to support dynamic dispatch (invokedynamic, the DLR)."
   research_status: draft
-  backlog:
-    - { name: "Rhino / Nashorn (JavaScript on the JVM)", year: 1997 }
   research_questions:
     - "Did JRuby's team shape JSR 292 (invokedynamic), or only adopt it early? Find JSR 292 expert-group records or John Rose's posts."
     - "Hugunin's account of why he built IronPython and how it became the DLR (his 2004 PyCon talk and 2007 MIX posts)."
+    - "Rhino: did it extend JavaScript (E4X, JavaAdapter, LiveConnect-style Java access) from the start? Read the old Mozilla Rhino documentation. Which syntax extensions did Nashorn add beyond ECMAScript 5.1? The OpenJDK wiki page 'Nashorn extensions' refused automated fetches."
   key_sources: [wiki-dlr]
 - id: scripting
   name: Scripting languages
@@ -410,24 +403,19 @@
   summary: "Languages whose main target is JavaScript: syntax layers (CoffeeScript), typed functional languages (Elm, PureScript, ReScript) and ports of existing languages (ClojureScript)."
   research_status: draft
   key_sources: [wiki-coffeescript, wiki-elm, wiki-haxe]
-  backlog:
-    - { name: "Coco", year: 2010, hint: "Not mentioned in the CoffeeScript or LiveScript articles (checked 2026-11-01). Needs the Coco repository or a dated announcement." }
-    - { name: "Iced CoffeeScript", year: 2011, hint: "Only a section of the CoffeeScript article: \"a superset of CoffeeScript which adds two new keywords: await and defer\"; no year or author stated. Needs maxtaco.github.io/coffee-script." }
-    - { name: "Imba", year: 2015, hint: "No Wikipedia article (404, 2026-11-01). Use imba.io." }
   research_questions:
     - "Find a primary source (Ashkenas or Eich) for which ES2015 features came from CoffeeScript: arrow functions, rest parameters, destructuring, classes."
     - "Elm 0.17 (2016) dropped signals and FRP for subscriptions: find the release post."
+    - "Who is satyr (Coco's author)? If Satoshi Murakami, LiveScript's co-designer, add him as Coco's creator. Was IcedCoffeeScript's await/defer carried over from Krohn's tamejs (2011)? Imba's influences are unstated in the sources read."
 - id: web/macromedia
   name: Macromedia and Flash-era languages
   parent: web
   summary: "Languages of the MacroMind/Macromedia/Adobe authoring tools: Lingo in Director, ActionScript in Flash, CFML in ColdFusion."
   research_status: draft
   key_sources: [wiki-lingo, wiki-actionscript, wiki-cfml]
-  backlog:
-    - { name: "Authorware scripting", year: 1987, hint: "Wikipedia only names \"its built-in proprietary scripting language\" (no name, year or designer); Authorware Inc. was founded in 1987 by Michael W. Allen. Needs an Authorware manual." }
-    - { name: "MXML", year: 2004, hint: "No Wikipedia article (404). Apache Flex: \"Flex uses MXML to define UI layout\", compiled with ActionScript into SWF; markup, so probably a note on ActionScript." }
   research_questions:
     - "Lingo: 1988 (Adobe Director article) or 1989 with Director 2.2 (Lingo article)? Find a MacroMind manual or press release."
+    - "Authorware scripting: when did the calculation-icon language first appear (Course of Action 1987, or later)? Its official name ('Authorware Script Language'?) needs the Using Authorware 7 manual, and a possible PLATO/TUTOR influence via Michael W. Allen is unexamined."
 - id: data
   name: Data, query and statistics languages
   research_status: draft

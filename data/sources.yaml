@@ -8318,4 +8318,248 @@
   primary: false
   title: 'Wikipedia: Commodore Plus/4'
   url: https://en.wikipedia.org/wiki/Commodore_Plus/4
+- id: odersky-wadler-1996-pizza-announcement
+  type: web
+  primary: true
+  authors: [Martin Odersky, Philip Wadler]
+  title: "Pizza, an extension of Java (TYPES mailing list announcement, 29 November 1996)"
+  year: 1996
+  url: https://www.engineering.upenn.edu/~sweirich/types/archive/1996/msg00382.html
+  checked: '2026-11-20'
+- id: odersky-wadler-1997-pizza
+  type: paper
+  primary: true
+  authors: [Martin Odersky, Philip Wadler]
+  title: "Pizza into Java: Translating theory into practice"
+  venue: POPL '97, pp. 146-159
+  year: 1997
+  doi: 10.1145/263699.263715
+  url: https://infoscience.epfl.ch/record/64384
+- id: pizza-sourceforge
+  type: web
+  primary: true
+  title: The Pizza Compiler (SourceForge project page; release 1.1, 3 January 2002)
+  url: https://pizzacompiler.sourceforge.net/
+  checked: '2026-11-20'
+- id: wiki-pizza
+  type: encyclopedia
+  title: Pizza (programming language)
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Pizza_(programming_language)
+  checked: '2026-11-20'
+- id: bracha-1998-gj
+  type: paper
+  primary: true
+  authors: [Gilad Bracha, Martin Odersky, David Stoutamire, Philip Wadler]
+  title: "Making the future safe for the past: Adding genericity to the Java programming language"
+  venue: OOPSLA '98
+  year: 1998
+  url: https://infoscience.epfl.ch/record/64387
+- id: wadler-gj-page
+  type: web
+  primary: true
+  authors: [Philip Wadler]
+  title: "GJ: A Generic Java Language Extension"
+  url: https://homepages.inf.ed.ac.uk/wadler/gj/
+  checked: '2026-11-20'
+- id: nutter-2008-duby
+  type: web
+  primary: true
+  authors: [Charles Oliver Nutter]
+  title: "Duby: A Type-Inferred Ruby-Like JVM Language (and follow-ups, March 2008)"
+  venue: Headius (blog)
+  year: 2008
+  url: https://headius.blogspot.com/2008/03
+  checked: '2026-11-20'
+- id: infoq-2009-duby-surinx
+  type: interview
+  primary: true
+  title: "Charles Nutter on Duby and Surinx"
+  venue: InfoQ, 15 November 2009
+  year: 2009
+  url: https://www.infoq.com/news/2009/11/duby-surinx
+  checked: '2026-11-20'
+- id: infoq-2010-mirah-interview
+  type: interview
+  primary: true
+  title: "Interview: Charles Nutter on Mirah"
+  venue: InfoQ, 27 July 2010
+  year: 2010
+  url: https://www.infoq.com/articles/mirah-interview
+  checked: '2026-11-20'
+- id: rubygems-duby
+  type: web
+  primary: true
+  title: duby (RubyGems versions 0.0.1 to 0.0.3, 2009-2010)
+  url: https://rubygems.org/gems/duby/versions
+  checked: '2026-11-20'
+- id: wiki-mirah
+  type: encyclopedia
+  title: Mirah (programming language)
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Mirah_(programming_language)
+  checked: '2026-11-20'
+- id: wiki-cpp-cx
+  type: encyclopedia
+  title: C++/CX
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/C%2B%2B/CX
+  checked: '2026-11-20'
+- id: ms-cppcx-reference
+  type: manual
+  primary: true
+  authors: [Microsoft]
+  title: C++/CX Language Reference
+  url: https://learn.microsoft.com/en-us/cpp/cppcx/visual-c-language-reference-c-cx
+  checked: '2026-11-20'
+- id: ms-vs2012-component-extensions
+  type: manual
+  primary: true
+  authors: [Microsoft]
+  title: Component Extensions for Runtime Platforms (Visual Studio 2012 documentation)
+  year: 2012
+  url: https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2012/xey702bw(v=vs.110)
+  checked: '2026-11-20'
+- id: springfield-2011-inside-cppcx
+  type: web
+  primary: true
+  authors: [Jim Springfield]
+  title: Inside the C++/CX Design
+  venue: C++ Team Blog (Microsoft), 20 October 2011
+  year: 2011
+  url: https://devblogs.microsoft.com/cppblog/inside-the-ccx-design/
+  checked: '2026-11-20'
+- id: wiki-rhino
+  type: encyclopedia
+  title: Rhino (JavaScript engine)
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Rhino_(JavaScript_engine)
+  checked: '2026-11-20'
+- id: rhino-repo
+  type: web
+  primary: true
+  authors: [Mozilla]
+  title: mozilla/rhino (GitHub repository and README)
+  url: https://github.com/mozilla/rhino
+  checked: '2026-11-20'
+- id: wiki-nashorn
+  type: encyclopedia
+  title: Nashorn (JavaScript engine)
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Nashorn_(JavaScript_engine)
+  checked: '2026-11-20'
+- id: coco-repo
+  type: web
+  primary: true
+  authors: [satyr]
+  title: "satyr/coco: Unfancy CoffeeScript (GitHub repository, README and changelog)"
+  url: https://github.com/satyr/coco
+  checked: '2026-11-20'
+- id: npm-coco
+  type: web
+  primary: true
+  title: coco (npm registry metadata; 0.1.0 on 20 December 2010, 0.9.1 on 2 March 2013)
+  url: https://registry.npmjs.org/coco
+  checked: '2026-11-20'
+- id: iced-coffeescript-site
+  type: manual
+  primary: true
+  title: IcedCoffeeScript (homepage and documentation)
+  url: https://maxtaco.github.io/coffee-script/
+  checked: '2026-11-20'
+- id: krohn-2014-error-handling
+  type: web
+  primary: true
+  authors: [Max Krohn]
+  title: Error Handling in JavaScript
+  venue: Keybase blog, 17 September 2014
+  year: 2014
+  url: https://keybase.io/blog/2014-09-17/error-handling-in-javascript
+  checked: '2026-11-20'
+- id: npm-iced-coffee-script
+  type: web
+  primary: true
+  title: iced-coffee-script (npm registry metadata; created 23 January 2012)
+  url: https://registry.npmjs.org/iced-coffee-script
+  checked: '2026-11-20'
+- id: hn-2012-coffeescript-under-pressure
+  type: web
+  title: "CoffeeScript Under Pressure (Hacker News discussion, 7 February 2012)"
+  year: 2012
+  url: https://news.ycombinator.com/item?id=3560835
+  checked: '2026-11-20'
+- id: imba-repo
+  type: web
+  primary: true
+  authors: [Sindre Aarsaether]
+  title: imba/imba (GitHub repository and README)
+  url: https://github.com/imba/imba
+  checked: '2026-11-20'
+- id: npm-imba
+  type: web
+  primary: true
+  title: imba (npm registry metadata; 0.9.0 on 27 July 2015)
+  url: https://registry.npmjs.org/imba
+  checked: '2026-11-20'
+- id: aminet-portable-e
+  type: web
+  primary: true
+  authors: [Christopher Handley]
+  title: PortablE readme (Aminet dev/e/PortablE, version r6b, 24 November 2022)
+  year: 2022
+  url: https://aminet.net/dev/e/PortablE.readme
+  checked: '2026-11-20'
+- id: amiga-news-2008-portable-e
+  type: web
+  title: "PortablE r1 (amiga-news.de, 15 June 2008)"
+  year: 2008
+  url: https://amiga-news.de/en/news/AN-2008-06-00030-EN.html
+  checked: '2026-11-20'
+- id: apache-flex-mxml
+  type: manual
+  primary: true
+  authors: [Apache Software Foundation]
+  title: Developing applications in MXML (Apache Flex documentation, from Adobe's Using Flex)
+  url: https://flex.apache.org/doc/flex/using/flx_mxml_mx.html
+  checked: '2026-11-20'
+- id: apache-flex-mxml-syntax
+  type: manual
+  primary: true
+  authors: [Apache Software Foundation]
+  title: MXML syntax (Apache Flex documentation)
+  url: https://flex.apache.org/doc/flex/using/flx_mxmlSyntax_sy.html
+  checked: '2026-11-20'
+- id: wiki-apache-flex
+  type: encyclopedia
+  title: Apache Flex
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Apache_Flex
+  checked: '2026-11-20'
+- id: chambers-2004-flex
+  type: web
+  primary: true
+  authors: [Mike Chambers]
+  title: Announcing Macromedia Flex (29 March 2004)
+  year: 2004
+  url: https://www.mikechambers.com/blog/post/2004-03-29-announcing-macromedia-flex/
+  checked: '2026-11-20'
+- id: macromedia-1996-authorware-3-help
+  type: manual
+  primary: true
+  authors: [Macromedia]
+  title: Authorware 3.0/3.5 Help (A3W.HLP; written by Jeff Swartz; copyright 1995-1996)
+  year: 1996
+  url: "https://discmaster.textfiles.com/file/11042/AMP Graphics Collection.iso/programs/author/aware/data.z/A3W.HLP/A3W.pdf"
+  checked: '2026-11-20'
+- id: wiki-authorware
+  type: encyclopedia
+  title: Adobe Authorware
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Adobe_Authorware
+  checked: '2026-11-20'
+- id: wiki-generics-in-java
+  type: encyclopedia
+  title: Generics in Java
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Generics_in_Java
   checked: '2026-11-20'

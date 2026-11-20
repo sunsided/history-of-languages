@@ -182,6 +182,7 @@
     - { type: influenced_by, to: standard-ml, weight: moderate, confidence: high }
     - { type: influenced_by, to: smalltalk, aspects: [everything-is-an-object], weight: moderate, confidence: medium }
     - { type: influenced_by, to: erlang, aspects: [actors], weight: moderate, confidence: high }
+    - { type: influenced_by, to: pizza, aspects: [pattern-matching, algebraic-data-types], weight: moderate, confidence: medium, sources: [wiki-pizza], note: "Wikipedia: Pizza's pattern-matching and functional features were developed further in Scala, by the same designer." }
   research_status: draft
   confidence: high
   sources: [wiki-scala]
@@ -837,6 +838,111 @@
       frame.set_visible true
     sources: [wiki-jruby]
 
+- id: mirah
+  name: Mirah
+  aliases: [Duby]
+  kind: language
+  category: general
+  cluster: managed
+  origin:
+    first_appeared: { year: 2008, date: "2008-03-10", precision: exact, note: "Announced as Duby in Nutter's blog post 'Duby: A Type-Inferred Ruby-Like JVM Language', 10 March 2008, with a first compiler written that night. First gem (duby 0.0.1) 28 October 2009. The date of the rename to Mirah was not found." }
+  creators:
+    - { name: Charles Oliver Nutter, role: designer }
+  status: historical
+  tags:
+    paradigm: [object-oriented, imperative]
+    typing: [static-typing, type-inference]
+    memory: [garbage-collection]
+  milestones:
+    - { version: "0.0.1", year: 2009, summary: "First RubyGems release, still named duby (28 October 2009)." }
+    - { version: "0.2.1", year: 2016, summary: "Latest stable release (26 September 2016) per Wikipedia." }
+  summary: >
+    Charles Oliver Nutter's "Ruby with a few type annotations": Ruby syntax over the Java type system,
+    with local type inference, compiled to JVM bytecode or Java source and deliberately without any
+    language-specific runtime library. It began in 2008 as Duby ("Duke plus Ruby"), a toy for writing
+    parts of JRuby in something other than Java, and was later renamed Mirah.
+  relations:
+    - { type: influenced_by, to: ruby, weight: strong, confidence: high, sources: [nutter-2008-duby, infoq-2010-mirah-interview], note: "Ruby syntax; Nutter: 'A real subset language that produces clean, tight JVM bytecode'." }
+    - { type: influenced_by, to: java, weight: strong, confidence: high, sources: [infoq-2010-mirah-interview], note: "Java's type system and libraries; 'a nicer way to write Java'." }
+    - { type: influenced_by, to: boo, weight: weak, confidence: medium, sources: [wiki-mirah], note: "Wikipedia infobox; what travelled is not said." }
+    - { type: targets, to: jvm-bytecode, weight: strong, confidence: high, sources: [nutter-2008-duby] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Mirah_(programming_language)" }
+  sources: [nutter-2008-duby, infoq-2009-duby-surinx, infoq-2010-mirah-interview, rubygems-duby, wiki-mirah]
+  example:
+    title: Typed Fibonacci
+    language: Mirah
+    note: "From Wikipedia's Mirah article. Ruby syntax; the only annotation is the parameter type (a:int), from which the return type is inferred."
+    code: |
+      def fib(a:int)
+        if a < 2
+          a
+        else
+          fib(a - 1) + fib(a - 2)
+        end
+      end
+    sources: [wiki-mirah]
+
+- id: portable-e
+  name: PortablE
+  aliases: [Portabl E]
+  kind: language
+  category: general
+  cluster: oop
+  origin:
+    first_appeared: { year: 2008, date: "2008-06", precision: year, note: "Earliest dated release found: r1 (1.0), reported by amiga-news.de on 15 June 2008. Whether earlier betas were public was not established." }
+  creators:
+    - { name: Christopher Handley, role: designer }
+  status: maintained
+  tags:
+    paradigm: [multi-paradigm, object-oriented, procedural]
+  milestones:
+    - { version: "r1", year: 2008, summary: "Release 1.0 for AmigaOS, AmigaOS 4, AROS and MorphOS." }
+    - { version: "r6b", year: 2022, summary: "24 November 2022; r6 dropped the beta label and added basic 64-bit x86 Linux support." }
+  summary: >
+    Christopher Handley's "recreation of AmigaE from scratch, along with most of the improvements I have
+    wanted": a self-hosting meta-compiler written in Amiga E that translates E into C++ or Amiga E, so E
+    programs run on AmigaOS (68k and PowerPC), AROS, MorphOS, Linux and Windows. It keeps compatibility with
+    the CreativE dialect of Amiga E.
+  relations:
+    - { type: dialect_of, to: amiga-e, weight: strong, confidence: high, sources: [wiki-amiga-e, aminet-portable-e] }
+    - { type: implemented_in, to: amiga-e, weight: strong, confidence: high, sources: [wiki-amiga-e], note: "\"a meta-compiler written from scratch in Amiga E\", able to compile itself." }
+    - { type: targets, to: cpp, weight: strong, confidence: high, sources: [wiki-amiga-e] }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://aminet.net/package/dev/e/PortablE" }
+  sources: [wiki-amiga-e, aminet-portable-e, amiga-news-2008-portable-e]
+
+- id: nashorn
+  name: Nashorn
+  kind: language
+  category: scripting
+  cluster: managed/dynamic
+  origin:
+    began: { year: 2011, precision: year, note: "Announced at the JVM Language Summit, July 2011; confirmed at JavaOne, October 2011." }
+    first_appeared: { year: 2012, date: "2012-12-21", precision: exact, note: "Source released on the OpenJDK repository on 21 December 2012 (open-sourcing announced 21 November 2012); then shipped with Java 8." }
+    places: [{ institution: Oracle, country: US }]
+  status: maintained
+  tags:
+    paradigm: [multi-paradigm, prototype-based, functional, scripting]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [host-interop]
+  summary: >
+    Oracle's JavaScript engine for the JVM, built on the invokedynamic support for dynamic languages
+    (JSR 292) from Java 7. It was the first implementation to pass the ECMAScript 5.1 test suite completely,
+    replaced Rhino in the JDK from Java 8, was deprecated in Java 11 and removed in Java 15, and lives on as
+    a standalone OpenJDK project. The name is German for rhinoceros.
+  relations:
+    - { type: dialect_of, to: javascript, weight: strong, confidence: high, sources: [wiki-nashorn], note: "\"100% support of ECMAScript 5.1\"." }
+    - { type: successor_of, to: rhino, weight: strong, confidence: high, sources: [wiki-nashorn, wiki-rhino], note: "Rhino article: 'a now-deprecated successor to Rhino for the JVM, starting at Java 8'." }
+    - { type: implemented_in, to: java, weight: strong, confidence: high, sources: [wiki-nashorn] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Nashorn_(JavaScript_engine)" }
+  sources: [wiki-nashorn, wiki-rhino]
+
 - id: ironpython
   name: IronPython
   kind: language
@@ -1044,6 +1150,35 @@
       };
     sources: [wiki-cpp-cli]
 
+- id: cpp-cx
+  name: C++/CX
+  aliases: [C++ Component Extensions]
+  kind: language
+  category: systems
+  cluster: managed
+  origin:
+    first_appeared: { year: 2011, precision: year, note: "Jim Springfield's 'Inside the C++/CX Design' (20 October 2011) explains it after a //BUILD/ 2011 presentation; the BUILD session itself was not read. Documented in Visual C++ 2012 (compiler switch /ZW)." }
+    places: [{ institution: Microsoft, country: US }]
+  status: legacy
+  tags:
+    paradigm: [object-oriented, imperative, generic-programming, multi-paradigm]
+    typing: [static-typing]
+    memory: [reference-counting, manual-memory, raii]
+    features: [c-interop, host-interop, templates]
+  summary: >
+    Microsoft's C++ language extensions for the Windows Runtime: native code, no CLR and no garbage
+    collector, but C++/CLI's syntax reused for a different object model, with ^ as a reference-counted handle
+    to a COM-based Windows Runtime object, ref new and ref class. The team chose a language extension because
+    the pure-library route (WRL) was "just too hard to use". Microsoft now recommends C++/WinRT, a standard
+    C++17 header library, instead.
+  relations:
+    - { type: influenced_by, to: cpp-cli, weight: strong, confidence: high, sources: [springfield-2011-inside-cppcx, wiki-cpp-cx], note: "\"The language extensions borrow syntax from C++/CLI but target the Windows Runtime\"; Springfield: \"Dereferencing of a ^ yields a %, also like C++/CLI.\" The Visual C++ 2012 documentation calls C++/CX 'a subset of C++/CLI' whose shared extensions take Windows Runtime semantics under /ZW." }
+    - { type: superset_of, to: cpp, weight: strong, confidence: high, sources: [ms-cppcx-reference], note: "\"a set of extensions to the C++ language\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/C%2B%2B/CX" }
+  sources: [ms-cppcx-reference, ms-vs2012-component-extensions, springfield-2011-inside-cppcx, wiki-cpp-cx]
+
 - id: actionscript
   name: ActionScript
   aliases: [AS3]
@@ -1097,6 +1232,45 @@
         }
       }
     sources: [wiki-actionscript]
+
+- id: mxml
+  name: MXML
+  kind: language
+  category: domain-specific
+  cluster: web/macromedia
+  origin:
+    first_appeared: { year: 2004, date: "2004-03-29", precision: exact, note: "Part of Macromedia Flex, whose initial version was released on 29 March 2004 (Mike Chambers's announcement)." }
+    places: [{ institution: Macromedia, country: US }]
+  status: legacy
+  tags:
+    paradigm: [declarative, object-oriented]
+    domain: [web]
+  summary: >
+    The XML language of Macromedia's (later Adobe's, then Apache's) Flex for laying out user interfaces and
+    declaring the non-visual parts of an application. "MXML tags correspond to ActionScript classes or
+    properties of classes"; ActionScript goes into fx:Script blocks, curly braces bind properties to data,
+    and the compiler turns the whole into ActionScript objects in a Flash SWF file. In Flex 1.0 and 1.5 a Java EE
+    application server compiled MXML and ActionScript on the fly.
+  relations:
+    - { type: embeds, to: actionscript, weight: strong, confidence: high, sources: [apache-flex-mxml-syntax, apache-flex-mxml], note: "ActionScript inside fx:Script blocks; every MXML tag stands for an ActionScript class or property." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Apache_Flex", homepage: "https://flex.apache.org/doc/flex/using/flx_mxml_mx.html" }
+  sources: [apache-flex-mxml, apache-flex-mxml-syntax, wiki-apache-flex, chambers-2004-flex]
+  example:
+    title: Script block and data binding
+    language: MXML (Flex 4)
+    note: "From the Apache Flex documentation 'MXML syntax'. [Bindable] makes myText a binding source; the braces in text={myText} keep the TextArea in step with it. The surrounding Application tag is omitted."
+    code: |
+      <fx:Script>
+          <![CDATA[
+              [Bindable]
+              public var myText:String = "Display" + "\n" + "Content";
+          ]]>
+      </fx:Script>
+
+      <s:TextArea width="100%" text="{myText}"/>
+    sources: [apache-flex-mxml-syntax]
 
 - id: haxe
   name: Haxe
@@ -1271,11 +1445,11 @@
     It adds piping, operators as functions, partial application and backcalls. Not to be confused with
     LiveScript, JavaScript's beta name in 1995, to which the name may be a homage.
   notes: >
-    Coco, the intermediate fork of CoffeeScript, is not yet in the dataset and its date is unverified.
     Wikipedia spells the second designer both "Satoshi Murakami" (infobox) and "Satoshi Muramaki" (text).
     Last release found: 1.6.1, 14 July 2020.
   relations:
     - { type: influenced_by, to: coffeescript, weight: strong, confidence: high, sources: [livescript-net, wiki-livescript], note: "Via the Coco fork." }
+    - { type: fork_of, to: coco, weight: strong, confidence: high, sources: [wiki-livescript], note: "\"a fork of Coco\"." }
     - { type: influenced_by, to: haskell, aspects: [first-class-functions], weight: moderate, confidence: medium, sources: [wiki-livescript] }
     - { type: influenced_by, to: fsharp, aspects: [pipes], weight: moderate, confidence: medium, sources: [wiki-livescript], note: "F# is in the infobox; the |> pipe is our reading." }
   research_status: draft
@@ -1295,6 +1469,107 @@
       console.log (+ 2) 4
       #=> 6
     sources: [livescript-net]
+
+- id: coco
+  name: Coco
+  kind: language
+  category: scripting
+  cluster: web/compile-to-js
+  origin:
+    first_appeared: { year: 2010, date: "2010-12-20", precision: exact, note: "First npm release (0.1.0) on 20 December 2010." }
+  status: historical
+  tags:
+    paradigm: [multi-paradigm, functional, scripting]
+    typing: [dynamic-typing]
+    features: [compiles-to-javascript, offside-rule, pipes]
+  milestones:
+    - { version: "0.8.0", year: 2012, summary: "6 August 2012: pipe operator changed to |>; cascades added." }
+    - { version: "0.9.1", year: 2013, summary: "Last release, 2 March 2013." }
+  summary: >
+    "Unfancy CoffeeScript": a CoffeeScript dialect by the developer known as satyr that "aims to be more
+    radical and practical", amending CoffeeScript's quirks under the mottos "Respect JS semantics and
+    idioms", "Die for DRY" and "Perl over Ruby". LiveScript was forked from it in 2011.
+  notes: >
+    The author appears only as "satyr" in the repository and npm; whether this is LiveScript's co-designer
+    Satoshi Murakami was not confirmed, so no creator is listed. Release dates are from the npm registry.
+  relations:
+    - { type: dialect_of, to: coffeescript, weight: strong, confidence: high, sources: [coco-repo], note: "\"Coco is a CoffeeScript dialect\"." }
+  research_status: stub
+  confidence: medium
+  links: { homepage: "https://github.com/satyr/coco" }
+  sources: [coco-repo, npm-coco]
+
+- id: iced-coffeescript
+  name: IcedCoffeeScript
+  aliases: [Iced CoffeeScript, ICS]
+  kind: language
+  category: scripting
+  cluster: web/compile-to-js
+  origin:
+    began: { year: 2011, precision: circa, note: "Krohn in September 2014: 'Chris Coyne and I wrote IcedCoffeeScript (ICS) almost 3 years ago'." }
+    first_appeared: { year: 2012, date: "2012-01-23", precision: exact, note: "The iced-coffee-script npm package was created on 23 January 2012; it was discussed on Hacker News by 7 February 2012." }
+  creators:
+    - { name: Maxwell Krohn, role: co-designer }
+    - { name: Chris Coyne, role: co-designer }
+  status: historical
+  tags:
+    paradigm: [multi-paradigm, functional, scripting]
+    typing: [dynamic-typing]
+    concurrency: [async-await]
+    features: [compiles-to-javascript, offside-rule]
+  summary: >
+    "A superset of CoffeeScript" with two keywords, await and defer: an await block waits until every
+    deferral made inside it has been fulfilled, so callback-based code reads sequentially. Krohn and
+    Coyne wrote it around 2011 and in 2014 said they had been developing with it "almost exclusively" since.
+  notes: >
+    The tamejs link rests on a Hacker News comment ("same guy"), not on an author's statement. The npm
+    package lists "Jeremy Ashkenas + Maxwell Krohn" as authors, i.e. CoffeeScript's author plus the fork's.
+  relations:
+    - { type: superset_of, to: coffeescript, weight: strong, confidence: high, sources: [iced-coffeescript-site] }
+    - { type: fork_of, to: coffeescript, weight: strong, confidence: high, sources: [npm-iced-coffee-script], note: "Developed in a fork of the CoffeeScript repository (maxtaco/coffee-script)." }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://maxtaco.github.io/coffee-script/" }
+  sources: [iced-coffeescript-site, krohn-2014-error-handling, npm-iced-coffee-script, hn-2012-coffeescript-under-pressure]
+  example:
+    title: await and defer
+    language: IcedCoffeeScript
+    note: "From the IcedCoffeeScript homepage: the jQuery callback's argument is bound to json by defer, and execution continues after the await once it arrives."
+    code: |
+      await $.getJSON url, defer json
+    sources: [iced-coffeescript-site]
+
+- id: imba
+  name: Imba
+  kind: language
+  category: scripting
+  cluster: web/compile-to-js
+  origin:
+    first_appeared: { year: 2015, date: "2015-07-27", precision: exact, note: "First npm release, 0.9.0, on 27 July 2015; the licence reads 'Copyright (c) 2015-present'." }
+  creators:
+    - { name: Sindre Aarsaether, role: designer }
+  status: active
+  tags:
+    paradigm: [object-oriented, scripting, multi-paradigm]
+    typing: [dynamic-typing]
+    features: [compiles-to-javascript]
+    domain: [web]
+  milestones:
+    - { version: "0.9.0", year: 2015, summary: "First npm release." }
+  summary: >
+    "A friendly full-stack programming language for the web that compiles to performant JavaScript", with
+    language-level support for "defining, extending, subclassing, instantiating and rendering DOM nodes" as
+    tags, plus integrated styling and its own bundler. It sets out to replace frameworks such as React or
+    Vue on the front end.
+  notes: >
+    Imba has no Wikipedia article (checked 2026-11-01). No source read for this node names its influences,
+    so no influence edges are stored.
+  relations:
+    - { type: targets, to: javascript, weight: strong, confidence: high, sources: [imba-repo] }
+  research_status: stub
+  confidence: medium
+  links: { homepage: "https://imba.io" }
+  sources: [imba-repo, npm-imba]
 
 - id: elm
   name: Elm

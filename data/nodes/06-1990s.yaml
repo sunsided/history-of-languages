@@ -423,6 +423,7 @@
     - { type: influenced_by, to: modula-3, weight: weak, confidence: medium }
     - { type: influenced_by, to: self, aspects: [jit-compilation], weight: moderate, confidence: high, note: "Implementation influence: HotSpot came from the Self/Strongtalk team." }
     - { type: influenced_by, to: simula, weight: weak, confidence: medium }
+    - { type: influenced_by, to: gj, year: 2004, aspects: [generics], weight: strong, confidence: high, sources: [wadler-gj-page], note: "Sun proposed generics 'based on GJ' as JSR 14 (May 1999); they shipped in JDK 1.5." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Java_(programming_language)" }
@@ -449,6 +450,76 @@
           }
       }
     sources: [jep-444]
+
+- id: pizza
+  name: Pizza
+  kind: language
+  category: research
+  cluster: managed
+  origin:
+    first_appeared: { year: 1996, date: "1996-11-29", precision: exact, note: "Odersky and Wadler announced the paper and a downloadable compiler on the TYPES mailing list on 29 November 1996; the paper appeared at POPL in January 1997." }
+    places: [{ institution: University of Karlsruhe, country: DE }, { institution: Lucent Technologies, country: US }]
+  creators:
+    - { name: Martin Odersky, role: designer }
+    - { name: Philip Wadler, role: designer }
+  status: historical
+  tags:
+    paradigm: [object-oriented, functional, multi-paradigm]
+    typing: [static-typing, parametric-polymorphism]
+    memory: [garbage-collection]
+    features: [generics, first-class-functions, algebraic-data-types, pattern-matching]
+  milestones:
+    - { version: "1.1", year: 2002, summary: "Last release, 3 January 2002 (SourceForge): Java 1.4 assert, Java 1.2 strictfp, compiling against Java 1.4 class files." }
+  summary: >
+    "A strict superset of Java that incorporates three ideas from the academic community": parametric
+    polymorphism, higher-order functions and algebraic data types with pattern matching, all defined by
+    translation into Java and compiled to JVM bytecode. Its generics led directly to GJ and so to Java 5's,
+    and its functional side was carried on by Odersky in Scala.
+  relations:
+    - { type: superset_of, to: java, weight: strong, confidence: high, sources: [odersky-wadler-1996-pizza-announcement], note: "\"Pizza is a strict superset of Java\"." }
+    - { type: targets, to: jvm-bytecode, weight: strong, confidence: high, sources: [odersky-wadler-1996-pizza-announcement], note: "\"implemented as a Java bytecode program\"; the compiler emits Java source or JVM code." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pizza_(programming_language)", homepage: "https://pizzacompiler.sourceforge.net/" }
+  sources: [odersky-wadler-1996-pizza-announcement, odersky-wadler-1997-pizza, pizza-sourceforge, wiki-pizza]
+
+- id: gj
+  name: GJ
+  aliases: [Generic Java]
+  kind: language
+  category: research
+  cluster: managed
+  origin:
+    first_appeared: { year: 1998, precision: year, note: "OOPSLA 1998 paper 'Making the future safe for the past'; a GJ specification is dated May 1998." }
+    places: [{ institution: JavaSoft, country: US }, { institution: Bell Labs, country: US }, { institution: University of South Australia, country: AU }]
+  creators:
+    - { name: Gilad Bracha, role: designer }
+    - { name: Martin Odersky, role: designer }
+    - { name: David Stoutamire, role: designer }
+    - { name: Philip Wadler, role: designer }
+  status: historical
+  tags:
+    paradigm: [object-oriented, imperative]
+    typing: [static-typing, parametric-polymorphism]
+    memory: [garbage-collection]
+    features: [generics]
+  summary: >
+    "An extension of the Java programming language that supports generic types", designed by the Pizza
+    authors with two JavaSoft engineers. Unlike Pizza it put compatibility first: every Java program stays
+    legal, type parameters are erased on compilation so the output runs on any JVM, and existing library
+    classes can be given generic interfaces without changing their code. Sun based JSR 14 (1999) and the
+    generics of JDK 1.5 (Java 5) on it.
+  notes: >
+    Wadler's GJ page: GJ "is not a product of JavaSoft or Sun Microsystems". The GJ compiler, written in GJ,
+    became the prototype of Sun's generics compiler (May 2001).
+  relations:
+    - { type: successor_of, to: pizza, weight: strong, confidence: high, sources: [wadler-gj-page, wiki-pizza], note: "Pizza's main developers moved on to GJ; Pizza's homepage calls GJ 'the Pizza compiler's daughter'." }
+    - { type: superset_of, to: java, weight: strong, confidence: high, sources: [wadler-gj-page], note: "\"Every Java source program is still legal and retains the same meaning in GJ.\"" }
+    - { type: targets, to: jvm-bytecode, weight: strong, confidence: high, sources: [wadler-gj-page] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Generics_in_Java", homepage: "https://homepages.inf.ed.ac.uk/wadler/gj/" }
+  sources: [bracha-1998-gj, wadler-gj-page, wiki-generics-in-java]
 
 - id: javascript
   name: JavaScript
@@ -507,6 +578,88 @@
       "3" + 1              // "31"
       "3" - 1              // 2
       [] + []              // ""
+
+- id: rhino
+  name: Rhino
+  kind: language
+  category: scripting
+  cluster: managed/dynamic
+  origin:
+    began: { year: 1997, precision: year, note: "Started at Netscape in 1997 for Javagator, a Navigator written fully in Java." }
+    first_appeared: { year: 1998, date: "1998-04", precision: exact, note: "Released to the Mozilla Foundation in April 1998 (Wikipedia; its infobox gives 1997 for the start)." }
+    places: [{ institution: Netscape, country: US }]
+  creators:
+    - { name: Norris Boyd, role: original author }
+  status: maintained
+  tags:
+    paradigm: [multi-paradigm, prototype-based, functional, scripting]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [host-interop]
+  milestones:
+    - { version: "1.9.1", year: 2026, summary: "Current release (15 February 2026); needs Java 17 or later, implements much of ES2015 and later." }
+  summary: >
+    JavaScript implemented in Java, begun at Netscape in 1997 for a browser written in Java and kept alive
+    as an engine after that browser was dropped. Early versions compiled JavaScript to JVM class files; an
+    interpreted mode followed in 1998. Bundled with Java SE 6 as the JDK's scripting engine, it let Java
+    programs embed JavaScript and scripts call Java classes, and it offered E4X as an optional module.
+    Nashorn replaced it in the JDK from Java 8.
+  notes: >
+    Wikipedia's text (release in April 1998) and infobox (1997) disagree; 1997 is kept as the start of work.
+    Wikipedia lists Norris Boyd as original author; no article for him was checked, so no portrait entry.
+  relations:
+    - { type: dialect_of, to: javascript, weight: strong, confidence: high, sources: [rhino-repo, wiki-rhino], note: "\"an open-source implementation of JavaScript written entirely in Java\"." }
+    - { type: implemented_in, to: java, weight: strong, confidence: high, sources: [rhino-repo] }
+    - { type: targets, to: jvm-bytecode, weight: moderate, confidence: high, sources: [wiki-rhino], note: "Compiled mode emits Java class files; an interpreter was added in autumn 1998." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Rhino_(JavaScript_engine)", homepage: "https://github.com/mozilla/rhino" }
+  sources: [wiki-rhino, rhino-repo]
+
+- id: authorware-scripting
+  name: Authorware scripting
+  kind: language
+  category: domain-specific
+  cluster: web/macromedia
+  origin:
+    first_appeared: { year: 1995, precision: circa, note: "A terminus ante quem, not a first appearance: the earliest documentation read is the Authorware 3.0/3.5 Help (Macromedia, copyright 1995-1996), which already refers to calculation-icon behaviour 'in previous versions'. Authorware itself goes back to Course of Action (Authorware Inc., founded 1987); when its expression language first appeared was not established." }
+    places: [{ institution: Macromedia, country: US }]
+  status: historical
+  tags:
+    paradigm: [imperative, event-driven, scripting]
+    typing: [dynamic-typing]
+    domain: [education]
+  milestones:
+    - { version: "7", year: 2003, summary: "Authorware 7 can interpret JavaScript 1.5 besides its built-in proprietary scripting language." }
+  summary: >
+    The built-in expression and script language of Authorware, the icon-and-flowline authoring tool for
+    computer-based training. Code lives in calculation icons placed on or attached to the flowline: variables,
+    system functions such as GoTo, JumpOut and Quit that redirect the flow, If-Then statements and Repeat
+    loops, and comments introduced by two hyphens. Authorware 7 added JavaScript as an alternative; Adobe
+    announced the end of development on 3 August 2007.
+  notes: >
+    Wikipedia does not name the language; the Using Authorware 7 manual reportedly calls it "Authorware Script
+    Language" (seen only in a search snippet, not read). Michael W. Allen had worked on PLATO before founding
+    Authorware Inc.; whether the language owes anything to PLATO's TUTOR is unexamined.
+  relations:
+    - { type: embeds, to: javascript, year: 2003, weight: moderate, confidence: high, sources: [wiki-authorware], note: "Authorware 7 could \"interpret both its built-in proprietary scripting language and JavaScript version 1.5\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Adobe_Authorware" }
+  sources: [macromedia-1996-authorware-3-help, wiki-authorware]
+  example:
+    title: A script in a calculation icon
+    language: Authorware 3.5
+    year: 1996
+    note: "From the Authorware 3.x Help, 'Functions that exit calculation icons': JumpOut leaves the calculation icon at once, so the final beep () is never executed. Text as extracted with pdftotext from the help file: any indentation was lost, and machine:=3 in the condition is printed so in the source."
+    code: |
+      if machine:=3
+      JumpOut("Notepad.exe")
+      else
+      JumpOut("TeachText")
+      end if
+      beep ()
+    sources: [macromedia-1996-authorware-3-help]
 
 - id: php
   name: PHP
