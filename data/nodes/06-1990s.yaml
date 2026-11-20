@@ -155,6 +155,60 @@
       > summary(lm(y ~ x))
     sources: [chambers-2020-s-r]
 
+- id: promela
+  name: Promela
+  aliases: [PROMELA, Protocol Meta Language, Process Meta Language, PROMELA2]
+  kind: language
+  category: domain-specific
+  cluster: verification
+  origin:
+    first_appeared: { year: 1991, precision: year, note: "Holzmann's manual cites the 1991 book for the name: \"PROMELA is short for Protocol Meta Language [Ho91]\" (Design and Validation of Computer Protocols, Prentice Hall, 1991; the book itself not read). SPIN work at Bell Labs began in 1980 per Wikipedia, which gives no date for Promela." }
+    places: [{ institution: Bell Labs, country: US }]
+  creators:
+    - { name: Gerard J. Holzmann, role: designer }
+  status: active
+  tags:
+    paradigm: [concurrent, imperative]
+    concurrency: [processes, channels, message-passing]
+    features: [guarded-commands, nondeterminism, assertions]
+  summary: >
+    The modelling language of Gerard Holzmann's SPIN model checker: "a modeling language, not a programming
+    language", in which "asynchronously executing concurrent processes" talk "through synchronous or asynchronous
+    message passing, or through direct access to shared variables". Its do and if blocks are nondeterministic guarded
+    commands in the manner of Dijkstra and Hoare, wrapped in a C-like syntax for expressions, declarations and
+    printf. A model is verified for safety and linear-temporal-logic properties rather than run.
+  notes: >
+    The name is expanded "Protocol Meta Language" in Using SPIN and "Process Meta Language" in the later Basic Spin
+    Manual. Wikipedia gives SPIN's first release as 1989 and its work as beginning in 1980; neither date is confirmed
+    for the language itself. PROMELA2 is "an extended version of this language, accepted by the current version of
+    the verifier SPIN" (Using SPIN, undated, citing work up to 1995); its year is not established.
+  relations:
+    - { type: influenced_by, to: dijkstra-guarded-commands, aspects: [guarded-commands, nondeterminism], weight: strong, confidence: high, sources: [spin-basic-manual], note: "\"The language was influenced significantly by the ``guarded command languages'' of E.W. Dijkstra [1] and C.A.R. Hoare [3].\"" }
+    - { type: influenced_by, to: csp, aspects: [channels, message-passing], weight: strong, confidence: high, sources: [spin-basic-manual], note: "Hoare's reference [3] is Communicating Sequential Processes; the manual adds that \"Hoare's language was based exclusively on synchronous communication\", where Promela also has buffered channels." }
+    - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [spin-basic-manual], note: "\"The syntax of Promela expressions, declarations, and assignments is loosely based on the language C\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Promela", homepage: "https://spinroot.com/" }
+  sources: [holzmann-using-spin, spin-basic-manual, holzmann-1991-design-validation, wiki-promela, wiki-spin-model-checker]
+  example:
+    title: Euclid's algorithm as a process with guarded commands
+    language: PROMELA2
+    note: "Verbatim from Holzmann, Using SPIN, section 1.2 (arrows typed as ->)."
+    code: |
+      proctype Euclid(int x, y)
+      {
+              do
+              :: (x > y) -> x = x - y
+              :: (x < y) -> y = y - x
+              :: (x == y) -> goto done
+              od;
+      done:
+              skip
+      }
+
+      init { run Euclid(36, 12) }
+    sources: [holzmann-using-spin]
+
 - id: r
   name: R
   kind: language
@@ -245,6 +299,98 @@
       for i in range(5) do squares[#squares + 1] = i * i end
       print(table.concat(squares, ", "))   -- 1, 4, 9, 16, 25
     sources: [ierusalimschy-2007-evolution-lua]
+
+- id: zebra-zpl
+  name: Zebra Programming Language
+  aliases: [ZPL, ZPL II, Zebra ZPL]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1994, precision: circa, note: "Upper bound only: the earliest dated document read is Zebra's ZPL II programming guide (46469L Rev. 1, dated 07/94, © 1994), which already describes \"Standard ZPL\" as its predecessor. When the original ZPL appeared is not established." }
+    places: [{ institution: Zebra Technologies, country: US }]
+  creators:
+    - { name: Zebra Technologies, role: developer }
+  status: active
+  milestones:
+    - { version: ZPL II, year: 1994, summary: "Data fields are formatted as received rather than after ^XZ, and ^SP (Start Print) is added, so \"ZPL II scripts are not 100% compatible with Standard ZPL scripts\". Dated by the 07/94 guide; it may be older.", sources: [zebra-1994-zpl2-guide] }
+  summary: >
+    The command language of Zebra label printers, "a high-level label definition and printer control language" in
+    which a host sends caret- or tilde-prefixed commands (^XA to open a label format, ^FO to place a field, ^FD for its
+    data, ^XZ to print). It is mostly a page description and device-control language: the 1994 guide offers stored
+    formats, variable field data and serialization rather than general computation. ZPL II is also accepted by some
+    non-Zebra label printers.
+  notes: >
+    Kept as a node because it is a widely used, vendor-named "programming language" (inclusion test 3), but it sits at
+    the edge of scope: the 1994 guide shows no conditionals or loops. Wikipedia's infobox gives "Influenced by: ANSI
+    BASIC", which belongs to the later Zebra BASIC Interpreter (ZBI) built into the printer firmware, not to ZPL's
+    command syntax; ZBI is a candidate node of its own once dated. Wikipedia gives no years. Not to be confused with the
+    array language ZPL (zpl).
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Zebra_Programming_Language", homepage: "https://www.zebra.com/" }
+  sources: [zebra-1994-zpl2-guide, wiki-zebra-programming-language]
+
+- id: robot-battle-rsl
+  name: Robot Scripting Language
+  aliases: [RSL, Robot Battle scripting language]
+  kind: language
+  category: domain-specific
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 1994, precision: year, note: "Robocode's documentation dates Robot Battle to 1994; Schick's own press release of 18 February 1996 announces version 1.3 and says it \"maintains 100% compatibility with all previous Robot Battle versions\". A Wikipedia mirror's 1994 release of version 1.2 was not read." }
+    places: [{ city: Chicago, country: US }]
+  creators:
+    - { name: Brad Schick, role: designer }
+  status: extinct
+  tags:
+    paradigm: [event-driven, imperative]
+    domain: [game-scripting]
+  summary: >
+    The robot language of Brad Schick's Windows programming game Robot Battle, in which players write robots that
+    fight in an arena: "Robots are created using an event driven scripting language". A script is a set of named
+    sections in curly braces; Init registers handler sections for events such as a radar contact or a missile hit, each
+    with a priority, and Core holds the default behaviour. Every line is one statement, statements return no value,
+    and all user variables are global floats.
+  notes: >
+    The backlog entry's link pointed to a Robot Battle section of Wikipedia that now redirects to GarageGames; the
+    RSL meant there is this one, not RenderMan's shading language (renderman-sl, also called RSL). Robocode (Java)
+    names Robot Battle as its inspiration; Robocode is not a node. The name "Robot Scripting Language" and the
+    acronym RSL come from fan wikis (liquisearch mirror); the game's own help calls it "the Robot Battle scripting
+    language". Moved from the industrial backlog, since it is a game language.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Robot_Battle" }
+  sources: [schick-1996-robot-battle-13, robot-battle-create-help, robocode-readme, liquisearch-robot-battle-rsl]
+  example:
+    title: The sample robot, with event handler sections
+    language: Robot Battle scripting language
+    note: "Verbatim from the \"Sample Robot\" page of Robot Battle's CREATE.HLP help file (copy on a 2001 compilation disc; game version not stated). Comment column re-spaced."
+    code: |
+      Init                          # Init section
+      {
+          Name( "Sample" )          # Sets robot's name
+          RegCore( Core )           # Registers core event handler
+          RegCldMissile( MissileHit,1 ) # Registers missile hit handler
+          RegDtcRobot( FoundRobot, 2 )  # Registers robot detection handler
+          fire_engy = 1             # User defined variable: fire_engy
+          LockGun( ON )             # Locks gun and radar together
+      }
+      Core                          # Core section
+      {
+          Scan( )                   # Looks for other objects
+          RadarRight( 5 )           # Turns radar (and gun) right
+      }
+      MissileHit                    # MissileHit section
+      {
+          Ahead( 20 )               # Moves robot ahead
+      }
+      FoundRobot                    # FoundRobot section
+      {
+          fire( fire_engy )         # Fires energy missile
+          Scan()                    # Looks for other objects
+      }
+    sources: [robot-battle-create-help]
 
 - id: ruby
   name: Ruby
@@ -482,6 +628,100 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Pizza_(programming_language)", homepage: "https://pizzacompiler.sourceforge.net/" }
   sources: [odersky-wadler-1996-pizza-announcement, odersky-wadler-1997-pizza, pizza-sourceforge, wiki-pizza]
+
+- id: kuka-krl
+  name: KUKA Robot Language
+  aliases: [KRL]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1997, precision: circa, note: "No source read dates the language. A KUKA document titled \"02.97.01 ... SOFTWARE KRL (KUKA ROBOT LANGUAGE)\" was seen only as a search-result title (not read), and KUKA's own history puts its move to \"the PC-based robot controller\" in 1996. A dated KR C1 KRL manual would confirm." }
+    places: [{ institution: KUKA, city: Augsburg, country: DE }]
+  creators:
+    - { name: KUKA, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, structured]
+    concurrency: [interrupts]
+    domain: [industrial-automation]
+  summary: >
+    The proprietary language of KUKA industrial robots, "an imperative programming language similar to Pascal" with
+    robot-specific types (AXIS, POS, FRAME), motion statements (PTP, LIN, circular and spline moves), triggers and
+    interrupts. Its execution uses "two program counters to implement a feature known as advance run", planning
+    motions ahead so that consecutive moves blend. Each program is a .src file of commands paired with a .dat file of
+    persistent data.
+  notes: >
+    The Augsburg SoftRobot project (Mühe et al. 2010) reverse-engineered KRL and reimplemented it on its Java and C#
+    Robotics API, citing KUKA System Software 5.5 (2009) as the reference manual.
+  relations:
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [muhe-2010-reverse-engineering-krl, wiki-kuka-robot-language], note: "Sources say only \"similar to Pascal\"; Wikipedia's infobox lists Pascal under \"Influenced by\". No KUKA design statement read." }
+  research_status: draft
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/KUKA_Robot_Language" }
+  sources: [muhe-2010-reverse-engineering-krl, wiki-kuka-robot-language, kuka-history]
+  example:
+    title: Motions, an interrupt and a path trigger
+    language: KRL (KUKA System Software 5.x era)
+    year: 2010
+    note: "Verbatim from Mühe et al. 2010, Fig. 1 (\"Example program written in KRL\")."
+    code: |
+      DEF example()
+        DECL INT i
+        DECL POS cpos
+        DECL AXIS jpos
+        FOR i=1 TO 6
+          $VEL_AXIS[i]=60
+        ENDFOR
+        jpos = {AXIS: A1 0,A2 -90,A3 90,A4 0,A5 0,A6 0}
+        PTP jpos
+        IF $IN[1] == TRUE THEN
+          cpos = {POS: X 300,Y -100,Z 1500,A 0,B 90,C 0}
+        ELSE
+          cpos = {POS: X 250,Y -200,Z 1300,A 0,B 90,C 0}
+        ENDIF
+        INTERRUPT DECL 3 WHEN $IN[2]==FALSE DO BRAKE
+        INTERRUPT ON 3
+        TRIGGER WHEN DISTANCE=0 DELAY=20 DO $OUT[2]=TRUE
+        LIN cpos
+        LIN {POS: X 250,Y -100,Z 1400, A 0,B 90,C 0} C_DIS
+        PTP jpos
+        INTERRUPT OFF 3
+      END
+    sources: [muhe-2010-reverse-engineering-krl]
+
+- id: stateflow
+  name: Stateflow
+  kind: language
+  category: domain-specific
+  cluster: visual
+  origin:
+    first_appeared: { year: 1997, date: "1997-05", precision: exact, note: "First printing of the Stateflow User's Guide, May 1997 (printing history in the Version 4 guide); the product's own release date was not found." }
+    places: [{ institution: MathWorks, country: US }]
+  creators:
+    - { name: MathWorks, role: developer }
+  status: active
+  tags:
+    paradigm: [visual-programming, event-driven]
+    domain: [embedded, simulation]
+  milestones:
+    - { version: "2.0", year: 1999, date: "1999-01", summary: "User's guide revised for Stateflow 2.0 (MATLAB Release 11).", sources: [mathworks-2000-stateflow-ug] }
+    - { version: "4.0", year: 2000, date: "2000-09", summary: "User's guide revised for Stateflow 4.0 (MATLAB Release 12).", sources: [mathworks-2000-stateflow-ug] }
+  summary: >
+    MathWorks' graphical language for "complex control and supervisory logic problems", drawn as charts inside a
+    Simulink model. It "uses a variant of the finite state machine notation established by Harel" (statecharts, with
+    hierarchy, parallel states and history) and lets flow-diagram notation for loops and if-then-else sit in the same
+    chart, with transitions and states labelled in a textual action language. Stateflow Coder generates code from the
+    charts for embedded controllers in cars, aircraft and machinery.
+  notes: >
+    Harel's statecharts (1987 paper cited by the guide) are not a node, so the strongest influence has no edge; see
+    the industrial cluster's research questions. Hamon and Rushby gave Stateflow an operational semantics (FASE 2004).
+  relations:
+    - { type: extension_of, to: simulink, weight: strong, confidence: high, sources: [mathworks-2000-stateflow-ug], note: "\"Stateflow provides a block that you include in a Simulink model. The collection of Stateflow blocks in a Simulink model is the Stateflow machine.\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Stateflow", homepage: "https://www.mathworks.com/products/stateflow.html" }
+  sources: [mathworks-2000-stateflow-ug, wiki-stateflow]
 
 - id: gj
   name: GJ
@@ -5849,6 +6089,7 @@
     was taken over by the real-time shading languages, Cg and HLSL among them.
   relations:
     - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [hanrahan-1990-shading-language], note: "\"based on a simple subset of C\"." }
+    - { type: influenced_by, to: shade-trees, weight: strong, confidence: high, sources: [hanrahan-1990-shading-language], note: "\"a new shading language based on previous work of Cook and Perlin\"; Cook's work is the 1984 shade trees paper." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/RenderMan_Shading_Language" }
@@ -6412,3 +6653,57 @@
       doc.Subject = "New building"
       Call doc.Save( True, True )
     sources: [hcl-domino-notesdocument-examples]
+- id: sa-c
+  name: SA-C
+  aliases: [Single Assignment C, Sassy]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1999, precision: year, note: "Hammes and Bohm, \"The SA-C Language - Version 1.0\" (1999), and the Cameron project paper at PACT '99, both cited by Bohm et al.; neither read." }
+    places: [{ institution: Colorado State University, city: Fort Collins, country: US }]
+  creators:
+    - { name: J. Hammes, role: designer }
+    - { name: W. Bohm, role: designer }
+  status: extinct
+  tags:
+    paradigm: [functional, data-parallelism, dataflow-programming]
+    features: [expression-oriented]
+    domain: [hardware-design]
+  summary: >
+    The DARPA-funded Cameron project's "high level, machine independent, algorithmic, single-assignment programming
+    language" for image processing on FPGAs. A C-family syntax without pointers carries single-assignment semantics, so
+    "Variables in SA-C are associated with wires, not with memory locations"; integers and fixed-point numbers have
+    user-chosen bit widths, and expression-valued for loops draw elements, slices or sliding windows from
+    multidimensional arrays and return arrays or reductions. The compiler goes through dataflow graphs to VHDL.
+  notes: >
+    Not to be confused with SAC (Single Assignment C, Scholz, a functional array language), which Wikipedia also flags.
+    The paper's related work places SA-C beside C-to-FPGA projects (Handel-C, Streams-C, DEFACTO) that start from C
+    and remove pointers; it states no design influence. A Sisal link would be plausible given the single-assignment
+    loops but is not stated in what was read.
+  relations:
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-sa-c], note: "Wikipedia: \"a member of the C programming language family\"; the 2001 paper only shows C-like syntax." }
+    - { type: targets, to: vhdl, weight: strong, confidence: high, sources: [bohm-2001-sa-c], note: "Compiler pipeline SA-C → DDCF → DFG → AHA → VHDL (Figure 1)." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SA-C_(programming_language)" }
+  sources: [bohm-2001-sa-c, wiki-sa-c]
+  example:
+    title: Prewitt edge detector with a window loop
+    language: SA-C
+    year: 2001
+    note: "From Bohm et al., Figure 2; the braces, which the PDF's font maps to f and g, are restored."
+    code: |
+      int16[:,:] main (uint8 Image[:,:]) {
+        int16 H[3,3] = {{-1,-1,-1}, { 0, 0, 0}, { 1, 1, 1}};
+        int16 V[3,3] = {{-1, 0, 1}, {-1, 0, 1}, {-1, 0, 1}};
+        int16 M[:,:] =
+          for window W[3,3] in Image {
+            int16 dfdy, int16 dfdx =
+              for h in H dot w in W dot v in V
+              return(sum(h*w), sum(v*w));
+            int16 magnitude =
+              sqrt(dfdy*dfdy+dfdx*dfdx);
+          } return(array (magnitude));
+      } return(M);
+    sources: [bohm-2001-sa-c]

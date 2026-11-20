@@ -104,6 +104,90 @@
   links: { wikipedia: "https://en.wikipedia.org/wiki/Superbase_(database)" }
   sources: [simpol-faq, wiki-superbase, start-1987-superbase]
 
+- id: gdl-graphisoft
+  name: Geometric Description Language
+  aliases: [GDL, ArchiCAD GDL]
+  kind: language
+  category: domain-specific
+  cluster: scientific
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "Graphisoft's GDL Center timeline: \"1983: more 3D modeling options are needed, the first GDL commands are created (ARME, ARMC)\", a year after ArchiCAD." }
+    places: [{ institution: Graphisoft }]
+  creators:
+    - { name: Graphisoft, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural]
+    domain: [computer-graphics]
+  milestones:
+    - { version: 2D script, year: 1992, summary: "\"2D script is introduced, connection with other modeling programs through GDL is made available\".", sources: [graphisoft-about-gdl] }
+    - { version: UI and parameter scripts, year: 1996, summary: "\"User Interface script and Parameter script is introduced\".", sources: [graphisoft-about-gdl] }
+    - { version: Property script, year: 1997, summary: "\"Property script and listing options are introduced\".", sources: [graphisoft-about-gdl] }
+  summary: >
+    The scripting language of ArchiCAD library parts, "a parametric programming language, similar to BASIC", in which
+    doors, windows, furniture and other building objects are written as scripts of 3D shape commands (BLOCK, PRISM_,
+    REVOLVE, SWEEP), 2D symbols and transformations, driven by parameters that users set in a settings dialog. It has
+    BASIC's FOR/NEXT, IF/THEN, GOTO and GOSUB, and library parts call one another as macros.
+  notes: >
+    Graphisoft's own pages call it "a functional programming language based on BASIC"; the scripts read are imperative,
+    so the "functional" is not reflected in the tags. Which BASIC it followed and who wrote the first interpreter are
+    not documented in what was read. Kept in the scientific cluster for want of a CAD cluster.
+  relations:
+    - { type: influenced_by, to: basic, weight: strong, confidence: high, sources: [graphisoft-2004-gdl-reference, graphisoft-about-gdl], note: "\"GDL is a parametric programming language, similar to BASIC\" (Reference Guide); \"based on BASIC\" (GDL Center)." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Geometric_Description_Language", homepage: "https://gdl.graphisoft.com/" }
+  sources: [graphisoft-about-gdl, graphisoft-2004-gdl-reference, wiki-geometric-description-language]
+  example:
+    title: A loop stacking five prisms
+    language: GDL (ArchiCAD 8.1 era)
+    year: 2004
+    note: "Verbatim from the GDL Reference Guide (2004), General Overview, p. 18."
+    code: |
+      FOR I = 1 TO 5
+      PRISM_ 8, 0.05,
+              -0.5, 0, 15,
+             -0.5, -0.15, 15,
+             0.5, -0.15, 15,
+             0.5, 0, 15,
+             0.45, 0, 15,
+             0.45, -0.1, 15,
+             -.45, -0.1, 15,
+             -0.45, 0, 15
+      ADDZ 0.2
+      NEXT I
+    sources: [graphisoft-2004-gdl-reference]
+
+- id: shade-trees
+  name: Shade trees
+  aliases: [Cook's shade trees]
+  kind: notation
+  category: domain-specific
+  cluster: gpu
+  origin:
+    first_appeared: { year: 1984, date: "1984-07", precision: exact, note: "Robert L. Cook, \"Shade trees\", SIGGRAPH '84 (Minneapolis, 23-27 July 1984), Computer Graphics 18(3), pp. 223-231." }
+    places: [{ institution: Lucasfilm, country: US }]
+  creators:
+    - { name: Robert L. Cook, role: designer }
+  status: historical
+  tags:
+    domain: [computer-graphics]
+  summary: >
+    Robert Cook's replacement of fixed shading equations by "a flexible tree-structured shading model that can
+    represent a wide range of shading characteristics": each surface gets its own expression, which "Cook parses ... into
+    a parse tree form that is interpreted for shading", with speed from "a powerful set of precompiled library
+    functions" (Olano). It is the first step of the programmable-shading line: Perlin's 1985 pixel stream editor
+    "expands Cook's shade trees work to a full language", and the RenderMan Shading Language was built on both.
+  notes: >
+    The paper itself was not read (ACM and the Pixar library copy were not reachable); the description comes from the
+    SIGGRAPH History Archives abstract and Marc Olano's annotated bibliography. Whether Cook's expressions count as a
+    language is left open, hence kind notation. Cook's affiliation (Lucasfilm Computer Division) is from search-result
+    bibliographic data. Perlin's pixel stream editor is not a node. An example would need the paper's figures.
+  research_status: stub
+  confidence: high
+  links: { homepage: "https://graphics.pixar.com/library/ShadeTrees/" }
+  sources: [cook-1984-shade-trees, siggraph-history-shade-trees, olano-dissertation-references]
+
 - id: cpp
   name: C++
   aliases: [C with Classes]

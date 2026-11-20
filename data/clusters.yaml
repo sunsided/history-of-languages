@@ -461,9 +461,8 @@
   name: Visual and dataflow languages
   summary: "Programs drawn as diagrams or patched dataflow graphs: LabVIEW, Prograph, Max and Pure Data."
   research_status: stub
-  backlog:
-    - { name: "Stateflow", hint: "MathWorks control-logic tool using \"a variant of the finite-state machine notation established by David Harel\" inside Simulink (Wikipedia). No first-release year on the page; find the MathWorks release history." }
   research_questions:
+    - "Stateflow follows Harel's statecharts (Science of Computer Programming 8, 1987, cited by the Stateflow guide), which are not a node; the release date of Stateflow 1.0 (the guide's first printing is May 1997) is unconfirmed."
     - "Keysight VEE reacts against textual 3GLs in general (Pascal, C, BASIC); no LabVIEW link appears in the primary source. DRAKON Editor generates code in many languages; only the embedding of C and Java by the language family is recorded."
     - "Missing ancestors met while connecting visual languages: Forms/3 and Coherence (Subtext), PROL2, DIPOL and LAKS (the Buran languages DRAKON replaced), RhinoScript (Grasshopper), the Arduino language (the XOD target), and the 1985 Prograph defining paper (Matwin and Pietrzykowski), which was not read."
 - id: audio
@@ -475,11 +474,6 @@
   name: Mathematical and scientific languages
   summary: "Computer algebra, numerical, statistical, optimisation and simulation languages outside the Fortran and array families."
   research_status: stub
-  backlog:
-    - { name: "Mortran", hint: "Mortran (More Fortran): Fortran extension \"macro-processed into Fortran code\"; MORTRAN2 is written in Fortran 66; SKOL (Charles Zahn, mid-1970s) was built with its macros (Wikipedia: Mortran). Wikipedia gives no year or authors; check Cook (1976) SIGPLAN Notices 11(9) and the MORTRAN 2 user guide." }
-    - { name: "Zebra, ZPL, ZPL2", hint: "Zebra Programming Language is \"a page description language from Zebra Technologies, used primarily for labeling applications\" (Wikipedia), infobox influenced by ANSI BASIC; no year given. Probably out of scope as a printer command format; Markus to decide." }
-    - { name: "SA-C", hint: "Single Assignment C, a C-family language translatable into circuits/FPGAs, no pointers, n-dimensional arrays (Wikipedia: SA-C). No year or designers on the page; read Böhm et al. (Colorado State, cs.colostate.edu/cameron/Publications/bohm_sc02.pdf)." }
-    - { name: "Geometric Description Language", hint: "BASIC-like language of Archicad library parts (Graphisoft). Wikipedia gives no year, designer or versions and cites no sources; needs a Graphisoft source." }
   research_questions:
     - "PROSE and POV-Ray SDL have no documented relation to existing nodes: the 1977 CDC PROSE manual only mentions calling Fortran subroutines; POV-Ray is \"basically an enhanced DKBTrace with a similar grammar\" (David K. Buck), and DKBTrace is not a node."
     - "Simula and GPSS: Nygaard and Dahl (HOPL I) say GPSS \"looked more like a generalized simulation model than a programming language. Consequently we did not study it very closely\"; no simula -> gpss edge, a candidate for claims.yaml."
@@ -490,22 +484,16 @@
   summary: "Languages for programming graphics processors and accelerators: the shading line from RenderMan SL through Stanford RTSL to Cg, HLSL, GLSL, Metal and WGSL, and GPU computing from Brook to CUDA, OpenCL and SYCL."
   research_status: draft
   key_sources: [hanrahan-1990-shading-language, mark-2003-cg, buck-2004-brookgpu, nickolls-2008-cuda]
-  backlog:
-    - { name: "Shade trees", year: 1984, hint: "Robert L. Cook, \"Shade Trees\", SIGGRAPH '84 (doi:10.1145/964965.808602); the inspiration for RenderMan SL. Possibly a notation node." }
-    - { name: "3Dlabs shading language (3DLSL)", year: 2002, hint: "Named by the Cg paper as a contemporaneous C-like shading language; the proposal behind GLSL." }
   research_questions:
+    - "Cook's Shade trees paper (SIGGRAPH 1984) was not reachable, so the node rests on the abstract and Olano's annotated bibliography; Perlin's pixel stream editor (SIGGRAPH 1985), which Olano calls the first full shading language and which RenderMan SL builds on, is a missing node. The 3Dlabs OpenGL 2.0 shading language white paper (2001) and its authors were not read."
     - "Did CUDA grow out of Brook? NVIDIA's 2008 Queue paper treats Brook only as related work; the Brook-to-CUDA story comes from Wikipedia citing Business Insider (2025). An interview with Ian Buck or an NVIDIA history would settle the low-confidence edge."
     - "GLSL, HLSL and Cg were designed at the same time and \"drew ideas from and contributed ideas to\" each other (Cg paper); no directed edge between GLSL and the other two is recorded."
 - id: industrial
   name: Industrial, real-time and synchronous languages
   summary: "PLC languages of IEC 61131-3, robot and machine-tool languages, telecom switching languages and synchronous languages such as Esterel and Lustre."
   research_status: stub
-  backlog:
-    - { name: "KUKA Robot Language", hint: "KUKA's proprietary Pascal-like robot language, .dat/.src files (Wikipedia). No year." }
-    - { name: "Promela", hint: "Gerard J. Holzmann's verification modelling language for the SPIN model checker (Wikipedia). No year on the page." }
-    - { name: "RSL", hint: "The list's RSL link points to a Robot Battle section that no longer exists (redirects to GarageGames). Unresolved." }
-    - { name: "S2", hint: "S2 redirects to LiveJournal, where it is the journal-template language; no year or authors." }
   research_questions:
+    - "KUKA Robot Language has no dated introduction: a KUKA document headed \"02.97.01 ... SOFTWARE KRL (KUKA ROBOT LANGUAGE)\" was seen only as a search-result title, and KUKA's 1996 move to PC-based control may mark the KR C1 and KRL; a dated KR C1 manual would settle it. The original (Standard) ZPL predates Zebra's 07/94 ZPL II guide by an unknown margin, and the Zebra BASIC Interpreter (ZBI) is a candidate node."
     - "Signal, G-code, IEC Instruction List, TTCN and Spin have no documented relation to existing nodes. Searched: Le Guernic et al. 1991 and Benveniste et al. 2003 (Signal is only contrasted with Lustre), NBS IR 76-1094 (RS-274 approved January 1963; no statement that it derives from APT), Wikipedia's Instruction list and Spin articles, ETSI ES 201 873-1 front matter."
     - "APT's output reaches machines as RS-274 G-code via post-processors and later APT versions were written in Fortran (Wikipedia only); both need a dated primary source before an apt targets g-code or implemented_in fortran edge. The first ANSI APT standard, X3.37, was published in June 1974 (NBS IR 76-1094)."
     - "Esterel began in 1982 (Marmorat and Rigault's robot car, per Berry's v5 primer), which conflicts with the node's 1980 decade dating; the primer says its design was influenced by Harel's Statecharts (1984) and the Argos variant, which are not nodes."

@@ -513,6 +513,57 @@
         where f(x) = x(x + a)
     sources: [landin-1966-next-700]
 
+- id: mortran
+  name: MORTRAN
+  aliases: [Mortran, More Fortran, MORTRAN2, MORTRAN 2, MORTRAN1]
+  kind: language
+  category: scientific
+  cluster: fortran
+  origin:
+    first_appeared: { year: 1973, precision: circa, note: "In January 1975 Cook and Shustek wrote that MORTRAN1 \"has been in use at the Stanford Linear Accelerator Center for almost two years\"; the Computer History Museum lists Cook's user's guide to CDC 7600/6600 MORTRAN dated July 1973 (catalog entry seen in search results only)." }
+    places: [{ institution: Stanford Linear Accelerator Center, city: Stanford, country: US }]
+  creators:
+    - { name: A. James Cook, role: designer }
+    - { name: Len Shustek, role: co-designer of MORTRAN2 }
+  status: historical
+  tags:
+    paradigm: [imperative, structured]
+    features: [macros, preprocessor, block-structure]
+    domain: [scientific-computing]
+  milestones:
+    - { version: MORTRAN2, year: 1975, date: "1975-01", summary: "\"an elaboration of MORTRAN1\": free-field statements ended by semicolons, blocks in < and >, alphanumeric labels like :TOMATOES:, WHILE/UNTIL/FOR/LOOP loops with EXIT and NEXT, and user macros; the language is \"defined by a set of about fifty macros\".", introduces: [macros], sources: [cook-1975-mortran2] }
+  summary: >
+    A structured Fortran extension from SLAC's Computation Research Group, implemented by "a pre-processor (which is in
+    fact a macro-processor) written in standard FORTRAN" whose output is also Fortran, so that both processor and
+    programs stay portable. Its designers treated Fortran as "a machine-independent assembler language" and the
+    language itself as a replaceable set of macros, so users could redefine keywords or add matrix and linked-list
+    constructs. It was used for large high-energy-physics programs at SLAC and "widely distributed in the United
+    States and to a lesser extent in Europe".
+  notes: >
+    Charles Zahn's SKOL (mid-1970s) was built from MORTRAN macros, and Cook (1975) knew of "at least two" processors
+    derived from MORTRAN and one adapting its algorithm to COBOL; none is a node. MORTRAN3 manuals (SLAC, up to 1983)
+    are held by the Computer History Museum and were not read. Cook says they were "encouraged to start experimenting
+    by the example of Waite", whose STAGE2 macro processor is not a node.
+  relations:
+    - { type: targets, to: fortran, weight: strong, confidence: high, sources: [cook-1975-mortran2], note: "\"The output of the pre-processor is also FORTRAN\"." }
+    - { type: implemented_in, to: fortran, weight: strong, confidence: high, sources: [cook-1975-mortran2, wiki-mortran], note: "\"written in standard FORTRAN\"; Wikipedia: MORTRAN2 is written in ANSI Fortran 66." }
+    - { type: extension_of, to: fortran, weight: strong, confidence: high, sources: [cook-1975-mortran2], note: "\"a FORTRAN language extension\"; \"the programmer may insert segments of FORTRAN code in a MORTRAN program or segments of MORTRAN code in a FORTRAN program\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Mortran" }
+  sources: [cook-1975-mortran2, cook-1975-experience-fortran-extensions, wiki-mortran]
+  example:
+    title: A macro that defines a new statement
+    language: MORTRAN2
+    year: 1975
+    note: "Verbatim from Cook and Shustek 1975 (definition (8) and the program text it matches, with its expansion); the OCR's l for 1 and the closing apostrophe restored, spaces around = closed up. The \"expands to\" line is an added MORTRAN comment (comments are enclosed in quotation marks)."
+    code: |
+      %'INCREMENT #;'='#1=#1+1;'
+      INCREMENT A(I,J,K);
+      "expands to"
+      A(I,J,K)=A(I,J,K)+1;
+    sources: [cook-1975-mortran2]
+
 - id: sql
   name: SQL
   aliases: [SEQUEL]

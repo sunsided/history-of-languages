@@ -251,6 +251,39 @@
           )
       )
 
+- id: 3dlabs-sl
+  name: 3Dlabs OpenGL 2.0 Shading Language
+  aliases: [3DLSL, 3Dlabs shading language, OpenGL 2.0 Shading Language proposal]
+  kind: language
+  category: domain-specific
+  cluster: gpu
+  origin:
+    first_appeared: { year: 2001, date: "2001-11-21", precision: exact, note: "Slashdot, 21 November 2001: \"3DLabs has posted a series of white papers on OpenGL 2.0\", among them \"a proposal for a hardware independent shading language\". The white paper itself (cited by Mark et al. as 3Dlabs 2002) was not read." }
+    places: [{ institution: 3Dlabs }]
+  creators:
+    - { name: 3Dlabs, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing]
+    domain: [computer-graphics, parallel-hardware]
+  summary: >
+    3Dlabs' proposal for a hardware-independent shading language at the heart of its "OpenGL 2.0" white papers, with
+    vertex and fragment shaders that replace OpenGL's fixed-function stages. It was "based on C and C++", with scalar,
+    vector and matrix types, and ran as "GL2" extensions on 3Dlabs Wildcat VP hardware in 2002. The Cg designers name
+    it 3DLSL, note that it took C++ call-by-reference for read/write parameters and special functions for array access,
+    and call GLSL "its descendent".
+  notes: >
+    The authors of the 3Dlabs white papers are not named in what was read; Randi Rost of 3Dlabs presented the language
+    in the SIGGRAPH 2002 course notes. Rost's notes already call it "the OpenGL Shading Language", so the line between
+    this proposal and the ARB's GLSL is a matter of stage, not of name.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [rost-2002-opengl-shading-language], note: "\"It is based on C and C++\"." }
+    - { type: influenced_by, to: cpp, aspects: [references], weight: moderate, confidence: high, sources: [rost-2002-opengl-shading-language, mark-2003-cg], note: "\"based on C and C++\"; Cg's designers considered \"the C++ call-by-reference syntax and semantics, as 3DLSL did\"." }
+  research_status: draft
+  confidence: medium
+  sources: [slashdot-2001-opengl-20-white-papers, rost-2002-opengl-shading-language, mark-2003-cg]
+
 - id: cyclone
   name: Cyclone
   kind: language
@@ -436,6 +469,40 @@
   research_status: draft
   confidence: medium
   sources: [blizzard-2009-sc2-qa-52, blizzplanet-2009-sc2-qa-52, wiki-starcraft-ii-wings-of-liberty, warcraftwiki-jass2]
+- id: s2-livejournal
+  name: S2
+  aliases: [Style System 2, LiveJournal S2]
+  kind: language
+  category: domain-specific
+  cluster: web
+  origin:
+    first_appeared: { year: 2003, date: "2003-01-16", precision: exact, note: "LiveJournal news, \"State of the Goat, 2003\" (16 January 2003): \"The fabled S2 is now nearing completion\", opening to opt-in beta testing. Wikipedia-derived text (via PLDB) says it was \"developed in the late 1990s\"; PLDB itself lists 2008. The public beta is used here." }
+    places: [{ institution: Danga Interactive, country: US }]
+  creators:
+    - { name: Brad Fitzpatrick, role: designer }
+    - { name: Martin Atkins, role: designer }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, imperative]
+    features: [templates]
+    domain: [web]
+  summary: >
+    LiveJournal's "page generation, templating, and customization system", a small object-oriented language in which
+    users and designers write journal styles. Where the older S1 needed a template for each kind of page, "In S2 you
+    describe the formatting of objects, not the formatting of views." Styles are stacks of layers (core, i18n, layout,
+    theme, user) that override methods and properties; S2 source is checked and compiled into Perl, and the language
+    deliberately has no while loops or gotos, only if/else and foreach over finite lists, so a user's style cannot loop
+    forever.
+  notes: >
+    Also the templating engine of LiveJournal's photo host Fotobilder (per the README of the purpleidea/livejournal code archive on GitHub). Creator names come from Wikipedia-derived
+    text on PLDB ("Brad Fitzpatrick, Martin "Mart" Atkins and others"); the S2 Wikipedia article now redirects to
+    LiveJournal and was not read. The backlog had it under industrial; it is a web templating language.
+  relations:
+    - { type: targets, to: perl, weight: strong, confidence: high, sources: [lj-styles-compare, pldb-s2], note: "\"S2 code will be parsed, checked, and compiled\"; the target \"At the moment ... is Perl\"." }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://www.livejournal.com/developer/" }
+  sources: [lj-2003-state-of-the-goat, lj-styles-compare, pldb-s2, wiki-livejournal-timeline]
 
 - id: scala
   name: Scala
@@ -4452,6 +4519,7 @@
     supply one.
   relations:
     - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [wiki-glsl], note: "\"syntax based on the C programming language\"." }
+    - { type: successor_of, to: 3dlabs-sl, weight: strong, confidence: high, sources: [mark-2003-cg, rost-2002-opengl-shading-language], note: "Mark et al.: 3DLSL \"used special syntax and function calls (e.g. element) for the array operations ... although its descendent GLSL switched to C-like array notation\"; 3Dlabs' GL2 extensions went to the ARB's GL2 working group (Rost 2002)." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/OpenGL_Shading_Language" }

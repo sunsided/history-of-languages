@@ -2776,3 +2776,23 @@
   person: Samantha John
   wiki: Samantha John
   nodes: [hopscotch]
+- id: person-gerard-j-holzmann
+  kind: person
+  person: Gerard J. Holzmann
+  wiki: Gerard J. Holzmann
+  nodes: [promela]
+- id: person-len-shustek
+  kind: person
+  person: Len Shustek
+  wiki: Len Shustek
+  nodes: [mortran]
+- id: person-brad-fitzpatrick
+  kind: person
+  person: Brad Fitzpatrick
+  wiki: Brad Fitzpatrick
+  nodes: [s2-livejournal]
+- id: person-robert-l-cook
+  kind: person
+  person: Robert L. Cook
+  wiki: Robert L. Cook
+  nodes: [shade-trees]
