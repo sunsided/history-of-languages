@@ -3961,6 +3961,7 @@
   primary: false
   title: "Wikipedia: SR (programming language)"
   url: https://en.wikipedia.org/wiki/SR_(programming_language)
+  checked: '2026-11-20'
 - id: wiki-orc
   type: encyclopedia
   primary: false
@@ -10132,4 +10133,248 @@
   title: "Hopscotch iPad app aims to teach children programming (Ubergizmo, 17 April 2013)"
   year: 2013
   url: https://ubergizmo.com/2013/04/hopscotch-ipad-app-aims-to-teach-children-programming
+- id: elvish-homepage
+  type: web
+  primary: true
+  authors: [Elvish developers]
+  title: Elvish Shell (home page)
+  url: https://elv.sh/
+  checked: '2026-11-20'
+- id: elvish-faq
+  type: web
+  primary: true
+  authors: [Elvish developers]
+  title: Elvish FAQ
+  url: https://elv.sh/learn/faq.html
+  checked: '2026-11-20'
+- id: elvish-repo
+  type: web
+  primary: true
+  authors: [Qi Xiao]
+  title: "elves/elvish (GitHub repository: created 16 June 2013; tag 0.1 on 23 March 2016; implemented in Go; top contributor xiaq, Qi Xiao)"
+  url: https://github.com/elves/elvish
+  checked: '2026-11-20'
+- id: chu-2016-what-oil-looks-like
+  type: web
+  primary: true
+  authors: [Andy Chu]
+  title: What Oil Looks Like, and a Plan for This Blog
+  venue: oilshell.org blog
+  year: 2016
+  url: https://www.oilshell.org/blog/2016/10/10.html
+  checked: '2026-11-20'
+- id: chu-2023-oils-rename
+  type: web
+  primary: true
+  authors: [Andy Chu]
+  title: Reasons for the Big Renaming to Oils, OSH, and YSH
+  venue: oilshell.org blog
+  year: 2023
+  url: https://www.oilshell.org/blog/2023/03/rename.html
+  checked: '2026-11-20'
+- id: oils-ysh-tour
+  type: manual
+  primary: true
+  authors: [Oils developers]
+  title: A Tour of YSH (Oils 0.38.0 documentation)
+  url: https://oils.pub/release/latest/doc/ysh-tour.html
+  checked: '2026-11-20'
+- id: oils-repo
+  type: web
+  primary: true
+  authors: [Oils developers]
+  title: oils-for-unix/oils (GitHub repository README)
+  url: https://github.com/oils-for-unix/oils
+  checked: '2026-11-20'
+- id: mcwiki-function
+  type: encyclopedia
+  primary: false
+  authors: [Minecraft Wiki contributors]
+  title: Function (Java Edition)
+  venue: Minecraft Wiki
+  url: https://minecraft.wiki/w/Function_(Java_Edition)
+  checked: '2026-11-20'
+- id: mcwiki-java-1-12
+  type: encyclopedia
+  primary: false
+  authors: [Minecraft Wiki contributors]
+  title: Java Edition 1.12
+  venue: Minecraft Wiki
+  url: https://minecraft.wiki/w/Java_Edition_1.12
+  checked: '2026-11-20'
+- id: mcwiki-command-block
+  type: encyclopedia
+  primary: false
+  authors: [Minecraft Wiki contributors]
+  title: Command Block
+  venue: Minecraft Wiki
+  url: https://minecraft.wiki/w/Command_Block
+  checked: '2026-11-20'
+- id: handwiki-easytrieve
+  type: encyclopedia
+  primary: false
+  authors: [HandWiki contributors]
+  title: Easytrieve (mirror of the English Wikipedia article)
+  venue: HandWiki
+  url: https://handwiki.org/wiki/Easytrieve
+  checked: '2026-11-20'
+- id: computerwoche-1976-easytrieve-pansophic
+  type: web
+  primary: true
+  authors: [Computerwoche]
+  title: Easytrieve bei Pansophic
+  venue: Computerwoche, 13 February 1976
+  year: 1976
+  url: https://www.computerwoche.de/article/2855626/easytrieve-bei-pansophic.html
+  checked: '2026-11-20'
+- id: computerwoche-1976-easytrieve-erweitert
+  type: web
+  primary: true
+  authors: [Computerwoche]
+  title: Easytrieve erweitert
+  venue: Computerwoche, 24 September 1976
+  year: 1976
+  url: https://www.computerwoche.de/article/2854487/easytrieve-erweitert.html
+  checked: '2026-11-20'
+- id: andrews-1981-synchronizing-resources
+  type: paper
+  primary: true
+  authors: [Gregory R. Andrews]
+  title: Synchronizing Resources
+  venue: ACM Transactions on Programming Languages and Systems 3(4), 405-430; metadata from Crossref, paper not read
+  year: 1981
+  doi: 10.1145/357146.357149
+  url: https://doi.org/10.1145/357146.357149
+- id: andrews-1988-overview-sr
+  type: paper
+  primary: true
+  authors: [Gregory R. Andrews, Ronald A. Olsson, Michael Coffin, Irving Elshoff, Kelvin Nilsen, Titus Purdin, Gregg Townsend]
+  title: An Overview of the SR Language and Implementation
+  venue: ACM Transactions on Programming Languages and Systems 10(1), 51-86; metadata from Crossref, paper not read
+  year: 1988
+  doi: 10.1145/42192.42324
+  url: https://doi.org/10.1145/42192.42324
+- id: andrews-schneider-1983-concepts-notations
+  type: paper
+  primary: true
+  authors: [Gregory R. Andrews, Fred B. Schneider]
+  title: Concepts and Notations for Concurrent Programming
+  venue: ACM Computing Surveys 15(1), 3-43 (read through a course abstract at Queen's University, not the paper)
+  year: 1983
+  url: https://research.cs.queensu.ca/home/cordy/cisc860/Biblio/drb/CE/andrews83.pdf
+  checked: '2026-11-20'
+- id: arizona-sr-pages
+  type: web
+  primary: true
+  authors: [SR Project, University of Arizona]
+  title: The SR Programming Language (home, project and documentation pages)
+  url: https://www2.cs.arizona.edu/sr/
+  checked: '2026-11-20'
+- id: arizona-mpd-pages
+  type: web
+  primary: true
+  authors: [Gregory R. Andrews, Gregg Townsend]
+  title: The MPD Programming Language (home, language overview, tutorial, release notes and download pages)
+  url: https://www2.cs.arizona.edu/mpd/
+  checked: '2026-11-20'
+- id: andrews-2000-foundations-mpd
+  type: book
+  primary: true
+  authors: [Gregory R. Andrews]
+  title: Foundations of Multithreaded, Parallel, and Distributed Programming
+  venue: Addison-Wesley (ISBN 0-201-35752-6); cited from the MPD home page, book not read
+  year: 2000
+- id: schneider-schuele-2006-averest
+  type: paper
+  primary: true
+  authors: [Klaus Schneider, Tobias Schuele]
+  title: A Framework for Verifying and Implementing Embedded Systems
+  venue: University of Kaiserslautern, Reactive Systems Group (venue not stated in the copy read; its latest references are from 2006)
+  year: 2006
+  url: https://wwwdasmod.cs.uni-kl.de/twiki/pub/DASMOD/Publications/ScSc06a.pdf
+  checked: '2026-11-20'
+- id: schneider-brandt-2017-quartz
+  type: chapter
+  primary: true
+  authors: [Klaus Schneider, Jens Brandt]
+  title: "Quartz: A Synchronous Language for Model-Based Design of Reactive Embedded Systems"
+  venue: "Handbook of Hardware/Software Codesign, ed. S. Ha and J. Teich, Springer, pp. 29-58"
+  year: 2017
+  doi: 10.1007/978-94-017-7267-9_3
+  url: https://liacs.leidenuniv.nl/~stefanovtp/courses/ES/papers/Ch2_Quartz.pdf
+  checked: '2026-11-20'
+- id: wiki-averest
+  type: encyclopedia
+  primary: false
+  title: Averest
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Averest
+  checked: '2026-11-20'
+- id: wiki-jean
+  type: encyclopedia
+  primary: false
+  title: JEAN
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/JEAN
+  checked: '2026-11-20'
+- id: wiki-small-language
+  type: encyclopedia
+  primary: false
+  title: SMALL
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/SMALL
+  checked: '2026-11-20'
+- id: vyper-docs
+  type: manual
+  primary: true
+  authors: [Vyper developers]
+  title: Vyper documentation (overview, principles and omitted features)
+  url: https://docs.vyperlang.org/en/stable/index.html
+  checked: '2026-11-20'
+- id: vyper-release-notes
+  type: manual
+  primary: true
+  authors: [Vyper developers]
+  title: Vyper release notes
+  url: https://docs.vyperlang.org/en/stable/release-notes.html
+  checked: '2026-11-20'
+- id: vyper-repo
+  type: web
+  primary: true
+  authors: [Vyper developers]
+  title: "vyperlang/vyper (GitHub repository: created 11 November 2016 as ethereum/viper; early commits by Vitalik Buterin; examples/crowdfund.vy)"
+  url: https://github.com/vyperlang/vyper
+  checked: '2026-11-20'
+- id: seberino-2017-viper-interview
+  type: interview
+  primary: true
+  authors: [Christian Seberino]
+  title: "Viper: interview with Vitalik Buterin"
+  venue: ethereumclassic.org blog, 13 March 2017
+  year: 2017
+  url: https://ethereumclassic.org/blog/2017-03-13-viper
+  checked: '2026-11-20'
+- id: warcraftwiki-jass2
+  type: encyclopedia
+  primary: false
+  authors: [Warcraft Wiki contributors]
+  title: JASS2
+  venue: Warcraft Wiki (warcraft.wiki.gg)
+  url: https://warcraft.wiki.gg/wiki/JASS2
+  checked: '2026-11-20'
+- id: pang-2003-jass-manual
+  type: manual
+  primary: true
+  authors: [Jeff Pang]
+  title: JASS Manual (semi-formal, unofficial manual for the JASS scripting language of Warcraft III)
+  venue: JASS Tools, SourceForge
+  year: 2003
+  url: https://jass.sourceforge.net/doc/
+  checked: '2026-11-20'
+- id: wiki-warcraft-iii-reign-of-chaos
+  type: encyclopedia
+  primary: false
+  title: "Warcraft III: Reign of Chaos"
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Warcraft_III:_Reign_of_Chaos
   checked: '2026-11-20'

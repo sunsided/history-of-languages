@@ -55,6 +55,34 @@
       end.
     sources: [wirth-1993-recollections-pascal]
 
+- id: jean
+  name: JEAN
+  aliases: [JOSS Extended and Adapted for Nineteen-hundred]
+  kind: language
+  category: general
+  cluster: joss
+  origin:
+    first_appeared: { year: 1970, precision: circa, note: "Wikipedia: used \"in the late 1960s and early 1970s\"; the earliest dated document it cites is ICL's 1970 user notice (Technical Publication 4194, chapter 3)." }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [interpreter, interactive-time-sharing]
+  summary: >
+    "JOSS Extended and Adapted for Nineteen-hundred": a dialect of JOSS for ICT/ICL 1900 series computers, used
+    interactively from Teletype terminals under the MINIMOP multi-access system, including at the University of
+    Southampton. As in JOSS, a program combined expressions, commands such as TYPE and clauses such as FOR appended
+    to repeat an evaluation.
+  notes: >
+    Moved here from the esoteric/minimal backlog, where the 2026-11-01 list sweep had put it: JEAN is not esoteric.
+    No developer is named in the sources read. Wikipedia cites Rees, "Some improvements to the MINIMOP multi-access
+    operating system", Software: Practice and Experience 1(2), 1971, and ICL's 1970 user notice; neither was read.
+  relations:
+    - { type: dialect_of, to: joss, weight: strong, confidence: high, sources: [wiki-jean], note: "\"a dialect of the JOSS programming language\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/JEAN" }
+  sources: [wiki-jean]
+
 - id: clist
   name: CLIST
   aliases: [TSO command procedure, Command List]
@@ -97,6 +125,54 @@
       WHEN SYSRC(GT 4) END
       CALL 'INVENTRY.A' '&OUTIN &LASTOUT.'
       END
+
+- id: easytrieve
+  name: Easytrieve
+  aliases: [EASYTRIEVE, Easytrieve Plus, EASYTRIEVE PLUS, Easytrieve Classic, CA Easytrieve, Easytrieve Report Generator]
+  kind: language
+  category: business
+  cluster: data
+  origin:
+    first_appeared: { year: 1971, precision: circa, note: "\"an initial release around 1971 or 1972\" (Wikipedia), for IBM System/360 and /370 and RCA Series 70 mainframes." }
+  creators:
+    - { name: Ribek Corporation, role: "original developer (named for its owner, Robert I. Beckler)" }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    domain: [business-data-processing, databases]
+  milestones:
+    - { version: "6.5", year: 1976, summary: "A READ command for direct access to indexed files (ISAM, VSAM, IMS, TOTAL), statements kept in a Panvalet library, and END NORUN for a syntax check without execution (Computerwoche, 24 September 1976)." }
+  summary: >
+    A report generator and "Information Retrieval und File Management System" for IBM and RCA mainframes:
+    a program declares a file's fields by position, length and type, then a JOB activity reads the file and
+    PRINTs a REPORT laid out by TITLE and LINE statements. Pansophic Systems sold it in North America from 1973
+    and worldwide from 1976, bought it from Ribek in 1979, and passed it to Computer Associates (1991) and
+    Broadcom (2018), which still sells it as Easytrieve Report Generator.
+  notes: >
+    Easytrieve Plus (with Easytrieve Classic one of "two available versions of this programming language") is kept on this node as an alias because no source read dates it or describes how it differs: an
+    unsourced comment on Wikipedia's talk page says Pansophic shipped it to Classic users after its 1979
+    fourth-generation language Pro/Grammar failed. Dating it needs a period source (Computerworld,
+    InfoWorld) or a Pansophic manual. Robert I. Beckler's role in the design is not stated beyond owning Ribek.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Easytrieve", homepage: "https://www.broadcom.com/products/mainframe/devops-app-development/app/easytrieve-report-generator" }
+  sources: [handwiki-easytrieve, computerwoche-1976-easytrieve-pansophic, computerwoche-1976-easytrieve-erweitert]
+  example:
+    title: A file definition and a report
+    language: Easytrieve
+    note: "From Wikipedia's Easytrieve article (read through the HandWiki mirror), German field names as given; the article's brace annotations marking the library and activity sections are dropped. Not traced to a manual and not run."
+    code: |
+      FILE PERSNL FB(150 1800)
+          NAME  17 8 A
+          PERSNR 9 5 N
+          ABTL  98 3 N
+          SUMME 94 4 P 2
+      JOB INPUT PERSNL NAME SUM-PERS
+        PRINT PAYRPT
+        REPORT PAYRPT LINESIZE 80
+        TITLE 01 'PERSONALREPORT BEISPIEL1'
+        LINE 01 ABTL NAME PERSNR SUMME
+    sources: [handwiki-easytrieve]
 
 - id: c
   name: C

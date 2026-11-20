@@ -1,5 +1,77 @@
 # The 1980s: C++, Objective-C, Common Lisp, Eiffel, Self, Erlang, Miranda, Perl, Standard ML, Modula-3, Oberon, occam, Newsqueak.
 
+- id: small-auckland
+  name: SMALL
+  aliases: [Small Machine Algol Like Language]
+  kind: language
+  category: educational
+  cluster: algol
+  origin:
+    first_appeared: { year: 1980, precision: circa, note: "Infobox \"First appeared: 1980\"; \"used extensively from about 1980 to 1985\"." }
+    places: [{ institution: University of Auckland, city: Auckland, country: NZ }]
+  creators:
+    - { name: Nevil Brownlee, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+    features: [string-processing]
+    domain: [education]
+  milestones:
+    - { version: object extensions, year: 1985, summary: "\"About 1985, SMALL had some object-oriented programming features added to handle structures.\"" }
+  summary: >
+    "Small Machine Algol Like Language", Nevil Brownlee's language at the University of Auckland, whose aim "was
+    to enable writing ALGOL-like code that ran on a small machine", with an added string type. Written first in
+    Fortran IV for a Burroughs B6700, it was rewritten in SMALL itself and ported to the PDP-10 (TOPS-10) and an
+    IBM S/360 (VM/CMS), and used from about 1980 to 1985 as a teaching aid and for internal projects.
+  notes: >
+    Moved from the esoteric/minimal backlog, where the 2026-11-01 list sweep had put it: SMALL is an ALGOL-family
+    teaching language, not an esoteric one. Wikipedia's article has no references; Brownlee has no English Wikipedia
+    article. The id carries -auckland because SMALL is a generic word.
+  relations:
+    - { type: influenced_by, to: algol-60, weight: strong, confidence: medium, sources: [wiki-small-language], note: "Infobox \"Influenced by: ALGOL\" and \"ALGOL-like code\"; which ALGOL is not stated." }
+    - { type: implemented_in, to: fortran, weight: weak, confidence: medium, sources: [wiki-small-language], note: "First written in Fortran IV, then rewritten in SMALL." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SMALL" }
+  sources: [wiki-small-language]
+
+- id: sr
+  name: SR
+  aliases: [Synchronizing Resources]
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1981, date: "1981-10", precision: exact, note: "Andrews, \"Synchronizing Resources\", ACM TOPLAS 3(4), October 1981 (metadata read, paper not read)." }
+    places: [{ institution: University of Arizona, city: Tucson, country: US }]
+  creators:
+    - { name: Gregory R. Andrews, role: designer }
+    - { name: Ronald A. Olsson, role: "co-designer of later versions; co-author of the SR book" }
+  status: historical
+  tags:
+    paradigm: [imperative, concurrent]
+    concurrency: [message-passing, rendezvous, semaphores]
+    domain: [distributed-systems]
+  milestones:
+    - { version: "1", year: 1988, summary: "An overview of version 1 of the language and implementation in ACM TOPLAS, January 1988." }
+    - { version: "2.3", year: 1993, summary: "The version described in The SR Programming Language: Concurrency in Practice (Andrews and Olsson, 1993); release notes for 2.3 by Gregg Townsend ship with the package. The year is that of the book." }
+  summary: >
+    A language for concurrent programs from the University of Arizona, built around resources that encapsulate
+    processes and the variables they share, and operations that can be invoked and serviced in several ways:
+    "local and remote procedure call, rendezvous, message passing, dynamic process creation, multicast,
+    semaphores and shared memory". The 1983 Andrews and Schneider survey already used it as one of four example
+    message-passing languages beside CSP, PLITS and Ada. It was used for teaching and research and is "the
+    predecessor to the MPD programming language".
+  notes: >
+    Ancestors are not recorded: the 1981 and 1988 TOPLAS papers, which would name them, were not read. The 1988
+    overview is said (search snippet only) to compare SR's redesign to Modula-2 succeeding Modula. The SR pages
+    say the software is no longer maintained. Neither Andrews nor Olsson has an English Wikipedia article. The 2.3
+    milestone's year is approximate: the book is 1993 but the release-notes date was not read.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SR_(programming_language)", homepage: "https://www2.cs.arizona.edu/sr/" }
+  sources: [andrews-1981-synchronizing-resources, andrews-1988-overview-sr, andrews-schneider-1983-concepts-notations, arizona-sr-pages, wiki-sr]
+
 - id: sbl
   name: Superbase Basic Language
   aliases: [SBL]

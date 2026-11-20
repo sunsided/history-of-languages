@@ -106,6 +106,68 @@
         File "Readme.txt"
       SectionEnd
 
+- id: mpd
+  name: MPD
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 2000, precision: circa, note: "Written for Andrews's book Foundations of Multithreaded, Parallel, and Distributed Programming (Addison-Wesley, 2000); the MPD pages date from 2001 and version 1.0.1 was packaged on 20 January 2004. The first release date was not read." }
+    places: [{ institution: University of Arizona, city: Tucson, country: US }]
+  creators:
+    - { name: Gregory R. Andrews, role: designer }
+    - { name: Gregg Townsend, role: "co-author of the MPD pages; author of the release notes" }
+  status: historical
+  tags:
+    paradigm: [imperative, concurrent]
+    concurrency: [message-passing, rendezvous, semaphores]
+    domain: [distributed-systems]
+  milestones:
+    - { version: "1.0.1", year: 2004, date: "2004-01-20", summary: "Maintenance release for newer GNU toolchains; the last version." }
+  summary: >
+    The concurrent language of Andrews's textbook, named from "Multithreaded, Parallel, and Distributed".
+    It is "implemented as a variant of the SR programming language": a different parser in front of SR's
+    intermediate form and run-time system, so it has the same resources, operations, co statements,
+    semaphores, call/send/forward invocations and receive and input statements, but "MPD has a C-like syntax
+    and C-like control statements" where SR is Pascal-like with guarded commands. The compiler translates MPD to C.
+  relations:
+    - { type: dialect_of, to: sr, weight: strong, confidence: high, sources: [arizona-mpd-pages], note: "\"MPD is a variant of the SR programming language.\"" }
+    - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [arizona-mpd-pages], note: "\"MPD has a C-like syntax and C-like control statements.\"" }
+    - { type: targets, to: c, weight: moderate, confidence: high, sources: [arizona-mpd-pages], note: "\"a compiler that translates MPD to C\"." }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://www2.cs.arizona.edu/mpd/" }
+  sources: [arizona-mpd-pages, arizona-sr-pages, andrews-2000-foundations-mpd]
+  example:
+    title: Fine-grained concurrency with co
+    language: MPD
+    note: "mm.co.mpd from the MPD tutorial, with the header and three other comment lines removed: the co statement starts n*n concurrent calls of inner and waits for them all. Not run here."
+    code: |
+      resource matrix_mult()
+        int n; getarg(1,n);
+
+        real a[n,n] = ([n] ([n] 1.0)),
+             b[n,n] = ([n] ([n] 1.0)),
+             c[n,n];
+
+        # compute inner product of a[i,*] * b[*,j]
+        procedure inner(int i, int j) {
+          real sum = 0.0;
+          for [k = 1 to n]
+            { sum += a[i,k] * b[k,j] }
+          c[i,j] = sum;
+        }
+
+        # compute n**2 inner products concurrently
+        co [i = 1 to n, j = 1 to n] inner(i,j) oc
+
+        for [i = 1 to n] {
+          for [j = 1 to n] { writes(c[i,j], " "); }  # one line per row
+          write();   # append a newline
+        }
+      end
+    sources: [arizona-mpd-pages]
+
 - id: d
   name: D
   kind: language
@@ -237,6 +299,48 @@
           return n;
       }
     sources: [wiki-cyclone, jim-2002-cyclone]
+
+- id: jass
+  name: JASS
+  aliases: [JASS2, Just Another Scripting Syntax]
+  kind: language
+  category: domain-specific
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 2002, date: "2002-07-03", precision: exact, note: "Release of Warcraft III: Reign of Chaos, whose World Editor lets players build maps; the language is the scripting layer of its maps and AI. An earlier date (betas) was not checked." }
+    places: [{ institution: Blizzard Entertainment, country: US }]
+  creators:
+    - { name: Blizzard Entertainment, role: developer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, event-driven]
+    domain: [game-scripting]
+  summary: >
+    "a scripting language provided with an event-driven API created by Blizzard Entertainment", used for the
+    triggers and AI of Warcraft III maps; the version in Warcraft III is called JASS2. Its syntax is "similar to
+    Delphi, although, unlike that language, it is case sensitive", with function ... takes ... returns ... headers,
+    and programs call native functions of the game engine declared in common.j, common.ai and Blizzard.j. Fan
+    preprocessors added object-oriented features, and StarCraft II replaced it with Galaxy script.
+  notes: >
+    The expansion "Just Another Scripting Syntax" is only "sometimes said". The Warcraft Wiki also says StarCraft
+    used a JASS 1; that was not checked against another source and is not recorded. No individual designer is named
+    in the sources read. Jeff Pang's 2003 manual is unofficial, "not affiliated or endorsed by Blizzard".
+  relations:
+    - { type: influenced_by, to: delphi, weight: moderate, confidence: medium, sources: [warcraftwiki-jass2], note: "Syntax \"similar to Delphi\" per a fan wiki; Blizzard's own statement not found." }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://jass.sourceforge.net/doc/" }
+  sources: [warcraftwiki-jass2, pang-2003-jass-manual, wiki-warcraft-iii-reign-of-chaos]
+  example:
+    title: A trigger action
+    language: JASS2
+    note: "The Warcraft Wiki's Hello-world example, read through a relayed fetch (one-space indent as reported): a trigger action function that shows a message to all players through engine natives. Not run here."
+    code: |
+      function Trig_JASS_test_Actions takes nothing returns nothing
+       local string a ="Hello, world!"
+       call DisplayTextToForce( GetPlayersAll(), a )
+      endfunction
+    sources: [warcraftwiki-jass2]
 
 - id: scala
   name: Scala
@@ -414,6 +518,57 @@
         Precedes(check_sensors, move_square);
       }
     sources: [benedettelli-2007-nxc-tutorial]
+- id: quartz
+  name: Quartz
+  aliases: [Averest]
+  kind: language
+  category: domain-specific
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 2006, precision: circa, note: "Earliest dated description read: Schneider and Schuele's Averest framework paper, whose latest references are from 2006 (\"The Averest Framework, 2006\"). Schneider's verified Esterel compilation work of 2000-2002 precedes it; when the name Quartz was first used was not established." }
+    places: [{ institution: University of Kaiserslautern, city: Kaiserslautern, country: DE }]
+  creators:
+    - { name: Klaus Schneider, role: designer }
+  status: maintained
+  tags:
+    paradigm: [imperative, synchronous-programming]
+    domain: [embedded, hardware-design]
+  summary: >
+    The "Esterel-like synchronous programming language" of Averest, the Kaiserslautern toolbox that combines a
+    compiler (Ruby) to transition systems, a symbolic model checker (Beryl) and a hardware and software code
+    generator (Topaz). Schneider and Brandt write: "We derived the language Quartz from the classic Esterel
+    language and modified its syntax and semantics to allow a more convenient description of hardware circuits."
+    Beyond most Esterel statements it adds generic programs, synchronous, asynchronous and interleaved
+    concurrency, explicit nondeterministic choice, fixed-bitwidth and unbounded integers, and temporal-logic
+    specifications inside the program; its compiler was formally verified with a theorem prover.
+  notes: >
+    The backlog listed this under the toolbox's name, Averest; the language is Quartz. Klaus Schneider has no
+    English Wikipedia article under that exact name.
+  relations:
+    - { type: influenced_by, to: esterel, weight: strong, confidence: high, sources: [schneider-brandt-2017-quartz, schneider-schuele-2006-averest], note: "\"We derived the language Quartz from the classic Esterel language\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Averest", homepage: "http://www.averest.org/" }
+  sources: [schneider-schuele-2006-averest, schneider-brandt-2017-quartz, wiki-averest]
+  example:
+    title: ABRO with a specification
+    language: Quartz
+    year: 2006
+    note: "Figure 2 of Schneider and Schuele's Averest paper: wait for a and b in parallel, then emit o, restarting on each r; the spec section states a CTL property checked by the model checker. Not run here."
+    code: |
+      module ABRO:
+      input
+        a,b,r: event;
+      output
+        o:event;
+        loop
+           [await a || await b];
+           emit o
+        each r
+      spec
+        Spec1: A G (o -> a | b)
+      end
+    sources: [schneider-schuele-2006-averest]
 
 - id: clojure
   name: Clojure
@@ -2163,6 +2318,113 @@
         };
     sources: [reasonml-org]
 
+- id: vyper
+  name: Vyper
+  aliases: [Viper]
+  kind: language
+  category: domain-specific
+  cluster: smart-contracts
+  origin:
+    first_appeared: { year: 2016, date: "2016-11-11", precision: exact, note: "GitHub repository created 11 November 2016 (as ethereum/viper), with early commits by Vitalik Buterin. Renamed from Viper to Vyper on 25 December 2017." }
+  creators:
+    - { name: Vitalik Buterin, role: "original author (early commits; described it in a March 2017 interview)" }
+  status: active
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing]
+  milestones:
+    - { version: "rename", year: 2017, date: "2017-12-25", summary: "\"Change name from Viper to Vyper.\"" }
+    - { version: "0.2.1", year: 2020, date: "2020-07-03", summary: "First 0.2 release after the long 0.1.0 beta series; \"v0.2.0 was not used due to a conflict in PyPI\"." }
+    - { version: "0.3.0", year: 2021, date: "2021-10-04" }
+    - { version: "0.4.0", year: 2024, date: "2024-06-20", summary: "\"a major overhaul to the Vyper language\": a module and import system for code reuse, and the experimental Venom backend." }
+  summary: >
+    "a contract-oriented, Pythonic programming language that targets the Ethereum Virtual Machine", begun in
+    2016 as Viper, a "totally-backwards-incompatible Serpent 2.0" with stronger typing and bounds checking. It puts
+    security, simplicity and auditability first and leaves out on purpose what makes contracts hard to read or
+    bound: modifiers, class inheritance, inline assembly, operator overloading, recursion and unbounded loops,
+    the last two because they make "it impossible to set an upper bound on gas limits".
+  notes: >
+    The backlog entry "Viper (Ethereum/Ether (ETH))" was the language's pre-2018 name; Viper is kept as an alias. Not
+    to be confused with other languages called Viper. The interview page attributes the answers to Buterin but
+    does not call him the designer; the Python influence is the docs' own word "Pythonic".
+  relations:
+    - { type: successor_of, to: serpent, weight: strong, confidence: high, sources: [seberino-2017-viper-interview], note: "Interview: a totally-backwards-incompatible Serpent 2.0 upgrade named Viper." }
+    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [vyper-docs, vyper-repo], note: "\"Pythonic Smart Contract Language for the EVM\"." }
+    - { type: implemented_in, to: python, weight: moderate, confidence: medium, sources: [vyper-repo], note: "GitHub lists the repository language as Python." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://docs.vyperlang.org/" }
+  sources: [vyper-docs, vyper-release-notes, vyper-repo, seberino-2017-viper-interview]
+  example:
+    title: Crowdfunding state and a payable function
+    language: Vyper 0.4
+    year: 2024
+    note: "Shortened from examples/crowdfund.vy in the Vyper repository (marked there as example code not for production): comments, two state variables and two assertions omitted. Not run here."
+    code: |
+      #pragma version >0.3.10
+
+      funders: HashMap[address, uint256]
+      beneficiary: address
+      deadline: public(uint256)
+      goal: public(uint256)
+
+      @deploy
+      def __init__(_beneficiary: address, _goal: uint256, _timelimit: uint256):
+          self.beneficiary = _beneficiary
+          self.deadline = block.timestamp + _timelimit
+          assert _goal > 0, "Goal must be non-zero"
+          self.goal = _goal
+
+      @external
+      @payable
+      def participate():
+          assert block.timestamp < self.deadline, "deadline has expired"
+          self.funders[msg.sender] += msg.value
+    sources: [vyper-repo]
+
+- id: mcfunction
+  name: Minecraft commands (mcfunction)
+  aliases: [mcfunction, Minecraft functions, Minecraft commands, command blocks]
+  kind: language
+  category: domain-specific
+  cluster: game-scripting
+  origin:
+    began: { year: 2012, precision: year, note: "Command blocks, \"an indestructible block that can execute commands\", added in Java Edition 1.4.2 (snapshot 12w32a); first hinted at by Mojang on 31 July 2012." }
+    first_appeared: { year: 2017, date: "2017-06-07", precision: exact, note: "Java Edition 1.12, which \"introduced a new system for working with collections of commands, called functions\"; the .mcfunction extension came in 1.12-pre3." }
+    places: [{ institution: Mojang, country: SE }]
+  creators:
+    - { name: Mojang Studios, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, scripting]
+    domain: [game-scripting]
+  milestones:
+    - { version: "1.13", year: 2018, summary: "Functions move into data packs; can be tagged, with #tick and #load tags run every tick and on (re)load." }
+    - { version: "1.20.2", year: 2023, summary: "Macro lines ($) that substitute arguments, and backslash line continuation." }
+    - { version: "1.20.3", year: 2023, summary: "/return gives functions a result." }
+  summary: >
+    The command language of Minecraft: Java Edition, written one command per line in .mcfunction text files
+    ("Functions are data pack files, allowing players to run lists of commands"). It grew from commands typed
+    in chat and run by command blocks (2012) into functions (1.12, 2017) that can be tagged to run every game
+    tick, take macro arguments and return values, which made it the scripting layer of map and data-pack makers.
+  notes: >
+    No designer is named in the sources read. Bedrock Edition has its own function files, not covered here.
+    Calendar dates for snapshots were not read.
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://minecraft.wiki/w/Function_(Java_Edition)" }
+  sources: [mcwiki-function, mcwiki-java-1-12, mcwiki-command-block]
+  example:
+    title: A function with macro lines
+    language: mcfunction (Java Edition 1.20.2 and later)
+    year: 2023
+    note: "From the Minecraft Wiki's Function article: lines starting with $ are macro lines into which $(key) arguments are substituted. Not run here."
+    code: |
+      say This is a normal non-macro command where $(key_1) does not work
+      $say This is a macro line, using $(key_1)!
+      $teleport @s ~ ~$(key_2) ~
+    sources: [mcwiki-function]
+
 - id: rescript
   name: ReScript
   aliases: [BuckleScript]
@@ -2873,6 +3135,105 @@
     code: |
       $ Get-EventLog application |Group source |Select –first 5 |Format-Table
     sources: [snover-2002-monad-manifesto]
+
+- id: elvish
+  name: Elvish
+  kind: language
+  category: shell
+  cluster: scripting/structured-shells
+  origin:
+    began: { year: 2013, date: "2013-06-16", precision: exact, note: "GitHub repository created 16 June 2013 (commits by Qi Xiao, then committing as Cheer Xiao)." }
+    first_appeared: { year: 2016, date: "2016-03-23", precision: exact, note: "Tag 0.1 in the repository; its README still called it \"a work in progress\"." }
+  creators:
+    - { name: Qi Xiao, role: "designer and principal developer (GitHub xiaq, by far the largest committer)" }
+  status: active
+  tags:
+    paradigm: [functional, scripting]
+    features: [pipes, closures, exceptions]
+  summary: >
+    A Unix shell and scripting language written in Go that adds lists, maps and closures to the shell
+    ("Data structures and functional programming") while keeping command syntax readable without
+    "double-quoting every variable". Undefined variables are reported as compilation errors before the
+    script runs, and failed commands abort execution by default. Its name is "named after elven items in
+    roguelikes".
+  notes: >
+    No source read names influences on the language. Its persistent data structures are "partially derived
+    from" Clojure's source code (repository licence notes), which is an implementation borrowing, not
+    recorded as an edge. Qi Xiao has no English Wikipedia article.
+  relations:
+    - { type: implemented_in, to: go, weight: moderate, confidence: high, sources: [elvish-repo] }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://elv.sh/" }
+  sources: [elvish-homepage, elvish-faq, elvish-repo]
+  example:
+    title: Lists, maps and a parallel each
+    language: Elvish
+    note: "From the elv.sh home page; line breaks restored from the page. peach runs the lambda for each map in the list in parallel. Not run here."
+    code: |
+      var hosts = [[&name=a &cmd='apt update']
+                   [&name=b &cmd='pacman -Syu']]
+      # peach = "parallel each"
+      peach {|h| ssh root@$h[name] $h[cmd] } $hosts
+    sources: [elvish-homepage]
+
+- id: ysh
+  name: YSH
+  aliases: [Oil, Oil language, Oils, Oils for Unix, Oil shell, OSH]
+  kind: language
+  category: shell
+  cluster: scripting/structured-shells
+  origin:
+    began: { year: 2016, date: "2016-04-20", precision: exact, note: "First commit of Andy Chu's Python sketch of a new Unix shell; first blog post 10 October 2016." }
+    first_appeared: { year: 2016, precision: year, note: "The project (OSH, a bash-compatible shell) was public by October 2016. The new language, first called the Oil language and renamed YSH in March 2023, came later; its first release date was not read." }
+  creators:
+    - { name: Andy Chu, role: "creator (author of the Oil shell blog)" }
+  status: active
+  tags:
+    paradigm: [imperative, scripting]
+    typing: [dynamic-typing]
+    features: [pipes, closures]
+  milestones:
+    - { version: "Oils rename", year: 2023, date: "2023-03-31", summary: "Project renamed Oils (Oils for Unix); the Oil language became YSH; OSH no longer stands for Oil Shell." }
+  summary: >
+    The new shell language of the Oils project, which ships two shells in one interpreter: OSH "runs your
+    existing shell scripts", while YSH, "for Python and JavaScript users who avoid shell", adds Python-like
+    expressions and data types, Ruby-like blocks, var and setvar declarations, and JSON reading and writing.
+    The rename post describes it as the "Shell influenced by Python, Ruby, JavaScript". The interpreter is
+    written in Python and translated to C++ by the project's own tools.
+  notes: >
+    OSH, the compatible half, aims to run POSIX and bash scripts and is noted here rather than mapped as its
+    own node. Chu's first post says the shell "is closer to the bash language than the POSIX shell subset".
+    The date of the first Oil-language release and the release that carried the rename were not read. Andy Chu has no English
+    Wikipedia article.
+  relations:
+    - { type: influenced_by, to: bash, weight: strong, confidence: high, sources: [chu-2016-what-oil-looks-like, oils-repo], note: "Oils is \"our upgrade path from bash\"; OSH runs bash scripts and YSH grew from it." }
+    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [chu-2023-oils-rename, oils-ysh-tour], note: "\"the expression language has Python-like data types\"." }
+    - { type: influenced_by, to: ruby, aspects: [closures], weight: moderate, confidence: high, sources: [chu-2023-oils-rename, oils-ysh-tour], note: "\"The command language has Ruby-like blocks\"." }
+    - { type: influenced_by, to: javascript, weight: moderate, confidence: high, sources: [chu-2023-oils-rename] }
+    - { type: implemented_in, to: python, weight: moderate, confidence: high, sources: [oils-repo, chu-2016-what-oil-looks-like], note: "Written in Python and translated to C++; the deployed binary does not depend on Python." }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://oils.pub/" }
+  sources: [chu-2016-what-oil-looks-like, chu-2023-oils-rename, oils-ysh-tour, oils-repo]
+  example:
+    title: Expressions, blocks and JSON
+    language: YSH (Oils 0.38.0)
+    note: "Excerpts from A Tour of YSH (A Taste of YSH). Python-like values on the right of var; cd takes a Ruby-like block; json write serializes a dict. Not run here."
+    code: |
+      var x = 42             # an integer, not a string
+      if (x > 0) {
+        echo 'positive'
+      }  # => positive
+
+      cd /tmp {
+        echo hi > greeting.txt  # file created inside /tmp
+        echo $PWD               # => /tmp
+      }
+
+      var person = {name: 'bob', age: 42}
+      json write (person)
+    sources: [oils-ysh-tour]
 
 - id: nushell
   name: Nushell

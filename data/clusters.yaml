@@ -328,18 +328,13 @@
 - id: scripting/structured-shells
   name: Structured-data shells
   parent: scripting
-  summary: "Shells whose pipelines pass objects or tables instead of text: PowerShell on .NET, Nushell."
+  summary: "Shells whose pipelines pass objects or tables instead of text, or that add real data types to the Unix shell: PowerShell on .NET, Nushell, Elvish, YSH."
   research_status: draft
   key_sources: [snover-2002-monad-manifesto]
-  backlog:
-    - { name: "Elvish", year: 2016, hint: "No Wikipedia article (Elvish_(shell) is 404). Use elv.sh." }
-    - { name: "Oil / Oils (YSH)", year: 2016, hint: "No Wikipedia article (Oil_shell is 404) and not in the Unix shell article. Use oilshell.org." }
 - id: scripting/embedded
   name: Embeddable scripting languages
   parent: scripting
   research_status: stub
-  backlog:
-    - { name: "Minecraft commands / mcfunction", hint: "Minecraft article only: command blocks October 2012, data packs in Java 1.13 (2018); no description of the command or function language. Probably out of scope without a better source." }
 - id: web
   name: Web languages
   research_status: draft
@@ -365,10 +360,9 @@
 - id: data
   name: Data, query and statistics languages
   research_status: draft
-  backlog:
-    - { name: "EASYTRIEVE PLUS", hint: "Wikipedia's Easytrieve title redirects to the Computer Associates article, which does not mention it; needs a CA/Broadcom manual or another source for year and designers." }
   research_questions:
     - "OmniMark and DAX have no documented relation to existing nodes: OmniMark began as the SGML processor XTRAN (SGML is not a node); DAX is said to be \"in part, an evolution of the Multidimensional Expression (MDX) language\" (Wikipedia, uncited) and close to Excel formulas; neither MDX nor the Excel formula language is a node. SAS: Barr notes PL/I\u2019s lexical design as an improvement but does not say SAS adopted it; Barr\u2019s Formatted File System is a missing predecessor."
+    - "Easytrieve Plus: when was it released and what did it add over Easytrieve Classic? Only an unsourced Wikipedia talk-page comment ties it to Pansophic after 1979; look for Computerworld or InfoWorld announcements or a Pansophic manual."
 - id: joss
   name: JOSS and its descendants
   summary: "RAND's conversational JOSS and the interactive languages that followed it: TELCOMP, CAL, FOCAL, AID, MUMPS."
@@ -409,13 +403,10 @@
   name: Concurrency models and languages
   summary: "Formalisms and languages that made concurrency a first-class concern. See the concurrency lineage for the narrative thread."
   research_status: draft
-  backlog:
-    - { name: "SR", hint: "Synchronizing Resources; Andrews and Olsson's book; version 2.2 ports listed (Wikipedia stub). No year." }
-    - { name: "MPD", hint: "\"implemented as a variant of the SR programming language\" for Andrews's book Foundations of Multithreaded, Parallel, and Distributed Programming (Wikipedia). No year." }
-    - { name: "Averest", hint: "Synchronous language and toolbox from the Kaiserslautern Embedded Systems Group (Wikipedia). No year." }
   research_questions:
     - "Hermes descends from IBM NIL (Strom and Yemini, 1983; not the Lisp dialect nil-lisp), which is not a node. UNITY credits no ancestor language in Misra\u2019s writings; the Secure Operations Language papers (ENTCS 2002) could not be read, and a search snippet says SOL borrows events from SCR, which is not a node."
     - "Missing nodes met while connecting concurrency languages: NIL (IBM), Seuss (from UNITY), Guarded Horn Clauses, Parlog and Flat Concurrent Prolog (Janus), ToonTalk (from Janus), SCR."
+    - "Quartz (Averest): when was the language first named and published? Schneider's internal report 375 (2009) and his ACSD 2001 and TPHOLs 2002 papers may date it earlier than the c. 2006 framework paper."
 - id: concurrency/plan9
   name: Bell Labs CSP line (Newsqueak to Go)
   parent: concurrency
@@ -442,9 +433,6 @@
   name: Minimal Turing tarpits
   parent: esoteric
   research_status: draft
-  backlog:
-    - { name: "JEAN", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
-    - { name: "SMALL", hint: "From the Wikipedia list sweep (2026-11-01), minor; needs year, sources and an example." }
 - id: esoteric/2d
   name: Two-dimensional languages
   parent: esoteric
@@ -567,14 +555,13 @@
   name: Smart-contract languages
   summary: "Languages for programs that run on blockchains."
   research_status: stub
-  backlog:
-    - { name: "Viper (Ethereum/Ether (ETH))", hint: "Vyper has no Wikipedia article (404) and the Ethereum article does not mention it. Use docs.vyperlang.org." }
 - id: game-scripting
   name: Game scripting languages
   summary: "Languages built into games and game engines: QuakeC, UnrealScript, LPC and MOO for MUDs, GML, Luau, Verse."
   research_status: stub
   backlog:
-    - { name: "JASS", hint: "JASS redirects to the Warcraft III: Reign of Chaos article (released July 3, 2002), whose text does not mention it; needs another source (e.g. the World Editor documentation) for a year and a description." }
+    - { name: "Galaxy (StarCraft II)", year: 2010, hint: "Blizzard's script language for StarCraft II maps; replaced JASS (Warcraft Wiki, JASS2). Successor edge to jass. Needs a Galaxy Editor source for date and design." }
+    - { name: "vJASS", hint: "JASS superset with object-oriented features, compiled to JASS by Vexorian's JassHelper for the NewGen World Editor; JassHelper manual on github (wurstscript/WurstScript, Wurstpack/vexorianjasshelper). Inclusion test 4 (variant)." }
   research_questions:
     - "GML is only likened to JavaScript and C by third parties; the GameMaker manual was not read. SCUMM: Wilmunder\u2019s memoir credits Chip Morningstar with creating the language \"in just a few short weeks\", while the node gives him only initial help; to be reconciled. LSL\u2019s Mono target was read only through a relayed fetch."
 - id: business/4gl
