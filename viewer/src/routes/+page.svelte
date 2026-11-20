@@ -5,7 +5,7 @@
 	import CommandPalette from '#lib/components/organisms/CommandPalette.svelte';
 	import PathFinder from '#lib/components/organisms/PathFinder.svelte';
 	import FocusBar from '#lib/components/organisms/FocusBar.svelte';
-	import { viewer } from '#lib/viewer.svelte.ts';
+	import { SHEET, viewer, type SheetSnap } from '#lib/viewer.svelte.ts';
 	import '../app.css';
 
 	// Folded by default. Wide: opens as a right column. Narrow: opens as a bottom sheet over the timeline.
@@ -23,6 +23,47 @@
 	function onResizeMove(ev: PointerEvent) {
 		if (resizing) setWidth(window.innerWidth - ev.clientX);
 	}
+	// ---- narrow screens: bottom sheet with three snap heights ----
+	const SNAPS = Object.keys(SHEET) as SheetSnap[];
+	const SNAP_LABEL: Record<SheetSnap, string> = { peek: 'peek', half: 'half height', full: 'full height' };
+	let mainEl: HTMLElement | undefined = $state();
+	/** live height while dragging the grip, px */
+	let dragH = $state<number | null>(null);
+	let drag: { y: number; h: number; moved: boolean } | null = null;
+
+	function onGripDown(ev: PointerEvent) {
+		const slot = (ev.currentTarget as HTMLElement).parentElement!;
+		drag = { y: ev.clientY, h: slot.getBoundingClientRect().height, moved: false };
+		(ev.currentTarget as HTMLElement).setPointerCapture(ev.pointerId);
+	}
+	function onGripMove(ev: PointerEvent) {
+		if (!drag || !mainEl) return;
+		const dy = drag.y - ev.clientY;
+		if (Math.abs(dy) > 6) drag.moved = true;
+		if (drag.moved) dragH = Math.max(80, Math.min(mainEl.clientHeight, drag.h + dy));
+	}
+	function onGripUp() {
+		if (drag?.moved && dragH !== null && mainEl) {
+			const f = dragH / mainEl.clientHeight;
+			// snap to the nearest height; a short flick down from peek folds the sheet
+			if (f < SHEET.peek * 0.6) viewer.panelOpen = false;
+			else viewer.sheet = SNAPS.reduce((a, b) => (Math.abs(SHEET[b] - f) < Math.abs(SHEET[a] - f) ? b : a));
+		}
+		dragH = null;
+	}
+	function onGripClick() {
+		if (drag?.moved) return void (drag = null);
+		drag = null;
+		viewer.sheet = SNAPS[(SNAPS.indexOf(viewer.sheet) + 1) % SNAPS.length];
+	}
+	function onGripKey(ev: KeyboardEvent) {
+		const i = SNAPS.indexOf(viewer.sheet);
+		if (ev.key === 'ArrowUp') viewer.sheet = SNAPS[Math.min(SNAPS.length - 1, i + 1)];
+		else if (ev.key === 'ArrowDown') viewer.sheet = SNAPS[Math.max(0, i - 1)];
+		else return;
+		ev.preventDefault();
+	}
+
 	function onResizeKey(ev: KeyboardEvent) {
 		const step = ev.shiftKey ? 64 : 16;
 		if (ev.key === 'ArrowLeft') setWidth(currentWidth() + step);
@@ -49,11 +90,23 @@
 	>
 	<Toolbar />
 	<FocusBar />
-	<main class:narrow={viewer.narrow.current} class:open={viewer.panelOpen} style:--panel-w={viewer.panelWidth ? `${viewer.panelWidth}px` : null}>
+	<main bind:this={mainEl} class:narrow={viewer.narrow.current} class:open={viewer.panelOpen} style:--panel-w={viewer.panelWidth ? `${viewer.panelWidth}px` : null}>
 		<Timeline />
 		{#if viewer.panelOpen}
-			<div class="panel-slot">
-				{#if !viewer.narrow.current}
+			<div class="panel-slot" class:dragging={dragH !== null} style:height={viewer.narrow.current ? (dragH !== null ? `${dragH}px` : `${SHEET[viewer.sheet] * 100}%`) : null}>
+				{#if viewer.narrow.current}
+					<button
+						class="grip"
+						aria-label="Details sheet at {SNAP_LABEL[viewer.sheet]}; change height"
+						title="Drag, tap, or use the up and down arrows to resize"
+						onpointerdown={onGripDown}
+						onpointermove={onGripMove}
+						onpointerup={onGripUp}
+						onpointercancel={() => ((dragH = null), (drag = null))}
+						onclick={onGripClick}
+						onkeydown={onGripKey}><span class="bar" aria-hidden="true"></span></button
+					>
+				{:else}
 					<!-- svelte-ignore a11y_no_noninteractive_tabindex, a11y_no_noninteractive_element_interactions -->
 					<div
 						class="resize"
@@ -149,11 +202,43 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		height: 50%;
+		display: flex;
+		flex-direction: column;
+		background: var(--bg-raised);
+		transition: height var(--duration-fast);
 		z-index: var(--z-sheet);
 		border-top: 1px solid var(--line);
 		border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 		overflow: hidden;
 		box-shadow: var(--shadow-sheet);
+	}
+	main.narrow .panel-slot.dragging {
+		transition: none;
+	}
+	main.narrow .panel-slot :global(.panel) {
+		flex: 1;
+		min-height: 0;
+		height: auto;
+	}
+	.grip {
+		flex: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 24px;
+		padding: 0;
+		border: none;
+		background: var(--bg-raised);
+		cursor: ns-resize;
+		touch-action: none;
+	}
+	.grip:focus-visible {
+		outline-offset: -2px;
+	}
+	.bar {
+		width: 40px;
+		height: 4px;
+		border-radius: var(--radius-pill);
+		background: var(--fg-faint);
 	}
 </style>

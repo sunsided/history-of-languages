@@ -51,6 +51,10 @@ function loadRecent(): string[] {
 	}
 }
 
+/** narrow screens: snap heights of the detail sheet, as a fraction of the area under the bars */
+export const SHEET = { peek: 0.3, half: 0.55, full: 1 } as const;
+export type SheetSnap = keyof typeof SHEET;
+
 export type Selection = { type: 'node' | 'cluster'; id: string } | null;
 export type Hover = { type: 'node'; id: string } | { type: 'edge'; from: string; to: string; idx: number } | null;
 
@@ -77,7 +81,11 @@ class Viewer {
 	effectiveZoom = $derived(Math.max(this.zoom, this.minZoom));
 	depth = $state<'direct' | 'full'>('full');
 	legendOpen = $state(true);
+	/** narrow screens: the key covers the plot, so it starts closed every visit */
+	legendOpenNarrow = $state(false);
 	panelWidth = $state<number | null>(null);
+	/** narrow screens: the sheet opens low, so the timeline stays usable; the user drags it up */
+	sheet = $state<SheetSnap>('peek');
 
 	selected = $state<Selection>(null);
 	hover = $state<Hover>(null);

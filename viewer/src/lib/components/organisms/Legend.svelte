@@ -4,6 +4,11 @@
 	import ToggleChip from '../atoms/ToggleChip.svelte';
 
 	const KINDS = ['mechanism', 'machine', 'machine-code', 'formalism', 'notation', 'assembly', 'language'];
+	const open = $derived(viewer.narrow.current ? viewer.legendOpenNarrow : viewer.legendOpen);
+	function toggle() {
+		if (viewer.narrow.current) viewer.legendOpenNarrow = !viewer.legendOpenNarrow;
+		else viewer.legendOpen = !viewer.legendOpen;
+	}
 	const presentKinds = $derived(KINDS.filter((k) => viewer.graph.data.nodes.some((n) => n.kind === k)));
 </script>
 
@@ -14,17 +19,17 @@
 	<button
 		id="legend-toggle"
 		class="head"
-		aria-expanded={viewer.legendOpen}
+		aria-expanded={open}
 		aria-controls="legend-body"
-		onclick={() => (viewer.legendOpen = !viewer.legendOpen)}
+		onclick={toggle}
 	>
-		<span class="chev" class:open={viewer.legendOpen} aria-hidden="true">▸</span>
+		<span class="chev" class:open aria-hidden="true">▸</span>
 		Key
 		{#if viewer.filterCount}<span class="badge">{viewer.filterCount}<span class="sr-only"> filters changed</span></span>{/if}
 	</button>
 	</h2>
 
-	{#if viewer.legendOpen}
+	{#if open}
 		<div class="body" id="legend-body">
 			<fieldset>
 				<legend>Relations</legend>

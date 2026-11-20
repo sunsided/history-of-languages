@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { tick, untrack } from 'svelte';
-	import { viewer } from '#lib/viewer.svelte.ts';
+	import { SHEET, viewer } from '#lib/viewer.svelte.ts';
 	import { timeScale, NOW, PAD } from '#lib/scale.ts';
 	import { layout, type Row } from '#lib/layout.ts';
 	import {
@@ -440,7 +440,7 @@
 	aria-label="Timeline"
 	tabindex="0"
 	style:scroll-padding-top="{AXIS_H}px"
-	style:scroll-padding-bottom={viewer.narrow.current && viewer.panelOpen ? '50%' : null}
+	style:scroll-padding-bottom={viewer.narrow.current && viewer.panelOpen ? `${SHEET[viewer.sheet] * 100}%` : null}
 	bind:this={scroller}
 	bind:clientWidth={viewW}
 	onwheel={onWheel}
@@ -472,7 +472,7 @@
 						aria-current={viewer.activeEra === era.id ? 'true' : undefined}
 						onclick={() => viewer.jump(era.id)}
 						title="{era.name} ({span}){era.summary ? '\n' + era.summary : ''}"
-						><span aria-hidden="true">{label}</span><span class="sr-only">{era.name}, {span}</span></button
+						><span class="era-label" style:left="{GUTTER + 4}px" aria-hidden="true">{label}</span><span class="sr-only">{era.name}, {span}</span></button
 					>
 				{/each}
 			</nav>
@@ -841,8 +841,13 @@
 		font-size: 10.5px;
 		text-align: left;
 		white-space: nowrap;
-		overflow: hidden;
+		/* clip, not hidden: hidden would make the button a scroll container and break the sticky label */
+		overflow: clip;
 		cursor: pointer;
+	}
+	/* the label sticks to the gutter edge while its era is on screen */
+	.era-label {
+		position: sticky;
 	}
 	.era-btn.alt {
 		background: var(--era-b);
