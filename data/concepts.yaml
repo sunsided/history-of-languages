@@ -188,6 +188,15 @@
   name: Threads
   facet: concurrency
   summary: Independently scheduled flows of control sharing memory.
+- id: interaction-nets
+  name: Interaction nets
+  facet: concurrency
+  summary: Lafont's graph-rewriting model of computation, whose local, strongly confluent rewrites can all run in parallel; interaction combinators are its universal minimal system.
+  first_seen:
+    node: bend
+    year: 2024
+    note: "Lafont introduced interaction nets in 1990 and interaction combinators in 1997; Bend 1 compiled to HVM2, an evaluator for interaction combinators."
+  sources: [lafont-1990-interaction-nets, lafont-1997-interaction-combinators, taelin-2024-hvm2]
 - id: virtual-threads
   name: Virtual threads
   facet: concurrency

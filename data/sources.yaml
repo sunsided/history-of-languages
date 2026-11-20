@@ -6243,3 +6243,95 @@
   title: "myhdl on PyPI: release history"
   url: https://pypi.org/project/myhdl/#history
   checked: '2026-11-02'
+- id: lafont-1990-interaction-nets
+  type: paper
+  primary: true
+  authors:
+  - Yves Lafont
+  title: Interaction nets
+  venue: "POPL '90: Proceedings of the 17th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages, pp. 95-108"
+  year: 1990
+  doi: 10.1145/96709.96718
+  url: https://doi.org/10.1145/96709.96718
+- id: lafont-1997-interaction-combinators
+  type: paper
+  primary: true
+  authors:
+  - Yves Lafont
+  title: Interaction Combinators
+  venue: Information and Computation 137(1), pp. 69-101
+  year: 1997
+  doi: 10.1006/inco.1997.2643
+  url: https://doi.org/10.1006/inco.1997.2643
+- id: taelin-2024-hvm2
+  type: paper
+  primary: true
+  authors:
+  - Victor Taelin
+  title: "HVM2: A Parallel Evaluator for Interaction Combinators"
+  venue: Higher Order Company (work-in-progress paper in the HVM2 repository)
+  year: 2024
+  url: https://github.com/HigherOrderCO/HVM2/tree/main/paper
+  checked: '2026-11-20'
+- id: bend-2024-readme
+  type: manual
+  primary: true
+  authors:
+  - Higher Order Company
+  title: Bend README (as of 18 May 2024)
+  year: 2024
+  url: https://github.com/bendlang/bend/blob/bc00caad1fb22fe7d85f4a2985d387cbf0640df7/README.md
+  checked: '2026-11-20'
+- id: bend-lang-crate
+  type: web
+  primary: true
+  title: "bend-lang on crates.io: version history"
+  url: https://crates.io/crates/bend-lang/versions
+  checked: '2026-11-20'
+- id: bend-changelog
+  type: web
+  primary: true
+  authors:
+  - Higher Order Company
+  title: Bend CHANGELOG
+  year: 2026
+  url: https://github.com/bendlang/bend/blob/main/CHANGELOG.md
+  checked: '2026-11-20'
+- id: taelin-2026-bendtt
+  type: paper
+  primary: true
+  authors:
+  - Victor Taelin
+  - Lorenzo W Battistela
+  - Paulo J Cavalcanti
+  - Nicolas Abril
+  - Vitor Chiarelli Neves
+  - Vanessa Ostroski
+  title: "BendTT: An Affine Dependent Type Theory"
+  venue: Higher Order Company (paper in the Bend repository)
+  year: 2026
+  url: https://github.com/bendlang/bend/blob/main/paper/BendTT.pdf
+  checked: '2026-11-20'
+- id: bend-homepage
+  type: web
+  primary: true
+  title: Bend (official site)
+  year: 2026
+  url: https://bend-lang.com/
+- id: vibescript-readme
+  type: manual
+  primary: true
+  authors:
+  - Mauricio Gomes
+  title: Vibescript README
+  year: 2026
+  url: https://github.com/xipkit/vibescript
+  checked: '2026-11-20'
+- id: vibescript-homepage
+  type: web
+  primary: true
+  authors:
+  - Mauricio Gomes
+  title: Vibescript (official site)
+  year: 2026
+  url: https://vibescript-lang.org/

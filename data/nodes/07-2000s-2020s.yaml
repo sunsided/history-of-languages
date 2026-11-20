@@ -7682,3 +7682,95 @@
         io.flag  := (counter === 0) | io.cond1
       }
     sources: [spinalhdl-docs]
+
+- id: bend
+  name: Bend
+  aliases: [Bend 2, bend-lang]
+  kind: language
+  category: general
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 2024, date: "2024-05-15", precision: exact, note: "First bend-lang crate (0.2.3) published on crates.io on 15 May 2024; the README's launch demo links an X post of 16 May 2024. The HVM2 paper introducing Bend was committed on 17 May 2024." }
+    places: [{ institution: Higher Order Company, city: Rio de Janeiro, country: BR }]
+  creators:
+    - { name: Victor Taelin, role: designer }
+  status: active
+  tags:
+    paradigm: [functional]
+    typing: [static-typing, dependent-types, affine-types]
+    concurrency: [interaction-nets]
+    domain: [parallel-hardware, theorem-proving]
+  milestones:
+    - { version: "2.0.0", year: 2026, date: "2026-09-17", introduces: [static-typing, dependent-types, affine-types, theorem-proving], summary: "Bend 2, a new language under the old name: a type checker for an affine dependent type theory (BendTT), a new compiler to C, Metal, CUDA and JavaScript, and a new runtime. Bend 1 programs and HVM do not carry over.", sources: [bend-changelog, taelin-2026-bendtt] }
+  summary: >
+    Bend 1 (2024) was "a massively parallel, high-level programming language" with "the feeling and features of expressive
+    languages like Python and Haskell", compiled to HVM2, Higher Order Company's evaluator for Lafont's interaction
+    combinators, which runs a program in parallel on CPUs and GPUs without explicit threads. Bend 2 (2026) kept the name
+    and the Python-like syntax but replaced the language: it is dependently typed with an affine core (BendTT), checks
+    proofs like Lean or Rocq, and compiles to C, Metal, CUDA and JavaScript.
+  notes: >
+    Bend 2's README says its compiler (not the kernel) is "99% AI-written and not yet fully audited", and the BendTT
+    paper discloses that it was written by an AI model from the author's design. Speed claims on the project pages are
+    the project's own benchmarks. Bend 1 may have been public a few days before 15 May 2024 under another crate name; not checked.
+    Taelin's earlier language Kind is not named as a predecessor in any Bend source read.
+  relations:
+    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [bend-2024-readme, bend-homepage], note: "Bend 1 README: \"the feeling and features of expressive languages like Python and Haskell\"; Bend 2: \"Syntax == Python + dependent types\"." }
+    - { type: influenced_by, to: haskell, aspects: [functional], weight: moderate, confidence: high, sources: [bend-2024-readme, taelin-2024-hvm2] }
+    - { type: influenced_by, to: lean, aspects: [dependent-types, theorem-proving], year: 2026, weight: moderate, confidence: medium, sources: [bend-homepage, taelin-2026-bendtt], note: "Bend 2's site compares its checker to Lean and Rocq, and its kernel is mechanised in Lean 4; BendTT positions itself against Coq, Agda and Lean rather than naming an ancestor." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://bend-lang.com/" }
+  sources: [bend-2024-readme, bend-lang-crate, taelin-2024-hvm2, bend-changelog, taelin-2026-bendtt, bend-homepage]
+  example:
+    title: Implicit parallelism with bend/fork
+    language: Bend 1
+    year: 2024
+    note: "Verbatim from the Bend README of May 2024. The bend/fork construct builds a tree whose branches HVM2 evaluates in parallel."
+    code: |
+      # given a shader, returns a square image
+      def render(depth, shader):
+        bend d = 0, i = 0:
+          when d < depth:
+            color = (fork(d+1, i*2+0), fork(d+1, i*2+1))
+          else:
+            width = depth / 2
+            color = shader(i % width, i / width)
+        return color
+    sources: [bend-2024-readme]
+
+- id: vibescript
+  name: Vibescript
+  aliases: [VibeScript]
+  kind: language
+  category: scripting
+  cluster: scripting/embedded
+  origin:
+    first_appeared: { year: 2025, date: "2025-12-15", precision: exact, note: "First tag v0.1.0 in github.com/xipkit/vibescript, 15 December 2025; repository created 2 November 2025." }
+  creators:
+    - { name: Mauricio Gomes, role: designer }
+  status: active
+  tags:
+    typing: [static-typing]
+    features: [embeddable]
+  summary: >
+    A small, statically typed scripting language with "Ruby-inspired syntax", implemented in Rust and embedded in a host
+    application that decides "which capabilities scripts can access and how much work they can do". It is designed to
+    be written by AI models as well as people: the README tells hosts to "give an AI author vibescript::guide()".
+  relations:
+    - { type: influenced_by, to: ruby, weight: strong, confidence: high, sources: [vibescript-readme, vibescript-homepage], note: "\"Vibescript's Ruby-inspired syntax\"." }
+  research_status: stub
+  confidence: high
+  links: { homepage: "https://vibescript-lang.org/" }
+  sources: [vibescript-readme, vibescript-homepage]
+  example:
+    title: Typed signature and a Ruby-style block
+    language: Vibescript
+    year: 2026
+    note: "Verbatim from the Vibescript README."
+    code: |
+      def total(items: array<{ price: int, qty: int }>) -> int
+        items.sum { |item| item["price"] * item["qty"] }
+      end
+
+      total([{ price: 250, qty: 2 }, { price: 100, qty: 1 }]) # 600
+    sources: [vibescript-readme]
