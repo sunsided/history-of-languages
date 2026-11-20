@@ -8526,3 +8526,70 @@
         allocate(res)
         bell(res)
     sources: [vax-2025-qmod]
+
+- id: verus
+  name: Verus
+  kind: language
+  category: research
+  cluster: verification
+  origin:
+    began: { year: 2021, date: "2021-10-19", precision: exact, note: "github.com/verus-lang/verus created 19 October 2021; when it became public was not checked." }
+    first_appeared: { year: 2023, date: "2023-03-09", precision: exact, note: "Lattuada et al., arXiv:2303.05491 (9 March 2023); OOPSLA 2023 (PACMPL, April 2023)." }
+    places: [{ institution: VMware Research }, { institution: Carnegie Mellon University, city: Pittsburgh, country: US }, { institution: Microsoft Research, country: US }]
+  creators:
+    - { name: Andrea Lattuada, role: designer }
+    - { name: Travis Hance, role: designer }
+    - { name: Jon Howell, role: designer }
+    - { name: Bryan Parno, role: designer }
+    - { name: Chris Hawblitzel, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, functional]
+    typing: [static-typing, linear-types]
+    memory: [ownership-borrowing]
+    features: [contracts]
+    domain: [theorem-proving]
+  summary: >
+    "An SMT-based tool for formally verifying Rust programs" in which "programmers express proofs and specifications
+    using the Rust language", so proofs can use Rust's linear types and borrow checking to handle permissions for
+    pointers and concurrent resources ("linear ghost types"). A mode system separates spec, proof and exec code; only
+    exec code is compiled, after all ghost code is erased. It works on a subset of Rust written inside verus! blocks.
+  notes: >
+    The OOPSLA paper lists nine authors (also Chanhee Cho, Matthias Brun, Isitha Subasinghe, Yi Zhou); the five listed
+    here carried the design across the paper and repository. The paper's own code uses an earlier #[spec]/#[proof]
+    attribute syntax. Prusti, RustHorn, Creusot and Aeneas are cited as related Rust verifiers.
+  relations:
+    - { type: dialect_of, to: rust, weight: strong, confidence: high, sources: [lattuada-2023-verus, verus-readme], note: "\"Verus currently supports a subset of Rust\", extended with specification and proof code checked by \"Rust's type checker\"." }
+    - { type: influenced_by, to: dafny, aspects: [contracts, theorem-proving], weight: moderate, confidence: high, sources: [lattuada-2023-verus], note: "\"By using a single language for specifications, proofs, and executable code, Verus follows in the footsteps of ... Coq, Dafny, F*, and Lean\"; its \"style of SMT-based verification with programmer-supplied lemmas and hints is similar to ... Boogie, Dafny, and F*\"." }
+    - { type: influenced_by, to: fstar, weight: weak, confidence: high, sources: [lattuada-2023-verus] }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://verus-lang.github.io/verus/" }
+  sources: [lattuada-2023-verus, verus-readme]
+  example:
+    title: A spec function and proved assertions
+    language: Verus
+    note: "Verbatim from examples/guide/getting_started.rs in the Verus repository (commit 8707ef2)."
+    code: |
+      use vstd::prelude::*;
+
+      verus! {
+
+      spec fn min(x: int, y: int) -> int {
+          if x <= y {
+              x
+          } else {
+              y
+          }
+      }
+
+      fn main() {
+          assert(min(10, 20) == 10);
+          assert(min(-10, -20) == -20);
+          assert(forall|i: int, j: int| min(i, j) <= i && min(i, j) <= j);
+          assert(forall|i: int, j: int| min(i, j) == i || min(i, j) == j);
+          assert(forall|i: int, j: int| min(i, j) == min(j, i));
+      }
+
+      } // verus!
+    sources: [verus-repo-examples]

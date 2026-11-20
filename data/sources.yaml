@@ -6664,3 +6664,27 @@
   venue: arXiv:2502.19368
   year: 2025
   url: https://arxiv.org/abs/2502.19368
+- id: lattuada-2023-verus
+  type: paper
+  primary: true
+  authors: [Andrea Lattuada, Travis Hance, Chanhee Cho, Matthias Brun, Isitha Subasinghe, Yi Zhou, Jon Howell, Bryan Parno, Chris Hawblitzel]
+  title: "Verus: Verifying Rust Programs using Linear Ghost Types"
+  venue: Proceedings of the ACM on Programming Languages 7(OOPSLA1)
+  year: 2023
+  doi: 10.1145/3586037
+  url: https://arxiv.org/abs/2303.05491
+  checked: '2026-11-20'
+- id: verus-readme
+  type: manual
+  primary: true
+  authors: [Verus contributors]
+  title: Verus README
+  url: https://github.com/verus-lang/verus
+  checked: '2026-11-20'
+- id: verus-repo-examples
+  type: manual
+  primary: true
+  authors: [Verus contributors]
+  title: "Verus examples: guide/getting_started.rs"
+  url: https://github.com/verus-lang/verus/blob/8707ef26789e8b734c2d5bfe6d866356314bd859/examples/guide/getting_started.rs
+  checked: '2026-11-20'

@@ -266,8 +266,13 @@
   research_status: draft
 - id: verification
   name: Proof checkers and specification languages
-  summary: "Languages for machine-checked mathematics and verified programs outside the ML/LCF line: Automath, the Boyer-Moore provers, Metamath, TLA+ and Dafny."
+  summary: "Languages for machine-checked mathematics and verified programs outside the ML/LCF line: Automath, the Boyer-Moore provers, Metamath, TLA+, Dafny and Verus."
   research_status: stub
+  backlog:
+    - { name: "Prusti", hint: "ETH Zurich verifier for Rust built on Viper; cited by the Verus paper as Astrauskas et al. 2022. Check whether its annotations make it a dialect or a tool on plain Rust." }
+    - { name: "Creusot", hint: "Rust verifier translating to Why3 (Denis et al. 2022, cited by Verus)." }
+    - { name: "Aeneas", hint: "Ho and Protzenko 2022: translates safe Rust to pure functional code for proof assistants; likely a tool, not a dialect." }
+    - { name: "Flux", hint: "Refinement types for Rust (UCSD); find the defining paper." }
   key_sources: [wiki-automath, wiki-nqthm, wiki-tla-plus, wiki-dafny]
 - id: adventure-games
   name: Adventure game languages
