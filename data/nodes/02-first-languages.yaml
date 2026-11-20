@@ -712,6 +712,11 @@
     Rome's Limits to Growth". It was "essentially a package for continuous simulation specified through difference
     equations" and "featured units checking of numerical types". Early versions were IBM 704/709/7090 assembly; DYNAMO II
     was written in AED-0, an extended ALGOL 60.
+  relations:
+    - { type: targets, to: ibm-704, weight: strong, confidence: medium, sources: [wiki-dynamo], note: "\"The earliest versions were written in assembly language for the IBM 704, then for the IBM 709 and IBM 7090.\"" }
+    - { type: targets, to: ibm-709, weight: moderate, confidence: medium, sources: [wiki-dynamo] }
+    - { type: targets, to: ibm-7090, weight: moderate, confidence: medium, sources: [wiki-dynamo] }
+    - { type: targets, to: fortran, year: 1971, weight: moderate, confidence: medium, sources: [wiki-dynamo], note: "\"Dynamo II/F, in 1971, generated portable FORTRAN code\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/DYNAMO_(programming_language)" }

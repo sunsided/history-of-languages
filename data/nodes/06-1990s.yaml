@@ -3256,6 +3256,7 @@
     - { name: Computational Algebra Group, role: developer, affiliation: University of Sydney }
   status: active
   tags:
+    features: [closures, first-class-functions, packages]
     paradigm: [procedural, functional]
     domain: [computer-algebra]
   milestones:
@@ -3264,6 +3265,8 @@
     "a computer algebra system designed to solve problems in algebra, number theory, geometry and combinatorics", named
     after the algebraic structure and "used extensively within pure mathematics". The kernel is C and the libraries are
     written in Magma's own language. It succeeded the Cayley system (1982–1993), named after Arthur Cayley.
+  relations:
+    - { type: implemented_in, to: c, weight: strong, confidence: medium, sources: [wiki-magma], note: "Infobox: \"C (kernel), Magma (libraries)\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Magma_(computer_algebra_system)", homepage: "http://magma.maths.usyd.edu.au" }
@@ -3289,6 +3292,8 @@
     important algebraic modeling languages", which mixes "declarative and imperative programming styles". It underlies
     a platform for building optimisation applications for business users; Bisschop received the INFORMS Impact Prize for
     it.
+  relations:
+    - { type: influenced_by, to: gams, weight: moderate, confidence: low, sources: [aimms-lr-authors, bisschop-meeraus-1982-gams], note: "AIMMS's author Johannes Bisschop co-wrote the founding GAMS paper (1982) at the World Bank; no source states that AIMMS took from GAMS. A statement by Bisschop would confirm it." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/AIMMS", homepage: "https://www.aimms.com" }
@@ -3390,7 +3395,7 @@
   status: legacy
   tags:
     paradigm: [array-programming, imperative]
-    features: [interpreter]
+    features: [interpreter, c-interop]
     domain: [scientific-computing]
   milestones:
     - { version: "2.2.04", year: 2015, summary: "Last stable release." }
@@ -3398,6 +3403,10 @@
     "an interpreted programming language designed for numerics, graph plotting, and steering large scientific
     simulation codes", "quite fast due to array syntax, and extensible via C or Fortran routines". Its index syntax marks
     the contracted dimension of a tensor product with +.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [munro-yorick-manual], note: "\"Yorick expression and flow control syntax is similar to the C programming language, but the Yorick language lacks declaration statements.\"" }
+    - { type: influenced_by, to: fortran, aspects: [array-programming], weight: moderate, confidence: high, sources: [munro-yorick-manual], note: "\"array indexing is designed to resemble FORTRAN array indexing\"." }
+    - { type: implemented_in, to: c, weight: strong, confidence: high, sources: [munro-yorick-manual] }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Yorick_(programming_language)" }
@@ -3429,8 +3438,9 @@
     - { name: Modelica Association, role: maintainer from 2000 }
   status: active
   tags:
+    typing: [static-typing, strong-typing, structural-typing, parametric-polymorphism]
     paradigm: [object-oriented, declarative]
-    features: [standardization, operator-overloading]
+    features: [standardization, operator-overloading, multiple-inheritance]
     domain: [simulation]
   milestones:
     - { version: "1.0", year: 1997, summary: "Continuous dynamic systems." }
@@ -3445,6 +3455,10 @@
     modeling language rather than a conventional programming language". Version 1.0 "is based on the PhD thesis of
     Hilding Elmqvist and on the experience with the modeling languages Allan, Dymola, NMF, ObjectMath, Omola, SIDOPS+,
     and Smile".
+  relations:
+    - { type: influenced_by, to: matlab, aspects: [array-programming], weight: moderate, confidence: high, sources: [modelica-1997-v1-report], note: "\"Modelica has adopted some of the Java syntax and the UniCode character standard, and uses the Matlab notation for matrix operations.\"" }
+    - { type: influenced_by, to: java, weight: weak, confidence: high, sources: [modelica-1997-v1-report], note: "\"Similar to Java, Modelica functions can have only one output argument.\"" }
+    - { type: influenced_by, to: ada, weight: weak, confidence: medium, sources: [modelica-1997-v1-report], note: "Named parameter passing, \"also present in Ada\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Modelica", homepage: "https://modelica.org" }

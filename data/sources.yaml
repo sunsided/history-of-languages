@@ -7333,3 +7333,66 @@
   authors: [The P4 Language Consortium]
   title: P4-16 Language Specification (working spec)
   url: https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html
+- id: stahl-2001-gpss-40-years
+  type: paper
+  primary: false
+  authors: [Ingolf Ståhl]
+  title: GPSS - 40 Years of Development
+  venue: Proceedings of the 2001 Winter Simulation Conference
+  year: 2001
+  url: https://informs-sim.org/wsc01papers/076.PDF
+- id: pari-home
+  type: web
+  primary: true
+  authors: [The PARI Group]
+  title: PARI/GP home page
+  url: https://pari.math.u-bordeaux.fr/
+- id: neubuser-gap-preface
+  type: manual
+  primary: true
+  authors: [Joachim Neubüser]
+  title: Preface to GAP 3.1 (including the GAP 2.4 preface)
+  url: https://gap-system.org/Doc/History/preface_3.1.html
+- id: nemanich-2010-sequencel-damp
+  type: paper
+  primary: true
+  authors: [Brad Nemanich, Daniel Cooke, J. Nelson Rushton]
+  title: "SequenceL: Transparency and Multi-Core Parallelisms"
+  venue: DAMP 2010
+  year: 2010
+  url: https://web.archive.org/web/20170202050125/https://texasmulticore.com/wp-content/uploads/2016/05/2004-ttudamp.pdf
+- id: aimms-lr-authors
+  type: manual
+  primary: true
+  authors: [AIMMS B.V.]
+  title: AIMMS Language Reference, The authors
+  url: https://documentation.aimms.com/language-reference/preface/the-authors.html
+- id: bisschop-meeraus-1982-gams
+  type: paper
+  primary: true
+  authors: [Johannes Bisschop, Alexander Meeraus]
+  title: On the development of a general algebraic modeling system in a strategic planning environment
+  venue: Mathematical Programming Study 20, pp. 1-29
+  year: 1982
+  url: https://link.springer.com/article/10.1007/BF02283654
+- id: munro-yorick-manual
+  type: manual
+  primary: true
+  authors: [David H. Munro]
+  title: "Yorick: An Interpreted Language (doc/yorick.tex)"
+  url: https://github.com/LLNL/yorick/blob/master/doc/yorick.tex
+- id: modelica-1997-v1-report
+  type: standard
+  primary: true
+  authors: [Modelica Design Group]
+  title: Modelica - A Unified Object-Oriented Language for Physical Systems Modeling, Version 1.0
+  year: 1997
+  url: https://modelica.org/documents/Modelica1.pdf
+- id: nygaard-dahl-1978-simula-hopl
+  type: paper
+  primary: true
+  authors: [Kristen Nygaard, Ole-Johan Dahl]
+  title: The Development of the SIMULA Languages
+  venue: HOPL I
+  year: 1978
+  url: https://hannemyr.com/cache/knojd_acm78.pdf

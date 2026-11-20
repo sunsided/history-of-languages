@@ -1212,6 +1212,11 @@
   notes: >
     The creator's Wikipedia article is "Geoffrey Gordon (computer scientist)"; the parenthesis is dropped here because
     build.py rejects it, so a portrait needs that title set in media-subjects.yaml.
+  relations:
+    - { type: targets, to: ibm-704, weight: strong, confidence: medium, sources: [stahl-2001-gpss-40-years], note: "Ståhl quoting Gordon 1961: \"the program was made available for use on the IBM 704, 709, and 7090 systems\"." }
+    - { type: targets, to: ibm-709, weight: moderate, confidence: medium, sources: [stahl-2001-gpss-40-years] }
+    - { type: targets, to: ibm-7090, weight: moderate, confidence: medium, sources: [stahl-2001-gpss-40-years] }
+    - { type: targets, to: ibm-system-360, year: 1967, weight: moderate, confidence: medium, sources: [wiki-gpss], note: "\"In 1967, GPSS/360 was released to run on the newly released System 360.\"" }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/GPSS" }

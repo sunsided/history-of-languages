@@ -3451,6 +3451,9 @@
     Programmable Calculator".
   notes: >
     Cohen's Wikipedia article is "Henri Cohen (number theorist)"; the parenthesis is dropped because build.py rejects it.
+  relations:
+    - { type: implemented_in, to: c, weight: strong, confidence: high, sources: [pari-home], note: "\"PARI is a C library, allowing fast computations.\" The first attempt was in Pascal: \"They quickly switched to C.\"" }
+    - { type: targets, to: c, weight: moderate, confidence: high, sources: [pari-home], note: "\"gp2c, the GP-to-C compiler ... compiling GP scripts to the C language\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/PARI/GP", homepage: "https://pari.math.u-bordeaux.fr" }
@@ -3483,13 +3486,18 @@
     - { name: Joachim Neubüser, role: chair of LDFM }
   status: active
   tags:
+    memory: [garbage-collection]
     paradigm: [procedural]
-    features: [interpreter, repl, packages]
+    features: [interpreter, repl, packages, first-class-functions]
     domain: [computer-algebra]
   summary: >
     "an open-source computer algebra system for computational discrete algebra with particular emphasis on
     computational group theory", made of "a procedural programming language and a large collection of functions". After
     Neubüser retired, St Andrews coordinated it, and since 2005 several GAP Centres share it; it is part of SageMath.
+  relations:
+    - { type: influenced_by, to: maple, weight: strong, confidence: high, sources: [neubuser-gap-preface], note: "Neubüser: \"Maple demonstrated to us the feasibility of a strong and efficient computer algebra system built from a small kernel, with an interpreted library of routines written in a problem-adapted language.\"" }
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: high, sources: [neubuser-gap-preface], note: "\"an interpreter for the GAP language, which belongs to the Pascal family\"." }
+    - { type: implemented_in, to: c, weight: strong, confidence: high, sources: [neubuser-gap-preface], note: "\"A comparatively small kernel, written in C\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/GAP_(computer_algebra_system)", homepage: "https://www.gap-system.org" }
@@ -3599,6 +3607,8 @@
     "can be compiled to multithreaded code that runs in parallel, with no explicit indications from a programmer of how or
     what to parallelize". Its normalize-transpose semantics apply operations across nested sequences, so definitions read
     like the mathematics. Texas Tech licensed it to Texas Multicore Technologies in 2009.
+  relations:
+    - { type: targets, to: cpp, weight: strong, confidence: high, sources: [nemanich-2010-sequencel-damp], note: "\"we employ a recently developed SequenceL compiler that generates multi-threaded C++\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/SequenceL" }

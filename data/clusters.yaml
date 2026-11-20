@@ -555,6 +555,11 @@
     - { name: "Zebra, ZPL, ZPL2", hint: "Zebra Programming Language is \"a page description language from Zebra Technologies, used primarily for labeling applications\" (Wikipedia), infobox influenced by ANSI BASIC; no year given. Probably out of scope as a printer command format; Markus to decide." }
     - { name: "SA-C", hint: "Single Assignment C, a C-family language translatable into circuits/FPGAs, no pointers, n-dimensional arrays (Wikipedia: SA-C). No year or designers on the page; read Böhm et al. (Colorado State, cs.colostate.edu/cameron/Publications/bohm_sc02.pdf)." }
     - { name: "Geometric Description Language", hint: "BASIC-like language of Archicad library parts (Graphisoft). Wikipedia gives no year, designer or versions and cites no sources; needs a Graphisoft source." }
+  research_questions:
+    - "PROSE and POV-Ray SDL have no documented relation to existing nodes: the 1977 CDC PROSE manual only mentions calling Fortran subroutines; POV-Ray is \"basically an enhanced DKBTrace with a similar grammar\" (David K. Buck), and DKBTrace is not a node."
+    - "Simula and GPSS: Nygaard and Dahl (HOPL I) say GPSS \"looked more like a generalized simulation model than a programming language. Consequently we did not study it very closely\"; no simula -> gpss edge, a candidate for claims.yaml."
+    - "SequenceL is tagged static-typing and type-inference, but Cooke et al. (TOPLAS 2008) say \"Current implementations of SequenceL use dynamic typing\"; static typing presumably came later and needs a dated milestone."
+    - "Missing ancestors met while connecting scientific languages: SIMPLE (Bennett, MIT, before DYNAMO, per Phyllis Fox), Cayley (Cannon, 1975-1982, Magma predecessor), ISABELLE (Cohen and Dress, Bordeaux 1979, PARI predecessor; not the proof assistant), DKBTrace (POV-Ray), SLANG and CUE (PROSE), Dymola, Omola and ObjectMath (Modelica), GSP, GPSS/H, STELLA and Vensim."
 - id: gpu
   name: Shader and GPU languages
   summary: "Languages for programming graphics processors and accelerators: the shading line from RenderMan SL through Stanford RTSL to Cg, HLSL, GLSL, Metal and WGSL, and GPU computing from Brook to CUDA, OpenCL and SYCL."
