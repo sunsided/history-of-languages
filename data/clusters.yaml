@@ -480,6 +480,8 @@
   research_status: draft
   research_questions:
     - "Inclusion rule for 'meaningful': founded a family (Brainfuck, Befunge), demonstrates a computational idea (Unlambda, P′′), or is culturally significant (INTERCAL, LOLCODE). Agree with Markus."
+    - "Piet, Chef, TIS-100, Assembunny, Duet and Intcode have no documented relation: their designers name no ancestor (searched esolangs.org, dangermouse.net, the Advent of Code puzzles 2016/12, 2016/23, 2017/18, 2019/02, and the TIS-100 interviews)."
+    - "Missing formalisms and machines that would connect the minimal languages: tag and cyclic tag systems (Bitwise Cyclic Tag; Cook 2004), semi-Thue systems (Thue), Minsky register machines (FRACTRAN, Subleq), URISC (Subleq), MARS (Redcode virtual machine), MUSYS and the PDP-8 (Mouse; Grogono: \"Mouse is descended from an older programming language called Musys\")."
 - id: esoteric/parody
   name: Parodies
   parent: esoteric

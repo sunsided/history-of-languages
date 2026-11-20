@@ -213,9 +213,15 @@
     places: [{ institution: KTH Royal Institute of Technology, city: Stockholm, country: SE }]
   creators: [{ name: Karl Hasselström, role: designer }, { name: Jon Åslund, role: designer }]
   status: historical
-  summary: "Programs read like plays: variables are characters, assignment is insult or compliment. A satire of 'English-like' languages descended from FLOW-MATIC and COBOL."
+  summary: "Programs read like plays: variables are characters, assignment is insult or compliment. Its authors joke that they 'combined the expressiveness of BASIC with the user-friendliness of assembly language'."
   notes: >
-    The Esolang wiki compares its syntax to COBOL and Visual Basic ("superficially similar"), without claiming influence.
+    The manual names no ancestor beyond the esoteric languages that prompted it (Java2k, Sorted!, Brainfuck, Malbolge);
+    an earlier note here attributed an Esolang wiki comparison with COBOL and Visual Basic to this language, but that
+    sentence is on the wiki's Rockstar page.
+  relations:
+    - { type: influenced_by, to: brainfuck, weight: weak, confidence: high, sources: [spl-manual-2001], note: "Motivation, not borrowed design: \"we had discovered a number of truly fascinating programming languages, such as Java2k, Sorted!, Brainfuck and Malbolge, and we wanted to make our own\"." }
+    - { type: influenced_by, to: malbolge, weight: weak, confidence: high, sources: [spl-manual-2001], note: "Same quote: motivation, not borrowed design." }
+    - { type: targets, to: c, weight: strong, confidence: high, sources: [spl-manual-2001], note: "\"There is no SPL compiler ... at present there is only a translator, which translates SPL to C.\"" }
   research_status: stub
   confidence: high
   sources: [esolangs-shakespeare]
@@ -281,6 +287,8 @@
   tags:
     paradigm: [stack-oriented]
   summary: "Only spaces, tabs and newlines are significant, so programs are invisible and can hide inside other source code. Brady later created the dependently typed language Idris."
+  relations:
+    - { type: implemented_in, to: haskell, weight: weak, confidence: medium, sources: [wspace-corpus], note: "The creators' interpreter wspace 0.3 (Edwin Brady, 2004) is written in Haskell; the original Durham site was not read." }
   research_status: stub
   confidence: high
   sources: [esolangs-whitespace]
@@ -303,6 +311,8 @@
     first_appeared: { year: 2007, precision: year }
   creators: [{ name: Adam Lindsay, role: designer }]
   status: historical
+  tags:
+    paradigm: [procedural]
   summary: "Keywords from the lolcats meme (HAI, KTHXBYE). A cultural marker of the meme-language genre."
   research_status: stub
   confidence: high
@@ -415,7 +425,7 @@
   creators: [{ name: Martin Ender, role: designer }]
   status: historical
   tags:
-    paradigm: [imperative]
+    paradigm: [imperative, two-dimensional]
   summary: >
     "The first two-dimensional esoteric programming language on a hexagonal grid": the source must be a regular
     hexagon, up to six instruction pointers move across it, and memory is a separate hexagonal grid of edges. The
@@ -423,6 +433,9 @@
     translated into it.
   notes: >
     The wiki says the grid is flat-topped, the author's README says pointy-topped.
+  relations:
+    - { type: implemented_in, to: ruby, weight: weak, confidence: medium, sources: [hexagony-github], note: "\"the original reference implementation in Ruby\"." }
+    - { type: influenced_by, to: befunge, aspects: [two-dimensional], weight: weak, confidence: low, sources: [esolangs-hexagony], note: "The designer compares instructions with Befunge (\"This is like Befunge's #\"); comparison, not a stated influence." }
   research_status: draft
   confidence: medium
   links: { homepage: "https://github.com/m-ender/hexagony" }
@@ -514,10 +527,11 @@
   creators: [{ name: Dylan Beattie, role: designer }]
   status: active
   tags:
+    features: [english-like-syntax]
     paradigm: [imperative]
     typing: [dynamic-typing]
   milestones:
-    - { version: "2.0", year: 2024, summary: "Released 30 November 2024: Rockstar 1 grammar kept, type inference overhauled; Satriani is the reference implementation." }
+    - { version: "2.0", year: 2024, summary: "Released 30 November 2024: Rockstar 1 grammar kept, type inference overhauled; the Starship engine (C#/.NET, also compiled to WebAssembly) replaced Satriani, the JavaScript interpreter for Rockstar 1.0.", sources: [rockstar-github] }
   summary: >
     "A computer programming language based on the lyrics to 1980s hard rock and power ballads", made "to satirise
     the use of the phrase 'rockstar developer' in IT job listings": anyone who learns it can honestly claim the
@@ -525,6 +539,10 @@
     implementations.
   notes: >
     The Esolang wiki compares its syntax to COBOL and Visual Basic ("superficially similar"), without claiming influence.
+  relations:
+    - { type: influenced_by, to: javascript, aspects: [dynamic-typing], weight: moderate, confidence: high, sources: [rockstar-docs-types], note: "\"Rockstar uses a similar type system to that defined by the ECMAScript type system, except undefined doesn't sound very rock'n'roll so we use mysterious instead.\"" }
+    - { type: implemented_in, to: javascript, weight: weak, confidence: high, sources: [rockstar-satriani], note: "Satriani, \"JavaScript interpreter for Rockstar 1.0\"." }
+    - { type: implemented_in, to: csharp, year: 2024, weight: weak, confidence: high, sources: [rockstar-github], note: "\"the Starship interpreter for Rockstar, built in C# and .NET\" (Rockstar 2.0)." }
   research_status: draft
   confidence: high
   links: { homepage: "https://codewithrockstar.com" }
@@ -943,6 +961,8 @@
     The assembly language of Core War, a 1984 programming game in which two programs ("warriors") share the
     memory of a virtual machine, the Memory Array Redcode Simulator (MARS), and fight for control of it. The first published warrior, Dewdney's Imp, is a single instruction that
     copies itself one cell ahead forever. Dewdney's article cites Bell Labs' 1961 game Darwin as a forerunner.
+  relations:
+    - { type: influenced_by, to: darwin-game, weight: weak, confidence: medium, sources: [dewdney-1984-05-corewar], note: "Indirect, through the Creeper and Reaper story: \"One program was a computer game called Darwin, invented by M. Douglas McIlroy of AT&T Bell Laboratories.\"" }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Core_War" }
@@ -1008,7 +1028,7 @@
     - { name: Allan Blomquist, role: programmer }
   status: maintained
   tags:
-    paradigm: [imperative]
+    paradigm: [imperative, visual-programming]
     features: [assembly-language]
   summary: >
     A puzzle game whose office worker is the CPU: "Your office is a simple computer", "Harvard Architecture with a
@@ -1056,7 +1076,7 @@
     few weeks when Morris wrote an "ultimate" program nobody could beat. Dennis Ritchie "is sometimes
     incorrectly cited as a co-author but was not involved."
   notes: >
-    Core War is listed under See also as "a similar 1984 programming game"; it is not a node yet.
+    Core War is listed under See also as "a similar 1984 programming game"; its language is the redcode node.
   relations:
     - { type: targets, to: ibm-7090, weight: strong, confidence: high, sources: [wiki-darwin-game] }
   research_status: stub
@@ -1135,8 +1155,8 @@
   creators:
     - { name: Peter Grogono, role: creator }
   tags:
-    paradigm: [stack-oriented]
-    features: [interpreter]
+    paradigm: [stack-oriented, structured]
+    features: [interpreter, recursion]
   summary: >
     "a small computer programming language developed by Dr. Peter Grogono", "an interpreted, stack-based
     language" using Reverse Polish notation, "originally intended as a small, efficient language for
@@ -1145,6 +1165,9 @@
     design suits teaching how to write a simple interpreter.
   notes: >
     Book: Mouse: A Language for Microcomputers (Petrocelli, 1983). MUSYS is not a node.
+  relations:
+    - { type: implemented_in, to: pascal, weight: moderate, confidence: high, sources: [byte-1979-07-mouse], note: "\"The Mouse interpreter is presented in listing 6 in the form of a Pascal program. It is not intended, however, that Mouse should be implemented by that program\" but in assembly or machine code." }
+    - { type: implemented_in, to: asm-z80, weight: weak, confidence: medium, sources: [wiki-mouse], note: "The 1983 book gives interpreters \"one in Z80 assembly language, the other in Pascal\" (Wikipedia)." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Mouse_(programming_language)" }

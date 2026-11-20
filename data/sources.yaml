@@ -7396,3 +7396,51 @@
   venue: HOPL I
   year: 1978
   url: https://hannemyr.com/cache/knojd_acm78.pdf
+- id: spl-manual-2001
+  type: manual
+  primary: true
+  authors: [Karl Hasselström, Jon Åslund]
+  title: The Shakespeare Programming Language
+  year: 2001
+  url: https://web.archive.org/web/20220721085340/http://shakespearelang.sourceforge.net/report/shakespeare/shakespeare.html
+- id: byte-1979-07-mouse
+  type: paper
+  primary: true
+  authors: [Peter Grogono]
+  title: "Mouse: A Language for Microcomputers"
+  venue: BYTE 4(7), pp. 198-220
+  year: 1979
+  url: https://archive.org/details/byte-magazine-1979-07
+- id: dewdney-1984-05-corewar
+  type: paper
+  primary: true
+  authors: [A. K. Dewdney]
+  title: "Computer Recreations: In the game called Core War hostile programs engage in a battle of bits"
+  venue: Scientific American
+  year: 1984
+  url: https://corewar.co.uk/dewdney/1984-05.htm
+- id: rockstar-docs-types
+  type: manual
+  primary: true
+  authors: [Dylan Beattie]
+  title: "Rockstar docs: Types and Values"
+  url: https://codewithrockstar.com/docs/02-types-and-values.html
+- id: rockstar-github
+  type: web
+  primary: true
+  authors: [Dylan Beattie]
+  title: RockstarLang/rockstar repository (Starship)
+  url: https://github.com/RockstarLang/rockstar
+- id: rockstar-satriani
+  type: web
+  primary: true
+  authors: [Dylan Beattie]
+  title: RockstarLang/satriani repository
+  year: 2018
+  url: https://github.com/RockstarLang/satriani
+- id: wspace-corpus
+  type: web
+  primary: false
+  authors: [Thalia Archibald]
+  title: The Whitespace Corpus
+  url: https://github.com/wspace/corpus
