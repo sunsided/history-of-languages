@@ -6993,3 +6993,25 @@
   title: DirectX Adopting SPIR-V as the Interchange Format of the Future
   year: 2024
   url: https://devblogs.microsoft.com/directx/directx-adopting-spir-v/
+- id: neo4j-2015-opencypher
+  type: web
+  primary: true
+  authors: [Neo Technology]
+  title: "Neo4j Opens Up Its Graph Query Language, Cypher, With Support From Leading Companies (Marketwired release, reprinted by VARinsights)"
+  year: 2015
+  url: https://www.varinsights.com/doc/neo-j-opens-up-its-graph-query-language-cypher-with-support-leading-companies-0001
+  checked: '2026-11-20'
+- id: opencypher-site
+  type: web
+  primary: true
+  authors: [Neo4j]
+  title: openCypher (official site)
+  url: https://opencypher.org/
+  checked: '2026-11-20'
+- id: opencypher-repo
+  type: standard
+  primary: true
+  authors: [openCypher Implementers Group]
+  title: openCypher specification repository (grammar, CIPs, TCK)
+  url: https://github.com/opencypher/openCypher
+  checked: '2026-11-20'

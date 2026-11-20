@@ -2730,7 +2730,6 @@
 
 - id: cypher
   name: Cypher
-  aliases: [openCypher]
   kind: language
   category: query
   cluster: data
@@ -2744,12 +2743,11 @@
     features: [pattern-matching]
     domain: [databases]
   milestones:
-    - { version: openCypher, year: 2015, summary: "Opened to other implementers in October 2015." }
     - { version: GQL, year: 2024, introduces: [standardization], summary: "Cypher was \"a significant input\" to ISO/IEC 39075:2024 GQL, published April 2024." }
   summary: >
     Neo4j's "declarative graph query language" for property graphs, whose patterns are drawn in ASCII art:
-    (node)-[:RELATIONSHIP]->(node). "Designed with the power and capability of SQL ... in mind", it was opened
-    as openCypher in 2015 and became a main input to the ISO GQL standard.
+    (node)-[:RELATIONSHIP]->(node). "Designed with the power and capability of SQL ... in mind", its specification was opened
+    as openCypher in 2015, and it became a main input to the ISO GQL standard.
   notes: >
     GQL is recorded as a milestone rather than a node for now; it may deserve its own node as a separate
     standard language. Wikipedia's infobox was not captured.
@@ -9018,3 +9016,43 @@
           result[index] = inA[index] + inB[index];
       }
     sources: [apple-metal-gpu-calculations]
+
+- id: opencypher
+  name: openCypher
+  aliases: [openCypher 9, Cypher TCK]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    first_appeared: { year: 2015, date: "2015-10-21", precision: exact, note: "Launch announced by Neo Technology at GraphConnect San Francisco, 21 October 2015 (Marketwired release); the specification repository dates from February 2015." }
+    places: [{ institution: Neo Technology, city: San Francisco, country: US }]
+  creators:
+    - { name: openCypher Implementers Group, role: specification body }
+  status: active
+  tags:
+    paradigm: [declarative, query]
+    features: [pattern-matching, standardization]
+    domain: [databases]
+  milestones:
+    - { version: "1.0.0-M04", year: 2016, date: "2016-12-20", summary: "First tagged release of the specification (grammar, Cypher Improvement Proposals and Technology Compatibility Kit).", sources: [opencypher-repo] }
+    - { version: "2024.1", year: 2025, date: "2025-04-08", summary: "First calendar-versioned release after ISO/IEC 39075 GQL (published 11 April 2024); openCypher now evolves by adding GQL features to pave \"the road to GQL for openCypher implementers\".", sources: [opencypher-repo, opencypher-site] }
+  summary: >
+    "An open source specification of Cypher", launched by Neo Technology in 2015 so that "any data storage, analytics
+    or tooling platform" could offer Cypher as "a universal language for querying graph data", with Oracle, Databricks
+    and Tableau among the first supporters. It consists of a grammar, Cypher Improvement Proposals and a Technology
+    Compatibility Kit, and was steered by the openCypher Implementers Group. It "was a key inspiration for the ISO/IEC
+    39075 GQL project" and now converges towards GQL.
+  relations:
+    - { type: dialect_of, to: cypher, weight: strong, confidence: high, sources: [opencypher-site, neo4j-2015-opencypher], note: "\"openCypher is an open source specification of Cypher\"; Neo Technology made Cypher \"available to technology providers\"." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://opencypher.org/" }
+  sources: [neo4j-2015-opencypher, opencypher-site, opencypher-repo]
+  example:
+    title: A variable-length pattern from the compatibility kit
+    language: openCypher
+    note: "Verbatim query from the openCypher TCK, tck/features/clauses/match/Match4.feature, scenario 1 (commit 677cbaf)."
+    code: |
+      MATCH (a)-[r*1..1]->(b)
+      RETURN r
+    sources: [opencypher-repo]
