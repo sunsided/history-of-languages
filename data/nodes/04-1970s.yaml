@@ -2017,7 +2017,7 @@
     "a simple compiler (a single yacc source file comprising a few hundred lines of code), which converted a C-like
     syntax into dc notation and piped the results through dc".
   relations:
-    - { type: influenced_by, to: dc, weight: strong, confidence: high, sources: [wiki-bc], note: "Compiled to dc and piped its output through it." }
+    - { type: targets, to: dc, weight: strong, confidence: high, sources: [wiki-bc], note: "Compiled to dc and piped its output through it." }
     - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [wiki-bc], note: "\"a C-like syntax\"." }
   research_status: stub
   confidence: high
@@ -2467,6 +2467,7 @@
   relations:
     - { type: superset_of, to: fortran, weight: strong, confidence: high, sources: [wiki-ratfor], note: "A preprocessor over Fortran 66; infobox \"Influenced by: Fortran, C\"." }
     - { type: influenced_by, to: c, aspects: [structured, compound-statements], weight: strong, confidence: high, sources: [wiki-ratfor], note: "\"shamelessly stolen from the language C, developed for the UNIX operating system by D.M. Ritchie\" (Software Tools, p. 318)." }
+    - { type: targets, to: fortran, weight: strong, confidence: high, note: "A preprocessor that translates Ratfor into Fortran 66.", sources: [wiki-ratfor] }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Ratfor" }

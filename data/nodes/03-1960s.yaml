@@ -1260,7 +1260,7 @@
     "implemented as a Fortran preprocessor on the IBM 7090". Markowitz's company CACI commercialised it as SIMSCRIPT I.5
     and II.5. Its design influenced Simula, which makes it an ancestor of object-oriented programming.
   relations:
-    - { type: implemented_in, to: fortran, weight: strong, confidence: high, sources: [wiki-simscript], note: "\"implemented as a Fortran preprocessor on the IBM 7090\"." }
+    - { type: targets, to: fortran, weight: strong, confidence: high, sources: [wiki-simscript], note: "\"implemented as a Fortran preprocessor on the IBM 7090\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/SIMSCRIPT" }

@@ -691,7 +691,7 @@
     aids (AUTO, RENUMBER, TRACE). Written by a 16-year-old British programmer and sold by Commodore
     itself, it shows what the stock BASIC lacked.
   relations:
-    - { type: superset_of, to: commodore-basic, aspects: [structured], weight: strong, confidence: high, note: "An extension: every BASIC 2.0 program still runs.", sources: [wiki-simons-basic] }
+    - { type: extension_of, to: commodore-basic, aspects: [structured], weight: strong, confidence: high, note: "An extension: every BASIC 2.0 program still runs.", sources: [wiki-simons-basic] }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Simons%27_BASIC" }
@@ -2150,7 +2150,7 @@
     implemented as a library" in ML: theorems are an abstract type that only the logic's inference rules can
     build. HOL4 continues HOL88; HOL Light is a minimalist variant, first in Caml Light and now in OCaml.
   relations:
-    - { type: influenced_by, to: ml, weight: strong, confidence: high, sources: [wiki-hol], note: "\"ML was originally developed along with LCF as a meta-language for theorem proving systems\"; HOL systems are libraries in ML." }
+    - { type: embeds, to: ml, weight: strong, confidence: high, sources: [wiki-hol], note: "\"ML was originally developed along with LCF as a meta-language for theorem proving systems\"; HOL systems are libraries in ML." }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/HOL_(proof_assistant)" }
@@ -2228,7 +2228,7 @@
     classes decide the layout, and define their own commands with \newcommand, so a LaTeX document is
     a TeX program.
   relations:
-    - { type: implemented_in, to: tex, weight: strong, confidence: high, sources: [wiki-latex], note: "\"itself written in the TeX macro language\"" }
+    - { type: extension_of, to: tex, weight: strong, confidence: high, sources: [wiki-latex], note: "\"itself written in the TeX macro language\"" }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/LaTeX", homepage: "https://www.latex-project.org/" }
@@ -3923,7 +3923,7 @@
     embedded in an SQR program", and it is "notable for its database and printing functions". It passed through Sybase,
     MITI/SQRiBE, Brio and Hyperion to Oracle, where it lives on in PeopleSoft PeopleTools.
   relations:
-    - { type: influenced_by, to: sql, weight: moderate, confidence: medium, sources: [wiki-sqr], note: "Its name \"suggests its relationship to SQL\"; SQL is embedded in its programs." }
+    - { type: embeds, to: sql, weight: moderate, confidence: medium, sources: [wiki-sqr], note: "Its name \"suggests its relationship to SQL\"; SQL is embedded in its programs." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/SQR" }
@@ -4116,7 +4116,7 @@
     example of prototype-based programming", competing with Flavors, HP's Common Objects and Xerox's CommonLoops. Early
     Macintosh Common Lisp used it.
   relations:
-    - { type: superset_of, to: lisp-machine-lisp, weight: strong, confidence: high, sources: [wiki-object-lisp], note: "\"an object-oriented extension for the Lisp dialect Lisp Machine Lisp\"." }
+    - { type: extension_of, to: lisp-machine-lisp, weight: strong, confidence: high, sources: [wiki-object-lisp], note: "\"an object-oriented extension for the Lisp dialect Lisp Machine Lisp\"." }
   research_status: stub
   confidence: low
   links: { wikipedia: "https://en.wikipedia.org/wiki/Object_Lisp" }
@@ -4448,7 +4448,7 @@
     programming language to include mixins", with :before and :after daemon methods. Symbolics developed it into New
     Flavors, and it "was hugely influential in the development of the Common Lisp Object System (CLOS)".
   relations:
-    - { type: superset_of, to: lisp-machine-lisp, weight: strong, confidence: high, sources: [wiki-flavors], note: "\"an early object-oriented extension to Lisp ... for the Lisp machine and its programming language Lisp Machine Lisp\"." }
+    - { type: extension_of, to: lisp-machine-lisp, weight: strong, confidence: high, sources: [wiki-flavors], note: "\"an early object-oriented extension to Lisp ... for the Lisp machine and its programming language Lisp Machine Lisp\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Flavors_(programming_language)" }
@@ -5547,7 +5547,7 @@
     mostly to help with programming graphics and sound", because the bundled Commodore BASIC V2.0 "was
     notorious for its sparse functionality."
   relations:
-    - { type: superset_of, to: commodore-basic, weight: strong, confidence: high, sources: [wiki-super-expander], note: "\"extensions to the BASIC interpreter\" of the VIC-20, Commodore BASIC V2.0." }
+    - { type: extension_of, to: commodore-basic, weight: strong, confidence: high, sources: [wiki-super-expander], note: "\"extensions to the BASIC interpreter\" of the VIC-20, Commodore BASIC V2.0." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Super_Expander" }
@@ -5569,7 +5569,7 @@
     "does not have direct support for the system's sound and graphics hardware." It "adds functions for
     drawing graphics, using sprites, reading joysticks, playing audio, and other features."
   relations:
-    - { type: superset_of, to: commodore-basic, weight: strong, confidence: high, sources: [wiki-super-expander-64], note: "\"a cartridge-based extension to the built in BASIC interpreter\"." }
+    - { type: extension_of, to: commodore-basic, weight: strong, confidence: high, sources: [wiki-super-expander-64], note: "\"a cartridge-based extension to the built in BASIC interpreter\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Super_Expander_64" }

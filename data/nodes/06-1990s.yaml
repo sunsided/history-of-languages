@@ -1784,7 +1784,7 @@
     that of Ada", and both "have Pascal as a common ancestor".
   relations:
     - { type: influenced_by, to: ada, weight: strong, confidence: high, sources: [wiki-pl-sql], note: "\"modeled its syntax on that of Ada\"" }
-    - { type: superset_of, to: sql, weight: strong, confidence: high, sources: [wiki-pl-sql], note: "\"procedural extension for SQL\"" }
+    - { type: embeds, to: sql, weight: strong, confidence: high, sources: [wiki-pl-sql], note: "\"procedural extension for SQL\"" }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/PL/SQL" }
@@ -3341,7 +3341,7 @@
     multidimensional arrays" manipulated as vector objects, plus image processing and plotting. Wikipedia says it
     "follows in the footsteps of the APL programming language" and compares it to MATLAB and IDL. Its core is C.
   relations:
-    - { type: superset_of, to: perl, weight: strong, confidence: high, sources: [wiki-pdl], note: "Extensions to Perl; \"The commands used in the shell are Perl statements\"." }
+    - { type: extension_of, to: perl, weight: strong, confidence: high, sources: [wiki-pdl], note: "Extensions to Perl; \"The commands used in the shell are Perl statements\"." }
     - { type: influenced_by, to: apl, aspects: [array-programming], weight: moderate, confidence: medium, sources: [wiki-pdl], note: "Infobox \"Influenced by: APL, IDL, Perl\"." }
     - { type: influenced_by, to: idl, weight: moderate, confidence: medium, sources: [wiki-pdl], note: "Infobox \"Influenced by: APL, IDL, Perl\"." }
   research_status: stub
@@ -4616,7 +4616,7 @@
     a committed-choice manner using a forward chaining algorithm". Turing complete but used mainly "to extend a host
     language with constraints", above all Prolog (SICStus, SWI-Prolog).
   relations:
-    - { type: influenced_by, to: prolog, weight: strong, confidence: high, sources: [wiki-chr], note: "Infobox \"Influenced by: Prolog\"; Prolog is \"by far the most popular host language\"." }
+    - { type: extension_of, to: prolog, weight: strong, confidence: high, sources: [wiki-chr], note: "Infobox \"Influenced by: Prolog\"; Prolog is \"by far the most popular host language\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Constraint_Handling_Rules" }

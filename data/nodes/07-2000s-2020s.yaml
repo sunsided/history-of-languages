@@ -1600,7 +1600,7 @@
   relations:
     - { type: influenced_by, to: csharp, weight: strong, confidence: high, sources: [wiki-vala], note: "\"They liked the syntax and semantics of C# but did not want to use Mono\"." }
     - { type: influenced_by, to: java, weight: weak, confidence: medium, sources: [vala-dev] }
-    - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [wiki-vala], note: "Compiles to C and calls C libraries directly." }
+    - { type: targets, to: c, weight: strong, confidence: high, sources: [wiki-vala], note: "Compiles to C and calls C libraries directly." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Vala_(programming_language)", homepage: "https://vala.dev" }
@@ -1808,6 +1808,7 @@
     - { type: influenced_by, to: rust, weight: moderate, confidence: high, sources: [gleam-2024-v1] }
     - { type: influenced_by, to: elixir, weight: weak, confidence: medium, sources: [wiki-gleam] }
     - { type: implemented_in, to: rust, weight: strong, confidence: high, sources: [wiki-gleam] }
+    - { type: targets, to: erlang, weight: strong, confidence: high, note: "Compiles to Erlang source and runs on the Erlang virtual machine.", sources: [gleam-run, wiki-gleam] }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Gleam_(programming_language)", homepage: "https://gleam.run" }
@@ -3115,7 +3116,7 @@
     are written in a compact mini-notation inside strings and transformed with Haskell functions while the music
     plays. Strudel ports it to JavaScript.
   relations:
-    - { type: implemented_in, to: haskell, weight: strong, confidence: high, sources: [tidalcycles-docs, wiki-tidalcycles], note: "\"a domain-specific language embedded in the functional programming language Haskell\"" }
+    - { type: extension_of, to: haskell, weight: strong, confidence: high, sources: [tidalcycles-docs, wiki-tidalcycles], note: "\"a domain-specific language embedded in the functional programming language Haskell\"" }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/TidalCycles", homepage: "https://tidalcycles.org/" }
@@ -3875,7 +3876,7 @@
     "An object-oriented extension for the Tool Command Language" by Gustaf Neumann and Uwe Zdun. "It is a derivative of
     MIT OTcl and is based on a dynamic object system with metaclasses influenced by CLOS."
   relations:
-    - { type: superset_of, to: tcl, weight: strong, confidence: high, sources: [wiki-xotcl], note: "\"an object-oriented extension for the Tool Command Language\"; a derivative of MIT OTcl." }
+    - { type: extension_of, to: tcl, weight: strong, confidence: high, sources: [wiki-xotcl], note: "\"an object-oriented extension for the Tool Command Language\"; a derivative of MIT OTcl." }
     - { type: influenced_by, to: common-lisp, weight: moderate, confidence: medium, sources: [wiki-xotcl], note: "Its object system has \"metaclasses influenced by CLOS\"." }
   research_status: stub
   confidence: high
@@ -6920,7 +6921,7 @@
     "relations do not distinguish between input and output", programs can run "backward", and its interleaved search
     finds any existing solution. Clojure's core.logic was inspired by it.
   relations:
-    - { type: implemented_in, to: scheme, weight: strong, confidence: high, sources: [wiki-minikanren], note: "\"The canonical implementation is an embedded language in Scheme.\"" }
+    - { type: extension_of, to: scheme, weight: strong, confidence: high, sources: [wiki-minikanren], note: "\"The canonical implementation is an embedded language in Scheme.\"" }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/MiniKanren", homepage: "https://minikanren.org" }
@@ -7047,7 +7048,7 @@
     vectorisation, multi-core CPUs and GPUs; "the main innovation Halide brings is the separation of the algorithm being
     implemented from its execution schedule". It is an internal DSL in C++.
   relations:
-    - { type: implemented_in, to: cpp, weight: strong, confidence: high, sources: [wiki-halide], note: "\"implemented as an internal domain-specific language (DSL) in C++\"." }
+    - { type: extension_of, to: cpp, weight: strong, confidence: high, sources: [wiki-halide], note: "\"implemented as an internal domain-specific language (DSL) in C++\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Halide_(programming_language)", homepage: "https://halide-lang.org" }
@@ -7097,7 +7098,7 @@
     single-source embedded domain-specific language (eDSL) based on pure C++17" from the Khronos Group; it "extends the
     C++ AMP features" with buffers and accessors.
   relations:
-    - { type: implemented_in, to: cpp, weight: strong, confidence: high, sources: [wiki-sycl], note: "\"an eDSL based on pure C++17\"." }
+    - { type: extension_of, to: cpp, weight: strong, confidence: high, sources: [wiki-sycl], note: "\"an eDSL based on pure C++17\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/SYCL" }
@@ -7419,7 +7420,7 @@
     and Verilog.
   relations:
     - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [wiki-myhdl, myhdl-pypi], note: "\"MyHDL turns Python into a hardware description and verification language\" (myhdl.org)." }
-    - { type: implemented_in, to: python, weight: strong, confidence: high, sources: [wiki-myhdl], note: "A Python library: designs are Python code." }
+    - { type: extension_of, to: python, weight: strong, confidence: high, sources: [wiki-myhdl], note: "A Python library: designs are Python code." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/MyHDL", homepage: "https://www.myhdl.org/" }
@@ -7505,7 +7506,7 @@
     John Wawrzynek and Krste Asanović; Wikipedia names no individual designer, so no creators are listed. Apache 2.0.
   relations:
     - { type: influenced_by, to: scala, aspects: [object-oriented, functional], weight: strong, confidence: high, sources: [wiki-chisel, bachrach-2012-chisel], note: "\"a Scala embedded language\" (paper title); \"inherits the object-oriented and functional programming aspects of Scala\"." }
-    - { type: implemented_in, to: scala, weight: strong, confidence: high, sources: [wiki-chisel], note: "An embedded DSL: Chisel designs are Scala programs." }
+    - { type: extension_of, to: scala, weight: strong, confidence: high, sources: [wiki-chisel], note: "An embedded DSL: Chisel designs are Scala programs." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Chisel_(programming_language)", homepage: "https://www.chisel-lang.org" }
@@ -7544,7 +7545,7 @@
     The FAQ does not name the person who started it. Core LGPL3, libraries MIT.
   relations:
     - { type: influenced_by, to: scala, weight: strong, confidence: high, sources: [spinalhdl-github], note: "\"SpinalHDL is simply a set of Scala libraries.\"" }
-    - { type: implemented_in, to: scala, weight: strong, confidence: high, sources: [spinalhdl-github], note: "Scala libraries included into a Scala project." }
+    - { type: extension_of, to: scala, weight: strong, confidence: high, sources: [spinalhdl-github], note: "Scala libraries included into a Scala project." }
   research_status: stub
   confidence: medium
   links: { homepage: "https://spinalhdl.github.io/SpinalDoc-RTD/master/index.html" }
@@ -7658,6 +7659,7 @@
     - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [bend-2024-readme, bend-homepage], note: "Bend 1 README: \"the feeling and features of expressive languages like Python and Haskell\"; Bend 2: \"Syntax == Python + dependent types\"." }
     - { type: influenced_by, to: haskell, aspects: [functional], weight: moderate, confidence: high, sources: [bend-2024-readme, taelin-2024-hvm2] }
     - { type: influenced_by, to: lean, aspects: [dependent-types, theorem-proving], year: 2026, weight: moderate, confidence: medium, sources: [bend-homepage, taelin-2026-bendtt], note: "Bend 2's site compares its checker to Lean and Rocq, and its kernel is mechanised in Lean 4; BendTT positions itself against Coq, Agda and Lean rather than naming an ancestor." }
+    - { type: reacts_against, to: lean, aspects: [dependent-types], year: 2026, weight: moderate, confidence: high, sources: [taelin-2026-bendtt], note: "\"Proof assistants such as Coq, Agda and Lean forbid Type : Type and such datatypes ... BendTT allows both and is consistent.\"" }
   research_status: draft
   confidence: high
   links: { homepage: "https://bend-lang.com/" }
@@ -7957,7 +7959,7 @@
     explicit" and models contraction by sharing rather than copying, and compiles to quantum circuits. Its compiler was
     written in Haskell.
   relations:
-    - { type: influenced_by, to: quantum-lambda-calculus, weight: weak, confidence: medium, sources: [altenkirch-2005-qml], note: "Defines itself against Selinger and Valiron: \"they use an affine type system (no contraction), while we use a strict system (no weakening)\"." }
+    - { type: reacts_against, to: quantum-lambda-calculus, weight: weak, confidence: high, sources: [altenkirch-2005-qml], note: "Defines itself against Selinger and Valiron: \"they use an affine type system (no contraction), while we use a strict system (no weakening)\"." }
   research_status: draft
   confidence: high
   sources: [altenkirch-2005-qml]
@@ -8006,7 +8008,7 @@
     calculus and the Quantum IO Monad as its predecessors, and wished Haskell had linear and dependent types, which the
     stand-alone Proto-Quipper line then added.
   relations:
-    - { type: influenced_by, to: haskell, weight: strong, confidence: high, sources: [green-2013-quipper], note: "Embedded in Haskell: \"Both Haskell and Quipper are strongly-typed functional programming languages\"." }
+    - { type: extension_of, to: haskell, weight: strong, confidence: high, sources: [green-2013-quipper], note: "Embedded in Haskell: \"Both Haskell and Quipper are strongly-typed functional programming languages\"." }
     - { type: influenced_by, to: quantum-lambda-calculus, aspects: [linear-types], weight: strong, confidence: high, sources: [green-2013-quipper], note: "Named as a predecessor: \"an ML-style language ... designed to run on Knill's QRAM model\"." }
     - { type: influenced_by, to: qcl, weight: moderate, confidence: high, sources: [green-2013-quipper], note: "Named as a predecessor and \"a milestone\"." }
     - { type: influenced_by, to: quantum-pseudocode, weight: moderate, confidence: high, sources: [green-2013-quipper], note: "\"known as Knill's QRAM model for quantum computation\"." }
@@ -8231,7 +8233,7 @@
     and functional programming". It has no built-in gates, compiles and exports circuits, and ships large simulators.
     It was designed "explicitly with quantum hardware in mind", in contrast to Quipper, and preceded Microsoft's Q#.
   relations:
-    - { type: influenced_by, to: fsharp, weight: strong, confidence: high, sources: [wecker-2014-liquid], note: "Embedded in F#." }
+    - { type: extension_of, to: fsharp, weight: strong, confidence: high, sources: [wecker-2014-liquid], note: "Embedded in F#." }
   research_status: draft
   confidence: high
   links: { homepage: "https://github.com/StationQ/Liquid" }
@@ -8283,7 +8285,7 @@
     considered a low-level quantum IR with classical control", with DEFGATE, DEFCIRCUIT, measurement into classical
     addresses and conditional jumps, aimed at hybrid algorithms such as VQE. pyQuil (2017) generates it from Python.
   relations:
-    - { type: influenced_by, to: qasm, weight: weak, confidence: medium, sources: [smith-2016-quil], note: "Positions itself against QASM, \"the most well-known example of a low-level quantum IR\", by adding classical control; contrast rather than stated influence." }
+    - { type: reacts_against, to: qasm, weight: weak, confidence: high, sources: [smith-2016-quil], note: "Positions itself against QASM: \"QASM, however, does not have any notion of classical control within the language ... Quil is considered a low-level quantum IR with classical control.\"" }
   research_status: draft
   confidence: high
   links: { homepage: "https://github.com/quil-lang/quil" }
@@ -8471,7 +8473,7 @@
     are linear, i.e., they cannot be copied", and programs compile to the Hugr intermediate representation. A 2025
     follow-up added ownership and borrowing modelled on Rust.
   relations:
-    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [koch-2024-guppy], note: "Embedded in Python with \"Pythonic syntax\"." }
+    - { type: extension_of, to: python, weight: strong, confidence: high, sources: [koch-2024-guppy], note: "Embedded in Python with \"Pythonic syntax\"." }
     - { type: influenced_by, to: rust, aspects: [ownership-borrowing], year: 2025, weight: moderate, confidence: high, sources: [koch-2025-guppy-ownership], note: "\"we draw inspiration from classical systems-level programming ... The most prominent example is Rust\"." }
   research_status: draft
   confidence: high
@@ -8510,7 +8512,7 @@
     describe quantum functions over typed quantum variables, including fixed-point numeric types and arithmetic, and a
     synthesis engine chooses the circuit implementation.
   relations:
-    - { type: influenced_by, to: python, weight: moderate, confidence: high, sources: [vax-2025-qmod], note: "Python is the host language of its embedded form." }
+    - { type: extension_of, to: python, weight: moderate, confidence: high, sources: [vax-2025-qmod], note: "Python is the host language of its embedded form." }
   research_status: draft
   confidence: high
   links: { homepage: "https://www.classiq.io/" }
