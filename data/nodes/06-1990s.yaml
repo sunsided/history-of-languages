@@ -1958,6 +1958,8 @@
     "enhanced batch scripting language".
   notes: >
     No example yet: Wikipedia's registry example lost its line breaks in the fetch.
+  relations:
+    - { type: influenced_by, to: batch, weight: weak, confidence: low, sources: [kixtart-95-manual], note: "Self-described \"logon script processor and/or enhanced batch language\"; a design statement by Ruud van Velsen would confirm an influence." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/KiXtart" }
@@ -2152,6 +2154,7 @@
     - { name: Bram Moolenaar, role: author of Vim }
   status: active
   tags:
+    typing: [gradual-typing, type-inference]
     paradigm: [imperative]
   milestones:
     - { version: "7.0", year: 2006, summary: "Lists, dictionaries and \"a simple form of object-oriented programming\"; Wikipedia says only \"since version 7\"." }
@@ -2163,6 +2166,12 @@
     programming style". Vim 9.0 added Vim9 script, "closer to commonly used languages".
   notes: >
     The ex/vi command language is not a node. Neovim's switch to Lua as a second extension language is not covered yet.
+  relations:
+    - { type: influenced_by, to: typescript, aspects: [gradual-typing, type-inference], year: 2022, weight: strong, confidence: high, sources: [vim-help-vim9], note: "Vim9 script: \"For many things TypeScript is followed. It's a recent language that is gaining popularity and has similarities with Vim script.\"" }
+    - { type: influenced_by, to: javascript, aspects: [lambdas], year: 2022, weight: weak, confidence: high, sources: [vim-help-vim9], note: "\"Vim9 script uses a different syntax for a lambda, similar to JavaScript\"." }
+    - { type: influenced_by, to: python, year: 2022, weight: weak, confidence: high, sources: [vim-help-vim9], note: "Vim9 script: \"Using 'def' to define a function comes from Python.\"" }
+    - { type: influenced_by, to: java, aspects: [classes, interfaces], year: 2024, weight: moderate, confidence: high, sources: [vim-help-vim9class], note: "\"Most of the choices for Vim9 classes come from popular and recently developed languages, such as Java, TypeScript and Dart.\"" }
+    - { type: influenced_by, to: dart, year: 2024, weight: weak, confidence: high, sources: [vim-help-vim9class], note: "Field initialisation in new(): \"This mechanism comes from the Dart language.\"" }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Vim_(text_editor)" }
@@ -3303,6 +3312,9 @@
   summary: >
     "the scripting language embedded in mIRC and Adiirc, IRC clients for Windows": aliases, popups and remote event
     handlers that react to IRC events, with "all variables ... dynamically typed".
+  relations:
+    - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [mardam-bey-faq], note: "The author says it \"resembles a combination of C and perl\" and \"grew organically, it was not designed\": resemblance, not a stated influence." }
+    - { type: influenced_by, to: perl, weight: weak, confidence: medium, sources: [mardam-bey-faq], note: "\"resembles a combination of C and perl\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/MIRC_scripting_language" }
@@ -3949,13 +3961,19 @@
   status: legacy
   tags:
     paradigm: [functional, scripting]
-    features: [first-class-functions]
+    features: [first-class-functions, exceptions]
   summary: >
     "an open source, command line interpreter ... that uses a scripting language syntax influenced by the rc shell" and
     is "intended to provide a fully functional programming language as a Unix shell", with higher-order functions. It was
     "originally based on code from Byron Rakitzis's clone of rc". Official releases stopped at 0.9-beta-1 in 1997.
   notes: >
     rc (Tom Duff) is not a node yet; es should get influenced_by rc when it is.
+  relations:
+    - { type: influenced_by, to: rc-shell, weight: strong, confidence: high, sources: [haahr-rakitzis-1993-es], note: "\"es is an exploration of new semantics combined with rc-influenced syntax\"; built from Rakitzis's re-implementation of rc." }
+    - { type: influenced_by, to: scheme, aspects: [lexical-scoping, first-class-functions, exceptions], weight: strong, confidence: high, sources: [haahr-rakitzis-1993-es], note: "\"es has lexically scoped variables, first-class functions, and an exception mechanism, which are concepts borrowed from modern programming languages such as Scheme and ML\"." }
+    - { type: influenced_by, to: ml, aspects: [lexical-scoping, first-class-functions, exceptions], weight: moderate, confidence: high, sources: [haahr-rakitzis-1993-es] }
+    - { type: influenced_by, to: tcl, weight: moderate, confidence: high, sources: [haahr-rakitzis-1993-es], note: "\"Es, in fact, borrows much from Tcl -- most notably the idea of passing around blocks of code as unparsed strings\"." }
+    - { type: influenced_by, to: bourne-shell, aspects: [pipes], weight: moderate, confidence: high, sources: [haahr-rakitzis-1993-es], note: "\"The syntax for pipes, redirection, background jobs, etc., is unchanged from the Bourne shell.\"" }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Rc_(Unix_shell)#es" }
@@ -4296,6 +4314,8 @@
   summary: >
     "a graphics-based batch language" for Windows 3.0 released with the LeBlond Group's Power Tools books (later Windows
     3.1 and NT editions), named after the oriel bay window.
+  relations:
+    - { type: influenced_by, to: batch, weight: weak, confidence: low, sources: [compute-134-power-tools], note: "Described only as \"a batch language for Windows\" (COMPUTE! 134); no design statement found." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Oriel_(scripting_language)" }

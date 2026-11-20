@@ -7199,3 +7199,79 @@
   title: Cortex unveils client-server version 5.1 of its CorVision applications generator
   year: 1993
   url: https://www.techmonitor.ai/?p=178881
+- id: kernighan-ritchie-1977-m4
+  type: manual
+  primary: true
+  authors: [Brian W. Kernighan, Dennis M. Ritchie]
+  title: The M4 Macro Processor
+  venue: Bell Laboratories (UNIX Seventh Edition, Volume 2)
+  year: 1977
+  url: https://wolfram.schneider.org/bsd/7thEdManVol2/m4/m4.pdf
+- id: ibm-1999-cms-pipelines-m50
+  type: talk
+  primary: true
+  authors: [IBM]
+  title: CMS Pipelines (VSE/VM technical conference session M50)
+  year: 1999
+  url: https://public.dhe.ibm.com/s390/zos/vse/pdf3/techconf2000/M50.pdf
+- id: kixtart-95-manual
+  type: manual
+  primary: true
+  authors: [Ruud van Velsen]
+  title: KiXtart 95 3.30 manual (mirror)
+  url: https://www2.latech.edu/~dan/KIX32.htm
+- id: compute-134-power-tools
+  type: web
+  primary: false
+  authors: [COMPUTE!]
+  title: Windows 3 Power Tools (review, COMPUTE! issue 134)
+  year: 1991
+  url: https://www.atarimagazines.com/compute/issue134/143_Windows_3_Power_Tool.php
+- id: vim-help-vim9
+  type: manual
+  primary: true
+  authors: [Bram Moolenaar]
+  title: "Vim help: vim9.txt (Vim9 script rationale)"
+  url: https://raw.githubusercontent.com/vim/vim/master/runtime/doc/vim9.txt
+- id: vim-help-vim9class
+  type: manual
+  primary: true
+  authors: [Bram Moolenaar]
+  title: "Vim help: vim9class.txt"
+  url: https://raw.githubusercontent.com/vim/vim/master/runtime/doc/vim9class.txt
+- id: mardam-bey-faq
+  type: web
+  primary: true
+  authors: [Khaled Mardam-Bey]
+  title: Khaled's FAQ
+  url: https://www.mirc.com/khaled/faq.html
+- id: haahr-rakitzis-1993-es
+  type: paper
+  primary: true
+  authors: [Paul Haahr, Byron Rakitzis]
+  title: "Es: A Shell with Higher-Order Functions"
+  venue: USENIX Winter Conference 1993
+  year: 1993
+  url: https://wryun.github.io/es-shell/paper.html
+- id: dog-github
+  type: web
+  primary: true
+  authors: [Salman Ahmad]
+  title: The Dog Programming Language (repository)
+  year: 2012
+  url: https://github.com/salmanahmad/dog
+- id: dolstra-2006-thesis
+  type: report
+  primary: true
+  authors: [Eelco Dolstra]
+  title: The Purely Functional Software Deployment Model
+  venue: PhD thesis, Utrecht University
+  year: 2006
+  url: https://edolstra.github.io/pubs/phd-thesis.pdf
+- id: burgess-1995-cfengine-draft
+  type: paper
+  primary: true
+  authors: [Mark Burgess]
+  title: A Site Configuration Engine (draft of the Computing Systems 8(3) paper)
+  year: 1995
+  url: https://sources.debian.org/src/cfengine/1.4.9-3/doc/cfarticle.latex

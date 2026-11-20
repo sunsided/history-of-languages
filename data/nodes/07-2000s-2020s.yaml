@@ -6647,6 +6647,8 @@
     A language from the MIT Media Lab "designed to facilitate easier creation of social computing applications" and
     "programming in a natural language", born of Kamvar's frustration that existing languages made code handling social
     interactions "needlessly difficult".
+  relations:
+    - { type: implemented_in, to: java, weight: moderate, confidence: medium, sources: [dog-github], note: "The repository is a Java/Maven project with an ANTLR grammar; no prose statement." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Sepandar_Kamvar" }
@@ -8334,6 +8336,8 @@
   notes: >
     ProjectQ, its stated model, is a Python framework rather than a language and is not a node. Paper authors also
     include Nicolás Quesada, Ville Bergholm and Matthew Amy.
+  relations:
+    - { type: extension_of, to: python, weight: moderate, confidence: high, sources: [killoran-2019-strawberry-fields], note: "Strawberry Fields provides \"an implementation of Blackbird using Python 3 as the embedding language\"; Blackbird also has its own grammar with Python and C++ parsers." }
   research_status: draft
   confidence: high
   links: { homepage: "https://github.com/XanaduAI/blackbird" }

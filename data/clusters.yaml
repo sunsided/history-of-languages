@@ -358,6 +358,9 @@
     - { name: "Snowball", hint: "Martin Porter's string language for stemming algorithms, named after SNOBOL (Wikipedia). No year on the page; snowballstem.org has the history." }
     - { name: "SBL", hint: "The list's SBL link points to Superbase (database), which never mentions SBL; possibly Snowball's .sbl files. Unresolved." }
     - { name: "Serpent", hint: "The list links to Ethereum#Programming_languages, which no longer exists; Solidity's article mentions Serpent only in passing. Needs an Ethereum-era source." }
+  research_questions:
+    - "Batch, DEC TPU, cfengine and the Nix language have no documented relation to existing nodes. Searched: Wikipedia, the MS-DOS Encyclopedia (Section I, partly), the DECTPU manual (TOC only), Burgess 1995 (cfengine resembles a Makefile; make is not a node) and Dolstra's 2006 thesis (Nix's precursor Maak is not a node)."
+    - "Missing ancestors met while connecting scripting languages: Strachey's GPM (1965), M6 and the Software Tools macro processor (m4), ex (Vim script), make (cfengine), Maak (Nix), CP/M SUBMIT and Extended Batch Language (batch). Hartmann's 'How CMS Got Its Plumbing Fixed' would confirm CMS Pipelines' Unix source."
 - id: scripting/unix
   name: Unix shell and text tools
   parent: scripting

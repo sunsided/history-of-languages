@@ -4363,6 +4363,8 @@
     influence.
   notes: >
     The infobox names "Pipeline (Unix)" as its influence, a concept rather than one language, so no edge is drawn.
+  relations:
+    - { type: influenced_by, to: thompson-shell, aspects: [pipes], weight: moderate, confidence: medium, sources: [ibm-1999-cms-pipelines-m50], note: "IBM: \"Modeled after, but far exceeds the capabilities of, UNIX pipes\". The Thompson shell is where pipes first appear in this dataset; Hartmann's own history would confirm the direct source." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/CMS_Pipelines" }

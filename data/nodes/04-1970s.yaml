@@ -2048,7 +2048,7 @@
     - { name: Dennis Ritchie, role: designer }
   status: active
   tags:
-    features: [macros]
+    features: [macros, preprocessor]
   summary: >
     A general-purpose macro processor for Unix. "Kernighan and Ritchie developed m4 in 1977, basing it on the ideas of
     Christopher Strachey"; it is "an extension of an earlier macro processor, m3, written by Ritchie for an unknown
@@ -2057,6 +2057,8 @@
   notes: >
     Strachey's General Purpose Macrogenerator (GPM, Computer Journal, October 1965) is not a node yet. The example is a
     fragment: Wikipedia's full example is interleaved with prose.
+  relations:
+    - { type: targets, to: ratfor, weight: moderate, confidence: high, sources: [kernighan-ritchie-1977-m4], note: "\"Its primary use has been as a front end for Ratfor for those cases where parameterless macros are not adequately powerful\"; also used with C and Cobol. M4 extends Ritchie's M3, based on the Software Tools macro processor." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/M4_(computer_language)" }
