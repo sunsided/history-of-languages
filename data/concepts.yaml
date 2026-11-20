@@ -1177,6 +1177,16 @@
     node: p-prime-prime
     year: 1964
     note: Böhm's proof that sequence, selection and iteration suffice.
+- id: term-rewriting
+  name: Term rewriting
+  facet: paradigm
+  broader:
+  - declarative
+  summary: Computation as the repeated application of rewrite rules (left-hand side => right-hand side) to terms, often modulo equations such as associativity and commutativity.
+  first_seen:
+    node: maude
+    year: 1996
+    note: Earliest node tagged so far; OBJ3's order-sorted rewriting and other earlier rewriting languages are not yet tagged.
 - id: tacit-programming
   name: Tacit programming
   facet: paradigm

@@ -9138,3 +9138,231 @@
   title: 'Wikipedia: Martin Porter'
   url: https://en.wikipedia.org/wiki/Martin_Porter
   checked: '2026-11-20'
+- id: wiki-troff
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: troff"
+  url: https://en.wikipedia.org/wiki/Troff
+  checked: '2026-11-20'
+- id: wiki-nroff
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: nroff"
+  url: https://en.wikipedia.org/wiki/Nroff
+  checked: '2026-11-20'
+- id: ossanna-kernighan-1992-troff-manual
+  type: manual
+  primary: true
+  authors: [Joseph F. Ossanna, Brian W. Kernighan]
+  title: "Troff User's Manual (Computing Science Technical Report No. 54, revised November 1992)"
+  venue: AT&T Bell Laboratories
+  year: 1992
+  url: https://www.troff.org/54.pdf
+  checked: '2026-11-20'
+- id: codenie-1994-agora
+  type: paper
+  primary: true
+  authors: [Wim Codenie, Koen De Hondt, Theo D'Hondt, Patrick Steyaert]
+  title: "Agora: Message Passing as a Foundation for Exploring OO Language Concepts"
+  venue: SIGPLAN Notices 29(12), December 1994; VUB technical report vub-prog-tr-94-05
+  year: 1994
+  url: https://soft.vub.ac.be/Publications/1994/vub-prog-tr-94-05.pdf
+  checked: '2026-11-20'
+- id: agora-homepage
+  type: web
+  primary: true
+  authors: [Programming Technology Lab, Vrije Universiteit Brussel]
+  title: "Agora (project page, revised 20 December 1997)"
+  url: https://soft.vub.ac.be/research/agora
+  checked: '2026-11-20'
+- id: wiki-agora
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Agora (programming language)"
+  url: https://en.wikipedia.org/wiki/Agora_(programming_language)
+  checked: '2026-11-20'
+- id: wiki-numpy
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: NumPy"
+  url: https://en.wikipedia.org/wiki/NumPy
+  checked: '2026-11-20'
+- id: bqn-homepage
+  type: web
+  primary: true
+  authors: [Marshall Lochbaum]
+  title: "BQN (documentation home page)"
+  url: https://mlochbaum.github.io/BQN/
+  checked: '2026-11-20'
+- id: bqn-history
+  type: web
+  primary: true
+  authors: [Marshall Lochbaum]
+  title: "BQN's development history"
+  url: https://mlochbaum.github.io/BQN/commentary/history.html
+  checked: '2026-11-20'
+- id: bqn-repo
+  type: web
+  primary: true
+  authors: [Marshall Lochbaum]
+  title: "mlochbaum/BQN (GitHub repository, created 5 June 2020)"
+  url: https://github.com/mlochbaum/BQN
+  checked: '2026-11-20'
+- id: carlisle-1997-latex3-programming
+  type: paper
+  primary: true
+  authors: [David Carlisle, Chris Rowley, Frank Mittelbach]
+  title: "The LaTeX3 Programming Language: a proposed system for TeX macro programming"
+  venue: TUGboat 18(4), 303-308
+  year: 1997
+  url: https://www.latex-project.org/publications/1997-DPC-TUB-tb18-4-expl3-proposal.pdf
+  checked: '2026-11-20'
+- id: expl3-doc
+  type: manual
+  primary: true
+  authors: [The LaTeX Project]
+  title: "The expl3 package and LaTeX3 programming (release 2026-09-09)"
+  url: https://ctan.org/pkg/l3kernel
+  checked: '2026-11-20'
+- id: ltnews-31
+  type: report
+  primary: true
+  authors: [The LaTeX Project]
+  title: "LaTeX News, Issue 31, February 2020 (LaTeX release 2020-02-02)"
+  year: 2020
+  url: https://www.latex-project.org/news/latex2e-news/ltnews31.pdf
+  checked: '2026-11-20'
+- id: wright-2024-mythical-latex3
+  type: web
+  primary: true
+  authors: [Joseph Wright]
+  title: The mythical LaTeX3
+  year: 2024
+  url: https://www.texdev.net/2024/11/11/the-mythical-latex3
+  checked: '2026-11-20'
+- id: clavel-1999-maude-manual
+  type: manual
+  primary: true
+  authors: [Manuel Clavel, Francisco Durán, Steven Eker, Patrick Lincoln, Narciso Martí-Oliet, José Meseguer, José Quesada]
+  title: "Maude: Specification and Programming in Rewriting Logic"
+  venue: SRI International Computer Science Laboratory, 8 March 1999 (documents Maude 1.0)
+  year: 1999
+  url: https://www.csl.sri.com/papers/maude-manual/maude-manual.pdf
+  checked: '2026-11-20'
+- id: clavel-1996-principles-maude
+  type: paper
+  primary: true
+  authors: [Manuel Clavel, Steven Eker, Patrick Lincoln, José Meseguer]
+  title: Principles of Maude
+  venue: "Electronic Notes in Theoretical Computer Science 4, 65-89 (WRLA '96)"
+  year: 1996
+  url: https://www.csl.sri.com/papers/rwl96b/
+  doi: 10.1016/S1571-0661(04)00034-9
+- id: moreau-2003-tom
+  type: paper
+  primary: true
+  authors: [Pierre-Etienne Moreau, Christophe Ringeissen, Marian Vittek]
+  title: A Pattern Matching Compiler for Multiple Target Languages
+  venue: Compiler Construction (CC 2003), LNCS 2622, 61-76
+  year: 2003
+  url: https://hal.archives-ouvertes.fr/inria-00099644
+  doi: 10.1007/3-540-36579-6_5
+- id: moreau-2001-pattern-matching-compiler
+  type: paper
+  primary: true
+  authors: [Pierre-Etienne Moreau, Christophe Ringeissen, Marian Vittek]
+  title: Pattern-Matching Compiler
+  venue: "LDTA 2001, Electronic Notes in Theoretical Computer Science 44(2), 161-180"
+  year: 2001
+  url: https://bibtex.github.io/LDTA-2001-MoreauRV.html
+- id: tom-about
+  type: web
+  primary: true
+  authors: [INRIA]
+  title: About Tom technology
+  url: https://tom.loria.fr/about.html
+  checked: '2026-11-20'
+- id: tom-manual-2008
+  type: manual
+  primary: true
+  authors: [Emilie Balland, Paul Brauner, Radu Kopetz, Pierre-Etienne Moreau, Antoine Reilles]
+  title: Tom Manual (version 2.6, April 2008)
+  year: 2008
+  url: https://tom.loria.fr/soft/release-2.6/manual-2.6/manual.html
+  checked: '2026-11-20'
+- id: wiki-tom
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Tom (pattern matching language)"
+  url: https://en.wikipedia.org/wiki/Tom_(pattern_matching_language)
+  checked: '2026-11-20'
+- id: backus-1978-liberated
+  type: paper
+  primary: true
+  authors: [John Backus]
+  title: "Can Programming Be Liberated from the von Neumann Style? A Functional Style and Its Algebra of Programs"
+  venue: Communications of the ACM 21(8), 613-641 (1977 ACM Turing Award lecture)
+  year: 1978
+  url: https://www.dcs.gla.ac.uk/~wpc/grcs/backus.pdf
+  doi: 10.1145/359576.359579
+  checked: '2026-11-20'
+- id: didrich-1994-opal
+  type: paper
+  primary: true
+  authors: [Klaus Didrich, Andreas Fett, Carola Gerke, Wolfgang Grieskamp, Peter Pepper]
+  title: "OPAL: Design and implementation of an algebraic programming language"
+  venue: Programming Languages and System Architectures, LNCS 782
+  year: 1994
+  url: https://link.springer.com/chapter/10.1007/3-540-57840-4_34
+  doi: 10.1007/3-540-57840-4_34
+- id: opal-repo
+  type: web
+  primary: true
+  authors: [TU Berlin]
+  title: "TU-Berlin/opal (GitHub repository README)"
+  url: https://github.com/TU-Berlin/opal
+  checked: '2026-11-20'
+- id: cryptol-repo
+  type: web
+  primary: true
+  authors: [Galois]
+  title: "GaloisInc/cryptol (GitHub repository: README and examples/xor_cipher.cry)"
+  url: https://github.com/GaloisInc/cryptol
+  checked: '2026-11-20'
+- id: galois-origin-story
+  type: web
+  primary: true
+  authors: [Galois]
+  title: Cryptol, SAW, and the Galois Origin Story
+  url: https://www.galois.com/articles/cryptol-saw-and-the-galois-origin-story
+  checked: '2026-11-20'
+- id: slashdot-2008-cryptol
+  type: web
+  primary: false
+  title: "Cryptol, Language of Cryptography, Now Available To the Public (Slashdot, 26 December 2008)"
+  year: 2008
+  url: https://developers.slashdot.org/story/08/12/26/1725208/cryptol-language-of-cryptography-now-available-to-the-public
+  checked: '2026-11-20'
+- id: flix-homepage
+  type: web
+  primary: true
+  authors: [Flix developers]
+  title: The Flix Programming Language (home page)
+  url: https://flix.dev/
+  checked: '2026-11-20'
+- id: flix-repo
+  type: web
+  primary: true
+  authors: [Flix developers]
+  title: "flix/flix (GitHub repository: created June 2015; snapshot-2016-06-09; v0.7.0 on 8 August 2019)"
+  url: https://github.com/flix/flix
+  checked: '2026-11-20'
+- id: madsen-2016-datalog-flix
+  type: paper
+  primary: true
+  authors: [Magnus Madsen, Ming-Ho Yee, Ondřej Lhoták]
+  title: "From Datalog to Flix: a declarative language for fixed points on lattices"
+  venue: PLDI 2016 (ACM SIGPLAN Notices 51(6)); metadata from Crossref, paper not read
+  year: 2016
+  doi: 10.1145/2908080.2908096
+  url: https://doi.org/10.1145/2908080.2908096

@@ -10266,3 +10266,252 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/XMOS" }
   sources: [wiki-xmos, watt-2009-programming-xc]
+- id: numpy
+  name: NumPy
+  aliases: [Numeric, Numarray]
+  kind: language
+  category: scientific
+  cluster: array
+  origin:
+    began: { year: 1995, precision: year, note: "The matrix-sig group was founded in 1995; Jim Hugunin's Numeric (infobox: first release 1995) is the predecessor." }
+    first_appeared: { year: 2006, precision: year, note: "Wikipedia infobox: NumPy 2006, when Travis Oliphant merged Numarray's features into Numeric." }
+  creators:
+    - { name: Travis Oliphant, role: "creator of NumPy" }
+    - { name: Jim Hugunin, role: "author of Numeric, the predecessor" }
+  status: active
+  tags:
+    paradigm: [array-programming]
+    domain: [scientific-computing, data-science]
+  summary: >
+    The Python package for n-dimensional arrays that carries APL-style whole-array programming into Python. In
+    1995 the matrix-sig special interest group set out to define an array package; Jim Hugunin's Numeric came
+    out of it, Numarray was written as a replacement, and Travis Oliphant created NumPy "by incorporating
+    features of the competing Numarray into Numeric".  notes: >
+    A library, mapped as a node because it is how array programming reached a mass audience (extension_of
+    python). Wikipedia lists influences from "the APL family of languages, Basis, MATLAB, FORTRAN, S and S+";
+    only APL and MATLAB are stored as edges, the others are not checked against a primary source.
+  relations:
+    - { type: extension_of, to: python, weight: strong, confidence: high, sources: [wiki-numpy] }
+    - { type: influenced_by, to: apl, aspects: [array-programming], weight: moderate, confidence: medium, sources: [wiki-numpy], note: "\"with influences from the APL family of languages, Basis, MATLAB, FORTRAN, S and S+\"." }
+    - { type: influenced_by, to: matlab, weight: moderate, confidence: medium, sources: [wiki-numpy], note: "Same sentence; MATLAB is named among the influences." }
+    - { type: influenced_by, to: j, weight: weak, confidence: medium, sources: [wiki-j], note: "J's Wikipedia infobox lists NumPy among the languages it influenced; the NumPy article does not name J." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/NumPy", homepage: "https://numpy.org" }
+  sources: [wiki-numpy]
+  example:
+    title: A typed two-dimensional array and its transpose
+    language: Python with NumPy
+    note: "From the Examples section of the Wikipedia article."
+    code: |
+      import numpy as np
+      from numpy.typing import NDArray
+
+      a: NDArray[int] = np.array([[1, 2, 3, 4], [3, 4, 6, 7], [5, 9, 0, 5]])
+      a.transpose()
+    sources: [wiki-numpy]
+
+- id: bqn
+  name: BQN
+  aliases: [Big Questions Notation]
+  kind: language
+  category: general
+  cluster: array
+  origin:
+    first_appeared: { year: 2020, date: "2020-06-05", precision: exact, note: "Public GitHub repository mlochbaum/BQN created 5 June 2020 (GitHub API). Designed earlier as a \"fixed APL\" with colleagues at Dyalog, start date not given; Lochbaum made it a personal project after leaving Dyalog in early 2020 (BQN history page)." }
+  creators:
+    - { name: Marshall Lochbaum, role: designer }
+  status: active
+  tags:
+    paradigm: [array-programming, tacit-programming, functional]
+    features: [special-character-set, lexical-scoping]
+  summary: >
+    Marshall Lochbaum's array language, which "aims to remove irregular and burdensome aspects of the APL
+    tradition" and "draws more from a general concept of APL than any particular dialect". Lochbaum took A+ as
+    the starting point, kept J's tacit programming and Dyalog's experience, and added
+    anonymous functions that "borrow some power from Lisp", with lexical scoping learned from JavaScript. It
+    keeps a special glyph set like APL.
+  notes: >
+    No Wikipedia article. dzaima and Adám Brudzewsky are named on the history page as significant contributors.
+  relations:
+    - { type: influenced_by, to: apl, aspects: [array-programming], weight: strong, confidence: high, sources: [bqn-history], note: "\"draws more from a general concept of APL than any particular dialect\"." }
+    - { type: influenced_by, to: a-plus, weight: strong, confidence: high, sources: [bqn-history], note: "Lochbaum \"found A+ to be a very sound design\" and took it as the starting point." }
+    - { type: influenced_by, to: j, aspects: [tacit-programming], weight: moderate, confidence: high, sources: [bqn-history], note: "J was Lochbaum's first language (2009) and a source of array and tacit ideas." }
+    - { type: reacts_against, to: apl, weight: moderate, confidence: high, sources: [bqn-homepage], note: "\"aims to remove irregular and burdensome aspects of the APL tradition\"." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://mlochbaum.github.io/BQN/" }
+  sources: [bqn-homepage, bqn-history, bqn-repo]
+  example:
+    title: A tacit one-liner from the home page
+    language: BQN
+    note: "From the BQN home page, which gives the result as \"B Q N\"."
+    code: |
+      <⟜'a'⊸/ "Big Questions Notation"
+    sources: [bqn-homepage]
+
+- id: tom-lang
+  name: Tom
+  aliases: [Tom pattern-matching compiler, TOM, MTOM]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    began: { year: 2001, precision: year, note: "Moreau, Ringeissen and Vittek, \"Pattern-Matching Compiler\", LDTA 2001 (ENTCS 44(2)), on the predecessor tool." }
+    first_appeared: { year: 2003, precision: year, note: "\"A Pattern Matching Compiler for Multiple Target Languages\", Compiler Construction 2003 (LNCS 2622), presents Tom for C, Java and Eiffel." }
+    places: [{ institution: INRIA, country: FR }]
+  creators:
+    - { name: Pierre-Etienne Moreau, role: designer }
+    - { name: Christophe Ringeissen, role: designer }
+    - { name: Marian Vittek, role: designer }
+  status: legacy
+  tags:
+    paradigm: [term-rewriting, imperative]
+    features: [pattern-matching, algebraic-data-types]
+  milestones:
+    - { version: "2.6", year: 2008, summary: "Released 11 April 2008; manual of April 2008 with the Gom signature language and a strategy library." }
+    - { version: "2.10", year: 2013, summary: "Last stable release, 21 March 2013 (Wikipedia infobox)." }
+  summary: >
+    A "language extension which adds new matching primitives to C and Java as well as support for rewrite rules
+    systems", from INRIA's Protheo group. A %match block inside ordinary Java or C code matches algebraic terms,
+    including non-linear patterns and matching modulo equations, and the rules can be steered by a strategy
+    language. Its design "follows our research on rule based languages, and our experiences on the efficient
+    compilation of ELAN"; the name stands for "To One Matching".
+  notes: >
+    ELAN, the rewriting language Tom grew out of, is not a node yet (logic backlog). The affiliations of the 2003
+    paper (LORIA-INRIA Nancy; Comenius University, Bratislava, for Vittek) come from a search snippet, not a read copy.
+  relations:
+    - { type: extension_of, to: java, weight: strong, confidence: high, sources: [wiki-tom, tom-manual-2008], note: "\"adds new matching primitives to C and Java\"." }
+    - { type: extension_of, to: c, weight: strong, confidence: high, sources: [wiki-tom, tom-about], note: "\"adds a new matching primitives to C and Java: %match\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Tom_(pattern_matching_language)", homepage: "https://tom.loria.fr/" }
+  sources: [moreau-2003-tom, moreau-2001-pattern-matching-compiler, tom-about, tom-manual-2008, wiki-tom]
+  example:
+    title: Peano addition by pattern matching inside Java
+    language: Tom 2.6 (Java host)
+    year: 2008
+    note: "From the Tom Manual (April 2008), section 5.2; the main method and its other code are omitted. %gom declares the algebraic signature, %match rewrites plus terms, and the backquote builds a term."
+    code: |
+      import main.peano.types.*;
+
+      public class Main {
+        %gom {
+          module Peano
+          abstract syntax
+          Nat = zero()
+              | suc(pred:Nat)
+              | plus(x1:Nat, x2:Nat)
+        }
+
+        public static Nat evaluate(Nat n) {
+          %match(n) {
+            plus(x, zero()) -> { return `x; }
+            plus(x, suc(y)) -> { return `suc(plus(x,y)); }
+          }
+          return n;
+        }
+      }
+    sources: [tom-manual-2008]
+
+- id: cryptol
+  name: Cryptol
+  aliases: [Cryptol 2, Cryptol 3]
+  kind: language
+  category: domain-specific
+  cluster: ml-family
+  origin:
+    began: { year: 1999, precision: circa, note: "Galois was founded in 1999 and \"developing the crypto-focused DSL for the U.S. Government was their very first contract\" (Galois); no exact start date is given." }
+    first_appeared: { year: 2003, date: "2003-10", precision: exact, note: "First dated publication: Lewis and Martin, \"Cryptol: high assurance, retargetable crypto development and validation\", MILCOM 2003, October 2003 (paper not read). Wikipedia's infobox year 1980 is wrong: Galois did not exist then." }
+    places: [{ institution: Galois, city: Portland, country: US }]
+  creators:
+    - { name: Galois, role: "designer, for the NSA Laboratory for Advanced Cybersecurity Research" }
+    - { name: John Launchbury, role: "Galois founder; Cryptol came out of the work of his group" }
+  status: active
+  tags:
+    paradigm: [functional, declarative]
+    typing: [static-typing, parametric-polymorphism]
+    features: [list-comprehensions]
+  milestones:
+    - { version: public release, year: 2008, summary: "Made available to the public in December 2008 (Galois blog, 24 December 2008, via Slashdot)." }
+    - { version: "2", year: 2014, summary: "First fully public version, released as open source (Galois)." }
+    - { version: "3.2.0", year: 2024, summary: "Stable release, 20 August 2024 (Wikipedia infobox)." }
+  summary: >
+    "A domain-specific programming language for cryptography", which Galois "designed for the NSA Laboratory for
+    Advanced Cybersecurity Research as a public standard for specifying cryptographic algorithms". Its types are
+    sequences of bits with sizes checked statically ([a][8] is a sequence of a bytes), and unlike paper specifications
+    it is "fully executable".
+  notes: >
+    The repository README says Cryptol "has been under development for over a decade" and that much of the work was
+    funded and guided by the NSA team. No language-influence edge is stored: none of the sources read names an
+    ancestor language, though the implementation is in Haskell.
+  relations:
+    - { type: implemented_in, to: haskell, weight: moderate, confidence: high, sources: [cryptol-repo], note: "GitHub reports the repository's language as Haskell." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Cryptol", homepage: "https://cryptol.net" }
+  sources: [cryptol-repo, galois-origin-story, wiki-cryptol, slashdot-2008-cryptol]
+  example:
+    title: A size-polymorphic XOR cipher and its round-trip property
+    language: Cryptol 3
+    note: "Verbatim from examples/xor_cipher.cry in the Cryptol repository. {a}(fin a) => quantifies over any finite length a; property declares the round-trip law as a checkable property."
+    code: |
+      encrypt : {a}(fin a) => [8] -> [a][8] -> [a][8]
+      encrypt key plaintext = [pt ^ key | pt <- plaintext ]
+
+      decrypt : {a}(fin a) => [8] -> [a][8] -> [a][8]
+      decrypt key ciphertext = [ct ^ key | ct <- ciphertext ]
+
+      property roundtrip k ip = decrypt k (encrypt k ip) == ip
+    sources: [cryptol-repo]
+
+- id: flix
+  name: Flix
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 2016, precision: year, note: "Paper \"From Datalog to Flix: a declarative language for fixed points on lattices\" (Madsen, Yee and Lhoták, PLDI 2016, ACM SIGPLAN Notices); first public snapshot on GitHub 9 June 2016, repository created June 2015." }
+    places: [{ institution: Aarhus University, city: Aarhus, country: DK }]
+  creators:
+    - { name: Magnus Madsen, role: "first author of the Flix papers" }
+    - { name: Ming-Ho Yee, role: co-author of the 2016 paper }
+    - { name: Ondřej Lhoták, role: co-author of the Flix papers }
+  status: active
+  tags:
+    paradigm: [functional, imperative, logic]
+    typing: [static-typing, parametric-polymorphism]
+    features: [algebraic-data-types, pattern-matching, tail-call-optimization]
+    concurrency: [channels]
+  milestones:
+    - { version: "0.7.0", year: 2019, summary: "First numbered GitHub release, 8 August 2019." }
+  summary: >
+    "A principled effect-oriented functional, imperative, and logic programming language developed at Aarhus
+    University". It began as a Datalog dialect for fixed points on lattices and became an ML-family language for
+    the JVM whose type and effect system "tracks the purity of every expression", with effect polymorphism and
+    effect handlers. Datalog constraints are first-class values that can be "passed to and returned from functions,
+    stored in data structures, composed with other Datalog constraints, and solved".
+  notes: >
+    Developed with researchers at Waterloo, Tübingen and Copenhagen. The influence edges come from Wikipedia's
+    infobox only (F#, Go, Haskell, OCaml, Scala); the designers' own statements were not read.
+    Effect handlers are on the home page's feature list but not tagged: when they arrived is not established.
+  relations:
+    - { type: influenced_by, to: datalog, aspects: [logic], weight: strong, confidence: high, sources: [wiki-flix, flix-homepage], note: "Paper title \"From Datalog to Flix\"; \"Flix supports Datalog programs as first-class values\"." }
+    - { type: influenced_by, to: ocaml, weight: moderate, confidence: medium, sources: [wiki-flix], note: "Infobox \"Influenced by\"." }
+    - { type: influenced_by, to: haskell, weight: moderate, confidence: medium, sources: [wiki-flix], note: "Infobox \"Influenced by\"." }
+    - { type: influenced_by, to: scala, weight: moderate, confidence: medium, sources: [wiki-flix], note: "Infobox \"Influenced by\"." }
+    - { type: influenced_by, to: fsharp, weight: weak, confidence: medium, sources: [wiki-flix], note: "Infobox \"Influenced by\"." }
+    - { type: influenced_by, to: go, aspects: [channels], weight: weak, confidence: low, sources: [wiki-flix], note: "Infobox lists Go; that channel-based concurrency is what came from it is an inference from the feature list. The Flix documentation would confirm." }
+    - { type: targets, to: jvm-bytecode, weight: strong, confidence: high, sources: [wiki-flix], note: "Compiles to JVM bytecode." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Flix_(programming_language)", homepage: "https://flix.dev" }
+  sources: [madsen-2016-datalog-flix, flix-homepage, wiki-flix, flix-repo]
+  example:
+    title: First-class Datalog rules with guards
+    language: Flix
+    note: "From the Flix home page: two Datalog rules over a road graph, inside a Flix program where minSpeed is an ordinary Flix variable."
+    code: |
+      Path(x, y) :- Road(x, maxSpeed, y), if maxSpeed >= minSpeed.
+      Path(x, z) :- Path(x, y), Road(y, maxSpeed, z), if maxSpeed >= minSpeed.
+    sources: [flix-homepage]

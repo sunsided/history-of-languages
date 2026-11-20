@@ -260,6 +260,7 @@
   - ampl
   - ratfor
   - awk
+  - troff
 - id: person-butler-lampson
   kind: person
   person: Butler Lampson
@@ -578,6 +579,7 @@
   person: John Backus
   wiki: John Backus
   nodes:
+  - ffp
   - speedcoding
   - fortran
   - algol-58
@@ -1103,6 +1105,7 @@
   nodes:
   - jython
   - ironpython
+  - numpy
 - id: person-charles-oliver-nutter
   kind: person
   person: Charles Oliver Nutter
@@ -2698,3 +2701,18 @@
   wiki: John Wainwright (computer scientist)
   nodes:
   - maxscript
+- id: person-joe-ossanna
+  kind: person
+  person: Joe Ossanna
+  wiki: Joe Ossanna
+  nodes: [nroff, troff]
+- id: person-travis-oliphant
+  kind: person
+  person: Travis Oliphant
+  wiki: Travis Oliphant
+  nodes: [numpy]
+- id: person-john-launchbury
+  kind: person
+  person: John Launchbury
+  wiki: John Launchbury
+  nodes: [cryptol]

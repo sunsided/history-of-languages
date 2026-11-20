@@ -233,9 +233,6 @@
 - id: array
   name: Array languages
   research_status: stub
-  backlog:
-    - { name: "BQN", year: 2020, hint: "No English Wikipedia article (BQN_(programming_language) is 404) and no List of programming languages entry; use Marshall Lochbaum's mlochbaum.github.io/BQN documentation as the source." }
-    - { name: "NumPy (library, as concept carrier)", year: 2006 }
 - id: stack
   name: Stack and concatenative languages
   research_status: stub
@@ -262,29 +259,26 @@
     - "Who besides Blank and Berez built ZILCH and ZAP, and when? \"Learning ZIL\" (1989) may say."
 - id: typesetting
   name: Typesetting languages
-  summary: "Document languages that are also programming languages: Knuth's TeX macro language and the macro packages written in it, such as LaTeX."
+  summary: "Document languages that are also programming languages: Bell Labs' roff line (nroff, troff), Knuth's TeX macro language and what is written in it, such as LaTeX and expl3."
   research_status: stub
-  key_sources: [wiki-tex, wiki-latex]
-  backlog:
-    - { name: "troff / nroff", hint: "Joe Ossanna, Bell Labs, for the Graphic Systems CAT (introduced 1972), developed from roff (Wikipedia: troff). No release year on the page; read Ossanna's Troff User's Manual (CSTR 54, 1976)." }
-    - { name: "expl3 / LaTeX3 programming layer", hint: "LaTeX article: \"LaTeX3 has been discontinued as a separate format; since 2018, it has been a programming layer within LaTeX2e\"; LaTeX3 in development since 1989 (Mittelbach, Rowley, Schöpf). expl3 is not named on the page." }
+  key_sources: [wiki-tex, wiki-latex, ossanna-kernighan-1992-troff-manual, carlisle-1997-latex3-programming]
+  research_questions:
+    - "RUNOFF (Saltzer, CTSS, mid-1960s), Morris's roff (GE 635) and McIlroy's BCPL roff (1969) are not nodes, so nroff has no ancestor edge. The first edition of CSTR 54 (1976) and the Unix V2 manual would date nroff and troff from primary sources."
 - id: logic
   name: Logic programming
   research_status: stub
   backlog:
-    - { name: "Maude system", hint: "SRI International implementation of rewriting logic, \"similar in its general approach to Joseph Goguen's OBJ3\" (Wikipedia). No year on the page." }
-    - { name: "Agora", hint: "Reflective prototype-based language based only on message passing; Agora98 in Java; papers ECOOP 1993/1995 (Wikipedia). No year or designers in the text." }
-    - { name: "Tom", hint: "INRIA's pattern-matching extension of C and Java with rewrite rules and strategies; 2.10 in 2013 (Wikipedia). No first year." }
+    - { name: "ELAN (rewriting)", hint: "Rewriting-logic language from France, named with CafeOBJ and Maude as the three rewriting-logic implementations in the Maude manual (1999). Not the Dutch educational ELAN (node elan)." }
+    - { name: "CafeOBJ", hint: "Rewriting-logic and algebraic-specification language from Japan, OBJ family (Maude manual 1999; OBJ article)." }
   research_questions:
-    - "OBJ3 is implemented in Common Lisp, but the year is unknown and OBJ dates from 1976; a dated source is needed for the edge. Clear (Burstall and Goguen 1977), the shared ancestor of OBJ, HOPE and Standard ML modules, is not a node; nor are Maude, CafeOBJ, Eqlog, FOOPS and CASL. Escher is said to grow out of Gödel (search snippet only)."
+    - "Tom's ELAN ancestry and Maude's place among rewriting languages need ELAN as a node (logic backlog). Which earlier rewriting languages (OBJ3, Refal) should carry the term-rewriting tag?"
+    - "OBJ3 is implemented in Common Lisp, but the year is unknown and OBJ dates from 1976; a dated source is needed for the edge. Clear (Burstall and Goguen 1977), the shared ancestor of OBJ, HOPE and Standard ML modules, is not a node; nor are CafeOBJ, Eqlog, FOOPS and CASL. Escher is said to grow out of Gödel (search snippet only)."
 - id: ml-family
   name: ML and typed functional languages
   research_status: draft
-  backlog:
-    - { name: "FFP", hint: "Only mentioned in the FP article as \"another one of Backus' own variations on FP\"; no year. Backus's 1978 Turing lecture / FFP papers are the source." }
-    - { name: "Opal", hint: "Wikipedia stub gives no year or designers (TU Berlin; github.com/TU-Berlin/opal); find the first OPAL report." }
-    - { name: "Flix", hint: "Aarhus University; influenced by F#, Go, Haskell, OCaml, Scala (infobox); no first-release year on the page. Use flix.dev release history." }
-    - { name: "Cryptol", hint: "Galois, Inc. for the NSA; DSL for cryptography (wiki-cryptol). Wikipedia infobox says first appeared 1980, which looks wrong; needs a real year." }
+  research_questions:
+    - "Opal's first report: Pepper's TR 91-10 (June 1991) and an \"OPAL-1\" report of May 1991 are both cited; neither was read. Which ancestor languages did Opal draw on (algebraic specification, Hope, ML)?"
+    - "Cryptol's first public description: read Lewis and Martin, MILCOM 2003, and look for anything earlier from Galois (founded 1999)."
 - id: ml-family/proof
   name: Proof assistants and dependently typed languages
   parent: ml-family

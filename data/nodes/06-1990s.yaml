@@ -5847,3 +5847,214 @@
   confidence: low
   links: { wikipedia: "https://en.wikipedia.org/wiki/Rational_Synergy" }
   sources: [wiki-rational-synergy]
+- id: agora
+  name: Agora
+  aliases: [Agora94, Agora96, Agora98, Agora-S]
+  kind: language
+  category: research
+  cluster: oop/simula-smalltalk
+  origin:
+    first_appeared: { year: 1993, precision: year, note: "First paper: \"Nested Mixin-methods in Agora\", ECOOP '93 (Wikipedia reference list); the defining paper appeared in SIGPLAN Notices 29(12), December 1994." }
+    places: [{ institution: Vrije Universiteit Brussel, city: Brussels, country: BE }]
+  creators:
+    - { name: Patrick Steyaert, role: designer }
+    - { name: Wim Codenie, role: designer }
+    - { name: Koen De Hondt, role: designer }
+    - { name: Theo D'Hondt, role: designer }
+    - { name: Wolfgang De Meuter, role: "implementer of Agora96 (C++) and Agora98 (Java)" }
+  status: historical
+  tags:
+    paradigm: [object-oriented, prototype-based, reflective]
+    features: [mixins, reflection, lexical-scoping]
+  milestones:
+    - { version: Agora94, year: 1994, summary: "Smalltalk implementation, described in SIGPLAN Notices, December 1994." }
+    - { version: Agora98, year: 1998, summary: "Java implementation with access to the Java APIs and applets; \"a considerable simplification of previous versions\". Year from the name: the December 1997 project page says it was being finalized." }
+  summary: >
+    A reflective prototype-based language from the Programming Technology Lab of the Vrije Universiteit Brussel,
+    "entirely (and solely!) based on message passing". Inheritance, slot access, cloning and reification are all
+    "introduced by means of message passing rather than by ordinary programming structures": mixins are methods
+    that an object applies to itself, and the special forms are "reifiers", messages in bold type. Its message
+    syntax follows Smalltalk.
+  notes: >
+    The backlog placed Agora under logic programming; it is a prototype-based object-oriented language and sits
+    with Self and Smalltalk. Implemented in Smalltalk (Agora94), C++ (Agora96), Java (Agora98) and Scheme (Agora-S).
+  relations:
+    - { type: influenced_by, to: self, aspects: [prototype-based], weight: moderate, confidence: high, sources: [codenie-1994-agora], note: "\"Agora is a prototype-based language [Ungar&Smith87]\", citing the Self paper." }
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: high, sources: [codenie-1994-agora], note: "\"Agora syntax resembles Smalltalk syntax in its message expressions\"; its nested objects are compared with \"'conventional' Smalltalk blocks\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Agora_(programming_language)", homepage: "https://soft.vub.ac.be/research/agora" }
+  sources: [codenie-1994-agora, agora-homepage, wiki-agora]
+  example:
+    title: Slots declared and accessed by message passing
+    language: Agora94
+    year: 1994
+    note: "Lines from the SIGPLAN Notices paper, section 2 and 3. In the paper the reifiers (variable:, method:, <-) are set in bold to mark them as language constructs; plain text loses that."
+    code: |
+      [ c1 variable:Complex clone ;
+        c2 variable:Complex clone ;
+        c1 real:3 imag:4 ;
+        c2 <- c1 ]
+
+      increment:amount method:counter <- counter + amount
+    sources: [codenie-1994-agora]
+
+- id: expl3
+  name: expl3
+  aliases: [LaTeX3 programming layer, L3 programming layer, LaTeX3 programming language, LaTeX3]
+  kind: language
+  category: domain-specific
+  cluster: typesetting
+  origin:
+    began: { year: 1990, precision: circa, note: "\"Variants of this language have been in use by The LaTeX3 Project Team since around 1990\" (Carlisle, Rowley and Mittelbach 1997)." }
+    first_appeared: { year: 1997, precision: year, note: "First published description: TUGboat 18(4), 1997, from a talk by David Carlisle in San Francisco, July 1997; it calls the language experimental." }
+  creators:
+    - { name: Frank Mittelbach, role: principal designer }
+    - { name: Denys Duchier, role: principal designer }
+    - { name: David Carlisle, role: co-author of the 1997 proposal }
+    - { name: Chris Rowley, role: co-author of the 1997 proposal }
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [macros, module-system]
+  milestones:
+    - { version: "2020-02-02", year: 2020, summary: "LaTeX2e release 2020-02-02 pre-loads a significant portion of expl3 into the format; LaTeX News 31 says it moved \"from being largely experimental to broadly stable\" over the previous decade." }
+  summary: >
+    The programming language of the LaTeX3 project: a set of conventions on top of TeX macros "designed to meet
+    the requirements of implementing large scale TeX macro programming projects such as LaTeX". Every command
+    name carries its module and an argument signature (\seq_push:Nn), which drives a uniform mechanism for
+    controlling expansion; white space is ignored inside code. LaTeX3 never shipped as a separate format; expl3
+    became the programming layer inside LaTeX2e instead, and packages such as xparse and fontspec are written
+    in it.
+  notes: >
+    The 1997 paper credits the work "principally" to Frank Mittelbach and Denys Duchier, with Johannes Braams,
+    David Carlisle, Michael Downes, Alan Jeffrey, Chris Rowley and Rainer Schöpf. Joseph Wright (on the team
+    since 2009) writes that experimental CTAN bundles l3in2e and xpackages preceded the stable layer; their
+    dates are not established here.
+  relations:
+    - { type: extension_of, to: latex, weight: strong, confidence: high, sources: [wiki-latex, ltnews-31], note: "LaTeX article: \"since 2018, it has been a programming layer within LaTeX2e\"; pre-loaded in the format from 2020." }
+    - { type: extension_of, to: tex, weight: strong, confidence: high, sources: [carlisle-1997-latex3-programming], note: "\"a TeX-based programming language\" built from TeX macros." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://www.latex-project.org/latex3/" }
+  sources: [carlisle-1997-latex3-programming, expl3-doc, ltnews-31, wright-2024-mythical-latex3, wiki-latex]
+  example:
+    title: A function with a typed argument signature
+    language: expl3
+    note: "Verbatim from the layout recommendation in the expl3 documentation (release 2026-09-09). :Nn says the first argument is a single token, the second a braced token list; \\__foo_bar:n is a private function of module foo."
+    code: |
+      \cs_new:Npn \foo_bar:Nn #1#2
+        {
+          \cs_if_exist:NTF #1
+            { \__foo_bar:n {#2} }
+            { \__foo_bar:nn {#2} { literal } }
+        }
+    sources: [expl3-doc]
+
+- id: maude
+  name: Maude
+  aliases: [Maude system, Core Maude, Full Maude]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1996, date: "1996-09", precision: exact, note: "\"A first implementation of Maude, supporting reflection, was presented and demonstrated at the First International Workshop on Rewriting Logic in September 1996\" (Maude manual, 1999); paper: Clavel, Eker, Lincoln and Meseguer, Principles of Maude, ENTCS 4, 1996." }
+    places: [{ institution: SRI International, country: US }]
+  creators:
+    - { name: José Meseguer, role: designer }
+    - { name: Manuel Clavel, role: designer }
+    - { name: Steven Eker, role: designer }
+    - { name: Patrick Lincoln, role: designer }
+  status: active
+  tags:
+    paradigm: [term-rewriting, declarative, object-oriented, reflective]
+    features: [module-system, generics, reflection, metaprogramming]
+  milestones:
+    - { version: "1.0", year: 1999, summary: "Documented in the manual of 8 March 1999; a beta had been available since March 1998." }
+  summary: >
+    A "high-performance language and system supporting both equational and rewriting logic computation", built at
+    SRI International. Its equational sublanguage "essentially contains OBJ3 as a sublanguage", and its novelty is
+    rewriting logic, "a logic of concurrent change", so system modules state rules (rl) that rewrite terms modulo
+    equations such as associativity and commutativity. Because rewriting logic is reflective, Maude is widely used
+    as a metalanguage for building executable semantics of other languages and logics.
+  notes: >
+    The 1999 manual names ELAN (France) and CafeOBJ (Japan) as the two other rewriting-logic language
+    implementations; neither is a node yet. Development later moved to a collaboration centred on the University
+    of Illinois Urbana-Champaign (maude.cs.illinois.edu); dates of Maude 2 and 3 are not established here.
+  relations:
+    - { type: superset_of, to: obj, weight: strong, confidence: high, sources: [clavel-1999-maude-manual], note: "\"Maude has been influenced in important ways by OBJ3. In particular, Maude's equational logic sublanguage essentially contains OBJ3 as a sublanguage.\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Maude_system", homepage: "https://maude.cs.illinois.edu/" }
+  sources: [clavel-1999-maude-manual, clavel-1996-principles-maude, wiki-maude]
+  example:
+    title: A vending machine as a Petri net of rewrite rules
+    language: Maude 1.0
+    year: 1999
+    note: "Verbatim from the Maude manual (1999), section 2.2. The empty-syntax operator __ is declared associative and commutative, so the rules rewrite multisets of coins and goods: a dollar buys a cake (c), or an apple (a) plus a quarter in change; four quarters make a dollar."
+    code: |
+      mod PETRI-NET is
+        sorts Place Marking .
+        subsort Place < Marking .
+        op __ : Marking Marking -> Marking [assoc comm] .
+        ops $ q a c : -> Place .
+
+        rl [buy-c] : $ => c .
+        rl [buy-a] : $ => a q .
+        rl [change] : q q q q => $ .
+      endm
+    sources: [clavel-1999-maude-manual]
+
+- id: opal
+  name: Opal
+  aliases: [OPAL, Optimized Applicative Language, Opal 2alpha]
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 1991, precision: year, note: "P. Pepper, \"The Programming Language OPAL\", Technical Report 91-10, TU Berlin, June 1991 (cited in Didrich et al. 1994; the report itself not read)." }
+    places: [{ institution: Technische Universität Berlin, city: Berlin, country: DE }]
+  creators:
+    - { name: Peter Pepper, role: "head of the group; author of the 1991 language report" }
+    - { name: Klaus Didrich, role: co-author of the 1994 paper }
+    - { name: Andreas Fett, role: co-author of the 1994 paper }
+    - { name: Carola Gerke, role: co-author of the 1994 paper }
+    - { name: Wolfgang Grieskamp, role: co-author of the 1994 paper }
+  status: historical
+  tags:
+    paradigm: [functional, purely-functional]
+    features: [abstract-data-types, module-system]
+  milestones:
+    - { version: "2alpha", year: 1997, summary: "\"Programming in the Large: The Algebraic-Functional Language Opal 2alpha\", IFL 1997 (title from the search index, paper not read)." }
+  summary: >
+    "A strict, purely functional programming language that combines ideas from algebraic specification and
+    applicative programming", developed by the Compiler Construction and Programming Languages group at TU Berlin.
+    Programs are split into SIGNATURE and IMPLEMENTATION parts in the manner of algebraic specifications, and the
+    1994 paper calls it "an algebraic programming language". Maintenance was
+    discontinued in 2015.
+  notes: >
+    The repository dates the group, headed by Peter Pepper, "from 1985 to 2000"; when work on Opal itself began is
+    not established. No influence edges yet: the sources read name no specific ancestor languages; the 1994 paper
+    (not read in full) would say which algebraic-specification languages (OBJ? ACT ONE?) it drew on.
+  relations:
+    - { type: targets, to: c, weight: moderate, confidence: low, sources: [opal-repo], note: "A 1992 paper by Schulte and Grieskamp on OPAL code generation (seen only as a search snippet) says the compiler uses C as its target language; GitHub reports the repository's language as C. Reading that paper would confirm." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Opal_(programming_language)", homepage: "https://github.com/TU-Berlin/opal" }
+  sources: [didrich-1994-opal, opal-repo, wiki-opal]
+  example:
+    title: Greatest common divisor, signature and implementation
+    language: Opal
+    note: "From the Wikipedia article (unsourced there); bold keyword markup removed. nat ** nat is the product type."
+    code: |
+      SIGNATURE GCD
+      FUN GCD: nat ** nat -> nat
+
+      IMPLEMENTATION GCD
+      IMPORT Nat COMPLETELY
+      DEF GCD(a,b) == IF a % b = 0 THEN b
+                      ELSE IF a-b < b THEN GCD(b,a-b)
+                          ELSE GCD(a-b,b)
+                      FI
+                  FI
+    sources: [wiki-opal]

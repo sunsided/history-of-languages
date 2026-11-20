@@ -2349,8 +2349,7 @@
     modules and a functional system based on equations"; OBJ3 is "based on order-sorted rewriting". The family includes
     CafeOBJ, Eqlog, FOOPS and Maude.
   notes: >
-    No example in the Wikipedia article. Maude (SRI International, rewriting logic, "similar in its general approach to
-    Joseph Goguen's OBJ3") stays in the backlog until it has a year.
+    No example in the Wikipedia article. Maude (1996) contains OBJ3 as its equational sublanguage.
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/OBJ_(programming_language)" }
@@ -4338,3 +4337,122 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Cybil_(programming_language)" }
   sources: [cdc-1983-cybil-handbook, cdc-1985-cybil-language-definition, wiki-cybil, ragan-1985-cybil]
+- id: nroff
+  name: nroff
+  aliases: [NROFF, "new roff"]
+  kind: language
+  category: domain-specific
+  cluster: typesetting
+  origin:
+    first_appeared: { year: 1972, date: "1972-06-12", precision: exact, note: "Wikipedia infobox release date 12 June 1972; \"written by Joe Ossanna for Version 2 Unix\", first in assembly language, later ported to C." }
+    places: [{ institution: Bell Labs, city: Murray Hill, country: US }]
+  creators:
+    - { name: Joe Ossanna, role: author }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    features: [macros]
+  summary: >
+    The Bell Labs text formatter for terminals and line printers that Joe Ossanna wrote for Version 2 Unix,
+    "a new version of roff" made when the patents department needed more flexibility than his first
+    reimplementation of McIlroy's roff gave. Its input interleaves text with request lines and user-defined
+    macros, and it became the basis of troff; the manual describes the two as "a single program, invoked by
+    two different names".
+  notes: >
+    Its ancestors, Jerome Saltzer's RUNOFF for CTSS (mid-1960s), Bob Morris's roff for the GE 635 and Doug
+    McIlroy's 1969 BCPL roff, are not nodes yet, so the edge back to them is missing. The Unix V2 dating is
+    Wikipedia's; the Unix Programmer's Manual, Second Edition, would confirm it.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Nroff" }
+  sources: [wiki-nroff, wiki-troff, ossanna-kernighan-1992-troff-manual]
+
+- id: troff
+  name: troff
+  aliases: [typesetter roff, ditroff, device-independent troff]
+  kind: language
+  category: domain-specific
+  cluster: typesetting
+  origin:
+    first_appeared: { year: 1973, precision: circa, note: "\"Troff was originally written by the late Joe Ossanna in about 1973, in assembly language for the PDP-11, to drive the Graphic Systems CAT typesetter\" (CSTR 54, 1992 revision)." }
+    places: [{ institution: Bell Labs, city: Murray Hill, country: US }]
+  creators:
+    - { name: Joe Ossanna, role: author }
+    - { name: Brian Kernighan, role: "device-independent revision, 1979" }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    features: [macros]
+  milestones:
+    - { version: C, year: 1975, summary: "\"rewritten in C around 1975\"." }
+    - { version: device-independent, year: 1979, summary: "Kernighan \"modified troff so that it would produce output for a variety of typesetters\"; drawing functions added (ditroff)." }
+  summary: >
+    Ossanna's typesetter version of nroff, made for the Graphic Systems CAT phototypesetter with multiple fonts
+    and proportional spacing. A troff document is a program of requests, macros, number registers and traps
+    that fire at page positions; document formats such as mm are macro packages, and preprocessors
+    such as eqn, tbl and pic compile their own little languages into troff. Kernighan's 1979 device-independent
+    version is the ancestor of GNU groff.
+  notes: >
+    The manual cited is Kernighan's 1992 revision of Ossanna's CSTR 54 (first edition 1976, not read here).
+    groff (from 1990) is a reimplementation and not a separate node.
+  relations:
+    - { type: dialect_of, to: nroff, weight: strong, confidence: high, sources: [wiki-troff, ossanna-kernighan-1992-troff-manual], note: "Wikipedia: Ossanna modified nroff for multiple fonts and proportional spacing; the manual: \"there is only a single program, invoked by two different names\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Troff", homepage: "https://www.troff.org/" }
+  sources: [ossanna-kernighan-1992-troff-manual, wiki-troff]
+  example:
+    title: Page margins as macros fired by traps
+    language: troff
+    year: 1992
+    note: "Verbatim from the tutorial examples of the Troff User's Manual (CSTR 54, 1992 revision). .de defines a macro, .wh plants a trap at a page position: hd fires at the top, fo one inch from the bottom."
+    code: |
+      .de hd \"define header
+      'sp 1i
+      ..     \"end definition
+      .de fo \"define footer
+      'bp
+      ..     \"end definition
+      .wh 0 hd
+      .wh -1i fo
+    sources: [ossanna-kernighan-1992-troff-manual]
+
+- id: ffp
+  name: FFP
+  aliases: [FFP systems, Formal Functional Programming, formal FP]
+  kind: formalism
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 1977, precision: year, note: "Section 13 of Backus's 1977 Turing Award lecture, published as \"Can Programming Be Liberated from the von Neumann Style?\", CACM 21(8), August 1978; dated like FP, which the same lecture introduced." }
+    places: [{ institution: IBM Research Laboratory, city: San Jose, country: US }]
+  creators:
+    - { name: John Backus, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional, tacit-programming]
+    features: [formal-semantics]
+  summary: >
+    The formal version of Backus's FP, defined in the same Turing lecture: "a precisely defined system that
+    provides the ability to use the functional programming style of FP systems and their algebra of programs".
+    The difference is that "in FFP systems objects are used to 'represent' functions": a sequence's first element
+    names a functional form, so programmers can define new combining forms, and a function apply becomes
+    possible. Backus offered FFP as the basis of his applicative state transition systems.
+  notes: >
+    Backus says FFP systems "are similar to, but simpler than, the Reduction (Red) languages of an earlier paper";
+    Red languages are not a node. The CACM copy read is a scan; quotations were checked against its OCR text.
+  relations:
+    - { type: dialect_of, to: fp, weight: strong, confidence: high, sources: [backus-1978-liberated], note: "\"Section 13 describes a formal extension of FP systems (FFP systems)\"; \"Otherwise FFP systems mirror FP systems closely.\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FP_(programming_language)" }
+  sources: [backus-1978-liberated, wiki-fp]
+  example:
+    title: Objects that represent functions
+    language: FFP
+    year: 1978
+    note: "From section 13.3 of the CACM paper. ρ maps an object to the function it represents and μ gives the meaning of an expression; the Greek letters are restored from the scanned text. apply is the function that FP cannot have."
+    code: |
+      μ(NULL:A) = (ρNULL):A = null:A = F
+      apply:<x,y> = (x:y)
+    sources: [backus-1978-liberated]
