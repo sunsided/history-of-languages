@@ -3,7 +3,7 @@
 import type { Cluster, Concept, Dataset, Edge, LangNode, MediaItem, RelationType, Source } from './types.ts';
 import { NOW } from './scale.ts';
 
-export type EdgeFamily = 'influence' | 'succession' | 'variant' | 'targets' | 'implementation';
+export type EdgeFamily = 'influence' | 'succession' | 'variant' | 'targets' | 'implementation' | 'reaction';
 
 export const FAMILY_OF: Record<RelationType, EdgeFamily> = {
 	influenced_by: 'influence',
@@ -13,15 +13,19 @@ export const FAMILY_OF: Record<RelationType, EdgeFamily> = {
 	subset_of: 'variant',
 	fork_of: 'variant',
 	targets: 'targets',
-	implemented_in: 'implementation'
+	implemented_in: 'implementation',
+	extension_of: 'variant',
+	embeds: 'implementation',
+	reacts_against: 'reaction'
 };
 
 export const FAMILIES: { id: EdgeFamily; label: string; hint: string }[] = [
 	{ id: 'succession', label: 'Succession', hint: 'successor_of: intended replacement in the same line' },
 	{ id: 'influence', label: 'Influence', hint: 'influenced_by: design influence' },
-	{ id: 'variant', label: 'Variant', hint: 'dialect_of / superset_of / subset_of / fork_of' },
-	{ id: 'targets', label: 'Targets', hint: 'targets: assembly or language -> machine' },
-	{ id: 'implementation', label: 'Implemented in', hint: 'implemented_in: bootstrapping history' }
+	{ id: 'variant', label: 'Variant', hint: 'dialect_of / superset_of / subset_of / fork_of / extension_of' },
+	{ id: 'targets', label: 'Targets', hint: 'targets: assembly or language -> machine, VM, IR or language it compiles to' },
+	{ id: 'implementation', label: 'Built with', hint: 'implemented_in: bootstrapping history; embeds: carries another language' },
+	{ id: 'reaction', label: 'Reaction', hint: 'reacts_against: designed against the older language' }
 ];
 
 /** Forward-in-time wording for an edge stored on the newer node (older --label--> newer). */
@@ -33,7 +37,10 @@ export const FORWARD_LABEL: Record<RelationType, string> = {
 	subset_of: 'has subset',
 	fork_of: 'forked as',
 	targets: 'targeted by',
-	implemented_in: 'used to implement'
+	implemented_in: 'used to implement',
+	extension_of: 'extended by',
+	embeds: 'embedded in',
+	reacts_against: 'provoked'
 };
 
 export const BACKWARD_LABEL: Record<RelationType, string> = {
@@ -44,7 +51,10 @@ export const BACKWARD_LABEL: Record<RelationType, string> = {
 	subset_of: 'subset of',
 	fork_of: 'fork of',
 	targets: 'targets',
-	implemented_in: 'implemented in'
+	implemented_in: 'implemented in',
+	extension_of: 'extension of',
+	embeds: 'embeds',
+	reacts_against: 'reacts against'
 };
 
 export interface ClusterInfo {

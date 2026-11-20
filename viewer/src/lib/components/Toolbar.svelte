@@ -389,6 +389,9 @@
 	.fam-implementation {
 		--sw: var(--fam-implementation);
 	}
+	.fam-reaction {
+		--sw: var(--fam-reaction);
+	}
 	.kind-mechanism {
 		--sw: var(--kind-mechanism);
 	}

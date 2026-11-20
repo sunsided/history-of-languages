@@ -402,6 +402,9 @@
 	.fam-implementation {
 		--fam: var(--fam-implementation);
 	}
+	.fam-reaction {
+		--fam: var(--fam-reaction);
+	}
 	.muted {
 		color: var(--fg-faint);
 	}

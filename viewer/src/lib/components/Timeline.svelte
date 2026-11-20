@@ -4,6 +4,7 @@
 	import { timeScale, NOW, PAD } from '../scale.ts';
 	import { layout, type Row } from '../layout.ts';
 	import {
+		FAMILIES,
 		FAMILY_OF,
 		FORWARD_LABEL,
 		conceptArrival,
@@ -430,7 +431,7 @@
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<svg class="plot" width={scale.width} height={lay.height + ROW_H} onclick={onBackgroundClick}>
 			<defs>
-				{#each ['succession', 'influence', 'variant', 'targets', 'implementation'] as f (f)}
+				{#each FAMILIES as { id: f } (f)}
 					<marker id="arrow-{f}" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
 						<path d="M0,0 L8,4 L0,8 z" class="arrowhead fam-{f}" />
 					</marker>
@@ -847,6 +848,9 @@
 		opacity: 0.55;
 		transition: opacity 0.12s;
 	}
+	.edge.fam-reaction {
+		stroke-dasharray: 6 3;
+	}
 	.edge.conf-low {
 		stroke-dasharray: 3 3;
 	}
@@ -878,6 +882,9 @@
 	}
 	.fam-implementation {
 		--f: var(--fam-implementation);
+	}
+	.fam-reaction {
+		--f: var(--fam-reaction);
 	}
 
 	.node,

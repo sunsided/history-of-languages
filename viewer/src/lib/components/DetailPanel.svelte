@@ -660,6 +660,9 @@
 	.fam-implementation {
 		--sw: var(--fam-implementation);
 	}
+	.fam-reaction {
+		--sw: var(--fam-reaction);
+	}
 	.sources {
 		margin: 3px 0;
 		padding-left: 16px;

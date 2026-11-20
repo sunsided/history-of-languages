@@ -9,7 +9,10 @@ export type RelationType =
 	| 'subset_of'
 	| 'fork_of'
 	| 'targets'
-	| 'implemented_in';
+	| 'implemented_in'
+	| 'extension_of'
+	| 'embeds'
+	| 'reacts_against';
 
 export type Confidence = 'high' | 'medium' | 'low';
 export type Weight = 'strong' | 'moderate' | 'weak';
