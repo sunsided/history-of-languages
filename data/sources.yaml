@@ -7827,3 +7827,115 @@
   year: 2007
   doi: 10.1145/1244381.1244404
   url: https://dl.acm.org/doi/10.1145/1244381.1244404
+- id: barr-sas-history
+  type: web
+  primary: true
+  authors: [Anthony J. Barr]
+  title: SAS History
+  url: https://web.archive.org/web/20071008070644/http://www.barrsystems.com/Company/SAS_Related_History.html
+- id: aster-sas-versions
+  type: web
+  primary: false
+  authors: [Rick Aster]
+  title: Versions, Environments, and Other Differences Among SAS Installations
+  url: https://web.archive.org/web/2012/http://www.globalstatements.com/sas/differences/
+- id: cox-2005-stata
+  type: paper
+  primary: false
+  authors: [Nicholas J. Cox]
+  title: A brief history of Stata on its 20th anniversary
+  venue: Stata Journal 5(1)
+  year: 2005
+  url: https://ageconsearch.umn.edu/record/117491/files/sjart_gn0017.pdf
+- id: pike-2005-sawzall
+  type: paper
+  primary: true
+  authors: [Rob Pike, Sean Dorward, Robert Griesemer, Sean Quinlan]
+  title: "Interpreting the Data: Parallel Analysis with Sawzall"
+  venue: Scientific Programming 13(4)
+  year: 2005
+  url: https://storage.googleapis.com/gweb-research2023-media/pubtools/pdf/61.pdf
+- id: debruijn-1980-automath-survey
+  type: paper
+  primary: true
+  authors: [N. G. de Bruijn]
+  title: A survey of the project Automath
+  venue: "To H. B. Curry: Essays on Combinatory Logic, Lambda Calculus and Formalism (Academic Press)"
+  year: 1980
+  url: https://www.win.tue.nl/automath/archive/pdf/aut072.pdf
+- id: rocq-refman-history
+  type: manual
+  primary: true
+  authors: [The Rocq development team]
+  title: Rocq reference manual, Historical notes
+  url: https://rocq-prover.org/doc/master/refman/history.html
+- id: matuszewski-rudnicki-2005-mizar
+  type: paper
+  primary: true
+  authors: [Roman Matuszewski, Piotr Rudnicki]
+  title: "Mizar: the first 30 years"
+  venue: Mechanized Mathematics and Its Applications 4
+  year: 2005
+  url: https://mizar.uwb.edu.pl/people/romat/MatRud2005.pdf
+- id: wenzel-isar-framework
+  type: paper
+  primary: true
+  authors: [Makarius Wenzel]
+  title: Isabelle/Isar - a generic framework for human-readable proof documents
+  url: https://www21.in.tum.de/~wenzelm/papers/isar-framework.pdf
+- id: megill-metamath-book
+  type: book
+  primary: true
+  authors: [Norman Megill, David A. Wheeler]
+  title: "Metamath: A Computer Language for Mathematical Proofs"
+  year: 2019
+  url: https://us.metamath.org/downloads/metamath.pdf
+- id: tlaplus-github
+  type: web
+  primary: true
+  authors: [TLA+ Foundation]
+  title: tlaplus/tlaplus repository
+  url: https://github.com/tlaplus/tlaplus
+- id: murphy-2009-teco
+  type: paper
+  primary: true
+  authors: [Dan Murphy]
+  title: The Beginnings of TECO
+  venue: IEEE Annals of the History of Computing 31(4)
+  year: 2009
+  url: https://opost.com/tenex/anhc-31-4-anec.pdf
+- id: caine-gordon-1968-ttm
+  type: report
+  primary: true
+  authors: [Stephen H. Caine, E. Kent Gordon]
+  title: "TTM: An Experimental Interpretive Language"
+  venue: Caltech Booth Computing Center Programming Report No. 7
+  year: 1968
+  url: https://raw.githubusercontent.com/DennisHeimbigner/ttm/HEAD/docs/caltech_manuals.zip
+- id: goguen-introducing-obj
+  type: paper
+  primary: true
+  authors: [Joseph Goguen, Timothy Winkler, José Meseguer, Kokichi Futatsugi, Jean-Pierre Jouannaud]
+  title: Introducing OBJ
+  url: https://cseweb.ucsd.edu/~goguen/pps/iobj.ps
+- id: macqueen-2020-sml-history
+  type: paper
+  primary: true
+  authors: [David MacQueen, Robert Harper, John Reppy]
+  title: The History of Standard ML
+  venue: HOPL IV
+  year: 2020
+  url: https://www.cs.tufts.edu/~nr/cs257/archive/dave-macqueen/history-of-ml.pdf
+- id: goedel-mitpress-1994
+  type: web
+  primary: false
+  authors: [MIT Press]
+  title: Announcement of Hill and Lloyd, The Gödel Programming Language
+  year: 1994
+  url: https://www.cs.cmu.edu/Groups/AI/lang/prolog/impl/other/goedel/bookinfo.txt
+- id: goedel-cmu-repo
+  type: web
+  primary: false
+  authors: [CMU AI Repository]
+  title: Goedel (repository entry)
+  url: https://www.cs.cmu.edu/Groups/AI/lang/prolog/impl/other/goedel/0.html

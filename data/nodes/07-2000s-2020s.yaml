@@ -5150,6 +5150,7 @@
     - { name: Rob Pike, role: designer }
   status: legacy
   tags:
+    features: [bytecode-vm]
     paradigm: [procedural]
     typing: [static-typing]
     concurrency: [data-parallelism]
@@ -5158,6 +5159,10 @@
     "a procedural domain-specific programming language, used by Google to process large numbers of individual log
     records": each script runs on one record and emits into aggregating tables, so MapReduce can run it over logs spread
     across GFS. It is statically typed and compiled to x86. Google replaced it with Lingo ("logs in Go").
+  relations:
+    - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [pike-2005-sawzall], note: "\"The syntax of statements and expressions is borrowed largely from C\"." }
+    - { type: influenced_by, to: pascal, weight: weak, confidence: high, sources: [pike-2005-sawzall], note: "\"Declarations borrow from the Pascal tradition\"." }
+    - { type: implemented_in, to: cpp, weight: moderate, confidence: high, sources: [pike-2005-sawzall], note: "\"implemented as a conventional compiler, written in C++, whose target language is an interpreted instruction set, or byte-code\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Sawzall_(programming_language)" }

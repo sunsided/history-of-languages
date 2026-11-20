@@ -507,6 +507,7 @@
   summary: "ML unified with HOPE's algebraic data types and pattern matching, with a module system of signatures and functors. The first general-purpose language with a complete formal definition."
   relations:
     - { type: successor_of, to: ml, weight: strong, confidence: high }
+    - { type: influenced_by, to: obj, aspects: [module-system], weight: weak, confidence: low, sources: [goguen-introducing-obj, macqueen-2020-sml-history], note: "Goguen et al.: \"Standard ML has been influenced by this approach\" (theories and views); but the HOPL IV history credits Clear, not OBJ: \"the design of modules for ML was originally inspired by the Clear algebraic specification language\"." }
   research_status: draft
   confidence: high
   sources: [macqueen-harper-reppy-2020-history-sml]
@@ -1829,6 +1830,8 @@
     Written in OCaml ("mainly implemented in OCaml with a bit of C"); there is no implemented_in edge because
     the date it moved to Caml or OCaml has not been sourced (OCaml dates from 1996). Lean's Wikipedia
     article says the rename was in 2024; the Rocq article dates it to Rocq 9.0, March 2025.
+  relations:
+    - { type: influenced_by, to: automath, aspects: [dependent-types], weight: strong, confidence: high, sources: [rocq-refman-history], note: "\"Combining both systems in a higher-order extension of the Automath language, T. Coquand presented in 1985 the first version of the Calculus of Constructions\"." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Rocq", homepage: "https://rocq-prover.org" }
@@ -2116,6 +2119,7 @@
     Mizar system", or as apply-scripts of tactics.
   relations:
     - { type: influenced_by, to: ml, weight: moderate, confidence: medium, sources: [wiki-isabelle, wiki-lcf], note: "Isabelle is an LCF-style prover; LCF \"introduced the general-purpose programming language ML to allow users to write theorem-proving tactics\". Implementation language not checked here." }
+    - { type: influenced_by, to: mizar, year: 1999, weight: moderate, confidence: high, sources: [wenzel-isar-framework], note: "Isar: \"After the pioneering approach of Mizar towards mathematical proofs on the computer ... The design of Isar draws both on Mizar and various Mizar modes\"." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Isabelle_(proof_assistant)", homepage: "https://isabelle.in.tum.de" }
@@ -3359,6 +3363,9 @@
     automated reporting", driven by a command language. Written in C and released for MS-DOS in 1985, it was meant to
     compete with SYSTAT and MicroTSP; Stata 9 added the Mata matrix language. StataCorp moved to College Station, Texas
     in 1993.
+  relations:
+    - { type: implemented_in, to: c, weight: strong, confidence: medium, sources: [cox-2005-stata], note: "\"It was written, then as now, in the C programming language.\"" }
+    - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [cox-2005-stata], note: "\"Anyone who knows C will recognize that the syntax of Stata is influenced by the syntax of C\" (Cox, not a designer)." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Stata", homepage: "https://www.stata.com" }

@@ -1553,6 +1553,10 @@
   notes: >
     SAS's own timeline is inconsistent about the incorporation (1971 vs July 1976); Wikipedia gives 1976. The C
     rewrite is 1985 (Wikipedia) or 1986 (SAS). Barr's Wikipedia title is "Anthony James Barr".
+  relations:
+    - { type: targets, to: ibm-system-360, weight: strong, confidence: high, sources: [barr-sas-history], note: "Barr: \"I was recruited ... to rewrite analysis of variance and regression programs for the IBM 360. I saw this as an opportunity to develop the Statistical Analysis System (SAS).\"" }
+    - { type: implemented_in, to: pl-i, weight: moderate, confidence: medium, sources: [aster-sas-versions], note: "\"SAS had been written in a combination of PL/I, Fortran, and assembly language\" until Version 6, rewritten in C for the IBM PC." }
+    - { type: implemented_in, to: fortran, weight: moderate, confidence: medium, sources: [aster-sas-versions] }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/SAS_(software)" }
@@ -2207,6 +2211,7 @@
     - { name: José Meseguer, role: contributor }
   status: historical
   tags:
+    features: [module-system, abstract-data-types, generics]
     paradigm: [declarative]
   summary: >
     "A family of declarative 'ultra high-level' languages" introduced by Joseph Goguen in 1976 and developed further
@@ -3629,6 +3634,9 @@
     mathematics", begun as "an attempt to reconstruct mathematical vernacular so it can be checked by a computer". Its
     library, on Tarski–Grothendieck set theory, was in 2009 "the largest coherent body of strictly formalized mathematics";
     Isabelle's Isar descends from its style.
+  relations:
+    - { type: implemented_in, to: pascal, weight: strong, confidence: high, sources: [matuszewski-rudnicki-2005-mizar], note: "\"In late August 1977, the implementation of MIZAR-QC was completed in Pascal on a CDC 6000\"." }
+    - { type: implemented_in, to: free-pascal, weight: moderate, confidence: medium, sources: [wiki-mizar], note: "\"It is written in Free Pascal and the source code is available on GitHub\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Mizar_system" }

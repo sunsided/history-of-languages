@@ -868,6 +868,8 @@
     automated proof checker can verify their correctness", and "the first practical system that exploited the
     Curry-Howard correspondence": propositions are types and proofs are terms. It shaped later logical frameworks
     and proof assistants; Mizar was influenced by it.
+  relations:
+    - { type: influenced_by, to: lambda-calculus, aspects: [lambdas, dependent-types], weight: moderate, confidence: medium, sources: [debruijn-1980-automath-survey], note: "de Bruijn admits \"type variables, and lambda expressions as types\", going \"beyond what is usually called typed lambda calculus\"; quote reconstructed from a poor OCR text." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Automath" }
@@ -980,6 +982,7 @@
     - { name: Dan Murphy, role: original author }
   status: legacy
   tags:
+    features: [macros]
     paradigm: [imperative]
   milestones:
     - { version: TECO-6, year: 1964, summary: "Implemented on the PDP-6 at MIT." }
@@ -991,6 +994,9 @@
   notes: >
     The Emacs link is to the original TECO-based Emacs, not to GNU Emacs Lisp, so no edge to emacs-lisp is stored.
     The example's $ is how TECO echoes the ESC key.
+  relations:
+    - { type: targets, to: pdp-1, weight: strong, confidence: high, sources: [murphy-2009-teco], note: "\"PDP-1 TECO was written in assembly language\"." }
+    - { type: targets, to: pdp-10, year: 1969, weight: weak, confidence: high, sources: [murphy-2009-teco], note: "TECO was later \"included in the base software set of every system that DEC offered\"." }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/TECO_(text_editor)" }
@@ -1936,6 +1942,8 @@
     A statistics package that "can be programmed with a proprietary 4GL command syntax language", released in 1968 for
     the social sciences by Nie, Bent and Hull, who incorporated as SPSS Inc. in 1975. Early versions were written in
     Fortran. IBM bought it in 2009 and sells it as IBM SPSS Statistics.
+  relations:
+    - { type: implemented_in, to: fortran, weight: moderate, confidence: medium, sources: [wiki-spss], note: "\"Early versions of SPSS Statistics were written in Fortran and designed for batch processing on mainframes\" (Wikipedia, uncited)." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/SPSS" }
@@ -2134,6 +2142,8 @@
     "string manipulation, text editing, macro definition and expansion". It first ran conversationally under Caltech's
     time-sharing system on an IBM System/360 Model 50. "It is derived from GAP and GPM"; "The exact relationship between
     TTM and TRAC is unknown."
+  relations:
+    - { type: targets, to: ibm-system-360, weight: strong, confidence: high, sources: [caine-gordon-1968-ttm], note: "\"Initially, TTM was planned as the macro processing portion of an assembler for the IBM System/360\"; first run under Caltech's time-sharing system on a System/360-50." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/TTM_(programming_language)" }

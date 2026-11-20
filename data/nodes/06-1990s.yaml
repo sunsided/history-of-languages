@@ -1457,6 +1457,8 @@
     mathematical proofs", with almost no built-in logic: axioms and inference rules are declared in the
     database (set.mm builds set theory this way) and the checker only substitutes symbols, so independent
     verifiers can be very small.
+  relations:
+    - { type: implemented_in, to: c, weight: strong, confidence: medium, sources: [megill-metamath-book], note: "The book builds it with gcc from C sources." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Metamath" }
@@ -1517,6 +1519,7 @@
     - { name: Leslie Lamport, role: designer }
   status: active
   tags:
+    features: [modules]
     paradigm: [declarative]
     domain: [theorem-proving]
   summary: >
@@ -1525,6 +1528,7 @@
     of Actions: a system is an initial-state predicate plus a next-state relation.
   relations:
     - { type: influenced_by, to: unity-cm, weight: moderate, confidence: high, sources: [lamport-writings], note: "Lamport: \"The first major step in getting beyond traditional programming languages to describe concurrent algorithms was Misra and Chandy's Unity ... The next step was TLA\"." }
+    - { type: implemented_in, to: java, weight: weak, confidence: high, sources: [tlaplus-github], note: "Tools only: \"The TLA+ tools require Java 11+ to run\"." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/TLA%2B", homepage: "https://lamport.azurewebsites.net/tla/tla.html" }
@@ -2371,8 +2375,9 @@
     - { name: Patricia Hill, role: designer }
   status: historical
   tags:
+    features: [module-system, metaprogramming]
     paradigm: [logic, declarative]
-    typing: [strong-typing]
+    typing: [strong-typing, parametric-polymorphism]
   milestones:
     - { version: "1.5", year: 1995, date: "1995-08-11" }
   summary: >
@@ -2382,6 +2387,10 @@
   notes: >
     No example yet: Wikipedia's GCD module came through the fetch on one line. The article states no influences; its
     relation to Prolog needs a source such as Hill and Lloyd, The Gödel Programming Language (1994).
+  relations:
+    - { type: influenced_by, to: prolog, aspects: [logic, unification], weight: strong, confidence: high, sources: [goedel-mitpress-1994], note: "\"based on the paradigm of logic programming and can be regarded as a successor to Prolog\" (different designers, so not successor_of)." }
+    - { type: reacts_against, to: prolog, weight: moderate, confidence: medium, sources: [goedel-cmu-repo], note: "\"functionality and expressiveness similar to Prolog, but ... greatly improved declarative semantics\"; \"declarative replacements for Prolog's var, nonvar, assert, and retract\"." }
+    - { type: implemented_in, to: prolog, weight: moderate, confidence: medium, sources: [goedel-cmu-repo], note: "\"Goedel must be compiled in SICStus Prolog\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/G%C3%B6del_(programming_language)" }
