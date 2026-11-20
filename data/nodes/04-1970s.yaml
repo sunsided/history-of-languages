@@ -2283,10 +2283,12 @@
   category: systems
   cluster: industrial
   origin:
-    first_appeared: { year: 1977, precision: circa, note: "Wikipedia: \"Since 1977, the language has undergone several standardization iterations by the Deutsches Institut für Normung\"; the language itself is older, date unconfirmed." }
+    began: { year: 1969, precision: year, note: "Elzer: \"Eine Arbeitsgruppe traf sich zum ersten Mal 1969 in Frankfurt/Main\"." }
+    first_appeared: { year: 1970, precision: year, note: "Elzer: \"Im Sommer 1970 erschien die erste Veröffentlichung\" (Brandes et al., elektronische datenverarbeitung 10, 1970); specification published April 1973; DIN standardisation from 1977." }
     places: [{ institution: DIN, country: DE }]
   status: legacy
   tags:
+    concurrency: [multitasking]
     paradigm: [procedural, imperative, concurrent]
     domain: [industrial-automation]
   milestones:
@@ -2295,6 +2297,9 @@
     "A computer programming language designed for multitasking and real-time programming", standardized in Germany by
     DIN from 1977; the current version, PEARL-90, became DIN 66253-2 in 1998. Programs separate a SYSTEM part, which
     names the hardware devices, from a PROBLEM part with the tasks.
+  relations:
+    - { type: influenced_by, to: pl-i, weight: moderate, confidence: high, sources: [elzer-pearl-2005], note: "A faction changed the common document afterwards \"mit dem Ziel, das Erscheinungsbild von PEARL doch mehr an PL/I anzugleichen\" (syntax and appearance)." }
+    - { type: influenced_by, to: algol-68, weight: moderate, confidence: medium, sources: [elzer-pearl-2005, ewd814], note: "Elzer recalls the \"Religionsstreit\" between adherents of PL/I and ALGOL 68 in the design group; what was taken from ALGOL 68 is not stated. Dijkstra (EWD814): \"PEARL seems to combine the worst of PL/I, ALGOL 68, and three assembler languages.\"" }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/PEARL_(programming_language)" }

@@ -3858,6 +3858,8 @@
     (formerly the P4 Language Consortium), a not-for-profit organization hosted by the Open Networking Foundation".
   notes: >
     No code in the article.
+  relations:
+    - { type: influenced_by, to: c, aspects: [preprocessor], year: 2016, weight: moderate, confidence: high, sources: [p4-16-spec], note: "P4-16: \"Inspired by C: Typing of integers is modeled after the well-defined parts of C\"; \"Similar to C, #include can specify a file name\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/P4_(programming_language)" }
@@ -6951,7 +6953,7 @@
     - { name: NASA, role: designer }
   status: maintained
   tags:
-    paradigm: [declarative]
+    paradigm: [declarative, synchronous-programming]
     typing: [static-typing]
     domain: [embedded]
   summary: >
@@ -6976,6 +6978,7 @@
     - { name: Jeff Martin, role: co-designer }
   status: legacy
   tags:
+    concurrency: [multitasking]
     paradigm: [imperative, concurrent]
     features: [offside-rule, bytecode-vm]
     domain: [embedded]

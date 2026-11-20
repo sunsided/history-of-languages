@@ -7275,3 +7275,61 @@
   title: A Site Configuration Engine (draft of the Computing Systems 8(3) paper)
   year: 1995
   url: https://sources.debian.org/src/cfengine/1.4.9-3/doc/cfarticle.latex
+- id: apt-system-vol1-1959
+  type: manual
+  primary: true
+  authors: [MIT Servomechanisms Laboratory]
+  title: "APT System, Volume 1: General Description of the APT System"
+  year: 1959
+  url: https://archive.org/details/bitsavers_mitwhirlwie1GeneralDescriptionoftheAPTSystem1959_5339230
+- id: nbs-ir-76-1094
+  type: report
+  primary: true
+  authors: [John M. Evans Jr.]
+  title: "NBSIR 76-1094: Standards for Computer Aided Manufacturing"
+  venue: National Bureau of Standards
+  year: 1976
+  url: https://www.govinfo.gov/content/pkg/GOVPUB-C13-2ef4aaa5a150eedcb85a1e6985e90bfa/pdf/GOVPUB-C13-2ef4aaa5a150eedcb85a1e6985e90bfa.pdf
+- id: elzer-pearl-2005
+  type: paper
+  primary: true
+  authors: [Peter Elzer]
+  title: Anmerkungen zur (Früh-)Geschichte von PEARL
+  venue: PEARL-News 2, GI-Fachgruppe Echtzeitsysteme
+  year: 2005
+  url: https://real-time.de/news/news05-2.pdf
+- id: ewd814
+  type: web
+  primary: false
+  authors: [Edsger W. Dijkstra]
+  title: A review of a book on PEARL (EWD814)
+  year: 1979
+  url: https://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD814.html
+- id: halbwachs-lustre-1991
+  type: paper
+  primary: true
+  authors: [Nicolas Halbwachs, Paul Caspi, Pascal Raymond, Daniel Pilaud]
+  title: The Synchronous Data Flow Programming Language LUSTRE
+  venue: Proceedings of the IEEE 79(9)
+  year: 1991
+  url: https://homepage.cs.uiowa.edu/~tinelli/classes/181/Fall20/Papers/Halb91.pdf
+- id: benveniste-sync-2003
+  type: paper
+  primary: true
+  authors: [Albert Benveniste, Paul Caspi, Stephen A. Edwards, Nicolas Halbwachs, Paul Le Guernic, Robert de Simone]
+  title: The Synchronous Languages 12 Years Later
+  venue: Proceedings of the IEEE 91(1)
+  year: 2003
+  url: https://www.cs.columbia.edu/~sedwards/papers/benveniste2003synchronous.pdf
+- id: berry-esterel-v5-primer
+  type: manual
+  primary: true
+  authors: [Gérard Berry]
+  title: The Esterel v5 Language Primer
+  url: https://www.rw.cdl.uni-saarland.de/people/kaestner/private/es0203/esterel_primer.pdf
+- id: p4-16-spec
+  type: standard
+  primary: true
+  authors: [The P4 Language Consortium]
+  title: P4-16 Language Specification (working spec)
+  url: https://p4lang.github.io/p4-spec/docs/P4-16-working-spec.html

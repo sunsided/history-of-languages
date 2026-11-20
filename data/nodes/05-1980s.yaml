@@ -5022,6 +5022,9 @@
     "a synchronous programming language for the development of complex reactive systems" whose "imperative programming
     style ... allows the simple expression of parallelism and preemption"; compilers emit C or hardware (VHDL, Verilog).
     Lustre is its "cousin"; an IEEE standardisation effort ran 2007–2011.
+  relations:
+    - { type: targets, to: c, weight: moderate, confidence: high, sources: [halbwachs-lustre-1991], note: "\"Translators toward C, Le-Lisp, and ADA languages have been designed by the ESTEREL team.\"" }
+    - { type: targets, to: ada, weight: weak, confidence: high, sources: [halbwachs-lustre-1991] }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Esterel" }
@@ -5062,6 +5065,10 @@
     "a formally defined, declarative, and synchronous dataflow programming language for programming reactive systems",
     the core of SCADE since 1993 and "now used for critical control software in aircraft, helicopters, and nuclear power
     plants".
+  relations:
+    - { type: influenced_by, to: lucid, aspects: [dataflow-programming], weight: strong, confidence: high, sources: [halbwachs-lustre-1991], note: "\"This similarity is not casual since LUCID was the first main reference in the design of LUSTRE.\"" }
+    - { type: influenced_by, to: esterel, weight: weak, confidence: high, sources: [halbwachs-lustre-1991], note: "Compilation, not language design: \"The search for more complex control structures is borrowed from the compiling technique of ESTEREL\"; both compilers emit the OC automaton format." }
+    - { type: targets, to: c, weight: moderate, confidence: high, sources: [halbwachs-lustre-1991], note: "Through the OC format shared with Esterel, translated to C." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Lustre_(programming_language)" }

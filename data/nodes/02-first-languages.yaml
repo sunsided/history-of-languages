@@ -651,6 +651,9 @@
     "The original version was created before even FORTRAN was available"; later versions were rewritten in FORTRAN. It is
     "the predecessor to modern computer aided manufacturing (CAM) systems" and spawned ADAPT, EXAPT, UNIAPT and the
     robot language RAPT.
+  relations:
+    - { type: targets, to: ibm-704, weight: moderate, confidence: high, sources: [apt-system-vol1-1959], note: "\"Since almost all of the interested companies already had or planned soon to have an IBM 704 computer, the initial APT system was coded for that machine\"; the APT programs \"simulate a specially designed APT computer\"." }
+    - { type: targets, to: whirlwind, weight: weak, confidence: high, sources: [apt-system-vol1-1959], note: "The first \"limited prototype system\" ran \"on the Whirlwind Computer\" in early 1957." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/APT_(programming_language)" }

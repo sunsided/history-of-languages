@@ -576,6 +576,11 @@
     - { name: "Promela", hint: "Gerard J. Holzmann's verification modelling language for the SPIN model checker (Wikipedia). No year on the page." }
     - { name: "RSL", hint: "The list's RSL link points to a Robot Battle section that no longer exists (redirects to GarageGames). Unresolved." }
     - { name: "S2", hint: "S2 redirects to LiveJournal, where it is the journal-template language; no year or authors." }
+  research_questions:
+    - "Signal, G-code, IEC Instruction List, TTCN and Spin have no documented relation to existing nodes. Searched: Le Guernic et al. 1991 and Benveniste et al. 2003 (Signal is only contrasted with Lustre), NBS IR 76-1094 (RS-274 approved January 1963; no statement that it derives from APT), Wikipedia's Instruction list and Spin articles, ETSI ES 201 873-1 front matter."
+    - "APT's output reaches machines as RS-274 G-code via post-processors and later APT versions were written in Fortran (Wikipedia only); both need a dated primary source before an apt targets g-code or implemented_in fortran edge. The first ANSI APT standard, X3.37, was published in June 1974 (NBS IR 76-1094)."
+    - "Esterel began in 1982 (Marmorat and Rigault's robot car, per Berry's v5 primer), which conflicts with the node's 1980 decade dating; the primer says its design was influenced by Harel's Statecharts (1984) and the Argos variant, which are not nodes."
+    - "Missing nodes met while connecting industrial languages: Statecharts, Argos, Click (P4 rejects it as 'insufficiently constrained'), PacketTypes and PADS (ideas borrowed by P4), STEP 5 Statement List and DIN 19239, ASN.1 (embedded in TTCN-3), Parallax Propeller and its assembly."
 - id: hardware
   name: Hardware description languages
   summary: "Languages for describing digital and analog circuits: register-transfer notations, PLD languages, VHDL and Verilog, and HDLs embedded in Scala, Haskell and Python."
