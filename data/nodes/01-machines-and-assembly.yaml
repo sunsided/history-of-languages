@@ -548,13 +548,41 @@
     that drove type checking, and there was no assembler: system software was written in the high-level
     El-76, "an ALGOL-68 variant" in the English article's words.
   notes: >
-    Elbrus-2 followed (en: 1984; ru: developed 1977-1984, delivered 1985, up to 200 built), with a
-    zero-address stack instruction set. Boris Babayan led the later VLIW Elbrus line, not this machine.
+    Elbrus-2 (node elbrus-2) followed. Boris Babayan led the later VLIW Elbrus line, not this machine.
     No Burroughs machine node exists yet to carry the influence edge.
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Elbrus_(computer)" }
   sources: [wiki-elbrus, ruwiki-elbrus-1, ruwiki-el-76]
+
+- id: elbrus-2
+  name: Elbrus-2
+  aliases: [Эльбрус-2, Elbrus 2, MVK Elbrus-2]
+  kind: machine
+  category: general
+  cluster: machines/eastern-bloc
+  origin:
+    began: { year: 1977, precision: year, note: "\"разработан в 1977—1984 годах\" (ru.wikipedia)." }
+    first_appeared: { year: 1984, precision: disputed, note: "en.wikipedia dates Elbrus-2 to 1984; ru.wikipedia: developed 1977-1984, \"сдан в 1985 году\" (delivered in 1985)." }
+    places: [{ institution: Lebedev Institute of Precision Mechanics and Computer Engineering, city: Moscow, country: SU }]
+  creators:
+    - { name: Vsevolod Burtsev, role: chief designer of the series }
+  status: historical
+  summary: >
+    The second Elbrus multiprocessor from the Lebedev Institute: ten processors, two of them spares, for 125 million
+    operations per second, with a "безадресная, стековая" (zero-address, stack) instruction set in reverse Polish
+    notation. Its base language was El-76; Fortran, COBOL, PL/I, Pascal, Lisp and Simula 67 were also supported.
+    Boris Babayan put production at "до 200 машин" (up to 200), and it ran the Don-2N radar of the A-135 Moscow
+    missile defence system.
+  notes: >
+    The Elbrus-1K2 was built from Elbrus-2 components to replace the BESM-6, with full software compatibility, about
+    60 made. Elbrus-3 (1986-1994, led by Babayan) moved to VLIW and was not put into production.
+  relations:
+    - { type: successor_of, to: elbrus-1, weight: strong, confidence: high, sources: [ruwiki-elbrus-2, wiki-elbrus] }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Elbrus_(computer)" }
+  sources: [ruwiki-elbrus-2, wiki-elbrus]
 
 - id: agat
   name: Agat
@@ -633,7 +661,7 @@
     then loaded from cassette.
   notes: >
     Developed by a "Jugendforscherkollektiv" of young engineers at Robotron Riesa; no individuals are
-    named. The Kleincomputer BASIC of the KC 87 is not yet a node.
+    named. The Kleincomputer BASIC of the KC 87 is the KC-BASIC dialect (node kc-basic).
   relations:
     - { type: targets, to: u880, weight: strong, confidence: high, note: "\"UD880 @ 1 MHz\" on the Z 1013.01; 2 MHz on later models.", sources: [dewiki-z-1013] }
   research_status: draft
@@ -1937,8 +1965,8 @@
     consoles".
   notes: >
     Wikipedia counts 35 opcodes in the commonly emulated set; the 1978 VIP manual lists 31. Later variants are
-    separate dialects not yet in the dataset: CHIP-48 (Andreas Gustafsson, 1990, for the HP-48), SUPER-CHIP (Erik
-    Bryntse, about 1991) and XO-CHIP (John Earnest). Wikipedia's PICO-8 navbox calls it "a predecessor to PICO-8
+    separate nodes: CHIP-48 (Andreas Gustafsson, 1990, for the HP-48), SUPER-CHIP (Erik Bryntse, 1991) and
+    XO-CHIP (John Earnest, 2014). Wikipedia's PICO-8 navbox calls it "a predecessor to PICO-8
     and other fantasy consoles"; no designer statement of influence was found, so no edge is stored.
   research_status: draft
   confidence: medium
@@ -1962,6 +1990,110 @@
       0212 F090
       0214 F000
     sources: [rca-1978-cosmac-vip-manual]
+
+- id: chip-48
+  name: CHIP-48
+  kind: machine
+  category: domain-specific
+  cluster: machines/fantasy
+  origin:
+    first_appeared: { year: 1990, date: "1990-09", precision: exact, note: "\"In 1990, a CHIP-8 interpreter called CHIP-48 was made by Andreas Gustafsson for HP-48 graphing calculators\" (Wikipedia); posted to comp.sys.handhelds in September 1990 (chip-8.github.io extensions list)." }
+  creators:
+    - { name: Andreas Gustafsson, role: author }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    features: [interpreter]
+    domain: [game-scripting]
+  summary: >
+    Andreas Gustafsson's CHIP-8 interpreter for the HP-48 graphing calculators, posted to comp.sys.handhelds in
+    1990. It "subtly changed the semantics of a few of the opcodes": the shifts 8XY6 and 8XYE shift VX and ignore
+    VY, FX55 and FX65 leave I incremented by one less, and BXNN jumps to XNN plus VX. SUPER-CHIP was built on it,
+    and because "many online resources about CHIP-8 propagate these new semantics", many later CHIP-8 games do not
+    run on the original COSMAC VIP interpreter.
+  relations:
+    - { type: dialect_of, to: chip-8, weight: strong, confidence: high, sources: [wiki-chip-8, chip8-extensions-list] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CHIP-8" }
+  sources: [wiki-chip-8, chip8-extensions-list]
+
+- id: super-chip
+  name: SUPER-CHIP
+  aliases: [SCHIP, S-CHIP, SuperChip8]
+  kind: machine
+  category: domain-specific
+  cluster: machines/fantasy
+  origin:
+    first_appeared: { year: 1991, date: "1991-05-16", precision: exact, note: "Version 1.0 announced on comp.sys.handhelds on 16 May 1991 (chip-8.github.io extensions list, which links the post); Wikipedia's opcode table is \"based on the SUPER-CHIP specification from 1991\"." }
+  creators:
+    - { name: Erik Bryntse, role: author }
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [interpreter]
+    domain: [game-scripting]
+  milestones:
+    - { version: "1.0", year: 1991, date: "1991-05-16", summary: "For the HP 48S and 48SX: a 128x64 high-resolution mode, 16x16 sprites, an exit instruction and saving registers to RPL user flags.", sources: [chip8-extensions-list] }
+    - { version: "1.1", year: 1991, date: "1991-05-24", summary: "Scrolling (00CN down, 00FB right, 00FC left) and FX30 for large digit sprites; FX55 and FX65 no longer increment I.", sources: [chip8-extensions-list] }
+  summary: >
+    Erik Bryntse's extension of CHIP-48 for the HP 48 calculators: "SCHIP extended the CHIP-8 language with a
+    larger resolution and several additional opcodes", 128x64 pixels, 16x16 sprites and, from 1.1, screen
+    scrolling. It kept CHIP-48's changed opcode semantics. The chip-8.github.io community list counts SUPER-CHIP
+    1.1 and XO-CHIP as the extensions still in use, and Wikipedia's opcode table follows its 1991 specification.
+  relations:
+    - { type: dialect_of, to: chip-48, weight: strong, confidence: high, note: "\"Erik Bryntse later created another interpreter based on CHIP-48, titled SUPER-CHIP\" (Wikipedia).", sources: [wiki-chip-8, chip8-extensions-list] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CHIP-8" }
+  sources: [wiki-chip-8, chip8-extensions-list]
+
+- id: xo-chip
+  name: XO-CHIP
+  aliases: [XO-Chip, XOCHIP]
+  kind: machine
+  category: domain-specific
+  cluster: machines/fantasy
+  origin:
+    first_appeared: { year: 2014, precision: year, note: "\"An extension for SCHIP created by John Earnest in 2014\" (chip-8.github.io extensions list). The specification in the Octo repository carries no date, only versions 1.0 and 1.1." }
+  creators:
+    - { name: John Earnest, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [interpreter]
+    domain: [game-scripting]
+  milestones:
+    - { version: "1.1", year: 2014, summary: "Adds pitch := vx (FX3A) and widens saveflags and loadflags to a full nybble range. The year of 1.1 was not found; 2014 is the extension's.", sources: [octo-xo-chip-spec] }
+  summary: >
+    John Earnest's extension of SUPER-CHIP, made alongside his Octo assembler and IDE, which test suites treat as
+    its reference implementation. It keeps CHIP-8 programs working and adds a 64 KB address space (i := long), a
+    second bitplane for four-colour graphics, a programmable 16-byte audio pattern buffer with pitch, upward
+    scrolling and register-range save and load, the last borrowed from CHIP-8E.
+  notes: >
+    Wikipedia: XO-CHIP "takes some from behavior from SCHIP and CHIP-8E"; CHIP-8E is not a node. The specification
+    says it is "informed by Chip16". The milestone year for 1.1 is a placeholder (the extension's year); the
+    Octo repository history would date it.
+  relations:
+    - { type: dialect_of, to: super-chip, weight: strong, confidence: high, note: "\"An extension for SCHIP\" (chip-8.github.io).", sources: [chip8-extensions-list, octo-xo-chip-spec] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CHIP-8", homepage: "https://johnearnest.github.io/Octo/" }
+  sources: [octo-xo-chip-spec, chip8-extensions-list, wiki-chip-8]
+  example:
+    title: Playing a click through the audio buffer
+    language: XO-CHIP (Octo assembly)
+    note: "From the XO-CHIP specification: load a 16-byte pattern into the audio buffer, then sound it for 2/60 s through the buzzer timer."
+    code: |
+      : click
+        0x02 0xCD 0x00 0x00 0x00 0x00 0x00 0x00
+        0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00
+
+      i := click
+      audio
+      v0 := 2
+      buzzer := v0
+    sources: [octo-xo-chip-spec]
 
 - id: dcpu-16
   name: DCPU-16

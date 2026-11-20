@@ -1968,6 +1968,47 @@
   links: { wikipedia: "https://en.wikipedia.org/wiki/MARK_IV_(software)" }
   sources: [wiki-mark-iv]
 
+- id: ramis
+  name: RAMIS
+  aliases: [RAMIS II, Random Access Marketing Information System, Rapid Access Management Information System]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1965, precision: year, note: "Gerald Cohen (CHM oral history, 1986): designed in 1965 for Allied Chemical's market-research department on a GE 625 time-sharing computer; \"In 1965 we had the GE version. In 1966 we got a follow-on contract\" for an IBM 360 Model 50 version. Wikipedia: \"initially developed in the mid 1960s\"." }
+    places: [{ institution: Mathematica, city: New York, country: US }]
+  creators:
+    - { name: Gerald D. Cohen, role: designer and lead programmer, affiliation: Mathematica }
+    - { name: Jack Goldstone, role: co-author of the specification, affiliation: Allied Chemical }
+  status: legacy
+  tags:
+    paradigm: [declarative, query]
+    features: [english-like-syntax, interactive-time-sharing]
+    domain: [databases, business-data-processing]
+  milestones:
+    - { version: IBM System/360, year: 1966, summary: "Rewritten for Allied's IBM 360 Model 50 when the GE machine was retired; renamed Rapid Access Management Information System during a Nabisco project.", sources: [chm-1986-cohen-oral-history] }
+    - { version: NCSS, year: 1967, summary: "Put on National CSS's IBM time-sharing service for an American Express project, then sold to NCSS customers with a per-CPU-second surcharge.", sources: [chm-1986-cohen-oral-history, wiki-focus] }
+    - { version: RAMIS II, year: 1979, summary: "Upgraded and renamed RAMIS II under the Mathematica Products Group; a Computerworld article of September 1979 is titled \"RAMIS II English-like nonprocedural\". Year of the rename not established.", sources: [wiki-ramis, chm-1986-cohen-oral-history] }
+  summary: >
+    Mathematica's report and file language, in the words of Wikipedia's FOCUS article "the
+    first Fourth-generation programming language". Gerald Cohen designed it in 1965 so that market analysts at Allied
+    Chemical could describe files separately from the data, load them and write reports from teletype terminals,
+    "format free", without fixed columns. Offered on National CSS time-sharing from about 1967, it showed that
+    software could be sold as a usage surcharge. When Cohen left in 1974 he recreated it as FOCUS, whose simplest
+    syntax "is almost a direct clone of the syntax of RAMIS".
+  notes: >
+    Cohen called RAMIS and FOCUS "non-procedural languages"; the term fourth-generation language came around 1981.
+    Wikipedia's FOCUS article names Gerald D. Cohen and Peter Mittelman as principal developers; the CHM transcript
+    spells the second name "Peter Middleman" (hired during the Nabisco project), so he is not listed as a creator
+    until the spelling is settled. Later owners: Martin Marietta (1983), On-Line Software International (1987),
+    Computer Associates. No period code sample was found; Computerworld's 1979 RAMIS II article is a lead.
+  relations:
+    - { type: targets, to: ibm-system-360, weight: moderate, confidence: high, year: 1966, note: "\"We went to an IBM 360 Model 50.\"", sources: [chm-1986-cohen-oral-history] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ramis_software" }
+  sources: [chm-1986-cohen-oral-history, wiki-ramis, wiki-focus]
+
 - id: focal
   name: FOCAL
   aliases: [FOCAL-69, FOCAL-71, FOCAL-8, FOCAL-11]

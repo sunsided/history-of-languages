@@ -4183,6 +4183,41 @@
   links: { wikipedia: "https://en.wikipedia.org/wiki/Plan_9_from_Bell_Labs" }
   sources: [wiki-plan-9]
 
+- id: acc
+  name: ACC
+  aliases: [ACC compiler, accompiler, Dave Ashley's C compiler]
+  kind: language
+  category: systems
+  cluster: c-family
+  origin:
+    first_appeared: { year: 1997, precision: year, note: "The original shareware README in the 2009 GPL package reads \"Everything here created and Copyright (C) 1997 by David Ashley\"; Ashley's own source and batch files in it are dated from December 1996 to February 1997 and later. The first public release date itself was not found (Simtel or BBS listings would give it)." }
+    places: [{ city: Newbury Park, country: US }]
+  creators:
+    - { name: David Ashley, role: author }
+  status: historical
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [weak-typing]
+    memory: [manual-memory]
+  milestones:
+    - { version: GPL release, year: 2009, date: "2009-12-11", summary: "Source GPL'd with Ashley's permission and put on SourceForge (accompiler).", sources: [sourceforge-accompiler] }
+  summary: >
+    "A near-C compiler for the IBMPC line of computers for MSDOS programs" by David Ashley, shipped as shareware with
+    its own 386 assembler (syntax "very similiar to TASM's"), linker and a library built on Tran's PMODE DOS
+    extender, so that compiled programs run in 32-bit protected mode with flat 4-byte pointers. It aimed at demo
+    coders who otherwise wrote "100% asm": small, fast, with inline #asm blocks, but with no floating point, no
+    argument type checking, 16-bit int and its own object format.
+  notes: >
+    The author's address in the README is Newbury Park, California, which is the basis for the place. Ashley's
+    page (xdr.com/dash/davedos.html) is gone and the Wayback Machine could not be reached from this session; a
+    capture would date the first public release. Not to be confused with OpenACC.
+  relations:
+    - { type: dialect_of, to: c, weight: strong, confidence: high, note: "\"a near-C compiler\": no floating point, no type checking of call arguments, unsigned char, a restricted #if.", sources: [ashley-1997-acc-readme] }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://sourceforge.net/projects/accompiler/" }
+  sources: [ashley-1997-acc-readme, sourceforge-accompiler]
+
 - id: c-minus-minus
   name: C--
   aliases: [C minus minus, Cmm]
@@ -6145,7 +6180,7 @@
     as a metalanguage for building executable semantics of other languages and logics.
   notes: >
     The 1999 manual names ELAN (France) and CafeOBJ (Japan) as the two other rewriting-logic language
-    implementations; neither is a node yet. Development later moved to a collaboration centred on the University
+    implementations. Development later moved to a collaboration centred on the University
     of Illinois Urbana-Champaign (maude.cs.illinois.edu); dates of Maude 2 and 3 are not established here.
   relations:
     - { type: superset_of, to: obj, weight: strong, confidence: high, sources: [clavel-1999-maude-manual], note: "\"Maude has been influenced in important ways by OBJ3. In particular, Maude's equational logic sublanguage essentially contains OBJ3 as a sublanguage.\"" }
@@ -6170,6 +6205,82 @@
         rl [change] : q q q q => $ .
       endm
     sources: [clavel-1999-maude-manual]
+
+- id: elan-rewriting
+  name: ELAN (rewriting)
+  aliases: [ELAN, ELAN rewriting language]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    first_appeared: { year: 1994, precision: year, note: "Marian Vittek's thesis \"ELAN: Un cadre logique pour le prototypage de langages de programmation\" (Université Henri Poincaré - Nancy 1, October 1994) is the first ELAN reference in the manual, and the system's banner reads \"Copyright (C) 1994-2006 LORIA\". The manual says the group \"started in the early nineties to design and implement\" it." }
+    places: [{ institution: LORIA, city: Nancy, country: FR }]
+  creators:
+    - { name: Claude Kirchner, role: designer }
+    - { name: Hélène Kirchner, role: designer }
+    - { name: Marian Vittek, role: designer and first implementer }
+    - { name: Peter Borovanský, role: developer }
+    - { name: Pierre-Etienne Moreau, role: developer (compiler) }
+  status: historical
+  tags:
+    paradigm: [term-rewriting, declarative]
+    features: [module-system, generics]
+  milestones:
+    - { version: "3.7", year: 2006, date: "2006-11-29", summary: "Last user manual, 29 November 2006.", sources: [borovansky-2006-elan-manual] }
+  summary: >
+    "A language to express non-deterministic computations via rewrite rules and strategies", built in the
+    PROTHEO project of CNRS, INRIA and the universities of Nancy. Its premise is that inference rules are rewrite
+    rules: a logic is given by mixfix syntax "as in the OBJ language", conditional rewrite rules and a strategy
+    saying how to apply them, which the manual calls a computational system, "rewriting logic extended with the
+    fundamental notion of strategies". With Maude and CafeOBJ it was one of the three rewriting-logic languages of
+    the late 1990s, and its compiler work led to Tom.
+  notes: >
+    Not the Dutch educational ELAN (node elan). The manual says the language "evolved a lot between ELAN version
+    1.17 and ELAN version 3.0" but dates neither; an ELAN release history would add them as milestones. Hélène Kirchner's ERCIM News article
+    (January 1999) compares it with ASF+SDF, Maude and CafeOBJ and names non-determinism and strategies as its
+    distinguishing features.
+  relations:
+    - { type: influenced_by, to: obj, aspects: [term-rewriting], weight: moderate, confidence: high, note: "\"The syntax of the logic can be described using mixfix operators as in the OBJ language\" (manual, 1.1).", sources: [borovansky-2006-elan-manual] }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "http://elan.loria.fr" }
+  sources: [borovansky-2006-elan-manual, kirchner-1999-ercim-elan, clavel-1999-maude-manual, tom-about]
+
+- id: cafeobj
+  name: CafeOBJ
+  aliases: [Cafe-OBJ, CafeOBJ system]
+  kind: language
+  category: research
+  cluster: logic
+  origin:
+    began: { year: 1995, date: "1995-10", precision: exact, note: "Futatsugi and Sawada, \"Design considerations for cafe specification environment\", OBJ2 10th Anniversary Workshop, October 1995 (cited in the 1996 report)." }
+    first_appeared: { year: 1996, precision: year, note: "Diaconescu and Futatsugi, \"Logical Semantics for CafeOBJ\", JAIST research report IS-RR-96-0024S, issued 28 August 1996, presents \"the semantics of CafeOBJ system and language\" and cites a CafeOBJ user's manual at IPA (www.ipa.go.jp/STC/CafeP/). The CafeOBJ Report (World Scientific) followed in 1998." }
+    places: [{ institution: Japan Advanced Institute of Science and Technology, city: Ishikawa, country: JP }]
+  creators:
+    - { name: Kokichi Futatsugi, role: project leader and designer }
+    - { name: Răzvan Diaconescu, role: designer of the logical semantics }
+  status: maintained
+  tags:
+    paradigm: [term-rewriting, declarative, object-oriented]
+    features: [module-system, generics, abstract-data-types]
+  summary: >
+    A Japanese algebraic specification and programming language that "can be seen as a successor of the famous
+    algebraic specification and programming language OBJ", led by Kokichi Futatsugi, one of the original OBJ2
+    developers, at JAIST. On OBJ's executable equations and Clear-derived module system it adds Meseguer's rewriting
+    logic for concurrent systems, behavioural specification with hidden sorts, and order-sorted types; Răzvan
+    Diaconescu gave it a semantics over a "CafeOBJ cube" of eight logics. Unlike Maude, a module's kind follows from
+    its contents rather than a keyword.
+  notes: >
+    Goguen's OBJ family page credits it with a compiled mode "based on an abstract rewriting machine". The 1996
+    report says rewriting logic "brings the Maude language close to a subset of CafeOBJ" and borrows "the rewriting
+    logic a la Maude treatment of objects". No code sample was read; the CafeOBJ Report (1998) or the user's manual
+    would supply one.
+  relations:
+    - { type: successor_of, to: obj, weight: strong, confidence: high, note: "\"CafeOBJ can be seen as a succesor of the famous algebraic specification and programming language OBJ\"; equational specification \"is inherited from OBJ\", and so are the principles of the module system.", sources: [diaconescu-1996-cafeobj-semantics, goguen-obj-family] }
+    - { type: influenced_by, to: maude, aspects: [term-rewriting, object-oriented], weight: moderate, confidence: high, note: "\"the rewriting logic a la Maude treatment of objects\" is one of CafeOBJ's two sources of object orientation (1996 report).", sources: [diaconescu-1996-cafeobj-semantics] }
+  research_status: draft
+  confidence: medium
+  sources: [diaconescu-1996-cafeobj-semantics, goguen-obj-family, kirchner-1999-ercim-elan]
 
 - id: opal
   name: Opal

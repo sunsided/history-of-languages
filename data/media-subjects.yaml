@@ -2612,6 +2612,7 @@
   wiki: Elbrus (computer)
   nodes:
   - elbrus-1
+  - elbrus-2
 - id: agat
   kind: machine
   wiki: Agat (computer)

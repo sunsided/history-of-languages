@@ -4698,8 +4698,9 @@
     IBM's 4300 machines arrived. Cohen called FOCUS and RAMIS "non-procedural languages"; a Datamation article
     about a FOCUS project popularised the term "fourth-generation language" around 1981.
   notes: >
-    RAMIS (Mathematica) is FOCUS's "direct ancestor" but is not yet a node, so the edge is missing; it is in this
-    cluster's backlog. Gerald D. Cohen is the spelling Wikipedia uses; he has no article of his own.
+    Gerald D. Cohen is the spelling Wikipedia uses; he has no article of his own.
+  relations:
+    - { type: influenced_by, to: ramis, weight: strong, confidence: high, sources: [wiki-focus, wiki-ramis, chm-1986-cohen-oral-history], note: "\"RAMIS was the direct ancestor of FOCUS\"; Cohen \"recreated the product he had built at Mathematica\", and \"the syntax of FOCUS in its simplest elements is almost a direct clone of the syntax of RAMIS\" (Wikipedia). Cohen himself (1986) calls RAMIS his \"major competitor\" and both \"non-procedural languages\". Not dialect_of: a separate codebase by a competing company." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Focus_(programming_language)" }

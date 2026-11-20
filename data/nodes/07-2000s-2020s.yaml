@@ -11060,11 +11060,12 @@
     language. Its design "follows our research on rule based languages, and our experiences on the efficient
     compilation of ELAN"; the name stands for "To One Matching".
   notes: >
-    ELAN, the rewriting language Tom grew out of, is not a node yet (logic backlog). The affiliations of the 2003
+    The affiliations of the 2003
     paper (LORIA-INRIA Nancy; Comenius University, Bratislava, for Vittek) come from a search snippet, not a read copy.
   relations:
     - { type: extension_of, to: java, weight: strong, confidence: high, sources: [wiki-tom, tom-manual-2008], note: "\"adds new matching primitives to C and Java\"." }
     - { type: extension_of, to: c, weight: strong, confidence: high, sources: [wiki-tom, tom-about], note: "\"adds a new matching primitives to C and Java: %match\"." }
+    - { type: influenced_by, to: elan-rewriting, aspects: [term-rewriting], weight: strong, confidence: high, sources: [tom-about], note: "\"Its design follows our research on rule based languages, and our experiences on the efficient compilation of ELAN developed by the Protheo group\"; conditional rules with matching conditions are \"as in ELAN or ASF+SDF\"." }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Tom_(pattern_matching_language)", homepage: "https://tom.loria.fr/" }
@@ -11223,13 +11224,14 @@
     debug at the EGL level. IBM offered migration from Informix-4GL and VisualAge Generator into it; Eclipse
     archived the open-source EDT in 2017.
   relations:
+    - { type: successor_of, to: cross-system-product, from_version: VisualAge Generator 4.5.3, weight: strong, confidence: high, sources: [cernosek-2005-egl], note: "\"IBM's 4GL has evolved and has been renamed EGL\"; IBM's chart runs CSP 1981, VisualGen, VisualAge Generator 4.5.3 (2/2002), WSED v5.0 (3/2003)." }
     - { type: targets, to: java, weight: strong, confidence: high, sources: [cernosek-2005-egl], note: "\"the EGL tools generate Java or COBOL code\"." }
     - { type: targets, to: cobol, weight: strong, confidence: high, sources: [cernosek-2005-egl] }
     - { type: influenced_by, to: informix-4gl, weight: weak, confidence: low, sources: [wiki-egl, wiki-informix-4gl, cernosek-2005-egl], note: "Informix-4GL's infobox lists EGL as influenced, and IBM shipped an Informix 4GL-to-EGL migration utility; EGL's own lineage is IBM's CSP/VisualAge Generator. An IBM statement that Informix-4GL shaped EGL's design would confirm it." }
   notes: >
     IBM donated it to the Eclipse Foundation as EGL Development Tools (EDT) under the EPL (year not found); the
-    project was "proposed for termination in 2014" and archived in 2017. Its direct ancestors, IBM Cross System Product (1981) and VisualGen/VisualAge Generator (1994-2002), are not yet
-    nodes; see this cluster's research questions.
+    project was "proposed for termination in 2014" and archived in 2017. VisualGen and VisualAge Generator (1994-2002) are milestones of the
+    Cross System Product node.
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/EGL_(programming_language)", homepage: "https://www.eclipse.org/edt/" }

@@ -10378,3 +10378,105 @@
   venue: Wikipedia
   url: https://en.wikipedia.org/wiki/Warcraft_III:_Reign_of_Chaos
   checked: '2026-11-20'
+- id: chip8-extensions-list
+  type: web
+  primary: false
+  title: CHIP-8 extensions and compatibility
+  venue: chip-8.github.io (CHIP-8 community research site)
+  url: https://chip-8.github.io/extensions
+  checked: '2026-11-20'
+- id: octo-xo-chip-spec
+  type: standard
+  primary: true
+  authors: [John Earnest]
+  title: XO-CHIP Specification
+  venue: Octo repository (GitHub)
+  url: https://github.com/JohnEarnest/Octo/blob/gh-pages/docs/XO-ChipSpecification.md
+  checked: '2026-11-20'
+- id: oss-1981-basic-a-plus-manual
+  type: manual
+  primary: true
+  authors: [Optimized Systems Software]
+  title: OSS BASIC A+ for the ATARI 800, Version 3.1
+  year: 1981
+  url: https://www.atarimania.com/documents/OSS_BASIC_A_3.1_manual.pdf
+  checked: '2026-11-20'
+- id: wiki-basic-a-plus
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: BASIC A+"
+  url: https://en.wikipedia.org/wiki/BASIC_A%2B
+  checked: '2026-11-20'
+- id: wiki-ramis
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: RAMIS (software)"
+  url: https://en.wikipedia.org/wiki/Ramis_software
+  checked: '2026-11-20'
+- id: wiki-ibm-cross-system-product
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IBM Cross System Product"
+  url: https://en.wikipedia.org/wiki/IBM_Cross_System_Product
+  checked: '2026-11-20'
+- id: borovansky-2006-elan-manual
+  type: manual
+  primary: true
+  authors: [Peter Borovanský, Horatiu Cirstea, Eric Deplagne, Hubert Dubois, Claude Kirchner, Hélène Kirchner, Pierre-Etienne Moreau, Quang-Huy Nguyen, Christophe Ringeissen, Marian Vittek]
+  title: "ELAN User Manual, ELAN V3.7 (29 November 2006)"
+  venue: LORIA, Nancy
+  year: 2006
+  url: https://www.informatik.uni-bremen.de/agbkb/lehre/gts/seminar/Elan-manual.pdf
+  checked: '2026-11-20'
+- id: kirchner-1999-ercim-elan
+  type: web
+  primary: true
+  authors: [Hélène Kirchner]
+  title: "ELAN"
+  venue: ERCIM News No. 36 (January 1999)
+  year: 1999
+  url: https://www.ercim.eu/publication/Ercim_News/enw36/kirchner.html
+  checked: '2026-11-20'
+- id: diaconescu-1996-cafeobj-semantics
+  type: report
+  primary: true
+  authors: [Răzvan Diaconescu, Kokichi Futatsugi]
+  title: Logical Semantics for CafeOBJ
+  venue: JAIST research report IS-RR-96-0024S (28 August 1996)
+  year: 1996
+  url: https://dspace.jaist.ac.jp/dspace/bitstream/10119/8372/1/IS-RR-96-0024S.pdf
+  checked: '2026-11-20'
+- id: goguen-obj-family
+  type: web
+  primary: true
+  authors: [Joseph Goguen]
+  title: The OBJ Family
+  venue: UCSD (Goguen's home page)
+  url: https://cseweb.ucsd.edu/~goguen/sys/obj.html
+  checked: '2026-11-20'
+- id: ruwiki-elbrus-2
+  type: encyclopedia
+  primary: false
+  title: "Википедия: Эльбрус-2 (section of the Elbrus series article)"
+  url: https://ru.wikipedia.org/wiki/Эльбрус-2
+  checked: '2026-11-20'
+- id: dewiki-kc-87
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia (de): Robotron KC 87"
+  url: https://de.wikipedia.org/wiki/Robotron_KC_87
+  checked: '2026-11-20'
+- id: ashley-1997-acc-readme
+  type: manual
+  primary: true
+  authors: [David Ashley]
+  title: "ACC README (original shareware README, Copyright 1997), README-old.txt and DOCS/ACC.DOC in the GPL package acc 12-11-2009.zip"
+  year: 1997
+  url: https://sourceforge.net/projects/accompiler/files/
+  checked: '2026-11-20'
+- id: sourceforge-accompiler
+  type: web
+  primary: false
+  title: "accompiler: David Ashley's C compiler (SourceForge project, registered 2009-12-11)"
+  url: https://sourceforge.net/projects/accompiler/
+  checked: '2026-11-20'

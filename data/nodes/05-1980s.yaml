@@ -4961,6 +4961,43 @@
   links: { wikipedia: "https://en.wikipedia.org/wiki/Uniface_(programming_language)" }
   sources: [wiki-uniface]
 
+- id: cross-system-product
+  name: Cross System Product
+  aliases: [CSP, IBM CSP, CSP/AD, CSP/AE, VisualGen, VisualAge Generator, VAGen]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1981, precision: year, note: "\"As far back as 1981, when IBM introduced a tool called Cross System Product\" (Cernosek, IBM white paper, 2005); IBM's lineage chart there starts at \"CSP 1981\". Wikipedia also gives 1981; no announcement letter was found." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: IBM, role: developer }
+  status: extinct
+  tags:
+    paradigm: [procedural, imperative]
+    domain: [business-data-processing]
+  milestones:
+    - { version: "3", year: 1986, summary: "DB2 support under CICS/OS/VS and MVS/TSO, SQL/DS under VSE and VM/SP, and MVS/XA.", sources: [wiki-ibm-cross-system-product] }
+    - { version: "3.3", year: 1990, date: "1990-05", summary: "On IBM's EGL lineage chart.", sources: [cernosek-2005-egl] }
+    - { version: "4.1", year: 1992, date: "1992-08", summary: "The last CSP version; out of support at the end of 2001.", sources: [cernosek-2005-egl, wiki-ibm-cross-system-product] }
+    - { version: VisualGen 1.0, year: 1994, date: "1994-06", summary: "Renamed VisualGen: client/server development, GUIs, non-IBM data stores and execution beyond the mainframe.", sources: [cernosek-2005-egl, wiki-ibm-cross-system-product] }
+    - { version: VisualAge Generator 2.2, year: 1996, date: "1996-06", summary: "Renamed VisualAge Generator (VAGen).", sources: [cernosek-2005-egl, wiki-ibm-cross-system-product] }
+    - { version: VisualAge Generator 4.5.3, year: 2002, date: "2002-02", summary: "Last VAGen release on IBM's chart before EGL in WebSphere Studio Enterprise Developer 5.0 (March 2003).", sources: [cernosek-2005-egl] }
+  summary: >
+    IBM's 4GL application generator for online systems on its mainframes: a family of "source code generators" in
+    which developers interactively defined, tested, generated and ran programs, split into a development side
+    (CSP/AD) and a runtime (CSP/AE). Renamed VisualGen in 1994 and VisualAge Generator in 1996, it is the root of
+    the line that IBM says "has evolved and has been renamed EGL".
+  notes: >
+    Wikipedia says the 1987 SAA announcement raised doubts about IBM's commitment to CSP. VisualAge Generator was
+    withdrawn in 2009 in favour of Rational Business Developer. Which language CSP generated is
+    not stated in the sources read, so there is no targets edge; nor is a code sample. A CSP/AD reference manual on
+    bitsavers or IBM's publication archive would settle both.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IBM_Cross_System_Product" }
+  sources: [cernosek-2005-egl, wiki-ibm-cross-system-product]
+
 - id: informix-4gl
   name: Informix-4GL
   aliases: [I-4GL, IBM Informix-4GL]
@@ -5744,6 +5781,52 @@
       ' Hello World for Amiga Basic
       PRINT "Hello world!"
 
+- id: basic-a-plus
+  name: BASIC A+
+  aliases: [OSS BASIC A+, BASIC A Plus]
+  kind: language
+  category: general
+  cluster: basic/atari
+  origin:
+    first_appeared: { year: 1981, date: "1981-05", precision: exact, note: "The OSS manual's title page reads \"COPYRIGHT (C) 1981, OSS / MAY 1981 / Version 3.1\". Wikipedia's text says \"introduced by Optimized Systems Software in 1981\"; its infobox says 1983." }
+    places: [{ institution: Optimized Systems Software, country: US }]
+  status: extinct
+  tags:
+    paradigm: [imperative, structured]
+    features: [line-numbers, interpreter, repl]
+  summary: >
+    Optimized Systems Software's disk-based extension of Atari BASIC for the Atari 800, "developed by the team
+    that created Atari BASIC". Its manual is an add-on to Atari's own BASIC reference manual and marks what is new:
+    structured IF...ELSE...ENDIF and WHILE...ENDWHILE, TRACE, PRINT USING, DPEEK and DPOKE, substrings, DOS
+    commands such as DIR and ERASE, and statements for player/missile graphics (PMGRAPHICS, PMMOVE, MISSILE). It
+    was followed by the cartridge BASIC XL.
+  notes: >
+    It loads from disk under OSS's OS/A+ or Atari DOS and, per Wikipedia, takes 15 KB of RAM where Atari BASIC sat
+    in an 8 KB cartridge. The individual authors are not named in the sources read.
+  relations:
+    - { type: superset_of, to: atari-basic, weight: strong, confidence: high, note: "The manual is \"intended as an 'add-on' or appendix\" to Atari's BASIC Reference Manual, and its contents mark sections \"new or substantially changed from standard Atari Basic\".", sources: [oss-1981-basic-a-plus-manual, wiki-basic-a-plus] }
+    - { type: targets, to: mos-6502, weight: strong, confidence: high }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/BASIC_A%2B" }
+  sources: [oss-1981-basic-a-plus-manual, wiki-basic-a-plus, wiki-optimized-systems-software]
+  example:
+    title: Nested IF...ELSE...ENDIF
+    language: BASIC A+ 3.1
+    year: 1981
+    note: "From the OSS BASIC A+ manual (May 1981), page 22-A: print which of A, B and C is largest. The colon after the condition is required and THEN is not allowed."
+    code: |
+      100 IF A>B : REM SO FAR A IS BIGGER
+      110   IF A>C : PRINT "A BIGGEST"
+      120   ELSE : PRINT "C BIGGEST"
+      130   ENDIF
+      140 ELSE
+      150   IF B>C : PRINT "B BIGGEST"
+      160   ELSE : PRINT "C BIGGEST"
+      170   ENDIF
+      180 ENDIF
+    sources: [oss-1981-basic-a-plus-manual]
+
 - id: basic-xl
   name: BASIC XL
   aliases: [OSS BASIC XL]
@@ -5766,9 +5849,9 @@
   notes: >
     Bill Wilkinson put sales at about 12,000 copies before the merger with ICD, 2.5 to 3 times those of
     Action!. After FAST, editing a running program invalidates the stored addresses, so CONT is blocked.
-    BASIC A+, the disk-based predecessor, is not yet a node and has no year in the sources read.
   relations:
     - { type: dialect_of, to: atari-basic, weight: strong, confidence: high, note: "\"BASIC A+, BASIC XL, and BASIC XE are based on Atari BASIC.\"", sources: [wiki-optimized-systems-software] }
+    - { type: successor_of, to: basic-a-plus, weight: strong, confidence: high, note: "\"bank-selected cartridge version of the language that replaced BASIC A+\".", sources: [wiki-optimized-systems-software, wiki-basic-a-plus] }
     - { type: targets, to: mos-6502, weight: strong, confidence: high }
   research_status: draft
   confidence: medium
@@ -5806,32 +5889,40 @@
 
 - id: kc-basic
   name: KC-BASIC
-  aliases: [KC BASIC, HC-BASIC]
+  aliases: [KC BASIC, HC-BASIC, Kleincomputer BASIC, KC 87 BASIC, Z 9001 BASIC]
   kind: language
   category: educational
   cluster: machines/eastern-bloc
   origin:
-    first_appeared: { year: 1986, precision: year, note: "Built into the ROM of the KC 85/3, which \"kam 1986 in den Handel\". Before that the KC 85/2 loaded it from cassette or from the M006 BASIC module; no date found for those." }
-    places: [{ institution: "VEB Mikroelektronik \"Wilhelm Pieck\" Mühlhausen", city: Mühlhausen, country: DD }]
+    first_appeared: { year: 1984, precision: year, note: "The Robotron Z 9001 went into series production in September 1984, and \"Mit dem Erscheinen des Z 9001 war gleichzeitig eine angepasste Version des K-1520-BASIC erhältlich\" (de.wikipedia, Robotron KC 87). In Mühlhausen it was first built into ROM with the KC 85/3, which \"kam 1986 in den Handel\"; the KC 85/2 loaded it from cassette or the M006 module (no date found)." }
+    places: [{ institution: "VEB Mikroelektronik \"Wilhelm Pieck\" Mühlhausen", city: Mühlhausen, country: DD }, { institution: Robotron, city: Dresden, country: DD }]
   status: extinct
   tags:
     paradigm: [imperative]
     features: [line-numbers, interpreter, repl]
     domain: [education]
+  milestones:
+    - { version: Z 9001 / KC 85/1, year: 1984, summary: "About 10 KB, loaded from cassette into RAM (about 5 KB left free without expansion) or plugged in as a ROM module.", sources: [dewiki-kc-87] }
+    - { version: KC 85/3, year: 1986, summary: "In ROM on the Mühlhausen KC 85/3; the KC 85/4 followed in 1988.", sources: [robotrontechnik-kc, dewiki-kc-85-2] }
+    - { version: KC 87, year: 1987, summary: "In ROM on the Dresden KC 87 (series production from April 1987); the .20 and .21 models can be configured for a full-graphics module or a plotter.", sources: [dewiki-kc-87] }
   summary: >
-    The BASIC interpreter of the Mühlhausen KC 85 school computers, about 10.5 KB, in ROM from the KC 85/3
-    (1986) and KC 85/4 (1988), and on cassette or the M006 module for the KC 85/2. It was the BASIC most
-    GDR pupils met in school computer rooms.
+    The BASIC of the GDR's home and school computers from both lines: the Dresden Z 9001, KC 85/1 and KC 87, and
+    the Mühlhausen KC 85/2 to /4. It is an adapted K-1520-BASIC, which the agricultural institute in Dummerstorf
+    had based on Extended Microsoft BASIC, and the engineers in Dresden and Mühlhausen agreed on "die Benutzung ein
+    und desselben BASIC-Interpreters". About 10 KB, it came on cassette or a module at first and in ROM from the
+    KC 85/3 (1986) and KC 87 (1987). It was the BASIC most GDR pupils met in school computer rooms, and Z 1013
+    owners typed it in from a listing.
   notes: >
-    Who wrote it and whether it derives from Microsoft BASIC is not stated in any source read (de.wikipedia,
-    robotrontechnik.de); there is deliberately no edge to microsoft-basic. The KC compact's BASIC 1.1 is a
-    different interpreter on a different machine.
+    Despite "des gemeinsamen BASIC-Dialekts und Datenspeicherformates", the KC 85/1 and KC 85/2 were only very
+    partly compatible. No individual authors are named in the sources read; K-1520-BASIC itself (Dummerstorf) has
+    no date or node yet. The KC compact's BASIC 1.1 is a different interpreter on a different machine.
   relations:
+    - { type: dialect_of, to: microsoft-basic, weight: strong, confidence: medium, note: "\"Diese vom Landwirtschaftlichen Institut Dummerstorf entwickelte BASIC-Variante basierte wiederum auf dem bereits in den späten 1970er Jahren für westliche Computer veröffentlichten Extended Microsoft BASIC\" (de.wikipedia). Secondary source only; a period description of K-1520-BASIC would raise the confidence.", sources: [dewiki-kc-87] }
     - { type: targets, to: kc-85, weight: strong, confidence: high, note: "\"die Programmiersprache BASIC in ROM-Form bereits fest im Rechner eingebaut\" (KC 85/3).", sources: [robotrontechnik-kc, dewiki-kc-85-2] }
-  research_status: stub
+  research_status: draft
   confidence: medium
   links: { wikipedia: "https://de.wikipedia.org/wiki/KC_85/2" }
-  sources: [dewiki-kc-85-2, robotrontechnik-kc]
+  sources: [dewiki-kc-85-2, robotrontechnik-kc, dewiki-kc-87]
 
 - id: gfa-basic
   name: GFA BASIC

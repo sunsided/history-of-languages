@@ -69,20 +69,13 @@
   summary: "Machines that exist only as specifications and emulators: CPUs invented for games and 'fantasy consoles' with deliberately tight limits."
   research_status: draft
   key_sources: [wiki-0x10c, wiki-tic-80]
-  backlog:
-    - { name: "CHIP-48", year: 1990, hint: "Andreas Gustafsson's CHIP-8 for HP-48 calculators; changed the semantics of a few opcodes (wiki-chip-8). Source code: github.com/Chromatophore/HP48-Superchip." }
-    - { name: "SUPER-CHIP (SCHIP)", year: 1991, hint: "Erik Bryntse, \"based on CHIP-48\": larger resolution and more opcodes (wiki-chip-8). Spec: devernay.free.fr/hacks/chip8/schip.txt." }
-    - { name: "XO-CHIP", hint: "John Earnest's extension combining SCHIP and CHIP-8E behaviour; spec in the Octo repository (XO-ChipSpecification.md). Year not yet read." }
 - id: machines/eastern-bloc
   name: Eastern Bloc computers
   parent: machines
   summary: "Clones and original machines from the GDR, the USSR and Comecon, and the languages taught on them."
   research_status: draft
-  backlog:
-    - { name: "Kleincomputer BASIC (KC 87 / Z 9001)", hint: "The 10 KB BASIC of the Robotron KC 87, which Z 1013 owners typed in from a listing (dewiki-z-1013). Is it the same interpreter as the Mühlhausen KC-BASIC?" }
-    - { name: "Elbrus-2", year: 1984, hint: "en.wikipedia 1984; ru.wikipedia developed 1977-1984, delivered 1985, up to 200 built, zero-address stack instruction set. Likely a milestone or successor node of elbrus-1." }
   research_questions:
-    - "Which BASIC dialects ran on GDR machines (KC-BASIC, Z 1013 BASIC), and do they descend from Microsoft BASIC? de.wikipedia and robotrontechnik.de (read 2026-11-20) are silent on KC-BASIC's origin and authors; HC/Funkamateur articles or René Meyer's book on GDR computers are leads."
+    - "KC-BASIC descends from K-1520-BASIC of the Landwirtschaftliches Institut Dummerstorf, itself based on Extended Microsoft BASIC (de.wikipedia, Robotron KC 87, a secondary source). Who wrote K-1520-BASIC, when, and from which Microsoft BASIC version? HC/Funkamateur articles or René Meyer's book on GDR computers are leads. The Z 9001 / KC 87 and the K 1520 system are not machine nodes yet."
     - "Robic: no program longer than the command ОТКРЫТЬ ОКНО found; Ershov and Zvenigorodsky's 1979 Kvant article would give real code."
     - "Agat: who designed it, and is the Apple II influence documented beyond resemblance? Needed for an edge once an Apple II node exists."
     - "El-76: add ALMIR-65 and Analitik as nodes to carry the infobox influences."
@@ -176,8 +169,8 @@
   summary: "ALGOL- and PL/I-derived languages for defence, real-time control and systems programming before C took over."
   research_status: stub
   research_questions:
-    - "PLANC (Norsk Data, Programming LAnguage for Nd Computers): Pascal-family successor to NPL for Sintran III, ND-500, 68000, 88000 and x86. No introduction year found; read the title page and revision history of the PLANC Reference Manual ND-60.117 (ndwiki.org blocks automated reading) before making the node."
-    - "Mystic Programming Language (MPL): Turbo-Pascal-like scripting language of Mystic BBS (James Coyle; BBS begun 1995, first public release December 1997), compiled with MPLC/MIDE. No year or version for MPL itself; check old Mystic release notes (WHATSNEW) or alt.bbs.mystic. Once dated it belongs in a scripting cluster, not here."
+    - "PLANC (Norsk Data, Programming LAnguage for Nd Computers): Pascal-family successor to NPL for Sintran III, ND-500, 68000, 88000 and x86. No introduction year found; read the title page and revision history of the PLANC Reference Manual ND-60.117 (ndwiki.org blocks automated reading) before making the node. Searched again 2026-11-20: en.wikipedia (no date; cites ND-60.117.03 undated), web searches for bitsavers/archive.org scans (none found). Search snippets (not read) say ndwiki's ND-10309 pages (PLANC for ND-100) carry a February 1982 file timestamp and ND-211038J (PLANC for MC68000) is dated 1989-05-02; ndwiki sits behind an Anubis bot check, so Markus would have to read those pages in a browser."
+    - "Mystic Programming Language (MPL): Turbo-Pascal-like scripting language of Mystic BBS (James Coyle; BBS begun 1995, first public release December 1997), compiled with MPLC/MIDE. No year or version for MPL itself; check old Mystic release notes (WHATSNEW) or alt.bbs.mystic. Once dated it belongs in a scripting cluster, not here. Searched again 2026-11-20: mysticbbs.com/about.html (history 1995-2015, no MPL), the Mystic wiki MPL page (\"At one time\" almost 100% Turbo Pascal compatible, no date), alt.bbs.mystic (2022 posts only), discmaster.textfiles.com (no hits). A search snippet mentions .mps scripts \"for Mystic BBS version 1.05b+\" in vert.synchro.net's Mystic-BBS-Utils archive (unreachable); a dated Mystic 1.05 release would bound MPL's decade."
 - id: algol/bcpl-line
   name: CPL and BCPL
   parent: algol
@@ -254,12 +247,11 @@
 - id: logic
   name: Logic programming
   research_status: stub
-  backlog:
-    - { name: "ELAN (rewriting)", hint: "Rewriting-logic language from France, named with CafeOBJ and Maude as the three rewriting-logic implementations in the Maude manual (1999). Not the Dutch educational ELAN (node elan)." }
-    - { name: "CafeOBJ", hint: "Rewriting-logic and algebraic-specification language from Japan, OBJ family (Maude manual 1999; OBJ article)." }
   research_questions:
-    - "Tom's ELAN ancestry and Maude's place among rewriting languages need ELAN as a node (logic backlog). Which earlier rewriting languages (OBJ3, Refal) should carry the term-rewriting tag?"
-    - "OBJ3 is implemented in Common Lisp, but the year is unknown and OBJ dates from 1976; a dated source is needed for the edge. Clear (Burstall and Goguen 1977), the shared ancestor of OBJ, HOPE and Standard ML modules, is not a node; nor are CafeOBJ, Eqlog, FOOPS and CASL. Escher is said to grow out of Gödel (search snippet only)."
+    - "Which earlier rewriting languages (OBJ3, Refal) should carry the term-rewriting tag? ELAN (1994) is now tagged, so the concept's first_seen (Maude, 1996) is too late; OBJ3's order-sorted rewriting may push it back further."
+    - "ELAN's versions (1.17, 3.0 and earlier) are undated in the 2006 manual; an ELAN release history or the WRLA 1996 and 1998 papers would date them. A real ELAN code sample needs the example files (poly1.eln) that the manual includes by reference."
+    - "CafeOBJ has no code sample yet: the CafeOBJ Report (Diaconescu and Futatsugi, 1998) or the IPA user's manual would give one, and would show whether the system was released before the August 1996 report."
+    - "OBJ3 is implemented in Common Lisp, but the year is unknown and OBJ dates from 1976; a dated source is needed for the edge. Clear (Burstall and Goguen 1977), the shared ancestor of OBJ, HOPE and Standard ML modules, is not a node; nor are Eqlog, FOOPS and CASL. Escher is said to grow out of Gödel (search snippet only)."
 - id: ml-family
   name: ML and typed functional languages
   research_status: draft
@@ -280,7 +272,6 @@
   research_status: draft
   research_questions:
     - "Kaleidoscope adopts Cecil\u2019s multiple dispatch and optional static typing (Freeman-Benson and Borning, ECOOP 1992), but Kaleidoscope is dated 1990 and Cecil 1992; Cecil\u2019s earliest date needs settling before the edge can be stored. Lithe has no documented ancestor (POPL 1982 paper unreadable). ThingLab, META II and the Burroughs B5000 (FLEX) are not nodes."
-    - "ACC (deferred, and misfiled here: it belongs in c-family): Dave Ashley's near-C compiler for MS-DOS on the 386, with its own assembler, linker and PMODE DOS extender, GPL'd on SourceForge (accompiler) on 11 December 2009. Its original release year is unknown; find a dated DOS-era release (Simtel, a BBS listing or the author's page) before making it a node."
 - id: oop/simula-smalltalk
   name: Simula, Smalltalk and their heirs
   parent: oop
@@ -385,8 +376,6 @@
   parent: basic
   summary: "Atari 8-bit BASIC, the rare non-Microsoft home-computer BASIC, and its faster replacements."
   research_status: draft
-  backlog:
-    - { name: "BASIC A+ (OSS)", hint: "Disk-based OSS interpreter \"compatible with Atari BASIC\" with PRINT USING, trace, DOS commands, player/missile graphics; predecessor of basic-xl (wiki-optimized-systems-software). No year in that article; en.wikipedia has a BASIC A+ page." }
 - id: basic/pc-compilers
   name: Third-party BASIC compilers for the PC
   parent: basic
@@ -569,9 +558,6 @@
   parent: business
   summary: "Fourth-generation and database application languages: dBase descendants, report writers and vendor languages such as PL/SQL and ABAP's peers."
   research_status: stub
-  backlog:
-    - { name: "RAMIS", hint: "Mathematica's report language, \"often cited as the world's first 4GL\"; Gerald Cohen and Peter Mittelman developed it at Mathematica (Wikipedia: 1970; FundingUniverse says work began in 1965), offered through NCSS time-sharing; RAMIS II followed. FOCUS's \"direct ancestor\" (chm-1986-cohen-oral-history, wiki-focus)." }
-    - { name: "Cross System Product", year: 1981, hint: "IBM CSP, the 4GL behind EGL; then VisualGen 1.0 (6/1994) and VisualAge Generator (VAGen 2.2 6/1996 to 4.5.3 2/2002), all on IBM's chart in cernosek-2005-egl. EGL successor_of edge waits for these nodes." }
   research_questions:
     - "RPG gained embedded SQL on IBM's midrange systems (ILE RPG supports it today), but no sourced year was found; an IBM SQL/400 or System/38 document would date an rpg embeds sql edge."
     - "RPG's predecessor FARGO is said to have appeared at the end of 1961, after RPG's 1959 date; the IBM 1401 RPG manual C24-3261-1 would settle the order."
