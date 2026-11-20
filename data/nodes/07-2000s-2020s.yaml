@@ -11445,3 +11445,31 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Salesforce" }
   sources: [computerworld-2006-salesforce-apex, wiki-salesforce]
+
+- id: mindscript
+  name: MindScript
+  aliases: [Mind Script, LEGO Script, Legoscript]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2001, precision: circa, note: "Dated by the product it belongs to: \"MindScript is an ASCII text-based program that the LEGO MINDSTORMS Robotics Invention System 2.0 uses for the graphical RCX Code programs\" (RIT course report), and RIS 2.0 launched \"in 2001\" (Wikipedia). The earlier name LEGO Script and the SDK 2.0 release date are undated." }
+    places: [{ institution: LEGO Group, country: DK }]
+  creators:
+    - { name: Michael Anderson, role: inventor (per the RIT report) }
+  status: historical
+  tags:
+    domain: [education]
+  summary: >
+    The text language behind LEGO Mindstorms' graphical RCX Code: "a high-level robotics programming language of Lego
+    Mindstorms" that "was originally released as Lego Script in previous versions". RIS 2.0 stored its RCX Code programs
+    as MindScript, and the Mindstorms SDK documented it alongside LASM, the RCX assembler, for programming the RCX brick
+    in text instead of blocks.
+  notes: >
+    The former backlog name "Legoscript" is this language's early name, not a separate product: a hiring-guide page
+    calling it a block language from the LEGO Group is unsourced. The SDK manuals (LEGO Script Language Manual, SDK 2.0
+    and 2.5) were seen only in search results; philohome's SDK 2.5 page returned 403. No relation to NQC is documented.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lego_Mindstorms" }
+  sources: [rit-2002-mindscript-history, wiki-lego-mindstorms]

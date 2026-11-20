@@ -6707,3 +6707,53 @@
           } return(array (magnitude));
       } return(M);
     sources: [bohm-2001-sa-c]
+
+- id: mystic-mpl
+  name: Mystic Programming Language
+  aliases: [MPL, Mystic BBS Programming Language]
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1999, precision: circa, note: "Latest-possible bound: the Mystic BBS v1.05 changelog (v1.05a released June 9th, 1999) already fixes bugs in \"MIDE.EXE and MPLC.EXE\", the MPL editor and compiler. Mystic BBS development began in 1995 and its first public release was December 1997 (Wikipedia); when MPL itself first shipped is not documented in what was read." }
+  creators:
+    - { name: James Coyle, role: "author of Mystic BBS (\"g00r00\")" }
+  status: active
+  tags:
+    paradigm: [imperative, procedural]
+  milestones:
+    - { version: "1.07", year: 2000, summary: "Mystic BBS v1.07 (changelog: \"RELEASED : December 26, 2000\", though its 1.07.2 and 1.07.3 lines read January and May 2000): \"Completely rewrote MIDE.EXE, the Mystic Programming Language IDE\" and the MPL manual; CONST support finished.", sources: [mystic-whats-new-107] }
+  summary: >
+    The "proprietary scripting language called Mystic Programming Language (MPL)" of the Mystic BBS bulletin-board
+    software by James Coyle. Scripts (.mps) are compiled with MPLC and edited in the MIDE IDE; they use Pascal-style
+    procedures, Begin/End blocks and USES units (CFG, USER) to drive the BBS screen and user records.
+  example:
+    title: A colour-fading write
+    language: MPL (Mystic BBS 1.07, updated for 1.10)
+    note: "Verbatim from MPLDEMO.MPS (\"Written by g00r00 for Mystic BBS Version 1.07 ... Updated for Mystic 1.10\") in the GPL source of Mystic BBS 1.10; |08, |07 and |15 are Mystic pipe colour codes. Not run here."
+    code: |
+      USES CFG;
+      USES USER;
+
+      Procedure FadeWrite (X, Y: Byte; S: String);
+      Begin
+        GotoXY (X, Y);
+        Write ('|08' + S);
+        BufFlush;
+        Delay (250);
+        GotoXY (X, Y);
+        Write ('|07' + S);
+        BufFlush;
+        Delay (250);
+        GotoXY (X, Y);
+        Write ('|15' + S);
+        BufFlush;
+        Delay (250);
+    sources: [mystic-mpldemo]
+  notes: >
+    Its Pascal look is visible in the code (Mystic is written in FreePascal), but no read source states an influence,
+    so no edge is stored. The example is the first part of the procedure; its closing lines were not quoted.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Mystic_BBS", homepage: "https://wiki.mysticbbs.com/" }
+  sources: [wiki-mystic-bbs, mystic-whats-new-105, mystic-whats-new-107, mystic-mpldemo]

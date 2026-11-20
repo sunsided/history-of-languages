@@ -3829,6 +3829,37 @@
   links: { wikipedia: "https://en.wikipedia.org/wiki/Nord_Programming_Language" }
   sources: [wiki-npl]
 
+- id: planc
+  name: PLANC
+  aliases: [Programming LAnguage for Nd Computers]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1979, precision: circa, note: "NDWiki's History of Norsk Data timeline lists \"1979: The systems programming language PLANC is developed\"; read only as a search-result snippet (the site blocks automated reading). Wikipedia gives no year. The PLANC Reference Manual (ND-60.117.03 and later) was not read." }
+    places: [{ institution: Norsk Data, city: Oslo, country: "NO" }]
+  creators:
+    - { name: Norsk Data, role: developer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+  summary: >
+    "PLANC (Programming LAnguage for Nd Computers, pronounced as plank)" was Norsk Data's in-house systems language,
+    "mainly used internally at Norsk Data for writing high level systems software such as the upper parts of
+    operating systems and compilers" under Sintran III. Wikipedia places it in the Pascal family and names the Nord
+    Programming Language as its influence; compilers were written for the Nord-10, the ND-500, the Motorola 68000 and
+    88000 and Intel x86, because "the language was designed to be cross-platform software".
+  notes: >
+    Wikipedia says assignment runs left to right, as in Plankalkül. The NDWiki PLANC page and manual catalogue (manuals
+    ND-60.117.03 to .6, PLANC-GEN ND-20.013) were seen only in search results.
+  relations:
+    - { type: successor_of, to: npl-nord, weight: strong, confidence: medium, sources: [wiki-planc], note: "Wikipedia infobox: \"Influenced by: Nord Programming Language\"; NDWiki (search snippet) says PLANC replaced NPL as Norsk Data's system language." }
+    - { type: influenced_by, to: pascal, weight: moderate, confidence: medium, sources: [wiki-planc], note: "\"PLANC is a language in the Pascal family.\"" }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PLANC" }
+  sources: [wiki-planc, ndwiki-history-norsk-data]
+
 - id: protel
   name: PROTEL
   aliases: [Protel, Procedure Oriented Type Enforcing Language, Protel-2]

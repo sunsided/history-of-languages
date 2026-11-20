@@ -10785,3 +10785,47 @@
   title: "References (annotated bibliography of an interactive-shading dissertation, UNC)"
   url: https://userpages.cs.umbc.edu/olano/papers/dissertation/chR.pdf
   checked: '2026-11-20'
+- id: wiki-planc
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: PLANC"
+  url: https://en.wikipedia.org/wiki/PLANC
+  checked: '2026-11-20'
+- id: ndwiki-history-norsk-data
+  type: web
+  primary: false
+  title: "NDWiki: History of Norsk Data (timeline)"
+  url: https://www.ndwiki.org/wiki/History_of_Norsk_Data
+- id: wiki-mystic-bbs
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Mystic BBS"
+  url: https://en.wikipedia.org/wiki/Mystic_BBS
+  checked: '2026-11-20'
+- id: mystic-whats-new-105
+  type: web
+  primary: true
+  authors: [James Coyle]
+  title: "Mystic BBS v1.05 - What's New"
+  url: https://wiki.mysticbbs.com/doku.php?id=whats_new_105
+  checked: '2026-11-20'
+- id: mystic-whats-new-107
+  type: web
+  primary: true
+  authors: [James Coyle]
+  title: "Mystic BBS v1.07 - What's New"
+  url: https://wiki.mysticbbs.com/doku.php?id=whats_new_107
+  checked: '2026-11-20'
+- id: mystic-mpldemo
+  type: web
+  primary: true
+  authors: [James Coyle]
+  title: "MPLDEMO.MPS: Mystic Programming Language (MPL) Demonstration Program (Mystic BBS 1.10 source)"
+  url: https://github.com/fidosoft/mysticbbs/blob/master/scripts/mpldemo.mps
+  checked: '2026-11-20'
+- id: rit-2002-mindscript-history
+  type: web
+  primary: false
+  title: "MindScript: History (RIT Programming Language Concepts report, 2002)"
+  url: https://www.cs.rit.edu/~ats/plcr-2002-1/reports/mindscript/History.htm
+  checked: '2026-11-20'
