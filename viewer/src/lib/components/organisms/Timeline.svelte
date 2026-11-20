@@ -326,12 +326,13 @@
 
 	// ---- gutter keyboard model: one tab stop, arrows move between rows (tree-view keys) ----
 	let gutter: HTMLDivElement | undefined = $state();
-	/** row the user last focused; falls back to the selection, then the first row, when it disappears */
-	let focusKey = $state<string | null>(null);
+	/** row the user last focused, and the selection at that time: a newer selection (palette, panel,
+	 * plot) wins; so do the selection and then the first row when the focused row disappears */
+	let focused = $state<{ key: string; sel: string | null } | null>(null);
 	const keyOf = (r: Row) => `${r.type}:${r.id}`;
 	const tabKey = $derived.by(() => {
 		const keys = new Set(lay.rows.map(keyOf));
-		if (focusKey && keys.has(focusKey)) return focusKey;
+		if (focused && focused.sel === selNode && keys.has(focused.key)) return focused.key;
 		if (selNode && keys.has(`node:${selNode}`)) return `node:${selNode}`;
 		return lay.rows[0] ? keyOf(lay.rows[0]) : null;
 	});
@@ -340,7 +341,7 @@
 		const r = lay.rows[Math.max(0, Math.min(lay.rows.length - 1, i))];
 		if (!r) return;
 		const key = keyOf(r);
-		focusKey = key;
+		focused = { key, sel: selNode };
 		tick().then(() => gutter?.querySelector<HTMLElement>(`.g-row[data-key="${CSS.escape(key)}"]`)?.focus());
 	}
 
@@ -410,6 +411,8 @@
 	role="region"
 	aria-label="Timeline"
 	tabindex="0"
+	style:scroll-padding-top="{AXIS_H}px"
+	style:scroll-padding-bottom={viewer.narrow.current && viewer.panelOpen ? '50%' : null}
 	bind:this={scroller}
 	bind:clientWidth={viewW}
 	onwheel={onWheel}
@@ -452,7 +455,7 @@
 			onkeydown={onGutterKey}
 			onfocusin={(e) => {
 				const k = (e.target as HTMLElement).closest<HTMLElement>('.g-row')?.dataset.key;
-				if (k) focusKey = k;
+				if (k) focused = { key: k, sel: selNode };
 			}}
 		>
 			<p class="sr-only">Clusters and languages. Up and Down move between rows, Right expands a cluster, Left collapses it or goes to its cluster, Enter selects.</p>
@@ -776,8 +779,8 @@
 		right: 0;
 		display: flex;
 		align-items: center;
-		gap: 6px;
-		padding-right: 8px;
+		gap: var(--space-3);
+		padding-right: var(--space-4);
 		font-size: 12.5px;
 		cursor: pointer;
 		white-space: nowrap;
@@ -806,14 +809,14 @@
 		}
 		.g-row {
 			font-size: 12px;
-			gap: 4px;
+			gap: var(--space-2);
 		}
 		.g-cluster {
 			padding-right: 28px;
 		}
 		.corner {
 			font-size: 10px;
-			padding: 0 6px;
+			padding: 0 var(--space-3);
 		}
 	}
 	.g-info {
@@ -1071,7 +1074,7 @@
 		background: var(--bg-raised);
 		border: 1px solid var(--line);
 		border-radius: var(--radius-md);
-		padding: 8px 10px;
+		padding: var(--space-4) 10px;
 		font-size: 12px;
 		box-shadow: var(--shadow-tooltip);
 	}
@@ -1079,13 +1082,13 @@
 		max-width: min(640px, calc(100vw - 32px));
 	}
 	.tt-ex-head {
-		margin-top: 8px;
+		margin-top: var(--space-4);
 		font-size: 11px;
 		color: var(--fg-muted);
 	}
 	.code {
-		margin: 4px 0 0;
-		padding: 8px 10px;
+		margin: var(--space-2) 0 0;
+		padding: var(--space-4) 10px;
 		background: var(--code-bg);
 		border-radius: var(--radius-md);
 		font-family: var(--mono);
@@ -1104,10 +1107,10 @@
 	.tt-sub {
 		color: var(--fg-muted);
 		font-size: 11px;
-		margin-top: 2px;
+		margin-top: var(--space-1);
 	}
 	.tt-body {
-		margin-top: 6px;
+		margin-top: var(--space-3);
 		white-space: pre-line;
 		display: -webkit-box;
 		-webkit-line-clamp: 6;

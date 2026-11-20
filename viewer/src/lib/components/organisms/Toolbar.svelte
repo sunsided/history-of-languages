@@ -54,7 +54,7 @@
 		<span class="search-text">Go to…</span>
 		<span class="keys" aria-hidden="true"><Kbd>{isMac ? '⌘' : 'Ctrl'}</Kbd><Kbd>K</Kbd></span>
 	</Button>
-	<Button class="path-btn" onclick={() => (viewer.pathOpen = true)} title="How are two languages related? Shortest path between them (P)" aria-label="Path finder" aria-keyshortcuts="P">
+	<Button class="path-btn" onclick={() => (viewer.pathOpen = true)} title="How are two languages related? Shortest path between them (P)" aria-keyshortcuts="P">
 		<span aria-hidden="true">⇄</span><span class="path-text">Path</span>
 		<span class="keys" aria-hidden="true"><Kbd>P</Kbd></span>
 	</Button>
@@ -344,9 +344,17 @@
 			min-width: 0;
 			width: auto;
 		}
-		.keys,
-		.path-text {
+		.keys {
 			display: none;
+		}
+		/* icon-only on narrow screens; the word stays as the button's name */
+		.path-text {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			overflow: hidden;
+			clip-path: inset(50%);
+			white-space: nowrap;
 		}
 		.filters {
 			display: flex;

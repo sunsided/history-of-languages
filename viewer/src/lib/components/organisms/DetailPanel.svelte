@@ -388,7 +388,7 @@
 	.panel {
 		height: 100%;
 		overflow: auto;
-		padding: 14px 16px 40px;
+		padding: 14px var(--space-6) 40px;
 		border-left: 1px solid var(--line);
 		background: var(--bg-raised);
 		font-size: var(--text-md);
@@ -399,12 +399,12 @@
 		margin-bottom: 10px;
 	}
 	h2 {
-		margin: 2px 0;
+		margin: var(--space-1) 0;
 		font-size: var(--text-xl);
 		letter-spacing: -0.01em;
 	}
 	h3 {
-		margin: 18px 0 6px;
+		margin: 18px 0 var(--space-3);
 		font-size: var(--text-xs);
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
@@ -417,7 +417,7 @@
 	.kicker {
 		display: flex;
 		align-items: center;
-		gap: 6px;
+		gap: var(--space-3);
 		color: var(--fg-muted);
 		font-size: var(--text-sm);
 	}
@@ -435,7 +435,7 @@
 	.note {
 		color: var(--fg-muted);
 		font-size: var(--text-sm);
-		margin: 2px 0;
+		margin: var(--space-1) 0;
 	}
 	.warn {
 		color: var(--warn);
@@ -444,7 +444,7 @@
 		margin: 10px 0;
 	}
 	.hero {
-		margin: 4px 0 12px;
+		margin: var(--space-2) 0 var(--space-5);
 	}
 	.hero img {
 		display: block;
@@ -455,7 +455,7 @@
 		border-radius: var(--radius-md);
 	}
 	.hero figcaption {
-		margin-top: 4px;
+		margin-top: var(--space-2);
 		font-size: var(--text-xs);
 		color: var(--fg-muted);
 		display: flex;
@@ -476,7 +476,7 @@
 	.creator {
 		display: flex;
 		align-items: center;
-		gap: 6px;
+		gap: var(--space-3);
 		min-height: 22px;
 	}
 	.avatar {
@@ -490,11 +490,11 @@
 	}
 	.ex-title {
 		font-weight: 600;
-		margin-bottom: 4px;
+		margin-bottom: var(--space-2);
 	}
 	.code {
-		margin: 4px 0 6px;
-		padding: 10px 12px;
+		margin: var(--space-2) 0 var(--space-3);
+		padding: 10px var(--space-5);
 		background: var(--code-bg);
 		border-radius: var(--radius-md);
 		font-family: var(--mono);
@@ -519,7 +519,7 @@
 	}
 	.links {
 		display: flex;
-		gap: 12px;
+		gap: var(--space-5);
 	}
 	a {
 		color: var(--accent);
@@ -527,11 +527,11 @@
 	.tags {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 4px;
+		gap: var(--space-2);
 		margin: 3px 0;
 	}
 	.tags.small {
-		gap: 3px 6px;
+		gap: 3px var(--space-3);
 	}
 	.tag {
 		font-size: var(--text-sm);
@@ -546,7 +546,7 @@
 	}
 	.facet {
 		display: flex;
-		gap: 8px;
+		gap: var(--space-4);
 		align-items: baseline;
 	}
 	.facet-name {
@@ -564,11 +564,11 @@
 	}
 	.milestones li {
 		display: flex;
-		gap: 8px;
+		gap: var(--space-4);
 		padding: 3px 0;
 	}
 	.plain li {
-		padding: 2px 0;
+		padding: var(--space-1) 0;
 	}
 	.ms-year {
 		display: inline-block;
@@ -577,7 +577,7 @@
 		font-variant-numeric: tabular-nums;
 	}
 	.steps li {
-		padding: 6px 0;
+		padding: var(--space-3) 0;
 		border-bottom: 1px solid var(--line);
 	}
 	.step {
@@ -594,10 +594,10 @@
 		color: var(--warn);
 	}
 	.edge-group {
-		margin-bottom: 8px;
+		margin-bottom: var(--space-4);
 	}
 	.edge-group ul {
-		margin: 2px 0 0;
+		margin: var(--space-1) 0 0;
 		padding-left: 18px;
 	}
 	.edge-group li {
@@ -606,13 +606,13 @@
 	.edge-label {
 		display: flex;
 		align-items: center;
-		gap: 6px;
+		gap: var(--space-3);
 		font-weight: 600;
 		font-size: var(--text-sm);
 	}
 	.sources {
 		margin: 3px 0;
-		padding-left: 16px;
+		padding-left: var(--space-6);
 		font-size: var(--text-sm);
 		color: var(--fg-muted);
 	}
@@ -643,13 +643,13 @@
 		color: var(--rs-reviewed);
 	}
 	.claim {
-		margin: 6px 0;
+		margin: var(--space-3) 0;
 	}
 	.verdict {
 		font-size: var(--text-xs);
 		font-weight: 700;
 		text-transform: uppercase;
-		padding: 0 4px;
+		padding: 0 var(--space-2);
 		border-radius: var(--radius-sm);
 		background: var(--hover);
 	}
@@ -663,7 +663,7 @@
 		padding-left: 18px;
 	}
 	.empty li {
-		margin: 4px 0;
+		margin: var(--space-2) 0;
 	}
 	code {
 		font-family: var(--mono);

@@ -203,9 +203,9 @@
 	.pickers {
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-		gap: 8px;
+		gap: var(--space-4);
 		align-items: start;
-		padding: 12px 14px;
+		padding: var(--space-5) 14px;
 		border-bottom: 1px solid var(--line);
 	}
 	.picker {
@@ -234,7 +234,7 @@
 		top: calc(100% + 4px);
 		list-style: none;
 		margin: 0;
-		padding: 4px;
+		padding: var(--space-2);
 		background: var(--bg-raised);
 		border: 1px solid var(--line);
 		border-radius: var(--radius-md);
@@ -243,7 +243,7 @@
 	.results li {
 		display: flex;
 		align-items: center;
-		gap: 8px;
+		gap: var(--space-4);
 		padding: 5px 7px;
 		border-radius: var(--radius-md);
 		cursor: pointer;
@@ -255,11 +255,11 @@
 	.chosen {
 		display: flex;
 		align-items: center;
-		gap: 4px;
+		gap: var(--space-2);
 		border: 1px solid var(--accent);
 		border-radius: var(--radius-md);
 		background: var(--bg);
-		padding: 1px 2px 1px 0;
+		padding: 1px var(--space-1) 1px 0;
 	}
 	.chosen .node {
 		flex: 1;
@@ -271,14 +271,14 @@
 	}
 	.body {
 		overflow-y: auto;
-		padding: 6px 14px 14px;
+		padding: var(--space-3) 14px 14px;
 	}
 	.route h3 {
 		font-size: var(--text-sm);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		color: var(--fg-muted);
-		margin: 12px 0 6px;
+		margin: var(--space-5) 0 var(--space-3);
 	}
 	.route h3 .muted {
 		text-transform: none;
@@ -293,14 +293,14 @@
 	.node {
 		display: flex;
 		align-items: center;
-		gap: 8px;
+		gap: var(--space-4);
 		width: 100%;
 		border: none;
 		background: none;
 		color: var(--fg);
 		font: inherit;
 		font-size: var(--text-base);
-		padding: 5px 8px;
+		padding: 5px var(--space-4);
 		border-radius: var(--radius-md);
 		cursor: pointer;
 		text-align: left;
@@ -325,7 +325,7 @@
 		display: flex;
 		align-items: baseline;
 		flex-wrap: wrap;
-		gap: 4px 8px;
+		gap: var(--space-2) var(--space-4);
 		margin-left: 11px;
 		padding: 3px 0 3px 14px;
 		border-left: 2px solid var(--fam, var(--line));
@@ -335,8 +335,9 @@
 	.hop.weak {
 		border-left-style: dashed;
 	}
+	/* the family colour is on the left rule; as text it misses AA in light mode */
 	.hop b {
-		color: var(--fam, var(--fg));
+		color: var(--fg);
 		font-weight: 600;
 	}
 	.fam-derived {

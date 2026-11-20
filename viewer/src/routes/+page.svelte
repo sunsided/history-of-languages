@@ -15,7 +15,15 @@
 </svelte:head>
 
 <div class="app">
-	<a class="skip" href="#timeline">Skip to timeline</a>
+	<!-- focus explicitly: the router handles fragment links as navigation, not as a focus move -->
+	<a
+		class="skip"
+		href="#timeline"
+		onclick={(e) => {
+			e.preventDefault();
+			document.getElementById('timeline')?.focus();
+		}}>Skip to timeline</a
+	>
 	<Toolbar />
 	<main class:narrow={viewer.narrow.current} class:open={viewer.panelOpen}>
 		<Timeline />

@@ -2,7 +2,9 @@
  * Design tokens. Two layers:
  *   primitives  - scales with no meaning of their own (space, type, radius, shadow, motion)
  *   semantic    - what a value is for (surface, text, border, accent, status, categories)
- * Components use semantic tokens and primitives only; no raw colours or ad-hoc sizes.
+ * Components use semantic tokens and primitives: colours, type, radii, shadows and on-scale spacing.
+ * Off-scale px offsets (1, 3, 10, 14 px) remain where they are optical alignment, and the timeline's
+ * row geometry stays in px because it is computed in JS.
  * Text colours meet WCAG 2.2 AA (4.5:1) on --bg and --bg-raised in both themes;
  * --fg-faint is for decorative strokes only (ticks, rings, rules), never for text.
  */
@@ -57,7 +59,7 @@
 	--bg-raised: #f7f7f5;
 	--fg: #1d1d1b;
 	--fg-muted: #5c5c57;
-	--fg-subtle: #65655f;
+	--fg-subtle: #60605a;
 	--fg-faint: #94948d;
 	--line: #deddd8;
 	--hover: rgb(0 0 0 / 0.045);
@@ -100,7 +102,7 @@
 		--bg-raised: #1f2023;
 		--fg: #e6e6e3;
 		--fg-muted: #a5a5a0;
-		--fg-subtle: #92928c;
+		--fg-subtle: #a0a09a;
 		--fg-faint: #6f6f6a;
 		--line: #34353a;
 		--hover: rgb(255 255 255 / 0.05);

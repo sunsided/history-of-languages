@@ -140,8 +140,8 @@
 	.input-row {
 		display: flex;
 		align-items: center;
-		gap: 8px;
-		padding: 10px 12px;
+		gap: var(--space-4);
+		padding: 10px var(--space-5);
 		border-bottom: 1px solid var(--line);
 	}
 	.icon {
@@ -161,15 +161,15 @@
 	.results {
 		list-style: none;
 		margin: 0;
-		padding: 4px;
+		padding: var(--space-2);
 		overflow-y: auto;
 	}
 	.results li[role='option'] {
 		display: grid;
 		grid-template-columns: 10px minmax(0, auto) minmax(0, 1fr) auto auto;
 		align-items: baseline;
-		gap: 8px;
-		padding: 6px 8px;
+		gap: var(--space-4);
+		padding: var(--space-3) var(--space-4);
 		border-radius: var(--radius-md);
 		cursor: pointer;
 		font-size: var(--text-md);
@@ -185,7 +185,7 @@
 		background: var(--accent-soft);
 	}
 	.section {
-		padding: 8px 8px 3px;
+		padding: var(--space-4) var(--space-4) 3px;
 		font-size: var(--text-xs);
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
@@ -236,7 +236,7 @@
 		text-align: right;
 	}
 	.empty {
-		padding: 16px;
+		padding: var(--space-6);
 		color: var(--fg-muted);
 		text-align: center;
 	}
@@ -246,7 +246,7 @@
 	.footer {
 		display: flex;
 		gap: 14px;
-		padding: 7px 12px;
+		padding: 7px var(--space-5);
 		border-top: 1px solid var(--line);
 		font-size: var(--text-xs);
 		color: var(--fg-subtle);
