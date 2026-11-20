@@ -1,20 +1,16 @@
 <script lang="ts">
 	import { viewer } from '#lib/viewer.svelte.ts';
-	import { FAMILIES } from '#lib/graph.ts';
 	import { NOW } from '#lib/scale.ts';
 	import Button from '../atoms/Button.svelte';
 	import IconButton from '../atoms/IconButton.svelte';
 	import Kbd from '../atoms/Kbd.svelte';
-	import ToggleChip from '../atoms/ToggleChip.svelte';
 	import FilterGroup from '../molecules/FilterGroup.svelte';
 	import Popover from '../molecules/Popover.svelte';
 
-	const KINDS = ['mechanism', 'machine', 'machine-code', 'formalism', 'notation', 'assembly', 'language'];
 
 	let showProblems = $state(false);
 
 	const g = $derived(viewer.graph);
-	const presentKinds = $derived(KINDS.filter((k) => g.data.nodes.some((n) => n.kind === k)));
 
 	const conceptGroups = $derived.by(() => {
 		const groups = new Map<string, { id: string; name: string }[]>();
@@ -74,9 +70,7 @@
 				<span class="loaded" title="Last loaded from data/">{new Date(g.data.loadedAt).toLocaleTimeString()}</span>
 			</div>
 		{/if}
-		<Button popovertarget="filters" title="Edges, kinds, highlights and view">
-			Filters{#if viewer.filterCount}<span class="badge">{viewer.filterCount}<span class="sr-only"> changed</span></span>{/if}
-		</Button>
+		<Button popovertarget="filters" title="Highlight a concept or lineage; expand or collapse clusters">View</Button>
 		<Button
 			onclick={() => (viewer.panelOpen = !viewer.panelOpen)}
 			aria-expanded={viewer.panelOpen}
@@ -112,22 +106,12 @@
 	</nav>
 </header>
 
-<Popover id="filters" label="Filters">
+<Popover id="filters" label="View options">
 	<div class="pop-head">
-		<h2>Filters</h2>
-		<IconButton label="Close filters" popovertarget="filters" popovertargetaction="hide">×</IconButton>
+		<h2>View</h2>
+		<IconButton label="Close view options" popovertarget="filters" popovertargetaction="hide">×</IconButton>
 	</div>
 	<div class="pop-body">
-		<FilterGroup legend="Edges">
-			{#each FAMILIES as f (f.id)}
-				<ToggleChip family={f.id} title={f.hint} checked={viewer.families.has(f.id)} onchange={() => viewer.toggle(viewer.families, f.id)}>{f.label}</ToggleChip>
-			{/each}
-		</FilterGroup>
-		<FilterGroup legend="Kinds">
-			{#each presentKinds as k (k)}
-				<ToggleChip kind={k} checked={!viewer.hiddenKinds.has(k)} onchange={() => viewer.toggle(viewer.hiddenKinds, k)}>{k}</ToggleChip>
-			{/each}
-		</FilterGroup>
 		<FilterGroup legend="Highlight">
 			<select
 				value={viewer.concept ?? ''}
@@ -147,12 +131,9 @@
 				{#each g.data.lineages as l (l.id)}<option value={l.id}>{l.title}</option>{/each}
 			</select>
 		</FilterGroup>
-		<FilterGroup legend="View">
+		<FilterGroup legend="Clusters">
 			<Button onclick={() => viewer.expandAll()} title="Expand all clusters">expand all</Button>
 			<Button onclick={() => viewer.collapseAll()} title="Collapse all clusters">collapse all</Button>
-			<IconButton variant="bordered" label="Zoom out" onclick={() => viewer.setZoom(viewer.effectiveZoom / 1.4)}>−</IconButton>
-			<output class="zoom" aria-label="Zoom level">{viewer.effectiveZoom.toFixed(2)}×</output>
-			<IconButton variant="bordered" label="Zoom in" onclick={() => viewer.setZoom(viewer.effectiveZoom * 1.4)}>+</IconButton>
 		</FilterGroup>
 	</div>
 </Popover>
@@ -191,16 +172,6 @@
 		display: flex;
 		align-items: center;
 		gap: var(--space-3);
-	}
-	.badge {
-		min-width: 18px;
-		padding: 0 var(--space-2);
-		border-radius: var(--radius-pill);
-		background: var(--accent);
-		color: var(--bg);
-		font-size: var(--text-xs);
-		font-weight: 600;
-		text-align: center;
 	}
 	.pop-head {
 		display: flex;
@@ -253,12 +224,6 @@
 		border: 1px solid var(--line);
 		border-radius: var(--radius-md);
 		padding: 0 var(--space-3);
-	}
-	.zoom {
-		min-width: 40px;
-		text-align: center;
-		font-variant-numeric: tabular-nums;
-		color: var(--fg-muted);
 	}
 	.status {
 		display: flex;

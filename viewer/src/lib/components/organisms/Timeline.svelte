@@ -17,6 +17,8 @@
 	} from '#lib/graph.ts';
 	import type { Edge, LangNode } from '#lib/types.ts';
 	import KindDot from '../atoms/KindDot.svelte';
+	import ZoomControl from '../molecules/ZoomControl.svelte';
+	import Legend from './Legend.svelte';
 
 	const AXIS_H = 46;
 	const INDENT = 14;
@@ -166,6 +168,13 @@
 	}
 
 	// ---- interactions ----
+	/** Zoom around the middle of the visible plot (buttons). */
+	function zoomCentre(next: number) {
+		if (!scroller) return;
+		const rect = scroller.getBoundingClientRect();
+		zoomAt(rect.left + GUTTER + (rect.width - GUTTER) / 2, next);
+	}
+
 	/** Zoom the time axis, keeping the year under clientX in place. */
 	function zoomAt(clientX: number, next: number) {
 		if (!scroller) return;
@@ -403,6 +412,7 @@
 	);
 </script>
 
+<div class="timeline">
 <!-- A focusable region, so keyboard users can scroll it with the arrow keys. -->
 <!-- svelte-ignore a11y_no_noninteractive_tabindex, a11y_no_noninteractive_element_interactions -->
 <div
@@ -431,7 +441,6 @@
 	>
 		<div class="corner" aria-hidden="true">
 			<span>{g.data.nodes.length} nodes · {g.data.edges.length} edges</span>
-			<span class="hint">{viewer.coarse.current ? 'pinch to zoom' : 'ctrl+wheel zooms'}</span>
 		</div>
 
 		<svg class="axis" width={scale.width} height={AXIS_H} aria-hidden="true">
@@ -663,6 +672,19 @@
 	</div>
 </div>
 
+	<div class="overlay key" style:left="{GUTTER + 12}px"><Legend /></div>
+	<div class="overlay zoom-ctl">
+		<ZoomControl
+			level={viewer.effectiveZoom}
+			hint={viewer.coarse.current ? 'Pinch to zoom' : 'Ctrl + wheel zooms'}
+			onzoomin={() => zoomCentre(viewer.effectiveZoom * 1.4)}
+			onzoomout={() => zoomCentre(viewer.effectiveZoom / 1.4)}
+			onfit={() => viewer.setZoom(viewer.minZoom)}
+			onnow={() => viewer.jump('now')}
+		/>
+	</div>
+</div>
+
 {#if tooltip && pointer.mouse}
 	{@const flipX = pointer.x > winW * 0.55}
 	{@const flipY = pointer.y > winH * 0.55}
@@ -690,6 +712,26 @@
 <svelte:window bind:innerWidth={winW} bind:innerHeight={winH} />
 
 <style>
+	.timeline {
+		position: relative;
+		height: 100%;
+		min-height: 0;
+		min-width: 0;
+	}
+	/* floating controls over the plot, clear of the horizontal scrollbar */
+	.overlay {
+		position: absolute;
+		bottom: 22px;
+		z-index: 5;
+	}
+	.zoom-ctl {
+		right: 22px;
+	}
+	@media (max-width: 899px) {
+		.overlay.key {
+			left: var(--space-4) !important;
+		}
+	}
 	.scroller {
 		position: relative;
 		outline-offset: -2px;

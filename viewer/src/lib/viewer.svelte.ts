@@ -26,6 +26,8 @@ interface Persisted {
 	families: EdgeFamily[];
 	hiddenKinds: string[];
 	zoom: number;
+	/** the timeline key is open */
+	legend: boolean;
 	depth: 'direct' | 'full';
 }
 
@@ -71,6 +73,7 @@ class Viewer {
 	/** never narrower than the viewport, so there is no dead strip on the right */
 	effectiveZoom = $derived(Math.max(this.zoom, this.minZoom));
 	depth = $state<'direct' | 'full'>('full');
+	legendOpen = $state(true);
 
 	selected = $state<Selection>(null);
 	hover = $state<Hover>(null);
@@ -101,6 +104,8 @@ class Viewer {
 		this.families = new SvelteSet(p.families ?? DEFAULT_FAMILIES);
 		this.hiddenKinds = new SvelteSet(p.hiddenKinds ?? []);
 		this.zoom = p.zoom ?? 1;
+		// open on first visit on wide screens, so the marks are explained where they are used
+		this.legendOpen = p.legend ?? !this.narrow.current;
 		this.depth = p.depth ?? 'full';
 	}
 
@@ -118,6 +123,7 @@ class Viewer {
 			families: [...this.families],
 			hiddenKinds: [...this.hiddenKinds],
 			zoom: this.zoom,
+			legend: this.legendOpen,
 			depth: this.depth
 		};
 		try {
