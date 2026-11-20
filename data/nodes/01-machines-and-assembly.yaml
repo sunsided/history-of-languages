@@ -1278,6 +1278,9 @@
     A portable binary instruction format for a stack-based virtual machine, with a text form (WAT) in
     S-expressions, designed as a compilation target for C, C++, Rust and others in browsers and beyond. Its
     initial feature set came from asm.js; it is the web's first new execution format since JavaScript.
+  notes: >
+    This node stands for both the virtual instruction set (the binary format) and its text format; there is no
+    separate machine node, and languages that compile to Wasm point here with `targets`.
   relations:
     - { type: successor_of, to: asm-js, weight: strong, confidence: high, sources: [wiki-webassembly, wiki-asmjs], note: "\"the initial implementation was based on the feature set of asm.js\"." }
     - { type: influenced_by, to: lisp, weight: weak, confidence: medium, sources: [wiki-webassembly], note: "In the infobox; the text format uses S-expressions." }
@@ -1751,6 +1754,56 @@
       }
     sources: [wiki-nacl]
 
+- id: chip-8
+  name: CHIP-8
+  kind: machine
+  category: domain-specific
+  cluster: machines/fantasy
+  origin:
+    first_appeared: { year: 1977, precision: disputed, note: "Shipped with the RCA COSMAC VIP, whose release Wikipedia gives as 1977 (COSMAC VIP article) or 1976 (Joseph Weisbecker article). The VIP manual that documents it is \"Copyright 1978\", printed 2-78; Weisbecker's BYTE article \"An Easy Programming System\" followed in December 1978. A date for CHIP-8 itself was not found." }
+    places: [{ institution: RCA Laboratories, city: Princeton, country: US }]
+  creators:
+    - { name: Joseph Weisbecker, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative]
+    features: [interpreter]
+    domain: [game-scripting]
+  summary: >
+    A 512-byte interpreter for the RCA COSMAC VIP that turned the CDP1802 into a simpler virtual machine for video
+    games: "31, easy-to-use CHIP-8 instructions", each "a two-byte (4-hex-digit) code", 16 one-byte variables V0-VF,
+    a memory pointer I, a 60 Hz timer and a sprite instruction that XORs patterns onto a 64x32 screen and reports
+    collisions in VF. Programs start at 0200 and are keyed in as hex. Most of the VIP's 20 bundled games were written
+    in it. Re-implemented on many machines since; Wikipedia calls it "a predecessor to PICO-8 and other fantasy
+    consoles".
+  notes: >
+    Wikipedia counts 35 opcodes in the commonly emulated set; the 1978 VIP manual lists 31. Later variants are
+    separate dialects not yet in the dataset: CHIP-48 (Andreas Gustafsson, 1990, for the HP-48), SUPER-CHIP (Erik
+    Bryntse, about 1991) and XO-CHIP (John Earnest). Wikipedia's PICO-8 navbox calls it "a predecessor to PICO-8
+    and other fantasy consoles"; no designer statement of influence was found, so no edge is stored.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CHIP-8" }
+  sources: [rca-1978-cosmac-vip-manual, wiki-chip-8, wiki-cosmac-vip, wiki-joseph-weisbecker]
+  example:
+    title: A moving "8"
+    language: CHIP-8 (COSMAC VIP)
+    year: 1978
+    note: "From section III of the COSMAC VIP manual: address, instruction and the manual's shorthand. D125 draws the 5-byte pattern at I at (V1, V2); drawing it again erases it, so the loop moves the digit diagonally. The last three words are the pattern bytes F0 90 F0 90 F0. OCR of \"I\" and \"V1\" corrected."
+    code: |
+      0200 A210   I=0210
+      0202 6100   V1=00
+      0204 6200   V2=00
+      0206 D125   SHOW 5MI@V1V2
+      0208 D125   SHOW 5MI@V1V2
+      020A 7101   V1+01
+      020C 7201   V2+01
+      020E 1206   GO 0206
+      0210 F090
+      0212 F090
+      0214 F000
+    sources: [rca-1978-cosmac-vip-manual]
+
 - id: dcpu-16
   name: DCPU-16
   aliases: [0x10c CPU]
@@ -1766,6 +1819,7 @@
     paradigm: [imperative]
   milestones:
     - { version: "1.1", year: 2012, summary: "16-bit words, 0x10000 words of RAM, eight registers (A, B, C, X, Y, Z, I, J) plus PC, SP and O; 4-bit basic and 6-bit non-basic opcodes." }
+    - { version: "1.7", year: 2012, summary: "A later revision (headed \"Copyright 1985 Mojang\"): 5-bit basic opcodes with a 5-bit b and a 6-bit a operand, EX (extra/excess) in place of O, an interrupt address register IA with INT, IAG, IAS, RFI and IAQ for queued interrupts, and HWN, HWQ and HWI to enumerate and signal attached hardware. Read from a copy committed to a third-party repository in late April 2012; the official release day is not confirmed." }
   summary: >
     The 16-bit CPU of 0x10c, a Mojang space game designed by Markus Persson and announced in April 2012. The game
     was shelved in August 2013 and never released, but the CPU's spec was public, and it was meant to let the
@@ -1774,7 +1828,7 @@
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/0x10c", homepage: "https://github.com/sunsided/dcpu-16" }
-  sources: [dcpu-16-spec-1-1, sunsided-dcpu-16, wiki-0x10c]
+  sources: [dcpu-16-spec-1-1, dcpu-16-spec-1-7, sunsided-dcpu-16, wiki-0x10c]
   example:
     title: The specification's sample program
     language: DCPU-16 assembly
@@ -1849,6 +1903,37 @@
       END
     sources: [pico-8-manual]
 
+- id: pixel-vision-8
+  name: Pixel Vision 8
+  aliases: [PV8]
+  kind: machine
+  category: educational
+  cluster: machines/fantasy
+  origin:
+    first_appeared: { year: 2017, precision: circa, note: "The GitHub repository was created on 1 April 2017 and the licence line reads \"Copyright (c) 2017-2021\"; the project's roadmap puts v0.8 Early Access in 2018. No dated first release was read." }
+  creators:
+    - { name: Jesse Freeman, role: creator }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    domain: [game-scripting, education]
+  summary: >
+    An open-source "8-bit fantasy game console" whose "core philosophy is to teach retro game development with
+    streamlined workflows". Where PICO-8 fixes one set of limits, Pixel Vision 8 lets the user configure them: its
+    chips set "resolution, system colors, the number of sprites that can be rendered" and the disk size. Games are
+    written in Lua or C#, on an engine forked from MonoGame. Development is paused and the repository was archived
+    on 4 January 2023.
+  notes: >
+    Created by Jesse Freeman with Christina-Antoinette Neofotistou (art) and Christer Kaitila (music); licensed
+    under the Microsoft Public License. Whether Jesse Freeman has an English Wikipedia article was not checked, so
+    no media subject was added.
+  relations:
+    - { type: influenced_by, to: pico-8, weight: moderate, confidence: medium, sources: [wiki-pico-8], note: "PICO-8's release spurred similar engines, among them \"the Pixel Vision 8, which allows the user to specify the simulated hardware limitations they wish to develop under\"." }
+  research_status: stub
+  confidence: medium
+  links: { homepage: "https://pixelvision8.github.io/Website" }
+  sources: [pixelvision8-github, pixelvision8-website, wiki-pico-8]
+
 - id: tic-80
   name: TIC-80
   kind: machine
@@ -1894,6 +1979,60 @@
         t=t+1
       end
     sources: [tic-80-wiki-hello-world]
+
+- id: picotron
+  name: Picotron
+  aliases: [Machine 3]
+  kind: machine
+  category: domain-specific
+  cluster: machines/fantasy
+  origin:
+    began: { year: 2021, date: "2021-06-16", precision: exact, note: "Announced by Joseph White as \"Machine 3\" on 16 June 2021; the web \"Picotron Playground\" followed on 31 December 2022." }
+    first_appeared: { year: 2024, date: "2024-03-14", precision: exact, note: "\"On 2024 March 14, he released the first alpha version of Picotron for purchase\" (version 0.1.0, \"First release of binaries\" in the changelog)." }
+    places: [{ institution: Lexaloffle Games }]
+  creators: [{ name: Joseph White, role: 'designer ("zep")' }]
+  status: active
+  tags:
+    paradigm: [imperative]
+    domain: [game-scripting]
+  milestones:
+    - { version: "0.1.0", year: 2024, summary: "First alpha, 14 March 2024." }
+    - { version: "0.3.0", year: 2026, summary: "Beta, 14 March 2026 (Wikipedia). Version 0.2 (binary exporters for Windows, Mac and 64-bit Linux) came in between; its date was not read." }
+  summary: >
+    Lexaloffle's "Fantasy Workstation: a self-contained creative environment built for imaginary hardware", a
+    virtual machine with its own desktop that mimics late-1980s 16-bit computers where PICO-8 mimics 8-bit
+    consoles: a "480x270 64-colour display" (also 240x135 and 160x90), 16 MB of RAM and a CPU budget of "8M vm
+    instructions per second". Everything in it, including the desktop, is written in "a slightly extended version
+    of Lua 5.4" with PICO-8 compatibility features, one VM per process.
+  notes: >
+    Wikipedia's PICO-8 article calls it PICO-8's successor; the Picotron article calls it a complement with a similar
+    API that does not run PICO-8 cartridges natively, because of differences in floating-point behaviour. PICO-8
+    remains on sale, so the edge is influence, not succession.
+  relations:
+    - { type: influenced_by, to: pico-8, weight: strong, confidence: high, sources: [picotron-manual, wiki-picotron], note: "Same designer and company. The manual's specification reads \"Code: Lua 5.4 w/ PICO-8 compatability features\"; Wikipedia notes \"a similar API\"." }
+    - { type: influenced_by, to: lua, weight: strong, confidence: high, sources: [picotron-manual], note: "\"Picotron uses a slightly extended version of Lua 5.4\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Picotron", homepage: "https://www.lexaloffle.com/picotron.php" }
+  sources: [picotron-homepage, wiki-picotron, picotron-manual, picotron-changelog]
+  example:
+    title: The three callbacks of a program
+    language: Picotron Lua
+    note: "From the Picotron manual, section 9.3 \"Program Structure\": \"A Picotron program can optionally provide 3 functions\". Unlike PICO-8's 30 frames per second, _update runs 60 times a second."
+    code: |
+      function _init()
+        -- called once just before the main loop
+      end
+
+      function _update()
+        -- called 60 times per second
+      end
+
+      function _draw()
+        -- called each time the window manager asks for a frame
+        -- (normally 60, 30 or 20 times per second)
+      end
+    sources: [picotron-manual]
 
 - id: rust-mir
   name: MIR (Rust)

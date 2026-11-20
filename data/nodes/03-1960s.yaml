@@ -1,5 +1,55 @@
 # The 1960s: ALGOL 60 and its children, Simula, APL, BASIC, PL/I, the BCPL line.
 
+- id: gotran
+  name: GOTRAN
+  kind: language
+  category: scientific
+  cluster: early/pioneers
+  origin:
+    first_appeared: { year: 1961, precision: circa, note: "IBM form C26-5594-1 is copyright 1961 and \"simply a reprint of the GOTRAN S Reference Manual, same title and same form number\", with a technical newsletter of 28 December 1961 folded in; the first edition's date was not found. The IBM 1620 was announced on 21 October 1959." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: IBM, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    features: [interpreter]
+    domain: [scientific-computing]
+  summary: >
+    IBM's load-and-go system for the IBM 1620, using "a language that is a subset of the 1620 FORTRAN language" for
+    engineers with "little computer background". It "compiles the problem-oriented source statements into
+    pseudo-instructions within the machine" and interprets them, so no object deck is produced; the name comes from
+    FORTRAN and from executing "in a load-and-go fashion". The subset is small: thirteen statements, one operator
+    per arithmetic statement, fixed-point variables only I to N, and a PLOT statement for plotting curves.
+  relations:
+    - { type: subset_of, to: fortran, weight: strong, confidence: high, sources: [ibm-1961-gotran], note: "\"The 1620 GOTRAN System language falls within the framework of the IBM 1620 FORTRAN System.\"" }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IBM_1620" }
+  sources: [ibm-1961-gotran, wiki-ibm-1620]
+  example:
+    title: The whole language
+    language: GOTRAN (IBM 1620)
+    year: 1961
+    note: "Table 1 of the manual, \"the thirteen GOTRAN statements in condensed form\" (all arithmetic forms count as one), laid out in rows here. The scan's OCR garbles the multiplication and involution glyphs; they are given here as * and **, as in FORTRAN. An arithmetic statement allows only one operation."
+    code: |
+      A=B+C   A=B-C   A=B*C   A=B/C   A=B**C
+      A=LOG (X)   A=EXP (X)   A=SQR (X)
+      A=SIN (X)   A=COS (X)   A=ATN (X)
+      GO TO n
+      IF (A) n1, n2, n3
+      DO n i = m1, m2, m3
+      CONTINUE
+      PAUSE
+      STOP
+      END
+      READ, A, B, C, D, E
+      PUNCH, A, B, C, D, E
+      PRINT, A, B, C, D, E
+      PLOT (v, c)
+      DIMENSION
+    sources: [ibm-1961-gotran]
+
 - id: algol-60
   name: ALGOL 60
   kind: language

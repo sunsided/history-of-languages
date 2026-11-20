@@ -8753,4 +8753,179 @@
   title: "Handbook for the Cyber Implementation Language (CYBIL), revision G (83/07/06; revision A dated 12/15/78)"
   year: 1983
   url: https://bitsavers.org/pdf/cdc/Tom_Hunter_Scans/L457290.pdf
+- id: wiki-fact
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: FACT (computer language)"
+  url: https://en.wikipedia.org/wiki/FACT_(computer_language)
+  checked: '2026-11-20'
+- id: honeywell-1960-fact-spec
+  type: manual
+  primary: true
+  authors: [Honeywell Electronic Data Processing]
+  title: "FACT, Fully Automatic Compiling Technique: A New Business Language (form 160-2M)"
+  year: 1960
+  url: https://bitsavers.org/pdf/honeywell/fact/160-2M_FACT_spec_1960.pdf
+  checked: '2026-11-20'
+- id: ibm-1961-gotran
+  type: manual
+  primary: true
+  authors: [IBM]
+  title: "IBM 1620 GOTRAN Interpretive Programming System (form C26-5594-1)"
+  year: 1961
+  url: https://bitsavers.org/pdf/ibm/1620/C26-5594-1_IBM_1620_GOTRAN_Interpretive_Programming_System_1961.pdf
+  checked: '2026-11-20'
+- id: wiki-ibm-1620
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IBM 1620"
+  url: https://en.wikipedia.org/wiki/IBM_1620
+  checked: '2026-11-20'
+- id: rca-1978-cosmac-vip-manual
+  type: manual
+  primary: true
+  authors: [RCA Corporation]
+  title: "RCA COSMAC VIP CDP18S711 Instruction Manual (VIP-311)"
+  year: 1978
+  url: https://archive.org/details/bitsavers_rcacosmacCManual1978_6956559
+  checked: '2026-11-20'
+- id: wiki-chip-8
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: CHIP-8"
+  url: https://en.wikipedia.org/wiki/CHIP-8
+  checked: '2026-11-20'
+- id: wiki-cosmac-vip
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: COSMAC VIP"
+  url: https://en.wikipedia.org/wiki/COSMAC_VIP
+  checked: '2026-11-20'
+- id: wiki-joseph-weisbecker
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Joseph Weisbecker"
+  url: https://en.wikipedia.org/wiki/Joseph_Weisbecker
+  checked: '2026-11-20'
+- id: picotron-homepage
+  type: web
+  primary: true
+  authors: [Lexaloffle Games]
+  title: "Picotron by Lexaloffle"
+  url: https://www.lexaloffle.com/picotron.php
+  checked: '2026-11-20'
+- id: wiki-picotron
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Picotron"
+  url: https://en.wikipedia.org/wiki/Picotron
+  checked: '2026-11-20'
+- id: picotron-manual
+  type: manual
+  primary: true
+  authors: [Lexaloffle Games]
+  title: "Picotron User Manual"
+  url: https://www.lexaloffle.com/dl/docs/picotron_manual.html
+  checked: '2026-11-20'
+- id: picotron-changelog
+  type: web
+  primary: true
+  authors: [Lexaloffle Games]
+  title: "Picotron changelog"
+  url: https://www.lexaloffle.com/dl/docs/picotron_changelog.txt
+  checked: '2026-11-20'
+- id: pixelvision8-github
+  type: web
+  primary: true
+  authors: [Jesse Freeman]
+  title: "PixelVision8/PixelVision8 (GitHub repository, created 1 April 2017, archived 4 January 2023)"
+  url: https://github.com/PixelVision8/PixelVision8
+  checked: '2026-11-20'
+- id: pixelvision8-website
+  type: web
+  primary: true
+  authors: [Jesse Freeman]
+  title: "Pixel Vision 8: an open source fantasy console (project website and roadmap)"
+  url: https://pixelvision8.github.io/Website
+  checked: '2026-11-20'
+- id: dcpu-16-spec-1-7
+  type: standard
+  primary: true
+  title: "Mojang: DCPU-16 Specification, Version 1.7 (2012), copy in gatesphere/demi-16 (docs/dcpu-specs/dcpu-1-7.txt)"
+  year: 2012
+  url: https://raw.githubusercontent.com/gatesphere/demi-16/master/docs/dcpu-specs/dcpu-1-7.txt
+  checked: '2026-11-20'
+- id: sep-recursive-functions
+  type: encyclopedia
+  primary: false
+  title: "Recursive Functions (Stanford Encyclopedia of Philosophy)"
+  url: https://plato.stanford.edu/entries/recursive-functions/
+  checked: '2026-11-20'
+- id: rojas-2023-first-computer-program
+  type: paper
+  primary: false
+  authors: [Raúl Rojas]
+  title: The First Computer Program
+  venue: arXiv:2303.13740
+  year: 2023
+  url: https://arxiv.org/abs/2303.13740
+  checked: '2026-11-20'
+- id: wiki-hero-of-alexandria
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Hero of Alexandria"
+  url: https://en.wikipedia.org/wiki/Hero_of_Alexandria
+  checked: '2026-11-20'
+- id: gizmodo-2007-hero-robot
+  type: web
+  primary: false
+  authors: [Wilson Rothman]
+  title: "World's First Programmable Robot Dates Back to 60 AD (Video)"
+  venue: Gizmodo, 6 July 2007
+  year: 2007
+  url: https://gizmodo.com/worlds-first-programmable-robot-dates-back-to-60-ad-vi-275647
+  checked: '2026-11-20'
+- id: lebling-2019-robots-ages-past
+  type: web
+  primary: false
+  authors: [Robert W. Lebling]
+  title: Robots of Ages Past
+  venue: AramcoWorld, 5 November 2019
+  year: 2019
+  url: https://www.aramcoworld.com/articles/2019/robots-of-ages-past
+  checked: '2026-11-20'
+- id: sharkey-2007-programmable-robot
+  type: web
+  primary: false
+  authors: [Noel Sharkey]
+  title: The programmable robot of ancient Greece
+  venue: New Scientist 2611, 7 July 2007
+  year: 2007
+  url: https://www.newscientist.com/article/mg19526111-600-the-programmable-robot-of-ancient-greece/
+- id: wiki-plugboard
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Plugboard"
+  url: https://en.wikipedia.org/wiki/Plugboard
+  checked: '2026-11-20'
+- id: wiki-ibm-402
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: IBM 402"
+  url: https://en.wikipedia.org/wiki/IBM_402
+  checked: '2026-11-20'
+- id: ibm-1956-functional-wiring-principles
+  type: manual
+  primary: true
+  authors: [IBM]
+  title: "Functional Wiring Principles (form 22-6275-0)"
+  year: 1956
+  url: http://www.bitsavers.org/pdf/ibm/punchedCard/Training/22-6275-0_Functional_Wiring_Principles.pdf
+  checked: '2026-11-20'
+- id: ibm-history-punched-card
+  type: web
+  primary: true
+  authors: [IBM]
+  title: "The IBM punched card (IBM History)"
+  url: https://www.ibm.com/history/punched-card
   checked: '2026-11-20'

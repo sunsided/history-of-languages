@@ -2644,3 +2644,33 @@
   wiki: Gary Mokotoff
   nodes:
   - ibm-1401-sps
+- id: person-joseph-weisbecker
+  kind: person
+  person: Joseph Weisbecker
+  wiki: Joseph Weisbecker
+  nodes:
+  - chip-8
+- id: person-kurt-godel
+  kind: person
+  person: Kurt Gödel
+  wiki: Kurt Gödel
+  nodes:
+  - general-recursive-functions
+- id: person-jacques-herbrand
+  kind: person
+  person: Jacques Herbrand
+  wiki: Jacques Herbrand
+  nodes:
+  - general-recursive-functions
+- id: person-stephen-kleene
+  kind: person
+  person: Stephen Cole Kleene
+  wiki: Stephen Cole Kleene
+  nodes:
+  - general-recursive-functions
+- id: person-hero-of-alexandria
+  kind: person
+  person: Hero of Alexandria
+  wiki: Hero of Alexandria
+  nodes:
+  - hero-programmable-cart

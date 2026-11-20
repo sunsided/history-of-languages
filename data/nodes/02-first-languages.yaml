@@ -43,6 +43,46 @@
       END
     sources: [wiki-plankalkul, bauer-woessner-1972-plankalkul]
 
+- id: curry-program-composition
+  name: Curry's program composition notation
+  aliases: [Curry's notation]
+  kind: notation
+  category: research
+  cluster: early/pioneers
+  origin:
+    first_appeared: { year: 1948, precision: year, note: "Two unpublished memoranda (Knuth and Trabb Pardo's [CU 48] and [CU 50]); \"the only appearance of his work in the open literature has been the brief and somewhat cryptic summary in [CU 50']\". Wikipedia's Haskell Curry article dates the description to 1947." }
+    places: [{ institution: Naval Ordnance Laboratory, city: Silver Spring, country: US }]
+  creators:
+    - { name: Haskell Curry, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+  summary: >
+    A logician's notation for building programs by composing "instruction groups" with numbered entrances and exits,
+    proposed after Curry "had prepared a rather complex program for ENIAC in 1946" as something "more compact than
+    flowcharts". Its aim of splitting a computation into independent "divisions" anticipates structured
+    programming, but components "tended to have several entrances and several exits" and the work was left
+    unfinished. More lasting was his recursive procedure for turning arithmetic expressions into one-address code,
+    which made him, in Knuth and Trabb Pardo's words, "the first person to describe the code-generation phase of a
+    compiler".
+  relations:
+    - { type: influenced_by, to: eniac, weight: weak, confidence: medium, sources: [knuth-pardo-1976-early-development], note: "\"He had prepared a rather complex program for ENIAC in 1946, and this experience led him to suggest a notation for program construction\"." }
+  research_status: draft
+  confidence: medium
+  sources: [knuth-pardo-1976-early-development]
+  example:
+    title: The TPK algorithm
+    language: Curry's notation (reconstruction)
+    note: "Reconstruction by Knuth and Trabb Pardo (1976, p. 21): \"Here is how he might have represented the TPK algorithm\". {E:x} stores E in x, A is the accumulator, {x = L(E)} substitutes E for x in the following groups, X → Y puts group Y at the first exit of X, I_j and O_j are entrances and exits, It_7(m,i) decrements i and loops. Subscripts are written with underscores here."
+    code: |
+      F(t) = {√|t| + 5t³ : A}
+      I    = {10:i} → {t = L(a+i)} → F(t) → {A:y}
+                    → II → It_7(0,i) → O_1 & I_2
+      II   = {x = L(b + 20 - 2i)} → {i:x} → III
+                    → {w = L(b + 21 - 2i)} → {y:w}
+      III  = {y > 400} → {999:y} & O_1
+    sources: [knuth-pardo-1976-early-development]
+
 - id: short-code
   name: Short Code
   aliases: [Brief Code]
@@ -432,6 +472,7 @@
   relations:
     - { type: influenced_by, to: comtran, weight: strong, confidence: high, sources: [wiki-comtran], note: "\"Several elements of COMTRAN were incorporated into COBOL\": picture clause, paragraphs, AT END, HIGH-VALUE, RETURN-CODE." }
     - { type: influenced_by, to: flow-matic, aspects: [english-like-syntax], weight: strong, confidence: high }
+    - { type: influenced_by, to: fact, weight: moderate, confidence: medium, sources: [wiki-fact], note: "FACT \"is one of three predecessor languages credited in all COBOL manuals\"; level-numbered data, VALUE, level-88 items, IN/OF qualification, MOVE CORRESPONDING, ON ERROR, SORT and the Report Section are named as carried over." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/COBOL" }
@@ -1004,6 +1045,54 @@
       02012 COMPUTE.PAY. IF DETAIL HOURS IS GREATER THAN 40 THEN SET DETAIL
       02013        GROSS = (DETAIL HOURS - 40) * MASTER RATE * 1.5.
     sources: [wiki-comtran]
+
+- id: fact
+  name: FACT
+  aliases: [Fully Automatic Compiling Technique]
+  kind: language
+  category: business
+  cluster: early/hopper
+  origin:
+    first_appeared: { year: 1959, precision: year, note: "Wikipedia dates the language to 1959; the specification \"FACT: A New Business Language\" (Honeywell form 160-2M) is dated 1960. Clippinger described it in The Computer Journal in 1962." }
+    places: [{ institution: Minneapolis-Honeywell Datamatic Division, country: US }, { institution: Computer Sciences Corporation, country: US }]
+  creators:
+    - { name: Roy Nutt, role: "designer, Computer Sciences Corporation" }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+    domain: [business-data-processing]
+    features: [english-like-syntax, records]
+  summary: >
+    Honeywell's business language for the Honeywell 800, "a complete programming system" whose 1960 specification
+    promised "easy and uniform handling of all aspects of data processing, including input editing, sorting,
+    processing of variable-length records, and report writing". Programs are English sentences grouped into named
+    paragraphs, with file outlines and a non-procedural report generator. It is one of the three languages (with
+    FLOW-MATIC and COMTRAN) credited in COBOL manuals as predecessors; COBOL took from it level-numbered data,
+    VALUE clauses, level-88 condition values, qualification with IN or OF, MOVE CORRESPONDING, ON ERROR, SORT and
+    the Report Section.
+  notes: >
+    Designed by Computer Sciences Corporation (Fletcher Jones, Roy Nutt and Robert L. Patrick) under contract to
+    Richard Clippinger of Honeywell; only Nutt is listed as a creator because the others' Wikipedia article titles
+    were not checked. Part of its design drew on C. K. Ogden's Basic English. It was used in production: five
+    customers wrote all their applications in it and about a dozen others used it to some degree (Wikipedia,
+    citing Sammet 1969 pp. 316-324, which was not read).
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/FACT_(computer_language)" }
+  sources: [wiki-fact, honeywell-1960-fact-spec]
+  example:
+    title: A paragraph used as a subroutine
+    language: FACT (1960 specification)
+    year: 1960
+    note: "From the specification's section on sub-paragraphs (p. 20): paragraph A computes interest I on a quantity Q at rate R, and the abbreviations in parentheses bind Q and R to different fields in each caller. Underlining in the original is not reproduced; line breaks are the manual's."
+    code: |
+      MORTGAGE.  PUT MASTERFILE-PRINCIPAL (Q) INTO SUMMARY-
+         -PRINCIPAL AND MASTERFILE-RATE (R) INTO SUMMARY-RATE.  DO
+         PARAGRAPH A.  ADD I TO PRINCIPAL.
+
+      BANKLOAN.  ADD LOAN (Q) TO TOTAL-LOAN.  PUT CHARGES (R)
+         INTO CURRENT-RATE.  DO PARAGRAPH A.  ADD I TO TOTAL-INTEREST.
+    sources: [honeywell-1960-fact-spec]
 
 - id: comit
   name: COMIT

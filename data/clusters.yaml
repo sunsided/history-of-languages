@@ -19,31 +19,25 @@
   name: Calculating and automatic mechanisms
   parent: prehistory
   research_status: draft
-  backlog:
-    - { name: "Hero of Alexandria's programmable cart", year: 60, hint: "Wikipedia (Hero of Alexandria): \"A cart that was powered by a falling weight and strings wrapped around the drive axle\"; no date for it, Hero dated 150 BC to 250 AD, and \"programmable\" appears only in a cited New Scientist title. Needs Sharkey 2007 or a translation of Automata." }
   research_questions:
     - "Where does 'computing' end and 'programming' begin? Proposed rule: a node is programmable if its behaviour can be changed without rebuilding it."
+    - "Hero's cart (hero-programmable-cart) rests on press reports of Sharkey 2007; read Sharkey's New Scientist article or a translation of Hero's Automata to confirm the peg-and-string programming."
 - id: prehistory/punched-cards
   name: Punched cards and paper tape
   parent: prehistory
   research_status: draft
-  backlog:
-    - { name: "IBM 80-column card", year: 1928, hint: "Punched card article: \"In 1927, Thomas J. Watson Sr. ... asked ... Clair D. Lake and J. Royden Pierce\"; the 1928 introduction was only in a tool summary, not verbatim. A format, so probably a note on hollerith-tabulator." }
-    - { name: "Plugboard programming (IBM 402 and unit-record equipment)", year: 1940, hint: "Plugboard article: Otto Schäffler invented it \"to easily reprogram tabulators\"; no year in the prose (only a 1906 category). Calculator panels \"were described as being programs\"." }
+  research_questions:
+    - "When did Otto Schäffler invent the plugboard (Wikipedia's only date is a 1906 category), and which IBM machine first had a removable control panel? Zemanek 1976 and Heide 2009 are the leads."
 - id: prehistory/babbage
   name: Babbage and Lovelace
   parent: prehistory
   research_status: draft
-  backlog:
-    - { name: "Babbage's own Analytical Engine 'programs' (1837 notebooks)", year: 1837, hint: "Predate Note G; relevant to the attribution debate." }
   research_questions:
     - "Attribution of Note G: summarise the historiography (Stein, Fuegi & Francis 2003, Hollings/Martin/Rice 2018) neutrally for the side sheet."
 - id: prehistory/formalisms
   name: Formal models of computation
   parent: prehistory
   research_status: draft
-  backlog:
-    - { name: "Gödel's recursive functions", year: 1931, hint: "General recursive function article gives no year for Gödel (1931/1934) or Herbrand; only Kleene 1936 in references (tool summary). Needs Kleene 1936 or Gödel 1934 lectures." }
 
 # ===================== Machines and assembly =====================
 - id: machines
@@ -76,10 +70,9 @@
   research_status: draft
   key_sources: [wiki-0x10c, wiki-tic-80]
   backlog:
-    - { name: "CHIP-8", year: 1977, hint: "Joseph Weisbecker's interpreted virtual machine for the COSMAC VIP; Wikipedia's PICO-8 navbox calls it \"a predecessor to PICO-8 and other fantasy consoles\"." }
-    - { name: "Picotron", hint: "Lexaloffle's \"fantasy workstation\" successor to PICO-8 with fewer constraints (Wikipedia: PICO-8). Year not yet read." }
-    - { name: "Pixel Vision 8", hint: "Named by Wikipedia's PICO-8 article among the fantasy consoles PICO-8 spurred." }
-    - { name: "DCPU-16 spec 1.7", year: 2012, hint: "Later revision of the 0x10c CPU (dcpu.com); add as a milestone once a copy can be read (Wayback is blocked from the sandbox)." }
+    - { name: "CHIP-48", year: 1990, hint: "Andreas Gustafsson's CHIP-8 for HP-48 calculators; changed the semantics of a few opcodes (wiki-chip-8). Source code: github.com/Chromatophore/HP48-Superchip." }
+    - { name: "SUPER-CHIP (SCHIP)", year: 1991, hint: "Erik Bryntse, \"based on CHIP-48\": larger resolution and more opcodes (wiki-chip-8). Spec: devernay.free.fr/hacks/chip8/schip.txt." }
+    - { name: "XO-CHIP", hint: "John Earnest's extension combining SCHIP and CHIP-8E behaviour; spec in the Octo repository (XO-ChipSpecification.md). Year not yet read." }
 - id: machines/eastern-bloc
   name: Eastern Bloc computers
   parent: machines
@@ -99,8 +92,6 @@
   name: RISC architectures
   parent: machines
   research_status: stub
-  backlog:
-    - { name: "WebAssembly (virtual ISA)", year: 2017, hint: "The text format is node webassembly (kind assembly). Add the ISA as a machine node if the graph needs a targets edge." }
 
 - id: assembly
   name: Assembly languages
@@ -163,15 +154,10 @@
   name: Pioneers
   parent: early
   research_status: draft
-  backlog:
-    - { name: "Haskell Curry's composition notation", year: 1948, hint: "Wikipedia's Haskell Curry article has no 1948 notation; it says \"In 1947 Curry also described one of the first high-level programming languages\" (citing Knuth & Trabb Pardo 1976, p. 22). Read Knuth & Trabb Pardo for the name and year." }
-    - { name: "GOTRAN (IBM 1620)", hint: "No article (GOTRAN is 404); the IBM 1620 article lists \"GOTRAN – simplified, interpreted version of FORTRAN for load and go operation\" with no year. Needs an IBM 1620 manual date." }
 - id: early/hopper
   name: Hopper's compilers
   parent: early
   research_status: draft
-  backlog:
-    - { name: "FACT (Honeywell)", year: 1959, hint: "No Wikipedia article or section found (FACT_(programming_language) is 404; Honeywell and Honeywell 200 pages do not mention it). Needs Sammet 1969 or a Honeywell manual." }
 - id: early/ai
   name: Early AI languages
   parent: early

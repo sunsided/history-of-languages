@@ -32,6 +32,34 @@
         saros_dial   = month_count mod 223             -- eclipse prediction
     sources: [freeth-2006-antikythera]
 
+- id: hero-programmable-cart
+  name: Hero of Alexandria's programmable cart
+  aliases: [Heron's cart]
+  kind: mechanism
+  category: domain-specific
+  cluster: prehistory/mechanisms
+  origin:
+    first_appeared: { year: 60, precision: circa, note: "\"60 AD\" is the date in the 2007 reports on Noel Sharkey's reconstruction (Gizmodo; New Scientist blog title). Hero's own dates are uncertain: Wikipedia gives a floruit \"probably 1st or 2nd century AD\", with estimates from 150 BC to 250 AD; Neugebauer matched an eclipse he mentions to 62 AD." }
+    places: [{ city: Alexandria }]
+  creators:
+    - { name: Hero of Alexandria, role: inventor }
+  status: extinct
+  summary: >
+    "A cart that was powered by a falling weight and strings wrapped around the drive axle", one of the automata of
+    Hero, whose treatise On Automaton-Making describes a mechanical puppet theatre. Noel Sharkey argued in 2007 that
+    it was programmable: the string "goes forward and back depending on where it has been wrapped around pegs in the
+    axle", so rewinding the string around different pegs gives the cart a different course without rebuilding it.
+    Sharkey "compares this control system to modern-day binary programming".
+  notes: >
+    The programmability is Sharkey's reading, reported in New Scientist (7 July 2007, "The programmable robot of
+    ancient Greece"), which could not be fetched; the details here come from press reports of it. The cart has
+    two independent axles driven by falling weights (Aramco World). A translation of Hero's Automata would confirm
+    the peg mechanism.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hero_of_Alexandria" }
+  sources: [wiki-hero-of-alexandria, gizmodo-2007-hero-robot, lebling-2019-robots-ages-past, sharkey-2007-programmable-robot]
+
 - id: banu-musa-flute-player
   name: Banū Mūsā automatic flute player
   kind: mechanism
@@ -130,6 +158,52 @@
       ×                   V4, V1  →  V3
     sources: [menabrea-lovelace-1843]
 
+- id: babbage-engine-programs
+  name: Babbage's Analytical Engine programs
+  aliases: [Notations and Calculations, BAB L1]
+  kind: notation
+  category: scientific
+  cluster: prehistory/babbage
+  origin:
+    began: { year: 1836, precision: year, note: "A sketch assigning the coefficients of a linear equation to memory addresses, without code, is dated 1836 in the Science Museum's Babbage archive." }
+    first_appeared: { year: 1837, date: "1837-08-04", precision: exact, note: "The sketch \"Notations and Calculations\" (archive BAB L1) opens \"No. 1. 4 August 1837.\" Unpublished; the archive has been digitized by the Science Museum, London." }
+  creators:
+    - { name: Charles Babbage, role: author }
+  status: historical
+  tags:
+    paradigm: [imperative]
+  summary: >
+    Babbage "wrote, between 1836 and 1841, 26 programming examples" for the Analytical Engine, as tables listing each
+    operation of the mill and the store variables it reads and writes, "displayed in tabular fashion, like a
+    program trace". The first, dated 4 August 1837, solves two linear equations in two unknowns in seven
+    operations. Because reading a store column cleared it, he marked each overwrite of a variable with a prime.
+    They predate Lovelace's Note G (1843) by six years, which is why they matter to the debate over the "first
+    program".
+  notes: >
+    Rojas reads them as programs written "in 'assembler'": the operations and addresses translate directly into
+    operation and variable cards, and the symbolic columns are comments. Babbage did not publish them; Note G stays
+    the first published program.
+  relations:
+    - { type: targets, to: analytical-engine, weight: strong, confidence: high, sources: [rojas-2023-first-computer-program], note: "Written for the Analytical Engine's mill and store, with variables v1 to v7." }
+  research_status: draft
+  confidence: high
+  sources: [rojas-2023-first-computer-program]
+  example:
+    title: "No. 1, 4 August 1837: solving two linear equations"
+    language: Babbage's operation table (BAB L1), as transcribed by Rojas
+    year: 1837
+    note: "Rojas's condensed transcription of the first table: for ax + by + c = 0 and a'x + b'y + c' = 0, v1-v6 hold a, b, c, a', b', c' and x = (bc' − b'c) / (b'a − ba'). Primes count how often a store column was overwritten. Rojas sets operation 7 as a fraction; it is written on one line here."
+    code: |
+      No.  Computation     Code
+      1    b'a             v7   = v5 · v1
+      2    b'c             v1'  = v5 · v3
+      3    ba'             v3'  = v2 · v4
+      4    bc'             v2'  = v2 · v6
+      5    bc' − b'c       v4'  = v2' − v1'
+      6    b'a − ba'       v1'' = v7 − v3'
+      7    x               v3'' = v4' ÷ v1''
+    sources: [rojas-2023-first-computer-program]
+
 - id: lovelace-note-g
   name: Lovelace's Note G (Bernoulli numbers program)
   aliases: [Note G]
@@ -183,6 +257,8 @@
   creators:
     - { name: Herman Hollerith, role: inventor }
   status: historical
+  milestones:
+    - { version: "IBM 80-column card", year: 1928, summary: "\"Introduced in 1928, the new IBM card had 80 columns and 10 rows for coding numbers\", with the smaller rectangular holes proposed by Clair D. Lake's team; until the late 1920s IBM cards \"had 45 columns of round holes\". Later, \"one card represented a line of code\" (IBM History)." }
   summary: >
     Electromechanical tabulator reading data from punched cards. Hollerith's company became part of
     IBM, and the punched card became the standard medium for both data and programs until the 1970s.
@@ -192,7 +268,7 @@
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Tabulating_machine" }
-  sources: [wiki-tabulating-machine]
+  sources: [wiki-tabulating-machine, ibm-history-punched-card]
   example:
     title: A census card
     language: punched card (illustrative)
@@ -233,6 +309,43 @@
 
       S K K x = K x (K x) = x        -- so I = S K K
     sources: [wiki-combinatory-logic]
+
+- id: general-recursive-functions
+  name: General recursive functions
+  aliases: [Gödel's recursive functions, Herbrand–Gödel recursive functions, μ-recursive functions]
+  kind: formalism
+  category: research
+  cluster: prehistory/formalisms
+  origin:
+    began: { year: 1931, precision: year, note: "Gödel's incompleteness paper defines \"recursive\" functions, the class later called primitive recursive; the definition is \"a digression from the main focus of the paper\"." }
+    first_appeared: { year: 1934, precision: year, note: "Gödel's 1934 lectures define the general recursive functions by systems of equations, following a suggestion of Herbrand. Kleene's partial recursive functions with unbounded minimization followed in 1936." }
+  creators:
+    - { name: Kurt Gödel, role: "originator (1931, 1934)" }
+    - { name: Jacques Herbrand, role: "suggested the equational definition" }
+    - { name: Stephen Cole Kleene, role: "μ-operator and normal form (1936)" }
+  status: active
+  tags:
+    features: [recursion]
+  summary: >
+    The functions on natural numbers definable by recursion equations: in 1931 Gödel's primitive recursive class,
+    in 1934 the general recursive functions, where "A function f:N^k → N is general recursive if there is a system
+    of equations" that defines it. Kleene's later form closes the primitive recursive functions "under the
+    operation of unbounded minimization". The class was shown equal to the lambda-definable functions (Church and
+    Kleene, 1936) and to the Turing-computable ones, and Church's thesis identifies it with the effectively
+    computable functions.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/General_recursive_function" }
+  sources: [sep-recursive-functions, wiki-general-recursive-function]
+  example:
+    title: Doubling, defined by a system of equations
+    language: Herbrand–Gödel recursion equations
+    note: "From the Stanford Encyclopedia of Philosophy (Recursive Functions, section 1.5): 2 × x \"is the unique function of type N → N satisfying\" this system. φ is the unknown function, ψ an auxiliary one."
+    code: |
+      φ(0)     = 0
+      ψ(x)     = φ(x) + 1
+      φ(x + 1) = ψ(x) + 1
+    sources: [sep-recursive-functions]
 
 - id: lambda-calculus
   name: Lambda calculus
@@ -615,6 +728,38 @@
       $ → [$]
       $ → $$
       $1$2 → $1[]$2
+
+- id: ibm-402-control-panel
+  name: IBM 402 control panel (plugboard programming)
+  aliases: [plugboard, control panel, wiring panel, IBM 402]
+  kind: mechanism
+  category: business
+  cluster: prehistory/punched-cards
+  origin:
+    first_appeared: { year: 1948, precision: year, note: "The IBM 402 and 403 accounting machines were \"introduced by International Business Machines in the late 1940s\"; Wikipedia's infobox gives 1948, citing an IBM chronology (not read) for \"402 developed in 1948 or 1949\". The plugboard itself is older: \"Otto Schäffler invented the plugboard in order to easily reprogram tabulators\", at a date the article does not state." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: IBM, role: manufacturer }
+  status: historical
+  tags:
+    domain: [business-data-processing]
+  summary: >
+    Unit-record machines such as the IBM 402 accounting machine were "primarily controlled by a removable control
+    panel": "a panel or board which, in most cases, can be removed from a machine or inserted", with "a lot of holes,
+    called hubs, into which you can insert wires with special tips, to vary the instructions" (IBM, 1956). Wiring a
+    panel told the machine which card columns to read, add, compare and print; swapping panels swapped the job. On
+    calculators such as the IBM 602 and 604, panels "that specified a sequence of operations, were described as being
+    programs", with numbered program steps. ENIAC was first programmed the same way, with cables and plugboards.
+  notes: >
+    Stands for plugboard programming of IBM unit-record equipment in general; the 402 was the backlog's named
+    example. "Removable control panels came to be used in all unit record machines." Schäffler's invention date and
+    the first IBM machine with a removable panel are open questions.
+  relations:
+    - { type: influenced_by, to: hollerith-tabulator, aspects: [punched-card-program], weight: moderate, confidence: low, sources: [wiki-plugboard], note: "IBM's accounting machines descend from Hollerith's tabulators and read the same kind of cards; the plugboard was invented \"to easily reprogram tabulators\". No source read states the line from Hollerith's machines to the 402 panel directly." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Plugboard" }
+  sources: [wiki-plugboard, wiki-ibm-402, ibm-1956-functional-wiring-principles]
 
 - id: markov-algorithm
   name: Markov algorithm
