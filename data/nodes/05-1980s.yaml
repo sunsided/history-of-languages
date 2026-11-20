@@ -1330,7 +1330,7 @@
   tags:
     paradigm: [imperative, procedural, event-driven, scripting]
     typing: [typeless]
-    features: [embeddable, string-processing, bytecode-vm, interpreter]
+    features: [embeddable, string-processing, bytecode-vm, interpreter, command-substitution]
   milestones:
     - { version: "Tk", year: 1991, summary: "Tk, the GUI toolkit extension, presented at USENIX in January 1991; Don Libes's Expect, built on Tcl, was announced in June 1990." }
     - { version: "8.0", year: 1997, introduces: [bytecode-vm], summary: "Bytecode compiler (Brian Lewis) and namespaces." }
@@ -1341,9 +1341,10 @@
     application, in which everything is a string and every statement a command. With Tk it became the
     easiest way to build Unix GUIs, and with Expect the standard tool for automating interactive programs.
   relations:
-    - { type: influenced_by, to: lisp, weight: moderate, confidence: medium, sources: [wiki-tcl] }
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: high, sources: [ousterhout-1990-tcl, wiki-tcl], note: "\"four additional syntactic constructs in Tcl, which give the language a Lisp-like flavor\"." }
     - { type: influenced_by, to: awk, weight: weak, confidence: medium, sources: [wiki-tcl] }
     - { type: influenced_by, to: rexx, weight: weak, confidence: low, sources: [wiki-rexx], note: "Wikipedia's Rexx article calls Rexx \"a precursor to Tcl and Python\" as a general-purpose scripting language; no Ousterhout statement found." }
+    - { type: influenced_by, to: bourne-shell, aspects: [command-substitution], weight: strong, confidence: medium, sources: [ousterhout-1990-tcl], note: "\"Tcl's basic syntax is similar to that of the UNIX shells\"; the paper cites the UNIX shells generally (via Kernighan and Pike), so the Bourne shell as the target is an inference." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Tcl_(programming_language)", homepage: "https://www.tcl-lang.org" }
@@ -4091,7 +4092,12 @@
     "with a variant of ML" and maintained by Cornell's PRL Project. Nuprl 4 was used to verify cache-coherency protocols;
     JonPRL and RedPRL build on the same computational type theory.
   relations:
-    - { type: influenced_by, to: ml, weight: moderate, confidence: medium, sources: [wiki-nuprl], note: "\"The overall system is controlled with a variant of ML.\"" }
+    - { type: embeds, to: ml, weight: strong, confidence: high, sources: [nuprl-book-1986, wiki-nuprl], note: "\"The metalanguage is the programming language ML from the Edinburgh LCF system modified to suit Nuprl\" (Cambridge ML)." }
+    - { type: influenced_by, to: lcf, weight: strong, confidence: high, sources: [nuprl-book-1986], note: "Nuprl \"follows in the spirit of the Edinburgh LCF project, which spawned ML\"." }
+    - { type: influenced_by, to: automath, weight: moderate, confidence: high, sources: [nuprl-book-1986], note: "\"The style of formalization extends the AUTOMATH approach\"." }
+    - { type: implemented_in, to: lisp-machine-lisp, weight: moderate, confidence: high, sources: [nuprl-book-1986], note: "\"written in about 60,000 lines of Lisp. It runs in Zetalisp on Symbolics Lisp Machines and in Franz Lisp\"." }
+    - { type: implemented_in, to: franz-lisp, weight: moderate, confidence: high, sources: [nuprl-book-1986] }
+    - { type: implemented_in, to: common-lisp, year: 2002, weight: moderate, confidence: high, sources: [kreitz-2002-nuprl5], note: "\"Nuprl 5 is written mostly in Common Lisp\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Nuprl" }
@@ -4755,9 +4761,10 @@
     (ISQL) toolset", joining ISQL's forms (Perform) and reports (Ace) with procedural code and embedded SQL. IBM bought
     Informix in 2001; Genero BDL, Querix4GL and Aubit 4GL are compatible clones, and the infobox lists IBM's EGL as an heir.
   relations:
-    - { type: influenced_by, to: sql, weight: strong, confidence: high, sources: [wiki-informix-4gl], note: "Infobox \"Influenced by: C, COBOL, SQL, ISQL, Perform, Ace\"." }
+    - { type: influenced_by, to: sql, weight: moderate, confidence: high, sources: [wiki-informix-4gl], note: "Infobox \"Influenced by: C, COBOL, SQL, ISQL, Perform, Ace\"; the SQL statements themselves are embedded (see embeds)." }
     - { type: influenced_by, to: cobol, weight: weak, confidence: medium, sources: [wiki-informix-4gl] }
     - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-informix-4gl] }
+    - { type: embeds, to: sql, weight: strong, confidence: high, sources: [hcl-4gl-concepts], note: "\"4GL includes all SQL statements supported by Informix as native statements of the language\"; it \"approximates a superset of the Informix implementation (Version 4.1) of the industry-standard SQL language\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Informix-4GL" }

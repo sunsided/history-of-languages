@@ -584,6 +584,7 @@
   relations:
     - { type: influenced_by, to: pascal, weight: strong, confidence: medium }
     - { type: influenced_by, to: algol-68, weight: moderate, confidence: low }
+    - { type: influenced_by, to: concurrent-pascal, aspects: [monitors], weight: moderate, confidence: high, sources: [lampson-redell-1980-mesa], note: "Monitors \"provided a very attractive framework for reliable concurrent programming ... and at least one implementation\" (Concurrent Pascal); \"The same rule is adopted in Concurrent Pascal\"." }
   research_status: draft
   confidence: medium
   sources: [lampson-redell-1980-mesa, wirth-2007-modula2-oberon]

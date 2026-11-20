@@ -7041,3 +7041,115 @@
   title: "Wikipedia: Gremlin (query language)"
   url: https://en.wikipedia.org/wiki/Gremlin_(query_language)
   checked: '2026-11-20'
+- id: liljencrantz-2005-fish
+  type: web
+  primary: true
+  authors: [Axel Liljencrantz]
+  title: Fish - The friendly interactive shell
+  venue: LWN.net
+  year: 2005
+  url: https://lwn.net/Articles/136232/
+  checked: '2026-11-20'
+- id: fish-design
+  type: manual
+  primary: true
+  authors: [fish-shell developers]
+  title: Design (fish-shell documentation)
+  url: https://fishshell.com/docs/current/design.html
+- id: ousterhout-1990-tcl
+  type: paper
+  primary: true
+  authors: [John K. Ousterhout]
+  title: "Tcl: An Embeddable Command Language"
+  venue: USENIX Winter Conference 1990, pp. 133-146
+  year: 1990
+  url: https://www.st.cs.uni-saarland.de/edu/config-ss04/tclUsenix90.pdf
+  checked: '2026-11-20'
+- id: neumann-2000-xotcl
+  type: paper
+  primary: true
+  authors: [Gustaf Neumann, Uwe Zdun]
+  title: XOTcl, an Object-Oriented Scripting Language
+  venue: 7th USENIX Tcl/Tk Conference (Tcl2k)
+  year: 2000
+  url: https://www.usenix.org/legacy/publications/library/proceedings/tcl2k/full_papers/neumann/neumann.pdf
+- id: mojo-vision
+  type: manual
+  primary: true
+  authors: [Modular]
+  title: Mojo vision
+  url: https://mojolang.org/docs/vision
+  checked: '2026-11-20'
+- id: lattner-2017-concurrency-manifesto
+  type: web
+  primary: true
+  authors: [Chris Lattner]
+  title: Swift Concurrency Manifesto
+  year: 2017
+  url: https://gist.github.com/lattner/31ed37682ef1576b16bca1432ea9f782
+  checked: '2026-11-20'
+- id: brinch-hansen-1999-java
+  type: paper
+  primary: true
+  authors: [Per Brinch Hansen]
+  title: Java's Insecure Parallelism
+  venue: SIGPLAN Notices 34(4)
+  year: 1999
+  url: http://brinch-hansen.net/papers/1999b.pdf
+  checked: '2026-11-20'
+- id: standish-1968-ppl
+  type: report
+  primary: true
+  authors: [Thomas A. Standish]
+  title: Preliminary Sketch of a PPL
+  venue: National University of Mexico (UNAM)
+  year: 1968
+  url: https://raw.githubusercontent.com/PDP-10/harvard-ppl/master/Standish-Preliminary_Sketch_of_a_PPL-1968.pdf
+  checked: '2026-11-20'
+- id: nuprl-book-1986
+  type: book
+  primary: true
+  authors: [Robert L. Constable]
+  title: Implementing Mathematics with the Nuprl Proof Development System (chapter 1, Overview)
+  venue: Prentice-Hall
+  year: 1986
+  url: https://web.archive.org/web/2015/http://www.nuprl.org/book/Overview.html
+  checked: '2026-11-20'
+- id: kreitz-2002-nuprl5
+  type: manual
+  primary: true
+  authors: [Christoph Kreitz]
+  title: The Nuprl Proof Development System, Version 5 - Reference Manual and User's Guide
+  venue: Cornell University
+  year: 2002
+  url: https://web.archive.org/web/20081031184434id_/http://www.nuprl.org/html/02cucs-NuprlManual.pdf
+- id: sather-history-1996
+  type: manual
+  primary: true
+  authors: [ICSI Sather group]
+  title: Sather history and acknowledgements (Sather 1.1 specification)
+  year: 1996
+  url: https://web.archive.org/web/19970715054211/http://www.icsi.berkeley.edu:80/~sather/history.html
+  checked: '2026-11-20'
+- id: sather-faq
+  type: web
+  primary: true
+  authors: [ICSI Sather group]
+  title: Sather FAQ
+  url: https://web.archive.org/web/2005/http://www.icsi.berkeley.edu/~sather/faq.html
+- id: hcl-4gl-concepts
+  type: manual
+  primary: true
+  authors: [HCL Software]
+  title: Informix 4GL Concepts and Use, Version 7.51
+  url: https://help.hcl-software.com/hclinformix/1410/pdf/4gl/HCL_4GL%20Concepts%20and%20Use,%20v7.51.pdf
+  checked: '2026-11-20'
+- id: trevor-2008-yql
+  type: talk
+  primary: true
+  authors: [Jonathan Trevor]
+  title: Pipes and Y! Query Language (YQL)
+  venue: QCon San Francisco 2008
+  year: 2008
+  url: https://qconsf.com/sf2008/dl/qcon-sanfran-2008/slides_/JonathanTrevor_Yahoo_Pipes.pdf
+  checked: '2026-11-20'

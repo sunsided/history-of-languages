@@ -2358,7 +2358,8 @@
     "an interactive, extensible language with a base language similar to the language APL", from Harvard. "The
     assignment operator <- (or ←) has influenced the language S."
   relations:
-    - { type: influenced_by, to: apl, weight: strong, confidence: medium, sources: [wiki-ppl], note: "\"a base language similar to the language APL\"; listed among APL dialects." }
+    - { type: influenced_by, to: apl, weight: strong, confidence: high, sources: [standish-1968-ppl, wiki-ppl], note: "\"an extensible conversational programming language based on Iverson's APL\", with the mechanics of arrays subtracted out." }
+    - { type: influenced_by, to: cpl, aspects: [conditional-expressions, references], weight: moderate, confidence: medium, sources: [standish-1968-ppl], note: "\"Two arm conditionals such as 'if B then C else D' are written B→(C,D) in PPL. This notation follows CPL\"; left-hand values: \"The terminology is Strachey's from CPL\". Only the 1968 sketch says so." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Polymorphic_Programming_Language" }

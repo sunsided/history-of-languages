@@ -708,6 +708,7 @@
     - { type: influenced_by, to: csharp, weight: moderate, confidence: high }
     - { type: influenced_by, to: python, weight: weak, confidence: medium }
     - { type: influenced_by, to: ruby, weight: weak, confidence: medium }
+    - { type: reacts_against, to: java, aspects: [monitors], year: 2017, weight: moderate, confidence: high, sources: [lattner-2017-concurrency-manifesto], note: "\"notably synchronized methods in Java (which were later imported into Objective-C). This sort of thing improves the syntactic side of the equation but doesn't fix the underlying problem\"; actors are the answer." }
   research_status: draft
   confidence: high
   sources: [lattner-swift-homepage, swift-se-0296]
@@ -966,6 +967,7 @@
     C++/CLI.
   relations:
     - { type: superset_of, to: cpp, weight: strong, confidence: high, note: "A 'C++ superset-oriented' extension with non-standard keywords (Wikipedia: C++/CLI).", sources: [wiki-cpp-cli, wiki-managed-cpp] }
+    - { type: targets, to: cil, weight: strong, confidence: medium, sources: [wiki-managed-cpp], note: "Code \"targeted for the .NET Framework produces Microsoft Intermediate Language (MSIL) output\"." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Managed_Extensions_for_C%2B%2B" }
@@ -1968,10 +1970,13 @@
     Conflict: Modular's "Why Mojo" page states the long-term goal of "a superset of Python"; Wikipedia says
     this goal was abandoned or postponed indefinitely by March 2026, citing a Modular forum post not yet read.
   relations:
-    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [mojo-why], note: "\"A member of the Python family\"." }
-    - { type: influenced_by, to: swift, weight: moderate, confidence: medium, sources: [wiki-mojo] }
-    - { type: influenced_by, to: rust, aspects: [ownership-borrowing], weight: moderate, confidence: medium, sources: [wiki-mojo] }
-    - { type: influenced_by, to: cpp, weight: weak, confidence: medium, sources: [wiki-mojo] }
+    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [mojo-vision], note: "\"Mojo adopts Python's syntax\"." }
+    - { type: influenced_by, to: swift, weight: moderate, confidence: high, sources: [mojo-vision], note: "\"It draws on lessons from languages like Swift, C++, Rust, and Zig\"." }
+    - { type: influenced_by, to: rust, aspects: [ownership-borrowing], weight: moderate, confidence: high, sources: [mojo-vision, mojo-manual], note: "\"we draw from languages like Rust, Swift, and Zig rather than create novel and untested solutions\"." }
+    - { type: influenced_by, to: cpp, weight: moderate, confidence: high, sources: [mojo-vision], aspects: [generics, compile-time-evaluation], note: "\"We took the ideas behind C++ templates (compile-time polymorphism and specialization)\"." }
+    - { type: influenced_by, to: zig, weight: weak, confidence: high, sources: [mojo-vision], note: "\"It draws on lessons from languages like Swift, C++, Rust, and Zig\"." }
+    - { type: influenced_by, to: cuda, weight: moderate, confidence: high, sources: [mojo-vision], note: "\"We took inspiration from kernel programming systems (CUDA, CUTLASS, DSLs, etc.)\"." }
+    - { type: reacts_against, to: cpp, weight: weak, confidence: high, sources: [mojo-vision], note: "\"The complexity of some languages (notably C++) has spiraled out of control\"." }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Mojo_(programming_language)", homepage: "https://mojolang.org" }
@@ -2150,13 +2155,16 @@
   status: active
   tags:
     paradigm: [imperative, scripting]
-    features: [interpreter]
+    features: [interpreter, command-substitution]
   summary: >
     A shell that deliberately breaks POSIX compatibility for a simpler, more uniform syntax: set instead of
     =, no then or fi, functions instead of aliases, and no subshells for language features. Known for
     autosuggestions and syntax highlighting out of the box.
   relations:
-    - { type: influenced_by, to: bash, weight: moderate, confidence: medium, sources: [wiki-fish], note: "\"The syntax resembles a POSIX compatible shell (such as Bash), but deviates in many ways\"." }
+    - { type: influenced_by, to: bash, weight: moderate, confidence: medium, sources: [wiki-fish], note: "\"The syntax resembles a POSIX compatible shell (such as Bash), but deviates in many ways\"; the 2005 announcement treats bash and zsh as the shells it argues against." }
+    - { type: influenced_by, to: bourne-shell, aspects: [command-substitution], weight: moderate, confidence: high, sources: [liljencrantz-2005-fish, fish-design], note: "\"the shell syntax of moderns POSIX shells like bash and zsh is very similar to the original Bourne shell\"; the design doc: \"fish should follow POSIX\" where its goals allow." }
+    - { type: reacts_against, to: bourne-shell, weight: moderate, confidence: high, sources: [liljencrantz-2005-fish], note: "\"There are a large number of problems with this syntax which I feel should be changed. Unfortunately, this means that the fish syntax is incompatible with other shells.\"" }
+    - { type: influenced_by, to: c-shell, weight: weak, confidence: high, sources: [liljencrantz-2005-fish], note: "\"It borrows syntax from csh, and uses a command called 'set' to assign variable values.\"" }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Fish_(Unix_shell)", homepage: "https://fishshell.com" }
@@ -3869,14 +3877,14 @@
   tags:
     paradigm: [multi-paradigm, object-oriented, functional, imperative, event-driven]
     typing: [dynamic-typing]
-    features: [metaclasses]
+    features: [metaclasses, mixins, metaobject-protocol]
   milestones:
     - { version: "1.6.8", year: 2014, summary: "Stable release, 29 April 2014." }
   summary: >
     "An object-oriented extension for the Tool Command Language" by Gustaf Neumann and Uwe Zdun. "It is a derivative of
     MIT OTcl and is based on a dynamic object system with metaclasses influenced by CLOS."
   relations:
-    - { type: extension_of, to: tcl, weight: strong, confidence: high, sources: [wiki-xotcl], note: "\"an object-oriented extension for the Tool Command Language\"; a derivative of MIT OTcl." }
+    - { type: extension_of, to: tcl, weight: strong, confidence: high, sources: [neumann-2000-xotcl, wiki-xotcl], note: "\"XOTcl is a standard Tcl extension which can be dynamically loaded into every Tcl compliant tool\"; a derivative of MIT OTcl." }
     - { type: influenced_by, to: common-lisp, weight: moderate, confidence: medium, sources: [wiki-xotcl], note: "Its object system has \"metaclasses influenced by CLOS\"." }
   research_status: stub
   confidence: high
@@ -5473,6 +5481,7 @@
     - { name: Yahoo!, role: developer }
   status: extinct
   tags:
+    features: [pipes]
     paradigm: [query, declarative]
     domain: [web]
   summary: >
@@ -5480,7 +5489,7 @@
     manipulate data from APIs through a single Web interface" for mashups. Third-party open data tables followed in 2009;
     Yahoo retired the service on January 3, 2019.
   relations:
-    - { type: influenced_by, to: sql, weight: strong, confidence: medium, sources: [wiki-yql], note: "\"an SQL-like query language\"." }
+    - { type: influenced_by, to: sql, weight: strong, confidence: high, sources: [trevor-2008-yql, wiki-yql], note: "\"Exposes a SQL-like SELECT syntax that is both familiar to developers and expressive enough ... YQL operates on hierarchical documents, not relational tuples\": the syntax, not the relational semantics." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Yahoo_Query_Language" }

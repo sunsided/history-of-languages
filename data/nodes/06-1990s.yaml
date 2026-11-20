@@ -140,7 +140,7 @@
     domain: [statistics]
   summary: "Interactive language for statistics at Bell Labs. R is an open implementation of it with Scheme semantics underneath."
   relations:
-    - { type: influenced_by, to: ppl, weight: weak, confidence: medium, sources: [wiki-ppl], note: "\"The assignment operator <- (or ←) has influenced the language S.\"" }
+    - { type: influenced_by, to: ppl, weight: weak, confidence: low, sources: [wiki-ppl], note: "Wikipedia's PPL article: \"The assignment operator <- (or ←) has influenced the language S.\" Not found in Chambers 1994, Chambers 2020 or Becker 1994; a Bell Labs statement would confirm it." }
   research_status: draft
   confidence: high
   sources: [chambers-2020-s-r]
@@ -419,7 +419,7 @@
     - { type: influenced_by, to: cpp, aspects: [classes], weight: strong, confidence: high }
     - { type: influenced_by, to: objective-c, aspects: [interfaces], weight: moderate, confidence: high, note: "Interfaces from Objective-C protocols." }
     - { type: influenced_by, to: smalltalk, aspects: [bytecode-vm, garbage-collection], weight: moderate, confidence: medium }
-    - { type: influenced_by, to: mesa, aspects: [monitors], weight: moderate, confidence: medium }
+    - { type: influenced_by, to: mesa, aspects: [monitors], weight: moderate, confidence: medium, sources: [brinch-hansen-1999-java], note: "Brinch Hansen: \"a Java class with synchronized methods, waiting loops and notifyAll statements is a variant of my earliest ideas in parallel programming\"; he lists Mesa among monitor languages. A Java-side statement naming Mesa was not found." }
     - { type: influenced_by, to: modula-3, weight: weak, confidence: medium }
     - { type: influenced_by, to: self, aspects: [jit-compilation], weight: moderate, confidence: high, note: "Implementation influence: HotSpot came from the Self/Strongtalk team." }
     - { type: influenced_by, to: simula, weight: weak, confidence: medium }
@@ -4878,12 +4878,26 @@
   notes: >
     Variants: Sather-K (Karlsruhe), Sather-W (Waikato, Sather 1.3) and pSather, a parallel version for NUMA
     machines with a shared-memory model. The infobox lists Cool as influenced; it is not a node. The old
-    backlog hint said Sather's iterators link CLU to C#; that is not on the page and is not stored.
+    backlog hint said Sather's iterators link CLU to C#; that is not on the page and is not stored. The first
+    compiler was "written in Sather (bootstrapped by hand-translating to C) over the summer of 1990" (Sather history page).
   relations:
-    - { type: influenced_by, to: eiffel, weight: strong, confidence: high, sources: [wiki-sather], note: "\"Originally, it was based on Eiffel\"." }
-    - { type: influenced_by, to: clu, weight: moderate, confidence: high, sources: [wiki-sather], note: "Infobox: influenced by \"Eiffel, CLU, Common Lisp, Scheme\"." }
-    - { type: influenced_by, to: common-lisp, weight: weak, confidence: high, sources: [wiki-sather], note: "Infobox." }
+    - { type: influenced_by, to: eiffel, weight: strong, confidence: high, sources: [sather-history-1996, wiki-sather], note: "\"Its primary debt is to Eiffel, designed by Bertrand Meyer\"." }
+    - { type: influenced_by, to: clu, weight: moderate, confidence: high, sources: [sather-history-1996, wiki-sather], note: "Listed in the Sather 1.1 acknowledgements." }
+    - { type: influenced_by, to: common-lisp, weight: weak, confidence: high, sources: [sather-history-1996, wiki-sather], note: "Listed in the Sather 1.1 acknowledgements." }
     - { type: influenced_by, to: scheme, weight: weak, confidence: high, sources: [wiki-sather], note: "Infobox." }
+    - { type: influenced_by, to: ml, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: influenced_by, to: cpp, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: influenced_by, to: c, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: influenced_by, to: cecil, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: influenced_by, to: dylan, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: influenced_by, to: modula-3, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: influenced_by, to: oberon, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: influenced_by, to: objective-c, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: influenced_by, to: pascal, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: influenced_by, to: sail, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: influenced_by, to: self, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: influenced_by, to: smalltalk, weight: weak, confidence: high, sources: [sather-history-1996], note: "Listed in the Sather 1.1 acknowledgements: \"it has also been influenced by C, C++, Cecil, CLOS, CLU, Common Lisp, Dylan, ML, Modula-3, Oberon, Objective C, Pascal, SAIL, School, Self, and Smalltalk\"." }
+    - { type: targets, to: c, weight: strong, confidence: high, sources: [sather-faq], note: "\"The ICSI compiler generates C.\"" }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Sather" }
