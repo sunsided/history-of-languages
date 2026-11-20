@@ -4456,3 +4456,49 @@
       μ(NULL:A) = (ρNULL):A = null:A = F
       apply:<x,y> = (x:y)
     sources: [backus-1978-liberated]
+
+- id: focus
+  name: FOCUS
+  aliases: [Focus, PC/FOCUS, WebFOCUS]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    began: { year: 1975, precision: year, note: "Gerald Cohen: \"We started FOCUS in 1975\" (CHM oral history, 1986), after leaving Mathematica and founding Information Builders." }
+    first_appeared: { year: 1976, precision: year, note: "Cohen: \"By 1976 we had an early version. And it was an instant success on the Tymshare network.\"" }
+    places: [{ institution: Information Builders, city: New York, country: US }]
+  creators:
+    - { name: Gerald D. Cohen, role: designer, affiliation: Information Builders }
+  status: legacy
+  tags:
+    paradigm: [declarative, query]
+    features: [english-like-syntax, interactive-time-sharing]
+    domain: [databases, business-data-processing]
+  milestones:
+    - { version: PC/FOCUS, year: 1983, summary: "Ported to the IBM PC XT; \"Focus was ready to serve this computer when the first shipments of the machine were made in 1983\".", sources: [fundinguniverse-information-builders] }
+    - { version: WebFOCUS, year: 1997, summary: "Extended to the web as the WebFOCUS product.", sources: [wiki-focus] }
+  summary: >
+    Information Builders' report-writing and data-maintenance language, which "began as an alternate product to
+    Mathematica's RAMIS, the first Fourth-generation programming language". Gerald Cohen, RAMIS's lead developer,
+    recreated it as FOCUS, first sold as a time-sharing service on Tymshare's IBM network and taken in-house once
+    IBM's 4300 machines arrived. Cohen called FOCUS and RAMIS "non-procedural languages"; a Datamation article
+    about a FOCUS project popularised the term "fourth-generation language" around 1981.
+  notes: >
+    RAMIS (Mathematica) is FOCUS's "direct ancestor" but is not yet a node, so the edge is missing; it is in this
+    cluster's backlog. Gerald D. Cohen is the spelling Wikipedia uses; he has no article of his own.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Focus_(programming_language)" }
+  sources: [chm-1986-cohen-oral-history, wiki-focus, fundinguniverse-information-builders]
+  example:
+    title: Interactive data maintenance
+    language: FOCUS
+    note: "From the samples in Wikipedia's FOCUS article: MODIFY prompts for the fields of a phone index, rejects records whose area code and number already exist and adds the rest."
+    code: |
+      MODIFY FILE PHONEIDX
+      PROMPT AREACODE PHONUM LASTNAME FIRSTNAME NOTES
+      MATCH AREACODE PHONUM
+      ON MATCH REJECT
+      ON NOMATCH INCLUDE
+      DATA
+    sources: [wiki-focus]

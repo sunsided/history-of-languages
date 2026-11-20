@@ -9366,3 +9366,183 @@
   year: 2016
   doi: 10.1145/2908080.2908096
   url: https://doi.org/10.1145/2908080.2908096
+- id: wiki-adaptive-server-enterprise
+  type: encyclopedia
+  primary: false
+  title: Adaptive Server Enterprise
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Adaptive_Server_Enterprise
+  checked: '2026-11-20'
+- id: garden-2006-sql-mythbusters
+  type: web
+  primary: true
+  authors: [Euan Garden]
+  title: "SQL MythBusters – \"SQL Server is really a Sybase product not a Microsoft one.\""
+  venue: MSDN blogs (Microsoft Learn archive)
+  year: 2006
+  url: https://learn.microsoft.com/en-us/archive/blogs/euanga/sql-mythbusters-sql-server-is-really-a-sybase-product-not-a-microsoft-one
+  checked: '2026-11-20'
+- id: ms-learn-tsql-while
+  type: manual
+  primary: true
+  authors: [Microsoft]
+  title: WHILE (Transact-SQL)
+  venue: Microsoft Learn, SQL Server documentation
+  year: 2025
+  url: https://learn.microsoft.com/en-us/sql/t-sql/language-elements/while-transact-sql
+  checked: '2026-11-20'
+- id: wiki-peoplecode
+  type: encyclopedia
+  primary: false
+  title: PeopleCode
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/PeopleCode
+  checked: '2026-11-20'
+- id: wiki-peoplesoft
+  type: encyclopedia
+  primary: false
+  title: PeopleSoft
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/PeopleSoft
+  checked: '2026-11-20'
+- id: wiki-peopletools
+  type: encyclopedia
+  primary: false
+  title: PeopleTools
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/PeopleTools
+  checked: '2026-11-20'
+- id: oracle-peoplecode-overview
+  type: manual
+  primary: true
+  authors: [Oracle Corporation]
+  title: "PeopleTools 8.61: PeopleCode Overview"
+  venue: Oracle PeopleSoft documentation
+  url: https://docs.oracle.com/cd/G10809_01/pt861pbr4/eng/pt/tpcd/PeopleCodeOverview-074b56.html
+  checked: '2026-11-20'
+- id: wiki-lotusscript
+  type: encyclopedia
+  primary: false
+  title: LotusScript
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/LotusScript
+  checked: '2026-11-20'
+- id: wiki-hcl-notes
+  type: encyclopedia
+  primary: false
+  title: HCL Notes
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/HCL_Notes
+  checked: '2026-11-20'
+- id: hcl-domino-notesdocument-examples
+  type: manual
+  primary: true
+  authors: [HCL Software]
+  title: "Examples: NotesDocument class"
+  venue: HCL Domino Designer 14.0 documentation
+  url: https://help.hcl-software.com/dom_designer/14.0.0/basic/H_EXAMPLES_NOTESDOCUMENT_CLASS.html
+  checked: '2026-11-20'
+- id: computerworld-2006-salesforce-apex
+  type: web
+  primary: true
+  title: Salesforce.com to roll out Apex programming language
+  venue: Computerworld (11 October 2006)
+  year: 2006
+  url: https://www.computerworld.com/article/1643381/salesforce-com-to-roll-out-apex-programming-language.html
+  checked: '2026-11-20'
+- id: wiki-salesforce
+  type: encyclopedia
+  primary: false
+  title: Salesforce
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Salesforce
+  checked: '2026-11-20'
+- id: wiki-egl
+  type: encyclopedia
+  primary: false
+  title: EGL (programming language)
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/EGL_(programming_language)
+  checked: '2026-11-20'
+- id: cernosek-2005-egl
+  type: report
+  primary: true
+  authors: [Gary Cernosek]
+  title: Exploiting Java with Enterprise Generation Language
+  venue: IBM Rational white paper (March 2005)
+  year: 2005
+  url: https://public.dhe.ibm.com/software/rational/web/whitepapers/egl-cernosek-wp.pdf
+  checked: '2026-11-20'
+- id: wiki-supercard
+  type: encyclopedia
+  primary: false
+  title: SuperCard
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/SuperCard
+  checked: '2026-11-20'
+- id: wiki-visual-objects
+  type: encyclopedia
+  primary: false
+  title: Visual Objects
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Visual_Objects
+  checked: '2026-11-20'
+- id: ca-1994-visual-objects-release-notes
+  type: manual
+  primary: true
+  authors: [Computer Associates]
+  title: CA-Visual Objects Version 1.0 Release Notes (November 13, 1994)
+  year: 1994
+  url: https://discmaster.textfiles.com/file/18117/win311aps.iso/VO/README.WRI/README.pdf
+  checked: '2026-11-20'
+- id: wiki-focus
+  type: encyclopedia
+  primary: false
+  title: FOCUS
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Focus_(programming_language)
+  checked: '2026-11-20'
+- id: chm-1986-cohen-oral-history
+  type: interview
+  primary: true
+  authors: [Gerald Cohen, Luanne Johnson]
+  title: Oral History of Gerald Cohen (recorded 14 May 1986)
+  venue: Computer History Museum, X4566.2008
+  year: 1986
+  url: https://archive.computerhistory.org/resources/access/text/2013/05/102658228-05-01-acc.pdf
+  checked: '2026-11-20'
+- id: fundinguniverse-information-builders
+  type: web
+  primary: false
+  title: Information Builders, Inc. History
+  venue: FundingUniverse (International Directory of Company Histories)
+  url: https://www.fundinguniverse.com/company-histories/information-builders-inc-history/
+  checked: '2026-11-20'
+- id: wiki-pro-c
+  type: encyclopedia
+  primary: false
+  title: Pro*C
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Pro*C
+  checked: '2026-11-20'
+- id: orafaq-precompiler
+  type: web
+  primary: false
+  title: Precompiler
+  venue: Oracle FAQ wiki
+  url: https://www.orafaq.com/wiki/Precompiler
+  checked: '2026-11-20'
+- id: oracle-proc-guide-92
+  type: manual
+  primary: true
+  authors: [Oracle Corporation]
+  title: "Pro*C/C++ Precompiler Programmer's Guide, Release 9.2 (A97269-01), chapter 2: Precompiler Concepts"
+  url: https://docs.oracle.com/cd/B10501_01/appdev.920/a97269/pc_02prc.htm
+  checked: '2026-11-20'
+- id: wiki-oracle-database
+  type: encyclopedia
+  primary: false
+  title: Oracle Database
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Oracle_Database
+  checked: '2026-11-20'

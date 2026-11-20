@@ -6058,3 +6058,80 @@
                       FI
                   FI
     sources: [wiki-opal]
+
+- id: visual-objects
+  name: Visual Objects
+  aliases: [CA-Visual Objects, VO, Aspen]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    began: { year: 1992, precision: circa, note: "Started at Nantucket as the Aspen project; Computer Associates bought Nantucket, and with it Aspen, in 1992." }
+    first_appeared: { year: 1994, date: "1994-11-13", precision: exact, note: "CA-Visual Objects Version 1.0 Release Notes, dated November 13, 1994, replacing a pre-release version." }
+    places: [{ institution: Computer Associates, country: US }]
+  creators:
+    - { name: Nantucket Corporation, role: original developer (Aspen) }
+    - { name: Computer Associates, role: developer and publisher }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, procedural, imperative]
+    typing: [dynamic-typing, static-typing]
+    features: [classes, compiler]
+    domain: [databases, business-data-processing]
+  milestones:
+    - { version: "2.5", year: 1999, date: "1999-06-29", summary: "CA-Visual Objects 2.5.", sources: [wiki-visual-objects] }
+    - { version: "2.8 SP4", year: 2012, summary: "\"the last release by GrafX Software was in 2012 of version 2.8 sp4\"; GrafX also built the .NET successor Vulcan.NET, continued by the open-source X#.", sources: [wiki-visual-objects] }
+  summary: >
+    Clipper for Windows: the Aspen project "was started as part of Nantucket's attempts to bring the Clipper language
+    to Windows, and move from the procedural to the object-oriented style", and Computer Associates shipped it after
+    buying Nantucket. It added classes with methods and accesses, optional strong typing of variables taken from C,
+    and a repository-based IDE; it was "released before it was market-ready" against Borland's Delphi. GrafX
+    Software kept it alive until 2012 and moved it to .NET as Vulcan.NET, now X#.
+  relations:
+    - { type: successor_of, to: clipper, weight: strong, confidence: high, sources: [wiki-visual-objects], note: "Nantucket's project to \"bring the Clipper language to Windows\"." }
+    - { type: influenced_by, to: c, aspects: [static-typing], weight: weak, confidence: medium, sources: [wiki-visual-objects], note: "Wikipedia: adopted some C features such as typed variables." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Visual_Objects" }
+  sources: [wiki-visual-objects, ca-1994-visual-objects-release-notes]
+
+- id: lotusscript
+  name: LotusScript
+  kind: language
+  category: scripting
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1996, date: "1996-01", precision: exact, note: "Used by Lotus Notes \"since version 4.0\" (Wikipedia, LotusScript); Notes 4 was released in January 1996 (Wikipedia, HCL Notes). If another Lotus product shipped it earlier, this date moves back." }
+    places: [{ institution: Lotus Development, country: US }]
+  creators:
+    - { name: Lotus Development, role: "developer (IBM from 1995, HCL from 2018)" }
+  status: maintained
+  tags:
+    paradigm: [object-oriented, procedural, event-driven]
+    features: [classes]
+    domain: [business-data-processing]
+  summary: >
+    The object-oriented BASIC of Lotus Notes and other Lotus products (Word Pro, 1-2-3), "similar to Visual Basic"
+    so that readers of one can read the other. It has user-defined types and classes but cannot inherit from the
+    product classes such as NotesSession and NotesDocument, and reaches Microsoft Office through OLE automation.
+    With the older @-formula language it is one of the "two original" ways to program Notes, and it remains "a
+    primary tool" for the Notes client under HCL.
+  relations:
+    - { type: influenced_by, to: visual-basic, weight: moderate, confidence: low, sources: [wiki-lotusscript], note: "The page only says LotusScript \"is similar to Visual Basic\"; a Lotus statement of intent (or a manual saying it is VB-compatible) would confirm direct influence." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/LotusScript" }
+  sources: [wiki-lotusscript, wiki-hcl-notes, hcl-domino-notesdocument-examples]
+  example:
+    title: Creating a Notes document
+    language: LotusScript (HCL Domino Designer 14)
+    note: "From HCL's examples for the NotesDocument class: creates a document in the current database, sets its Subject item and saves it."
+    code: |
+      Dim session As New NotesSession
+      Dim db As NotesDatabase
+      Dim doc As NotesDocument
+      Set db = session.CurrentDatabase
+      Set doc = New NotesDocument ( db )
+      doc.Subject = "New building"
+      Call doc.Save( True, True )
+    sources: [hcl-domino-notesdocument-examples]

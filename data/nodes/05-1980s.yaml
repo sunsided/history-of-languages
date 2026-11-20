@@ -6067,3 +6067,163 @@
   links: { wikipedia: "https://en.wikipedia.org/wiki/Objective-C#Objective-C++" }
   sources: [wiki-objective-c-cpp]
 
+
+- id: transact-sql
+  name: Transact-SQL
+  aliases: [T-SQL, TSQL]
+  kind: language
+  category: query
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1987, precision: year, note: "The SQL dialect of Sybase SQL Server, \"Originally developed for Unix operating system platforms in 1987\" (Wikipedia, Adaptive Server Enterprise). No source found dates the name Transact-SQL itself; a Sybase SQL Server 1.x or 3.0 manual would." }
+    places: [{ institution: Sybase, city: Berkeley, country: US }]
+  creators:
+    - { name: Sybase, role: developer (Microsoft and SAP maintain separate dialects) }
+  status: active
+  tags:
+    paradigm: [declarative, query, procedural]
+    domain: [databases]
+  milestones:
+    - { version: "Ashton-Tate/Microsoft SQL Server 1.0", year: 1989, summary: "The OS/2 port of Sybase DataServer; \"V1 of Ashton-Tate/Microsoft SQL Server was shipped in 1989\".", sources: [garden-2006-sql-mythbusters] }
+    - { version: "Microsoft/Sybase split", year: 1994, summary: "\"In 1994 the partnership was dissolved\"; Microsoft built on the SQL Server for NT code, Sybase on System 10, and the two T-SQL dialects diverged.", sources: [garden-2006-sql-mythbusters] }
+  summary: >
+    "An extension of SQL used by Microsoft SQL products and services", and also the dialect of Sybase's SQL Server
+    (now SAP ASE): local variables prefixed with @, IF...ELSE, WHILE and later TRY...CATCH, stored procedures with
+    output parameters, and FROM clauses on UPDATE and DELETE. Microsoft SQL Server began in 1987 as a partnership
+    to port "the then (yet to be released) Sybase DataServer" to OS/2, so the Microsoft and Sybase dialects share
+    one origin and split in 1994.
+  relations:
+    - { type: dialect_of, to: sql, weight: strong, confidence: high, sources: [wiki-transact-sql], note: "\"an extension of SQL\"; SAP calls its version \"an enhanced version of the relational database language\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Transact-SQL" }
+  sources: [wiki-transact-sql, wiki-adaptive-server-enterprise, garden-2006-sql-mythbusters, ms-learn-tsql-while]
+  example:
+    title: WHILE with BREAK and CONTINUE
+    language: Transact-SQL (Microsoft SQL Server)
+    year: 2025
+    note: "Example A of Microsoft's WHILE (Transact-SQL) reference, without its USE/GO preamble: doubles prices until the maximum exceeds $500. $300 is a money literal."
+    code: |
+      WHILE (
+              SELECT AVG(ListPrice)
+              FROM Production.Product
+              ) < $300
+      BEGIN
+          UPDATE Production.Product
+          SET ListPrice = ListPrice * 2
+
+          SELECT MAX(ListPrice)
+          FROM Production.Product
+
+          IF (
+              SELECT MAX(ListPrice)
+              FROM Production.Product
+              ) > $500
+              BREAK
+          ELSE
+              CONTINUE
+      END
+
+      PRINT 'Too much for the market to bear';
+    sources: [ms-learn-tsql-while]
+
+- id: pro-c
+  name: Pro*C
+  aliases: [Pro*C/C++, ProC]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1988, precision: circa, note: "Not dated by any source found. Oracle 7.0 (1992) \"shipped with Pro*C version 1.5\", so 1.0 is older; Oracle v6 (1988) lists \"PL/SQL executed from compiled programs (C etc.)\". An Oracle v5 or v6 precompiler manual would date 1.0." }
+    places: [{ institution: Oracle Corporation, country: US }]
+  creators:
+    - { name: Oracle Corporation, role: developer }
+  status: maintained
+  tags:
+    paradigm: [imperative, procedural]
+    features: [preprocessor]
+    domain: [databases, business-data-processing]
+  milestones:
+    - { version: "1.5", year: 1992, summary: "\"Oracle 7.0 shipped with Pro*C version 1.5\".", sources: [orafaq-precompiler, wiki-oracle-database] }
+    - { version: "8.0", year: 1997, summary: "\"Starting with Oracle 8, precompiler versions were synchronized with the database version.\" Now Pro*C/C++.", sources: [orafaq-precompiler, wiki-oracle-database] }
+  summary: >
+    Oracle's embedded-SQL precompiler for C, later C++: "an embedded SQL programming language used by Oracle Database
+    DBMSes" in which EXEC SQL statements with :host variables sit inside C code, and the precompiler "translates all
+    EXEC SQL statements into calls to the runtime library SQLLIB". It is one of a family with Pro*COBOL, Pro*FORTRAN
+    and, until Oracle 8, precompilers for Pascal, PL/I and Ada.
+  notes: >
+    Pro*C 2.0 shipped with Oracle 7.1 alongside 1.6 (year not found); "Pro*C 2.x behaved so differently from Pro*C
+    1.x" that both were shipped with Oracle 7.1 and 7.2, with PARSE options to simulate 1.x behaviour.
+  relations:
+    - { type: embeds, to: sql, weight: strong, confidence: high, sources: [oracle-proc-guide-92], note: "\"Pro*C/C++ provides the ability to embed certain SQL statements in a C or C++ host program\"." }
+    - { type: extension_of, to: c, weight: strong, confidence: high, sources: [wiki-pro-c, oracle-proc-guide-92], note: "\"Pro*C uses either C or C++ as its host language\"; precompiling yields \"a modified source file that can be compiled normally\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Pro*C" }
+  sources: [wiki-pro-c, orafaq-precompiler, oracle-proc-guide-92, wiki-oracle-database]
+  example:
+    title: SELECT INTO host variables
+    language: Pro*C/C++ 9.2
+    note: "From sample1.pc in chapter 2 of the Pro*C/C++ 9.2 Programmer's Guide; emprec and emprec_ind are a host struct and its indicator struct declared earlier in the program."
+    code: |
+      EXEC SQL SELECT ename, sal, NVL(comm, 0)
+          INTO :emprec INDICATOR :emprec_ind
+          FROM EMP
+          WHERE EMPNO = :emp_number;
+    sources: [oracle-proc-guide-92]
+
+- id: peoplecode
+  name: PeopleCode
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1989, precision: circa, note: "No source found dates PeopleCode. PeopleSoft (founded 1987) released \"PeopleSoft version 1\" in late 1989, implemented on its proprietary PeopleTools, whose \"primary language is PeopleCode\"; that PeopleCode was already in version 1 is an inference. Early PeopleTools release notes would confirm it." }
+    places: [{ institution: PeopleSoft, country: US }]
+  creators:
+    - { name: PeopleSoft, role: developer (Oracle Corporation since 2004) }
+  status: active
+  tags:
+    paradigm: [object-oriented, procedural, event-driven]
+    features: [classes]
+    domain: [business-data-processing, databases]
+  summary: >
+    "A proprietary object-oriented programming language used to express business logic for PeopleSoft applications",
+    part of the PeopleTools framework. "All PeopleCode is associated with a definition and an event", run in a fixed
+    order by the Component Processor; SQL is passed as strings to objects such as CreateSQL. Its object syntax,
+    similar to Java's, arrived with PeopleTools 8, and Oracle has owned it since buying PeopleSoft in 2004.
+  notes: >
+    "Object syntax was an important feature of PeopleTools 8" (dot notation, classes, methods); the year of
+    PeopleTools 8.0 is not on the pages read (8.14 is dated 15 June 2001), so it is not a milestone yet. Wikipedia
+    notes that PeopleCode "has evolved over time and its implementation through the PeopleSoft
+    applications lack consistency". No influence on or from another language is documented in the sources read.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/PeopleCode" }
+  sources: [wiki-peoplecode, wiki-peoplesoft, wiki-peopletools, oracle-peoplecode-overview]
+
+- id: supertalk
+  name: SuperTalk
+  kind: language
+  category: scripting
+  cluster: oop/apple
+  origin:
+    first_appeared: { year: 1989, precision: year, note: "Shipped with SuperCard, \"first published in 1989 by Silicon Beach Software\" (Wikipedia)." }
+    places: [{ institution: Silicon Beach Software, country: US }]
+  creators:
+    - { name: Bill Appleton, role: creator of SuperCard }
+  status: historical
+  tags:
+    paradigm: [procedural, event-driven, scripting]
+    features: [english-like-syntax]
+  summary: >
+    The scripting language of SuperCard, Bill Appleton's HyperCard competitor for the Macintosh, "largely based on
+    HyperTalk". It could call OSA scripting languages such as AppleScript and shell commands, and was extended with
+    "externals", compiled code that behaves like native routines. SuperCard passed from Silicon Beach to Aldus (1990),
+    Allegiant (1994), Incwell (1998) and Solutions Etcetera (2002).
+  relations:
+    - { type: dialect_of, to: hypertalk, weight: strong, confidence: medium, sources: [wiki-supercard], note: "\"largely based on HyperTalk\"; one of the xTalk family." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/SuperCard" }
+  sources: [wiki-supercard]

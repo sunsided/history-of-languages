@@ -10515,3 +10515,86 @@
       Path(x, y) :- Road(x, maxSpeed, y), if maxSpeed >= minSpeed.
       Path(x, z) :- Path(x, y), Road(y, maxSpeed, z), if maxSpeed >= minSpeed.
     sources: [flix-homepage]
+
+- id: egl
+  name: EGL
+  aliases: [Enterprise Generation Language, EDT, EGL Development Tools]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 2003, date: "2003-03", precision: exact, note: "IBM's lineage chart dates EGL to WebSphere Studio Enterprise Developer (WSED) v5.0, March 2003, after Cross System Product (1981), VisualGen and VisualAge Generator 4.5.3 (February 2002)." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: IBM, role: developer (Eclipse EDT project later) }
+  status: extinct
+  tags:
+    paradigm: [procedural, imperative]
+    typing: [static-typing]
+    domain: [business-data-processing, web]
+  milestones:
+    - { version: EGL Rich UI, year: 2008, date: "2008-12", summary: "Web 2.0-style rich web applications.", sources: [wiki-egl] }
+  summary: >
+    IBM's 4GL renamed: "IBM's 4GL has evolved and has been renamed EGL", the language of Cross System Product (1981)
+    and VisualAge Generator carried onto the Eclipse workbench. Developers write business logic in a "simplified
+    high-level" procedural language and "the EGL tools generate Java or COBOL code" for the chosen platform, and
+    debug at the EGL level. IBM offered migration from Informix-4GL and VisualAge Generator into it; Eclipse
+    archived the open-source EDT in 2017.
+  relations:
+    - { type: targets, to: java, weight: strong, confidence: high, sources: [cernosek-2005-egl], note: "\"the EGL tools generate Java or COBOL code\"." }
+    - { type: targets, to: cobol, weight: strong, confidence: high, sources: [cernosek-2005-egl] }
+    - { type: influenced_by, to: informix-4gl, weight: weak, confidence: low, sources: [wiki-egl, wiki-informix-4gl, cernosek-2005-egl], note: "Informix-4GL's infobox lists EGL as influenced, and IBM shipped an Informix 4GL-to-EGL migration utility; EGL's own lineage is IBM's CSP/VisualAge Generator. An IBM statement that Informix-4GL shaped EGL's design would confirm it." }
+  notes: >
+    IBM donated it to the Eclipse Foundation as EGL Development Tools (EDT) under the EPL (year not found); the
+    project was "proposed for termination in 2014" and archived in 2017. Its direct ancestors, IBM Cross System Product (1981) and VisualGen/VisualAge Generator (1994-2002), are not yet
+    nodes; see this cluster's research questions.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/EGL_(programming_language)", homepage: "https://www.eclipse.org/edt/" }
+  sources: [cernosek-2005-egl, wiki-egl]
+  example:
+    title: Hello, world as a program with functions
+    language: EGL
+    note: "From Wikipedia's EGL article; tabs replaced by spaces."
+    code: |
+      Program HelloWorld
+          const GREETING string = "Hello, ";
+
+          function main()
+              myName string = "John";
+              sayHello(myName);
+          end
+          function sayHello(name String in)
+              SysLib.writeStdOut(GREETING + name + "!");
+          end
+      end
+    sources: [wiki-egl]
+
+- id: apex
+  name: Apex
+  aliases: [Apex Code, Salesforce Apex, Force.com Apex]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 2006, date: "2006-10", precision: exact, note: "Announced at Dreamforce 2006 in San Francisco as \"a new Java-like programming language and platform\" (Computerworld, 11 October 2006); \"available by January\"." }
+    places: [{ institution: Salesforce, city: San Francisco, country: US }]
+  creators:
+    - { name: Craig Weissman, role: initial designer of the language and compiler, affiliation: Salesforce }
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative]
+    typing: [static-typing]
+    features: [classes]
+    domain: [business-data-processing, databases]
+  summary: >
+    Salesforce's "proprietary Java-like programming language" for the Force.com (now Salesforce Platform) PaaS: code
+    runs on Salesforce's multi-tenant servers next to the customer's data. It was announced at Dreamforce in October
+    2006 as part of a platform meant to let partners build hosted applications, and "The Apex language and compiler
+    were initially designed by Craig Weissman".
+  relations:
+    - { type: influenced_by, to: java, weight: strong, confidence: medium, sources: [computerworld-2006-salesforce-apex, wiki-salesforce], note: "Both sources call it \"Java-like\"; no designer statement on what was taken was read." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Salesforce" }
+  sources: [computerworld-2006-salesforce-apex, wiki-salesforce]

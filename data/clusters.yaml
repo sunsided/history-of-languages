@@ -612,17 +612,12 @@
   summary: "Fourth-generation and database application languages: dBase descendants, report writers and vendor languages such as PL/SQL and ABAP's peers."
   research_status: stub
   backlog:
-    - { name: "Transact-SQL", hint: "T-SQL; Sybase, then Microsoft SQL Server (announced January 1988 with Ashton-Tate, licensed from Sybase) and SAP ASE; \"an extension of SQL\" (wiki-transact-sql). Needs a release year and a verbatim example." }
-    - { name: "PeopleCode", hint: "Oracle/PeopleSoft's object-oriented business-logic language, part of PeopleTools; \"Object syntax was an important feature of PeopleTools 8\" (Wikipedia). No first year on the page." }
-    - { name: "LotusScript", hint: "Object-oriented, \"similar to Visual Basic\", used by Lotus Notes \"since version 4.0\". Wikipedia gives no year; find the Notes 4.0 release date." }
-    - { name: "Apex (Salesforce.com, Inc)", hint: "Salesforce's \"proprietary Java-like programming language\", initially designed by Craig Weissman (Wikipedia: Salesforce). en.wikipedia.org/wiki/Apex_(programming_language) redirects to Salesforce; needs a year from Salesforce docs." }
-    - { name: "EGL", hint: "IBM's Enterprise Generation Language, later Eclipse EDT (archived 2017); EGL Rich UI December 2008; Informix-4GL's infobox lists EGL as influenced (Wikipedia). No first year." }
-    - { name: "SuperTalk", hint: "\"the scripting language used in SuperCard\", \"a descendant of HyperTalk\" (Wikipedia). No year; use SuperCard's release date from another source." }
-    - { name: "Visual Objects", hint: "CA-Visual Objects (code-named Aspen), Nantucket's Clipper for Windows, brought to market by Computer Associates; 2.5 in 1999, last 2.8 sp4 in 2012; successors Vulcan.NET and X# (Wikipedia). No first-release year." }
-    - { name: "FOCUS", hint: "Information Builders' 4GL; Gerald D. Cohen recreated RAMIS as FOCUS after founding Information Builders in October 1975; WebFOCUS 1997 (Wikipedia). No release year for FOCUS itself." }
-    - { name: "Pro*C", hint: "Oracle's embedded-SQL precompiler language for C/C++ (Wikipedia); no year or authors on the page." }
+    - { name: "RAMIS", hint: "Mathematica's report language, \"often cited as the world's first 4GL\"; Gerald Cohen and Peter Mittelman developed it at Mathematica (Wikipedia: 1970; FundingUniverse says work began in 1965), offered through NCSS time-sharing; RAMIS II followed. FOCUS's \"direct ancestor\" (chm-1986-cohen-oral-history, wiki-focus)." }
+    - { name: "Cross System Product", year: 1981, hint: "IBM CSP, the 4GL behind EGL; then VisualGen 1.0 (6/1994) and VisualAge Generator (VAGen 2.2 6/1996 to 4.5.3 2/2002), all on IBM's chart in cernosek-2005-egl. EGL successor_of edge waits for these nodes." }
   research_questions:
     - "RPG gained embedded SQL on IBM's midrange systems (ILE RPG supports it today), but no sourced year was found; an IBM SQL/400 or System/38 document would date an rpg embeds sql edge."
     - "RPG's predecessor FARGO is said to have appeared at the end of 1961, after RPG's 1959 date; the IBM 1401 RPG manual C24-3261-1 would settle the order."
     - "OpenEdge ABL, DataFlex and SIMPOL have no documented relation yet: searched Wikipedia, the DataFlex 2.0 manual (1984), Progress DataServer docs and the SIMPOL SBL-to-SIMPOL guide. ABL's SELECT reference or the Progress SQL-89 guide would document an embeds sql edge; SIMPOL's predecessor Superbase SBL is not a node."
     - "Missing nodes met while connecting 4GLs: FARGO and 9PAC (IBM), GIRLS (MARK IV's ancestor on the IBM 704), Cortex INFORM (CorVision's 1972 predecessor), Superbase SBL; machines UNIVAC 1108, HP 3000, IBM System/3 and System/38."
+    - "PeopleCode and Pro*C have no sourced first year: PeopleCode is dated circa 1989 by inference from PeopleSoft version 1 (late 1989) on PeopleTools; Pro*C circa 1988 from Oracle v6 and Pro*C 1.5 in Oracle 7.0 (1992). Early PeopleTools release notes and an Oracle v5/v6 precompiler manual would settle both."
+    - "Transact-SQL is dated by Sybase SQL Server (1987); a Sybase SQL Server or DataServer manual from 1987-1988 would show when the name Transact-SQL was first used. LotusScript is dated by Notes 4.0 (January 1996); check whether another Lotus product (Approach, Improv, 1-2-3) shipped it earlier."
