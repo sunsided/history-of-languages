@@ -5,6 +5,7 @@ import initialIndex from 'virtual:search-index';
 import { MediaQuery, SvelteSet } from 'svelte/reactivity';
 import { buildGraph, clusterPath, type EdgeFamily, type Graph } from './graph.ts';
 import type { Dataset } from './types.ts';
+import { NOW } from './scale.ts';
 import type { SearchEntry, SearchIndex } from './search.ts';
 
 const STORAGE_KEY = 'hol-viewer:v2';
@@ -113,6 +114,15 @@ class Viewer {
 	get filterCount() {
 		const changed = [...this.families].filter((f) => !DEFAULT_FAMILIES.includes(f)).length;
 		return changed + DEFAULT_FAMILIES.filter((f) => !this.families.has(f)).length + this.hiddenKinds.size;
+	}
+
+	/** era under the centre of the view (the one last clicked wins until the user scrolls by hand).
+	 * Eras may overlap; the latest-starting one containing the centre year wins (same rule as build.py). */
+	get activeEra(): string | null {
+		if (this.pinnedEra) return this.pinnedEra;
+		if (this.centerYear > NOW - 3) return 'now';
+		const hits = this.data.eras.filter((e) => e.start <= this.centerYear && this.centerYear <= (e.end ?? NOW) + 1);
+		return hits.sort((a, b) => a.start - b.start).at(-1)?.id ?? null;
 	}
 
 	persist() {

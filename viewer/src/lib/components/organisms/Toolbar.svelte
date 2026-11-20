@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { viewer } from '#lib/viewer.svelte.ts';
-	import { NOW } from '#lib/scale.ts';
 	import Button from '../atoms/Button.svelte';
 	import IconButton from '../atoms/IconButton.svelte';
 	import Kbd from '../atoms/Kbd.svelte';
@@ -21,14 +20,6 @@
 		return [...groups.entries()].sort((a, b) => a[0].localeCompare(b[0]));
 	});
 
-	const eras = $derived([...g.data.eras].sort((a, b) => a.start - b.start));
-	// Eras may overlap; the latest-starting one containing the centre year wins (same rule as build.py).
-	const activeEra = $derived.by(() => {
-		if (viewer.pinnedEra) return viewer.pinnedEra;
-		if (viewer.centerYear > NOW - 3) return 'now';
-		const hits = eras.filter((e) => e.start <= viewer.centerYear && viewer.centerYear <= (e.end ?? NOW) + 1);
-		return hits.at(-1)?.id ?? null;
-	});
 	/** load status, timestamp and problems are for whoever is editing data/, not for readers */
 	const dev = import.meta.env.DEV;
 
@@ -89,21 +80,6 @@
 		</a>
 	</div>
 
-	<nav class="eras" aria-label="Jump to era">
-		{#each eras as e (e.id)}
-			<Button
-				variant="pill"
-				class="era"
-				aria-current={activeEra === e.id ? 'true' : undefined}
-				onclick={() => viewer.jump(e.id)}
-				title="{e.name} ({e.start < 0 ? `${-e.start} BC` : e.start}–{e.end ?? 'now'}){e.summary ? '\n' + e.summary : ''}"
-			>
-				<span class="era-year">{e.start < 0 ? `${-e.start} BC` : e.start}</span>
-				<span class="era-name">{e.name}</span>
-			</Button>
-		{/each}
-		<Button variant="pill" class="era now" aria-current={activeEra === 'now' ? 'true' : undefined} onclick={() => viewer.jump('now')} title="Scroll to the present">Now →</Button>
-	</nav>
 </header>
 
 <Popover id="filters" label="View options">
@@ -261,38 +237,6 @@
 		color: var(--fg);
 		background: var(--hover);
 	}
-	.eras {
-		flex-basis: 100%;
-		display: flex;
-		flex-wrap: wrap;
-		gap: var(--space-2);
-		scrollbar-width: thin;
-		padding-bottom: var(--space-1);
-	}
-	.eras :global(.era) {
-		flex: none;
-		align-items: baseline;
-		max-width: 220px;
-		white-space: nowrap;
-		padding-top: 3px;
-	}
-	.eras :global(.era[aria-current='true']) {
-		background: var(--accent-soft);
-		border-color: var(--accent);
-	}
-	.era-year {
-		color: var(--fg-subtle);
-		font-variant-numeric: tabular-nums;
-		font-size: var(--text-xs);
-	}
-	.era-name {
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-	.eras :global(.now) {
-		margin-left: auto;
-		font-weight: 600;
-	}
 	.problem-list {
 		position: absolute;
 		z-index: var(--z-popover);
@@ -357,18 +301,6 @@
 		}
 		.loaded {
 			display: none;
-		}
-		.eras {
-			order: 6;
-			flex-wrap: nowrap;
-			overflow-x: auto;
-		}
-		.era-name {
-			display: none;
-		}
-		.eras :global(.era:hover .era-name),
-		.eras :global(.era[aria-current='true'] .era-name) {
-			display: inline;
 		}
 	}
 </style>

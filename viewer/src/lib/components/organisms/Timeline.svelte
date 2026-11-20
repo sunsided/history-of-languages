@@ -19,8 +19,11 @@
 	import KindDot from '../atoms/KindDot.svelte';
 	import ZoomControl from '../molecules/ZoomControl.svelte';
 	import Legend from './Legend.svelte';
+	import Minimap from './Minimap.svelte';
 
-	const AXIS_H = 46;
+	/** era band (buttons, target size) on top of the year ticks */
+	const BAND_H = 24;
+	const AXIS_H = 52;
 	const INDENT = 14;
 
 	let scroller: HTMLDivElement | undefined = $state();
@@ -304,8 +307,10 @@
 		viewer.pinnedEra = null;
 	}
 
+	let scrollX = $state(0);
 	function onScroll() {
 		if (!scroller) return;
+		scrollX = scroller.scrollLeft;
 		viewer.centerYear = scale.year(scroller.scrollLeft + (scroller.clientWidth - GUTTER) / 2);
 	}
 
@@ -413,6 +418,19 @@
 </script>
 
 <div class="timeline">
+<div class="mini" style:grid-template-columns="{GUTTER}px minmax(0, 1fr)">
+	<span class="counts">{g.data.nodes.length} nodes · {g.data.edges.length} edges</span>
+	<Minimap
+		{scrollX}
+		plotWidth={scale.width}
+		viewWidth={viewW - GUTTER}
+		onscrollto={(x) => {
+			unpinEra();
+			if (scroller) scroller.scrollLeft = x;
+		}}
+		onzoom={(f) => zoomCentre(viewer.effectiveZoom * f)}
+	/>
+</div>
 <!-- A focusable region, so keyboard users can scroll it with the arrow keys. -->
 <!-- svelte-ignore a11y_no_noninteractive_tabindex, a11y_no_noninteractive_element_interactions -->
 <div
@@ -439,23 +457,32 @@
 		style:grid-template-columns="{GUTTER}px {scale.width}px"
 		style:grid-template-rows="{AXIS_H}px {lay.height + ROW_H}px"
 	>
-		<div class="corner" aria-hidden="true">
-			<span>{g.data.nodes.length} nodes · {g.data.edges.length} edges</span>
-		</div>
+		<div class="corner" aria-hidden="true"></div>
 
-		<svg class="axis" width={scale.width} height={AXIS_H} aria-hidden="true">
-			{#each eras as era (era.id)}
-				<rect x={era.x1} y="0" width={Math.max(0, era.x2 - era.x1)} height="18" class="era era-{era.i % 2}">
-					<title>{era.name} ({era.start}–{era.end ?? 'now'}){era.summary ? '\n' + era.summary : ''}</title>
-				</rect>
-				{@const label = fit(era.name, era.x2 - era.x1 - 8)}
-				{#if label}<text x={era.x1 + 4} y="13" class="era-label">{label}</text>{/if}
-			{/each}
-			{#each ticks as t (t.year)}
-				<line x1={scale.x(t.year)} x2={scale.x(t.year)} y1={t.major ? 26 : 34} y2={AXIS_H} class="tick" />
-				<text x={scale.x(t.year)} y="32" class="tick-label" class:major={t.major}>{t.year < 0 ? `${-t.year} BC` : t.year}</text>
-			{/each}
+		<div class="axis" style:width="{scale.width}px" style:height="{AXIS_H}px">
+			<nav class="era-nav" aria-label="Jump to era" style:height="{BAND_H}px">
+				{#each eras as era (era.id)}
+					{@const label = fit(era.name, era.x2 - era.x1 - 8)}
+					{@const span = `${era.start < 0 ? `${-era.start} BC` : era.start}–${era.end ?? 'now'}`}
+					<button
+						class="era-btn"
+						class:alt={era.i % 2 === 1}
+						style:left="{era.x1}px"
+						style:width="{Math.max(0, era.x2 - era.x1)}px"
+						aria-current={viewer.activeEra === era.id ? 'true' : undefined}
+						onclick={() => viewer.jump(era.id)}
+						title="{era.name} ({span}){era.summary ? '\n' + era.summary : ''}"
+						><span aria-hidden="true">{label}</span><span class="sr-only">{era.name}, {span}</span></button
+					>
+				{/each}
+			</nav>
+			<svg width={scale.width} height={AXIS_H} aria-hidden="true">
+				{#each ticks as t (t.year)}
+					<line x1={scale.x(t.year)} x2={scale.x(t.year)} y1={t.major ? 32 : 40} y2={AXIS_H} class="tick" />
+					<text x={scale.x(t.year)} y="38" class="tick-label" class:major={t.major}>{t.year < 0 ? `${-t.year} BC` : t.year}</text>
+				{/each}
 		</svg>
+		</div>
 
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
@@ -714,9 +741,27 @@
 <style>
 	.timeline {
 		position: relative;
+		display: flex;
+		flex-direction: column;
 		height: 100%;
 		min-height: 0;
 		min-width: 0;
+	}
+	.mini {
+		display: grid;
+		align-items: stretch;
+	}
+	.counts {
+		display: flex;
+		align-items: center;
+		padding: 0 10px;
+		font-size: 11px;
+		color: var(--fg-subtle);
+		background: var(--bg-raised);
+		border-right: 1px solid var(--line);
+		border-bottom: 1px solid var(--line);
+		white-space: nowrap;
+		overflow: hidden;
 	}
 	/* floating controls over the plot, clear of the horizontal scrollbar */
 	.overlay {
@@ -737,7 +782,8 @@
 		outline-offset: -2px;
 		touch-action: pan-x pan-y;
 		overflow: auto;
-		height: 100%;
+		flex: 1;
+		min-height: 0;
 		overscroll-behavior: contain;
 	}
 	.grid {
@@ -759,18 +805,12 @@
 		font-size: 11px;
 		color: var(--fg-muted);
 	}
-	.corner span {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
 	.axis {
 		position: sticky;
 		top: 0;
 		z-index: 3;
 		background: var(--bg-raised);
 		border-bottom: 1px solid var(--line);
-		display: block;
 	}
 	.gutter {
 		position: sticky;
@@ -784,19 +824,44 @@
 	}
 
 	/* axis */
-	.era {
-		stroke: var(--line);
-		stroke-width: 0.5;
+	.era-nav {
+		position: absolute;
+		inset: 0 0 auto 0;
 	}
-	.era-0 {
-		fill: var(--era-a);
-	}
-	.era-1 {
-		fill: var(--era-b);
-	}
-	.era-label {
+	.era-btn {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		padding: 0 var(--space-2);
+		border: none;
+		border-right: 1px solid var(--line);
+		background: var(--era-a);
+		color: var(--fg-muted);
+		font: inherit;
 		font-size: 10.5px;
-		fill: var(--fg-muted);
+		text-align: left;
+		white-space: nowrap;
+		overflow: hidden;
+		cursor: pointer;
+	}
+	.era-btn.alt {
+		background: var(--era-b);
+	}
+	.era-btn:hover {
+		color: var(--fg);
+		background: var(--hover);
+	}
+	.era-btn[aria-current='true'] {
+		color: var(--fg);
+		background: var(--accent-soft);
+		box-shadow: inset 0 -2px var(--accent);
+	}
+	.era-btn:focus-visible {
+		outline-offset: -2px;
+	}
+	.axis svg {
+		position: absolute;
+		inset: 0;
 		pointer-events: none;
 	}
 	.tick {
@@ -935,6 +1000,12 @@
 	/* plot */
 	.era-band {
 		opacity: 0.5;
+	}
+	.era-band.era-0 {
+		fill: var(--era-a);
+	}
+	.era-band.era-1 {
+		fill: var(--era-b);
 	}
 	.grid-line {
 		stroke: var(--grid);
