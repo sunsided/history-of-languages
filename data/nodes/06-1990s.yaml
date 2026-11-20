@@ -859,6 +859,38 @@
       End Sub
     sources: [wiki-visual-basic-classic]
 
+- id: visual-dialogscript
+  name: Visual DialogScript
+  aliases: [VDS, DialogScript]
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1996, precision: circa, note: "Version 2.01 release notes are dated 1 August 1996 and refer to an earlier 2.0, whose serial numbers are shared with WinScript 2.0. No version 1 or first-release date was found." }
+    places: [{ institution: J M Technical Services, city: Cockermouth, country: GB }]
+  creators:
+    - { name: Julian Moss, role: "creator (JM-Tech), up to version 3.0" }
+    - { name: Emmanuel Daunizeau, role: "owner and developer from 1998 (S.A.D.E.)" }
+  status: maintained
+  tags:
+    paradigm: [imperative, scripting]
+  milestones:
+    - { version: "3.0", year: 1998, summary: "After 3.0, Emmanuel Daunizeau of S.A.D.E. took over ownership and development and changed the syntax." }
+  summary: >
+    A Windows scripting language for small dialog-based utilities, built by Julian Moss of J M Technical
+    Services in Cumbria and continued from 1998 by Emmanuel Daunizeau. Its syntax resembles the MS-DOS batch
+    language (%0 to %9 act as in batch files), with one command per line such as dialog create, info or warn, and
+    functions written with a leading @, as in a spreadsheet. The 1996 release notes treat it as the successor of
+    Moss's WinScript.
+  notes: >
+    WinScript is not a node. dialogscript.com credits Daunizeau with having "designed and developed" VDS, while
+    Wikipedia names Moss as the creator; the 1996 README supports Moss's company. The batch likeness is a resemblance
+    only, so no edge is stored.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Visual_DialogScript", homepage: "https://www.dialogscript.com/" }
+  sources: [jmtech-1996-vds-201-readme, wiki-visual-dialogscript]
+
 - id: jython
   name: Jython
   aliases: [JPython]
@@ -1341,6 +1373,109 @@
       (tog (list 5 "hello "
                  1/2 "world" (sqrt -1)))
     sources: [racket-org]
+
+- id: maxscript
+  name: MAXScript
+  aliases: [MaxScript]
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    began: { year: 1996, precision: year, note: "Wainwright became its principal architect after Kaleida Labs closed in 1996; Wikipedia dates MaxScript to 1996." }
+    first_appeared: { year: 1997, precision: year, note: "\"MAXScript makes its first appearance with the release of 3D Studio MAX R2\" (1997)." }
+  creators:
+    - { name: John Wainwright, role: principal architect }
+  status: active
+  tags:
+    paradigm: [imperative, scripting]
+    domain: [computer-graphics]
+  summary: >
+    The built-in scripting language of Autodesk 3ds Max, first shipped with 3D Studio MAX R2 in 1997, which lets
+    users "build tools on top" of the 3D package. Its principal architect, John Wainwright, had previously led the
+    design of ScriptX at Kaleida Labs. It has been used in game production, for example in the animation pipeline
+    for Maxis's The Sims.
+  notes: >
+    Wikipedia's claim that MAXScript, unlike ScriptX, "has explicit syntax to support 3D animation" is marked
+    "citation needed"; no design influence from ScriptX is recorded until a source states one (ScriptX is not yet a
+    node).
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Autodesk_3ds_Max" }
+  sources: [beforesandafters-2020-3ds-max, wiki-john-wainwright]
+
+- id: unicon
+  name: Unicon
+  aliases: [Unified Extended Dialect of Icon, UNIX Icon]
+  kind: language
+  category: general
+  cluster: string-processing
+  origin:
+    first_appeared: { year: 1997, precision: year, note: "\"Unicon\" first named Shamim Mohamed's POSIX (UNIX) extensions for Icon, \"Version 1 of Unicon\" in the FAQ, dated 1997 in Mitchell's 2003 slides. The unified object-oriented language followed in 1999 (milestone)." }
+  creators:
+    - { name: Clinton Jeffery, role: designer }
+    - { name: Shamim Mohamed, role: "designer, POSIX extensions (Version 1)" }
+  status: active
+  tags:
+    paradigm: [imperative, goal-directed, object-oriented]
+    typing: [dynamic-typing]
+    features: [generators, backtracking, string-processing, classes]
+  milestones:
+    - { version: "Icon-2 merger", year: 1999, introduces: [classes], summary: "Jeffery and Mohamed merged their work with other extensions, such as an ODBC interface, into one system, tentatively called Icon-2; the name Unicon was then reused for the unified language." }
+  summary: >
+    A "unified extended dialect of Icon" that keeps Icon's goal-directed evaluation and generators and adds
+    classes, POSIX system and network access and database access. It merged three Icon extensions: Clinton
+    Jeffery's object-oriented preprocessor Idol (1988), Shamim Mohamed's POSIX interface, which first carried the
+    name Unicon, and an ODBC facility. Mohamed wrote it because Icon lacked access to operating-system facilities
+    and Perl, which he used instead, has "some of the worst language features" of sed, awk and shell.
+  relations:
+    - { type: dialect_of, to: icon, weight: strong, confidence: high, sources: [unicon-faq, wiki-unicon], note: "\"a unified extended dialect of Icon\"; Unicon \"descended from Icon and a preprocessor for Icon called IDOL\"." }
+    - { type: reacts_against, to: perl, weight: weak, confidence: medium, sources: [mitchell-2003-unicon-slides], note: "Mohamed, quoted in Mitchell's slides: Perl \"does so with some of the worst language features from them\"; \"Unicon was his solution\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Unicon_(programming_language)", homepage: "https://unicon.sourceforge.io/" }
+  sources: [unicon-faq, mitchell-2003-unicon-slides, wiki-unicon]
+  example:
+    title: Hello in a graphics window
+    language: Unicon
+    note: "From Wikipedia's Unicon article (indentation changed from tabs to spaces): open with mode \"g\" makes a window, and the ordinary write and read work on it."
+    sources: [wiki-unicon]
+    code: |
+      procedure main()
+          w := open("test UNICON window", "g")
+          write(w, "Hello, World!")
+          read(w)
+          close(w)
+      end
+
+- id: mel
+  name: MEL
+  aliases: [Maya Embedded Language, Maya MEL]
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1998, precision: year, note: "Shipped with Maya 1.0, \"released in February 1998\"; no separate date for MEL is on the pages read." }
+    places: [{ institution: "Alias|Wavefront" }]
+  creators:
+    - { name: "Alias|Wavefront", role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural, scripting]
+    domain: [computer-graphics]
+  milestones:
+    - { version: "Maya 8.5", year: 2007, summary: "Python was added to Maya as an alternative to MEL (Maya 8.5, January 2007)." }
+  summary: >
+    The scripting language of Autodesk Maya (originally Alias|Wavefront), shipped with Maya 1.0 in 1998.
+    Early Maya development used Tcl for scripting; after the Alias and Wavefront merger Tcl "was replaced
+    with Maya Embedded Language (MEL)", with Sophia, the scripting language of Wavefront's Dynamation, "chosen as the
+    basis of MEL". Wikipedia calls its syntax similar to Perl and Tcl.
+  notes: >
+    No edges yet: Sophia (Dynamation) is not a node, and the Perl and Tcl likeness is only a resemblance. MEL
+    replaced Tcl inside Maya rather than descending from it.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Maya_Embedded_Language" }
+  sources: [wiki-maya-embedded-language, wiki-autodesk-maya]
 
 - id: agda
   name: Agda

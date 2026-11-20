@@ -55,6 +55,49 @@
       end.
     sources: [wirth-1993-recollections-pascal]
 
+- id: clist
+  name: CLIST
+  aliases: [TSO command procedure, Command List]
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 1971, date: "1971-03", precision: exact, note: "Command procedures (the PROC, WHEN and END statements, run with EXEC from a data set with the CLIST qualifier) are documented in the TSO Command Language manual, Second Edition, March 1971, for OS/360 Release 20.1. Wikipedia says CLIST originated in Release 20; the first edition of the manual (GC28-6732-0, copyright 1970) was not read." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: IBM, role: developer }
+  status: legacy
+  tags:
+    paradigm: [imperative, scripting]
+  summary: >
+    The command-procedure language of TSO, the Time Sharing Option of IBM's OS/360 and later MVS: a stored
+    "prearranged sequence of TSO commands" whose PROC statement declares symbolic parameters (&NAME) that are
+    substituted before each command runs, and whose WHEN command ends or redirects the procedure on a command's
+    return code. OS/VS2 R3.6 (MVS) added If-Then-Else and loops; since Rexx became available in TSO/E Version 2,
+    CLIST has played a secondary role.
+  notes: >
+    The year of OS/VS2 R3.6, which added If-Then-Else and loop constructs, is not on the pages read, so it is not
+    recorded as a milestone.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/CLIST" }
+  sources: [ibm-1971-tso-command-language, wiki-clist]
+  example:
+    title: A command procedure with parameters and a return-code test
+    language: TSO command procedure (OS/360 Release 20.1)
+    year: 1971
+    note: "From the PROC statement example (Example 2) of the March 1971 TSO Command Language manual, pp. 287-288: the PROC line and the procedure body put together as the manual describes. Taken from an OCR text: SPACE(SOO 10) in the scan is read as 500, and the ALLOCATE line split across two lines in the scan is joined."
+    sources: [ibm-1971-tso-command-language]
+    code: |
+      PROC 2 INPUT OUTIN LASTOUT(*) NEW
+      ALLOCATE DATASET(&LASTOUT.) NEW BLOCK(80) SPACE(500 10)
+      ALLOCATE DATASET(&INPUT.) OLD
+      ALLOCATE DATASET(&OUTIN.) &NEW BLOCK(80) SPACE(500 10)
+      CALL (SALESRPT) '&INPUT &OUTIN.'
+      WHEN SYSRC(GT 4) END
+      CALL 'INVENTRY.A' '&OUTIN &LASTOUT.'
+      END
+
 - id: c
   name: C
   kind: language

@@ -3739,6 +3739,7 @@
   primary: false
   title: "Wikipedia: CLIST"
   url: https://en.wikipedia.org/wiki/CLIST
+  checked: '2026-11-20'
 - id: wiki-exec-2
   type: encyclopedia
   primary: false
@@ -5574,6 +5575,7 @@
   primary: false
   title: "Wikipedia: Superbase (database)"
   url: https://en.wikipedia.org/wiki/Superbase_(database)
+  checked: '2026-11-20'
 - id: wiki-axum
   type: encyclopedia
   primary: false
@@ -8928,4 +8930,211 @@
   authors: [IBM]
   title: "The IBM punched card (IBM History)"
   url: https://www.ibm.com/history/punched-card
+  checked: '2026-11-20'
+- id: ibm-1971-tso-command-language
+  type: manual
+  primary: true
+  authors: [IBM]
+  title: 'IBM System/360 Operating System: Time Sharing Option, Command Language (GC28-6732-1, Second Edition, Release 20.1)'
+  year: 1971
+  url: http://www.bitsavers.org/pdf/ibm/360/os/R20.1_Mar71/GC28-6732-1_TSO_Command_Language_Rel_20.1_Mar71.pdf
+  checked: '2026-11-20'
+- id: wiki-john-wainwright
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: John Wainwright (computer scientist)'
+  url: https://en.wikipedia.org/wiki/John_Wainwright_(computer_scientist)
+  checked: '2026-11-20'
+- id: beforesandafters-2020-3ds-max
+  type: web
+  primary: false
+  title: A visual history of 3ds Max
+  venue: befores & afters
+  year: 2020
+  url: https://beforesandafters.com/2020/06/04/a-visual-history-of-3ds-max/
+  checked: '2026-11-20'
+- id: wiki-maya-embedded-language
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Maya Embedded Language'
+  url: https://en.wikipedia.org/wiki/Maya_Embedded_Language
+  checked: '2026-11-20'
+- id: wiki-autodesk-maya
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Autodesk Maya'
+  url: https://en.wikipedia.org/wiki/Autodesk_Maya
+  checked: '2026-11-20'
+- id: wiki-unicon
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Unicon (programming language)'
+  url: https://en.wikipedia.org/wiki/Unicon_(programming_language)
+  checked: '2026-11-20'
+- id: unicon-faq
+  type: web
+  primary: true
+  title: 'Unicon: Frequently Asked Questions'
+  url: https://unicon.sourceforge.io/faq.html
+  checked: '2026-11-20'
+- id: mitchell-2003-unicon-slides
+  type: report
+  primary: false
+  authors: [W. H. Mitchell]
+  title: 'Unicon (CSc 451 lecture slides, University of Arizona)'
+  year: 2003
+  url: https://www2.cs.arizona.edu/classes/cs451/unicon.pdf
+  checked: '2026-11-20'
+- id: wiki-qtscript
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: QtScript'
+  url: https://en.wikipedia.org/wiki/QtScript
+  checked: '2026-11-20'
+- id: osnews-2007-qt-430
+  type: web
+  primary: true
+  authors: [Matthew Smith]
+  title: Qt v4.3.0 Released
+  venue: OSnews, 30 May 2007
+  year: 2007
+  url: https://www.osnews.com/story/17999/qt-v430-released/
+  checked: '2026-11-20'
+- id: wiki-script-net
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Script.NET'
+  url: https://en.wikipedia.org/wiki/Script.NET
+  checked: '2026-11-20'
+- id: ssharp-github
+  type: web
+  primary: true
+  authors: [Petro Protsyk]
+  title: 'SSharp: Script.NET (S#) source repository and README'
+  url: https://github.com/PetroProtsyk/SSharp
+  checked: '2026-11-20'
+- id: nsis-docs-changelog
+  type: manual
+  primary: true
+  title: 'NSIS Users Manual, Appendix F: Changelog and Release Notes'
+  url: https://nsis.sourceforge.io/Docs/AppendixF.html
+  checked: '2026-11-20'
+- id: nsis-docs-intro
+  type: manual
+  primary: true
+  title: 'NSIS Users Manual, Chapter 1: Introduction to NSIS'
+  url: https://nsis.sourceforge.io/Docs/Chapter1.html
+  checked: '2026-11-20'
+- id: nsis-docs-tutorial
+  type: manual
+  primary: true
+  title: 'NSIS Users Manual, Chapter 2: Tutorial'
+  url: https://nsis.sourceforge.io/Docs/Chapter2.html
+  checked: '2026-11-20'
+- id: sourceforge-2006-potm-nsis
+  type: interview
+  primary: true
+  title: 'SourceForge Project of the Month, January 2006: NSIS'
+  year: 2006
+  url: https://sourceforge.net/potm/potm-2006-01.php
+  checked: '2026-11-20'
+- id: nullsoft-nsis-page
+  type: web
+  primary: true
+  authors: [Nullsoft]
+  title: 'Nullsoft: NSIS (history of the Winamp installer, PiMP and NSIS 1.x)'
+  url: https://1014.org/code/nullsoft/nsis/index.html
+  checked: '2026-11-20'
+- id: wiki-visual-dialogscript
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Visual DialogScript'
+  url: https://en.wikipedia.org/wiki/Visual_DialogScript
+  checked: '2026-11-20'
+- id: jmtech-1996-vds-201-readme
+  type: manual
+  primary: true
+  authors: [J M Technical Services]
+  title: Visual DialogScript 2.01 release notes (README.TXT)
+  year: 1996
+  url: https://discmaster.textfiles.com/view/34623/vb5%20dev%20kit.iso/dev/vds232/vds232.exe/README.TXT
+  checked: '2026-11-20'
+- id: kivy-guide-lang
+  type: manual
+  primary: true
+  title: 'Kivy Programming Guide: Kv language'
+  url: https://kivy.org/doc/stable/guide/lang.html
+  checked: '2026-11-20'
+- id: kivy-api-lang
+  type: manual
+  primary: true
+  title: 'Kivy API: kivy.lang (Kivy Language)'
+  url: https://kivy.org/doc/master/api-kivy.lang.html
+  checked: '2026-11-20'
+- id: kivy-changelog
+  type: manual
+  primary: true
+  title: Kivy changelog
+  url: https://github.com/kivy/kivy/blob/master/doc/sources/changelog.rst
+  checked: '2026-11-20'
+- id: porter-2001-snowball
+  type: paper
+  primary: true
+  authors: [Martin Porter]
+  title: 'Snowball: A language for stemming algorithms'
+  year: 2001
+  url: https://snowballstem.org/texts/introduction.html
+  checked: '2026-11-20'
+- id: snowballstem-home
+  type: web
+  primary: true
+  title: 'Snowball (snowballstem.org home page and news)'
+  url: https://snowballstem.org/
+  checked: '2026-11-20'
+- id: wiki-snowball
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Snowball (programming language)'
+  url: https://en.wikipedia.org/wiki/Snowball_(programming_language)
+  checked: '2026-11-20'
+- id: snowball-porter-sbl
+  type: web
+  primary: true
+  title: 'snowball/algorithms/porter.sbl (the Porter stemmer in Snowball)'
+  url: https://github.com/snowballstem/snowball/blob/master/algorithms/porter.sbl
+  checked: '2026-11-20'
+- id: simpol-faq
+  type: web
+  primary: true
+  title: 'SIMPOL: Frequently Asked Questions'
+  url: https://www.simpol.eu/faq/
+  checked: '2026-11-20'
+- id: buterin-2014-pyethereum-serpent
+  type: web
+  primary: true
+  authors: [Vitalik Buterin]
+  title: Pyethereum and Serpent Programming Guide
+  venue: Ethereum Foundation Blog, 10 April 2014
+  year: 2014
+  url: https://blog.ethereum.org/2014/04/10/pyethereum-and-serpent-programming-guide
+  checked: '2026-11-20'
+- id: ethereum-serpent-repo
+  type: web
+  primary: true
+  title: 'ethereum/serpent: source repository, README and contributor list'
+  url: https://github.com/ethereum/serpent
+  checked: '2026-11-20'
+- id: start-1987-superbase
+  type: web
+  primary: true
+  title: 'Superbase (review of the Atari ST version)'
+  venue: START Vol. 2 No. 3, Winter 1987
+  year: 1987
+  url: https://www.atarimagazines.com/startv2n3/superbase.php
+  checked: '2026-11-20'
+- id: wiki-martin-porter
+  type: encyclopedia
+  primary: false
+  title: 'Wikipedia: Martin Porter'
+  url: https://en.wikipedia.org/wiki/Martin_Porter
   checked: '2026-11-20'

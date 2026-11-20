@@ -65,6 +65,47 @@
       Console.WriteLine(string.Join(", ", big));
     sources: [syme-2020-early-history-fsharp]
 
+- id: nsis
+  name: NSIS script
+  aliases: [NSIS, Nullsoft Scriptable Install System, Nullsoft SuperPiMP Installation System]
+  kind: language
+  category: scripting
+  cluster: scripting
+  origin:
+    first_appeared: { year: 2000, date: "2000-07-31", precision: exact, note: "\"The first public release of NSIS was v1.0f on July 31st, 2000.\"" }
+    places: [{ institution: Nullsoft, country: US }]
+  creators:
+    - { name: Justin Frankel, role: "founder; wrote the original installer" }
+    - { name: Amir Szekely, role: "project leader of the community NSIS 2" }
+  status: maintained
+  tags:
+    paradigm: [imperative, scripting]
+  milestones:
+    - { version: "2.0a2", year: 2002, date: "2002-07-31", summary: "First release hosted on SourceForge, from the community branch nsis2k." }
+    - { version: "2.0", year: 2004, date: "2004-02-07", summary: "Final version 2 release." }
+    - { version: "3.0", year: 2016, date: "2016-07-24" }
+  summary: >
+    The script language of Nullsoft's open-source Windows installer generator: a script of commands, sections and
+    user functions with variables and string manipulation, from which the compiler builds a Windows installer. It grew out
+    of the custom installer Justin Frankel built for Winamp, by way of the simpler Plug-In Mini Packager (PiMP); the
+    acronym stood for "Nullsoft SuperPiMP Installation System" or "Nullsoft Scriptable Installation System". Around
+    the 2.0 alphas Frankel let the community take it over, led by Amir Szekely.
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://nsis.sourceforge.io/" }
+  sources: [nsis-docs-changelog, sourceforge-2006-potm-nsis, nullsoft-nsis-page, nsis-docs-intro]
+  example:
+    title: An installer section
+    language: NSIS 3
+    note: "Verbatim from the NSIS manual's tutorial (Chapter 2): a section copies two files into the chosen installation directory."
+    sources: [nsis-docs-tutorial]
+    code: |
+      Section "My Program"
+        SetOutPath $INSTDIR
+        File "My Program.exe"
+        File "Readme.txt"
+      SectionEnd
+
 - id: d
   name: D
   kind: language
@@ -103,6 +144,50 @@
 
       void main() { writeln(f20); }
     sources: [bright-2020-origins-d]
+
+- id: snowball
+  name: Snowball
+  kind: language
+  category: domain-specific
+  cluster: string-processing
+  origin:
+    first_appeared: { year: 2001, date: "2001-10", precision: exact, note: "Porter's account \"Snowball: A language for stemming algorithms\" is dated October 2001." }
+  creators:
+    - { name: Martin Porter, role: designer and implementer }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    features: [string-processing]
+    domain: [natural-language-processing]
+  milestones:
+    - { version: "Java support", year: 2002, date: "2002-02" }
+    - { version: "Unicode support", year: 2002, date: "2002-05" }
+    - { version: "community project", year: 2014, date: "2014-09", summary: "Martin Porter retired from Snowball development; it continued as a community project, at snowballstem.org from September 2015." }
+  summary: >
+    A small string-processing language "in which the rules of stemming algorithms can be expressed in a natural
+    way", invented by Martin Porter (author of the 1980 Porter stemmer); its compiler translates a .sbl script into
+    other programming languages. Named "as a tribute to" SNOBOL, it shares SNOBOL's idea that string patterns
+    succeed or fail and so drive the program's flow, instead of explicit if and break.
+  relations:
+    - { type: influenced_by, to: snobol, aspects: [string-processing], weight: moderate, confidence: medium, sources: [wiki-snowball, snowballstem-home], note: "Named as a tribute to SNOBOL; Wikipedia says it \"shares the concept of string patterns delivering signals\" that control flow." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Snowball_(programming_language)", homepage: "https://snowballstem.org/" }
+  sources: [porter-2001-snowball, snowballstem-home, wiki-snowball, wiki-martin-porter]
+  example:
+    title: Step 1a of the Porter stemmer
+    language: Snowball
+    note: "Verbatim from porter.sbl in the snowball repository (current master, not the 2001 text). In backward mode, [substring] marks the longest matching suffix and among picks the action: replace with <-, or delete."
+    sources: [snowball-porter-sbl]
+    code: |
+      define Step_1a as (
+          [substring] among (
+              'sses' (<-'ss')
+              'ies'  (<-'i')
+              'ss'   ()
+              's'    (delete)
+          )
+      )
 
 - id: cyclone
   name: Cyclone
@@ -299,6 +384,70 @@
       (->> (range 10) (filter even?) (map #(* % %)) (reduce +))  ;; => 120
     sources: [hickey-2020-history-clojure]
 
+- id: qtscript
+  name: QtScript
+  aliases: [Qt Script]
+  kind: language
+  category: scripting
+  cluster: scripting/embedded
+  origin:
+    first_appeared: { year: 2007, date: "2007-05-30", precision: exact, note: "Qt 4.3.0, announced 30 May 2007, added \"a new ECMAscript-standard scripting module (QtScript)\"." }
+  creators:
+    - { name: Trolltech, role: developer }
+  status: extinct
+  tags:
+    paradigm: [scripting, prototype-based]
+    typing: [dynamic-typing]
+    features: [embeddable]
+  milestones:
+    - { version: "Qt 4.7", year: 2011, summary: "Reimplemented on WebKit's JavaScriptCore, then developed no further." }
+    - { version: "Qt 5.5", year: 2015, date: "2015-04", summary: "Deprecated." }
+  summary: >
+    The ECMAScript engine that Qt applications embedded to become scriptable, part of Qt from 4.3.0 (2007) until it
+    was deprecated in Qt 5.5 and dropped in Qt 6.5. Its language is ECMAScript "with a few extensions", notably for
+    connecting Qt signals and slots; Trolltech's earlier, unrelated Qt Script for Applications (QSA) was deprecated
+    alongside its release. Qt's QML took over its role.
+  notes: >
+    The dataset's qml node is the quantum language, not Qt's QML, so no edge to Qt QML is stored. QSA is not a node.
+    Wikipedia's claim that the 4.7 version uses JavaScriptCore is recorded as given; the year 2011 is Wikipedia's.
+  relations:
+    - { type: dialect_of, to: javascript, weight: strong, confidence: high, sources: [wiki-qtscript, osnews-2007-qt-430], note: "\"based on the ECMAScript standard with a few extensions\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/QtScript" }
+  sources: [osnews-2007-qt-430, wiki-qtscript]
+
+- id: script-net
+  name: Script.NET
+  aliases: [S#, SSharp]
+  kind: language
+  category: scripting
+  cluster: managed/dynamic
+  origin:
+    first_appeared: { year: 2007, precision: year, note: "The repository's earliest copyright line is \"Copyright (c) 2007 Petro Protsyk\"; a CodeProject article (not read) is said to date the first alpha to October 2007." }
+  creators:
+    - { name: Petro Protsyk, role: designer and implementer }
+    - { name: Denys Vuika, role: "co-developer, 2008-2011" }
+  status: legacy
+  tags:
+    paradigm: [imperative, scripting]
+    typing: [dynamic-typing]
+    features: [metaprogramming, interpreter, embeddable]
+  summary: >
+    "A scripting language for .NET applications" with JavaScript-like syntax and dynamic typing, interpreted
+    directly instead of generating in-memory assemblies, for customising .NET programs and working with their objects,
+    types and assemblies. It is also a metaprogramming language: a quotation operator returns a program's syntax
+    tree, and the prog object gives the current program's tree.
+  notes: >
+    Wikipedia's infobox names Microsoft as developer, which conflicts with the repository's copyright lines (Petro
+    Protsyk, and Denys Vuika for 2008-2011); the repository is followed here.
+  relations:
+    - { type: influenced_by, to: javascript, weight: moderate, confidence: medium, sources: [wiki-script-net], note: "Infobox \"Influenced by: JavaScript\"; syntax described as similar to JavaScript." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Script.NET", homepage: "https://www.protsyk.com/scriptdotnet" }
+  sources: [ssharp-github, wiki-script-net]
+
 - id: go
   name: Go
   aliases: [Golang]
@@ -351,6 +500,74 @@
           go func() { ch <- "ping" }()
           fmt.Println(<-ch)
       }
+
+- id: kv
+  name: Kv
+  aliases: [Kv language, Kivy language, kvlang]
+  kind: language
+  category: domain-specific
+  cluster: scripting/python
+  origin:
+    first_appeared: { year: 2011, precision: year, note: "Kivy 1.0.0 is dated 1 February 2011, and the 1.0.x changelog already has Lang entries (for example 1.0.7, 16 July 2011); the release that first shipped kv is not named." }
+  status: active
+  tags:
+    paradigm: [declarative]
+  milestones:
+    - { version: "1.0.5", year: 2011, summary: "Templates (deprecated from 1.7.0, removed in 3.0.0)." }
+  summary: >
+    The declarative UI description language of the Kivy Python framework: an indented tree of widget rules and
+    property values, meant to overcome the verbosity of building widget trees in Python and to separate interface
+    from application logic. Every property value "is evaluated as a Python expression", and on_ handlers hold
+    Python statements, so kv files bind properties reactively through embedded Python.
+  relations:
+    - { type: embeds, to: python, weight: strong, confidence: high, sources: [kivy-api-lang], note: "\"the value is evaluated as a Python expression\"; on_property handlers accept \"python statements\"." }
+  research_status: stub
+  confidence: medium
+  links: { homepage: "https://kivy.org/doc/stable/guide/lang.html" }
+  sources: [kivy-guide-lang, kivy-api-lang, kivy-changelog]
+  example:
+    title: A rule with ids and an event handler
+    language: Kv
+    note: "Verbatim from the Kivy programming guide's Kv language page: the on_release value is a Python call on the rule's root widget."
+    sources: [kivy-guide-lang]
+    code: |
+      <Marvel>
+        Label:
+          id: loki
+          text: 'loki: I AM YOUR GOD!'
+        Button:
+          id: hulk
+          text: "press to smash loki"
+          on_release: root.hulk_smash()
+
+- id: serpent
+  name: Serpent
+  aliases: [HLL]
+  kind: language
+  category: domain-specific
+  cluster: smart-contracts
+  origin:
+    first_appeared: { year: 2014, date: "2014-04-10", precision: exact, note: "Buterin's Ethereum blog post of 10 April 2014: \"HLL is no longer called HLL; the language is now called Serpent\". The earlier HLL is undated here." }
+  creators:
+    - { name: Vitalik Buterin, role: "principal implementer (by far the largest committer; author of the 2014 guide)" }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+  summary: >
+    An early contract language for Ethereum, compiled to EVM code. Buterin introduced it in April 2014
+    with "Why? Because it's basically Python"; its README later called it "an assembly language that compiles to
+    EVM code that is extended with various high-level features" and marked it "NOT RECOMMENDED" for applications,
+    pointing to Solidity, LLL or Viper (Vyper) instead. The repository was archived on 31 December 2024.
+  notes: >
+    Not read, so not recorded: the deprecation date, the Zeppelin Solutions audit of the compiler for Augur, and
+    claims that Vyper was designed as its replacement. Buterin is credited as implementer from the contributor list
+    (316 commits) and the README's "The creator recommends", which does not name him.
+  relations:
+    - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [buterin-2014-pyethereum-serpent], note: "\"Because it's basically Python.\"" }
+  research_status: stub
+  confidence: medium
+  links: { homepage: "https://github.com/ethereum/serpent" }
+  sources: [buterin-2014-pyethereum-serpent, ethereum-serpent-repo]
 
 - id: rust
   name: Rust
@@ -7330,10 +7547,12 @@
   summary: >
     The object-oriented language of the next-generation rewrite of the Superbase desktop database, sold as SIMPOL
     Professional, "a cross-platform language and database tool set".
+  relations:
+    - { type: successor_of, to: sbl, weight: strong, confidence: medium, sources: [simpol-faq], note: "The SIMPOL FAQ answers \"Why not just keep SBL?\" and \"How does SIMPOL differ from SBL?\": \"SBL is interpreted and SIMPOL is compiled.\"" }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Superbase_(database)" }
-  sources: [wiki-superbase]
+  sources: [wiki-superbase, simpol-faq]
 
 - id: axum
   name: Axum

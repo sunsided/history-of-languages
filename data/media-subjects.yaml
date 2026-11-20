@@ -2674,3 +2674,27 @@
   wiki: Hero of Alexandria
   nodes:
   - hero-programmable-cart
+- id: person-martin-porter
+  kind: person
+  person: Martin Porter
+  wiki: Martin Porter
+  nodes:
+  - snowball
+- id: person-justin-frankel
+  kind: person
+  person: Justin Frankel
+  wiki: Justin Frankel
+  nodes:
+  - nsis
+- id: person-vitalik-buterin
+  kind: person
+  person: Vitalik Buterin
+  wiki: Vitalik Buterin
+  nodes:
+  - serpent
+- id: person-john-wainwright
+  kind: person
+  person: John Wainwright
+  wiki: John Wainwright (computer scientist)
+  nodes:
+  - maxscript

@@ -1,5 +1,37 @@
 # The 1980s: C++, Objective-C, Common Lisp, Eiffel, Self, Erlang, Miranda, Perl, Standard ML, Modula-3, Oberon, occam, Newsqueak.
 
+- id: sbl
+  name: Superbase Basic Language
+  aliases: [SBL]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1983, precision: circa, note: "Superbase was \"originally created in 1983 by Precision Software for the Commodore 64\" (Wikipedia), and the product \"includes a proprietary dialect of BASIC\"; no read source says the 1983 Commodore 64 release already had it. A 1987 START review of the Atari ST version still describes a programmable \"Superbase Professional\" as forthcoming for the ST, available for the IBM PC." }
+    places: [{ institution: Precision Software, country: GB }]
+  creators:
+    - { name: Precision Software, role: developer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+    domain: [databases]
+  summary: >
+    The interpreted programming language of the Superbase desktop database, a "proprietary dialect of BASIC" with
+    over 270 keywords. By its successor's account it "began life as a very primitive form of BASIC" with only GOSUB,
+    GOTO and RETURN for flow control, was extended with SUB main() as an entry point and later with a limited
+    object layer, so that it is "a collection of four different styles of BASIC". The compiled, object-oriented
+    SIMPOL replaced it in the Superbase rewrite.
+  notes: >
+    The backlog entry linked to Superbase and guessed it might mean Snowball's .sbl files; the SIMPOL FAQ settles it as
+    "Superbase Basic Language (SBL)". Leads not read: the Ahoy! review of SuperBase 64 (July 1984) and Bruce Hunt's
+    Superbase: The Book (1986), which would show whether the Commodore 64 version was programmable.
+  relations:
+    - { type: dialect_of, to: basic, weight: moderate, confidence: medium, sources: [wiki-superbase, simpol-faq], note: "\"a proprietary dialect of BASIC\"; \"SBL began life as a very primitive form of BASIC\"." }
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Superbase_(database)" }
+  sources: [simpol-faq, wiki-superbase, start-1987-superbase]
+
 - id: cpp
   name: C++
   aliases: [C with Classes]
