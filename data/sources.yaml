@@ -3499,6 +3499,7 @@
   primary: false
   title: "Wikipedia: Blockly"
   url: https://en.wikipedia.org/wiki/Blockly
+  checked: '2026-11-20'
 - id: scratch-wiki-block-plugin
   type: web
   primary: false
@@ -9932,4 +9933,203 @@
   title: "Signals and Threads, episode 1: Programmable Hardware (9 September 2020)"
   year: 2020
   url: https://signalsandthreads.com/programmable-hardware/
+- id: aoc-2015-23
+  type: web
+  primary: true
+  title: "Advent of Code 2015, day 23: Opening the Turing Lock (Eric Wastl)"
+  url: https://adventofcode.com/2015/day/23
+  checked: '2026-11-20'
+- id: aoc-2018-16
+  type: web
+  primary: true
+  title: "Advent of Code 2018, day 16: Chronal Classification (Eric Wastl)"
+  url: https://adventofcode.com/2018/day/16
+  checked: '2026-11-20'
+- id: aoc-2018-19
+  type: web
+  primary: true
+  title: "Advent of Code 2018, day 19: Go With The Flow (Eric Wastl)"
+  url: https://adventofcode.com/2018/day/19
+  checked: '2026-11-20'
+- id: aoc-2018-21
+  type: web
+  primary: true
+  title: "Advent of Code 2018, day 21: Chronal Conversion (Eric Wastl)"
+  url: https://adventofcode.com/2018/day/21
+  checked: '2026-11-20'
+- id: aoc-2020-08
+  type: web
+  primary: true
+  title: "Advent of Code 2020, day 8: Handheld Halting (Eric Wastl)"
+  url: https://adventofcode.com/2020/day/8
+  checked: '2026-11-20'
+- id: wiki-shenzhen-io
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Shenzhen I/O"
+  url: https://en.wikipedia.org/wiki/Shenzhen_I/O
+  checked: '2026-11-20'
+- id: zachtronics-shenzhen-io
+  type: web
+  primary: true
+  authors: [Zachtronics]
+  title: "Zachtronics: SHENZHEN I/O"
+  url: https://www.zachtronics.com/shenzhen-io/
+  checked: '2026-11-20'
+- id: shenzhen-io-manual
+  type: manual
+  primary: true
+  authors: [Zachtronics]
+  title: "SHENZHEN I/O manual (in-game PDF, 47 pages), incl. MCxxxx Family Language Reference CSM_TD_100202"
+  year: 2016
+  url: https://web.archive.org/web/2020/https://usermanual.wiki/Document/SHENZHENIOManual.736522646/html
+  checked: '2026-11-20'
+- id: wiki-exapunks
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Exapunks"
+  url: https://en.wikipedia.org/wiki/Exapunks
+  checked: '2026-11-20'
+- id: zachtronics-exapunks
+  type: web
+  primary: true
+  authors: [Zachtronics]
+  title: "Zachtronics: EXAPUNKS"
+  url: https://www.zachtronics.com/exapunks/
+  checked: '2026-11-20'
+- id: trash-world-news-1
+  type: manual
+  primary: true
+  authors: [Zachtronics]
+  title: "TRASH WORLD NEWS, Issue #1: The EXA Issue (EXAPUNKS in-game zine; page scans in the exazines repository)"
+  year: 2018
+  url: https://github.com/MatthewMerrill/exazines
+  checked: '2026-11-20'
+- id: cheatography-exa
+  type: web
+  primary: false
+  authors: [walthered]
+  title: "EXA Language Reference (Cheatography cheat sheet)"
+  url: https://cheatography.com/walthered/cheat-sheets/exa-language-reference
+  checked: '2026-11-20'
+- id: wiki-7-billion-humans
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: 7 Billion Humans"
+  url: https://en.wikipedia.org/wiki/7_Billion_Humans
+  checked: '2026-11-20'
+- id: tomorrow-corp-7bh
+  type: web
+  primary: true
+  authors: [Tomorrow Corporation]
+  title: "Tomorrow Corporation: 7 Billion Humans"
+  url: https://tomorrowcorporation.com/7billionhumans
+  checked: '2026-11-20'
+- id: larryv-7bh
+  type: web
+  primary: false
+  title: "larryv/7-billion-humans: solutions exported as plain text"
+  url: https://github.com/larryv/7-billion-humans
+  checked: '2026-11-20'
+- id: ddj-1988-03-object-logo
+  type: web
+  primary: true
+  title: "Dr. Dobb's Journal, March 1988, Of Interest: Object Logo from Coral Software"
+  year: 1988
+  url: https://jacobfilipp.com/DrDobbs/articles/DDJ/1988/8803/8803k/8803k.htm
+  checked: '2026-11-20'
+- id: logo-foundation-history
+  type: web
+  primary: false
+  authors: [Logo Foundation]
+  title: "Logo History (Logo Foundation, MIT Media Lab)"
+  url: https://el.media.mit.edu/logo-foundation/what_is_logo/history.html
+  checked: '2026-11-20'
+- id: wiki-logo
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Logo (programming language)"
+  url: https://en.wikipedia.org/wiki/Logo_(programming_language)
+  checked: '2026-11-20'
+- id: nqc-guide-3.1
+  type: manual
+  primary: true
+  authors: [Dave Baum, John Hansen]
+  title: "NQC Programmer's Guide, Version 3.1 r5"
+  url: https://bricxcc.sourceforge.net/nqc/doc/NQC_Guide.pdf
+  checked: '2026-11-20'
+- id: nqc-home
+  type: web
+  primary: true
+  title: "NQC - Not Quite C (home page, release list)"
+  url: https://bricxcc.sourceforge.net/nqc/welcome.html
+  checked: '2026-11-20'
+- id: spectrum-2001-mindstorms
+  type: web
+  primary: false
+  authors: [Paul Wallich]
+  title: "Mindstorms: Not Just a Kid's Toy (IEEE Spectrum, 3 September 2001)"
+  year: 2001
+  url: https://spectrum.ieee.org/mindstorms-not-just-a-kids-toy
+  checked: '2026-11-20'
+- id: lugnet-1999-nqc
+  type: web
+  primary: false
+  title: "LUGNET Cool Site of the Week, August 15-21, 1999: NQC"
+  year: 1999
+  url: https://www.lugnet.com/cool/site-145.html
+  checked: '2026-11-20'
+- id: wiki-lego-mindstorms
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lego Mindstorms"
+  url: https://en.wikipedia.org/wiki/Lego_Mindstorms
+  checked: '2026-11-20'
+- id: nbc-home
+  type: web
+  primary: true
+  title: "NBC - Next Byte Codes, Not eXactly C, and SuperPro C (home page, release list)"
+  url: https://bricxcc.sourceforge.net/nbc/welcome.html
+  checked: '2026-11-20'
+- id: nbc-beta-releases
+  type: web
+  primary: true
+  title: "NBC beta releases (1.0.1 b10 to b35)"
+  url: https://bricxcc.sourceforge.net/nbc/beta/index.html
+  checked: '2026-11-20'
+- id: nxc-guide-intro
+  type: manual
+  primary: true
+  authors: [John Hansen]
+  title: "NXC Programmer's Guide, NXC Version 1.2.1 r5 (18 February 2013): Introduction"
+  year: 2013
+  url: https://bricxcc.sourceforge.net/nbc/nxcdoc/nxcapi/intro.html
+  checked: '2026-11-20'
+- id: benedettelli-2007-nxc-tutorial
+  type: manual
+  primary: true
+  authors: [Daniele Benedettelli, John Hansen]
+  title: "Programming LEGO NXT Robots using NXC (beta 30 or higher), version 2.2"
+  year: 2007
+  url: https://bricxcc.sourceforge.net/nbc/nxcdoc/NXC_tutorial.pdf
+  checked: '2026-11-20'
+- id: wiki-hopscotch
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Hopscotch (programming language)"
+  url: https://en.wikipedia.org/wiki/Hopscotch_(programming_language)
+  checked: '2026-11-20'
+- id: wiki-samantha-john
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Samantha John"
+  url: https://en.wikipedia.org/wiki/Samantha_John
+  checked: '2026-11-20'
+- id: ubergizmo-2013-hopscotch
+  type: web
+  primary: false
+  authors: [Tyler Lee]
+  title: "Hopscotch iPad app aims to teach children programming (Ubergizmo, 17 April 2013)"
+  year: 2013
+  url: https://ubergizmo.com/2013/04/hopscotch-ipad-app-aims-to-teach-children-programming
   checked: '2026-11-20'

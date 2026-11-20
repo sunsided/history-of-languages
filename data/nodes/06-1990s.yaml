@@ -1477,6 +1477,59 @@
   links: { wikipedia: "https://en.wikipedia.org/wiki/Maya_Embedded_Language" }
   sources: [wiki-maya-embedded-language, wiki-autodesk-maya]
 
+- id: nqc
+  name: Not Quite C
+  aliases: [NQC]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1998, year_end: 1999, precision: range, note: "No dated first release was found. Bounds: the RCX's Robotics Invention System launched in fall 1998, Baum built NQC \"quickly\" after the brick was reverse-engineered (IEEE Spectrum, 2001), and LUGNET featured it as an established tool in August 1999." }
+  creators:
+    - { name: Dave Baum, role: designer }
+    - { name: John Hansen, role: "maintainer (3.x) and co-author of the Programmer's Guide" }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+    concurrency: [tasks]
+    features: [preprocessor, compiler]
+    domain: [embedded, education]
+  milestones:
+    - { version: "3.0 a1", year: 2004, summary: "Beta, 22 January 2004." }
+    - { version: "3.1 r1", year: 2005, summary: "15 March 2005: support for Dick Swan's enhanced RCX firmware." }
+    - { version: "3.1 r6", year: 2007, summary: "6 June 2007, the last release on the NQC home page." }
+  summary: >
+    A text language for LEGO's RCX programmable brick, written by Dave Baum after hobbyists reverse-engineered the
+    brick: "a dialect of the C language he called Not Quite C", whose compiler "produced byte-codes that could be
+    downloaded and interpreted by the RCX firmware" (IEEE Spectrum), so programs ran on LEGO's stock firmware.
+    "Although the preprocessor and control structures of NQC are very similar to C, NQC is not a general purpose
+    language" (Programmer's Guide): programs are tasks that start and stop each other, and later targets
+    (RCX2, Scout, CyberMaster, Spybotics, Swan) added acquire and monitor statements for resource ownership and
+    events. It gave Mindstorms hackers a typed-text alternative to LEGO's graphical RCX Code.
+  notes: >
+    The first release date is the open question; a dated changelog or Baum's original NQC page would settle it.
+    Version 1.x and 2.x dates are also missing (an NQC beta supported RCX firmware 2.0, per the Linux Lego HOWTO).
+  relations:
+    - { type: influenced_by, to: c, aspects: [preprocessor], weight: strong, confidence: high, sources: [nqc-guide-3.1, spectrum-2001-mindstorms], note: "\"the preprocessor and control structures of NQC are very similar to C\" (Programmer's Guide); \"a dialect of the C language\" (Spectrum)." }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://bricxcc.sourceforge.net/nqc/" }
+  sources: [nqc-guide-3.1, nqc-home, spectrum-2001-mindstorms, lugnet-1999-nqc, wiki-lego-mindstorms]
+  example:
+    title: Acquiring a resource
+    language: NQC 3.1
+    note: "Verbatim from the NQC Programmer's Guide 3.1 r5, section 2.3.4, page 16: acquire output A for ten seconds (Wait counts hundredths of a second), playing a sound if a higher-priority task takes it away. Needs an RCX2, Scout, Swan or Spybotics target. Not compiled here."
+    code: |
+      acquire(ACQUIRE_OUT_A)
+      {
+          Wait(1000);
+      }
+      catch
+      {
+          PlaySound(SOUND_UP);
+      }
+    sources: [nqc-guide-3.1]
+
 - id: agda
   name: Agda
   aliases: [Agda 2]

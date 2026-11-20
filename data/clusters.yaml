@@ -471,27 +471,17 @@
   summary: "Toy instruction sets invented for programming puzzles and games: Advent of Code machines, whose programs are the puzzle input, and programming games such as Core War and the Zachtronics titles, played by writing assembly."
   research_status: draft
   key_sources: [wiki-advent-of-code]
-  backlog:
-    - { name: "Advent of Code 2015 day 23 register machine", year: 2015, hint: "\"Opening the Turing Lock\": two registers, hlf/tpl/inc/jmp/jie/jio. Unnamed; add only if a name or later reuse turns up." }
-    - { name: "Advent of Code 2018 device opcodes", year: 2018, hint: "Days 16, 19 and 21: 16 opcodes (addr ... eqrr) and an #ip directive binding a register to the instruction pointer. Unnamed on the puzzle pages (\"ElfCode\" is a fan name, unconfirmed)." }
-    - { name: "Advent of Code 2020 handheld boot code", year: 2020, hint: "Day 8: acc/jmp/nop. Unnamed, used once." }
-    - { name: "Shenzhen I/O", year: 2016, hint: "Zachtronics, 17 November 2016; \"similar to assembly language\" for MCxxxx microcontrollers; \"a spiritual successor to their previous title TIS-100\" (Wikipedia). Needs a sourced code example (the in-game manual)." }
-    - { name: "EXAPUNKS", year: 2018, hint: "Zachtronics, 22 October 2018; EXA agents with \"a few simple opcodes for movement, data processing, network messaging, and interfacing with files and registers\". Needs instruction list and example." }
-    - { name: "7 Billion Humans", year: 2018, hint: "Tomorrow Corporation's sequel to Human Resource Machine (23 August 2018): many workers at once, language \"similar to assembly language\" (Wikipedia). Needs a real program text." }
+  research_questions:
+    - "The Advent of Code machines of 2015 day 23, 2018 (days 16, 19, 21) and 2020 day 8, and EXAPUNKS, have no documented relation to other nodes: the puzzle pages name no ancestor, and Wikipedia relates EXAPUNKS to TIS-100 and SHENZHEN I/O only through the shared studio. An Eric Wastl or Zach Barth interview on the design of these instruction sets would settle it."
 - id: education
   name: Educational languages
   summary: "Languages designed for teaching programming, from PILOT and TUTOR to block-based Scratch and Snap!."
   research_status: stub
-  backlog:
-    - { name: "Blockly", year: 2012, hint: "Google (Neil Fraser and others), a JavaScript library for building block languages, not a language itself; Scratch 3.0 blocks use a fork of it (wiki-blockly). Probably a note on Scratch rather than a node." }
-    - { name: "Hopscotch", hint: "Hopscotch Technologies' iPad visual language, inspired by Scratch (Wikipedia); no first-release year on the page." }
-    - { name: "ObjectLOGO", hint: "Only a bullet in the Logo article: OO extensions and lexical scoping, version 2.7 sold by Digitool, no longer developed. No year." }
-    - { name: "Legoscript", hint: "Redirects to Lego Mindstorms, whose readable text does not describe it. No source yet." }
-    - { name: "Not eXactly C", hint: "Covered in the Lego Mindstorms NXT article: \"a high-level open source language, similar to C and built on the NBC compiler\", \"basically NQC for the NXT\". No year." }
-    - { name: "Not Quite C", hint: "Language for the Lego RCX; Wikipedia has no own article (the URL redirects to Lego Mindstorms). Find the NQC homepage or manual for a date." }
   research_questions:
     - "TUTOR, CESIL, FOIL, Haggis and EPL have no documented relation to existing nodes. Searched: Sherwood, The TUTOR Language (1974); the iclces.uk CESIL history; Wikipedia and FOLDOC for FOIL (Hesselbart, ACM 1968, unread); Cutts et al. 2014 (Haggis deliberately follows no existing language); English and Chinese sources for EPL, whose creation year may be 2000 rather than 2004."
-    - "Missing ancestors met while connecting education languages: IBM 1620 (COMPUTEST, the forerunner of PILOT), Common PILOT, Coursewriter (FOIL), the CDC 6600 family (PLATO/TUTOR), cT, TenCORE, the ICL 1900 (CESIL), Kawa (the App Inventor target) and Blockly."
+    - "Missing ancestors met while connecting education languages: IBM 1620 (COMPUTEST, the forerunner of PILOT), Common PILOT, Coursewriter (FOIL), the CDC 6600 family (PLATO/TUTOR), cT, TenCORE, the ICL 1900 (CESIL), and Kawa (the App Inventor target). Blockly is a library, recorded in the scratch node's notes rather than as a node."
+    - "Legoscript (a former backlog item, which Wikipedia redirects to Lego Mindstorms) is unconfirmed: the Mindstorms article does not mention it, and the only page found (a Localazy language hub, unsourced) calls it a LabVIEW-based visual language by David Levy and Bernard Poulin from 1998. It may be a confusion with ROBOLAB or with MindScript, which the Mindstorms article lists beside LASM. Needs a period LEGO or Tufts document naming it."
+    - "Not Quite C: no dated first release found (bounded 1998 to 1999). Look for Dave Baum's original NQC page (archived) or the NQC 1.x/2.x release notes. Object Logo: Digitool's version 2.7 is undated, and the object model was not documented in anything read."
 - id: visual
   name: Visual and dataflow languages
   summary: "Programs drawn as diagrams or patched dataflow graphs: LabVIEW, Prograph, Max and Pure Data."

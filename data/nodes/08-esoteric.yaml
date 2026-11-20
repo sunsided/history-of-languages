@@ -1057,6 +1057,258 @@
           OUTBOX
     sources: [hrm-solutions]
 
+- id: aoc-2015-turing-lock
+  name: Turing Lock register machine
+  aliases: [Opening the Turing Lock]
+  kind: language
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    first_appeared: { year: 2015, date: "2015-12-23", precision: exact, note: "Advent of Code 2015 day 23, \"Opening the Turing Lock\"; puzzles were released daily at midnight EST." }
+  creators: [{ name: Eric Wastl, role: puzzle author }]
+  status: historical
+  tags:
+    paradigm: [imperative]
+    features: [assembly-language]
+  summary: >
+    The first Advent of Code machine language, two years before assembunny: a computer with two registers, a
+    and b, that "can hold any non-negative integer", and six instructions: hlf, tpl and inc change a register,
+    jmp jumps by a signed offset "relative to itself", and jie and jio jump only if a register is even or is
+    exactly one ("jump if one", not odd). The program ends when it runs past its last instruction. The puzzle
+    gives it no name, and it was used for this one day only.
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://adventofcode.com/2015/day/23" }
+  sources: [aoc-2015-23, wiki-advent-of-code]
+  example:
+    title: Jump if one
+    language: Advent of Code 2015 day 23
+    note: "The example from the puzzle: it \"sets a to 2, because the jio instruction causes it to skip the tpl instruction.\" Checked with a small interpreter."
+    code: |
+      inc a
+      jio a, +2
+      tpl a
+      inc a
+    sources: [aoc-2015-23]
+
+- id: shenzhen-io
+  name: SHENZHEN I/O
+  aliases: [Shenzhen I/O, MCxxxx, MCxxxx Family Language]
+  kind: assembly
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    began: { year: 2016, date: "2016-10", precision: exact, note: "Steam Early Access in October 2016, after the September 2016 announcement." }
+    first_appeared: { year: 2016, date: "2016-11-17", precision: exact, note: "Left early access for Linux, macOS and Windows on 17 November 2016 (Wikipedia)." }
+    places: [{ institution: Zachtronics, country: US }]
+  creators: [{ name: Zach Barth, role: designer }]
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    concurrency: [message-passing]
+    features: [assembly-language]
+    domain: [embedded]
+  milestones:
+    - { version: "1.3", year: 2016, summary: "Firmware Update 1.3 (11 November 2016): a new campaign of eleven puzzles and a math co-processor." }
+  summary: >
+    Zachtronics' circuit-building puzzle game, programmed in the "MCxxxx Family Language" of fictional Chinese
+    microcontrollers (such as the MC4000) and documented by a 47-page in-game manual of datasheets and application
+    notes. Each line is "LABEL CONDITION INSTRUCTION COMMENT"; registers acc and dat hold integers from -999 to
+    999, and pins p0, p1 (simple I/O) and x0 to x3 (XBus) connect chips. Every instruction can be prefixed with
+    + or -, so test instructions (teq, tgt, tlt, tcp) enable or disable later lines instead of branching, and
+    slp and slx sleep to save power. Wikipedia calls the game "a spiritual successor" to TIS-100.
+  relations:
+    - { type: influenced_by, to: tis-100, aspects: [assembly-language], weight: moderate, confidence: medium, sources: [wiki-shenzhen-io], note: "\"The game is seen as a spiritual successor to their previous title TIS-100\" (Wikipedia); same designer and studio. No Zachtronics statement on the language itself was read." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Shenzhen_I/O", homepage: "https://www.zachtronics.com/shenzhen-io/" }
+  sources: [wiki-shenzhen-io, zachtronics-shenzhen-io, shenzhen-io-manual]
+  example:
+    title: Conditional execution
+    language: MCxxxx Family Language
+    note: "Verbatim from the manual's Language Reference (CSM_TD_100202, page 1 of 4), \"Examples of syntactically valid lines\". teq sets the condition; + jmp end runs only if acc equals 10, and x2 is an XBus pin. Not run in the game."
+    code: |
+      # This line is a comment.
+      loop: # until ACC is ten
+        teq acc 10
+      + jmp end
+        mov 50 x2
+        add 1
+        jmp loop
+      end:
+        mov 0 acc # reset counter
+    sources: [shenzhen-io-manual]
+
+- id: exapunks
+  name: EXAPUNKS
+  aliases: [EXA, EXA language]
+  kind: assembly
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    began: { year: 2018, date: "2018-08-09", precision: exact, note: "Steam Early Access." }
+    first_appeared: { year: 2018, date: "2018-10-22", precision: exact, note: "Full release (Wikipedia)." }
+    places: [{ institution: Zachtronics, country: US }]
+  creators:
+    - { name: Zach Barth, role: designer }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    concurrency: [message-passing]
+    features: [assembly-language]
+  summary: >
+    Zachtronics' hacking puzzle game set in 1997, played by programming "programmable software agents called
+    EXAs" that move between hosts over numbered links, grab, read and write files, and talk to each other. Its
+    instruction set has "a few simple opcodes for movement, data processing, network messaging, and interfacing
+    with files and registers" (LINK, GRAB, DROP, COPY, TEST, TJMP, REPL, HALT and more); each EXA has registers
+    X, T (the test result), F (the held file) and M (messages), and REPL lets an EXA copy itself. The language is
+    taught by the fictional zine TRASH WORLD NEWS, which the game ships as printable issues.
+  notes: >
+    Wikipedia names no relation to TIS-100 or SHENZHEN I/O beyond the shared studio and designer; no edge is
+    stored. The register descriptions come from a community cheat sheet, not from the zine pages read here.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Exapunks", homepage: "https://www.zachtronics.com/exapunks/" }
+  sources: [wiki-exapunks, zachtronics-exapunks, trash-world-news-1, cheatography-exa]
+  example:
+    title: "Tutorial 1: The Basics"
+    language: EXA
+    note: "Verbatim from TRASH WORLD NEWS issue 1, page 08 (\"Ghast walks\"): move file 200 from the host \"inbox\" to \"outbox\" through link 800. The zine's own glosses: traverse link 800, grab file 200, traverse link 800, drop the held file, terminate the EXA."
+    code: |
+      LINK 800
+      GRAB 200
+      LINK 800
+      DROP
+      HALT
+    sources: [trash-world-news-1]
+
+- id: 7-billion-humans
+  name: 7 Billion Humans
+  aliases: [7BH]
+  kind: assembly
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    first_appeared: { year: 2018, date: "2018-08-23", precision: exact, note: "Windows, macOS and Linux release (Wikipedia infobox)." }
+    places: [{ institution: Tomorrow Corporation, country: US }]
+  creators:
+    - { name: Kyle Gabler, role: co-founder of Tomorrow Corporation }
+    - { name: Kyle Gray, role: co-founder of Tomorrow Corporation }
+    - { name: Allan Blomquist, role: co-founder of Tomorrow Corporation }
+  status: maintained
+  tags:
+    paradigm: [imperative, visual-programming]
+    concurrency: [data-parallelism]
+    features: [assembly-language]
+  summary: >
+    Tomorrow Corporation's sequel to Human Resource Machine: "Where Human Resource Machine's puzzles were all
+    executed by a single worker, 7 Billion Humans has an all new language that lots of workers can all execute at
+    the same time", so every worker on the floor runs the same program. Commands such as step, pickUp and drop
+    take directions such as s, e and w, and if/else/endif and jump to labels test what is next to each worker. Like its predecessor it exports programs as plain text.
+  notes: >
+    Wikipedia names no designers; the creators listed are the three people named on Tomorrow Corporation's site
+    for the studio, not credits for this game.
+  relations:
+    - { type: successor_of, to: human-resource-machine, weight: strong, confidence: high, sources: [tomorrow-corp-7bh, wiki-7-billion-humans], note: "\"Designed as a sequel to Human Resource Machine\" (Wikipedia); Tomorrow Corporation: \"an all new language that lots of workers can all execute at the same time\"." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/7_Billion_Humans", homepage: "https://tomorrowcorporation.com/7billionhumans" }
+  sources: [wiki-7-billion-humans, tomorrow-corp-7bh, larryv-7bh]
+  example:
+    title: "Dynamic Angles (year 9)"
+    language: 7 Billion Humans
+    note: "Program body of larryv's exported solution year09-small.7bh (the file's header comments, added for the game's level text and scores, are left out). Each worker picks up the cube below it and walks south while the tile to its west holds something, then drops it, making a diagonal. The game indents with a tab, shown here as spaces. Not run in the game here."
+    code: |
+      pickup s
+      a:
+      step s
+      if w == something:
+          jump a
+      endif
+      drop
+    sources: [larryv-7bh]
+
+- id: aoc-2018-device
+  name: Advent of Code 2018 device code
+  aliases: [Chronal Classification opcodes]
+  kind: language
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    first_appeared: { year: 2018, date: "2018-12-16", precision: exact, note: "Advent of Code 2018 day 16, \"Chronal Classification\"; puzzles were released daily at midnight EST." }
+  creators: [{ name: Eric Wastl, role: puzzle author }]
+  status: historical
+  tags:
+    paradigm: [imperative]
+    features: [assembly-language]
+  milestones:
+    - { version: "day 19", year: 2018, summary: "\"Go With The Flow\": the #ip directive binds the instruction pointer to a register, so programs jump by writing to it; six registers." }
+    - { version: "day 21", year: 2018, summary: "\"Chronal Conversion\": the time travel module's activation system is a program for the same device, citing days 16 and 19 as \"manual section one and manual section two\"." }
+  summary: >
+    The instruction set of the time-travel "device" in Advent of Code 2018. Day 16 gives four
+    registers and 16 opcodes of the form opcode A B C, in register and immediate variants (addr, addi, mulr,
+    muli, banr, bani, borr, bori, setr, seti, gtir, gtri, gtrr, eqir, eqri, eqrr), with the numbering left for
+    the solver to deduce. Day 19 adds #ip, binding the instruction pointer to a register so that arithmetic
+    becomes control flow, and day 21 reuses it. The puzzles do not name the language.
+  notes: >
+    "ElfCode" is a name used by some solvers; it does not appear on the puzzle pages and is not used here.
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://adventofcode.com/2018/day/16" }
+  sources: [aoc-2018-16, aoc-2018-19, aoc-2018-21, wiki-advent-of-code]
+  example:
+    title: Instruction pointer bound to register 0
+    language: Advent of Code 2018 device code
+    note: "The example from day 19. #ip 0 makes register 0 the instruction pointer, so addi 0 1 0 skips an instruction and setr 1 0 0 jumps to 5+1; the run ends with registers [6, 5, 6, 0, 0, 9], as in the puzzle's trace. Checked with a small interpreter."
+    code: |
+      #ip 0
+      seti 5 0 1
+      seti 6 0 2
+      addi 0 1 0
+      addr 1 2 3
+      setr 1 0 0
+      seti 8 0 4
+      seti 9 0 5
+    sources: [aoc-2018-19]
+
+- id: aoc-2020-boot-code
+  name: Handheld boot code
+  aliases: [Handheld Halting]
+  kind: language
+  category: esoteric
+  cluster: esoteric/puzzle
+  origin:
+    first_appeared: { year: 2020, date: "2020-12-08", precision: exact, note: "Advent of Code 2020 day 8, \"Handheld Halting\"; puzzles were released daily at midnight EST." }
+  creators: [{ name: Eric Wastl, role: puzzle author }]
+  status: historical
+  tags:
+    paradigm: [imperative]
+    features: [assembly-language]
+  summary: >
+    The boot code of a handheld game console in Advent of Code 2020 day 8: one instruction per line, a
+    single "accumulator", and three instructions, acc (add to it), jmp (relative jump) and nop. Part one asks for
+    the accumulator just before the program would run an instruction a second time, a small exercise in
+    detecting non-termination. Unnamed beyond "boot code" and used on this day only.
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://adventofcode.com/2020/day/8" }
+  sources: [aoc-2020-08, wiki-advent-of-code]
+  example:
+    title: An infinite loop
+    language: Advent of Code 2020 boot code
+    note: "The example from the puzzle: \"Immediately before the program would run an instruction a second time, the value in the accumulator is 5.\" Checked with a small interpreter."
+    code: |
+      nop +0
+      acc +1
+      jmp +4
+      acc +3
+      jmp -3
+      acc -99
+      acc +1
+      jmp -4
+      acc +6
+    sources: [aoc-2020-08]
+
 - id: darwin-game
   name: Darwin
   kind: language

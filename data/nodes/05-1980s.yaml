@@ -512,6 +512,39 @@
          RETURN collection
     sources: [wiki-abc, van-rossum-2009-history-python]
 
+- id: objectlogo
+  name: Object Logo
+  aliases: [ObjectLOGO]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 1988, date: "1988-03", precision: exact, note: "Announced as available for the Macintosh in Dr. Dobb's Journal, March 1988 (\"Of Interest\")." }
+    places: [{ institution: Coral Software, city: Cambridge MA, country: US }]
+  creators:
+    - { name: Coral Software, role: developer }
+  status: extinct
+  tags:
+    paradigm: [object-oriented, procedural]
+    features: [turtle-graphics, lexical-scoping, compiler, interpreter]
+    domain: [education]
+  summary: >
+    A Macintosh Logo from Coral Software: the Logo Foundation's history says "Coral Software, developed an
+    object-oriented version of Logo called Object Logo", and Wikipedia describes it as "a variant of Logo with
+    object-oriented programming extensions and lexical scoping" (classic Logo is dynamically scoped). The 1988
+    announcement lists an interpreter for interactive debugging and "a compiler that automatically translates each
+    procedure into native code", for $79.95 on the Macintosh 512, 512E, Plus and SE. Version 2.7 was later sold
+    by Digitool; it "does not run on versions of the Mac operating system later than 7.5".
+  notes: >
+    The object model (classes or prototypes, message syntax) was not documented in any source read. A 1992
+    SIGGRAPH exhibit by Paradigm Software (Cambridge MA) reportedly drove a LEGO plotter from Object Logo; not read.
+  relations:
+    - { type: dialect_of, to: logo, weight: strong, confidence: high, sources: [logo-foundation-history, wiki-logo], note: "\"an object-oriented version of Logo\" (Logo Foundation)." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Logo_(programming_language)" }
+  sources: [ddj-1988-03-object-logo, logo-foundation-history, wiki-logo]
+
 - id: standard-ml
   name: Standard ML
   aliases: [SML]

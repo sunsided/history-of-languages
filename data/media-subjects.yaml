@@ -2768,3 +2768,8 @@
   wiki: Daniel Siewiorek
   nodes:
   - isps
+- id: person-samantha-john
+  kind: person
+  person: Samantha John
+  wiki: Samantha John
+  nodes: [hopscotch]

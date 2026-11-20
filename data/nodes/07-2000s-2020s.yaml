@@ -344,6 +344,77 @@
       |> Array.iter (fun (u, n) -> printfn "%s: %d" u n)
     sources: [syme-2020-early-history-fsharp, syme-2011-fsharp-async]
 
+- id: nxc
+  name: Not eXactly C
+  aliases: [NXC]
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2006, precision: circa, note: "The NXT shipped on 2 August 2006; the oldest surviving NBC beta is 1.0.1 b10 (10 October 2006, earlier betas deleted), and NXC is mentioned in the notes of b17 (29 December 2006). No dated first NXC release was found." }
+  creators:
+    - { name: John Hansen, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+    concurrency: [tasks, semaphores]
+    features: [preprocessor, compiler]
+    domain: [embedded, education]
+  milestones:
+    - { version: "1.2.1 r4", year: 2011, summary: "NBC/NXC release of 13 March 2011." }
+    - { version: "1.2.1 r5", year: 2013, summary: "NXC Programmer's Guide dated 18 February 2013." }
+  summary: >
+    "A high level language, similar to C, built on top of the NBC compiler" for LEGO's Mindstorms NXT brick, and
+    "basically NQC for the NXT" (BricxCC site); Daniele Benedettelli's tutorial calls it "a programming language,
+    invented by John Hansen". Like NQC it compiles to the bytecode of LEGO's own firmware, here through Next Byte
+    Codes (NBC), an assembly-syntax language by the same project. Programs are concurrent tasks; the language adds
+    a mutex type with Acquire and Release, and Precedes to start tasks.
+  relations:
+    - { type: successor_of, to: nqc, weight: strong, confidence: medium, sources: [nbc-home, nqc-home], note: "\"basically NQC for the NXT\"; the NQC home page, maintained by the same BricxCC project, points NXT users to NXC because \"NQC does not currently support the new LEGO NXT programmable brick\"." }
+    - { type: influenced_by, to: c, aspects: [preprocessor], weight: strong, confidence: high, sources: [nxc-guide-intro], note: "\"Although the preprocessor and control structures of NXC are very similar to C\" (NXC Programmer's Guide)." }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://bricxcc.sourceforge.net/nbc/" }
+  sources: [nbc-home, nxc-guide-intro, benedettelli-2007-nxc-tutorial, wiki-lego-mindstorms-nxt, nbc-beta-releases]
+  example:
+    title: Two tasks sharing the motors through a mutex
+    language: NXC (beta 30 or later)
+    note: "Verbatim from Benedettelli, Programming LEGO NXT Robots using NXC (version 2.2, 7 June 2007), page 40. Precedes starts both tasks when main ends. Not compiled here."
+    code: |
+      mutex moveMutex;
+
+      task move_square()
+      {
+        while (true)
+        {
+          Acquire(moveMutex);
+          OnFwd(OUT_AC, 75); Wait(1000);
+          OnRev(OUT_C, 75); Wait(850);
+          Release(moveMutex);
+        }
+      }
+
+      task check_sensors()
+      {
+        while (true)
+        {
+          if (SENSOR_1 == 1)
+          {
+            Acquire(moveMutex);
+            OnRev(OUT_AC, 75); Wait(500);
+            OnFwd(OUT_A, 75); Wait(850);
+            Release(moveMutex);
+          }
+        }
+      }
+
+      task main()
+      {
+        SetSensor(IN_1,SENSOR_TOUCH);
+        Precedes(check_sensors, move_square);
+      }
+    sources: [benedettelli-2007-nxc-tutorial]
+
 - id: clojure
   name: Clojure
   kind: language
@@ -539,6 +610,36 @@
           id: hulk
           text: "press to smash loki"
           on_release: root.hulk_smash()
+
+- id: hopscotch
+  name: Hopscotch
+  kind: language
+  category: educational
+  cluster: education
+  origin:
+    first_appeared: { year: 2013, date: "2013-04", precision: exact, note: "Released in beta as a free iPad app (Ubergizmo, 17 April 2013); Samantha John's Wikipedia article: \"first launched the app for iPad in 2013\"." }
+    places: [{ institution: Hopscotch Technologies, country: US }]
+  creators:
+    - { name: Samantha John, role: co-founder }
+    - { name: Jocelyn Leavitt, role: co-founder }
+  status: active
+  tags:
+    paradigm: [visual-programming, event-driven]
+    domain: [education]
+  summary: >
+    "A visual programming language developed by Hopscotch Technologies, designed to allow young or beginner
+    programmers to develop simple projects", for the iPad and later the iPhone: scripts of drag-and-drop blocks
+    run when their trigger event fires. Wikipedia says "The idea sprang from an existing programming tool, Scratch",
+    and Samantha John's article names HyperCard as a second inspiration.
+  notes: >
+    No edge to HyperCard: it is not yet a node. Wikipedia also calls the event-and-rule concept "similar to
+    AgentSheets", which is a resemblance, not a stated influence.
+  relations:
+    - { type: influenced_by, to: scratch, aspects: [visual-programming], weight: strong, confidence: medium, sources: [wiki-hopscotch, wiki-samantha-john], note: "\"The idea sprang from an existing programming tool, Scratch\" (Wikipedia)." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hopscotch_(programming_language)", homepage: "https://gethopscotch.com/" }
+  sources: [wiki-hopscotch, wiki-samantha-john, ubergizmo-2013-hopscotch]
 
 - id: serpent
   name: Serpent
@@ -3748,6 +3849,11 @@
   notes: >
     Edges to StarLogo, HyperCard and AgentSheets wait for those nodes (education/ backlog). The Scratch
     Team left the Media Lab on 11 March 2019 for the Scratch Foundation.
+    Blockly, the block-editor library Scratch 3.0 forked, is not a node of its own (a library, not a language):
+    a client-side JavaScript library "for creating block-based visual programming languages (VPLs) and
+    editors", begun in summer 2011 and released in May 2012 by Neil Fraser, Quynh Neutron, Ellen Spertus and
+    Mark Friedman at Google and MIT. It "can generate code in JavaScript, Lua, Dart, Python, or PHP" and also
+    underlies App Inventor 2, Code.org, Microsoft MakeCode and PICAXE (wiki-blockly).
   relations:
     - { type: implemented_in, to: squeak, weight: strong, confidence: high, sources: [wiki-squeak], note: "\"The first version of Scratch was implemented in Squeak.\"" }
     - { type: influenced_by, to: logo, weight: strong, confidence: high, sources: [wiki-scratch], note: "Infobox: influenced by Logo." }
@@ -3756,7 +3862,7 @@
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Scratch_(programming_language)", homepage: "https://scratch.mit.edu/" }
-  sources: [wiki-scratch, scratch-wiki-block-plugin]
+  sources: [wiki-scratch, scratch-wiki-block-plugin, wiki-blockly]
   example:
     title: A custom block, in scratchblocks text notation
     language: Scratch (scratchblocks)
