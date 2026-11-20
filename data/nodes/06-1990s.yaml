@@ -5139,3 +5139,28 @@
           }
       }
     sources: [wiki-handel-c]
+
+- id: interaction-nets
+  name: Interaction nets
+  aliases: [Interaction combinators, Interaction calculus]
+  kind: formalism
+  category: research
+  cluster: prehistory/formalisms
+  origin:
+    first_appeared: { year: 1990, precision: year, note: "Lafont's paper in the proceedings of POPL '90; Wikipedia dates the invention to 1989." }
+  creators:
+    - { name: Yves Lafont, role: designer }
+  status: active
+  tags:
+    concurrency: [interaction-nets]
+  milestones:
+    - { version: "Interaction Combinators", year: 1997, summary: "Lafont's three-agent system (constructor, duplicator, eraser) into which every interaction net system can be translated.", sources: [lafont-1997-interaction-combinators, taelin-2024-hvm2] }
+  summary: >
+    A graphical model of computation devised by Yves Lafont "as a generalisation of the proof structures of linear
+    logic". Programs are nets of agents; two agents joined at their principal ports rewrite locally, and strong
+    confluence means many rewrites can happen at once without synchronisation. Used for optimal lambda-calculus
+    reduction and, from 2022, as the runtime model of HVM and through it Bend.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Interaction_nets" }
+  sources: [lafont-1990-interaction-nets, lafont-1997-interaction-combinators, wiki-interaction-nets]

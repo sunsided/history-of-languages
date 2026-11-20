@@ -7683,6 +7683,56 @@
       }
     sources: [spinalhdl-docs]
 
+- id: hvm
+  name: HVM
+  aliases: [Higher-order Virtual Machine, HVM1, HVM2]
+  kind: language
+  category: research
+  cluster: ml-family
+  origin:
+    first_appeared: { year: 2022, date: "2022-01-31", precision: exact, note: "First hvm crate (0.1.0) published on crates.io on 31 January 2022; the HVM1 repository was created on 3 January 2022." }
+    places: [{ institution: Higher Order Company, country: BR }]
+  creators:
+    - { name: Victor Taelin, role: designer }
+  status: active
+  tags:
+    paradigm: [functional]
+    concurrency: [interaction-nets]
+    domain: [parallel-hardware]
+  milestones:
+    - { version: "2", year: 2024, date: "2024-05-15", summary: "HVM2, \"a massively parallel Interaction Combinator evaluator\" compiling to C and CUDA. Its language became \"a low-level IR language for specifying the HVM2 nets\", \"not meant for direct human usage\"; Bend became the high-level language on top.", sources: [hvm2-readme, taelin-2024-hvm2, hvm-crate] }
+  summary: >
+    The Higher-order Virtual Machine of Higher Order Company: "a minimalist functional language that is compiled to a
+    novel runtime based on Interaction Nets", which its README calls lazy, non-garbage-collected, massively parallel and
+    beta-optimal. HVM2 (2024) narrowed it to an evaluator for Lafont's interaction combinators with a low-level net
+    language, compiled to C and CUDA, and made it the target of Bend.
+  notes: >
+    HVM3 (repository created November 2024) and HVM4 (November 2025) exist but have not been researched; they are not
+    milestones yet. The HVM1 README quoted here is its current text, which mentions the later HVM-Core.
+  relations:
+    - { type: influenced_by, to: interaction-nets, from_version: "Interaction Combinators", weight: strong, confidence: high, sources: [hvm1-readme, taelin-2024-hvm2], note: "HVM1 is built on interaction nets; HVM2 is \"a parallel evaluator for interaction combinators\" (Lafont 1997)." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://github.com/HigherOrderCO/HVM2" }
+  sources: [hvm1-readme, hvm2-readme, hvm-crate, taelin-2024-hvm2]
+  example:
+    title: Rewrite rules in HVM1
+    language: HVM1
+    note: "Verbatim from the HVM1 README (examples/sort/bubble/main.hvm): functions are equations over constructors, compiled to interaction nets."
+    code: |
+      // sort : List -> List
+      (Sort Nil)         = Nil
+      (Sort (Cons x xs)) = (Insert x (Sort xs))
+
+      // Insert : U60 -> List -> List
+      (Insert v Nil)         = (Cons v Nil)
+      (Insert v (Cons x xs)) = (SwapGT (> v x) v x xs)
+
+      // SwapGT : U60 -> U60 -> U60 -> List -> List
+      (SwapGT 0 v x xs) = (Cons v (Cons x xs))
+      (SwapGT 1 v x xs) = (Cons x (Insert v xs))
+    sources: [hvm1-readme]
+
 - id: bend
   name: Bend
   aliases: [Bend 2, bend-lang]
@@ -7714,6 +7764,7 @@
     the project's own benchmarks. Bend 1 may have been public a few days before 15 May 2024 under another crate name; not checked.
     Taelin's earlier language Kind is not named as a predecessor in any Bend source read.
   relations:
+    - { type: targets, to: hvm, from_version: "2", weight: strong, confidence: high, sources: [bend-2024-readme, taelin-2024-hvm2], note: "Bend 1 \"is powered by the HVM2 runtime\"; Bend 2 dropped HVM (\"Bend 1 programs and HVM do not carry over\")." }
     - { type: influenced_by, to: python, weight: strong, confidence: high, sources: [bend-2024-readme, bend-homepage], note: "Bend 1 README: \"the feeling and features of expressive languages like Python and Haskell\"; Bend 2: \"Syntax == Python + dependent types\"." }
     - { type: influenced_by, to: haskell, aspects: [functional], weight: moderate, confidence: high, sources: [bend-2024-readme, taelin-2024-hvm2] }
     - { type: influenced_by, to: lean, aspects: [dependent-types, theorem-proving], year: 2026, weight: moderate, confidence: medium, sources: [bend-homepage, taelin-2026-bendtt], note: "Bend 2's site compares its checker to Lean and Rocq, and its kernel is mechanised in Lean 4; BendTT positions itself against Coq, Agda and Lean rather than naming an ancestor." }

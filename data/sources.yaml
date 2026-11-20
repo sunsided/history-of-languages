@@ -6335,3 +6335,30 @@
   title: Vibescript (official site)
   year: 2026
   url: https://vibescript-lang.org/
+- id: wiki-interaction-nets
+  type: encyclopedia
+  title: Interaction nets (Wikipedia)
+  url: https://en.wikipedia.org/wiki/Interaction_nets
+  checked: '2026-11-20'
+- id: hvm1-readme
+  type: manual
+  primary: true
+  authors:
+  - Victor Taelin
+  title: HVM1 README
+  url: https://github.com/HigherOrderCO/HVM1
+  checked: '2026-11-20'
+- id: hvm2-readme
+  type: manual
+  primary: true
+  authors:
+  - Higher Order Company
+  title: HVM2 README
+  url: https://github.com/HigherOrderCO/HVM2
+  checked: '2026-11-20'
+- id: hvm-crate
+  type: web
+  primary: true
+  title: "hvm on crates.io: version history"
+  url: https://crates.io/crates/hvm/versions
+  checked: '2026-11-20'
