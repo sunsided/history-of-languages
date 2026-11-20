@@ -10829,3 +10829,9 @@
   title: "MindScript: History (RIT Programming Language Concepts report, 2002)"
   url: https://www.cs.rit.edu/~ats/plcr-2002-1/reports/mindscript/History.htm
   checked: '2026-11-20'
+- id: ndwiki-planc
+  type: encyclopedia
+  primary: false
+  title: "NDWiki: PLANC (article wikitext, read by a person in a browser and pasted, 2026-11-20)"
+  url: https://ndwiki.org/wiki/PLANC
+  checked: '2026-11-20'

@@ -169,7 +169,7 @@
   summary: "ALGOL- and PL/I-derived languages for defence, real-time control and systems programming before C took over."
   research_status: stub
   research_questions:
-    - "PLANC is now a stub (c.1979 from an NDWiki timeline snippet). Confirm the date from the PLANC Reference Manual ND-60.117 title page or revision history; ndwiki.org sits behind an Anubis bot check, so Markus would have to read its pages (ND-10309, PLANC for ND-100, file timestamp February 1982; ND-211038J, PLANC for MC68000, 1989-05-02) in a browser."
+    - "PLANC: the NDWiki PLANC article (read by Markus, 2026-11-20) gives structure, example and manual numbers but no year; c.1979 still rests on a timeline snippet. Date it from the title page or revision history of the PLANC Reference Manual ND-60.117.03, or from NDWiki product pages ND-10309 (PLANC for ND-100) and ND-211038 (MC68000). ndwiki.org sits behind an Anubis bot check: read it in a browser by hand only."
     - "Mystic Programming Language (now node mystic-mpl in scripting) is dated only by a bound: v1.05a (June 1999) already ships MPLC.EXE. Find the Mystic release that first shipped MPL (pre-1.05 WHATSNEW, Mystic BBS 1.0 to 1.04 archives)."
 - id: algol/bcpl-line
   name: CPL and BCPL
