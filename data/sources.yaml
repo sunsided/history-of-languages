@@ -10479,4 +10479,80 @@
   primary: false
   title: "accompiler: David Ashley's C compiler (SourceForge project, registered 2009-12-11)"
   url: https://sourceforge.net/projects/accompiler/
+- id: schmolze-1983-kl-one-classification
+  type: paper
+  primary: true
+  authors: [James G. Schmolze, Thomas A. Lipkis]
+  title: Classification in the KL-ONE Knowledge Representation System
+  venue: Proceedings of IJCAI-83
+  year: 1983
+  url: https://ijcai.org/proceedings/1983/0076.pdf
+  checked: '2026-11-20'
+- id: baader-1991-kris
+  type: paper
+  primary: false
+  authors: [Franz Baader, Bernhard Hollunder]
+  title: "KRIS: Knowledge Representation and Inference System"
+  venue: ACM SIGART Bulletin 2(3), 8-14
+  year: 1991
+  doi: 10.1145/122296.122298
+  url: https://api.crossref.org/works/10.1145/122296.122298
+  checked: '2026-11-20'
+- id: bobrow-1972-uci-lisp-manual
+  type: manual
+  primary: true
+  authors: [Robert J. Bobrow, Richard R. Burton, Daryle Lewis]
+  title: "UCI LISP Manual (An Extended Stanford LISP 1.6 System)"
+  venue: "UC Irvine Information and Computer Science Technical Report No. 21 (reprinted as CS 206 class notes)"
+  year: 1972
+  url: https://softwarepreservation.computerhistory.org/LISP/stanford/Bobrow_Burton_Lewis-UCI_LISP-1972.pdf
+  checked: '2026-11-20'
+- id: blizzard-2009-sc2-qa-52
+  type: interview
+  primary: true
+  authors: [Blizzard Entertainment]
+  title: "StarCraft II Q&A Batch 52 (map maker series), as relayed by GosuGamers"
+  venue: GosuGamers
+  year: 2009
+  url: https://www.gosugamers.net/starcraft/news/10072-starcraft-ii-q-a-batch-52
+  checked: '2026-11-20'
+- id: blizzplanet-2009-sc2-qa-52
+  type: web
+  primary: false
+  authors: [Medievaldragon]
+  title: "StarCraft II Q&A Batch 52 - Map Maker Series (Blizzplanet, 12 June 2009)"
+  venue: Blizzplanet
+  year: 2009
+  url: https://www.blizzplanet.com/blog/comments/starcraft_ii_qa_batch_52_map_maker_series
+  checked: '2026-11-20'
+- id: wiki-starcraft-ii-wings-of-liberty
+  type: encyclopedia
+  primary: false
+  title: "StarCraft II: Wings of Liberty"
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/StarCraft_II:_Wings_of_Liberty
+  checked: '2026-11-20'
+- id: vexorian-2009-jasshelper-manual
+  type: manual
+  primary: true
+  authors: [Vexorian]
+  title: "JassHelper 0.9.G.0 manual (wc3c.net, Wayback Machine snapshot of 5 May 2009)"
+  venue: wc3c.net
+  year: 2009
+  url: https://web.archive.org/web/20090505180900/http://www.wc3c.net:80/vexorian/jasshelpermanual.html
+  checked: '2026-11-20'
+- id: warraft-jasshelper-manual
+  type: manual
+  primary: false
+  title: "JassHelper Help (current mirror of Vexorian's manual, with changelog)"
+  venue: warraft.github.io
+  url: https://warraft.github.io/JassHelper-manual/jasshelper.html
+  checked: '2026-11-20'
+- id: handwiki-jass
+  type: encyclopedia
+  primary: false
+  authors: [HandWiki contributors]
+  title: JASS (mirror of the former English Wikipedia article)
+  venue: HandWiki
+  url: https://handwiki.org/wiki/JASS
   checked: '2026-11-20'

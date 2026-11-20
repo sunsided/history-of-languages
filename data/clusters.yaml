@@ -147,8 +147,8 @@
   name: Early AI languages
   parent: early
   research_status: stub
-  backlog:
-    - { name: "KL-ONE", hint: "Brachman's frame-based representation language; KRYPTON's TBox \"is, in large part, a distillation of KL-ONE\" (Brachman, Fikes and Levesque, AAAI-83, which cites the Second KL-ONE Workshop, May 1982). Needs a dated primary source (Brachman and Schmolze, Cognitive Science) before it becomes a node." }
+  research_questions:
+    - "KL-ONE: read Brachman's thesis (Harvard, May 1977; BBN Report 3605) and Brachman and Schmolze, Cognitive Science 9(2), 1985, to confirm the 1977 date, the co-designers and the implementation language (Interlisp?). Its descendants NIKL, KL-TWO, LOOM, BACK and CLASSIC are not nodes."
 
 # ===================== Language families =====================
 - id: fortran
@@ -210,8 +210,6 @@
 - id: lisp
   name: Lisp family
   research_status: draft
-  backlog:
-    - { name: "UCI LISP", hint: "Stanford LISP 1.6 exported to UC Irvine, with an Interlisp-style editor added (Software Preservation Group, Stanford LISP 1.6 family page); used at Stanford in the early to mid-1970s. DECUS 10-210; source at saildart.org [UCI,SYS]. No year yet." }
 - id: array
   name: Array languages
   research_status: stub
@@ -548,10 +546,8 @@
   name: Game scripting languages
   summary: "Languages built into games and game engines: QuakeC, UnrealScript, LPC and MOO for MUDs, GML, Luau, Verse."
   research_status: stub
-  backlog:
-    - { name: "Galaxy (StarCraft II)", year: 2010, hint: "Blizzard's script language for StarCraft II maps; replaced JASS (Warcraft Wiki, JASS2). Successor edge to jass. Needs a Galaxy Editor source for date and design." }
-    - { name: "vJASS", hint: "JASS superset with object-oriented features, compiled to JASS by Vexorian's JassHelper for the NewGen World Editor; JassHelper manual on github (wurstscript/WurstScript, Wurstpack/vexorianjasshelper). Inclusion test 4 (variant)." }
   research_questions:
+    - "vJASS has no confirmed first-release date: an earlier wc3c.net JassHelper thread or changelog dates would settle it (the Wikipedia-cited 26 June 2007 for version 0.A.0.0 conflicts with a 0.9.G.0 manual archived in 2009). Galaxy has no example yet: Blizzard's own Galaxy documentation was not read."
     - "GML is only likened to JavaScript and C by third parties; the GameMaker manual was not read. SCUMM: Wilmunder\u2019s memoir credits Chip Morningstar with creating the language \"in just a few short weeks\", while the node gives him only initial help; to be reconciled. LSL\u2019s Mono target was read only through a relayed fetch."
 - id: business/4gl
   name: xBase and 4GL languages

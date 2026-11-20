@@ -388,6 +388,54 @@
   confidence: high
   sources: [mcdermott-sussman-1972-conniver, sussman-1972-conniving, wiki-planner]
 
+- id: uci-lisp
+  name: UCI LISP
+  aliases: [UCILISP, UCI-LISP]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1972, date: "1972-10", precision: exact, note: "UC Irvine ICS Technical Report No. 21, \"UCI LISP Manual (An Extended Stanford LISP 1.6 System)\", October 1972." }
+    places: [{ institution: "University of California, Irvine", city: Irvine, country: US }]
+  creators:
+    - { name: Robert J. Bobrow, role: co-author of the system manual }
+    - { name: Richard R. Burton, role: co-author of the system manual }
+    - { name: Daryle Lewis, role: co-author of the system manual }
+  status: extinct
+  tags:
+    paradigm: [functional, procedural]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [compiler, repl, macros]
+    domain: [artificial-intelligence]
+  milestones:
+    - { version: TR 21, year: 1972, summary: "UCI LISP Manual by Bobrow, Burton and Lewis, October 1972." }
+    - { version: TR 21 (updated), year: 1973, summary: "Manual updated October 1973, with Jeffrey M. Jacobs as co-author; \"Changes to the UCILISP System 9/73\"." }
+    - { version: DECUS 10-210, year: 1975, summary: "\"UCI-LISP\" distributed through DECUS, 27 March 1975: \"This is U.C.I.'s version of LISP.\"" }
+    - { version: New UCI-LISP, year: 1979, summary: "James R. Meehan, The New UCI-LISP Manual, Lawrence Erlbaum Associates, 1979." }
+  summary: >
+    "a compatible extension of the Stanford LISP 1.6 programming system for the DEC PDP-10" (manual, 1972), made
+    at UC Irvine to be "a powerful and convenient interactive programming environment for research and teaching in
+    artificial intelligence". "A majority of the extensions were suggested by the features of BBN LISP": a
+    break package for conditional breakpoints and tracing, a list-structure editor, and stack inspection; read macros
+    were "patterned after MIT AI LISP". It ran at Stanford in the early to mid-1970s until MacLisp "supplanted the
+    Lisp 1.6 derivatives, including UCI Lisp", and lived on as Rutgers/UCI LISP and C-MU LISP.
+  notes: >
+    The manual says "All Stanford LISP programs, (except those using the BIGNUM package) can be run directly in UCI
+    LISP" and that it eased moving programs from BBN LISP and MIT AI LISP (Woods' ATN parser, Micro-Planner). The
+    later history (DECUS 10-210, the 1973 and 1979 manuals, the successors) is from the Software Preservation Group
+    page, which quotes Steele and Gabriel (1993). Wikipedia titles for the three manual authors were not checked, so
+    they have no media-subjects entries; Robert J. Bobrow is not Daniel G. Bobrow of BBN LISP. Rutgers/UCI LISP,
+    Yale TLISP and C-MU LISP are not nodes. No example: the editor chapters were not read.
+  relations:
+    - { type: dialect_of, to: stanford-lisp-1-6, weight: strong, confidence: high, sources: [bobrow-1972-uci-lisp-manual], note: "\"UCI LISP is a compatible extension of the Stanford LISP 1.6 programming system\"." }
+    - { type: influenced_by, to: interlisp, weight: moderate, confidence: high, aspects: [ide], sources: [bobrow-1972-uci-lisp-manual, spp-stanford-lisp16], note: "\"A majority of the extensions were suggested by the features of BBN LISP\"; SPG: \"an Interlisp style editor and other programming environment improvements\"." }
+    - { type: influenced_by, to: maclisp, weight: weak, confidence: high, aspects: [macros], sources: [bobrow-1972-uci-lisp-manual], note: "\"Read Macros (patterned after MIT AI LISP)\"." }
+    - { type: targets, to: pdp-10, weight: strong, confidence: high, sources: [bobrow-1972-uci-lisp-manual] }
+  research_status: draft
+  confidence: high
+  sources: [bobrow-1972-uci-lisp-manual, spp-stanford-lisp16]
+
 - id: ml
   name: ML
   aliases: ["Meta Language", "Edinburgh ML"]
@@ -3826,6 +3874,40 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/KRL_(programming_language)" }
   sources: [wiki-krl-bobrow]
+
+- id: kl-one
+  name: KL-ONE
+  kind: language
+  category: research
+  cluster: early/ai
+  origin:
+    first_appeared: { year: 1977, precision: year, note: "Baader and Hollunder (1991): KL-ONE \"first appeared in 1977\". Schmolze and Lipkis (IJCAI-83) cite Brachman's Harvard PhD thesis \"A Structural Paradigm for Representing Knowledge\" (May 1977; also BBN Report 3605, May 1978) first among KL-ONE's sources; the thesis itself was not read." }
+    places: [{ institution: "Bolt, Beranek and Newman", city: Cambridge MA, country: US }]
+  creators:
+    - { name: Ronald J. Brachman, role: "designer (PhD thesis, Harvard, 1977)" }
+  status: extinct
+  tags:
+    paradigm: [declarative]
+    features: [inheritance]
+    domain: [artificial-intelligence]
+  summary: >
+    A knowledge representation system "developed at Bolt Beranek and Newman over the past few years" that "grew
+    out of semantic network formalisms" (Schmolze and Lipkis, IJCAI-83). Its unit is the Concept, which "denotes a
+    set of objects" and has Rolesets "analogous to a 'slot' in a 'frame-like' language"; Concepts inherit the
+    components of the Concepts that subsume them, and a classifier places each new Concept in the taxonomy.
+    KRYPTON's terminological component is "a distillation of KL-ONE", and Baader and Hollunder name a family of
+    KL-ONE systems: BACK, KL-TWO, LOOM, NIKL and SB-ONE.
+  notes: >
+    The standard overview, Brachman and Schmolze, "An Overview of the KL-ONE Knowledge Representation System",
+    Cognitive Science 9(2), 171-216 (1985), was not reachable and is not cited. The IJCAI-83 paper says the
+    system and classifier "have been used for several years" in AI systems and that "We are currently re-designing
+    the KL-ONE" system; its implementation language is not stated in the sources read, so there is no
+    implemented_in edge. James G. Schmolze and Thomas A. Lipkis wrote the classifier paper; their part in the
+    original design is not established. No example: the IJCAI-83 paper describes Concepts in prose only.
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/KL-ONE" }
+  sources: [schmolze-1983-kl-one-classification, baader-1991-kris, brachman-1983-krypton-aaai]
 
 - id: ops5
   name: OPS5

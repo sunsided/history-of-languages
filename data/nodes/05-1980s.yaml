@@ -3047,10 +3047,11 @@
     for the ABox the authors were investigating a version of Mark Stickel's connection-graph theorem prover.
   notes: >
     The AAAI-83 paper reports "An implementation of a KRYPTON system in Interlisp-D" as "under way", with the
-    terminological operations done. KL-ONE is not a node yet (early/ai backlog). The IEEE Computer paper was
+    terminological operations done. The IEEE Computer paper was
     not read. Its later influence on description logics (the TBox/ABox terms) is not recorded here until a
     source such as Baader et al., The Description Logic Handbook, is read.
   relations:
+    - { type: influenced_by, to: kl-one, weight: strong, confidence: high, sources: [brachman-1983-krypton-aaai], note: "\"The TBox is, in large part, a distillation of KL-ONE\" (AAAI-83)." }
     - { type: implemented_in, to: interlisp, weight: moderate, confidence: high, sources: [brachman-1983-krypton-aaai], note: "\"An implementation of a KRYPTON system in Interlisp-D is under way\" (AAAI-83)." }
   research_status: draft
   confidence: high

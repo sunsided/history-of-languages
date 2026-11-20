@@ -342,6 +342,101 @@
       endfunction
     sources: [warcraftwiki-jass2]
 
+- id: vjass
+  name: vJASS
+  aliases: [vJass]
+  kind: language
+  category: domain-specific
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 2007, precision: circa, note: "Undated in the manual. The former Wikipedia article (HandWiki mirror) cites \"JassHelper 0.A.0.0\", wc3c.net, 26 June 2007, but the oldest archived manual (5 May 2009) is version 0.9.G.0, so that citation date is doubtful. The changelog begins at \"0.2 (initial public release)\" without dates." }
+  creators:
+    - { name: Vexorian, role: "author of JassHelper (pseudonym)" }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, event-driven]
+    features: [preprocessor, interfaces, macros]
+    domain: [game-scripting]
+  milestones:
+    - { version: 0.9.G.0, year: 2009, summary: "Manual as archived in May 2009: libraries and scopes, textmacros, structs with methods, interfaces, extending structs, delegates, modules, function interfaces, dynamic arrays." }
+  summary: >
+    A superset of Warcraft III's JASS, compiled by Vexorian's JassHelper, "a compiler for the vJass language
+    extension which includes structs, libraries, textmacros and more". It started from "extending Jass to OOP", but
+    "there is no inheritance and that's the reason I am not calling the objects classes but structs"; interfaces give
+    polymorphism. "JassHelper is just a preprocessor not a hack": structs are indices into JASS arrays (8190
+    instances per type), so the output runs on any copy of the game. It spread through the Jass NewGen Pack, and
+    JassHelper later became part of Warcraft III.
+  notes: >
+    "JassHelper is now part of Warcraft III allowing vJASS to be used without any third party tools" is from the
+    former Wikipedia JASS article (HandWiki mirror), with no date for the change. JassHelper version Z.0 added Zinc,
+    "a less verbose alternative to vJass"; cJass (via AdicHelper) and vrJASS are other JASS dialects named there.
+    None of these are nodes. Vexorian has no Wikipedia article, so the creator name is the forum pseudonym; the
+    manual's credits also thank pipedream for help with the syntax. The site wc3c.net is not given as a place
+    because its location was not checked.
+  relations:
+    - { type: superset_of, to: jass, weight: strong, confidence: high, sources: [vexorian-2009-jasshelper-manual], note: "\"JassHelper is just a preprocessor not a hack so whatever adition to Jass we add is still limited by Jass' own limitations\"." }
+    - { type: targets, to: jass, weight: strong, confidence: high, sources: [handwiki-jass], note: "\"a custom-made compiler that compiles vJASS code to strict JASS code\"." }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://warraft.github.io/JassHelper-manual/jasshelper.html" }
+  sources: [vexorian-2009-jasshelper-manual, warraft-jasshelper-manual, handwiki-jass]
+  example:
+    title: A struct
+    language: vJASS
+    year: 2009
+    note: "The manual's first struct example, as printed in JassHelper 0.9.G.0 (archived 2009), including its one-space indent for locals and the second assignment to A.x where A.y was probably meant. Not compiled here."
+    code: |
+      struct pair
+          integer x
+          integer y
+      endstruct
+
+      function testpairs takes nothing returns nothing
+       local pair A=pair.create()
+          set A.x=5
+          set A.x=8
+
+          call BJDebugMsg(I2S(A.x)+" : "+I2S(A.y))
+
+          call pair.destroy(A)
+
+      endfunction
+    sources: [vexorian-2009-jasshelper-manual]
+
+- id: galaxy
+  name: Galaxy
+  aliases: [Galaxy script, GalaxyScript]
+  kind: language
+  category: domain-specific
+  cluster: game-scripting
+  origin:
+    first_appeared: { year: 2010, date: "2010-07-27", precision: exact, note: "Release of StarCraft II: Wings of Liberty. Blizzard named the language in a Q&A of 12 June 2009; the map editor reached beta players in Patch 9 of the 2010 beta (Wikipedia)." }
+    places: [{ institution: Blizzard Entertainment, country: US }]
+  creators:
+    - { name: Blizzard Entertainment, role: developer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+    domain: [game-scripting]
+  summary: >
+    The scripting language of StarCraft II maps and mods. Asked whether the game still used JASS, Blizzard answered
+    that "StarCraft II uses an entirely new scripting language, which we've called Galaxy. This language is very
+    similar to C, and anyone familiar with programming in C will have no trouble picking it up." "The language
+    itself is not object-oriented, although most of the native functionality is based around operating on game
+    objects." It replaced JASS, the language of Warcraft III maps.
+  notes: >
+    Blizzard's answers were read as relayed by GosuGamers; Blizzplanet dates the batch to 12 June 2009 and adds that
+    the editor (then also called Galaxy) "adds to things it lacked, such as the garbage collection system", which is
+    not clearly about the language and is not tagged. No designer is named. Community dialects that compile to
+    Galaxy (Galaxy++, Galaxy Sharp) were only seen in search results. No example: no sample from Blizzard's own
+    documentation was read.
+  relations:
+    - { type: successor_of, to: jass, weight: moderate, confidence: medium, sources: [warcraftwiki-jass2, blizzard-2009-sc2-qa-52], note: "\"JASS was replaced with Galaxy script in StarCraft II\" (Warcraft Wiki); Blizzard calls it \"an entirely new scripting language\" in answer to whether StarCraft II uses JASS." }
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [blizzard-2009-sc2-qa-52], note: "\"This language is very similar to C\"." }
+  research_status: draft
+  confidence: medium
+  sources: [blizzard-2009-sc2-qa-52, blizzplanet-2009-sc2-qa-52, wiki-starcraft-ii-wings-of-liberty, warcraftwiki-jass2]
+
 - id: scala
   name: Scala
   kind: language
