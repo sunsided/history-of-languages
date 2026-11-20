@@ -277,6 +277,41 @@
 
       ?- ancestor(tom, Who).
 
+- id: conniver
+  name: Conniver
+  aliases: [CONNIVER]
+  kind: language
+  category: research
+  cluster: early/ai
+  origin:
+    first_appeared: { year: 1972, date: "1972-05-01", precision: exact, note: "The Conniver Reference Manual, MIT AI Memo AIM-259, issued 1 May 1972, describes the language as \"complete,\" and running at the AI Lab now. Wikipedia cites the revision AIM-259A (January 1974). Sussman's AIM-255, \"Why Conniving is Better than Planning\", is dated 1 February 1972." }
+    places: [{ institution: MIT Artificial Intelligence Laboratory, country: US }]
+  creators:
+    - { name: Drew McDermott, role: co-author of the reference manual }
+    - { name: Gerald Jay Sussman, role: co-author of the reference manual }
+  status: extinct
+  tags:
+    domain: [artificial-intelligence]
+  summary: >
+    An AI programming language from the MIT AI Lab, described in Drew McDermott and Gerald Jay Sussman's
+    Conniver Reference Manual (AIM-259, May 1972) as "a guide to the philosophy and use of the programming
+    language CONNIVER". It came out of the Planner line and against it: the manual assumes "good knowledge of
+    LISP, but no knowledge of Micro-Planner", and Sussman's memo "Why Conniving is Better than Planning"
+    (February 1972) argued that a language's author "imposes his theory of problem solving on the user".
+    Wikipedia lists it among Planner's derivations, with QA4, QLISP and Ether.
+  notes: >
+    Only the MIT DSpace records (title, date, abstract) were read, not the memos themselves, so the language's
+    features are not described or tagged yet. The
+    DSpace record for AIM-255 names Sussman alone. Whether Conniver was built on MacLisp is likely but
+    unconfirmed.
+  relations:
+    - { type: influenced_by, to: planner, weight: strong, confidence: medium, sources: [wiki-planner, mcdermott-sussman-1972-conniver], note: "Wikipedia lists Conniver among Planner's derivations; the manual defines itself against Micro-Planner, which Sussman co-implemented." }
+    - { type: reacts_against, to: planner, weight: strong, confidence: medium, sources: [sussman-1972-conniving], note: "The memo's title, \"Why Conniving is Better than Planning\" (AIM-255, 1972); its argument was read only in the abstract." }
+    - { type: influenced_by, to: lisp, weight: moderate, confidence: medium, sources: [mcdermott-sussman-1972-conniver], note: "The manual \"assumes good knowledge of LISP\" and points beginners to the LISP 1.5 Programmer's Manual." }
+  research_status: stub
+  confidence: high
+  sources: [mcdermott-sussman-1972-conniver, sussman-1972-conniving, wiki-planner]
+
 - id: ml
   name: ML
   aliases: ["Meta Language", "Edinburgh ML"]

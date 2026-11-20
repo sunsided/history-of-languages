@@ -1159,6 +1159,53 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Nashorn_(JavaScript_engine)" }
   sources: [wiki-nashorn, wiki-rhino]
+- id: lisa-rules
+  name: LISA
+  aliases: [Lisp-based Intelligent Software Agents, Lisp Intelligent Software Agents]
+  kind: language
+  category: domain-specific
+  cluster: logic
+  origin:
+    first_appeared: { year: 2001, date: "2001-08-31", precision: exact, note: "\"first production release (Version 1.0) on 31 August, 2001\" (project home page)." }
+  creators:
+    - { name: David E. Young, role: developer }
+  status: legacy
+  tags:
+    paradigm: [declarative, object-oriented]
+    domain: [artificial-intelligence]
+  milestones:
+    - { version: "2.0", year: 2002, summary: "9 December 2002." }
+    - { version: "3.0", year: 2007, summary: "8 September 2007." }
+    - { version: "3.2", year: 2007, summary: "17 September 2007 (CLiki); the project page calls it \"the latest official release\"." }
+  summary: >
+    A forward-chaining production-rule system for Common Lisp, "a platform for the development of Lisp-based
+    Intelligent Software Agents", implemented in CLOS around an object-oriented Rete matcher, and able to
+    reason over CLOS objects without changes to an application's class hierarchy. It is "heavily influenced by
+    CLIPS and the Java Expert System Shell (JESS)", whose defrule/deftemplate style it carries into Lisp.
+    Released under the LGPL.
+  notes: >
+    Not the Language for Instruction Set Architecture, also called LISA. The id is lisa-rules to keep the
+    plain name free for that. The CLiki page mentions a fork on GitHub.
+  relations:
+    - { type: extension_of, to: common-lisp, weight: strong, confidence: high, sources: [wiki-lisa-rules, lisa-homepage], note: "\"an extension to Common Lisp\" (Wikipedia), implemented in CLOS." }
+    - { type: influenced_by, to: clips, weight: strong, confidence: high, sources: [lisa-homepage], note: "\"heavily influenced by CLIPS and the Java Expert System Shell (JESS)\"." }
+    - { type: influenced_by, to: jess, weight: strong, confidence: high, sources: [lisa-homepage] }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Lisp-based_Intelligent_Software_Agents", homepage: "https://lisa.sourceforge.net/" }
+  sources: [lisa-homepage, wiki-lisa-rules, cliki-lisa, lisa-ref-guide]
+  example:
+    title: A template and a rule
+    language: LISA
+    note: "Two separate snippets from the LISA Reference Guide: a deftemplate (section on queries) and the rule from \"The initial fact\" (rule-related operators)."
+    code: |
+      (deftemplate frodo ()
+        (slot companion (default merry)))
+
+      (defrule always-fires ()
+         =>
+         (format t "always-fires fired!~%"))
+    sources: [lisa-ref-guide]
 
 - id: ironpython
   name: IronPython
@@ -7657,6 +7704,54 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/SYCL" }
   sources: [wiki-sycl]
+
+- id: lll
+  name: LLL
+  aliases: [Low-level Lisp-like Language, Lisp Like Language, Lovely Little Language]
+  kind: language
+  category: domain-specific
+  cluster: smart-contracts
+  origin:
+    first_appeared: { year: 2014, precision: year, note: "Gavin Wood's \"LLL Tutorial PoC 3\" on the cpp-ethereum wiki (2014), written for the PoC-3 build of the AlethZero client. The original documentation \"was last updated in 2014\" (LLL docs)." }
+  creators:
+    - { name: Gavin Wood, role: author of the 2014 tutorial }
+  status: extinct
+  tags:
+    paradigm: [imperative]
+  summary: >
+    "one of the original Ethereum smart contract programming languages": in Gavin Wood's 2014 tutorial "the
+    Low-level Lisp-like Language", written as S-expressions over the Ethereum virtual machine's operations.
+    Later documentation calls it "a low level language similar to Assembly", "essentially just a tiny wrapper
+    over coding in EVM directly" that takes over stack and jump management but "doesn't hide from you the
+    highly resource-constrained nature of the EVM". Its later implementation lived in the Solidity repository; it fell out
+    of use, though the LLL docs still link an ENS registry written in it.
+  notes: >
+    The compiler lllc reportedly called itself the "Lovely Little Language Compiler" (search result only). The
+    role given for Gavin Wood rests on the tutorial byline; who wrote the first compiler is not stated in the
+    pages read. No EVM machine node exists, so there is no targets edge. Wikipedia has no article.
+  relations:
+    - { type: influenced_by, to: lisp, weight: weak, confidence: medium, sources: [wood-2014-lll-tutorial], note: "Only the name and the S-expression syntax: \"the Low-level Lisp-like Language\"." }
+  research_status: stub
+  confidence: medium
+  links: { homepage: "https://lll-docs.readthedocs.io/en/latest/lll_introduction.html" }
+  sources: [wood-2014-lll-tutorial, lll-docs]
+  example:
+    title: Crediting a deposit, minus a fee
+    language: LLL (PoC-3)
+    year: 2014
+    note: "First step of the bank contract in Wood's PoC-3 tutorial: stop unless the transaction carries at least 20 times the base fee, then add the rest to the sender's stored balance. Written for the PoC-3 client; later versions of LLL may not accept these names."
+    code: |
+      (seq
+        (unless (>= (txvalue) (* 20 (basefee))) (stop))
+        (sstore
+          (txsender)
+          (+
+            (sload (txsender))
+            (- (txvalue) (* 20 (basefee)))
+          )
+        )
+      )
+    sources: [wood-2014-lll-tutorial]
 
 - id: solidity
   name: Solidity

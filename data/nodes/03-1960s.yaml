@@ -671,6 +671,51 @@
       (SETQ L '(A B C))   ; 'X reads as (QUOTE X)
     sources: [wiki-maclisp]
 
+- id: stanford-lisp-1-6
+  name: Stanford LISP 1.6
+  aliases: [LISP 1.6, Stanford LISP, Stanford A. I. Lisp 1.6]
+  kind: language
+  category: research
+  cluster: lisp
+  origin:
+    first_appeared: { year: 1968, date: "1968-06-13", precision: exact, note: "SAILON 28.1, Lynn H. Quam and John Allen, \"Lisp 1.6\", 13 June 1968, the first operating note under that name. SAILON 7 (Quam, LISP Display Functions, 15 February 1967) documents the Stanford PDP-6 Lisp earlier." }
+    places: [{ institution: Stanford Artificial Intelligence Laboratory, country: US }]
+  creators:
+    - { name: Lynn Quam, role: co-author of the rewrite and of the manuals }
+    - { name: Whitfield Diffie, role: "later compiler improvements; co-author of the manual (SAILON 28.6 and 28.7)" }
+  status: extinct
+  tags:
+    paradigm: [functional, procedural]
+    typing: [dynamic-typing]
+    memory: [garbage-collection]
+    features: [compiler]
+    domain: [artificial-intelligence]
+  milestones:
+    - { version: SAILON 28.1, year: 1968, summary: "\"Lisp 1.6\", Quam and Allen, 13 June 1968: the PDP-6 system described for readers familiar with LISP 1.5." }
+    - { version: SAILON 28.2, year: 1968, summary: "\"Stanford A. I. Lisp 1.6 Manual\", Quam, 9 December 1968." }
+    - { version: SAILON 28.3, year: 1969, summary: "\"Stanford Lisp 1.6 Manual\", Quam, September 1969." }
+    - { version: DECUS 10-59, year: 1973, summary: "\"LISP 1.6\" by Quam and Diffie distributed through DECUS, 1 May 1973." }
+    - { version: SAILON 28.7, year: 1976, summary: "Quam and Diffie's manual, September 1969, updated 1976." }
+  summary: >
+    The Lisp of the Stanford AI Lab on the PDP-6 and PDP-10. Per John Allen (1980), when Stanford received a
+    PDP-6 the original MacLISP from MIT "was converted to run under the DEC monitor", and "this LISP became
+    LISP 1.6, also known as Stanford LISP"; Allen and Lynn Quam rewrote it and Whitfield Diffie later improved
+    the compiler. Distributed through DECUS, it "has as a subset most of the features and functions of other
+    LISP 1.5 systems", adding arbitrary-precision integers, an S-expression editor and a compiler. Exported to
+    UC Irvine it became UCI LISP; MacLisp, ported to SAIL in 1976, "supplanted the Lisp 1.6 derivatives".
+  notes: >
+    Wikipedia's Lisp article calls it "a successor to LISP 1.5"; the Software Preservation Group quotes Allen
+    that it began as a conversion of the PDP-6 MacLISP and lists MIT AIM-116 as the basis for SAILON 28. John
+    Allen is not listed as a creator because his Wikipedia article title was not checked. No example: the
+    SAILON 28.x manuals are scanned at softwarepreservation.org but were not read for this node.
+  relations:
+    - { type: dialect_of, to: lisp, from_version: LISP 1.5, weight: strong, confidence: high, sources: [spp-stanford-lisp16], note: "DECUS abstract: LISP 1.6 \"has as a subset most of the features and functions of other LISP 1.5 systems\"." }
+    - { type: fork_of, to: maclisp, weight: strong, confidence: medium, sources: [spp-stanford-lisp16], note: "Allen (The TLC-LISP Documentation, 1980), as quoted by the Software Preservation Group: the PDP-6 MacLISP \"was converted to run under the DEC monitor\" at Stanford. Allen's document itself was not read." }
+    - { type: targets, to: pdp-10, weight: strong, confidence: high, sources: [spp-stanford-lisp16] }
+  research_status: draft
+  confidence: medium
+  sources: [spp-stanford-lisp16]
+
 - id: interlisp
   name: Interlisp
   aliases: [BBN Lisp, Interlisp-D]
@@ -1151,7 +1196,7 @@
     QA4, Conniver, QLISP and Ether were "important tools in artificial intelligence research in the 1970s".
     Wikipedia lists Prolog and Smalltalk among the languages it influenced.
   notes: >
-    No example: Wikipedia gives only rule sketches such as "If assert P, assert Q". QA4, Conniver and QLISP are
+    No example: Wikipedia gives only rule sketches such as "If assert P, assert Q". QA4 and QLISP are
     in the early/ai backlog.
   research_status: stub
   confidence: high

@@ -374,6 +374,7 @@
     - { type: influenced_by, to: fortran, weight: moderate, confidence: high, note: "Via FLPL (Fortran List Processing Language) on the 704, which McCarthy found inadequate for recursion and conditional expressions." }
     - { type: influenced_by, to: lambda-calculus, aspects: [first-class-functions], weight: moderate, confidence: high, note: "McCarthy took the lambda notation but said he did not use the lambda calculus seriously; Lisp's original scoping was dynamic, not Church's." }
     - { type: targets, to: ibm-704, weight: moderate, confidence: high }
+    - { type: influenced_by, to: flpl, aspects: [linked-lists], weight: moderate, confidence: high, sources: [mccarthy-1978-history-lisp], note: "McCarthy: \"Gelernter and Gerberich noticed that cons should be a function, not just a subroutine\"; FLPL \"had neither conditional expressions nor recursion\", which LISP added." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Lisp_(programming_language)" }
@@ -389,6 +390,43 @@
           (COND ((ZEROP N) 1)
                 (T (TIMES N (FACTORIAL (SUB1 N)))))))
       ))
+
+- id: flpl
+  name: FLPL
+  aliases: [Fortran List Processing Language, FORTRAN-Compiled List-Processing Language]
+  kind: language
+  category: research
+  cluster: early/ai
+  origin:
+    first_appeared: { year: 1960, precision: year, note: "Gelernter, Hansen and Gerberich, \"A Fortran-Compiled List-Processing Language\", JACM 7(2), April 1960. It was in use earlier for IBM's geometry theorem-proving program; a 1959 ACM national meeting paper of the same title is reported but was not read." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: Herbert Gelernter, role: designer }
+    - { name: Carl Gerberich, role: designer }
+    - { name: Nathaniel Rochester, role: "co-decided to build a list language within FORTRAN" }
+  status: extinct
+  tags:
+    paradigm: [procedural]
+    features: [linked-lists, subroutine-library]
+    domain: [artificial-intelligence]
+  summary: >
+    A list-processing language built inside FORTRAN at IBM for Herbert Gelernter's geometry theorem-proving
+    machine. McCarthy, then consulting for IBM, recalls that Rochester and Gelernter, "on the advice of
+    McCarthy", decided "to implement a list processing language within FORTRAN" because it "seemed to the the
+    easiest way to get started", and that Gelernter and Carl Gerberich built it. It "was used successfully
+    for the Geometry program" but "had neither conditional expressions nor recursion", and the IBM group did
+    not want to change it, which is part of why McCarthy started LISP instead.
+  notes: >
+    The JACM paper itself was not read (the copy at justine.lol was unreachable, ACM returned 403); details
+    such as the function names and the IBM 704 as target come from search snippets only. J. R. Hansen is the
+    paper's second author.
+  relations:
+    - { type: extension_of, to: fortran, weight: strong, confidence: high, sources: [mccarthy-1978-history-lisp], note: "\"a list processing language within FORTRAN\" (McCarthy, History of LISP)." }
+    - { type: influenced_by, to: ipl, aspects: [linked-lists], weight: moderate, confidence: low, note: "The JACM paper's abstract, seen only in search snippets, says it manipulates symbolic expressions organized as Newell-Shaw-Simon lists. Read the paper to confirm." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Herbert_Gelernter" }
+  sources: [mccarthy-1978-history-lisp, wiki-herbert-gelernter, gelernter-1960-flpl]
 
 - id: algol-58
   name: ALGOL 58

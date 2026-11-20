@@ -9545,4 +9545,197 @@
   title: Oracle Database
   venue: Wikipedia
   url: https://en.wikipedia.org/wiki/Oracle_Database
+- id: spp-stanford-lisp16
+  type: web
+  primary: false
+  authors: [Paul McJones]
+  title: "Stanford LISP 1.6 family (History of LISP, Software Preservation Group)"
+  url: https://softwarepreservation.computerhistory.org/LISP/stanford_lisp16_family.html
+  checked: '2026-11-20'
+- id: mcdermott-sussman-1972-conniver
+  type: report
+  primary: true
+  authors: [Drew V. McDermott, Gerald Jay Sussman]
+  title: "The Conniver Reference Manual (DSpace record and abstract)"
+  venue: MIT AI Memo AIM-259
+  year: 1972
+  url: https://dspace.mit.edu/handle/1721.1/6203
+  checked: '2026-11-20'
+- id: sussman-1972-conniving
+  type: report
+  primary: true
+  authors: [Gerald Jay Sussman]
+  title: "Why Conniving is Better than Planning (DSpace record and abstract)"
+  venue: MIT AI Memo AIM-255
+  year: 1972
+  url: https://dspace.mit.edu/handle/1721.1/5813
+  checked: '2026-11-20'
+- id: wiki-herbert-gelernter
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Herbert Gelernter"
+  url: https://en.wikipedia.org/wiki/Herbert_Gelernter
+  checked: '2026-11-20'
+- id: gelernter-1960-flpl
+  type: paper
+  primary: true
+  authors: [H. Gelernter, J. R. Hansen, C. L. Gerberich]
+  title: A Fortran-Compiled List-Processing Language
+  venue: Journal of the ACM 7(2), 87-101
+  year: 1960
+  doi: 10.1145/321021.321022
+  url: https://dl.acm.org/doi/10.1145/321021.321022
+- id: brachman-1983-krypton-aaai
+  type: paper
+  primary: true
+  authors: [Ronald J. Brachman, Richard E. Fikes, Hector J. Levesque]
+  title: "KRYPTON: Integrating Terminology and Assertion"
+  venue: Proceedings of AAAI-83
+  year: 1983
+  url: https://cdn.aaai.org/AAAI/1983/AAAI83-005.pdf
+  checked: '2026-11-20'
+- id: brachman-1983-krypton-computer
+  type: paper
+  primary: true
+  authors: [Ronald J. Brachman, Richard E. Fikes, Hector J. Levesque]
+  title: "Krypton: A Functional Approach to Knowledge Representation"
+  venue: IEEE Computer 16(10), 67-73
+  year: 1983
+  doi: 10.1109/MC.1983.1654200
+  url: https://web.stanford.edu/class/cs227/Readings/KryptonAFunctionalApproachToKRR.pdf
+- id: lisa-homepage
+  type: web
+  primary: true
+  authors: [David E. Young]
+  title: "Lisa: Lisp-based Intelligent Software Agents (project home page)"
+  url: https://lisa.sourceforge.net/
+  checked: '2026-11-20'
+- id: lisa-ref-guide
+  type: manual
+  primary: true
+  authors: [David E. Young]
+  title: The LISA Reference Guide
+  url: https://lisa.sourceforge.net/ref-guide.html
+  checked: '2026-11-20'
+- id: wiki-lisa-rules
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Lisp-based Intelligent Software Agents"
+  url: https://en.wikipedia.org/wiki/Lisp-based_Intelligent_Software_Agents
+  checked: '2026-11-20'
+- id: cliki-lisa
+  type: web
+  primary: false
+  title: "CLiki: LISA"
+  url: https://cliki.net/lisa
+  checked: '2026-11-20'
+- id: spp-fortran
+  type: web
+  primary: false
+  authors: [Paul McJones]
+  title: "History of FORTRAN and FORTRAN II (Software Preservation Group)"
+  url: https://softwarepreservation.computerhistory.org/FORTRAN/index.html
+  checked: '2026-11-20'
+- id: moore-1961-fap
+  type: manual
+  primary: true
+  authors: [Donald P. Moore]
+  title: "FORTRAN Assembly Program (FAP) for the IBM 709/7090 (IBM 709/7090 Data Processing System Bulletin, Form J28-6098-1)"
+  venue: IBM
+  year: 1961
+  url: https://archive.computerhistory.org/resources/text/Fortran/102663110.05.01.acc.pdf
+  checked: '2026-11-20'
+- id: ibm-1964-map
+  type: manual
+  primary: true
+  authors: [IBM]
+  title: "IBM 7090/7094 Programming Systems: Macro Assembly Program (MAP) Language (Form C28-6311-2)"
+  venue: IBM Systems Reference Library
+  year: 1964
+  url: https://www.bitsavers.org/pdf/ibm/7090/C28-6311-2_7090_MAP.pdf
+  checked: '2026-11-20'
+- id: cdc-1967-compass
+  type: manual
+  primary: true
+  authors: [Control Data Corporation]
+  title: "6400/6500/6600 Computer Systems COMPASS Reference Manual (Publication No. 60190900)"
+  venue: Control Data Corporation
+  year: 1967
+  url: https://www.bitsavers.org/pdf/cdc/cyber/lang/compass/60190900_COMPASS_Reference_Manual_196704.pdf
+  checked: '2026-11-20'
+- id: wood-2014-lll-tutorial
+  type: web
+  primary: true
+  authors: [Gavin Wood]
+  title: "LLL Tutorial PoC 3 (cpp-ethereum wiki)"
+  year: 2014
+  url: https://github.com/chriseth/cpp-ethereum/wiki/LLL-Tutorial-PoC-3
+  checked: '2026-11-20'
+- id: lll-docs
+  type: manual
+  primary: false
+  title: "LLL Introduction (LLL documentation, github.com/benjaminion/LLL_docs)"
+  url: https://lll-docs.readthedocs.io/en/latest/lll_introduction.html
+  checked: '2026-11-20'
+- id: panks-2005-hla
+  type: web
+  primary: false
+  authors: [Paul Panks]
+  title: "HLA: The High Level Assembly Programming Language (Linux Journal, 29 June 2005)"
+  year: 2005
+  url: https://www.linuxjournal.com/node/8408
+  checked: '2026-11-20'
+- id: wiki-hla
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: High Level Assembly"
+  url: https://en.wikipedia.org/wiki/High_Level_Assembly
+  checked: '2026-11-20'
+- id: wiki-randall-hyde
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Randall Hyde"
+  url: https://en.wikipedia.org/wiki/Randall_Hyde
+  checked: '2026-11-20'
+- id: hyde-aoa-hello-world
+  type: book
+  primary: true
+  authors: [Randall Hyde]
+  title: "The Art of Assembly Language, Chapter Two: Hello, World of Assembly Language (HTML edition, mirrored at phatcode.net)"
+  url: https://www.phatcode.net/res/260/files/html/HelloWorld.html
+  checked: '2026-11-20'
+- id: motorola-1997-ppc-pem
+  type: manual
+  primary: true
+  authors: [Motorola]
+  title: "PowerPC Microprocessor Family: The Programming Environments for 32-Bit Microprocessors (MPCFPE32B/AD, Rev. 1)"
+  venue: Motorola
+  year: 1997
+  url: https://www.bitsavers.org/components/motorola/PowerPC/MPCFPE32B_PowerPC_Programming_Environments_for_32-Bit_Microprocessors_Jan97.pdf
+  checked: '2026-11-20'
+- id: eblong-infocom
+  type: web
+  primary: false
+  authors: [Andrew Plotkin]
+  title: "Infocom source code and documents (eblong.com/infocom)"
+  url: https://eblong.com/infocom/
+  checked: '2026-11-20'
+- id: berez-zap-spec
+  type: manual
+  primary: true
+  authors: [Joel M. Berez]
+  title: "ZAP: Z-language Assembly Program (Infocom specification, undated)"
+  url: https://eblong.com/infocom/other/spec-zap.fwf
+  checked: '2026-11-20'
+- id: ifwiki-zapf
+  type: web
+  primary: false
+  title: "IFWiki: ZAPF"
+  url: https://www.ifwiki.org/ZAPF
+  checked: '2026-11-20'
+- id: historicalsource-zork2
+  type: web
+  primary: true
+  title: "historicalsource/zork2: Infocom's source for Zork II, with ZAP intermediate files"
+  url: https://github.com/historicalsource/zork2
   checked: '2026-11-20'

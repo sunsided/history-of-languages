@@ -98,10 +98,8 @@
   collapsed: true
   summary: "Symbolic forms of machine code, from hand-assembled notation (1947) to macro assemblers and syntax dialects."
   research_status: stub
-  backlog:
-    - { name: "COMPASS", hint: "No article (COMPASS_(programming_language) is 404). CDC 6600 assembler; needs a CDC manual." }
-    - { name: "LLL", hint: "Only a List of programming languages entry linking to Ethereum#Contract_source_code, which does not mention it. Needs the Ethereum docs." }
   research_questions:
+    - "COMPASS has no targets edge: the CDC 6600 (and 6400/6500) is not a machine node. Was there a COMPASS before the April 1967 manual (60190900), e.g. for the CDC 3600 or the first 6600 deliveries?"
     - "Model choice: one node per ISA's assembly language, plus dialect nodes for distinct syntaxes/assemblers (Intel vs AT&T, MASM vs NASM). Is that the right granularity for the site?"
 - id: assembly/early
   name: First assemblers
@@ -111,8 +109,6 @@
   name: IBM assemblers
   parent: assembly
   research_status: stub
-  backlog:
-    - { name: "FAP / MAP (IBM 709/7090)", year: 1959, hint: "IBM 709 article: \"The FORTRAN Assembly Program was introduced for the 709\" (no year, no author; its own article is 404). IBM 7090: IBSYS included \"the MAP assembler\". Needs an IBM manual on bitsavers." }
 - id: assembly/dec
   name: DEC assemblers
   parent: assembly
@@ -121,8 +117,6 @@
   name: x86 assemblers and syntaxes
   parent: assembly
   research_status: stub
-  backlog:
-    - { name: "HLA (High Level Assembly)", hint: "Wikipedia: Randall Hyde, for teaching assembly; syntax \"loosely based on\" Pascal, Ada, Modula-2 and C++; v1.x emitted MASM/TASM/FASM/NASM/Gas source; stable 2.16 (6 July 2011). No first-release year." }
   research_questions:
     - "AT&T syntax on x86: Wikipedia's comparison says Interactive Systems Corporation wrote the System V x86 assembler in 1986 (table says 1985). Find a primary source (ISC or AT&T System V/386 manuals)."
 - id: assembly/8-bit
@@ -133,8 +127,6 @@
   name: RISC assembly
   parent: assembly
   research_status: stub
-  backlog:
-    - { name: "PowerPC assembly", year: 1992, hint: "The PowerPC article has no assembly section or example. Needs IBM or Motorola programming environments manual." }
 
 - id: assembly/virtual
   name: Virtual machine instruction sets
@@ -163,10 +155,7 @@
   parent: early
   research_status: stub
   backlog:
-    - { name: "FLPL (Fortran List Processing Language)", year: 1958, hint: "No Wikipedia article (FLPL is 404) and not in the Fortran article's verbatim part. Gelernter, Hansen and Gerberich (1960, JACM) is the primary source to find." }
-    - { name: "Conniver", year: 1972, hint: "No article (Conniver is a racehorse page); the Planner article lists it as a Planner dialect and cites McDermott and Sussman, The Conniver Reference Manual, MIT AI Memo 259A, January 1974. Read the memo for the year." }
-    - { name: "KRYPTON", hint: "KRYPTON redirects to KL-ONE, whose article does not mention it; needs Brachman, Fikes and Levesque's KRYPTON papers (early 1980s)." }
-    - { name: "LISA", hint: "Lisp-based Intelligent Software Agents: a CLIPS/Jess-influenced production-rule system in CLOS (Wikipedia), with no year or authors. Note the list's LISA link may point to the Language for Instruction Set Architecture instead." }
+    - { name: "KL-ONE", hint: "Brachman's frame-based representation language; KRYPTON's TBox \"is, in large part, a distillation of KL-ONE\" (Brachman, Fikes and Levesque, AAAI-83, which cites the Second KL-ONE Workshop, May 1982). Needs a dated primary source (Brachman and Schmolze, Cognitive Science) before it becomes a node." }
 
 # ===================== Language families =====================
 - id: fortran
@@ -229,7 +218,7 @@
   name: Lisp family
   research_status: draft
   backlog:
-    - { name: "Stanford LISP 1.6", year: 1966, hint: "Lisp article: \"A successor to LISP 1.5 developed at the Stanford AI Lab, and widely distributed to PDP-10 systems running the TOPS-10 operating system. It was rendered obsolete by Maclisp and InterLisp.\" No year; read the Stanford LISP 1.6 Manual (Quam and Diffie)." }
+    - { name: "UCI LISP", hint: "Stanford LISP 1.6 exported to UC Irvine, with an Interlisp-style editor added (Software Preservation Group, Stanford LISP 1.6 family page); used at Stanford in the early to mid-1970s. DECUS 10-210; source at saildart.org [UCI,SYS]. No year yet." }
 - id: array
   name: Array languages
   research_status: stub
@@ -253,10 +242,8 @@
   summary: "Languages for writing text and graphical adventures: MDL-derived ZIL at Infocom, the Z-machine it compiled to, Inform, which revived the Z-machine for hobbyists, and Inform 7's English-prose rewrite."
   research_status: stub
   key_sources: [wiki-z-machine, z-machine-standard-1-1, wiki-inform]
-  backlog:
-    - { name: "ZAP (Z-machine Assembler Program)", hint: "Only named in the Z-machine article: Infocom's tools were \"a compiler (ZILCH, short for ZIL Compiler Hack) and an assembler (ZAP, the Z-machine Assembler Program)\"; never released. No year." }
   research_questions:
-    - "Who besides Blank and Berez built ZILCH and ZAP, and when? \"Learning ZIL\" (1989) may say."
+    - "Who besides Blank and Berez built ZILCH and ZAP? ZAP's earliest surviving code is MDL dated 18 January 1980 and the C version of March 1988 credits \"Zinn Computer Company, for Infocom\" (eblong.com/infocom); \"Learning ZIL\" (1989) may name people."
 - id: typesetting
   name: Typesetting languages
   summary: "Document languages that are also programming languages: Bell Labs' roff line (nroff, troff), Knuth's TeX macro language and what is written in it, such as LaTeX and expl3."

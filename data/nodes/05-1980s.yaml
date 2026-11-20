@@ -2919,6 +2919,48 @@
         (car_problem (name engine) (status wont_start))
         (car_problem (name headlights) (status work)))
 
+- id: krypton
+  name: KRYPTON
+  kind: language
+  category: research
+  cluster: early/ai
+  origin:
+    first_appeared: { year: 1983, precision: year, note: "AAAI-83 paper \"KRYPTON: Integrating Terminology and Assertion\"; the IEEE Computer paper \"Krypton: A Functional Approach to Knowledge Representation\" followed later in 1983. The authors had been \"designing and implementing\" it for \"the past year\"." }
+    places: [{ institution: Fairchild Laboratory for Artificial Intelligence Research, city: Palo Alto, country: US }, { institution: Xerox PARC, city: Palo Alto, country: US }]
+  creators:
+    - { name: Ronald J. Brachman, role: co-designer }
+    - { name: Richard Fikes, role: co-designer }
+    - { name: Hector Levesque, role: co-designer }
+  status: extinct
+  tags:
+    paradigm: [logic, declarative]
+    domain: [artificial-intelligence]
+  summary: >
+    A hybrid knowledge representation system that split a knowledge base into a terminological component
+    ("TBox") of frame-like structured terms and an assertional component ("ABox") of first-order sentences,
+    accessed only through TELL and ASK operations. "The TBox is, in large part, a distillation of KL-ONE";
+    for the ABox the authors were investigating a version of Mark Stickel's connection-graph theorem prover.
+  notes: >
+    The AAAI-83 paper reports "An implementation of a KRYPTON system in Interlisp-D" as "under way", with the
+    terminological operations done. KL-ONE is not a node yet (early/ai backlog). The IEEE Computer paper was
+    not read. Its later influence on description logics (the TBox/ABox terms) is not recorded here until a
+    source such as Baader et al., The Description Logic Handbook, is read.
+  relations:
+    - { type: implemented_in, to: interlisp, weight: moderate, confidence: high, sources: [brachman-1983-krypton-aaai], note: "\"An implementation of a KRYPTON system in Interlisp-D is under way\" (AAAI-83)." }
+  research_status: draft
+  confidence: high
+  sources: [brachman-1983-krypton-aaai, brachman-1983-krypton-computer]
+  example:
+    title: A composed TBox term
+    language: KRYPTON TBox
+    year: 1983
+    note: "From the AAAI-83 paper (checked against the page image, including the infinity sign), which reads it as \"a bachelor whose brothers have grandchildren\"."
+    code: |
+      (VRGeneric (ConjGeneric unmarried-person man)
+                 (VRDiffRole sibling man)
+                 (NRGeneric person (RoleChain child child) 1 ∞))
+    sources: [brachman-1983-krypton-aaai]
+
 - id: visual-prolog
   name: Visual Prolog
   aliases: [Turbo Prolog, PDC Prolog]

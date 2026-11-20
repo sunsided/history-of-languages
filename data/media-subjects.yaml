@@ -468,6 +468,7 @@
   wiki: Gerald Jay Sussman
   nodes:
   - scheme
+  - conniver
 - id: person-grace-hopper
   kind: person
   person: Grace Hopper
@@ -500,6 +501,7 @@
   - fortress
   - emacs-lisp
   - scheme
+  - conniver
   - common-lisp
 - id: person-heinz-rutishauser
   kind: person
@@ -2061,6 +2063,7 @@
   person: Gavin Wood
   wiki: Gavin Wood
   nodes:
+  - lll
   - solidity
 - id: person-krysta-svore
   kind: person
@@ -2447,6 +2450,7 @@
   nodes:
   - ibm-701
   - rochester-assembler
+  - flpl
 - id: person-ben-gurley
   kind: person
   person: Ben Gurley
@@ -2716,3 +2720,45 @@
   person: John Launchbury
   wiki: John Launchbury
   nodes: [cryptol]
+- id: person-whitfield-diffie
+  kind: person
+  person: Whitfield Diffie
+  wiki: Whitfield Diffie
+  nodes:
+  - stanford-lisp-1-6
+- id: person-drew-mcdermott
+  kind: person
+  person: Drew McDermott
+  wiki: Drew McDermott
+  nodes:
+  - conniver
+- id: person-herbert-gelernter
+  kind: person
+  person: Herbert Gelernter
+  wiki: Herbert Gelernter
+  nodes:
+  - flpl
+- id: person-ronald-j-brachman
+  kind: person
+  person: Ronald J. Brachman
+  wiki: Ronald J. Brachman
+  nodes:
+  - krypton
+- id: person-richard-fikes
+  kind: person
+  person: Richard Fikes
+  wiki: Richard Fikes
+  nodes:
+  - krypton
+- id: person-hector-levesque
+  kind: person
+  person: Hector Levesque
+  wiki: Hector Levesque
+  nodes:
+  - krypton
+- id: person-randall-hyde
+  kind: person
+  person: Randall Hyde
+  wiki: Randall Hyde
+  nodes:
+  - hla
