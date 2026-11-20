@@ -2672,6 +2672,59 @@
   links: { wikipedia: "https://en.wikipedia.org/wiki/Euler_(programming_language)" }
   sources: [wiki-euler]
 
+- id: cdl
+  name: CDL
+  aliases: [Computer Design Language, Computer Description Language]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1965, date: "1965-10", precision: exact, note: "Chu, \"An Algol-like Computer Design Language\", CACM 8(10), October 1965, pp. 607-615, as cited in Chu's 1969 report (the paper itself was not read). A 1964 date reported elsewhere was not confirmed." }
+    places: [{ institution: University of Maryland, city: College Park, country: US }]
+  creators:
+    - { name: Yaohan Chu, role: designer }
+  status: historical
+  tags:
+    domain: [hardware-design]
+  summary: >
+    Yaohan Chu's register-transfer language, published as "an Algol-like Computer Design Language" in 1965 and one of
+    the first hardware description languages. A CDL description, the "macro design", declares registers, switches,
+    lights, clocks and memories and gives labelled micro-statements for each control step; a CDL simulator ran it, and a
+    "Boolean translator" turned it into a "micro design" of Boolean equations for gates and flip-flops.
+  notes: >
+    Chu's University of Maryland report of March 1969 says version 1 of the CDL simulator "has been available since the
+    Summer of 1967", version 2 since February 1968 and version 3 since fall 1968, all "written in Fortran IV with several
+    routines in assembly language MAP for the IBM 7090 family". The place is Chu's affiliation in that report; his
+    affiliation in 1965 was not checked.
+  relations:
+    - { type: influenced_by, to: algol-60, weight: moderate, confidence: medium, sources: [chu-1969-design-automation-cdl], note: "The 1965 paper's title, \"An Algol-like Computer Design Language\" (cited in Chu 1969); which ALGOL features were taken was not read." }
+  research_status: draft
+  confidence: medium
+  sources: [chu-1969-design-automation-cdl, chu-1965-algol-like-cdl]
+  example:
+    title: a serial complementer
+    language: CDL
+    year: 1969
+    note: "Statements (1) and (3) of Chu's 1969 report (pp. 7 and 12): declarations, then labelled micro-statements; A←A(4)'-A(1-3) is the report's \"complementing and right-shifting operation\". Transcribed from the scanned page; the report draws the transfer arrow by hand as an arrowhead and two dashes."
+    code: |
+      Register,  A(1-4),         $shift register
+                 T(1-3),         $control register
+                 C(3-1),         $counter
+      Switch     START(ON)       $start switch
+      Light,     FINI(ON,OFF)    $completion indicator
+      Clock,     P               $clock signal
+
+      /START(ON)/ C←0,
+                  FINI←OFF,
+                  T←100,
+      /T(1)*P/    A←A(4)'-A(1-3),
+                  C←countup C,
+                  T(1-2)←01
+      /T(2)*P/    IF (C=4) THEN (T(2,3)←01) ELSE (T(1,2)←10)
+      /T(3)*P/    FINI←ON
+                  END
+    sources: [chu-1969-design-automation-cdl]
+
 - id: formula-algol
   name: Formula Algol
   aliases: [FORMULA ALGOL]

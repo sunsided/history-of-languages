@@ -551,19 +551,13 @@
   collapsed: true
   research_status: stub
   key_sources: [wiki-hardware-description-language]
-  backlog:
-    - { name: "CDL (Computer Design Language)", year: 1965, hint: "Yaohan Chu's ALGOL-like register-transfer language, CACM 1965. Neither a Wikipedia page nor dblp (blocked) could be read; find the CACM paper." }
-    - { name: "ISPS", hint: "\"At least two implementations of the basic ISP language (ISPL and ISPS) followed\"; ISPS was adopted at DEC and by NATO research teams (Wikipedia: Hardware description language). No year; probably a milestone or dialect of isp." }
-    - { name: "KARL", year: 1979, hint: "\"Separate work done about 1979 at the University of Kaiserslautern produced a language named KAiserslautern Register Transfer Language (KARL)\" (Wikipedia: Hardware description language)." }
-    - { name: "ABL", hint: "\"ABL was implemented in the early 1980s by the Centro Studi e Laboratori Telecomunicazioni (CSELT) in Torino\" (Wikipedia: Hardware description language). Needs a source of its own." }
-    - { name: "CUPL", hint: "PLD language named with ABEL and PALASM as \"originating in the same era\" (Wikipedia: ABEL). No page read yet." }
-    - { name: "LALSD", hint: "S. Y. H. Su's HDL, on which Verilog co-designer Chi-Lai Huang had worked for his PhD (Wikipedia: Verilog). No date." }
-    - { name: "Superlog", year: 2002, hint: "Co-Design Automation's language, donated to Accellera in 2002 as the start of SystemVerilog (Wikipedia: SystemVerilog). Needs its own dating." }
-    - { name: "OpenVera", hint: "Synopsys's verification language, donated as the basis of SystemVerilog's verification features (Wikipedia: SystemVerilog). No date." }
-    - { name: "Lava", hint: "Haskell-embedded HDL from Chalmers (\"Hardware description EDSL\", Hackage chalmers-lava2000, author Koen Claessen). Hackage chalmers-lava2000 copyright \"2000-2008 Koen Claessen\"; the founding paper \"Lava: Hardware Design in Haskell\" could not be read (dblp blocked)." }
-    - { name: "Amaranth (nMigen)", hint: "\"Amaranth HDL (previously nMigen)\", Python toolchain, BSD-2. PyPI amaranth starts Dec 2021, docs copyright from 2020; nMigen and its predecessor Migen (M-Labs, \"A Python toolbox for building complex digital hardware\") are undated so far." }
-    - { name: "Hardcaml", hint: "\"an embedded DSL for designing and simulating hardware in OCaml\" (opam), Jane Street, MIT licence. CHANGES.md opens with \"v0.11 Initial Jane Street public release\"; no dates found. Earlier non-Jane-Street 1.x versions exist." }
   research_questions:
+    - "Superlog vs SystemVerilog: read Flake et al., \"Verilog HDL and its ancestors and descendants\" (HOPL IV, 2020) for Superlog's first release, its C features and whether it was a strict superset of Verilog; it would also settle the Verilog date question above and could add HILO as a node."
+    - "Vera/OpenVera: who designed Vera, and when was it first sold? A tutorial site says it began inside Sun Microsystems; Systems Science sold it before Synopsys bought the company in July 1998. A Systems Science or Synopsys document is needed."
+    - "LALSD: what the name stands for, where S. Y. H. Su developed it, and the date of the first version (LALSD II was presented at CHDL in September 1981)."
+    - "KARL and ABL: read Hartenstein, \"KARL and ABL\" (1993) and the 1979 CHDL paper for KARL's first version, KARL-II/III and ABL's date; Girardi's first name is needed for an ABL creators entry."
+    - "CDL: read Chu's CACM paper (October 1965) for what it took from ALGOL 60; Barbacci, Bell and Newell (1974) are reported to date CDL to 1964."
+    - "Lava: muFP (Sheeran, 1985) and Ruby (Jones and Sheeran, 1990) are Lava's stated ancestors and are not nodes yet; Confluence (about 2003) inspired Hardcaml."
     - "Lola: Wikipedia's Lola article dates it June 1995 (Wirth's book Digital Circuit Design), the Niklaus Wirth article says he published it in 1991. Find Wirth's 1990s ETH reports."
     - "Bluespec: the Wikipedia article gives no first-release year (company 2003, category 'created in 2000'). Find Augustsson's or Arvind's own account."
     - "Verilog: 1984 (infobox, design late 1983 to early 1984) or 1985 (Gateway's introduction, Wikipedia: HDL)? Find Moorby's own history."

@@ -8032,6 +8032,8 @@
   relations:
     - { type: superset_of, to: verilog, weight: strong, confidence: medium, sources: [wiki-systemverilog], note: "\"SystemVerilog for register-transfer level (RTL) design is an extension of Verilog-2005\"." }
     - { type: successor_of, to: verilog, from_version: "Verilog 2005", year: 2009, weight: strong, confidence: medium, sources: [wiki-systemverilog, wiki-verilog], note: "\"In 2009, the standard was merged with the base Verilog (IEEE 1364-2005) standard, creating IEEE Standard 1800-2009.\"" }
+    - { type: influenced_by, to: superlog, weight: strong, confidence: medium, sources: [wiki-systemverilog, wiki-superlog], note: "\"SystemVerilog started with the donation of the Superlog language to Accellera in 2002 by the startup company Co-Design Automation.\"" }
+    - { type: influenced_by, to: openvera, weight: strong, confidence: high, sources: [wiki-systemverilog, synopsys-2002-sv31-donation], year: 2002, note: "\"The bulk of the verification functionality is based on the OpenVera language donated by Synopsys\"; Synopsys donated OpenVera testbench constructs and assertions for SystemVerilog 3.1 in June 2002." }
     - { type: influenced_by, to: java, aspects: [object-oriented], weight: moderate, confidence: medium, sources: [wiki-systemverilog], note: "Verification side \"more closely related to Java than Verilog\"; infobox lists Java and OpenVera for verification." }
     - { type: influenced_by, to: cpp, weight: weak, confidence: low, sources: [wiki-systemverilog], note: "Infobox lists C++ for design; no prose." }
     - { type: influenced_by, to: vhdl, weight: weak, confidence: low, sources: [wiki-systemverilog], note: "Infobox lists VHDL for design; no prose." }
@@ -8222,6 +8224,124 @@
         io.flag  := (counter === 0) | io.cond1
       }
     sources: [spinalhdl-docs]
+
+- id: migen
+  name: Migen
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 2011, date: "2011-12", precision: circa, note: "The m-labs/migen repository was created on 4 December 2011; no announcement was read. The first PyPI release (0.9) is from June 2019." }
+    places: [{ institution: M-Labs }]
+  status: maintained
+  tags:
+    domain: [hardware-design]
+  summary: >
+    "A Python toolbox for building complex digital hardware" from M-Labs: an HDL embedded in Python, in which Python code
+    builds the circuit description. Its successor nMigen, now Amaranth, "reimplements
+    Migen concepts from scratch" because "its design could be improved in many fundamental ways".
+  notes: >
+    The PyPI package lists Sebastien Bourdeauducq of M-Labs as author contact; he is not named as designer in a source read
+    here, so no creators are listed. The GitHub repository was archived in January 2026 and moved to git.m-labs.hk; release
+    0.10.0 followed in October 2026.
+  relations:
+    - { type: extension_of, to: python, weight: strong, confidence: high, sources: [migen-repo], note: "\"A Python toolbox for building complex digital hardware\"." }
+  research_status: stub
+  confidence: medium
+  links: { homepage: "https://m-labs.hk/migen" }
+  sources: [migen-repo, pypi-migen, nmigen-repo]
+
+- id: hardcaml
+  name: Hardcaml
+  aliases: [HardCaml]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 2014, date: "2014-05", precision: circa, note: "The ujamjar/hardcaml repository (\"Register Transfer Level Hardware Design in OCaml\") was created on 15 May 2014; its 1.x releases came before Jane Street's. Jane Street's repository dates from May 2018, and its CHANGES.md starts with \"v0.11 Initial Jane Street public release\"." }
+  creators:
+    - { name: Andy Ray, role: designer }
+  status: active
+  tags:
+    paradigm: [functional]
+    domain: [hardware-design]
+  milestones:
+    - { version: "v0.11", year: 2018, summary: "\"Initial Jane Street public release\", with version numbers synchronised with Jane Street's releases. The year is that of the Jane Street repository (May 2018); the release itself was not dated. MIT licence (the ujamjar version was ISC)." }
+  summary: >
+    "An OCaml library for designing and testing hardware designs": circuits are built from OCaml values, simulated in
+    OCaml (cycle-accurate and event-driven simulators, ASCII waveforms in unit tests) and converted to Verilog or VHDL.
+    Andy Ray began it as a side project out of "frustration with the tools that we were using to build hardware, in
+    particular, testing stuff"; it moved to Jane Street, which uses it "internally for many large FPGA designs".
+  notes: >
+    Ray says the idea came from Confluence, an OCaml-implemented hardware language from about 2003, for which he first
+    wrote libraries, then an F# version at work, before writing Hardcaml "in earnest" (Signals and Threads, 2020).
+    Confluence is not a node. The ujamjar version also generated C.
+  relations:
+    - { type: extension_of, to: ocaml, weight: strong, confidence: high, sources: [hardcaml-repo, ray-2023-hardcaml], note: "The 2023 paper presents it as a hardware design DSL embedded in OCaml; the README calls it \"an OCaml library\"." }
+    - { type: influenced_by, to: ocaml, aspects: [functional], weight: strong, confidence: high, sources: [hardcaml-repo], note: "\"Make generic designs using higher order functions, lists, maps, functors...\"" }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://github.com/janestreet/hardcaml" }
+  sources: [hardcaml-repo, hardcaml-ujamjar-repo, ray-2023-hardcaml, signals-threads-2020-programmable-hardware]
+
+- id: amaranth
+  name: Amaranth
+  aliases: [Amaranth HDL, nMigen]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    began: { year: 2018, date: "2018-12", precision: exact, note: "The m-labs/nmigen repository was created on 8 December 2018." }
+    first_appeared: { year: 2019, date: "2019-11", precision: exact, note: "nMigen 0.1 on PyPI, 10 November 2019 (0.1rc1 on 15 October 2019)." }
+    places: [{ institution: M-Labs }]
+  status: active
+  tags:
+    domain: [hardware-design]
+  milestones:
+    - { version: "0.3", year: 2021, date: "2021-12", summary: "\"The project has been renamed from nMigen to Amaranth\"; PyPI package amaranth from December 2021." }
+  summary: >
+    "An open-source toolchain for developing hardware based on synchronous digital logic using the Python programming
+    language", released as nMigen and renamed Amaranth in version 0.3. It "is based on Migen", but "reimplements Migen
+    concepts from scratch" to fix its design; a Migen compatibility layer was kept, deprecated, until 0.5. Designs are
+    Python classes whose elaborate method builds a module of combinational and synchronous domains.
+  notes: >
+    The nMigen PyPI package names whitequark as author; the README credits support from M-Labs and LambdaConcept, and later
+    ChipEleven and Chipflow. BSD two-clause licence. Amaranth 0.5.0 removed the Migen compatibility layer (its date was not read).
+  relations:
+    - { type: successor_of, to: migen, weight: strong, confidence: high, sources: [nmigen-repo], note: "\"nMigen is based on Migen, a hardware description language developed by M-Labs\"; it \"reimplements Migen concepts from scratch\"." }
+    - { type: extension_of, to: python, weight: strong, confidence: high, sources: [amaranth-docs, nmigen-repo], note: "\"using the Python programming language\"; designs are Python classes." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://amaranth-lang.org" }
+  sources: [nmigen-repo, pypi-nmigen-amaranth, amaranth-docs]
+  example:
+    title: a 16-bit up counter with a fixed limit
+    language: Amaranth 0.5
+    note: "From up_counter.py in the Amaranth Getting started guide; docstring and test bench omitted."
+    code: |
+      from amaranth import *
+      from amaranth.lib import wiring
+      from amaranth.lib.wiring import In, Out
+
+      class UpCounter(wiring.Component):
+          en: In(1)
+          ovf: Out(1)
+
+          def __init__(self, limit):
+              self.limit = limit
+              self.count = Signal(16)
+              super().__init__()
+
+          def elaborate(self, platform):
+              m = Module()
+              m.d.comb += self.ovf.eq(self.count == self.limit)
+              with m.If(self.en):
+                  with m.If(self.ovf):
+                      m.d.sync += self.count.eq(0)
+                  with m.Else():
+                      m.d.sync += self.count.eq(self.count + 1)
+              return m
+    sources: [amaranth-docs]
 
 - id: hvm
   name: HVM

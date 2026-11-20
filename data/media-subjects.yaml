@@ -2762,3 +2762,9 @@
   wiki: Randall Hyde
   nodes:
   - hla
+- id: person-daniel-siewiorek
+  kind: person
+  person: Daniel Siewiorek
+  wiki: Daniel Siewiorek
+  nodes:
+  - isps

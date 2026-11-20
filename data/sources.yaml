@@ -9738,4 +9738,198 @@
   primary: true
   title: "historicalsource/zork2: Infocom's source for Zork II, with ZAP intermediate files"
   url: https://github.com/historicalsource/zork2
+- id: chu-1965-algol-like-cdl
+  type: paper
+  primary: true
+  authors: [Yaohan Chu]
+  title: An ALGOL-like Computer Design Language
+  venue: Communications of the ACM 8(10), 607-615
+  year: 1965
+  doi: 10.1145/365628.365650
+  url: https://doi.org/10.1145/365628.365650
+- id: chu-1969-design-automation-cdl
+  type: report
+  primary: true
+  authors: [Yaohan Chu]
+  title: Design Automation by the Computer Design Language (Technical Report 69-86, Computer Science Center, University of Maryland, March 1969)
+  year: 1969
+  url: https://ntrs.nasa.gov/api/citations/19690012793/downloads/19690012793.pdf
+  checked: '2026-11-20'
+- id: barbacci-1979-isps-manual
+  type: manual
+  primary: true
+  authors: [Mario R. Barbacci, Gary E. Barnes, Roderic G. Cattell, Daniel P. Siewiorek]
+  title: "The Symbolic Manipulation of Computer Descriptions: The ISPS Computer Description Language (CMU-CS-79-137; editions of 14 August 1977, 6 March 1978, 16 August 1979)"
+  venue: Carnegie-Mellon University
+  year: 1979
+  url: https://kilthub.cmu.edu/articles/journal_contribution/The_ISPS_computer_description_language_the_symbolic_manipulation_of_computer_descriptions/6610637/1
+  checked: '2026-11-20'
+- id: barbacci-1981-isps
+  type: paper
+  primary: true
+  authors: [Mario R. Barbacci]
+  title: "Instruction Set Processor Specifications (ISPS): The Notation and Its Applications"
+  venue: IEEE Transactions on Computers C-30(1), 24-40
+  year: 1981
+  doi: 10.1109/TC.1981.6312154
+  url: https://doi.org/10.1109/TC.1981.6312154
+- id: hartenstein-1993-karl-abl
+  type: chapter
+  primary: true
+  authors: [Reiner W. Hartenstein]
+  title: KARL and ABL
+  venue: "J. Mermet (ed.), Fundamentals and Standards in Hardware Description Languages, Springer (NATO ASI series)"
+  year: 1993
+- id: ithistory-hartenstein
+  type: web
+  primary: false
+  title: Reiner W. Hartenstein (IT History Society honor roll)
+  venue: IT History Society
+  url: https://ithistory.org/node/30774
+  checked: '2026-11-20'
+- id: vt-chdl-bibliography
+  type: web
+  primary: false
+  title: Bibliography of the IFIP CHDL symposium proceedings (1981-1987)
+  venue: Virginia Tech
+  url: https://fox.cs.vt.edu/VAD1/DOWN/BIB/P/CHDLTA
+  checked: '2026-11-20'
+- id: osann-1982-cupl
+  type: paper
+  primary: true
+  authors: [Robert Osann]
+  title: A Universal Language for Programmable Logic
+  venue: "Wescon/82 Professional Program Session Record 21 (New Developments in Programmable Logic), Anaheim, September 1982"
+  year: 1982
+  url: https://deramp.com/swtpc.com/PLD_History/ABEL_project/CUPL_Wescon_Sep_1982_ocr.pdf
+  checked: '2026-11-20'
+- id: wiki-superlog
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Superlog HDL"
+  url: https://en.wikipedia.org/wiki/Superlog_HDL
+  checked: '2026-11-20'
+- id: codesign-2000-press-release
+  type: web
+  primary: true
+  authors: [Co-Design Automation]
+  title: Co-Design Automation Launches Innovative Product Line to Reshape System Design Methodologies (8 May 2000)
+  venue: Design & Reuse
+  year: 2000
+  url: https://design-reuse.com/news/1632/co-design-automation-innovative-reshape-system-design-methodologies.html
+  checked: '2026-11-20'
+- id: flake-2020-verilog-hopl
+  type: paper
+  primary: true
+  authors: [Peter Flake, Phil Moorby, Steve Golson, Arturo Salz, Simon Davidmann]
+  title: Verilog HDL and its ancestors and descendants
+  venue: Proc. ACM Program. Lang. 4 (HOPL IV), article 87
+  year: 2020
+  doi: 10.1145/3386337
+  url: https://hopl4.sigplan.org/details/hopl-4-papers/6/Verilog-HDL-and-its-ancestors-and-descendants
+- id: techmonitor-1998-synopsys-systems-science
+  type: web
+  primary: true
+  title: Synopsys to buy Systems Science (26 July 1998)
+  venue: Computergram / Tech Monitor
+  year: 1998
+  url: https://www.techmonitor.ai/?p=94413
+  checked: '2026-11-20'
+- id: maliniak-2001-openvera
+  type: web
+  primary: true
+  authors: [David Maliniak]
+  title: Verification Language Now Open For Business (21 May 2001)
+  venue: Electronic Design
+  year: 2001
+  url: https://www.electronicdesign.com/products/verification-language-now-open-business
+  checked: '2026-11-20'
+- id: synopsys-2002-sv31-donation
+  type: web
+  primary: true
+  authors: [Synopsys]
+  title: Synopsys donates verification technologies to Accellera for SystemVerilog 3.1 (11 June 2002)
+  venue: Design & Reuse
+  year: 2002
+  url: https://www.design-reuse.com/news/3383/synopsys-donates-verification-accellera-systemverilog-3-1-standard.html
+  checked: '2026-11-20'
+- id: asicworld-vera-history
+  type: web
+  primary: false
+  title: Vera history
+  venue: asic-world.com
+  url: https://www.asic-world.com/vera/history.html
+  checked: '2026-11-20'
+- id: bjesse-1998-lava
+  type: paper
+  primary: true
+  authors: [Per Bjesse, Koen Claessen, Mary Sheeran, Satnam Singh]
+  title: "Lava: Hardware Design in Haskell"
+  venue: ICFP '98, 174-184
+  year: 1998
+  doi: 10.1145/289423.289440
+  url: https://www.cse.chalmers.se/edu/year/2012/course/TDA956/Papers/Lava98.pdf
+  checked: '2026-11-20'
+- id: migen-repo
+  type: web
+  primary: true
+  authors: [M-Labs]
+  title: "m-labs/migen: A Python toolbox for building complex digital hardware (repository created 4 December 2011)"
+  url: https://github.com/m-labs/migen
+  checked: '2026-11-20'
+- id: pypi-migen
+  type: web
+  primary: true
+  title: migen on PyPI
+  url: https://pypi.org/project/migen/
+  checked: '2026-11-20'
+- id: nmigen-repo
+  type: web
+  primary: true
+  authors: [M-Labs]
+  title: "m-labs/nmigen: A refreshed Python toolbox for building complex digital hardware (repository created 8 December 2018)"
+  url: https://github.com/m-labs/nmigen
+  checked: '2026-11-20'
+- id: pypi-nmigen-amaranth
+  type: web
+  primary: true
+  title: nmigen and amaranth on PyPI (release history)
+  url: https://pypi.org/project/amaranth/
+  checked: '2026-11-20'
+- id: amaranth-docs
+  type: manual
+  primary: true
+  authors: [Amaranth HDL contributors]
+  title: Amaranth HDL documentation (changelog and Getting started)
+  url: https://amaranth-lang.org/docs/amaranth/latest/
+  checked: '2026-11-20'
+- id: hardcaml-ujamjar-repo
+  type: web
+  primary: true
+  title: "ujamjar/hardcaml: Register Transfer Level Hardware Design in OCaml (repository created 15 May 2014)"
+  url: https://github.com/ujamjar/hardcaml
+  checked: '2026-11-20'
+- id: hardcaml-repo
+  type: web
+  primary: true
+  authors: [Jane Street]
+  title: "janestreet/hardcaml (README and CHANGES.md; repository created 23 May 2018)"
+  url: https://github.com/janestreet/hardcaml
+  checked: '2026-11-20'
+- id: ray-2023-hardcaml
+  type: paper
+  primary: true
+  authors: [Andy Ray, Benjamin Devlin, Fu Yong Quah, Rahul Yesantharao]
+  title: "Hardcaml: An OCaml Hardware Domain-Specific Language for Efficient and Robust Design"
+  venue: arXiv:2312.15035
+  year: 2023
+  url: https://arxiv.org/abs/2312.15035
+  checked: '2026-11-20'
+- id: signals-threads-2020-programmable-hardware
+  type: interview
+  primary: true
+  authors: [Ron Minsky, Andy Ray]
+  title: "Signals and Threads, episode 1: Programmable Hardware (9 September 2020)"
+  year: 2020
+  url: https://signalsandthreads.com/programmable-hardware/
   checked: '2026-11-20'

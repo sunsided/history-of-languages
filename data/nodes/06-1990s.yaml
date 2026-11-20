@@ -5520,6 +5520,119 @@
       }
     sources: [wiki-handel-c]
 
+- id: lava
+  name: Lava
+  aliases: [Chalmers Lava, Xilinx Lava]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1998, precision: year, note: "Bjesse, Claessen, Sheeran and Singh, \"Lava: Hardware Design in Haskell\", ICFP '98 (Baltimore), pp. 174-184. The paper says an earlier version of the system had already been used for FPGA circuits." }
+    places: [{ institution: Chalmers University of Technology, city: Gothenburg, country: SE }, { institution: Xilinx, country: US }]
+  creators:
+    - { name: Per Bjesse, role: co-designer }
+    - { name: Koen Claessen, role: co-designer }
+    - { name: Mary Sheeran, role: co-designer }
+    - { name: Satnam Singh, role: "co-designer (Xilinx)" }
+  status: legacy
+  tags:
+    paradigm: [functional]
+    typing: [type-classes]
+    features: [monads]
+    domain: [hardware-design]
+  summary: >
+    A hardware description language embedded in Haskell: "a tool to assist circuit designers in specifying, designing,
+    verifying and implementing hardware. It is a collection of Haskell modules." Circuit descriptions are overloaded in a
+    monad, so the same description can be simulated, turned into formulas for formal verification, or compiled into a
+    netlist; higher-order functions act as circuit combinators. The authors resisted designing "yet another hardware
+    description language" and built on Sheeran's muFP and on Ruby. It is the oldest of the HDLs embedded in a host
+    language in this cluster.
+  notes: >
+    Several implementations followed (Wikipedia's HDL table lists Chalmers, Xilinx, Kansas and York Lava); the Hackage
+    package chalmers-lava2000 is by Koen Claessen. muFP (Sheeran, 1985) and Ruby (Jones and Sheeran, 1990) are not nodes
+    yet. That Clash or Chisel drew on Lava is not sourced here, so no edges are stored.
+  relations:
+    - { type: extension_of, to: haskell, weight: strong, confidence: high, sources: [bjesse-1998-lava], note: "\"we would like to see how far we can get using the functional programming language Haskell\"; \"a collection of Haskell modules\"." }
+    - { type: influenced_by, to: haskell, aspects: [monads, type-classes, functional], weight: strong, confidence: high, sources: [bjesse-1998-lava], note: "\"The system is constructed in a way that systematically makes use of important features of Haskell: monads, type classes, polymorphism and higher order functions.\"" }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://hackage.haskell.org/package/chalmers-lava2000" }
+  sources: [bjesse-1998-lava, wiki-hardware-description-language]
+  example:
+    title: a half adder, and simulating it
+    language: Lava (1998)
+    year: 1998
+    note: "Section 2.1 of the ICFP '98 paper and its simulation in Hugs (section 2.2); transcribed from the scanned paper."
+    code: |
+      halfAdd :: Circuit m => (Bit, Bit) -> m (Bit, Bit)
+      halfAdd (a, b) =
+        do carry <- and2 (a, b)
+           sum   <- xor2 (a, b)
+           return (carry, sum)
+
+      Hugs> simulate (halfAdd (high, high))
+      (high, low)
+    sources: [bjesse-1998-lava]
+
+- id: openvera
+  name: OpenVera
+  aliases: [Vera]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1998, precision: circa, note: "Latest possible year for Vera: Synopsys agreed to buy Systems Science, which \"brings with it the Vera testbench automation system\", in July 1998. Its first release was not dated in the sources read. The open OpenVera 1.0 followed in April 2001." }
+    places: [{ institution: Systems Science, city: Palo Alto, country: US }]
+  status: legacy
+  tags:
+    domain: [hardware-design]
+  milestones:
+    - { version: "OpenVera 1.0", year: 2001, date: "2001-04", summary: "Synopsys's Vera Open Source Initiative made Vera \"an open-source language\": \"There are no licensing fees\", with Synopsys as \"the managing entity\"." }
+  summary: >
+    A hardware verification language for writing testbenches, sold as Vera by Systems Science and, after Synopsys bought
+    the company in 1998, opened up as OpenVera in 2001. Its selling points were "pseudorandom reactive tests controlled by
+    functional-coverage objects". Synopsys donated its testbench constructs and assertions to Accellera for SystemVerilog
+    3.1 in 2002, and "the bulk of the verification functionality" of SystemVerilog is based on it.
+  notes: >
+    A tutorial site says "Vera language was orginally developed in Sun Micro Systems for internal ASIC verification
+    projects"; no primary source for the Sun origin or its designers was found, and no OpenVera manual was read, so
+    paradigm tags are left out. The design was implemented in Synopsys VCS as NTB (native testbench).
+  research_status: stub
+  confidence: medium
+  sources: [techmonitor-1998-synopsys-systems-science, maliniak-2001-openvera, synopsys-2002-sv31-donation, asicworld-vera-history, wiki-systemverilog]
+
+- id: superlog
+  name: Superlog
+  aliases: [SUPERLOG, Superlog HDL]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1999, precision: year, note: "\"In 1999, the company announced the SUPERLOG system design language\" (Co-Design Automation press release, May 2000); EE Times reported the startup's plans on 31 May 1999 (not read)." }
+    places: [{ institution: Co-Design Automation, country: US }]
+  creators:
+    - { name: Peter Flake, role: co-founder of Co-Design Automation }
+    - { name: Simon Davidmann, role: co-founder of Co-Design Automation }
+  status: historical
+  tags:
+    domain: [hardware-design]
+  summary: >
+    Co-Design Automation's system design language, "designed as an extension to Verilog with additional features for
+    modeling complex hardware systems" (Wikipedia). Its founders Peter Flake and Simon Davidmann had worked on HILO, and
+    Verilog's creator Phil Moorby wrote Superlog simulators. Co-Design donated it to Accellera, where it became the start of
+    SystemVerilog, and Synopsys bought the company in 2002.
+  notes: >
+    The company's SYSTEMEX tool "extracts Verilog HDL code from SUPERLOG descriptions for hardware implementation" (press
+    release, May 2000). Wikipedia's Superlog article carries a notice that it may contain text from a large language model;
+    claims taken from it are marked. Flake et al.'s HOPL IV paper (2020), the primary history, was not read beyond its
+    abstract.
+  relations:
+    - { type: superset_of, to: verilog, weight: strong, confidence: medium, sources: [wiki-superlog, codesign-2000-press-release], note: "\"designed as an extension to Verilog\" (Wikipedia); the vendor's tool extracted Verilog from Superlog descriptions. Flake et al. (HOPL IV) are reported to call it a strict superset; not read." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Superlog_HDL" }
+  sources: [codesign-2000-press-release, wiki-superlog, wiki-systemverilog, flake-2020-verilog-hopl]
+
 - id: interaction-nets
   name: Interaction nets
   aliases: [Interaction combinators, Interaction calculus]

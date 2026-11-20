@@ -5866,6 +5866,119 @@
   links: { wikipedia: "https://en.wikipedia.org/wiki/Advanced_Boolean_Expression_Language" }
   sources: [wiki-abel, wiki-hardware-description-language]
 
+- id: lalsd
+  name: LALSD
+  aliases: [LALSD II]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1981, precision: circa, note: "Latest possible year: \"A new multi-level hardware design language (LALSD II) and translator\" (Su, Huang and Fu) was given at the IFIP Fifth International Symposium on CHDL, Kaiserslautern, September 1981. The first LALSD is older and undated in the sources read." }
+  creators:
+    - { name: S. Y. H. Su, role: designer }
+  status: historical
+  tags:
+    domain: [hardware-design]
+  milestones:
+    - { version: "LALSD II", year: 1981, summary: "\"A new multi-level hardware design language (LALSD II) and translator\" (CHDL 1981); \"Logic design automation based on LALSD II\" followed at CHDL 1983." }
+  summary: >
+    A hardware description language "developed by Professor S.Y.H. Su", on which Chi-Lai Huang worked for his PhD before
+    he co-created Verilog at Gateway Design Automation (Wikipedia: Verilog). Its second version, LALSD II, was presented
+    as a multi-level hardware design language with a translator in 1981.
+  notes: >
+    What the name stands for, where Su's group was and the date of the first LALSD were not found. Huang and Su also
+    published "Approaches for Computer-Aided Logic System Design Using Hardware Description Language" (International
+    Computer Symposium, Taipei, December 1980; not read).
+  research_status: stub
+  confidence: low
+  sources: [vt-chdl-bibliography, wiki-verilog]
+
+- id: cupl
+  name: CUPL
+  aliases: [Compiler for Universal Programmable Logic, Universal Compiler for Programmable Logic, WinCUPL]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1982, date: "1982-09", precision: exact, note: "Presented by Robert Osann of Assisted Technology at Wescon/82, Anaheim, September 1982 (the paper's example is dated 5/12/82). A 1983 data sheet and Wikipedia's PAL article give September 1983 for the product release (not read in full)." }
+    places: [{ institution: Assisted Technology, city: San Jose, country: US }]
+  creators:
+    - { name: Robert Osann, role: "author of the 1982 paper; co-designer of its example" }
+  status: maintained
+  tags:
+    domain: [hardware-design]
+  summary: >
+    A device-independent language for programmable logic devices (PALs, FPLAs), pronounced "couple": a PLD source
+    specification "should not be tied to a particular PLD type or family", and the target device is named only when the
+    compiler is run to produce the fuse pattern. Osann presented it in 1982 as "a hardware compiler specifically designed
+    for programmable logic" and "the first universal language of its kind", answering a market in which "different families
+    of PLD's (PALs, FPLAs, etc.) have been supported by different languages". It offers pin declarations, bit fields with ranges, expression substitution and C-style comments,
+    and with ABEL and PALASM it became one of the standard PLD languages of the 1980s.
+  notes: >
+    Later sold by Logical Devices, Inc. (Wikipedia's HDL table). WinCUPL, the Windows version, is distributed free by
+    Microchip (formerly Atmel); that history was seen only in search results.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Programmable_Array_Logic" }
+  sources: [osann-1982-cupl, wiki-hardware-description-language]
+  example:
+    title: address decoding with pins, fields and ranges
+    language: CUPL
+    year: 1982
+    note: "Shortened from Figure 3 of Osann's 1982 Wescon paper (two of the four RAS equations kept, and the \"rev\" line dropped; the scan's \"al9\" is read as a19); ! is NOT, & is AND, # is OR, and memaddr:[00000..3FFFF] is a range test on a field."
+    code: |
+      partno    pl1000153 ;
+      name      mdecode ;
+      date      5/12/82 ;
+      designer  Osann/Kahl ;
+      company   Assisted Technology ;
+
+      pin 1         = !ioacc ;
+      pin [2..5]    = [a19..16] ;
+      pin 6         = altloc ; /* map RAM to 40000 thru 7FFFF */
+      pin 7         = !refcyc ; /* memory refresch cycle */
+      pin [8,9]     = ![memw,memr] ;
+      pin 14        = raminh ; /* system RAM inhibit signal */
+      pin [15..18]  = ![ras0..3] ; /*RAM RAS signals*/
+
+      field memaddr = [a19..16] ;
+      memreq        = memw # memr ;
+
+      ras1 = !raminh & memreq & !refcyc & (memaddr:[10000..1FFFF] &
+             !altloc # memaddr:[50000..5FFFF] & altloc) # refcyc ;
+      ras0 = !raminh & memreq & !refcyc & (memaddr:[00000..0FFFF] &
+             !altloc # memaddr:[40000..4FFFF] & altloc) # refcyc ;
+    sources: [osann-1982-cupl]
+
+- id: abl-hdl
+  name: ABL
+  aliases: [A Block diagram Language, ABLED]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1983, precision: circa, note: "\"ABL was implemented in the early 1980s by the Centro Studi e Laboratori Telecomunicazioni (CSELT) in Torino\" (Wikipedia: HDL); its cited specification, Girardi and Hartenstein, ABL Specification, is dated 1983. Neither document was read." }
+    places: [{ institution: CSELT, city: Turin, country: IT }, { institution: University of Kaiserslautern, city: Kaiserslautern, country: DE }]
+  creators:
+    - { name: Reiner Hartenstein, role: "co-author of the ABL specification, with G. Girardi of CSELT" }
+  status: historical
+  tags:
+    paradigm: [visual-programming]
+    domain: [hardware-design]
+  summary: >
+    "KARL's interactive graphic sister language", whose name was an initialism for "A Block diagram Language" (Wikipedia:
+    HDL). CSELT in Turin implemented it in the early 1980s and built the ABLED graphic VLSI design editor on it; in the
+    mid-1980s a VLSI design framework funded by the European Union was implemented around KARL and ABL.
+  notes: >
+    The id is abl-hdl because ABL is also the name of OpenEdge ABL (openedge-abl). Hartenstein's own account, "KARL and
+    ABL" (1993), was not read.
+  relations:
+    - { type: influenced_by, to: karl, weight: strong, confidence: medium, sources: [wiki-hardware-description-language], note: "\"This work was also the basis of KARL's interactive graphic sister language ABL\"." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hardware_description_language#History" }
+  sources: [wiki-hardware-description-language, ithistory-hartenstein, hartenstein-1993-karl-abl]
+
 - id: verilog
   name: Verilog
   aliases: [Verilog HDL, IEEE 1364]
@@ -5899,6 +6012,7 @@
     on its page, so they are kept here rather than as nodes.
   relations:
     - { type: influenced_by, to: c, weight: moderate, confidence: medium, sources: [wiki-verilog], note: "\"wanted a language with syntax similar to the C programming language\"; \"Like C, Verilog is case-sensitive and has a basic preprocessor\"." }
+    - { type: influenced_by, to: lalsd, weight: weak, confidence: low, sources: [wiki-verilog], note: "Shared person only: co-creator Chi-Lai Huang \"had earlier worked on a hardware description LALSD\", Su's language, for his PhD. Nobody says LALSD shaped Verilog; Huang's or Moorby's own account would confirm or drop this." }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Verilog" }
@@ -5950,7 +6064,7 @@
     Related standards: 1076.2 math, 1076.3 synthesis, 1076.4 VITAL, 1164 std_logic.
   relations:
     - { type: influenced_by, to: ada, aspects: [strong-typing], weight: strong, confidence: medium, sources: [wiki-vhdl, wiki-hardware-description-language], note: "\"VHDL borrows heavily from the Ada programming language in both concept and syntax\", by DoD requirement." }
-    - { type: influenced_by, to: isp, weight: moderate, confidence: medium, sources: [wiki-hardware-description-language], note: "\"based on the Ada programming language, and on the experience gained with the earlier development of ISPS\"." }
+    - { type: influenced_by, to: isps, weight: moderate, confidence: medium, sources: [wiki-hardware-description-language], note: "\"based on the Ada programming language, and on the experience gained with the earlier development of ISPS\"." }
     - { type: influenced_by, to: pascal, weight: weak, confidence: low, sources: [wiki-vhdl], note: "Infobox lists Pascal; no prose. Confirm from Coelho 1989 or the IEEE 1076 rationale." }
   research_status: draft
   confidence: high

@@ -4131,7 +4131,7 @@
 
 - id: isp
   name: ISP
-  aliases: [Instruction Set Processor notation, ISPL, ISPS]
+  aliases: [Instruction Set Processor notation, ISPL]
   kind: notation
   category: hardware
   cluster: hardware
@@ -4149,12 +4149,115 @@
     used in the ISP language to describe the behavior of the Digital Equipment Corporation (DEC) PDP-8". Its implementations
     ISPL and ISPS followed; ISPS was taken up at DEC and later fed into VHDL.
   notes: >
-    "The first hardware description languages appeared in the late 1960s" (Wikipedia: HDL); Yaohan Chu's CDL is in the
-    hardware backlog. ISPS is recorded as an alias until its own dating is found.
+    "The first hardware description languages appeared in the late 1960s" (Wikipedia: HDL); Yaohan Chu's CDL (1965) is
+    older. ISPL, Barbacci's first implementation (CMU report, 1976, cited by Wikipedia but not read), is kept as an alias;
+    ISPS (1977) is its own node.
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Hardware_description_language#History" }
   sources: [wiki-hardware-description-language]
+
+- id: isps
+  name: ISPS
+  aliases: [Instruction Set Processor Specifications]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1977, date: "1977-08-14", precision: exact, note: "First edition of the ISPS reference manual, dated 14 August 1977 (second edition 6 March 1978, third 16 August 1979)." }
+    places: [{ institution: Carnegie Mellon University, city: Pittsburgh, country: US }]
+  creators:
+    - { name: Mario Barbacci, role: "designer; author of the reference manual" }
+    - { name: Gary E. Barnes, role: co-author of the reference manual }
+    - { name: Rick Cattell, role: "co-author of the reference manual, as Roderic G. Cattell" }
+    - { name: Daniel Siewiorek, role: co-author of the reference manual }
+  status: historical
+  tags:
+    domain: [hardware-design]
+  milestones:
+    - { version: "parser V5", year: 1979, summary: "Third edition of the manual describes version 5 of the ISPS parser: concatenated mappings removed, new operators and predeclared entities, syntax charts added." }
+  summary: >
+    The computer-language implementation of Bell and Newell's ISP notation, built at Carnegie-Mellon for the DARPA-funded
+    Symbolic Manipulation of Computer Descriptions project. Barbacci called it "a kernel language which provides the users
+    with the tools to define application dependent abstractions around a core notation": its parser, running on a PDP-10,
+    emits a parse tree (the "global data base") that separate programs use for simulation, design automation and
+    generating machine-relative software such as compiler-compilers. The VHDL design drew on the experience with ISPS.
+  notes: >
+    The manual's introduction: "The ISP notation was first introduced by Bell&Newell [Bell,1971]" and "Although ISP is
+    oriented towards the description of Instruction Set Processors, it contains a fair number of constructs which can be
+    used to describe a large class of register transfer systems". Wikipedia says ISPS was adopted at DEC and by NATO
+    research teams; that was not checked against a primary source. Barbacci's IEEE Transactions on Computers paper (1981)
+    on ISPS was not read.
+  relations:
+    - { type: dialect_of, to: isp, weight: strong, confidence: high, sources: [barbacci-1979-isps-manual, wiki-hardware-description-language], note: "\"At least two implementations of the basic ISP language (ISPL and ISPS) followed\" (Wikipedia); the manual introduces ISPS from Bell and Newell's ISP notation." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hardware_description_language#History" }
+  sources: [barbacci-1979-isps-manual, wiki-hardware-description-language, barbacci-1981-isps]
+  example:
+    title: the Manchester Mark 1 (first version)
+    language: ISPS
+    year: 1979
+    note: "From section 16.1 of the ISPS reference manual (third edition, 1979), Barbacci's description of the first version of the Manchester machine after Lavington (1975); the opening comment block is shortened."
+    code: |
+      ! The Manchester University Mark-1 Computer
+      MARK1 :=
+              Begin
+              ** Memory.State **
+              M[0:8191]<31:0>,
+              ** Processor.State **
+              PI\Present.Instruction<15:0>,
+                      F\Function<0:2> := PI<15:13>,
+                      S<0:12> := PI<12:0>,
+              CR\Control.Register<12:0>,
+              Acc\Accumulator<31:0>,
+              ** Instruction.Execution ** {TC}
+      Main I.Cycle :=
+              Begin
+              PI = M[CR]<15:0> next
+              Decode F =>
+                      Begin
+              0\JMP   := CR = M[S],
+              1\JRP   := CR = CR + M[S],
+              2\LDN   := Acc = - M[S],
+              3\STO   := M[S] = Acc,
+              4:5\SUB := Acc = Acc - M[S],
+              6\CMP   := If Acc Lss 0 => CR = CR + 1,
+              7\STP   := Stop(),
+                      End next
+              CR = CR + 1 next
+              Restart I.Cycle
+              End
+      End
+    sources: [barbacci-1979-isps-manual]
+
+- id: karl
+  name: KARL
+  aliases: [KAiserslautern Register Transfer Language, Kaiserslautern Register Transfer Language, KARL-II, KARL-III]
+  kind: language
+  category: hardware
+  cluster: hardware
+  origin:
+    first_appeared: { year: 1979, precision: circa, note: "\"Separate work done about 1979 at the University of Kaiserslautern produced a language named KAiserslautern Register Transfer Language (KARL)\" (Wikipedia: HDL). A 1979 CHDL paper by Hartenstein on KARL is listed in bibliographies but was not read." }
+    places: [{ institution: University of Kaiserslautern, city: Kaiserslautern, country: DE }]
+  creators:
+    - { name: Reiner Hartenstein, role: designer }
+  status: historical
+  tags:
+    domain: [hardware-design]
+  summary: >
+    A register-transfer language from Reiner Hartenstein's group at the University of Kaiserslautern, with "design
+    calculus language features supporting VLSI chip floorplanning" and structured hardware design (Wikipedia: HDL). It
+    had a graphical sister language, ABL, and in the mid-1980s a European VLSI design framework was built around the two.
+    The IT History Society calls it "the successful hardware design language KARL".
+  notes: >
+    Later versions appear in the CHDL literature: "A microassembler for the register transfer language Karl II" (CHDL
+    1987); a compiler paper for KARL-2 (GI 1980) and a "KARL-III Primer" (1985) are reported in search results but were not
+    read. Hartenstein's own account, "KARL and ABL" (1993), was not read.
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Hardware_description_language#History" }
+  sources: [wiki-hardware-description-language, ithistory-hartenstein, vt-chdl-bibliography, hartenstein-1993-karl-abl]
 
 - id: distributed-processes
   name: Distributed Processes
