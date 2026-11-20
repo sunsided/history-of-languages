@@ -249,10 +249,10 @@
   facet: domain
   summary: Languages that describe the structure and behaviour of digital (and analog) circuits for simulation and synthesis.
   first_seen:
-    node: isp
-    year: 1971
-    note: "\"The first that had a lasting effect was described in 1971 in C. Gordon Bell and Allen Newell's text Computer Structures\" (Wikipedia: Hardware description language)."
-  sources: [wiki-hardware-description-language]
+    node: cdl
+    year: 1965
+    note: "Chu's Computer Design Language (CACM, October 1965) is the earliest hardware description language in the dataset. Wikipedia credits ISP (1971) as \"the first that had a lasting effect\"."
+  sources: [wiki-hardware-description-language, chu-1969-design-automation-cdl]
 - id: music-audio
   name: Music and audio
   facet: domain
@@ -1184,9 +1184,9 @@
   - declarative
   summary: Computation as the repeated application of rewrite rules (left-hand side => right-hand side) to terms, often modulo equations such as associativity and commutativity.
   first_seen:
-    node: maude
-    year: 1996
-    note: Earliest node tagged so far; OBJ3's order-sorted rewriting and other earlier rewriting languages are not yet tagged.
+    node: elan-rewriting
+    year: 1994
+    note: Earliest node tagged so far (ELAN, LORIA 1994, ahead of Maude 1996); OBJ3's order-sorted rewriting and other earlier rewriting languages are not yet tagged.
 - id: tacit-programming
   name: Tacit programming
   facet: paradigm
