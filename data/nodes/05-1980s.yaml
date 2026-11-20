@@ -50,11 +50,11 @@
   status: historical
   tags:
     paradigm: [imperative, concurrent]
-    concurrency: [message-passing, rendezvous, semaphores]
+    concurrency: [message-passing, semaphores]
     domain: [distributed-systems]
   milestones:
     - { version: "1", year: 1988, summary: "An overview of version 1 of the language and implementation in ACM TOPLAS, January 1988." }
-    - { version: "2.3", year: 1993, summary: "The version described in The SR Programming Language: Concurrency in Practice (Andrews and Olsson, 1993); release notes for 2.3 by Gregg Townsend ship with the package. The year is that of the book." }
+    - { version: "2.3", year: 1993, introduces: [rendezvous], summary: "The version described in The SR Programming Language: Concurrency in Practice (Andrews and Olsson, 1993); release notes for 2.3 by Gregg Townsend ship with the package. The year is that of the book. Rendezvous is attached here as an upper bound: the description that lists it comes from later SR, and the 1981 paper was not read." }
   summary: >
     A language for concurrent programs from the University of Arizona, built around resources that encapsulate
     processes and the variables they share, and operations that can be invoked and serviced in several ways:
