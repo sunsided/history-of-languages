@@ -7939,3 +7939,122 @@
   authors: [CMU AI Repository]
   title: Goedel (repository entry)
   url: https://www.cs.cmu.edu/Groups/AI/lang/prolog/impl/other/goedel/0.html
+- id: us3686639-fletcher-1972
+  type: report
+  primary: true
+  authors: [William E. Fletcher, Leon B. Rosseau]
+  title: Digital computer-industrial controller system and apparatus (US Patent 3,686,639)
+  venue: Modicon Corp, filed 1969-12-11, granted 1972-08-22
+  year: 1972
+  url: https://patents.google.com/patent/US3686639A/en
+  checked: '2026-11-20'
+- id: walker-2012-plc-thesis
+  type: report
+  primary: false
+  authors: [Mark John Walker]
+  title: "The Programmable Logic Controller: its prehistory, emergence and application"
+  venue: PhD thesis, The Open University
+  year: 2012
+  url: https://web.archive.org/web/20180620115412/http://oro.open.ac.uk/54687/1/594090.pdf
+- id: iec-61131-3-1993
+  type: standard
+  primary: true
+  authors: [IEC SC 65B]
+  title: "IEC 1131-3: Programmable controllers - Part 3: Programming languages"
+  year: 1993
+  url: https://cdn.standards.iteh.ai/samples/7199/cc33998d101548ad8220048849fce28b/IEC-61131-3-1993.pdf
+- id: iec-61131-3-2003
+  type: standard
+  primary: true
+  authors: [IEC SC 65B]
+  title: IEC 61131-3 edition 2.0
+  year: 2003
+  url: https://www.vde-verlag.de/iec-normen/preview-pdf/info_iec61131-3%7Bed2.0%7Db.pdf
+- id: iec-61131-3-2013
+  type: standard
+  primary: true
+  authors: [IEC SC 65B]
+  title: IEC 61131-3 edition 3.0
+  year: 2013
+  url: https://webstore.iec.ch/en/publication/4552
+- id: iec-61131-3-2025
+  type: standard
+  primary: true
+  authors: [IEC SC 65B]
+  title: IEC 61131-3 edition 4.0
+  year: 2025
+  url: https://webstore.iec.ch/en/publication/68533
+- id: iec-60848-2013
+  type: standard
+  primary: true
+  authors: [IEC]
+  title: "IEC 60848: GRAFCET specification language for sequential function charts, edition 3.0"
+  year: 2013
+  url: https://webstore.iec.ch/en/publication/3684
+- id: david-1995-grafcet
+  type: paper
+  primary: false
+  authors: [René David]
+  title: "Grafcet: a powerful tool for specification of logic controllers"
+  venue: IEEE Transactions on Control Systems Technology 3(3), pp. 253-268
+  year: 1995
+  url: https://www2.informatik.uni-hamburg.de/TGI/pnbib/d/david_r2.html
+- id: siemens-s5-101u-programmieranleitung
+  type: manual
+  primary: true
+  authors: [Siemens]
+  title: SIMATIC S5 101 U Programmieranleitung
+  url: https://cache.industry.siemens.com/dl/files/345/21196345/att_68400/v1/S5-101U_Programmieranleitung_d_OCR.pdf
+- id: siemens-1998-scl-v4
+  type: manual
+  primary: true
+  authors: [Siemens]
+  title: SCL für S7-300/400, Bausteine programmieren
+  year: 1998
+  url: https://cache.industry.siemens.com/dl/files/188/1137188/att_27468/v1/SCLV4_d.pdf
+- id: siemens-2005-s7-scl
+  type: manual
+  primary: true
+  authors: [Siemens]
+  title: S7-SCL V5.3 for S7-300/400
+  year: 2005
+  url: https://cache.industry.siemens.com/dl/files/793/5581793/att_66783/v1/SCL_e.pdf
+- id: siemens-step7-norm-tbl
+  type: manual
+  primary: true
+  authors: [Siemens]
+  title: Standards Compliance according to IEC 61131-3 (STEP 7)
+  url: https://cache.industry.siemens.com/dl/files/932/8790932/att_82258/v1/norm_tbl.pdf
+- id: vanderwal-2015-iec61131
+  type: web
+  primary: false
+  authors: [Eelco van der Wal]
+  title: IEC 61131-3 specifies syntax and semantics for a unified suite of programming resource
+  venue: Control Design
+  year: 2015
+  url: https://www.controldesign.com/control/control-software/article/11326311/iec-61131-3-specifies-syntax-and-semantics-for-a-unified-suite-of-programming-resource
+- id: motioncontroltips-il
+  type: web
+  primary: false
+  authors: [Danielle Collins]
+  title: Why is the instruction list (IL) language for PLCs falling out of favor?
+  url: https://www.motioncontroltips.com/why-is-the-instruction-list-il-language-for-plcs-falling-out-of-favor
+- id: lenze-iec61131
+  type: web
+  primary: false
+  authors: [Lenze]
+  title: IEC 61131-3 (knowledge base)
+  url: https://www.lenze.com/en-de/go/akb/200450573/1
+- id: computer-automation-simatic-ages
+  type: web
+  primary: false
+  authors: [computer-automation.de]
+  title: The Simatic through the ages
+  url: https://www.computer-automation.de/images/4/the-simatic-through-the-ages.htm
+- id: siemens-uk-2020-s5
+  type: web
+  primary: true
+  authors: [Siemens UK]
+  title: "The end of an era for automation: how Siemens SIMATIC S5 transformed manufacturing"
+  year: 2020
+  url: https://news.siemens.co.uk/news/the-end-of-an-era-for-automation-how-siemens-simatic-s5-transformed-manufacturing

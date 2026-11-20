@@ -2737,21 +2737,23 @@
   category: domain-specific
   cluster: industrial
   origin:
-    first_appeared: { year: 1993, date: "1993-12", precision: exact, note: "IEC 61131-3, \"first published in December 1993 by the IEC\"." }
+    first_appeared: { year: 1993, precision: year, note: "IEC 1131-3:1993 (later IEC 61131-3); Wikipedia gives December 1993, but the standard's front matter states only the year." }
     places: [{ institution: International Electrotechnical Commission }]
   status: active
   tags:
     paradigm: [imperative, structured]
     domain: [industrial-automation]
   milestones:
-    - { version: 3rd edition, year: 2013, introduces: [object-oriented], summary: "IEC 61131-3 third edition, with object-oriented programming." }
-    - { version: 4th edition, year: 2025, summary: "May 2025." }
+    - { version: 2nd edition, year: 2003, summary: "\"cancels and replaces the first edition, published in 1993, and constitutes a technical revision\".", sources: [iec-61131-3-2003] }
+    - { version: 3rd edition, year: 2013, date: "2013-02-20", introduces: [object-oriented], summary: "\"new data types and conversion functions, references, name spaces and the object oriented features of classes and function blocks\".", sources: [iec-61131-3-2013] }
+    - { version: 4th edition, year: 2025, date: "2025-05-22", summary: "UTF-8 strings; Instruction List removed, leaving ST as the only textual language.", sources: [iec-61131-3-2025] }
   summary: >
     The textual language of IEC 61131-3 for programmable logic controllers, "a high level language that is block
     structured and syntactically resembles Pascal, on which it is based". It sits beside the standard's graphical
     languages (ladder diagram, function block diagram, sequential function chart).
   relations:
-    - { type: influenced_by, to: pascal, weight: strong, confidence: high, sources: [wiki-structured-text], note: "\"syntactically resembles Pascal, on which it is based\"." }
+    - { type: influenced_by, to: pascal, weight: strong, confidence: medium, sources: [wiki-structured-text, iec-61131-3-1993, vanderwal-2015-iec61131], note: "\"syntactically resembles Pascal, on which it is based\" (Wikipedia); the 1993 standard normatively references ISO 7185 (Pascal); PLCopen's van der Wal: \"roots in Ada, Pascal and C\"." }
+    - { type: influenced_by, to: ada, weight: weak, confidence: low, sources: [vanderwal-2015-iec61131], note: "Only van der Wal (PLCopen): \"a very powerful high-level language with its roots in Ada, Pascal and C\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Structured_text" }
@@ -2779,18 +2781,21 @@
   category: domain-specific
   cluster: industrial
   origin:
-    first_appeared: { year: 1993, date: "1993-12", precision: exact, note: "One of the five languages of the first IEC 61131-3, December 1993." }
+    first_appeared: { year: 1993, precision: year, note: "One of the five languages of the first IEC 1131-3 (1993); the month is given only by Wikipedia." }
     places: [{ institution: International Electrotechnical Commission }]
   status: legacy
   tags:
     paradigm: [imperative]
     domain: [industrial-automation]
   milestones:
-    - { version: deprecated, year: 2013, summary: "Deprecated in IEC 61131-3's third edition; removed in the fourth (2025)." }
+    - { version: deprecated, year: 2017, summary: "Marked deprecated for the next edition (IEC TR 61131-8 ed. 3, as reported secondarily): \"an assembler-like language is not up-to-date in modern development environments\".", sources: [motioncontroltips-il] }
+    - { version: removed, year: 2025, date: "2025-05-22", summary: "IEC 61131-3 ed. 4 lists only ST as a textual language, beside LD and FBD.", sources: [iec-61131-3-2025] }
   summary: >
     The low-level language of IEC 61131-3: "a low level language and resembles assembly", working on an accumulator
     with load, compare, jump and store. Siemens's version is known as Statement List (STL) or Anweisungsliste (AWL).
-    It was deprecated in 2013 and removed from the standard in 2025.
+    It was marked for deprecation after the 2013 edition and removed from the standard in 2025.
+  relations:
+    - { type: influenced_by, to: step5, weight: weak, confidence: low, sources: [siemens-s5-101u-programmieranleitung, lenze-iec61131], note: "STEP 5 AWL \"entspricht DIN 19 239 (Entwurf)\", and DIN IEC 61131-3 \"substitutes the standards DIN 19239\"; no source states that IL was derived from AWL. An IEC SC65B WG7 history would confirm it." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Instruction_list" }
@@ -5434,3 +5439,94 @@
       astack get          ==> toast
       astack destroy      ==> {}
     sources: [wetherall-1995-otcl]
+
+- id: function-block-diagram
+  name: Function Block Diagram
+  aliases: [FBD, FUP, Funktionsplan, FBS]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1993, precision: year, note: "\"Language FBD\" in IEC 1131-3:1993; earlier logic-symbol forms existed, such as STEP 5 FUP (corresponding to DIN 40700, DIN 40719 and draft DIN 19239)." }
+    places: [{ institution: International Electrotechnical Commission }]
+  status: active
+  tags:
+    paradigm: [visual-programming, dataflow-programming]
+    domain: [industrial-automation]
+  milestones:
+    - { version: "IEC 61131-3 ed. 4", year: 2025, summary: "One of the two graphical languages kept, beside LD.", sources: [iec-61131-3-2025] }
+  summary: >
+    The IEC 61131-3 graphical language of "networks of graphically represented functions, function blocks, data
+    elements, labels, and connective elements": a program "in terms of the flow of signals between processing
+    elements", common in the process industry.
+  relations:
+    - { type: influenced_by, to: step5, weight: weak, confidence: low, sources: [siemens-s5-101u-programmieranleitung], note: "STEP 5 FUP was an earlier logic-symbol form tied to draft DIN 19239; no source states that FBD derives from it." }
+  research_status: draft
+  confidence: high
+  sources: [iec-61131-3-1993, vanderwal-2015-iec61131]
+
+- id: sequential-function-chart
+  name: Sequential Function Chart
+  aliases: [SFC, Ablaufsprache, AS, S7-GRAPH]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1993, precision: year, note: "\"Sequential Function Chart (SFC) elements\" in IEC 1131-3:1993." }
+    places: [{ institution: International Electrotechnical Commission }]
+  status: active
+  tags:
+    paradigm: [visual-programming]
+    domain: [industrial-automation]
+  summary: >
+    "An additional set of graphical and equivalent textual elements named sequential function chart (SFC) ... for
+    structuring the internal organization of programs and function blocks": steps and transitions in the GRAFCET
+    style, with actions written in the other IEC 61131-3 languages. Siemens's version is S7-GRAPH.
+  relations:
+    - { type: influenced_by, to: grafcet, weight: strong, confidence: medium, sources: [iec-61131-3-1993, walker-2012-plc-thesis, david-1995-grafcet], note: "IEC 1131-3:1993 cites IEC 848 (GRAFCET) normatively; Walker: SFC is \"based on GRAFCET\"; David: GRAFCET \"is the basis of the Sequential Function Chart\"." }
+  research_status: draft
+  confidence: high
+  sources: [iec-61131-3-1993, iec-61131-3-2013, walker-2012-plc-thesis]
+
+- id: siemens-scl
+  name: SCL
+  aliases: [S7-SCL, Structured Control Language]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1998, precision: circa, note: "Latest bound: the 1998 manual \"SCL für S7-300/400\", valid from STEP 7 version 3.0; the first release year was not found." }
+    places: [{ institution: Siemens, country: DE }]
+  creators:
+    - { name: Siemens, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, structured]
+    domain: [industrial-automation]
+  summary: >
+    Siemens's structured text for SIMATIC S7: "a PASCAL-oriented high-level language for programming PLCs" that
+    "fulfils the textual high-level language ST (Structured Text) defined in IEC 61131-3".
+  relations:
+    - { type: dialect_of, to: iec-structured-text, weight: strong, confidence: high, sources: [siemens-2005-s7-scl, siemens-step7-norm-tbl], note: "\"S7-SCL fulfils the textual high-level language ST (Structured Text) defined in IEC 61131-3\"." }
+    - { type: influenced_by, to: pascal, weight: strong, confidence: high, sources: [siemens-1998-scl-v4, siemens-2005-s7-scl], note: "\"eine höhere Programmiersprache, die sich an PASCAL orientiert\"." }
+  research_status: draft
+  confidence: medium
+  sources: [siemens-1998-scl-v4, siemens-2005-s7-scl, siemens-step7-norm-tbl]
+  example:
+    title: A function with an overflow check
+    language: S7-SCL V5.3
+    year: 2005
+    note: "From the S7-SCL V5.3 manual (2005); its header comment is left out and a line wrap in a comment is repaired."
+    code: |
+      FUNCTION SQUARE : INT
+      VAR_INPUT
+           value : INT;
+      END_VAR
+      BEGIN
+      IF value <= 181 THEN
+           SQUARE   := value * value; //Calculation of function value
+      ELSE
+           SQUARE   := 32_767; // If overflow, set maximum value
+      END_IF;
+      END_FUNCTION
+    sources: [siemens-2005-s7-scl]

@@ -599,7 +599,6 @@
   summary: "PLC languages of IEC 61131-3, robot and machine-tool languages, telecom switching languages and synchronous languages such as Esterel and Lustre."
   research_status: stub
   backlog:
-    - { name: "Ladder", hint: "Graphical PLC language from relay-rack documentation, standardised in IEC 61131-3 (Wikipedia: Ladder logic). No year." }
     - { name: "KUKA Robot Language", hint: "KUKA's proprietary Pascal-like robot language, .dat/.src files (Wikipedia). No year." }
     - { name: "Promela", hint: "Gerard J. Holzmann's verification modelling language for the SPIN model checker (Wikipedia). No year on the page." }
     - { name: "RSL", hint: "The list's RSL link points to a Robot Battle section that no longer exists (redirects to GarageGames). Unresolved." }

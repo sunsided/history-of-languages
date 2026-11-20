@@ -2561,3 +2561,45 @@
   research_status: draft
   confidence: high
   sources: [perlis-1964-formula-algol, perlis-1966-definition-formula-algol]
+
+- id: ladder-diagram
+  name: Ladder Diagram
+  aliases: [LD, LAD, Ladder logic, Relay ladder logic, RLL, Kontaktplan, KOP]
+  kind: language
+  category: domain-specific
+  cluster: industrial
+  origin:
+    first_appeared: { year: 1969, date: "1969-12-11", precision: exact, note: "Modicon patent US 3,686,639, filed 11 December 1969: a controller programmed by entering \"the ladder diagram\"; the notation itself comes from relay schematics." }
+    places: [{ institution: Modicon, city: Bedford, country: US }]
+  creators:
+    - { name: William E. Fletcher, role: patent inventor }
+    - { name: Leon B. Rosseau, role: patent inventor }
+  status: active
+  tags:
+    paradigm: [visual-programming]
+    features: [standardization]
+    domain: [industrial-automation]
+  milestones:
+    - { version: "IEC 1131-3", year: 1993, summary: "Standardised as \"Language LD (Ladder Diagram)\" in the first IEC 1131-3; kept in the 2025 edition.", sources: [iec-61131-3-1993, iec-61131-3-2025] }
+  summary: >
+    The graphical PLC language drawn as relay schematics: rails with rungs of contacts and coils, because "this
+    particular form of schematic electrical circuit diagram resembles a ladder and is often referred to as a ladder
+    diagram". Modicon's 1969 patent let "an ordinary industrial engineer having no computer programming experience"
+    program a controller by entering such a diagram; Allen-Bradley's controllers followed with the same notation.
+  notes: >
+    Dick Morley is credited with the Modicon 084 (1969), but its programs used a Boolean notation "functionally
+    equivalent to the ladder notation" (Walker 2012), so he is not listed as a creator of the language.
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Ladder_logic" }
+  sources: [us3686639-fletcher-1972, walker-2012-plc-thesis, iec-61131-3-1993]
+  example:
+    title: A start/stop seal-in rung
+    language: Ladder Diagram (ASCII rendering)
+    note: "Illustrative: the ASCII rendering from Wikipedia's Ladder logic article (uncited); real ladder programs are drawn graphically."
+    code: |
+      --+----[ ]--+----[\]----( )
+        |   Start |   Stop    Run
+        +----[ ]--+
+             Run
+    sources: [walker-2012-plc-thesis]

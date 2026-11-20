@@ -1083,6 +1083,7 @@
   name: Visual programming
   facet: paradigm
   summary: Programs built by arranging graphical elements (blocks, tiles, boxes and wires) instead of writing text.
+  first_seen: { node: ladder-diagram, year: 1969, note: "Modicon's 1969 patent: a controller programmed by entering a ladder diagram on a panel." }
 - id: dataflow-programming
   name: Dataflow programming
   facet: paradigm
