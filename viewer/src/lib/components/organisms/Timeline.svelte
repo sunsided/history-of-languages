@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { tick, untrack } from 'svelte';
-	import { viewer } from '../viewer.svelte.ts';
-	import { timeScale, NOW, PAD } from '../scale.ts';
-	import { layout, type Row } from '../layout.ts';
+	import { viewer } from '#lib/viewer.svelte.ts';
+	import { timeScale, NOW, PAD } from '#lib/scale.ts';
+	import { layout, type Row } from '#lib/layout.ts';
 	import {
 		FAMILIES,
 		FAMILY_OF,
@@ -14,8 +14,8 @@
 		narrowerConcepts,
 		reach,
 		type EdgeFamily
-	} from '../graph.ts';
-	import type { Edge, LangNode } from '../types.ts';
+	} from '#lib/graph.ts';
+	import type { Edge, LangNode } from '#lib/types.ts';
 
 	const AXIS_H = 46;
 	const INDENT = 14;

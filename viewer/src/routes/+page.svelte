@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Toolbar from '#lib/components/Toolbar.svelte';
-	import Timeline from '#lib/components/Timeline.svelte';
-	import DetailPanel from '#lib/components/DetailPanel.svelte';
-	import CommandPalette from '#lib/components/CommandPalette.svelte';
-	import PathFinder from '#lib/components/PathFinder.svelte';
+	import Toolbar from '#lib/components/organisms/Toolbar.svelte';
+	import Timeline from '#lib/components/organisms/Timeline.svelte';
+	import DetailPanel from '#lib/components/organisms/DetailPanel.svelte';
+	import CommandPalette from '#lib/components/organisms/CommandPalette.svelte';
+	import PathFinder from '#lib/components/organisms/PathFinder.svelte';
 	import { viewer } from '#lib/viewer.svelte.ts';
 	import '../app.css';
 

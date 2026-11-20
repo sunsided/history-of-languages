@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { viewer } from '../viewer.svelte.ts';
+	import { viewer } from '#lib/viewer.svelte.ts';
 	import {
 		BACKWARD_LABEL,
 		FAMILY_OF,
@@ -10,8 +10,8 @@
 		firstYear,
 		mediaUrl,
 		narrowerConcepts
-	} from '../graph.ts';
-	import type { Dating, Edge, MediaItem } from '../types.ts';
+	} from '#lib/graph.ts';
+	import type { Dating, Edge, MediaItem } from '#lib/types.ts';
 
 	const g = $derived(viewer.graph);
 	const node = $derived(viewer.selected?.type === 'node' ? g.node.get(viewer.selected.id) : undefined);

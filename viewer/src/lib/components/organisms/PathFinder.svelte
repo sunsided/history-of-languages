@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
-	import { viewer } from '../viewer.svelte.ts';
-	import { querySearch, type SearchHit } from '../search.ts';
-	import { firstYear, FAMILY_OF } from '../graph.ts';
-	import { shortestPath, type Hop, type Via } from '../path.ts';
+	import { viewer } from '#lib/viewer.svelte.ts';
+	import { querySearch, type SearchHit } from '#lib/search.ts';
+	import { firstYear, FAMILY_OF } from '#lib/graph.ts';
+	import { shortestPath, type Hop, type Via } from '#lib/path.ts';
 
 	const g = $derived(viewer.graph);
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { viewer } from '../viewer.svelte.ts';
-	import { querySearch, type SearchEntry, type SearchHit } from '../search.ts';
+	import { viewer } from '#lib/viewer.svelte.ts';
+	import { querySearch, type SearchEntry, type SearchHit } from '#lib/search.ts';
 
 	let query = $state('');
 	let active = $state(0);

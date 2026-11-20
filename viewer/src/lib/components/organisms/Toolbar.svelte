@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { viewer } from '../viewer.svelte.ts';
-	import { FAMILIES } from '../graph.ts';
-	import { NOW } from '../scale.ts';
+	import { viewer } from '#lib/viewer.svelte.ts';
+	import { FAMILIES } from '#lib/graph.ts';
+	import { NOW } from '#lib/scale.ts';
 
 	const KINDS = ['mechanism', 'machine', 'machine-code', 'formalism', 'notation', 'assembly', 'language'];
 
