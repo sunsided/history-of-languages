@@ -3082,6 +3082,13 @@
     drag statements together to animate 3D scenes. It was built by Randy Pausch's group, first at the University of
     Virginia (1994) and then at Carnegie Mellon. Caitlin Kelleher's Storytelling Alice variant was succeeded by Looking
     Glass at Washington University in St. Louis.
+  relations:
+    - { type: influenced_by, to: logo, aspects: [turtle-graphics], weight: strong, confidence: high, sources: [conway-2000-alice], note: "\"LOGO, Bolio, and the Alternate Reality Kit (ARK) and the animated Self programming environment were all strong influences in the Alice project\"; \"Alice uses LOGO-style, object-centric direction names\"." }
+    - { type: influenced_by, to: self, weight: moderate, confidence: high, sources: [conway-2000-alice], note: "The animated Self environment was among the \"strong influences\"." }
+    - { type: influenced_by, to: smalltalk, weight: weak, confidence: high, sources: [conway-2000-alice], note: "\"Smalltalk and HyperCard both demonstrated that programming-in-the-small was feasible by nonprogrammers.\"" }
+    - { type: influenced_by, to: hypertalk, weight: weak, confidence: medium, sources: [conway-2000-alice], note: "The paper names HyperCard, not HyperTalk." }
+    - { type: dialect_of, to: python, weight: moderate, confidence: high, sources: [conway-2000-alice], note: "\"Alice uses a general purpose, interpreted language called Python\", modified: \"we modified Python's integer division ... Second, we made Python case insensitive.\"" }
+    - { type: implemented_in, to: python, weight: moderate, confidence: high, sources: [conway-2000-alice], note: "\"User scripts are written in Python as is much of the Animation Engine Layer beneath it.\"" }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Alice_(software)" }
@@ -3647,6 +3654,10 @@
     "a graphical dataflow programming software development environment from Keysight Technologies for automated test,
     measurement, data analysis and reporting". It began at HP as HP VEE (Visual Engineering Environment) and has since been renamed
     Keysight VEE.
+  relations:
+    - { type: reacts_against, to: pascal, weight: weak, confidence: high, sources: [hpj-1992-10-vee], note: "\"The initial functionality was specified by the team based on our experience as frustrated users of third-generation languages (3GLs) such as Pascal, C, and BASIC.\"" }
+    - { type: reacts_against, to: c, weight: weak, confidence: high, sources: [hpj-1992-10-vee], note: "\"The initial functionality was specified by the team based on our experience as frustrated users of third-generation languages (3GLs) such as Pascal, C, and BASIC.\"" }
+    - { type: reacts_against, to: basic, weight: weak, confidence: high, sources: [hpj-1992-10-vee], note: "\"The initial functionality was specified by the team based on our experience as frustrated users of third-generation languages (3GLs) such as Pascal, C, and BASIC.\"" }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Keysight_VEE" }
@@ -3711,6 +3722,9 @@
     programme, meant "to replace specialized languages used in the Buran project with one universal programming
     language". Its charts formalise the ISO 5807 flowcharts, and hybrid forms (DRAKON-C, DRAKON-Java, DRAKON-JavaScript)
     generate code in a host language.
+  relations:
+    - { type: embeds, to: c, weight: moderate, confidence: medium, sources: [wiki-drakon], note: "\"DRAKON is a family of hybrid languages, such as DRAKON-C, DRAKON-ASM, DRAKON-Java\"; \"Code snippets of a programming language are added to the DRAKON icons.\"" }
+    - { type: embeds, to: java, weight: moderate, confidence: medium, sources: [wiki-drakon] }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/DRAKON", homepage: "https://drakon.su/start" }

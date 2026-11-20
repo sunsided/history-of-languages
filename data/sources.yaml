@@ -7550,3 +7550,86 @@
   year: 2021
   doi: 10.1109/CGO51591.2021.9370308
   url: https://arxiv.org/abs/2002.11054
+- id: edm2-pilot
+  type: web
+  primary: false
+  authors: [EDM2 wiki]
+  title: PILOT
+  url: https://www.edm2.com/index.php/PILOT
+- id: conway-2000-alice
+  type: paper
+  primary: true
+  authors: [Matthew Conway, Steve Audia, Tommy Burnette, Dennis Cosgrove, Kevin Christiansen, Rob Deline, Jim Durbin, Rich Gossweiler, Shuichi Koga, Chris Long, Beth Mallory, Steve Miale, Kristen Monkaitis, James Patten, Jeffrey Pierce, Joe Shochet, David Staack, Brian Stearns, Richard Stoakley, Chris Sturgill, John Viega, Jeff White, George Williams, Randy Pausch]
+  title: "Alice: Lessons Learned from Building a 3D System for Novices"
+  venue: CHI 2000
+  year: 2000
+  url: https://www.alice.org/wp-content/uploads/2017/04/chialice.pdf
+- id: kodugamelab-github
+  type: web
+  primary: true
+  authors: [Microsoft]
+  title: KoduGameLab source repository
+  url: https://github.com/Microsoft/KoduGameLab
+- id: udell-2007-boku
+  type: web
+  primary: false
+  authors: [Jon Udell]
+  title: Matt MacLaurin on creative expression with Boku
+  year: 2007
+  url: https://blog.jonudell.net/2007/12/10/matt-maclaurin-on-creative-expression-with-boku/
+- id: appinventor-about-2010
+  type: web
+  primary: true
+  authors: [Google]
+  title: "App Inventor for Android: About"
+  year: 2010
+  url: https://web.archive.org/web/20100811023417/http://appinventor.googlelabs.com/about/
+- id: hopl-prograph
+  type: web
+  primary: false
+  authors: [Bill Kinnersley]
+  title: "HOPL: Prograph"
+  url: https://hopl.info/showlanguage.prx?exp=1011
+- id: creative-computing-1983-ceemac
+  type: paper
+  primary: true
+  authors: [Creative Computing]
+  title: "A structured graphics language: Ceemac"
+  venue: Creative Computing 9(1)
+  year: 1983
+  url: https://www.atarimagazines.com/creative/v9n1/54_A_structured_graphics_lan.php
+- id: hpj-1992-10-vee
+  type: paper
+  primary: true
+  authors: [Douglas C. Beethe, William L. Hunt]
+  title: A Visual Engineering Environment for Test Software Development
+  venue: Hewlett-Packard Journal 43(5), pp. 72-77
+  year: 1992
+  url: https://docs.ampnuts.ru/eevblog.docs/HP_Agilent_Keysight/journals/1992-10.pdf
+- id: rutten-2013-gh-vbnet
+  type: web
+  primary: true
+  authors: [David Rutten]
+  title: Forum reply on Grasshopper's implementation language
+  year: 2013
+  url: https://www.grasshopper3d.com/xn/detail/2985220:Comment:896064
+- id: mcneel-script-component
+  type: manual
+  primary: true
+  authors: [Robert McNeel & Associates]
+  title: Grasshopper Script Component
+  url: https://developer.rhino3d.com/guides/scripting/scripting-component/
+- id: xod-github
+  type: web
+  primary: true
+  authors: [XOD Inc]
+  title: xodio/xod repository
+  url: https://github.com/xodio/xod
+- id: edwards-2005-subtext
+  type: paper
+  primary: true
+  authors: [Jonathan Edwards]
+  title: "Subtext: Uncovering the Simplicity of Programming"
+  venue: OOPSLA 2005
+  year: 2005
+  url: http://www.subtext-lang.org/OOPSLA05.pdf

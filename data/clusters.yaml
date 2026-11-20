@@ -537,12 +537,18 @@
     - { name: "Legoscript", hint: "Redirects to Lego Mindstorms, whose readable text does not describe it. No source yet." }
     - { name: "Not eXactly C", hint: "Covered in the Lego Mindstorms NXT article: \"a high-level open source language, similar to C and built on the NBC compiler\", \"basically NQC for the NXT\". No year." }
     - { name: "Not Quite C", hint: "Language for the Lego RCX; Wikipedia has no own article (the URL redirects to Lego Mindstorms). Find the NQC homepage or manual for a date." }
+  research_questions:
+    - "TUTOR, CESIL, FOIL, Haggis and EPL have no documented relation to existing nodes. Searched: Sherwood, The TUTOR Language (1974); the iclces.uk CESIL history; Wikipedia and FOLDOC for FOIL (Hesselbart, ACM 1968, unread); Cutts et al. 2014 (Haggis deliberately follows no existing language); English and Chinese sources for EPL, whose creation year may be 2000 rather than 2004."
+    - "Missing ancestors met while connecting education languages: IBM 1620 (COMPUTEST, the forerunner of PILOT), Common PILOT, Coursewriter (FOIL), the CDC 6600 family (PLATO/TUTOR), cT, TenCORE, the ICL 1900 (CESIL), Kawa (the App Inventor target) and Blockly."
 - id: visual
   name: Visual and dataflow languages
   summary: "Programs drawn as diagrams or patched dataflow graphs: LabVIEW, Prograph, Max and Pure Data."
   research_status: stub
   backlog:
     - { name: "Stateflow", hint: "MathWorks control-logic tool using \"a variant of the finite-state machine notation established by David Harel\" inside Simulink (Wikipedia). No first-release year on the page; find the MathWorks release history." }
+  research_questions:
+    - "Keysight VEE reacts against textual 3GLs in general (Pascal, C, BASIC); no LabVIEW link appears in the primary source. DRAKON Editor generates code in many languages; only the embedding of C and Java by the language family is recorded."
+    - "Missing ancestors met while connecting visual languages: Forms/3 and Coherence (Subtext), PROL2, DIPOL and LAKS (the Buran languages DRAKON replaced), RhinoScript (Grasshopper), the Arduino language (the XOD target), and the 1985 Prograph defining paper (Matwin and Pietrzykowski), which was not read."
 - id: audio
   name: Audio and music languages
   summary: "Languages for sound synthesis and music, from MUSIC-N's unit generators through Csound, SuperCollider and ChucK to live-coding pattern languages such as TidalCycles and Strudel."

@@ -908,6 +908,9 @@
     professor John Starkweather: each line starts with a one-letter command and a colon, T: to type text,
     A: to accept an answer, M: to match it and J: to jump. "Like its sibling LOGO", it was an early attempt at
     teaching with computers. Later versions such as Atari PILOT added turtle graphics.
+  relations:
+    - { type: influenced_by, to: logo, aspects: [turtle-graphics], year: 1981, weight: weak, confidence: medium, sources: [edm2-pilot], note: "Later implementations \"extended the language by adding the turtle graphics system from LOGO, this included ATARI PILOT\"." }
+    - { type: targets, to: intel-8008, year: 1973, weight: weak, confidence: medium, sources: [edm2-pilot], note: "\"he made a implementation for the DATAPOINT 8008 based microcomputer\"." }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/PILOT" }

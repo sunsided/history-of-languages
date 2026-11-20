@@ -3835,6 +3835,9 @@
     actions to be taken on data", from Acadia University in Nova Scotia; Mark Szpakowski "suggested the merger of
     object-orientation with visual dataflow". The commercial Mac products were withdrawn in the late 1990s, and Andescotia's
     Marten IDE supports the language today.
+  relations:
+    - { type: implemented_in, to: pascal, weight: weak, confidence: medium, sources: [hopl-prograph], note: "\"First implemented in Pascal, Acadia U, 1982, later in Prolog at Tech U.\"" }
+    - { type: implemented_in, to: prolog, weight: weak, confidence: medium, sources: [hopl-prograph] }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Prograph" }
@@ -4541,6 +4544,8 @@
     "a visual composition language in which the programmer designs dynamic scores by programmatically controlling color,
     shape, sound and movement" on the Apple II, then "performs" them from the keyboard or paddles. Its syntax "loosely
     resembles a combination of BASIC and Pascal"; it was marketed through the free demo Fire Organ.
+  relations:
+    - { type: influenced_by, to: applesoft-basic, weight: weak, confidence: medium, sources: [creative-computing-1983-ceemac], note: "\"If you are familiar with Applesoft, some of the commands will seem familiar.\"" }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/CEEMAC" }
