@@ -2730,11 +2730,12 @@
 
 - id: cypher
   name: Cypher
+  aliases: [Cypher 9, Neo4j Cypher]
   kind: language
   category: query
   cluster: data
   origin:
-    first_appeared: { year: 2011, precision: year, note: "\"largely an invention of Andrés Taylor while working for Neo4j, Inc. (formerly Neo Technology) in 2011\"." }
+    first_appeared: { year: 2011, precision: year, note: "\"Cypher was largely an invention by Andrés Taylor, engineer at Neo4j ..., in early 2011\" (Francis et al. 2018)." }
     places: [{ institution: Neo4j }]
   creators: [{ name: Andrés Taylor, role: designer }]
   status: active
@@ -2745,27 +2746,37 @@
   milestones:
     - { version: GQL, year: 2024, introduces: [standardization], summary: "Cypher was \"a significant input\" to ISO/IEC 39075:2024 GQL, published April 2024." }
   summary: >
-    Neo4j's "declarative graph query language" for property graphs, whose patterns are drawn in ASCII art:
-    (node)-[:RELATIONSHIP]->(node). "Designed with the power and capability of SQL ... in mind", its specification was opened
-    as openCypher in 2015, and it became a main input to the ISO GQL standard.
+    Neo4j's declarative query language for property graphs, whose patterns are drawn as "ASCII art" such as
+    (a)-[r]->(b). It "is at a syntactic and feature level inspired by SQL, and also incorporates concepts from
+    functional programming, Python and SPARQL", and its queries are a linear flow of clauses (MATCH, WITH, RETURN)
+    rather than SQL's nested subqueries, which its designers relate to Gremlin. Opened as openCypher in 2015, it is
+    implemented beyond Neo4j and was a main input to the ISO GQL standard.
   notes: >
-    GQL is recorded as a milestone rather than a node for now; it may deserve its own node as a separate
-    standard language. Wikipedia's infobox was not captured.
+    GQL is recorded as a milestone rather than a node for now; it may deserve its own node as a separate standard
+    language.
   relations:
-    - { type: influenced_by, to: sql, weight: moderate, confidence: medium, sources: [wiki-cypher], note: "\"designed with the power and capability of SQL ... in mind\"." }
+    - { type: influenced_by, to: sql, weight: strong, confidence: high, sources: [francis-2018-cypher, wiki-cypher], note: "\"at a syntactic and feature level inspired by SQL\"." }
+    - { type: influenced_by, to: sparql, aspects: [pattern-matching], weight: moderate, confidence: high, sources: [francis-2018-cypher], note: "\"Cypher's functionality was influenced by XPath and SPARQL\"." }
+    - { type: influenced_by, to: gremlin, weight: moderate, confidence: medium, sources: [francis-2018-cypher], note: "\"There is a strong family relationship to the feature set of Gremlin, including the concept of a linear flow of successive data operations\"; Gremlin's APIs \"originated in the early incarnations of Neo4j\"." }
+    - { type: influenced_by, to: python, weight: weak, confidence: high, sources: [francis-2018-cypher] }
   research_status: draft
-  confidence: medium
+  confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Cypher_(query_language)" }
-  sources: [wiki-cypher, iso-39075-gql]
+  sources: [francis-2018-cypher, wiki-cypher, iso-39075-gql]
   example:
-    title: A pattern match
-    language: Cypher
-    note: "From Wikipedia. The MATCH pattern is drawn as nodes in parentheses and a typed, directed relationship; $yearParameter is a query parameter."
+    title: Pattern matching with a linear clause flow
+    language: Cypher 9
+    year: 2018
+    note: "Verbatim from Francis et al. 2018 (researchers, the students they supervise, and how often their publications are cited, directly or indirectly)."
     code: |
-      MATCH (nicole:Actor {name: 'Nicole Kidman'})-[:ACTED_IN]->(movie:Movie)
-      WHERE movie.year < $yearParameter
-      RETURN movie
-    sources: [wiki-cypher]
+      MATCH (r:Researcher)
+      OPTIONAL MATCH (r)-[:SUPERVISES]->(s:Student)
+      WITH r, count(s) AS studentsSupervised
+      MATCH (r)-[:AUTHORS]->(p1:Publication)
+      OPTIONAL MATCH (p1)<-[:CITES*]-(p2:Publication)
+      RETURN r.name, studentsSupervised,
+             count(DISTINCT p2) AS citedCount
+    sources: [francis-2018-cypher]
 
 - id: freebasic
   name: FreeBASIC
@@ -9034,6 +9045,7 @@
     features: [pattern-matching, standardization]
     domain: [databases]
   milestones:
+    - { version: "Cypher 9", year: 2017, date: "2017-11", summary: "Cypher Query Language Reference, Version 9: \"the first version of the language governed by the openCypher Implementers Group\"; work on Cypher 10 (graph projections, multiple named graphs) followed.", sources: [francis-2018-cypher] }
     - { version: "1.0.0-M04", year: 2016, date: "2016-12-20", summary: "First tagged release of the specification (grammar, Cypher Improvement Proposals and Technology Compatibility Kit).", sources: [opencypher-repo] }
     - { version: "2024.1", year: 2025, date: "2025-04-08", summary: "First calendar-versioned release after ISO/IEC 39075 GQL (published 11 April 2024); openCypher now evolves by adding GQL features to pave \"the road to GQL for openCypher implementers\".", sources: [opencypher-repo, opencypher-site] }
   summary: >
@@ -9041,13 +9053,14 @@
     or tooling platform" could offer Cypher as "a universal language for querying graph data", with Oracle, Databricks
     and Tableau among the first supporters. It consists of a grammar, Cypher Improvement Proposals and a Technology
     Compatibility Kit, and was steered by the openCypher Implementers Group. It "was a key inspiration for the ISO/IEC
-    39075 GQL project" and now converges towards GQL.
+    39075 GQL project" and now converges towards GQL. By 2018 it was implemented in SAP HANA Graph, RedisGraph,
+    AgensGraph and Memgraph besides Neo4j.
   relations:
     - { type: dialect_of, to: cypher, weight: strong, confidence: high, sources: [opencypher-site, neo4j-2015-opencypher], note: "\"openCypher is an open source specification of Cypher\"; Neo Technology made Cypher \"available to technology providers\"." }
   research_status: draft
   confidence: high
   links: { homepage: "https://opencypher.org/" }
-  sources: [neo4j-2015-opencypher, opencypher-site, opencypher-repo]
+  sources: [neo4j-2015-opencypher, opencypher-site, opencypher-repo, francis-2018-cypher]
   example:
     title: A variable-length pattern from the compatibility kit
     language: openCypher
@@ -9056,3 +9069,48 @@
       MATCH (a)-[r*1..1]->(b)
       RETURN r
     sources: [opencypher-repo]
+
+- id: gremlin
+  name: Gremlin
+  aliases: [Apache TinkerPop, Gremlin-Groovy, Gremlin-Java, Gremlin-Python]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    began: { year: 2009, precision: year, note: "\"The Apache TinkerPop project was started in November 2009\" (Rodriguez 2015); Wikipedia gives 30 October 2009." }
+    first_appeared: { year: 2009, date: "2009-12-25", precision: exact, note: "Version 0.1, per the release history in Wikipedia's Gremlin article (not checked against a TinkerPop release)." }
+  creators:
+    - { name: Marko A. Rodriguez, role: designer }
+  status: active
+  tags:
+    paradigm: [functional, declarative, query]
+    domain: [databases]
+  milestones:
+    - { version: "1.0", year: 2011, date: "2011-05-21", summary: "First 1.0 release.", sources: [wiki-gremlin] }
+    - { version: "2.0", year: 2012, date: "2012-05-24", summary: "Second generation of TinkerPop.", sources: [wiki-gremlin] }
+    - { version: "3.0", year: 2015, date: "2015-07", summary: "TinkerPop3, released as an Apache Incubator project: Gremlin as a traversal machine (in Java 8) plus language bindings in the host language.", sources: [rodriguez-2015-gremlin] }
+  summary: >
+    Apache TinkerPop's graph traversal language and virtual machine. "Gremlin, as a graph traversal language, is a
+    functional language implemented in the user's native programming language": traversals are chains of steps such as
+    g.V().has(...).out(...) written with method chaining in Java, Groovy, Python and other hosts, and run on any graph
+    system that implements the Gremlin machine. Its APIs originated in early Neo4j, and Cypher's designers describe "a
+    strong family relationship" to it.
+  notes: >
+    Wikipedia's infobox lists regular expressions, XPath, Ripple, SPARQL, SQL and Java as influences; the 2015 paper
+    does not state them, so only the Java implementation is recorded.
+  relations:
+    - { type: implemented_in, to: java, weight: moderate, confidence: high, sources: [rodriguez-2015-gremlin], note: "\"TinkerPop distributes a Gremlin machine implemented in Java8 and a Gremlin language binding in both Java8 and Groovy\"." }
+    - { type: influenced_by, to: sparql, weight: weak, confidence: medium, sources: [wiki-gremlin], note: "Wikipedia infobox only." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Gremlin_(query_language)", homepage: "https://tinkerpop.apache.org/" }
+  sources: [rodriguez-2015-gremlin, wiki-gremlin]
+  example:
+    title: A traversal as chained steps
+    language: Gremlin (TinkerPop3)
+    year: 2015
+    note: "Verbatim from Rodriguez 2015: the age of the oldest person that Marko knows."
+    code: |
+      g.V().has("name","marko").
+        out("knows").values("age").max()
+    sources: [rodriguez-2015-gremlin]

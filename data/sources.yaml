@@ -7015,3 +7015,29 @@
   title: openCypher specification repository (grammar, CIPs, TCK)
   url: https://github.com/opencypher/openCypher
   checked: '2026-11-20'
+- id: francis-2018-cypher
+  type: paper
+  primary: true
+  authors: [Nadime Francis, Alastair Green, Paolo Guagliardo, Leonid Libkin, Tobias Lindaaker, Victor Marsault, Stefan Plantikow, Mats Rydberg, Petra Selmer, Andrés Taylor]
+  title: "Cypher: An Evolving Query Language for Property Graphs"
+  venue: SIGMOD 2018
+  year: 2018
+  doi: 10.1145/3183713.3190657
+  url: https://homepages.inf.ed.ac.uk/libkin/papers/sigmod18.pdf
+  checked: '2026-11-20'
+- id: rodriguez-2015-gremlin
+  type: paper
+  primary: true
+  authors: [Marko A. Rodriguez]
+  title: The Gremlin Graph Traversal Machine and Language
+  venue: DBPL 2015 (invited talk)
+  year: 2015
+  doi: 10.1145/2815072.2815073
+  url: https://arxiv.org/abs/1508.03843
+  checked: '2026-11-20'
+- id: wiki-gremlin
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Gremlin (query language)"
+  url: https://en.wikipedia.org/wiki/Gremlin_(query_language)
+  checked: '2026-11-20'
