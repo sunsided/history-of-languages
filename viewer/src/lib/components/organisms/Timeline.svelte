@@ -324,6 +324,63 @@
 		return { example: undefined, title: `${from} → ${to}`, sub: `${FORWARD_LABEL[e.type]}${meta ? ' · ' + meta : ''}`, body: [aspects, e.note].filter(Boolean).join('\n') };
 	});
 
+	// ---- gutter keyboard model: one tab stop, arrows move between rows (tree-view keys) ----
+	let gutter: HTMLDivElement | undefined = $state();
+	/** row the user last focused; falls back to the selection, then the first row, when it disappears */
+	let focusKey = $state<string | null>(null);
+	const keyOf = (r: Row) => `${r.type}:${r.id}`;
+	const tabKey = $derived.by(() => {
+		const keys = new Set(lay.rows.map(keyOf));
+		if (focusKey && keys.has(focusKey)) return focusKey;
+		if (selNode && keys.has(`node:${selNode}`)) return `node:${selNode}`;
+		return lay.rows[0] ? keyOf(lay.rows[0]) : null;
+	});
+
+	function focusRow(i: number) {
+		const r = lay.rows[Math.max(0, Math.min(lay.rows.length - 1, i))];
+		if (!r) return;
+		const key = keyOf(r);
+		focusKey = key;
+		tick().then(() => gutter?.querySelector<HTMLElement>(`.g-row[data-key="${CSS.escape(key)}"]`)?.focus());
+	}
+
+	function onGutterKey(ev: KeyboardEvent) {
+		const el = (ev.target as HTMLElement).closest<HTMLElement>('.g-row');
+		if (!el) return;
+		const i = lay.rows.findIndex((r) => keyOf(r) === el.dataset.key);
+		if (i < 0) return;
+		const row = lay.rows[i];
+		switch (ev.key) {
+			case 'ArrowDown':
+				focusRow(i + 1);
+				break;
+			case 'ArrowUp':
+				focusRow(i - 1);
+				break;
+			case 'Home':
+				focusRow(0);
+				break;
+			case 'End':
+				focusRow(lay.rows.length - 1);
+				break;
+			case 'ArrowRight':
+				if (row.type === 'cluster' && !row.expanded) viewer.toggleCluster(row.id);
+				else focusRow(i + 1);
+				break;
+			case 'ArrowLeft':
+				if (row.type === 'cluster' && row.expanded) viewer.toggleCluster(row.id);
+				else {
+					// parent = nearest earlier cluster row one level up (node rows sit at cluster depth + 1)
+					const p = lay.rows.findLastIndex((r, j) => j < i && r.type === 'cluster' && r.depth < row.depth);
+					if (p >= 0) focusRow(p);
+				}
+				break;
+			default:
+				return;
+		}
+		ev.preventDefault();
+	}
+
 	/** Truncate text to fit a pixel width (rough 6px/char estimate). */
 	function fit(text: string, px: number): string {
 		const max = Math.floor(px / 6);
@@ -388,11 +445,23 @@
 			{/each}
 		</svg>
 
-		<div class="gutter">
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
+		<div
+			class="gutter"
+			bind:this={gutter}
+			onkeydown={onGutterKey}
+			onfocusin={(e) => {
+				const k = (e.target as HTMLElement).closest<HTMLElement>('.g-row')?.dataset.key;
+				if (k) focusKey = k;
+			}}
+		>
+			<p class="sr-only">Clusters and languages. Up and Down move between rows, Right expands a cluster, Left collapses it or goes to its cluster, Enter selects.</p>
 			{#each lay.rows as row (row.type + row.id)}
 				{#if row.type === 'cluster'}
 					<button
 						class="g-row g-cluster"
+						data-key="cluster:{row.id}"
+						tabindex={tabKey === `cluster:${row.id}` ? 0 : -1}
 						style:height="{ROW_H}px"
 						class:selected={viewer.selected?.type === 'cluster' && viewer.selected.id === row.id}
 						class:synthetic={row.info.cluster._synthetic}
@@ -410,6 +479,7 @@
 					</button>
 					<button
 						class="g-info"
+						tabindex={tabKey === `cluster:${row.id}` ? 0 : -1}
 						style:top="{row.y}px"
 						style:height="{ROW_H}px"
 						onclick={() => viewer.selectCluster(row.id)}
@@ -419,6 +489,8 @@
 				{:else}
 					<button
 						class="g-row g-node"
+						data-key="node:{row.id}"
+						tabindex={tabKey === `node:${row.id}` ? 0 : -1}
 						style:height="{ROW_H}px"
 						class:selected={selNode === row.id}
 						aria-pressed={selNode === row.id}
