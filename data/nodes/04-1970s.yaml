@@ -4195,3 +4195,103 @@
       U E 1.3
       = A 1.1
     sources: [siemens-s5-101u-programmieranleitung]
+
+- id: pl-p
+  name: PL/P
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1978, date: "1978-08-25", precision: exact, note: "Internal Prime memo PE-T-483, \"PL/P Specification\", dated August 25, 1978, to R & D personnel. Wikipedia (PRIMOS) dates its adoption to PRIMOS revision 16." }
+    places: [{ institution: Prime Computer, country: US }]
+  creators:
+    - { name: Prime Computer, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured]
+    typing: [static-typing]
+    memory: [pointers]
+    features: [block-structure]
+    domain: [operating-systems]
+  summary: >
+    Prime Computer's systems dialect of PL/I: "a variant of ANSI PL/I: although a subset in most respects, it contains
+    several significant extensions to the standard language". It drops PL/I's input and output, the CONDITION
+    mechanism, ALLOCATE and FREE, and most attributes and built-ins, keeping BASED pointers and structures. "At version
+    16 ... PL/P became the high level language of choice within PRIMOS", and it was used in the kernel until SPL and
+    Modula-2 took over from revision 19.
+  notes: >
+    The 1978 specification is signed by William M. Miller; the language's designers are not otherwise named.
+    Prime's 50-page "Introduction to PL/P" by Clive Backham is dated 7 January 1982 (Computer History Museum catalogue).
+    The date of PRIMOS revision 16 has not been established. SPL, "similar to PL/P", is a candidate node.
+  relations:
+    - { type: dialect_of, to: pl-i, weight: strong, confidence: high, sources: [prime-1978-plp-spec], note: "\"PL/P is a variant of ANSI PL/I: although a subset in most respects, it contains several significant extensions\"." }
+  research_status: stub
+  confidence: high
+  sources: [prime-1978-plp-spec, wiki-primos, chm-1982-introduction-plp]
+
+- id: zopl
+  name: ZOPL
+  aliases: [Z-OPL, OPL (Geac), Our Programming Language]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1970, precision: decade, note: "Wikipedia (Geac): OPL was \"a 1970s high-level minicomputer language\", developed with Geac's own operating system; Geac was incorporated in March 1971. No year is given for OPL or for the change to ZOPL. PLDB says 1979 but cites only Wikipedia." }
+    places: [{ institution: Geac Computer Corporation, country: CA }]
+  creators:
+    - { name: Geac Computer Corporation, role: developer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+  summary: >
+    The in-house systems language of the Canadian company Geac: "Geac's main low-level programming language was called
+    OPL (Our Programming Language) which later became ZOPL (or Z-OPL)". Geac developed it, together with its own
+    operating system, with Dr Michael R Sweet, for its own minicomputers (four models between 1971 and 1977, among them
+    the Geac 8000). Geac's higher-level application languages, such as Hugo for the library division, were
+    quite different from ZOPL.
+  notes: >
+    Wikipedia mirrors claim ZOPL resembled BCPL and was later ported to VAX/VMS, Unix and Windows by CGI; those claims
+    were not in the Wikipedia text read here. Dating and design need a Geac manual or a former Geac developer's account.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Geac_Computer_Corporation" }
+  sources: [wiki-geac]
+
+- id: cybil
+  name: CYBIL
+  aliases: [Cybil, CYBER Implementation Language]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 1978, date: "1978-12-15", precision: exact, note: "Internal: the CDC \"Handbook for the Cyber Implementation Language (CYBIL)\" lists revision A, \"Original\", dated 12/15/78 (revision G, 83/07/06, describes compilers on the CYBER 170). The first external Language Definition, revision A, is dated February 1984 for NOS/VE 1.0.2." }
+    places: [{ institution: Control Data Corporation, country: US }]
+  creators:
+    - { name: Control Data Corporation, role: developer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural, structured, modular]
+    typing: [static-typing, strong-typing]
+    memory: [pointers]
+    features: [modules, records, separate-compilation]
+    domain: [operating-systems]
+  milestones:
+    - { version: Language Definition rev. A, year: 1984, summary: "February 1984, with NOS/VE 1.0.2." }
+    - { version: Language Definition rev. D, year: 1985, summary: "October 1985, NOS/VE 1.1.3: #SEQ, adaptable types as #SIZE arguments, INLINE functions." }
+  summary: >
+    Control Data's "Pascal-like" Cyber Implementation Language, in which the NOS/VE operating system for the CDC
+    Cyber series was written; it was also used for the eOS operating system of the ETA10 supercomputer. Programs are
+    MODULEs of declarations and procedures compiled separately and linked; beyond Pascal's types it has cells (the
+    smallest addressable unit), sequences and heaps under explicit storage management, adaptable (run-time sized)
+    types, and read-only or read/write SECTIONs to place variables.
+  notes: >
+    The 1983 handbook (submitted by H. A. Wohlwend) went through revisions A to G between December 1978 and July 1983. The
+    language definition mentions "variations of CYBIL available on other operating systems". Ragan's 1985 SIGPLAN
+    Notices paper is the published description; it was not read in this run, and the designers are not named in what
+    was read.
+  relations:
+    - { type: influenced_by, to: pascal, weight: strong, confidence: medium, sources: [wiki-cybil], note: "Wikipedia: \"a Pascal-like programming language\"." }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Cybil_(programming_language)" }
+  sources: [cdc-1983-cybil-handbook, cdc-1985-cybil-language-definition, wiki-cybil, ragan-1985-cybil]

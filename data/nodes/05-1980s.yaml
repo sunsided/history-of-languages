@@ -5961,3 +5961,77 @@
       $close democursor;
       }
     sources: [informix-1989-esqlc-v4]
+
+- id: cedar
+  name: Cedar
+  aliases: [Cedar Mesa]
+  kind: language
+  category: systems
+  cluster: algol/wirth
+  origin:
+    began: { year: 1979, precision: year, note: "\"the decision was made in early 1979 to launch a project to build Cedar, an experimental programming environment, starting with Mesa\"; work began in 1979 (Teitelman 1984)." }
+    first_appeared: { year: 1981, precision: year, note: "First usable system, internal to Xerox PARC: \"by mid-1981, approximately ten programmers were using the core facilities\"; Cedar 2.0, the first release made with the Release Tool, \"took place in October 1981\"." }
+    places: [{ institution: Xerox PARC, city: Palo Alto, country: US }]
+  status: extinct
+  tags:
+    paradigm: [imperative, modular]
+    typing: [static-typing, strong-typing]
+    memory: [garbage-collection, reference-counting]
+    features: [modules, exceptions, safe-unsafe-split, reflection]
+  milestones:
+    - { version: "2.0", year: 1981, summary: "October 1981: first release built with the Release Tool, 22 components." }
+    - { version: "4.0", year: 1983, summary: "Released March 1983." }
+  summary: >
+    Xerox PARC's language and programming environment of the early 1980s: "a direct descendant of Mesa" whose
+    "safe storage" extensions add garbage-collected REF types, REF ANY with run-time type checks, ROPEs
+    (variable-length text strings) and Lisp-like ATOMs. A compiler-enforced Safe subset kept programs from corrupting the
+    collector. The goal was "to combine a compiled, strongly-typed language with the interpretive symbolic power of
+    Interlisp or Smalltalk", two of the three PARC programming cultures of 1978 (Mesa was the third).
+  notes: >
+    The backlog entry gave 1983; Teitelman's midterm report dates the project to 1979 and the first usable releases
+    to 1981. 1980 brought "reference-counted assignments, type equivalence, run-time type checking, and LISP-like atoms
+    and lists" into the Mesa compiler and runtime, plus an incremental garbage collector. The language's designers are
+    not named in the sources read here; Lampson's "A Description of the Cedar Language" is the one to read for that.
+  relations:
+    - { type: superset_of, to: mesa, weight: strong, confidence: high, sources: [xerox-cedar-overview, teitelman-1984-cedar-midterm, wiki-mesa-cedar], note: "\"The Cedar language is a direct descendant of Mesa\"; the project chose to start \"with Mesa\" in early 1979. Wikipedia: \"a superset of Mesa\"." }
+    - { type: influenced_by, to: interlisp, aspects: [garbage-collection, reflection], weight: moderate, confidence: high, sources: [xerox-cedar-overview, teitelman-1984-cedar-midterm], note: "\"An original goal for Cedar was to combine a compiled, strongly-typed language with the interpretive symbolic power of Interlisp or Smalltalk.\" Working-group members \"with experience in the Lisp world would consider garbage collection non-negotiable\" (Teitelman 1984)." }
+    - { type: influenced_by, to: smalltalk, weight: weak, confidence: medium, sources: [xerox-cedar-overview], note: "Named with Interlisp in the stated goal; no specific feature is attributed to Smalltalk." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Mesa_(programming_language)#Cedar" }
+  sources: [teitelman-1984-cedar-midterm, xerox-cedar-overview, wiki-mesa-cedar]
+
+- id: objective-cpp
+  name: Objective-C++
+  aliases: [ObjC++]
+  kind: language
+  category: general
+  cluster: c-family
+  origin:
+    first_appeared: { year: 1989, precision: year, note: "Wikipedia: NeXT developed it \"at the request of Lotus Development during the development of the Improv spreadsheet program in 1989\"." }
+    places: [{ institution: NeXT, country: US }]
+  creators:
+    - { name: NeXT, role: developer }
+  status: active
+  tags:
+    paradigm: [object-oriented, imperative, generic-programming]
+    typing: [static-typing, dynamic-typing]
+    features: [message-passing, late-binding, templates, c-interop]
+  summary: >
+    A language variant accepted by the GCC and Clang front ends that compiles source files mixing C++ and
+    Objective-C syntax. NeXT made it for Lotus while Lotus was writing Improv. The two object models stay separate: C++ and
+    Objective-C classes cannot inherit from each other, and Objective-C declarations cannot sit inside C++
+    namespaces or templates.
+  notes: >
+    The backlog entry gave 2000; Wikipedia's Objective-C article dates the variant to NeXT and Lotus Improv in
+    1989. Exception interoperability depends on the runtime; on macOS a C++11 lambda passed where a block is expected
+    is converted to a block. Wikipedia's raw text cites Cox, Naroff and Hsu (HOPL IV, 2020), pp. 24-25 for the 1989
+    date; that passage was not re-read here.
+  relations:
+    - { type: superset_of, to: objective-c, weight: strong, confidence: medium, sources: [wiki-objective-c-cpp], note: "Compiles source files that combine Objective-C and C++ syntax." }
+    - { type: superset_of, to: cpp, weight: strong, confidence: medium, sources: [wiki-objective-c-cpp] }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Objective-C#Objective-C++" }
+  sources: [wiki-objective-c-cpp]
+

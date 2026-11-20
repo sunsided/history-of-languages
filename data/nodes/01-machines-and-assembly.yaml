@@ -3193,3 +3193,34 @@
         }
       }
     sources: [lattner-2021-mlir]
+
+- id: ibm-1401-sps
+  name: IBM 1401 Symbolic Programming System
+  aliases: [SPS, SPS-1, SPS-2, 1401 SPS]
+  kind: assembly
+  category: business
+  cluster: assembly/ibm
+  origin:
+    first_appeared: { year: 1959, precision: year, note: "\"announced by IBM with the machine\" (Wikipedia), i.e. with the 1401 in October 1959; the preliminary specifications bulletin J28-0200 carries a 1959 copyright (revision J28-200-1, January 1960: \"© 1959 and 1960\")." }
+    places: [{ institution: IBM, country: US }]
+  creators:
+    - { name: Gary Mokotoff, role: developer, affiliation: IBM Applied Programming Department }
+  status: extinct
+  tags:
+    features: [assembly-language]
+  summary: >
+    The card-based assembler announced with the IBM 1401: "a symbolic programming and assembly system developed by
+    IBM to simplify the preparation of programs for the IBM 1401 Data Processing System", with mnemonic operation codes,
+    symbolic addresses and relocatable output, one coding-sheet line per card. Its two-pass processor needed only a
+    1402 card read punch. SPS-1 fitted the smallest 1.4K machines; SPS-2 needed 4K. It was displaced by the more
+    capable Autocoder, which used different mnemonics.
+  notes: >
+    The backlog listed it under algol/systems; it is an assembler and belongs in assembly/ibm. SPS-1 ran on a 1.4K
+    machine and punched one card per instruction in pass 1, read again in pass 2; SPS-2 needed at least 4K. The SPS-2
+    date is not established. The full manual C24-1480-0 (1962) was not reachable in this run.
+  relations:
+    - { type: targets, to: ibm-1401, weight: strong, confidence: high, sources: [ibm-1960-1401-sps-prelim, wiki-ibm-1401-sps] }
+  research_status: stub
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/IBM_1401_Symbolic_Programming_System" }
+  sources: [ibm-1960-1401-sps-prelim, wiki-ibm-1401-sps]

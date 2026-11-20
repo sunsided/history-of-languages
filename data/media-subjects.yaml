@@ -2632,3 +2632,15 @@
   wiki: Vladimir Pentkovski
   nodes:
   - el-76
+- id: person-christophe-de-dinechin
+  kind: person
+  person: Christophe de Dinechin
+  wiki: Christophe de Dinechin
+  nodes:
+  - xl
+- id: person-gary-mokotoff
+  kind: person
+  person: Gary Mokotoff
+  wiki: Gary Mokotoff
+  nodes:
+  - ibm-1401-sps

@@ -9830,3 +9830,220 @@
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Graph_Query_Language", homepage: "https://www.gqlstandards.org/" }
   sources: [iso-39075-gql, green-2016-property-graph-standard, green-2018-gql-nwip, opencypher-site, wiki-gql]
+
+- id: vale
+  name: Vale
+  aliases: [GelLLVM]
+  kind: language
+  category: systems
+  cluster: c-family/safe
+  origin:
+    first_appeared: { year: 2020, precision: circa, note: "The ValeLang/Vale compiler repository was created on 28 June 2020 (GitHub API); the first tagged release, v0.1.4, is dated 31 December 2021. The site says it was \"Previously known as GelLLVM\". No earlier public date was read." }
+  creators:
+    - { name: Evan Ovadia, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, generic-programming]
+    typing: [static-typing, type-inference]
+    memory: [move-semantics, raii]
+    features: [generics]
+  milestones:
+    - { version: "0.1.4", year: 2021, summary: "First tagged release on GitHub, 31 December 2021." }
+    - { version: "0.2", year: 2022, summary: "Beta 21 March 2022, released 10 May 2022." }
+  summary: >
+    An ahead-of-time compiled, statically typed language on LLVM that aimed at memory safety "on par with languages
+    like C++ and Rust" without a borrow checker. Its central idea is the generational reference, offered for "memory
+    safety with speed and flexibility": Ovadia describes it as similar to the generational indices technique "from C++
+    and Rust", applied to the whole program instead of a single vector. Around it sit single ownership with move
+    semantics, "Higher RAII" and planned regions. The project is archived; its site names Valen as the successor.
+  relations:
+    - { type: influenced_by, to: cpp, aspects: [move-semantics, raii], weight: moderate, confidence: high, sources: [ovadia-2023-generational-references], note: "\"Single ownership is a C++ concept\"; generational references are \"similar to\" generational indices \"from C++ and Rust\"." }
+    - { type: influenced_by, to: rust, weight: weak, confidence: medium, sources: [ovadia-2023-generational-references], note: "Generational indices \"from C++ and Rust\"; Rust is otherwise the language Vale compares itself against, not a stated model." }
+  research_status: stub
+  confidence: medium
+  links: { homepage: "https://vale.dev" }
+  sources: [vale-site, vale-repo, ovadia-2023-generational-references]
+  example:
+    title: Hello world
+    language: Vale
+    year: 2022
+    note: "From the Vale home page."
+    code: |
+      import stdlib.*;
+
+      exported func main() {
+        println("Hello world!");
+      }
+    sources: [vale-site]
+
+- id: austral
+  name: Austral
+  kind: language
+  category: systems
+  cluster: c-family/safe
+  origin:
+    began: { year: 2018, precision: year, note: "The austral/austral compiler repository was created on 25 September 2018 (GitHub API)." }
+    first_appeared: { year: 2022, precision: exact, note: "Announced in Borretti's \"Introducing Austral\", 28 December 2022. The site's copyright runs from 2021." }
+  creators:
+    - { name: Fernando Borretti, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural, modular]
+    typing: [static-typing, strong-typing, linear-types, type-classes]
+    memory: [manual-memory, ownership-borrowing]
+    features: [modules, pattern-matching, algebraic-data-types]
+  summary: >
+    A small systems language built on linear types: a linear value must be used exactly once, which rules out leaks,
+    double frees and use-after-free without a garbage collector or runtime cost. Linear capabilities extend the same
+    check to security, so filesystem or network access needs an explicit capability. Borretti calls it "a modernized,
+    stripped-down Ada"; its borrowing is "stolen lock, stock, and barrel from Rust", its typeclasses work "as in
+    Haskell". No exceptions, no null, no implicit conversions and no operator precedence.
+  relations:
+    - { type: influenced_by, to: ada, aspects: [modules], weight: strong, confidence: high, sources: [borretti-2022-introducing-austral], note: "\"a modernized, stripped-down Ada\"; the module system, split into interface and implementation, is \"Ada-inspired\"." }
+    - { type: influenced_by, to: rust, aspects: [ownership-borrowing], weight: strong, confidence: high, sources: [borretti-2022-introducing-austral], note: "Borrowing is \"stolen lock, stock, and barrel from Rust.\"" }
+    - { type: influenced_by, to: haskell, aspects: [type-classes], weight: moderate, confidence: high, sources: [borretti-2022-introducing-austral], note: "Typeclasses work \"as in Haskell\"." }
+    - { type: implemented_in, to: ocaml, weight: weak, confidence: high, sources: [borretti-2022-introducing-austral], note: "The compiler is written in OCaml." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://austral-lang.org" }
+  sources: [borretti-2022-introducing-austral, austral-site]
+  example:
+    title: Hello world
+    language: Austral
+    year: 2022
+    note: "From \"Introducing Austral\"."
+    code: |
+      function main(): ExitCode is
+          printLn("Hello, world!");
+          return ExitSuccess();
+      end;
+    sources: [borretti-2022-introducing-austral]
+
+- id: hylo
+  name: Hylo
+  aliases: [Val]
+  kind: language
+  category: systems
+  cluster: c-family/safe
+  origin:
+    began: { year: 2021, precision: year, note: "The original compiler repository (now hylo-lang/hylo-old) was created on 24 January 2021 (GitHub API); the 2021 paper \"Native Implementation of Mutable Value Semantics\" is listed on the site." }
+    first_appeared: { year: 2022, precision: year, note: "Presented publicly as Val in 2022 (\"The Val Object Model\", CppCon 2022 talk \"Val: A Safe Language to Interoperate with C++\"). Later renamed Hylo; the rename date was not found." }
+  creators:
+    - { name: Dimi Racordon, role: designer }
+    - { name: Dave Abrahams, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, generic-programming]
+    typing: [static-typing]
+    features: [generics]
+  summary: >
+    "A Safe Systems Programming Language" that is "All in on Value Semantics and Generic Programming": it "leverages
+    mutable value semantics and generic programming for high-level systems programming". Subscripts can project a part
+    of a value for in-place mutation (inout yields). The team's earlier work formalised Swift's value semantics, and it
+    was first presented as Val, "A Safe Language to Interoperate with C++". The compiler uses LLVM.
+  notes: >
+    The backlog entry grouped it with Vale and Austral at 2020; the earliest dated items found are the 2021 repository
+    and paper. Racordon and Abrahams lead the papers and talks listed on the site; Sean Parent co-wrote "The Val Object
+    Model". The compiler is written in Swift.
+  relations:
+    - { type: influenced_by, to: swift, weight: moderate, confidence: low, sources: [hylo-site], note: "Inferred: the site lists the team's earlier \"A Formal Definition of Swift's Value Semantics\" (2020) and \"Extending Swift's subscripts with inout projections\", but no sentence read states the influence. A designer statement (talk or paper) naming Swift as the model would confirm it." }
+    - { type: implemented_in, to: swift, weight: weak, confidence: high, sources: [hylo-repo], note: "\"This project is written in Swift\"." }
+  research_status: stub
+  confidence: medium
+  links: { homepage: "https://www.hylo-lang.org" }
+  sources: [hylo-site, hylo-repo]
+  example:
+    title: An inout subscript
+    language: Hylo
+    note: "From the Hylo home page: \"A subscript projecting the lesser of two variables, which the caller increments in place.\""
+    code: |
+      subscript min(a: inout Int, b: inout Int) inout -> Int {
+        if a < b { yield &a } else { yield &b }
+      }
+      var (x, y) = (4, 2)
+      inout m = &min[&x, &y]
+      &m += 1  // y is now 3
+    sources: [hylo-site]
+
+- id: xl
+  name: XL
+  aliases: [eXtensible Language, LX, Mozart, WASHB]
+  kind: language
+  category: general
+  cluster: algol/systems
+  origin:
+    began: { year: 1990, precision: year, note: "Started as LX (\"Langage experimental\") in 1990 after de Dinechin's training period on the Alsys Ada compiler; renamed \"extensible\" circa 1992, and LX became XL after he joined HP's California Language Lab in 1998 (XL handbook, History)." }
+    first_appeared: { year: 2000, precision: circa, note: "Open-sourced as \"Mozart\" on SourceForge after Daveed Vandevoorde left HP CLL; the handbook speaks of \"2000-vintage XL\" but gives no exact release date." }
+    places: [{ institution: Hewlett-Packard, city: Cupertino, country: US }]
+  creators:
+    - { name: Christophe de Dinechin, role: designer }
+  status: active
+  tags:
+    paradigm: [imperative, functional]
+    typing: [static-typing]
+    features: [metaprogramming, macros, offside-rule, generics, pattern-matching]
+  summary: >
+    Christophe de Dinechin's eXtensible Language, whose syntax and semantics are reconfigurable by the programmer:
+    the parse tree is a public API and compiler plug-ins (first through pragmas) add language features, so arrays,
+    tasking and I/O live in libraries rather than as keywords. It began as "WASHB" (What Ada Should Have Been), an
+    Ada-style language without Ada's built-in magic; around 1999 it switched to the off-side rule. Later versions
+    reduce the language to parse-tree rewrites (0! is 1, N! is N * (N-1)!). The theory behind it is de Dinechin's
+    "concept programming"; Tao3D, a real-time 3D document language, is built on it.
+  notes: >
+    Dates come from de Dinechin's own history in the XL handbook, written from memory decades later. The current
+    compiler repository (c3d/xl) dates from 2012. Briefly merged with Daveed Vandevoorde's Xroma at HP CLL.
+  relations:
+    - { type: influenced_by, to: ada, weight: strong, confidence: high, sources: [xl-handbook], note: "\"the very first codename for it was 'WASHB' (What Ada Should Have Been)\"; it kept \"an Ada-style syntax and semantics\" while moving tasking and arrays into libraries." }
+    - { type: reacts_against, to: ada, weight: moderate, confidence: high, sources: [xl-handbook], note: "\"What did I dislike about Ada? I never liked magic in a language.\" Built-in tasks, arrays, one-argument text I/O and pragmas are listed as frustrations." }
+  research_status: draft
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Christophe_de_Dinechin", homepage: "https://github.com/c3d/xl" }
+  sources: [xl-handbook, wiki-christophe-de-dinechin]
+  example:
+    title: Factorial as rewrite rules
+    language: XL
+    note: "From the XL handbook (c3d/xl, docs/HANDBOOK.adoc, section Factorial). Definitions are patterns rewritten by the compiler."
+    code: |
+      use IO = XL.CONSOLE.TEXT_IO
+
+      0! is 1
+      N! is N * (N-1)!
+
+      for I in 1..5 loop
+          IO.print "The factorial of ", I, " is ", I!
+    sources: [xl-handbook]
+
+- id: xc-xmos
+  name: XC
+  aliases: [xC]
+  kind: language
+  category: systems
+  cluster: algol/systems
+  origin:
+    first_appeared: { year: 2009, precision: circa, note: "Wikipedia: \"introduced by XMOS in the late 2000s\" (uncited). The earliest dated document read is Douglas Watt, Programming XC on XMOS Devices, copyright 2009." }
+    places: [{ institution: XMOS }]
+  creators:
+    - { name: XMOS, role: developer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural, concurrent]
+    typing: [static-typing]
+    concurrency: [channels]
+    domain: [embedded]
+  summary: >
+    XMOS's language for its xcore multicore microcontrollers, "developed by XMOS to support real-time, embedded,
+    and parallel programming". It combines elements of C with occam-style concurrency built on Hoare's CSP: par
+    statements, channels between hardware threads, ports and timers as language types, and events for low-latency
+    signalling. It "remains a key part of the legacy toolchain" in the XTC Tools, while XMOS has moved its tooling
+    towards standard C and C++.
+  notes: >
+    No exact release date found. Wikipedia lists David May among XMOS's founders and calls channels and threads a
+    "Transputer legacy", but of XMOS technology in general, not of XC specifically.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: medium, sources: [wiki-xmos], note: "XC \"combines elements of C\"." }
+    - { type: influenced_by, to: occam, aspects: [channels], weight: strong, confidence: medium, sources: [wiki-xmos], note: "XC builds \"on the principles of the occam programming language\"." }
+    - { type: influenced_by, to: csp, aspects: [channels], weight: moderate, confidence: medium, sources: [wiki-xmos], note: "Wikipedia names the Communicating Sequential Processes model developed by Tony Hoare as a foundation." }
+  research_status: stub
+  confidence: medium
+  links: { wikipedia: "https://en.wikipedia.org/wiki/XMOS" }
+  sources: [wiki-xmos, watt-2009-programming-xc]

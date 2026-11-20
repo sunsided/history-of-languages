@@ -8562,4 +8562,195 @@
   title: Generics in Java
   venue: Wikipedia
   url: https://en.wikipedia.org/wiki/Generics_in_Java
+- id: teitelman-1984-cedar-midterm
+  type: report
+  primary: true
+  authors: [Warren Teitelman]
+  title: "The Cedar Programming Environment: A Midterm Report and Examination"
+  venue: Xerox PARC CSL-83-11
+  year: 1984
+  url: https://worrydream.com/refs/Teitelman_1984_-_The_Cedar_Programming_Environment,_A_Midterm_Report_and_Examination.pdf
+  checked: '2026-11-20'
+- id: xerox-cedar-overview
+  type: report
+  primary: true
+  authors: [Xerox PARC]
+  title: "Cedar Overview (section 2 of a Cedar paper in the Xerox PARC Indigo archive)"
+  url: https://xeroxparcarchive.computerhistory.org/indigo/voice/cedarpaper/.part1.tioga!3.html
+  checked: '2026-11-20'
+- id: wiki-mesa-cedar
+  type: encyclopedia
+  primary: false
+  title: "Mesa (programming language), section Cedar"
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Mesa_(programming_language)
+  checked: '2026-11-20'
+- id: wiki-objective-c-cpp
+  type: encyclopedia
+  primary: false
+  title: "Objective-C, section Objective-C++"
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Objective-C
+  checked: '2026-11-20'
+- id: vale-site
+  type: web
+  primary: true
+  authors: [Evan Ovadia]
+  title: The Vale Programming Language (home page)
+  url: https://vale.dev/
+  checked: '2026-11-20'
+- id: vale-repo
+  type: web
+  primary: true
+  authors: [Evan Ovadia]
+  title: "ValeLang/Vale (GitHub repository: created 28 June 2020, v0.1.4 on 31 December 2021, v0.2.0 on 12 May 2022)"
+  url: https://github.com/ValeLang/Vale
+  checked: '2026-11-20'
+- id: ovadia-2023-generational-references
+  type: web
+  primary: true
+  authors: [Evan Ovadia]
+  title: "Generational References (updated 9 July 2023, first version 2021)"
+  year: 2023
+  url: https://verdagon.dev/blog/generational-references
+  checked: '2026-11-20'
+- id: borretti-2022-introducing-austral
+  type: web
+  primary: true
+  authors: [Fernando Borretti]
+  title: "Introducing Austral: A Systems Language with Linear Types and Capabilities"
+  year: 2022
+  url: https://borretti.me/article/introducing-austral
+  checked: '2026-11-20'
+- id: austral-site
+  type: web
+  primary: true
+  authors: [Fernando Borretti]
+  title: Austral (home page)
+  url: https://austral-lang.org/
+  checked: '2026-11-20'
+- id: hylo-site
+  type: web
+  primary: true
+  authors: [Hylo project]
+  title: "Hylo: A Safe Systems Programming Language (home page, with publications and talks)"
+  url: https://www.hylo-lang.org/
+  checked: '2026-11-20'
+- id: hylo-repo
+  type: web
+  primary: true
+  authors: [Hylo project]
+  title: "hylo-lang/hylo (GitHub repository of the former implementation; created 24 January 2021)"
+  url: https://github.com/hylo-lang/hylo
+  checked: '2026-11-20'
+- id: xl-handbook
+  type: manual
+  primary: true
+  authors: [Christophe de Dinechin]
+  title: "XL handbook, section History of XL (docs/HANDBOOK.adoc in c3d/xl)"
+  url: https://github.com/c3d/xl/blob/master/docs/HANDBOOK.adoc
+  checked: '2026-11-20'
+- id: wiki-christophe-de-dinechin
+  type: encyclopedia
+  primary: false
+  title: Christophe de Dinechin
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Christophe_de_Dinechin
+  checked: '2026-11-20'
+- id: wiki-xmos
+  type: encyclopedia
+  primary: false
+  title: "XMOS, section XC"
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/XMOS
+  checked: '2026-11-20'
+- id: watt-2009-programming-xc
+  type: book
+  primary: true
+  authors: [Douglas Watt]
+  title: Programming XC on XMOS Devices
+  venue: XMOS Limited, ISBN 978-1-907361-00-5
+  year: 2009
+  url: "https://1m2n3b4v.xmos.com/download/Programming-XC-on-XMOS-Devices(X9577A).pdf"
+- id: ibm-1960-1401-sps-prelim
+  type: manual
+  primary: true
+  authors: [IBM]
+  title: "IBM 1401 Symbolic Programming System: Preliminary Specifications (1401 Data Processing System Bulletin J28-200-1, revision of J28-0200)"
+  year: 1960
+  url: https://bitsavers.org/pdf/ibm/1401/J28-200-1_IBM_1401_Symbolic_Programming_System_Preliminary_Specifications_Jan60.pdf
+  checked: '2026-11-20'
+- id: wiki-ibm-1401-sps
+  type: encyclopedia
+  primary: false
+  title: IBM 1401 Symbolic Programming System
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/IBM_1401_Symbolic_Programming_System
+  checked: '2026-11-20'
+- id: prime-1978-plp-spec
+  type: report
+  primary: true
+  authors: [William M. Miller]
+  title: "PL/P Specification (Prime Computer memo PE-T-483, 25 August 1978)"
+  year: 1978
+  url: "https://sysovl.info/pages/blobs/prime/pet/pe-t-483%20PLP%201978.pdf"
+  checked: '2026-11-20'
+- id: wiki-primos
+  type: encyclopedia
+  primary: false
+  title: PRIMOS
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/PRIMOS
+  checked: '2026-11-20'
+- id: chm-1982-introduction-plp
+  type: manual
+  primary: true
+  authors: [Clive Backham]
+  title: "Introduction to PL/P (Prime Computer, 7 January 1982; Computer History Museum catalogue 102703289)"
+  year: 1982
+  url: https://www.computerhistory.org/collections/catalog/102703289
+- id: cdc-1985-cybil-language-definition
+  type: manual
+  primary: true
+  authors: [Control Data Corporation]
+  title: "CYBIL for NOS/VE Language Definition, Revision D (October 1985)"
+  year: 1985
+  url: https://bitsavers.org/pdf/cdc/Tom_Hunter_Scans/CYBILForNOSVELanguageDefinition_6046411e.OCRTextUnder300.pdf
+  checked: '2026-11-20'
+- id: wiki-cybil
+  type: encyclopedia
+  primary: false
+  title: Cybil (programming language)
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Cybil_(programming_language)
+  checked: '2026-11-20'
+- id: ragan-1985-cybil
+  type: paper
+  primary: true
+  authors: [Richard R. Ragan]
+  title: "CYBIL - CYBER Implementation Language"
+  venue: ACM SIGPLAN Notices 20(5), 21-30
+  year: 1985
+  url: https://dblp.org/rec/journals/sigplan/Ragan85.html
+- id: wiki-geac
+  type: encyclopedia
+  primary: false
+  title: Geac Computer Corporation
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Geac_Computer_Corporation
+  checked: '2026-11-20'
+- id: wiki-rational-synergy
+  type: encyclopedia
+  primary: false
+  title: Rational Synergy
+  venue: Wikipedia
+  url: https://en.wikipedia.org/wiki/Rational_Synergy
+  checked: '2026-11-20'
+- id: cdc-1983-cybil-handbook
+  type: manual
+  primary: true
+  authors: [Control Data Corporation]
+  title: "Handbook for the Cyber Implementation Language (CYBIL), revision G (83/07/06; revision A dated 12/15/78)"
+  year: 1983
+  url: https://bitsavers.org/pdf/cdc/Tom_Hunter_Scans/L457290.pdf
   checked: '2026-11-20'

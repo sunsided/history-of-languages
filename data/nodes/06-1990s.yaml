@@ -5683,3 +5683,32 @@
       END_IF;
       END_FUNCTION
     sources: [siemens-2005-s7-scl]
+
+- id: accent-caseware
+  name: ACcent
+  aliases: [Accent (Rational Synergy), ACcent (CaseWare)]
+  kind: language
+  category: domain-specific
+  cluster: algol/systems
+  origin:
+    began: { year: 1988, precision: year, note: "\"Synergy began in 1988 as a research project for computer-aided software engineering by software developer Pete Orelup\"; in 1989 the company turned to configuration management." }
+    first_appeared: { year: 1990, precision: circa, note: "The CaseWare/Amplify Control product, \"first released in 1990\", was written entirely in ACcent, and ACcent \"pre-dates [Java] by five years\" (Wikipedia: Rational Synergy). No release date for the language itself." }
+    places: [{ institution: CaseWare }]
+  creators:
+    - { name: CaseWare, role: developer }
+  status: extinct
+  tags:
+    features: [bytecode-vm]
+  summary: >
+    The language CaseWare created for its software configuration management tool (CaseWare/Amplify Control, renamed
+    Continuus in 1993; the product line is now Rational Synergy): "the entire Amplify Control product was written in the ACcent language".
+    Its compiler produces machine-independent byte-codes, and Wikipedia says it "has many features similar to Java,
+    but pre-dates it by five years".
+  notes: >
+    The backlog placed it in algol/systems; nothing read describes its syntax or ancestry, so the cluster is
+    provisional. Pete Orelup led the 1988 research project, but no source read names ACcent's designer. Which "features
+    similar to Java" it had is not stated.
+  research_status: stub
+  confidence: low
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Rational_Synergy" }
+  sources: [wiki-rational-synergy]
