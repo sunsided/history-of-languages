@@ -635,9 +635,6 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
-	.corner .hint {
-		opacity: 0.7;
-	}
 	.axis {
 		position: sticky;
 		top: 0;
@@ -678,7 +675,7 @@
 	}
 	.tick-label {
 		font-size: 10px;
-		fill: var(--fg-faint);
+		fill: var(--fg-subtle);
 		text-anchor: middle;
 	}
 	.tick-label.major {
@@ -741,7 +738,7 @@
 		align-items: center;
 		justify-content: center;
 		font-size: 13px;
-		color: var(--fg-faint);
+		color: var(--fg-subtle);
 		cursor: pointer;
 		z-index: 1;
 	}
@@ -760,14 +757,13 @@
 	}
 	.g-meta {
 		font-size: 10.5px;
-		color: var(--fg-faint);
+		color: var(--fg-subtle);
 		font-weight: 400;
 		font-variant-numeric: tabular-nums;
 	}
 	.backlog-count {
 		margin-left: 3px;
-		color: var(--fg-faint);
-		opacity: 0.8;
+		color: var(--fg-subtle);
 	}
 	.g-node.dim {
 		opacity: 0.4;
@@ -778,7 +774,7 @@
 	.chev {
 		display: inline-block;
 		width: 10px;
-		transition: transform 0.12s;
+		transition: transform var(--duration-fast);
 		color: var(--fg-muted);
 	}
 	.chev.open {
@@ -803,7 +799,7 @@
 		height: 8px;
 		border-radius: 50%;
 		flex: none;
-		background: var(--k);
+		background: var(--kind);
 	}
 
 	/* plot */
@@ -844,9 +840,9 @@
 
 	.edge {
 		fill: none;
-		stroke: var(--f);
+		stroke: var(--fam);
 		opacity: 0.55;
-		transition: opacity 0.12s;
+		transition: opacity var(--duration-fast);
 	}
 	.edge.fam-reaction {
 		stroke-dasharray: 6 3;
@@ -866,31 +862,13 @@
 		stroke-width: 3;
 	}
 	.arrowhead {
-		fill: var(--f);
-	}
-	.fam-succession {
-		--f: var(--fam-succession);
-	}
-	.fam-influence {
-		--f: var(--fam-influence);
-	}
-	.fam-variant {
-		--f: var(--fam-variant);
-	}
-	.fam-targets {
-		--f: var(--fam-targets);
-	}
-	.fam-implementation {
-		--f: var(--fam-implementation);
-	}
-	.fam-reaction {
-		--f: var(--fam-reaction);
+		fill: var(--fam);
 	}
 
 	.node,
 	.member {
 		cursor: pointer;
-		transition: opacity 0.12s;
+		transition: opacity var(--duration-fast);
 	}
 	.node.dim,
 	.member.dim {
@@ -902,13 +880,13 @@
 		opacity: 0.7;
 	}
 	.dot {
-		fill: var(--k);
+		fill: var(--kind);
 		stroke: var(--bg);
 		stroke-width: 1.5;
 	}
 	.dot.rs-stub {
 		fill: var(--bg);
-		stroke: var(--k);
+		stroke: var(--kind);
 		stroke-width: 1.8;
 	}
 	.dot.rs-reviewed {
@@ -935,7 +913,7 @@
 		stroke: transparent;
 	}
 	.member.dot.rs-stub {
-		stroke: var(--k);
+		stroke: var(--kind);
 		stroke-width: 1.8px;
 	}
 	.member.dot.rs-reviewed {
@@ -952,7 +930,7 @@
 		stroke-width: 3;
 	}
 	.design {
-		fill: var(--k);
+		fill: var(--kind);
 		opacity: 0.25;
 	}
 	.life {
@@ -999,27 +977,6 @@
 		stroke-width: 3px;
 	}
 
-	.kind-mechanism {
-		--k: var(--kind-mechanism);
-	}
-	.kind-machine {
-		--k: var(--kind-machine);
-	}
-	.kind-machine-code {
-		--k: var(--kind-machine-code);
-	}
-	.kind-formalism {
-		--k: var(--kind-formalism);
-	}
-	.kind-notation {
-		--k: var(--kind-notation);
-	}
-	.kind-assembly {
-		--k: var(--kind-assembly);
-	}
-	.kind-language {
-		--k: var(--kind-language);
-	}
 
 	.tooltip {
 		position: fixed;
@@ -1028,10 +985,10 @@
 		pointer-events: none;
 		background: var(--bg-raised);
 		border: 1px solid var(--line);
-		border-radius: 6px;
+		border-radius: var(--radius-md);
 		padding: 8px 10px;
 		font-size: 12px;
-		box-shadow: 0 4px 16px rgb(0 0 0 / 0.18);
+		box-shadow: var(--shadow-tooltip);
 	}
 	.tooltip.wide {
 		max-width: min(640px, calc(100vw - 32px));
@@ -1045,7 +1002,7 @@
 		margin: 4px 0 0;
 		padding: 8px 10px;
 		background: var(--code-bg);
-		border-radius: 5px;
+		border-radius: var(--radius-md);
 		font-family: var(--mono);
 		font-size: 11.5px;
 		line-height: 1.45;

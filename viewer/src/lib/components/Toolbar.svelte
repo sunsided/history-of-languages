@@ -184,7 +184,7 @@
 		padding: 6px 12px;
 		border-bottom: 1px solid var(--line);
 		background: var(--bg-raised);
-		font-size: 12px;
+		font-size: var(--text-sm);
 	}
 	.filters {
 		display: contents;
@@ -207,7 +207,7 @@
 		align-items: baseline;
 		gap: 5px;
 		max-width: 220px;
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		padding: 2px 9px;
 		white-space: nowrap;
 	}
@@ -216,9 +216,9 @@
 		border-color: var(--accent);
 	}
 	.era-year {
-		color: var(--fg-faint);
+		color: var(--fg-subtle);
 		font-variant-numeric: tabular-nums;
-		font-size: 11px;
+		font-size: var(--text-xs);
 	}
 	.era-name {
 		overflow: hidden;
@@ -230,7 +230,7 @@
 	}
 	.brand {
 		font-weight: 700;
-		font-size: 14px;
+		font-size: var(--text-base);
 		letter-spacing: -0.01em;
 	}
 	.search-btn {
@@ -238,7 +238,7 @@
 		align-items: center;
 		gap: 6px;
 		width: 220px;
-		color: var(--fg-faint);
+		color: var(--fg-subtle);
 		text-align: left;
 	}
 	.search-text {
@@ -251,16 +251,16 @@
 		color: var(--fg-muted);
 	}
 	.search-icon {
-		font-size: 15px;
+		font-size: var(--text-lg);
 		line-height: 1;
 	}
 	kbd {
 		font-family: var(--mono);
-		font-size: 10px;
+		font-size: var(--text-2xs);
 		padding: 0 4px;
 		border: 1px solid var(--line);
 		border-bottom-width: 2px;
-		border-radius: 3px;
+		border-radius: var(--radius-sm);
 		color: var(--fg-muted);
 	}
 	@media (max-width: 899px) {
@@ -319,7 +319,7 @@
 		color: var(--fg);
 		background: var(--bg);
 		border: 1px solid var(--line);
-		border-radius: 5px;
+		border-radius: var(--radius-md);
 		padding: 3px 7px;
 	}
 	button {
@@ -342,8 +342,8 @@
 	legend {
 		float: left;
 		padding: 0 4px 0 0;
-		color: var(--fg-faint);
-		font-size: 10.5px;
+		color: var(--fg-subtle);
+		font-size: var(--text-xs);
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 	}
@@ -353,7 +353,7 @@
 		gap: 4px;
 		padding: 2px 6px;
 		border: 1px solid var(--line);
-		border-radius: 999px;
+		border-radius: var(--radius-pill);
 		cursor: pointer;
 		user-select: none;
 	}
@@ -366,52 +366,13 @@
 	.swatch {
 		width: 14px;
 		height: 3px;
-		background: var(--sw, var(--fg-muted));
+		background: var(--fam, var(--kind, var(--fg-muted)));
 		border-radius: 2px;
 	}
 	.swatch.round {
 		width: 8px;
 		height: 8px;
 		border-radius: 50%;
-	}
-	.fam-succession {
-		--sw: var(--fam-succession);
-	}
-	.fam-influence {
-		--sw: var(--fam-influence);
-	}
-	.fam-variant {
-		--sw: var(--fam-variant);
-	}
-	.fam-targets {
-		--sw: var(--fam-targets);
-	}
-	.fam-implementation {
-		--sw: var(--fam-implementation);
-	}
-	.fam-reaction {
-		--sw: var(--fam-reaction);
-	}
-	.kind-mechanism {
-		--sw: var(--kind-mechanism);
-	}
-	.kind-machine {
-		--sw: var(--kind-machine);
-	}
-	.kind-machine-code {
-		--sw: var(--kind-machine-code);
-	}
-	.kind-formalism {
-		--sw: var(--kind-formalism);
-	}
-	.kind-notation {
-		--sw: var(--kind-notation);
-	}
-	.kind-assembly {
-		--sw: var(--kind-assembly);
-	}
-	.kind-language {
-		--sw: var(--kind-language);
 	}
 	.zoom {
 		min-width: 40px;
@@ -425,8 +386,8 @@
 		align-items: center;
 		gap: 8px;
 		padding: 2px 6px;
-		border-radius: 5px;
-		transition: background 0.6s;
+		border-radius: var(--radius-md);
+		transition: background var(--duration-slow);
 	}
 	.status.flash {
 		background: var(--accent-soft);
@@ -440,14 +401,14 @@
 		color: var(--rs-reviewed);
 	}
 	.loaded {
-		color: var(--fg-faint);
+		color: var(--fg-subtle);
 		font-variant-numeric: tabular-nums;
 	}
 	.repo {
 		display: inline-flex;
 		align-items: center;
 		padding: 3px;
-		border-radius: 5px;
+		border-radius: var(--radius-md);
 		color: var(--fg-muted);
 	}
 	.repo:hover {
@@ -468,9 +429,9 @@
 		overflow: auto;
 		background: var(--bg-raised);
 		border: 1px solid var(--warn);
-		border-radius: 6px;
-		box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
-		font-size: 12px;
+		border-radius: var(--radius-md);
+		box-shadow: var(--shadow-popover);
+		font-size: var(--text-sm);
 	}
 	.pl-head {
 		display: flex;
@@ -487,6 +448,6 @@
 		margin: 0;
 		padding: 8px 10px 10px 28px;
 		font-family: var(--mono);
-		font-size: 11.5px;
+		font-size: var(--text-sm);
 	}
 </style>

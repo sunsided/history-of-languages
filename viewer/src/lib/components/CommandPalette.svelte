@@ -145,7 +145,7 @@
 		position: fixed;
 		inset: 0;
 		z-index: 100;
-		background: rgb(0 0 0 / 0.32);
+		background: var(--scrim);
 		display: flex;
 		justify-content: center;
 		align-items: flex-start;
@@ -158,8 +158,8 @@
 		flex-direction: column;
 		background: var(--bg-raised);
 		border: 1px solid var(--line);
-		border-radius: 10px;
-		box-shadow: 0 18px 50px rgb(0 0 0 / 0.35);
+		border-radius: var(--radius-lg);
+		box-shadow: var(--shadow-dialog);
 		overflow: hidden;
 	}
 	.input-row {
@@ -171,13 +171,13 @@
 	}
 	.icon {
 		font-size: 18px;
-		color: var(--fg-faint);
+		color: var(--fg-subtle);
 	}
 	input {
 		flex: 1;
 		min-width: 0;
 		font: inherit;
-		font-size: 15px;
+		font-size: var(--text-lg);
 		border: none;
 		outline: none;
 		background: transparent;
@@ -195,19 +195,19 @@
 		align-items: baseline;
 		gap: 8px;
 		padding: 6px 8px;
-		border-radius: 6px;
+		border-radius: var(--radius-md);
 		cursor: pointer;
-		font-size: 13px;
+		font-size: var(--text-md);
 	}
 	.results li.active {
 		background: var(--accent-soft);
 	}
 	.section {
 		padding: 8px 8px 3px;
-		font-size: 10.5px;
+		font-size: var(--text-xs);
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
-		color: var(--fg-faint);
+		color: var(--fg-subtle);
 	}
 	.label {
 		font-weight: 600;
@@ -222,13 +222,13 @@
 	.code-mark {
 		margin-left: 5px;
 		font-family: var(--mono);
-		font-size: 10px;
+		font-size: var(--text-2xs);
 		color: var(--accent);
 		font-weight: 400;
 	}
 	.detail {
-		color: var(--fg-faint);
-		font-size: 11.5px;
+		color: var(--fg-subtle);
+		font-size: var(--text-sm);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -240,16 +240,16 @@
 		font-style: normal;
 	}
 	.type {
-		font-size: 10px;
+		font-size: var(--text-2xs);
 		padding: 0 5px;
 		border: 1px solid var(--line);
-		border-radius: 3px;
+		border-radius: var(--radius-sm);
 		color: var(--fg-muted);
 	}
 	.year {
 		font-variant-numeric: tabular-nums;
 		color: var(--fg-muted);
-		font-size: 12px;
+		font-size: var(--text-sm);
 		min-width: 44px;
 		text-align: right;
 	}
@@ -263,20 +263,20 @@
 		gap: 14px;
 		padding: 7px 12px;
 		border-top: 1px solid var(--line);
-		font-size: 11px;
-		color: var(--fg-faint);
+		font-size: var(--text-xs);
+		color: var(--fg-subtle);
 	}
 	.footer .count {
 		margin-left: auto;
 	}
 	kbd {
 		font-family: var(--mono);
-		font-size: 10.5px;
+		font-size: var(--text-xs);
 		padding: 0 4px;
 		margin-right: 2px;
 		border: 1px solid var(--line);
 		border-bottom-width: 2px;
-		border-radius: 3px;
+		border-radius: var(--radius-sm);
 		background: var(--bg);
 		color: var(--fg-muted);
 	}
@@ -285,38 +285,11 @@
 		height: 8px;
 		border-radius: 50%;
 		align-self: center;
-		background: var(--k, var(--fg-faint));
-	}
-	.kind-mechanism {
-		--k: var(--kind-mechanism);
-	}
-	.kind-machine {
-		--k: var(--kind-machine);
-	}
-	.kind-machine-code {
-		--k: var(--kind-machine-code);
-	}
-	.kind-formalism {
-		--k: var(--kind-formalism);
-	}
-	.kind-notation {
-		--k: var(--kind-notation);
-	}
-	.kind-assembly {
-		--k: var(--kind-assembly);
-	}
-	.kind-language {
-		--k: var(--kind-language);
+		background: var(--kind, var(--fg-faint));
 	}
 	.kind-cluster,
 	.kind-era {
 		border-radius: 2px;
-	}
-	.kind-concept {
-		--k: var(--warn);
-	}
-	.kind-lineage {
-		--k: var(--rs-reviewed);
 	}
 
 	@media (max-width: 899px) {

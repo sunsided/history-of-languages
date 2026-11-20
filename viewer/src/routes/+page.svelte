@@ -66,10 +66,10 @@
 		right: 0;
 		bottom: 0;
 		height: 50%;
-		z-index: 20;
+		z-index: var(--z-sheet);
 		border-top: 1px solid var(--line);
-		border-radius: 12px 12px 0 0;
+		border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 		overflow: hidden;
-		box-shadow: 0 -8px 28px rgb(0 0 0 / 0.22);
+		box-shadow: var(--shadow-sheet);
 	}
 </style>
