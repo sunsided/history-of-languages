@@ -4,6 +4,7 @@
 	import DetailPanel from '#lib/components/organisms/DetailPanel.svelte';
 	import CommandPalette from '#lib/components/organisms/CommandPalette.svelte';
 	import PathFinder from '#lib/components/organisms/PathFinder.svelte';
+	import FocusBar from '#lib/components/organisms/FocusBar.svelte';
 	import { viewer } from '#lib/viewer.svelte.ts';
 	import '../app.css';
 
@@ -25,6 +26,7 @@
 		}}>Skip to timeline</a
 	>
 	<Toolbar />
+	<FocusBar />
 	<main class:narrow={viewer.narrow.current} class:open={viewer.panelOpen}>
 		<Timeline />
 		{#if viewer.panelOpen}

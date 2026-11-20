@@ -82,8 +82,6 @@ class Viewer {
 	narrow = new MediaQuery('max-width: 899px');
 	coarse = new MediaQuery('pointer: coarse');
 	reducedMotion = new MediaQuery('prefers-reduced-motion: reduce');
-	/** narrow screens: filter bar is toggled */
-	filtersOpen = $state(false);
 	/** detail sidebar: folded by default, opens on selection or via the toolbar toggle */
 	panelOpen = $state(false);
 	/** year at the horizontal centre of the timeline viewport (drives the era nav highlight) */
@@ -104,6 +102,12 @@ class Viewer {
 		this.hiddenKinds = new SvelteSet(p.hiddenKinds ?? []);
 		this.zoom = p.zoom ?? 1;
 		this.depth = p.depth ?? 'full';
+	}
+
+	/** edge families and kinds that differ from the defaults (toolbar badge) */
+	get filterCount() {
+		const changed = [...this.families].filter((f) => !DEFAULT_FAMILIES.includes(f)).length;
+		return changed + DEFAULT_FAMILIES.filter((f) => !this.families.has(f)).length + this.hiddenKinds.size;
 	}
 
 	persist() {
@@ -281,6 +285,7 @@ if (typeof window !== 'undefined') {
 			return;
 		}
 		if (viewer.paletteOpen || viewer.pathOpen) return; // the dialogs handle their own keys
+		if (document.querySelector(':popover-open')) return; // Esc closes the popover first
 		// checkboxes (the filter chips) don't take text, so shortcuts still apply there
 		const typing = (ev.target as Element | null)?.matches?.('input:not([type=checkbox]), select, textarea, [contenteditable]');
 		if (ev.key.toLowerCase() === 'p' && !ev.ctrlKey && !ev.metaKey && !ev.altKey && !typing) {

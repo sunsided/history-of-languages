@@ -7,6 +7,7 @@
 	import Kbd from '../atoms/Kbd.svelte';
 	import ToggleChip from '../atoms/ToggleChip.svelte';
 	import FilterGroup from '../molecules/FilterGroup.svelte';
+	import Popover from '../molecules/Popover.svelte';
 
 	const KINDS = ['mechanism', 'machine', 'machine-code', 'formalism', 'notation', 'assembly', 'language'];
 
@@ -32,8 +33,8 @@
 		const hits = eras.filter((e) => e.start <= viewer.centerYear && viewer.centerYear <= (e.end ?? NOW) + 1);
 		return hits.at(-1)?.id ?? null;
 	});
-	const focusActive = $derived(viewer.selected !== null || viewer.concept !== null || viewer.lineage !== null);
-	const showFilters = $derived(!viewer.narrow.current || viewer.filtersOpen);
+	/** load status, timestamp and problems are for whoever is editing data/, not for readers */
+	const dev = import.meta.env.DEV;
 
 	const isMac = typeof navigator !== 'undefined' && /mac|iphone|ipad/i.test(navigator.platform);
 
@@ -59,70 +60,23 @@
 		<span class="keys" aria-hidden="true"><Kbd>P</Kbd></span>
 	</Button>
 
-	{#if viewer.narrow.current}
-		<Button onclick={() => (viewer.filtersOpen = !viewer.filtersOpen)} aria-expanded={viewer.filtersOpen} aria-controls="filters">
-			Filters{#if focusActive}<span aria-hidden="true"> •</span><span class="sr-only">(highlight active)</span>{/if}
-		</Button>
-	{/if}
-
-	{#if showFilters}
-		<div class="filters" id="filters">
-			<FilterGroup legend="Edges">
-				{#each FAMILIES as f (f.id)}
-					<ToggleChip family={f.id} title={f.hint} checked={viewer.families.has(f.id)} onchange={() => viewer.toggle(viewer.families, f.id)}>{f.label}</ToggleChip>
-				{/each}
-			</FilterGroup>
-
-			<FilterGroup legend="Kinds">
-				{#each presentKinds as k (k)}
-					<ToggleChip kind={k} checked={!viewer.hiddenKinds.has(k)} onchange={() => viewer.toggle(viewer.hiddenKinds, k)}>{k}</ToggleChip>
-				{/each}
-			</FilterGroup>
-
-			<FilterGroup legend="Highlight">
-				<select
-					value={viewer.concept ?? ''}
-					onchange={(e) => viewer.setConcept(e.currentTarget.value || null)}
-					aria-label="Highlight a concept"
-					title="Highlight nodes that have a concept (or a narrower one) and mark when it arrived"
-				>
-					<option value="">concept…</option>
-					{#each conceptGroups as [facet, items] (facet)}
-						<optgroup label={facet}>
-							{#each items as c (c.id)}<option value={c.id}>{c.name}</option>{/each}
-						</optgroup>
-					{/each}
-				</select>
-				<select value={viewer.lineage ?? ''} onchange={(e) => viewer.setLineage(e.currentTarget.value || null)} aria-label="Highlight a lineage" title="Highlight a narrative lineage">
-					<option value="">lineage…</option>
-					{#each g.data.lineages as l (l.id)}<option value={l.id}>{l.title}</option>{/each}
-				</select>
-				<ToggleChip title="On selection, follow edges transitively or only one hop" checked={viewer.depth === 'full'} onchange={() => (viewer.depth = viewer.depth === 'full' ? 'direct' : 'full')}>transitive</ToggleChip>
-			</FilterGroup>
-
-			<FilterGroup legend="View">
-				<Button onclick={() => viewer.expandAll()} title="Expand all clusters">expand</Button>
-				<Button onclick={() => viewer.collapseAll()} title="Collapse all clusters">collapse</Button>
-				<IconButton variant="bordered" label="Zoom out" onclick={() => viewer.setZoom(viewer.effectiveZoom / 1.4)}>−</IconButton>
-				<output class="zoom" aria-label="Zoom level">{viewer.effectiveZoom.toFixed(2)}×</output>
-				<IconButton variant="bordered" label="Zoom in" onclick={() => viewer.setZoom(viewer.effectiveZoom * 1.4)}>+</IconButton>
-				{#if focusActive}
-					<Button onclick={() => viewer.clearFocus()} title="Clear selection and highlights (Esc)">clear</Button>
+	<div class="actions">
+		{#if dev}
+			<div class="status" class:flash>
+				<span class="sr-only" role="status">{flash ? 'Data reloaded' : ''}</span>
+				{#if g.data.problems.length}
+					<Button class="problems" onclick={() => (showProblems = !showProblems)} aria-expanded={showProblems}>
+						<span aria-hidden="true">⚠</span> {g.data.problems.length} problem{g.data.problems.length === 1 ? '' : 's'}
+					</Button>
+				{:else}
+					<span class="ok" title="Lenient load OK. Run `task data:build` for full schema validation.">data ok</span>
 				{/if}
-			</FilterGroup>
-		</div>
-	{/if}
-
-	<div class="status" class:flash>
-		<span class="sr-only" role="status">{flash ? 'Data reloaded' : ''}</span>
-		{#if g.data.problems.length}
-			<Button class="problems" onclick={() => (showProblems = !showProblems)} aria-expanded={showProblems}>
-				<span aria-hidden="true">⚠</span> {g.data.problems.length} problem{g.data.problems.length === 1 ? '' : 's'}
-			</Button>
-		{:else}
-			<span class="ok" title="Lenient load OK. Run `task data:build` for full schema validation.">data ok</span>
+				<span class="loaded" title="Last loaded from data/">{new Date(g.data.loadedAt).toLocaleTimeString()}</span>
+			</div>
 		{/if}
-		<span class="loaded" title="Last loaded from data/">{new Date(g.data.loadedAt).toLocaleTimeString()}</span>
+		<Button popovertarget="filters" title="Edges, kinds, highlights and view">
+			Filters{#if viewer.filterCount}<span class="badge">{viewer.filterCount}<span class="sr-only"> changed</span></span>{/if}
+		</Button>
 		<Button
 			onclick={() => (viewer.panelOpen = !viewer.panelOpen)}
 			aria-expanded={viewer.panelOpen}
@@ -158,6 +112,51 @@
 	</nav>
 </header>
 
+<Popover id="filters" label="Filters">
+	<div class="pop-head">
+		<h2>Filters</h2>
+		<IconButton label="Close filters" popovertarget="filters" popovertargetaction="hide">×</IconButton>
+	</div>
+	<div class="pop-body">
+		<FilterGroup legend="Edges">
+			{#each FAMILIES as f (f.id)}
+				<ToggleChip family={f.id} title={f.hint} checked={viewer.families.has(f.id)} onchange={() => viewer.toggle(viewer.families, f.id)}>{f.label}</ToggleChip>
+			{/each}
+		</FilterGroup>
+		<FilterGroup legend="Kinds">
+			{#each presentKinds as k (k)}
+				<ToggleChip kind={k} checked={!viewer.hiddenKinds.has(k)} onchange={() => viewer.toggle(viewer.hiddenKinds, k)}>{k}</ToggleChip>
+			{/each}
+		</FilterGroup>
+		<FilterGroup legend="Highlight">
+			<select
+				value={viewer.concept ?? ''}
+				onchange={(e) => viewer.setConcept(e.currentTarget.value || null)}
+				aria-label="Highlight a concept"
+				title="Highlight nodes that have a concept (or a narrower one) and mark when it arrived"
+			>
+				<option value="">concept…</option>
+				{#each conceptGroups as [facet, items] (facet)}
+					<optgroup label={facet}>
+						{#each items as c (c.id)}<option value={c.id}>{c.name}</option>{/each}
+					</optgroup>
+				{/each}
+			</select>
+			<select value={viewer.lineage ?? ''} onchange={(e) => viewer.setLineage(e.currentTarget.value || null)} aria-label="Highlight a lineage" title="Highlight a narrative lineage">
+				<option value="">lineage…</option>
+				{#each g.data.lineages as l (l.id)}<option value={l.id}>{l.title}</option>{/each}
+			</select>
+		</FilterGroup>
+		<FilterGroup legend="View">
+			<Button onclick={() => viewer.expandAll()} title="Expand all clusters">expand all</Button>
+			<Button onclick={() => viewer.collapseAll()} title="Collapse all clusters">collapse all</Button>
+			<IconButton variant="bordered" label="Zoom out" onclick={() => viewer.setZoom(viewer.effectiveZoom / 1.4)}>−</IconButton>
+			<output class="zoom" aria-label="Zoom level">{viewer.effectiveZoom.toFixed(2)}×</output>
+			<IconButton variant="bordered" label="Zoom in" onclick={() => viewer.setZoom(viewer.effectiveZoom * 1.4)}>+</IconButton>
+		</FilterGroup>
+	</div>
+</Popover>
+
 {#if showProblems && g.data.problems.length}
 	<div class="problem-list" role="region" aria-label="Load problems">
 		<div class="pl-head">
@@ -187,8 +186,44 @@
 		font-size: var(--text-base);
 		letter-spacing: -0.01em;
 	}
-	.filters {
-		display: contents;
+	.actions {
+		margin-left: auto;
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+	}
+	.badge {
+		min-width: 18px;
+		padding: 0 var(--space-2);
+		border-radius: var(--radius-pill);
+		background: var(--accent);
+		color: var(--bg);
+		font-size: var(--text-xs);
+		font-weight: 600;
+		text-align: center;
+	}
+	.pop-head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: var(--space-4);
+	}
+	.pop-head h2 {
+		margin: 0;
+		font-size: var(--text-base);
+	}
+	.pop-body {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-5);
+	}
+	.pop-body :global(fieldset) {
+		flex-wrap: wrap;
+	}
+	.pop-body :global(legend) {
+		float: none;
+		width: 100%;
+		padding-bottom: var(--space-2);
 	}
 	.toolbar :global(.search-btn) {
 		width: 220px;
@@ -226,7 +261,6 @@
 		color: var(--fg-muted);
 	}
 	.status {
-		margin-left: auto;
 		display: flex;
 		align-items: center;
 		gap: var(--space-4);
@@ -355,19 +389,6 @@
 			overflow: hidden;
 			clip-path: inset(50%);
 			white-space: nowrap;
-		}
-		.filters {
-			display: flex;
-			flex-direction: column;
-			gap: var(--space-4);
-			flex-basis: 100%;
-			order: 5;
-			padding: var(--space-3) 0;
-			border-top: 1px solid var(--line);
-		}
-		.status {
-			margin-left: 0;
-			gap: var(--space-3);
 		}
 		.loaded {
 			display: none;
