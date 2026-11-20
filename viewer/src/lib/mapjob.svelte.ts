@@ -1,5 +1,6 @@
-// Pre-cooks the similarity map in a worker once the page is idle, so the Map view usually opens on a
-// finished layout. Restarts on every data push (dev live reload).
+// Pre-cooks the similarity map in a worker, so the Map view usually opens on a finished layout. Starts
+// only once the user leaves the timeline (most visitors never do, so they don't pay ~20 s of CPU), at the
+// next idle moment; the Map view itself starts it at once. Restarts on data pushes (dev live reload).
 
 import EmbedWorker from './embed.worker.ts?worker&inline';
 import type { FromWorker, ToWorker } from './embed.worker.ts';
@@ -60,6 +61,7 @@ if (typeof window !== 'undefined') {
 	$effect.root(() => {
 		$effect(() => {
 			viewer.data; // restart on every data push
+			if (viewer.view === 'timeline') return;
 			const idle = window.requestIdleCallback ?? ((f: () => void) => setTimeout(f, 1500));
 			const id = idle(() => mapJob.start(), { timeout: 4000 });
 			return () => (window.cancelIdleCallback ?? clearTimeout)(id);
