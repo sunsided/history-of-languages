@@ -7778,6 +7778,98 @@
       total([{ price: 250, qty: 2 }, { price: 100, qty: 1 }]) # 600
     sources: [vibescript-readme]
 
+- id: qgcl
+  name: qGCL
+  aliases: [Quantum Guarded Command Language]
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    began: { year: 1999, date: "1999-11", precision: exact, note: "Sanders and Zuliani, \"Quantum Programming\", Oxford PRG Technical Report TR-5-99, November 1999 (only the report's abstract was read; it does not show the name qGCL)." }
+    first_appeared: { year: 2000, date: "2000-07", precision: exact, note: "Sanders and Zuliani, \"Quantum Programming\", Mathematics of Program Construction (MPC 2000), Ponte de Lima, 3-5 July 2000, LNCS 1837." }
+    places: [{ institution: Oxford University Computing Laboratory, city: Oxford, country: GB }]
+  creators:
+    - { name: J. W. Sanders, role: designer }
+    - { name: P. Zuliani, role: designer }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    features: [guarded-commands, nondeterminism, formal-semantics]
+    domain: [quantum-computing]
+  summary: >
+    An imperative quantum language built for proofs rather than simulation: "a quantum program is a pGCL program
+    invoking quantum procedures", where pGCL is Dijkstra's guarded-command language "extended to include probabilism".
+    Its three kinds of quantum procedure are initialisation, evolution and finalisation (observation), and because it
+    is defined in pGCL it "inherits its refinement calculus", and the paper derives the Deutsch-Jozsa algorithm from its
+    specification. Its authors set it against Ömer's QCL, which they judged better suited to numerical
+    simulation.
+  notes: >
+    The paper's examples are written in mathematical notation that does not survive text extraction, so no example is
+    given. Wikipedia credits qGCL to Zuliani's PhD thesis; the language already appears in the 2000 paper. pGCL
+    (McIver and Morgan's probabilistic GCL) is not a node of its own.
+  relations:
+    - { type: influenced_by, to: dijkstra-guarded-commands, aspects: [guarded-commands, nondeterminism], weight: strong, confidence: high, sources: [sanders-2000-qgcl], note: "\"With qGCL we introduce an extension of the guarded-command language to express quantum algorithms.\"" }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Quantum_programming" }
+  sources: [sanders-2000-qgcl, sanders-1999-quantum-programming-tr, wiki-quantum-programming]
+
+- id: q-bettelli
+  name: Q Language
+  aliases: [Q (Bettelli), Bettelli-Calarco-Serafini Q]
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2001, date: "2001-03-08", precision: exact, note: "Bettelli, Calarco and Serafini, \"Toward an architecture for quantum programming\", arXiv:cs/0103009 v1 (8 March 2001), ITC-IRST technical report 0103-010; final version in Eur. Phys. J. D 25 (2003)." }
+    places: [{ institution: ITC-IRST, city: Trento, country: IT }, { institution: University of Trento, city: Trento, country: IT }]
+  creators:
+    - { name: Stefano Bettelli, role: designer }
+    - { name: T. Calarco, role: co-author }
+    - { name: L. Serafini, role: co-author }
+  status: historical
+  tags:
+    paradigm: [imperative, object-oriented]
+    features: [operator-overloading]
+    domain: [quantum-computing]
+  summary: >
+    "A template high level quantum language ... which complements a generic general purpose classical language with a
+    set of quantum primitives", realised as a C++ library. Quantum operators are objects (Qop) that are composed,
+    offset, split and adjoined with overloaded operators, and a run-time environment "calculates the byte-code for the
+    quantum operations and pipes it to a quantum device controller or to a simulator", simplifying circuits on the
+    way. It is one of the early proposals Selinger's QPL paper contrasts itself with.
+  notes: >
+    The paper never names the language; the name "Q Language" and the description of it as "the second implemented
+    imperative quantum programming language", "an extension of C++", come from Wikipedia, which links an archived
+    sra.itc.it/people/serafini/qlang/ software page (not reachable from here). Bettelli's Trento PhD thesis
+    (announced for February 2002) holds the detailed implementation and has not been read.
+  relations:
+    - { type: extension_of, to: cpp, weight: strong, confidence: high, sources: [bettelli-2003-quantum-programming], note: "\"A preliminary implementation ... has been developed in the form of a C++ library\"." }
+    - { type: influenced_by, to: qcl, weight: moderate, confidence: high, sources: [bettelli-2003-quantum-programming], note: "QCL \"shares many common points with the approach presented in this article about the treatment of quantum registers\"; the paper criticises QCL's operators being functions rather than objects." }
+    - { type: influenced_by, to: quantum-pseudocode, weight: moderate, confidence: high, sources: [bettelli-2003-quantum-programming], note: "The language programs \"a QRAM machine\"; Knill's report \"moved the first steps towards a standardised notation for quantum pseudo-code\"." }
+    - { type: influenced_by, to: qgcl, weight: weak, confidence: medium, sources: [bettelli-2003-quantum-programming], note: "Listed with Knill and QCL among the \"previous works\" the desiderata build on; no specific trait is credited." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Quantum_programming" }
+  sources: [bettelli-2003-quantum-programming, wiki-quantum-programming]
+  example:
+    title: A three-input adder built from operator objects
+    language: Q Language (C++)
+    year: 2003
+    note: "Verbatim from Bettelli et al., section 4.1 (arXiv v3, 2003)."
+    code: |
+      Qop build_three_adder(int size) {
+         Qop phase_shifts;
+         for (int i=0; i<size; ++i)
+           phase_shifts << QCondPhase(size-i, i+1).offset(i);
+         Qop transform = (QFourier(size) & QSwap(size)).offset(size);
+         Qop adder_2   = transform & phase_shifts & (! transform);
+         Qop adder_3   = (adder_2 >> size);
+         adder_3 << adder_2.split(size, size);
+         return adder_3;
+      }
+    sources: [bettelli-2003-quantum-programming]
+
 - id: qpl
   name: QPL
   aliases: [QFC, Quantum flow charts, Block QPL]
@@ -8035,6 +8127,97 @@
               else {qfalse | qtrue}
     sources: [altenkirch-2005-qml]
 
+- id: qio
+  name: Quantum IO Monad
+  aliases: [QIO, The Quantum IO Monad]
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2008, precision: year, note: "The preprint \"Shor in Haskell: The Quantum IO Monad\" cites the QIO source code on Green's Nottingham web page as 2008. Published as \"The Quantum IO Monad\", chapter 5 of Semantic Techniques in Quantum Computation (Cambridge University Press, 2009), pp. 173-205." }
+    places: [{ institution: University of Nottingham, city: Nottingham, country: GB }]
+  creators:
+    - { name: Alexander S. Green, role: designer }
+    - { name: Thorsten Altenkirch, role: designer }
+  status: historical
+  tags:
+    paradigm: [functional]
+    typing: [static-typing]
+    features: [monads, type-classes]
+    domain: [quantum-computing]
+  milestones:
+    - { version: "1.3", year: 2016, date: "2016-11-13", summary: "Latest Hackage release of the QIO package.", sources: [qio-hackage] }
+  summary: >
+    "A monadic interface to do quantum programming in Haskell": the QIO monad is "the quantum analogue of IO", and
+    unitaries form a separate monoid U with a reversible let (ulet) for ancillas and urev for inversion. The same program
+    can be run with pseudo-random measurement, simulated to a probability distribution, or run classically, and the
+    authors used it to implement Shor's algorithm. A Qdata type class relates classical data to quantum data, the
+    strategy Quipper later took over.
+  notes: >
+    The design is "inspired by the 2nd authors work with Wouter Swierstra on functional specifications of IO" (Swierstra
+    and Altenkirch, Haskell Workshop 2007). The code is on Hackage as the QIO package (BSD-3-Clause).
+  relations:
+    - { type: extension_of, to: haskell, weight: strong, confidence: high, sources: [green-qio-preprint, qio-hackage], note: "\"instead of implementing a new language from scratch we provide a monadic interface to do quantum programming in Haskell\"." }
+    - { type: influenced_by, to: qml, weight: moderate, confidence: high, sources: [green-qio-preprint], note: "\"Our previous work on QML proposed a first order functional quantum programming language, the present work is more modest but gives us a stepping stone ... to implement future versions of languages like QML\"." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://hackage.haskell.org/package/QIO" }
+  sources: [green-qio-preprint, altenkirch-2009-qio, qio-hackage, qio-haskell-repo]
+  example:
+    title: Deutsch's algorithm in the QIO monad
+    language: QIO (Haskell)
+    note: "Verbatim from QIO/QExamples.hs in the qio-haskell repository, without its comments. The preprint prints a typeset version that inlines the oracle instead of calling u."
+    code: |
+      u :: (Bool -> Bool) -> Qbit -> Qbit -> U
+      u f x y = cond x (\ b -> if f b then unot y else mempty)
+
+      deutsch :: (Bool -> Bool) -> QIO Bool
+      deutsch f = do
+                    x <- qPlus
+                    y <- qMinus
+                    applyU (u f x y)
+                    applyU (uhad x)
+                    measQ x
+    sources: [qio-haskell-repo]
+
+- id: qugcl
+  name: QuGCL
+  aliases: [QGCL, QuGcl]
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    began: { year: 2012, date: "2012-09-19", precision: exact, note: "Ying, Yu and Feng, \"Defining Quantum Control Flow\", arXiv:1209.4379: quantum guarded commands, quantum choice and quantum recursion, without a language name." }
+    first_appeared: { year: 2014, date: "2014-02-20", precision: exact, note: "Ying, Yu and Feng, \"Alternation in Quantum Programming\", arXiv:1402.5172, which names the language QGCL. Qunity cites it as QuGcl after chapter 6 of Ying's Foundations of Quantum Programming (2016)." }
+    places: [{ institution: University of Technology Sydney, city: Sydney, country: AU }, { institution: Tsinghua University, city: Beijing, country: CN }]
+  creators:
+    - { name: Mingsheng Ying, role: designer }
+    - { name: Nengkun Yu, role: co-author }
+    - { name: Yuan Feng, role: co-author }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    features: [guarded-commands, formal-semantics]
+    domain: [quantum-computing]
+  summary: >
+    A quantum extension of Dijkstra's guarded command language built around quantum alternation (a quantum case
+    statement), which runs subprograms in superposition, guarded by "coin" variables, instead of choosing one by
+    measurement. It was drawn from quantum-walk algorithms as a paradigm of "superposition of programs", and comes
+    with denotational and weakest-precondition semantics and algebraic laws. Qunity lists it among its inspirations
+    while noting that its denotational semantics is not compositional.
+  notes: >
+    Named QGCL in the 2014 arXiv paper. Qunity cites the language as "QuGcl" from Ying's 2016 book, which has not
+    been read; the capitalisation QuGCL was seen only in a search-result snippet of the book. That the book's language is the 2014 QGCL is inferred from the shared author and the matching
+    construct (quantum case / quantum alternation). Bădescu and Panangaden (2015) argued that quantum alternation is not
+    physically meaningful, as quoted in the Qunity paper.
+  relations:
+    - { type: influenced_by, to: qgcl, aspects: [guarded-commands], weight: strong, confidence: high, sources: [ying-2014-alternation], note: "\"It is essentially an extension of Sanders and Zuliani's qGCL obtained by adding quantum alternation.\"" }
+    - { type: influenced_by, to: dijkstra-guarded-commands, aspects: [guarded-commands], weight: moderate, confidence: high, sources: [ying-2014-alternation], note: "\"This language can be seen as a quantum extension of Dijkstra's GCL (Guarded Command Language).\"" }
+    - { type: influenced_by, to: qpl, weight: weak, confidence: high, sources: [ying-2014-alternation], note: "\"QGCL also borrows some ideas from Selinger's language QPL.\"" }
+  research_status: draft
+  confidence: medium
+  sources: [ying-2014-alternation, ying-2012-quantum-control-flow, ying-2016-foundations, voichick-2023-qunity]
+
 - id: quipper
   name: Quipper
   aliases: [Proto-Quipper]
@@ -8072,6 +8255,7 @@
     - { type: influenced_by, to: quantum-lambda-calculus, aspects: [linear-types], weight: strong, confidence: high, sources: [green-2013-quipper], note: "Named as a predecessor: \"an ML-style language ... designed to run on Knill's QRAM model\"." }
     - { type: influenced_by, to: qcl, weight: moderate, confidence: high, sources: [green-2013-quipper], note: "Named as a predecessor and \"a milestone\"." }
     - { type: influenced_by, to: quantum-pseudocode, weight: moderate, confidence: high, sources: [green-2013-quipper], note: "\"known as Knill's QRAM model for quantum computation\"." }
+    - { type: influenced_by, to: qio, aspects: [type-classes], weight: moderate, confidence: high, sources: [green-2013-quipper], note: "\"Following the strategy first presented in Altenkirch and Green's work on the Quantum IO monad, Quipper uses Haskell's type classes to provide an abstract view of the notion of quantum data\" (section 4.5)." }
   research_status: draft
   confidence: high
   links: { homepage: "https://www.mathstat.dal.ca/~selinger/quipper/" }
@@ -8211,10 +8395,46 @@
     - { type: influenced_by, to: silq, weight: moderate, confidence: high, sources: [voichick-2023-qunity], note: "\"Qunity's design was inspired by several existing languages ...: Silq, Qml, the symmetric pattern matching language, Quipper, and QuGcl\"." }
     - { type: influenced_by, to: qml, weight: moderate, confidence: high, sources: [voichick-2023-qunity] }
     - { type: influenced_by, to: quipper, weight: moderate, confidence: high, sources: [voichick-2023-qunity] }
+    - { type: influenced_by, to: qugcl, weight: moderate, confidence: high, sources: [voichick-2023-qunity], note: "\"QuGcl [Ying 2016, Chapter 6]\"; Qunity's comparison notes that QuGcl's quantum alternation has a non-compositional denotational semantics." }
     - { type: targets, to: openqasm, weight: moderate, confidence: high, sources: [voichick-2023-qunity] }
   research_status: draft
   confidence: high
   sources: [voichick-2023-qunity]
+
+- id: proto-quipper-dyn
+  name: Proto-Quipper-Dyn
+  aliases: [Proto-Quipper with dynamic lifting]
+  kind: language
+  category: research
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2022, date: "2022-04-27", precision: exact, note: "Fu, Kishida, Ross and Selinger, \"Proto-Quipper with dynamic lifting\", arXiv:2204.13041 v1 (27 April 2022), v2 8 November 2022." }
+    places: [{ institution: Dalhousie University, city: Halifax, country: CA }, { institution: University of Illinois Urbana-Champaign, city: Urbana, country: US }]
+  creators:
+    - { name: Peng Fu, role: designer }
+    - { name: Kohei Kishida, role: designer }
+    - { name: Neil J. Ross, role: designer }
+    - { name: Peter Selinger, role: designer }
+  tags:
+    paradigm: [functional]
+    typing: [static-typing, linear-types]
+    features: [formal-semantics]
+    domain: [quantum-computing]
+  summary: >
+    A member of the Proto-Quipper family, the small formal languages that "aim to provide formal semantics for fragments
+    of Quipper". It extends Proto-Quipper-M with Quipper's dynamic lifting, which turns a state known only at circuit
+    execution time, such as a measurement result, into a parameter that shapes the rest of circuit generation. Its type
+    system tracks dynamic lifting with modalities, and the paper proves it sound against an operational and an enriched
+    categorical semantics.
+  notes: >
+    The paper names the earlier members Proto-Quipper-S (Ross 2015, linear types with subtyping), Proto-Quipper-M
+    (Rios and Selinger, a milestone on the quipper node) and Proto-Quipper-D (linear dependent types, 2020); those stay
+    folded into the quipper node. No published venue beyond arXiv was checked.
+  relations:
+    - { type: dialect_of, to: quipper, from_version: "Proto-Quipper-M", weight: strong, confidence: high, sources: [fu-2022-proto-quipper-dyn], note: "\"we extend Proto-Quipper-M with a construct called dynamic lifting, which is present in Quipper\"." }
+  research_status: draft
+  confidence: high
+  sources: [fu-2022-proto-quipper-dyn]
 
 - id: scaffold
   name: Scaffold
@@ -8413,6 +8633,41 @@
       Fock(4) | q[1]
     sources: [killoran-2019-strawberry-fields]
 
+- id: openql
+  name: OpenQL
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2017, date: "2017-08-18", precision: exact, note: "GitHub repository QuTech-Delft/OpenQL: initial commit 23 January 2017, first tagged release 0.2 on 18 August 2017. The framework paper is Khammassi et al., arXiv:2005.13283 (27 May 2020)." }
+    places: [{ institution: QuTech, city: Delft, country: NL }]
+  creators:
+    - { name: Nader Khammassi, role: first author }
+    - { name: Koen Bertels, role: co-author }
+  status: maintained
+  tags:
+    paradigm: [imperative]
+    domain: [quantum-computing]
+  milestones:
+    - { version: "0.12.2", year: 2024, date: "2024-01-09", summary: "Latest GitHub release.", sources: [openql-repo] }
+  summary: >
+    QuTech's "quantum programming framework", which its paper says "includes a high-level quantum programming language
+    and its associated quantum compiler". Programs are written through a C++ or Python interface as kernels of gates
+    added to a program, which the compiler optimises, schedules and maps to a target chip. It emits technology-independent
+    cQASM for the QX simulator and, through hardware back ends, executable eQASM for superconducting and Si-spin qubits.
+  notes: >
+    Kept as a node because its authors present it as a language with its own compiler, as with Quipper and Guppy;
+    its surface is a host-language API, the same shape as Qiskit, which the cluster leaves out as a self-described SDK.
+  relations:
+    - { type: extension_of, to: cpp, weight: strong, confidence: high, sources: [khammassi-2020-openql], note: "\"OpenQL uses traditional host languages, namely C++ and Python, to define a programming interface\"." }
+    - { type: extension_of, to: python, weight: strong, confidence: high, sources: [khammassi-2020-openql], note: "\"the programming API of C++ is identical to the Python API\"." }
+    - { type: targets, to: cqasm, year: 2018, weight: strong, confidence: high, sources: [khammassi-2020-openql], note: "\"The produced QASM code complies with the Common QASM 1.0 syntax\"." }
+    - { type: targets, to: eqasm, year: 2018, weight: moderate, confidence: high, sources: [khammassi-2020-openql, fu-2019-eqasm], note: "\"different eQASM (executable QASM) backends can be used to compile the QASM code\"; the eQASM paper's programs \"are all compiled from OpenQL descriptions\"." }
+  research_status: draft
+  confidence: medium
+  links: { homepage: "https://openql.readthedocs.io" }
+  sources: [khammassi-2020-openql, openql-repo]
+
 - id: cqasm
   name: cQASM
   aliases: [Common QASM]
@@ -8460,6 +8715,60 @@
       measure q[0]
       measure q[1]
     sources: [khammassi-2018-cqasm]
+
+- id: eqasm
+  name: eQASM
+  aliases: [Executable QASM, Executable quantum instruction set architecture]
+  kind: language
+  category: domain-specific
+  cluster: quantum
+  origin:
+    first_appeared: { year: 2018, date: "2018-08-07", precision: exact, note: "Fu et al., \"eQASM: An Executable Quantum Instruction Set Architecture\", arXiv:1808.02449 v1 (7 August 2018); HPCA 2019." }
+    places: [{ institution: QuTech, city: Delft, country: NL }]
+  creators:
+    - { name: X. Fu, role: first author }
+    - { name: Koen Bertels, role: co-author }
+  tags:
+    paradigm: [imperative]
+    features: [assembly-language]
+    domain: [quantum-computing]
+  summary: >
+    "An executable QISA based on QASM": a quantum instruction set with auxiliary classical instructions (registers,
+    compare, branch) so that measurement results can steer program flow on the control hardware. Timing is given by
+    explicit wait instructions, one operation can target a mask of qubits, and instructions are bundled in a
+    very-long-instruction-word format; the operations themselves are configured at compile time. It was instantiated
+    as a 32-bit instruction set for a seven-qubit superconducting processor and sits below cQASM in QuTech's stack.
+  notes: >
+    The paper places it after QuMIS, an earlier QuTech microinstruction set that is not a node, and says it "can be
+    generated by the compiler backend from a higher-level representation, like cQASM". The paper's experiments compiled
+    eQASM from OpenQL descriptions. The sixteen authors include N. Khammassi, C. G. Almudever and L. DiCarlo.
+  relations:
+    - { type: influenced_by, to: qasm, weight: moderate, confidence: high, sources: [fu-2019-eqasm], note: "\"we propose an executable QISA based on QASM, named executable QASM (eQASM)\"." }
+  research_status: draft
+  confidence: high
+  sources: [fu-2019-eqasm]
+  example:
+    title: Branching on a measurement result
+    language: eQASM
+    year: 2019
+    note: "Verbatim from Fu et al., Fig. 5, without line numbers and with the PDF's spacing re-joined. If qubit 1 measures 1, Y is applied to qubit 0, otherwise X."
+    code: |2
+        SMIS S0, {0}
+        SMIS S1, {1}
+        LDI  R0, 1
+        MEASZ S1
+        QWAIT 30
+        FMR  R1, Q1          # fetch msmt result
+        CMP  R1, R0          # compare
+        BR   EQ, eq_path     # jump if R0 == R1
+      ne_path:
+        X    S0              # happen if msmt result is 0
+        BR   ALWAYS, next    # this flag is always '1'
+      eq_path:
+        Y    S0              # happen if msmt result is 1
+      next:
+        ...
+    sources: [fu-2019-eqasm]
 
 - id: twist
   name: Twist

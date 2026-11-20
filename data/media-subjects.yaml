@@ -2544,6 +2544,7 @@
   wiki: Thorsten Altenkirch
   nodes:
   - qml
+  - qio
 - id: person-martin-vechev
   kind: person
   person: Martin Vechev

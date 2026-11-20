@@ -8119,3 +8119,122 @@
   title: "Wikipedia: Graph Query Language"
   url: https://en.wikipedia.org/wiki/Graph_Query_Language
   checked: '2026-11-20'
+- id: sanders-1999-quantum-programming-tr
+  type: report
+  primary: true
+  authors: [J. W. Sanders, P. Zuliani]
+  title: Quantum Programming
+  venue: Oxford University Computing Laboratory, Programming Research Group Technical Report TR-5-99 (November 1999)
+  year: 1999
+  url: https://cs.ox.ac.uk/techreports/oucl/tr-5-99.html
+  checked: '2026-11-20'
+- id: sanders-2000-qgcl
+  type: paper
+  primary: true
+  authors: [J. W. Sanders, P. Zuliani]
+  title: Quantum Programming
+  venue: Mathematics of Program Construction (MPC 2000), LNCS 1837, pp. 80-99
+  year: 2000
+  doi: 10.1007/10722010_6
+  url: https://pzuliani.github.io/papers/qp.pdf
+  checked: '2026-11-20'
+- id: bettelli-2003-quantum-programming
+  type: paper
+  primary: true
+  authors: [S. Bettelli, T. Calarco, L. Serafini]
+  title: Toward an architecture for quantum programming
+  venue: European Physical Journal D 25(2), pp. 181-200; arXiv:cs/0103009 (v1 8 March 2001)
+  year: 2003
+  url: https://arxiv.org/abs/cs/0103009
+  checked: '2026-11-20'
+- id: green-qio-preprint
+  type: paper
+  primary: true
+  authors: [Alexander S. Green, Thorsten Altenkirch]
+  title: "Shor in Haskell: The Quantum IO Monad"
+  venue: Preprint, University of Nottingham
+  url: https://people.cs.nott.ac.uk/psztxa/publ/qio.pdf
+  checked: '2026-11-20'
+- id: altenkirch-2009-qio
+  type: chapter
+  primary: true
+  authors: [Thorsten Altenkirch, Alexander S. Green]
+  title: The Quantum IO Monad
+  venue: "Semantic Techniques in Quantum Computation, ed. Simon Gay and Ian Mackie, Cambridge University Press, pp. 173-205"
+  year: 2009
+  url: https://www.cambridge.org/core/product/identifier/CBO9781139193313A012/type/BOOK_PART
+  checked: '2026-11-20'
+- id: qio-hackage
+  type: web
+  primary: true
+  authors: [Alexander S. Green]
+  title: "QIO: The Quantum IO Monad is a library for defining quantum computations in Haskell (Hackage)"
+  url: https://hackage.haskell.org/package/QIO
+  checked: '2026-11-20'
+- id: qio-haskell-repo
+  type: web
+  primary: true
+  authors: [Alexander S. Green]
+  title: "qio-haskell: The Quantum IO Monad, implemented in Haskell (GitHub)"
+  url: https://github.com/alexandersgreen/qio-haskell
+  checked: '2026-11-20'
+- id: ying-2012-quantum-control-flow
+  type: paper
+  primary: true
+  authors: [Mingsheng Ying, Nengkun Yu, Yuan Feng]
+  title: Defining Quantum Control Flow
+  venue: arXiv:1209.4379
+  year: 2012
+  url: https://arxiv.org/abs/1209.4379
+  checked: '2026-11-20'
+- id: ying-2014-alternation
+  type: paper
+  primary: true
+  authors: [Mingsheng Ying, Nengkun Yu, Yuan Feng]
+  title: "Alternation in Quantum Programming: From Superposition of Data to Superposition of Programs"
+  venue: arXiv:1402.5172
+  year: 2014
+  url: https://arxiv.org/abs/1402.5172
+  checked: '2026-11-20'
+- id: ying-2016-foundations
+  type: book
+  primary: true
+  authors: [Mingsheng Ying]
+  title: Foundations of Quantum Programming
+  venue: Elsevier Science, Cambridge, MA
+  year: 2016
+  url: https://worldcat.org/en/title/1027777388
+- id: fu-2019-eqasm
+  type: paper
+  primary: true
+  authors: [X. Fu, L. Riesebos, M. A. Rol, J. van Straten, J. van Someren, N. Khammassi, I. Ashraf, R. F. L. Vermeulen, V. Newsum, K. K. L. Loh, J. C. de Sterke, W. J. Vlothuizen, R. N. Schouten, C. G. Almudever, L. DiCarlo, K. Bertels]
+  title: "eQASM: An Executable Quantum Instruction Set Architecture"
+  venue: HPCA 2019; arXiv:1808.02449 (v1 7 August 2018)
+  year: 2019
+  url: https://arxiv.org/abs/1808.02449
+  checked: '2026-11-20'
+- id: khammassi-2020-openql
+  type: paper
+  primary: true
+  authors: [N. Khammassi, I. Ashraf, J. v. Someren, R. Nane, A. M. Krol, M. A. Rol, L. Lao, K. Bertels, C. G. Almudever]
+  title: "OpenQL: A Portable Quantum Programming Framework for Quantum Accelerators"
+  venue: arXiv:2005.13283
+  year: 2020
+  url: https://arxiv.org/abs/2005.13283
+  checked: '2026-11-20'
+- id: openql-repo
+  type: web
+  primary: true
+  authors: [QuTech]
+  title: "OpenQL (GitHub repository: initial commit 23 January 2017, release 0.2 on 18 August 2017)"
+  url: https://github.com/QuTech-Delft/OpenQL
+  checked: '2026-11-20'
+- id: fu-2022-proto-quipper-dyn
+  type: paper
+  primary: true
+  authors: [Peng Fu, Kohei Kishida, Neil J. Ross, Peter Selinger]
+  title: Proto-Quipper with dynamic lifting
+  venue: arXiv:2204.13041 (v1 27 April 2022, v2 8 November 2022)
+  year: 2022
+  url: https://arxiv.org/abs/2204.13041
+  checked: '2026-11-20'
