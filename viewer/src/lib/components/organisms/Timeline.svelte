@@ -16,6 +16,7 @@
 		type EdgeFamily
 	} from '#lib/graph.ts';
 	import type { Edge, LangNode } from '#lib/types.ts';
+	import KindDot from '../atoms/KindDot.svelte';
 
 	const AXIS_H = 46;
 	const INDENT = 14;
@@ -254,7 +255,7 @@
 			el.scrollTo({
 				left: Math.max(0, x - (el.clientWidth - GUTTER) / 2),
 				top: Math.max(0, y - el.clientHeight / 2),
-				behavior: 'smooth'
+				behavior: scrollBehavior()
 			});
 		});
 	});
@@ -269,7 +270,7 @@
 		const el = scroller;
 		const view = el.clientWidth - untrack(() => GUTTER);
 		if (t.era === 'now') {
-			el.scrollTo({ left: el.scrollWidth, behavior: 'smooth' });
+			el.scrollTo({ left: el.scrollWidth, behavior: scrollBehavior() });
 			return;
 		}
 		const era = untrack(() => g.data.eras.find((e) => e.id === t.era));
@@ -283,9 +284,11 @@
 		tick().then(() => {
 			const sc = timeScale(viewer.effectiveZoom);
 			const mid = (sc.x(era.start) + sc.x((era.end ?? NOW) + 1)) / 2;
-			el.scrollTo({ left: Math.max(0, mid - view / 2), behavior: 'smooth' });
+			el.scrollTo({ left: Math.max(0, mid - view / 2), behavior: scrollBehavior() });
 		});
 	});
+
+	const scrollBehavior = (): ScrollBehavior => (viewer.reducedMotion.current ? 'auto' : 'smooth');
 
 	/** user-initiated scrolling (not our smooth scrollTo) releases the pinned era highlight */
 	function unpinEra() {
@@ -342,9 +345,14 @@
 	);
 </script>
 
-<!-- svelte-ignore a11y_no_static_element_interactions -->
+<!-- A focusable region, so keyboard users can scroll it with the arrow keys. -->
+<!-- svelte-ignore a11y_no_noninteractive_tabindex, a11y_no_noninteractive_element_interactions -->
 <div
 	class="scroller"
+	id="timeline"
+	role="region"
+	aria-label="Timeline"
+	tabindex="0"
 	bind:this={scroller}
 	bind:clientWidth={viewW}
 	onwheel={onWheel}
@@ -361,12 +369,12 @@
 		style:grid-template-columns="{GUTTER}px {scale.width}px"
 		style:grid-template-rows="{AXIS_H}px {lay.height + ROW_H}px"
 	>
-		<div class="corner">
+		<div class="corner" aria-hidden="true">
 			<span>{g.data.nodes.length} nodes · {g.data.edges.length} edges</span>
 			<span class="hint">{viewer.coarse.current ? 'pinch to zoom' : 'ctrl+wheel zooms'}</span>
 		</div>
 
-		<svg class="axis" width={scale.width} height={AXIS_H}>
+		<svg class="axis" width={scale.width} height={AXIS_H} aria-hidden="true">
 			{#each eras as era (era.id)}
 				<rect x={era.x1} y="0" width={Math.max(0, era.x2 - era.x1)} height="18" class="era era-{era.i % 2}">
 					<title>{era.name} ({era.start}–{era.end ?? 'now'}){era.summary ? '\n' + era.summary : ''}</title>
@@ -388,15 +396,17 @@
 						style:height="{ROW_H}px"
 						class:selected={viewer.selected?.type === 'cluster' && viewer.selected.id === row.id}
 						class:synthetic={row.info.cluster._synthetic}
+						aria-expanded={row.expanded}
 						style:top="{row.y}px"
 						style:padding-left="{6 + row.depth * INDENT_PX}px"
 						onclick={() => viewer.toggleCluster(row.id)}
 						title={row.info.cluster.summary ?? row.id}
 					>
-						<span class="chev" class:open={row.expanded}>▸</span>
+						<span class="chev" class:open={row.expanded} aria-hidden="true">▸</span>
 						<span class="g-name">{row.info.cluster.name}</span>
 						<span class="g-meta">{row.members.length}{#if row.info.cluster.backlog?.length}<span class="backlog-count">+{row.info.cluster.backlog.length}</span>{/if}</span>
 						<span class="status status-{row.info.cluster.research_status ?? 'none'}" title="research status: {row.info.cluster.research_status ?? 'unset'}"></span>
+						<span class="sr-only">, {row.members.length} languages, research {row.info.cluster.research_status ?? 'unset'}</span>
 					</button>
 					<button
 						class="g-info"
@@ -404,13 +414,14 @@
 						style:height="{ROW_H}px"
 						onclick={() => viewer.selectCluster(row.id)}
 						title="Cluster details, backlog and research questions"
-						aria-label="Details for {row.info.cluster.name}">ⓘ</button
+						aria-label="Details for {row.info.cluster.name}"><span aria-hidden="true">ⓘ</span></button
 					>
 				{:else}
 					<button
 						class="g-row g-node"
 						style:height="{ROW_H}px"
 						class:selected={selNode === row.id}
+						aria-pressed={selNode === row.id}
 						class:dim={!lit(row.id)}
 						style:top="{row.y}px"
 						style:padding-left="{6 + row.depth * INDENT_PX + 14}px"
@@ -418,10 +429,10 @@
 						onpointerenter={() => (viewer.hover = { type: 'node', id: row.id })}
 						onpointerleave={() => (viewer.hover = null)}
 					>
-						<span class="kind-dot kind-{row.node.kind}"></span>
+						<KindDot kind={row.node.kind} />
 						<span class="g-name">{row.node.name}</span>
-						{#if row.node.example}<span class="has-code" title="has a code example (hover)">&lt;/&gt;</span>{/if}
-						<span class="g-meta">{firstYear(row.node)}</span>
+						{#if row.node.example}<span class="has-code" title="has a code example (hover)" aria-hidden="true">&lt;/&gt;</span>{/if}
+						<span class="g-meta"><span class="sr-only">, {row.node.kind}, </span>{firstYear(row.node)}</span>
 					</button>
 				{/if}
 			{/each}
@@ -429,7 +440,7 @@
 
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
-		<svg class="plot" width={scale.width} height={lay.height + ROW_H} onclick={onBackgroundClick}>
+		<svg class="plot" width={scale.width} height={lay.height + ROW_H} onclick={onBackgroundClick} aria-hidden="true">
 			<defs>
 				{#each FAMILIES as { id: f } (f)}
 					<marker id="arrow-{f}" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -606,6 +617,7 @@
 <style>
 	.scroller {
 		position: relative;
+		outline-offset: -2px;
 		touch-action: pan-x pan-y;
 		overflow: auto;
 		height: 100%;
@@ -704,13 +716,16 @@
 	.g-row.selected {
 		background: var(--accent-soft);
 	}
+	.g-row.selected .g-meta {
+		color: var(--fg-muted);
+	}
 	.g-row:focus-visible {
 		outline: 2px solid var(--accent);
 		outline-offset: -2px;
 	}
 	.g-cluster {
 		font-weight: 600;
-		padding-right: 28px;
+		padding-right: 32px;
 	}
 	@media (max-width: 899px) {
 		.g-row .g-meta,
@@ -722,7 +737,7 @@
 			gap: 4px;
 		}
 		.g-cluster {
-			padding-right: 22px;
+			padding-right: 28px;
 		}
 		.corner {
 			font-size: 10px;
@@ -732,8 +747,8 @@
 	.g-info {
 		all: unset;
 		position: absolute;
-		right: 4px;
-		width: 20px;
+		right: 2px;
+		width: var(--target-min);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -745,6 +760,10 @@
 	.g-info:hover,
 	.g-info:focus-visible {
 		color: var(--accent);
+	}
+	.g-info:focus-visible {
+		outline: var(--focus-ring);
+		outline-offset: -2px;
 	}
 	.g-cluster.synthetic .g-name {
 		font-style: italic;
@@ -765,11 +784,12 @@
 		margin-left: 3px;
 		color: var(--fg-subtle);
 	}
+	/* dimmed rows: muted text instead of opacity, so they keep AA contrast */
 	.g-node.dim {
-		opacity: 0.4;
+		color: var(--fg-muted);
 	}
-	.g-node.dim:hover {
-		opacity: 0.8;
+	.g-node.dim :global(.kind-dot) {
+		opacity: 0.4;
 	}
 	.chev {
 		display: inline-block;
@@ -793,13 +813,6 @@
 	.status-reviewed {
 		background: var(--rs-reviewed);
 		border-color: var(--rs-reviewed);
-	}
-	.kind-dot {
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		flex: none;
-		background: var(--kind);
 	}
 
 	/* plot */

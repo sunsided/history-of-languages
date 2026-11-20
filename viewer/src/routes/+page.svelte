@@ -15,6 +15,7 @@
 </svelte:head>
 
 <div class="app">
+	<a class="skip" href="#timeline">Skip to timeline</a>
 	<Toolbar />
 	<main class:narrow={viewer.narrow.current} class:open={viewer.panelOpen}>
 		<Timeline />
@@ -34,6 +35,21 @@
 {/if}
 
 <style>
+	.skip {
+		position: absolute;
+		z-index: var(--z-tooltip);
+		left: var(--space-4);
+		top: var(--space-4);
+		padding: var(--space-3) var(--space-5);
+		background: var(--bg);
+		color: var(--accent);
+		border: var(--focus-ring);
+		border-radius: var(--radius-md);
+		transform: translateY(-200%);
+	}
+	.skip:focus {
+		transform: none;
+	}
 	.app {
 		height: 100vh;
 		height: 100dvh;
