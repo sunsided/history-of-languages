@@ -477,6 +477,8 @@
     Influenced by 9PAC and FARGO (Wikipedia infobox), neither yet a node; FARGO was "the predecessor to RPG on the
     IBM 1401". FOLDOC credits Wilf Hey with the work that led to RPG; not confirmed, so no creator is listed.
     The infobox also lists dialects Baby/36, Baby/400, Lattice RPG and VAX RPG II.
+  relations:
+    - { type: targets, to: ibm-1401, weight: strong, confidence: high, sources: [ibm1401-rpg-recollections, wiki-ibm-rpg], note: "Mokotoff: \"It is my understanding the RPG was always planned to be on the 1401.\"" }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/IBM_RPG" }

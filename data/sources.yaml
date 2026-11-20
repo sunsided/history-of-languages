@@ -7153,3 +7153,49 @@
   year: 2008
   url: https://qconsf.com/sf2008/dl/qcon-sanfran-2008/slides_/JonathanTrevor_Yahoo_Pipes.pdf
   checked: '2026-11-20'
+- id: ibm1401-rpg-recollections
+  type: web
+  primary: true
+  authors: [Gary Mokotoff, Ed Thelen]
+  title: RPG on the IBM 1401 (collected recollections)
+  venue: IBM 1401 restoration project
+  url: https://ibm-1401.info/RPG-1401.html
+- id: chm-informatics-mark-iv
+  type: book
+  primary: true
+  authors: [Informatics]
+  title: "Chapter 9: The Story of MARK IV (Informatics history, CHM 102679129)"
+  url: https://archive.computerhistory.org/resources/access/text/2016/12/102679129-05-10-acc.pdf
+- id: dec-datatrieve-11-summary-1989
+  type: manual
+  primary: true
+  authors: [Digital Equipment Corporation]
+  title: DATATRIEVE-11 Summary Description (AA-U052C-TC)
+  year: 1989
+  url: https://archive.decromancer.ca/bitsavers.org/pdf/dec/pdp11/lang/datatrieve-11/V3.3_Jul89/AA-U052C-TC_DATATRIEVE-11_V3.3_Summary_Description_Jul89.pdf
+- id: m204wiki-model-204
+  type: web
+  primary: true
+  authors: [Rocket Software]
+  title: Model 204 (m204wiki)
+  url: https://m204wiki.rocketsoftware.com/index.php/Model_204
+- id: sap-abap-sql-doc
+  type: manual
+  primary: true
+  authors: [SAP SE]
+  title: ABAP Keyword Documentation 7.54, ABAP SQL (mirror)
+  url: https://eduardocopat.github.io/abap-docs/7.54/abenabap_sql
+- id: appeon-powerscript-sql
+  type: manual
+  primary: true
+  authors: [Appeon]
+  title: PowerScript Reference 2019, Using SQL in scripts
+  year: 2019
+  url: https://docs.appeon.com/pb2019/powerscript_reference/ch08s01.html
+- id: techmonitor-corvision-1993
+  type: web
+  primary: false
+  authors: [Computer Business Review]
+  title: Cortex unveils client-server version 5.1 of its CorVision applications generator
+  year: 1993
+  url: https://www.techmonitor.ai/?p=178881

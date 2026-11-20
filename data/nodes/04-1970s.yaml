@@ -3032,7 +3032,7 @@
   status: maintained
   tags:
     paradigm: [query, declarative]
-    features: [english-like-syntax]
+    features: [english-like-syntax, interpreter]
     domain: [databases]
   milestones:
     - { version: VAX DATATRIEVE, year: 1981, summary: "Part of the VAX Information Architecture." }
@@ -3041,6 +3041,9 @@
     "a database query and report writer tool originally from Digital Equipment Corporation" whose "command structure is
     nearly plain English", "an early example of a Fourth Generation Language (4GL)". It runs on OpenVMS and several PDP-11
     systems and is now maintained by VMS Software Inc.
+  relations:
+    - { type: targets, to: pdp-11, weight: strong, confidence: high, sources: [dec-datatrieve-11-summary-1989], note: "\"a Local Call Interface, for calls to DATATRIEVE on your local PDP-11 node\"; RSX-11M, RSTS/E." }
+    - { type: targets, to: vax, year: 1981, weight: moderate, confidence: medium, sources: [wiki-datatrieve], note: "\"VAX DATATRIEVE was released in 1981 as part of the VAX Information Architecture.\"" }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/DATATRIEVE" }
@@ -3341,6 +3344,8 @@
     that "incorporates a programming language and an environment for application development". It is one of "the three
     major inverted-list" database systems with ADABAS and Datacom/DB. In 2014 Australia's social security system and the
     Pentagon were said to be its last customers.
+  relations:
+    - { type: targets, to: ibm-system-360, weight: moderate, confidence: low, sources: [m204wiki-model-204], note: "\"a DBMS for IBM and compatible mainframes, which was first deployed as a product in 1972\"; System/360 is not named. The USGS 1981 report said to list IBM 360/370 would confirm it." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Model_204" }
@@ -3415,6 +3420,8 @@
     "a fourth-generation programming language originally from Sperry Univac", now Unisys's Business Information Server.
     It was "initially called CRT RPS (Report Processing System), to differentiate it from RPG", and was written in
     assembler. A 1989 Unisys survey found 140 of 224 UNIVAC 1100 customers using it.
+  relations:
+    - { type: embeds, to: sql, weight: weak, confidence: low, sources: [wiki-mapper], note: "Wikipedia: MAPPER can issue \"SQL data retrieval commands ... with full SQL syntax on external databases\" (pass-through). A Unisys manual would confirm it." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/MAPPER" }

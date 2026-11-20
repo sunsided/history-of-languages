@@ -1820,6 +1820,8 @@
     DataWindow". The product belongs to SAP today and is developed by Appeon.
   notes: >
     No example yet: needs a verbatim multi-line PowerScript listing from Appeon's documentation.
+  relations:
+    - { type: embeds, to: sql, weight: strong, confidence: high, sources: [appeon-powerscript-sql], note: "\"PowerScript supports standard embedded SQL statements and dynamic SQL statements in scripts.\"" }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/PowerBuilder" }

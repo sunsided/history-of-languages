@@ -1852,6 +1852,8 @@
     reading of input files and conversion of the data inside to produce one or more reports and updated output files".
     It descends from Postley's GIRLS and Marks I to III, and is "historically important as one of the first examples of
     commercial software that was sold by an independent vendor". Computer Associates sold it as VISION:BUILDER.
+  relations:
+    - { type: targets, to: ibm-system-360, weight: strong, confidence: high, sources: [chm-informatics-mark-iv], note: "\"a file management program designed to be a proprietary software product compatible with the IBM System/360 computer\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/MARK_IV_(software)" }

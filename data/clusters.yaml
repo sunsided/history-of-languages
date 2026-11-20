@@ -640,3 +640,8 @@
     - { name: "Visual Objects", hint: "CA-Visual Objects (code-named Aspen), Nantucket's Clipper for Windows, brought to market by Computer Associates; 2.5 in 1999, last 2.8 sp4 in 2012; successors Vulcan.NET and X# (Wikipedia). No first-release year." }
     - { name: "FOCUS", hint: "Information Builders' 4GL; Gerald D. Cohen recreated RAMIS as FOCUS after founding Information Builders in October 1975; WebFOCUS 1997 (Wikipedia). No release year for FOCUS itself." }
     - { name: "Pro*C", hint: "Oracle's embedded-SQL precompiler language for C/C++ (Wikipedia); no year or authors on the page." }
+  research_questions:
+    - "RPG gained embedded SQL on IBM's midrange systems (ILE RPG supports it today), but no sourced year was found; an IBM SQL/400 or System/38 document would date an rpg embeds sql edge."
+    - "RPG's predecessor FARGO is said to have appeared at the end of 1961, after RPG's 1959 date; the IBM 1401 RPG manual C24-3261-1 would settle the order."
+    - "OpenEdge ABL, DataFlex and SIMPOL have no documented relation yet: searched Wikipedia, the DataFlex 2.0 manual (1984), Progress DataServer docs and the SIMPOL SBL-to-SIMPOL guide. ABL's SELECT reference or the Progress SQL-89 guide would document an embeds sql edge; SIMPOL's predecessor Superbase SBL is not a node."
+    - "Missing nodes met while connecting 4GLs: FARGO and 9PAC (IBM), GIRLS (MARK IV's ancestor on the IBM 704), Cortex INFORM (CorVision's 1972 predecessor), Superbase SBL; machines UNIVAC 1108, HP 3000, IBM System/3 and System/38."
