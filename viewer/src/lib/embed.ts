@@ -5,20 +5,24 @@
 // its concept tags and milestone concepts, and its cluster path. Year is deliberately left out, so a
 // time gradient on the map is something the relations produced, not something put in.
 
-import type { Graph } from './graph.ts';
+import type { Edge, LangNode } from './types.ts';
 
 type Sparse = Map<string, number>;
 
-export function features(g: Graph): { ids: string[]; vecs: Sparse[] } {
-	const ids = [...g.node.keys()];
+/** the parts of a node the features read; small enough to post to a worker */
+export type FeatureNode = Pick<LangNode, 'id' | 'cluster' | 'tags' | 'milestones'>;
+
+export function features(nodes: FeatureNode[], edges: Pick<Edge, 'from' | 'to'>[]): { ids: string[]; vecs: Sparse[] } {
+	const ids = nodes.map((n) => n.id);
+	const byId = new Map(nodes.map((n) => [n.id, n]));
 	const nb = new Map<string, Set<string>>(ids.map((id) => [id, new Set()]));
-	for (const e of g.data.edges) {
+	for (const e of edges) {
 		if (!nb.has(e.from) || !nb.has(e.to)) continue;
 		nb.get(e.from)!.add(e.to);
 		nb.get(e.to)!.add(e.from);
 	}
 	const vecs = ids.map((id) => {
-		const n = g.node.get(id)!;
+		const n = byId.get(id)!;
 		const v: Sparse = new Map();
 		const add = (k: string, w: number) => v.set(k, Math.max(v.get(k) ?? 0, w));
 		add(`n:${id}`, 1);

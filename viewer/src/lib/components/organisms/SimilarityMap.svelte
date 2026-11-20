@@ -1,21 +1,10 @@
-<script lang="ts" module>
-	import { affinities, distances, features, som, type SOM } from '#lib/embed.ts';
-	import type { Graph } from '#lib/graph.ts';
-
-	// features and affinities cost ~0.6 s; keep them per dataset, so switching method is instant
-	const cache = new WeakMap<Graph, { ids: string[]; vecs: ReturnType<typeof features>['vecs']; P?: Float64Array; som?: SOM }>();
-	function prep(g: Graph) {
-		let c = cache.get(g);
-		if (!c) cache.set(g, (c = features(g)));
-		return c;
-	}
-</script>
-
 <script lang="ts">
 	// Every node placed by similarity of its relations, concepts and cluster: t-SNE in 2D or 3D, or a SOM.
 	import { viewer, type MapMethod } from '#lib/viewer.svelte.ts';
 	import { FAMILY_OF, firstYear } from '#lib/graph.ts';
-	import { TSNE } from '#lib/embed.ts';
+	import type { SOM } from '#lib/embed.ts';
+	import { mapJob } from '#lib/mapjob.svelte.ts';
+	import { untrack } from 'svelte';
 	import { NOW } from '#lib/scale.ts';
 	import Button from '../atoms/Button.svelte';
 
@@ -28,11 +17,13 @@
 	const Y0 = 1940;
 
 	const g = $derived(viewer.graph);
-	let ids = $state.raw<string[]>([]);
+	const res = $derived(mapJob.result[viewer.mapMethod]);
+	const ids = $derived(res?.ids ?? []);
 	/** t-SNE coordinates, n * dims */
-	let Y = $state.raw<Float64Array | null>(null);
-	let grid = $state.raw<SOM | null>(null);
-	let progress = $state<string>('');
+	const Y = $derived(res?.Y ?? null);
+	const grid = $derived<SOM | null>(res?.som ?? null);
+	/** 0..1 while the worker cooks the shown method; null when ready */
+	const cooking = $derived(res ? null : (mapJob.progress[viewer.mapMethod] ?? 0));
 	let w = $state(800);
 	let h = $state(600);
 	let yaw = $state(0.6);
@@ -40,41 +31,10 @@
 	let spin = $state(true);
 	let hover = $state<number | null>(null);
 
+	// the worker usually finished long ago; if not, cook what is on screen first
 	$effect(() => {
-		const graph = g;
-		const method = viewer.mapMethod;
-		const still = viewer.reducedMotion.current;
-		let stop = false;
-		let raf = 0;
-		Y = null;
-		grid = null;
-		progress = 'computing…';
-		// let "computing…" paint before the blocking prep
-		const t = setTimeout(() => {
-			const c = prep(graph);
-			ids = c.ids;
-			if (method === 'som') {
-				grid = c.som ??= som(c.vecs);
-				progress = `${grid.cols}×${grid.rows} cells`;
-				return;
-			}
-			c.P ??= affinities(distances(c.vecs), c.ids.length);
-			const ts = new TSNE(c.P, c.ids.length, method === 'tsne3' ? 3 : 2);
-			const frame = () => {
-				if (stop) return;
-				const end = performance.now() + 14;
-				while (!ts.done && performance.now() < end) ts.step();
-				if (!still || ts.done) Y = Float64Array.from(ts.Y);
-				progress = ts.done ? `${ts.total} iterations` : `iteration ${ts.iter} / ${ts.total}`;
-				if (!ts.done) raf = requestAnimationFrame(frame);
-			};
-			frame();
-		});
-		return () => {
-			stop = true;
-			clearTimeout(t);
-			cancelAnimationFrame(raf);
-		};
+		const m = viewer.mapMethod;
+		untrack(() => mapJob.prioritize(m));
 	});
 
 	// slow turn in 3D until the user grabs it
@@ -158,6 +118,7 @@
 	let drag: { x: number; y: number } | null = null;
 	function down(ev: PointerEvent) {
 		if (viewer.mapMethod !== 'tsne3') return;
+		ev.preventDefault(); // else the drag selects the toolbar and caption text
 		drag = { x: ev.clientX, y: ev.clientY };
 		spin = false;
 		(ev.currentTarget as Element).setPointerCapture(ev.pointerId);
@@ -187,7 +148,9 @@
 				<Button variant="pill" aria-pressed={viewer.mapMethod === m.id} onclick={() => (viewer.mapMethod = m.id)}>{m.label}</Button>
 			{/each}
 		</div>
-		<span class="status" role="status">{progress}</span>
+		<span class="status" role="status">
+			{#if cooking !== null}<span class="spinner" aria-hidden="true"></span>Cooking… {Math.round(cooking * 100)}%{:else if grid}{grid.cols}×{grid.rows} cells{/if}
+		</span>
 		<span class="ramp" aria-label="Colour: first appeared, {Y0} or earlier to now"><span>≤{Y0}</span><span class="grad"></span><span>now</span></span>
 		<span class="caption">
 			Placed by shared relations (2 hops), concepts and cluster; year is not an input. Axes and gaps between far groups mean nothing.
@@ -207,6 +170,9 @@
 		bind:clientHeight={h}
 		onkeydown={key}
 	>
+		{#if cooking !== null}
+			<p class="cooking"><span class="spinner big" aria-hidden="true"></span>Cooking the map… {Math.round(cooking * 100)}%</p>
+		{/if}
 		<svg
 			width={w}
 			height={h}
@@ -304,7 +270,45 @@
 		border-radius: 4px;
 		background: linear-gradient(to right in oklch longer hue, oklch(0.68 0.15 290), oklch(0.68 0.15 70));
 	}
+	.spinner {
+		display: inline-block;
+		width: 0.9em;
+		height: 0.9em;
+		margin-right: var(--space-2);
+		vertical-align: -0.1em;
+		border: 2px solid var(--line);
+		border-top-color: var(--accent);
+		border-radius: 50%;
+		animation: spin 0.8s linear infinite;
+	}
+	.spinner.big {
+		width: 1.4em;
+		height: 1.4em;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.spinner {
+			animation-duration: 3s;
+		}
+	}
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+	.cooking {
+		position: absolute;
+		inset: 0;
+		display: grid;
+		place-content: center;
+		grid-auto-flow: column;
+		align-items: center;
+		margin: 0;
+		color: var(--fg-muted);
+		font-variant-numeric: tabular-nums;
+		pointer-events: none;
+	}
 	.plot {
+		position: relative;
 		flex: 1;
 		min-height: 0;
 		overflow: hidden;
@@ -313,6 +317,7 @@
 	svg {
 		display: block;
 		touch-action: none;
+		user-select: none;
 	}
 	svg.grab {
 		cursor: grab;
