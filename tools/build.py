@@ -26,6 +26,9 @@ INVERSE = {
     "fork_of": "forked_as",
     "targets": "targeted_by",
     "implemented_in": "used_to_implement",
+    "extension_of": "extended_by",
+    "embeds": "embedded_in",
+    "reacts_against": "provoked",
 }
 FORWARD_TOLERANCE = 3  # years: an influence may come from a contemporary still in development
 

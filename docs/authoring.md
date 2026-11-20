@@ -154,7 +154,10 @@ A complete node, annotated (based on `zig`, with fields it does not have yet add
 | `dialect_of` | variant | same language, different variant (MACLISP of LISP 1.5) |
 | `superset_of` / `subset_of` | variant | syntactic or semantic inclusion (C++ superset of C, roughly) |
 | `fork_of` | fork | codebase or community fork |
-| `targets` | assembly or language | assembly → its machine; a language → the machine it was built for |
+| `extension_of` | the extension | realised inside a host language as a package, library, macro set or embedded DSL, so host code stays valid (XOTcl in Tcl, PDL in Perl, Quipper in Haskell) |
+| `embeds` | the host | carries another language's statements inside it, or uses it as its metalanguage (Informix-4GL embeds SQL; Nuprl's tactics are in ML) |
+| `reacts_against` | newer node | the designers say they set out against the older design (fish against Bourne-shell syntax, Swift's actors against Java's `synchronized`); store it *in addition to* `influenced_by` when both hold |
+| `targets` | assembly or language | assembly → its machine; a language → the machine, virtual machine, IR or other language it was built for or compiles to (Sather → C, Qunity → OpenQASM) |
 | `implemented_in` | the implemented node | bootstrapping history worth showing (C in B, then C) |
 
 - Always newer → older. `build.py` warns when an edge points more than 3 years forward in time. When a
@@ -169,7 +172,14 @@ A complete node, annotated (based on `zig`, with fields it does not have yet add
 - `confidence`: `high` = the designers say so in a primary source; `medium` = consistent secondary
   sources; `low` = plausible hypothesis. A `low` edge needs a `note` saying what would confirm it.
 - No self edges and no duplicate `(type, to)` pairs on one node (`build.py` rejects both).
-- Inverse edges (`influenced`, `superseded_by`, ...) are derived. Never store them.
+- Inverse edges (`influenced`, `superseded_by`, `extended_by`, `embedded_in`, `provoked`, ...) are derived. Never store them.
+- `superset_of` is for a language of its own that includes another (C++ and C, Objective-C and C). A package or
+  embedded DSL that lives inside its host is `extension_of`. A language that merely contains another's statements
+  (embedded SQL) is `embeds`.
+- A rejection is not an inheritance: when the source says the design is a reaction, add `reacts_against` with the
+  quote; keep `influenced_by` only for what was actually kept.
+- People, institutions and rare shared concepts are not stored as edges. The path-finder derives them from
+  `creators`, `places` and tags, so spell names and institutions identically everywhere.
 
 ## Cluster
 
@@ -254,7 +264,8 @@ colours, filters or labels:
 | change | schema | viewer |
 |---|---|---|
 | new node `kind` | `$defs.node.kind` | `viewer/src/app.css` (`--kind-*`, light and dark), `.kind-*` classes in `Timeline.svelte` and `DetailPanel.svelte`, `KINDS` in `Toolbar.svelte`, `LangNode` in `types.ts` |
-| new relation `type` | `$defs.relation.type`, `INVERSE` in `tools/build.py` | `RelationType` in `types.ts`; `FAMILY_OF`, `FORWARD_LABEL`, `BACKWARD_LABEL` in `src/lib/graph.ts` |
+| new relation `type` | `$defs.relation.type`, `INVERSE` in `tools/build.py` | `RelationType` in `types.ts`; `FAMILY_OF`, `FORWARD_LABEL`, `BACKWARD_LABEL` in `src/lib/graph.ts`; its cost in `TYPE_COST` in `src/lib/path.ts` |
+| new edge family | — | `EdgeFamily`, `FAMILIES` in `graph.ts`; `--fam-*` in `app.css` (light and dark); `.fam-*` rules in `DetailPanel.svelte` and `PathFinder.svelte` |
 | new tag facet | `$defs.node.tags`, `$defs.concept.facet` | works (facets are read dynamically) |
 | new field on any record | the record's `$defs` (they all set `additionalProperties: false`) | add it to `types.ts` if the viewer should show it |
 | new top-level data file | `tools/build.py` loader | `loadDataset` in `viewer/vite/dataset.ts` |

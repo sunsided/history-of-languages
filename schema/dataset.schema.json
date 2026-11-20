@@ -122,9 +122,12 @@
             "subset_of",
             "fork_of",
             "targets",
-            "implemented_in"
+            "implemented_in",
+            "extension_of",
+            "embeds",
+            "reacts_against"
           ],
-          "description": "influenced_by: design influence. successor_of: intended replacement in the same line (inverse: superseded_by). dialect_of: variant of the same language. superset_of / subset_of: syntactic or semantic inclusion. fork_of: codebase/community fork. targets: assembly -> machine code -> machine. implemented_in: notable for bootstrapping history."
+          "description": "influenced_by: design influence. successor_of: intended replacement in the same line (inverse: superseded_by). dialect_of: variant of the same language. superset_of / subset_of: syntactic or semantic inclusion of a language of its own. fork_of: codebase/community fork. extension_of: realised inside a host language as a package, library, macro set or embedded DSL; host code stays valid (inverse: extended_by). embeds: carries another language's statements inside it or uses it as its metalanguage (inverse: embedded_in). reacts_against: the designers set out against the older language's design; stored in addition to influenced_by when both hold (inverse: provoked). targets: built for or compiles to a machine, virtual machine, intermediate representation or another language. implemented_in: notable for bootstrapping history."
         },
         "to": {
           "$ref": "#/$defs/id"

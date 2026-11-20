@@ -41,8 +41,8 @@ def clusters_report():
 
 
 def orphans_report():
-    section("Nodes with no stored or derived relation (orphans)")
     linked = {a for a, _ in edges} | {r["to"] for _, r in edges}
+    section(f"Nodes with no stored or derived relation (orphans): {sum(n['id'] not in linked for n in nodes)}")
     for n in nodes:
         if n["id"] not in linked:
             print(f"  {n['id']} ({year(n)}, {n['cluster']})")

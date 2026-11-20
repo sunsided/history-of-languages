@@ -51,7 +51,10 @@ machine code), `formalism`, `notation` (written but not executed, such as Note G
 | `influenced_by` | `influenced` | design influence; `aspects` lists which concepts travelled |
 | `successor_of` | `superseded_by` | intended replacement in the same line |
 | `dialect_of` / `superset_of` / `subset_of` / `fork_of` | `has_dialect` / ... | same language, different variant |
-| `targets` | `targeted_by` | assembly → machine; program → machine |
+| `extension_of` | `extended_by` | package, library or embedded DSL inside a host language |
+| `embeds` | `embedded_in` | carries another language's statements, or uses it as metalanguage |
+| `reacts_against` | `provoked` | designed against the older language (kept alongside `influenced_by`) |
+| `targets` | `targeted_by` | assembly → machine; language → machine, VM, IR or language it compiles to |
 | `implemented_in` | `used_to_implement` | bootstrapping history |
 
 Each edge carries `weight` (strong / moderate / weak), `confidence` (high / medium / low), an optional

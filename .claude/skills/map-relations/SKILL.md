@@ -46,8 +46,19 @@ when.
   BCPL → B → C). An outside language inspired by an older one is influence, not succession.
 - `dialect_of`, `superset_of`, `subset_of`: the same language in a variant; code largely carries over.
 - `fork_of`: the codebase or community split.
-- `targets`: an assembler or language built for a specific machine.
+- `extension_of`: the newer language lives inside a host as a package, library, macro set or embedded DSL, and
+  host code stays valid (XOTcl in Tcl, PDL in Perl, Quipper in Haskell, Guppy in Python). Not `superset_of`,
+  which is a language of its own.
+- `embeds`: the newer language carries another's statements, or uses it as metalanguage (Informix-4GL and
+  SQL, Nuprl and ML).
+- `reacts_against`: the designers say they set out against the older design (fish vs Bourne-shell syntax,
+  Swift's actors vs Java `synchronized`, Mojo vs C++'s complexity). Quote it. Store it next to
+  `influenced_by` when something was also kept; never turn a rejection into an influence.
+- `targets`: an assembler or language built for a specific machine, or a language that compiles to a VM,
+  an IR or another language (Sather → C, Qunity → OpenQASM).
 - `implemented_in`: only when the bootstrapping story is worth showing.
+- People, institutions and rare shared concepts are derived by the path-finder from `creators`, `places`
+  and tags; do not store them as edges, but keep the spelling identical across nodes.
 
 ## 4. Write the edge
 
