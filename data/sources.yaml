@@ -7633,3 +7633,197 @@
   venue: OOPSLA 2005
   year: 2005
   url: http://www.subtext-lang.org/OOPSLA05.pdf
+- id: leijen-koka-2012-overview
+  type: talk
+  primary: true
+  authors: [Daan Leijen]
+  title: Koka overview
+  venue: Microsoft Research
+  year: 2012
+  url: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/koka-2012-overviewkoka.pdf
+- id: leijen-koka-effects-2013
+  type: report
+  primary: true
+  authors: [Daan Leijen]
+  title: "Koka: Programming with Row-polymorphic Effect Types"
+  venue: Microsoft Research technical report
+  year: 2013
+  url: https://microsoft.com/en-us/research/wp-content/uploads/2016/02/koka-effects-2013.pdf
+- id: koka-readme
+  type: manual
+  primary: true
+  authors: [Daan Leijen]
+  title: koka README
+  url: https://github.com/koka-lang/koka
+- id: augustsson-cayenne-1998
+  type: paper
+  primary: true
+  authors: [Lennart Augustsson]
+  title: Cayenne - a Language with Dependent Types
+  venue: ICFP 1998
+  year: 1998
+  url: https://www.cs.tufts.edu/~nr/cs257/archive/lennart-augustsson/cayenne.pdf
+- id: norell-thesis-2007
+  type: report
+  primary: true
+  authors: [Ulf Norell]
+  title: Towards a practical programming language based on dependent type theory
+  venue: PhD thesis, Chalmers University of Technology
+  year: 2007
+  url: https://www.cse.chalmers.se/~ulfn/papers/thesis.pdf
+- id: augustsson-verse-calculus-2023
+  type: paper
+  primary: true
+  authors: [Lennart Augustsson, Joachim Breitner, Koen Claessen, Ranjit Jhala, Simon Peyton Jones, Olin Shivers, Guy L. Steele Jr., Tim Sweeney]
+  title: "The Verse Calculus: A Core Calculus for Deterministic Functional Logic Programming"
+  venue: Proceedings of the ACM on Programming Languages 7(ICFP)
+  year: 2023
+  url: https://www.cs.tufts.edu/~nr/cs257/archive/simon-peyton-jones/verse-icfp23.pdf
+- id: peytonjones-verse-hx-2022
+  type: web
+  primary: false
+  authors: [Michael Tsai]
+  title: The Verse Programming Language (quoting Peyton Jones's Haskell eXchange 2022 abstract)
+  year: 2022
+  url: https://mjtsai.com/blog/2022/12/13/the-verse-programming-language/
+- id: kay-flex-1968
+  type: report
+  primary: true
+  authors: [Alan Kay]
+  title: "FLEX - A flexible extendable language (thesis excerpt)"
+  venue: University of Utah
+  year: 1968
+  url: http://www.mprove.de/diplom/gui/kay68.html
+- id: kay-early-history-smalltalk
+  type: paper
+  primary: true
+  authors: [Alan Kay]
+  title: The Early History of Smalltalk
+  venue: HOPL II
+  year: 1993
+  url: https://worrydream.com/EarlyHistoryOfSmalltalk/
+- id: scott-lynx-1984
+  type: paper
+  primary: true
+  authors: [Michael L. Scott, Raphael A. Finkel]
+  title: "LYNX: A Dynamic Distributed Programming Language"
+  venue: ICPP 1984
+  year: 1984
+  url: https://www.cs.rochester.edu/u/scott/papers/1984_ICPP_Lynx.pdf
+- id: scott-lynx-tr183
+  type: report
+  primary: true
+  authors: [Michael L. Scott]
+  title: LYNX language description (University of Rochester TR 183, revised)
+  year: 1986
+  url: https://www.cs.rochester.edu/u/scott/papers/1986_TR183_revised.pdf
+- id: kahn-saraswat-actors-1990
+  type: paper
+  primary: true
+  authors: [Kenneth M. Kahn, Vijay A. Saraswat]
+  title: Actors as a Special Case of Concurrent Constraint (Logic) Programming
+  venue: OOPSLA/ECOOP 1990
+  year: 1990
+  url: https://static.aminer.org/pdf/20170130/pdfs/oopsla/hybewvu2zfo5ie9bpimxstamncxruk8a.pdf
+- id: lamport-writings
+  type: web
+  primary: true
+  authors: [Leslie Lamport]
+  title: My Writings (note on The Temporal Logic of Actions)
+  url: https://lamport.azurewebsites.net/pubs/pubs.html
+- id: lopez-kaleidoscope-oopsla94
+  type: paper
+  primary: true
+  authors: [Gus Lopez, Bjorn Freeman-Benson, Alan Borning]
+  title: "Implementing Constraint Imperative Programming Languages: The Kaleidoscope'93 Virtual Machine"
+  venue: OOPSLA 1994
+  year: 1994
+  url: https://www.cs.washington.edu/research/constraints/cip/kaleidoscope-oopsla-94.pdf
+- id: freeman-benson-kaleidoscope-ecoop92
+  type: paper
+  primary: true
+  authors: [Bjorn Freeman-Benson, Alan Borning]
+  title: Integrating Constraints with an Object-Oriented Language
+  venue: ECOOP 1992
+  year: 1992
+  url: https://www.cs.washington.edu/research/constraints/cip/kaleidoscope-ecoop-92.pdf
+- id: lambdamoo-prog-manual-text
+  type: manual
+  primary: true
+  authors: [Pavel Curtis]
+  title: LambdaMOO Programmer's Manual (1.8.0p6 text)
+  url: https://artport.whitney.org/gatepages/artists/nideffer/moo/docs/prog-man.txt
+- id: sl-wiki-mono
+  type: web
+  primary: true
+  authors: [Linden Lab]
+  title: Mono (Second Life wiki)
+  url: https://wiki.secondlife.com/wiki/Mono
+- id: wilmunder-scumm-diary
+  type: web
+  primary: true
+  authors: [Aric Wilmunder]
+  title: "The SCUMM Diary: Stories behind one of the greatest game engines ever made"
+  venue: Game Developer
+  year: 2013
+  url: https://gamedeveloper.com/design/the-scumm-diary-stories-behind-one-of-the-greatest-game-engines-ever-made
+- id: mmi-pal-handbook-1981
+  type: manual
+  primary: true
+  authors: [Monolithic Memories]
+  title: PAL Programmable Array Logic Handbook, 2nd edition
+  year: 1981
+  url: https://ftp.mirrorservice.org/sites/www.bitsavers.org/components/mmi/_dataBooks/1981_MMI_PAL_Handbook_2ed.pdf
+- id: nistor-wyvern-2013
+  type: paper
+  primary: true
+  authors: [Ligia Nistor, Darya Kurilova, Stephanie Balzer, Benjamin Chung, Alex Potanin, Jonathan Aldrich]
+  title: "Wyvern: A Simple, Typed, and Pure Object-Oriented Language"
+  venue: MASPEGHI 2013
+  year: 2013
+  url: https://www.cs.cmu.edu/~aldrich/papers/maspeghi13.pdf
+- id: omar-tsl-2014
+  type: paper
+  primary: true
+  authors: [Cyrus Omar, Darya Kurilova, Ligia Nistor, Benjamin Chung, Alex Potanin, Jonathan Aldrich]
+  title: Safely Composable Type-Specific Languages
+  venue: ECOOP 2014
+  year: 2014
+  url: https://www.cs.cmu.edu/~aldrich/papers/ecoop14-tsls.pdf
+- id: wyvern-homepage
+  type: web
+  primary: true
+  authors: [Jonathan Aldrich, Alex Potanin]
+  title: The Wyvern Programming Language
+  url: https://wyvernlang.github.io
+- id: orlarey-faust-2004
+  type: paper
+  primary: true
+  authors: [Yann Orlarey, Dominique Fober, Stéphane Letz]
+  title: Syntactical and semantical aspects of Faust
+  venue: Soft Computing 8(9)
+  year: 2004
+  url: https://allstar.jhuapl.edu/repo/p1/i386/faust/doc/faust-soft-computing.pdf.gz
+- id: orlarey-faust-2009
+  type: paper
+  primary: true
+  authors: [Yann Orlarey, Dominique Fober, Stéphane Letz]
+  title: "FAUST: an Efficient Functional Approach to DSP Programming"
+  venue: New Computational Paradigms for Computer Music
+  year: 2009
+  url: https://tzechienchu.github.io/mynotes/papers/2026/FAUST_an_Efficient_Functional_Approach_to_DSP_Prog.pdf
+- id: agnarsson-fjolnir-manual
+  type: manual
+  primary: true
+  authors: [Snorri Agnarsson]
+  title: Fjölnir (manual, Icelandic)
+  url: https://web.archive.org/web/20041209213633/http://www.hi.is/~snorri/087133-03/fjolnir.pdf
+- id: yokoyama-gluck-janus-2007
+  type: paper
+  primary: true
+  authors: [Tetsuo Yokoyama, Robert Glück]
+  title: A reversible programming language and its invertible self-interpreter
+  venue: PEPM 2007
+  year: 2007
+  doi: 10.1145/1244381.1244404
+  url: https://dl.acm.org/doi/10.1145/1244381.1244404

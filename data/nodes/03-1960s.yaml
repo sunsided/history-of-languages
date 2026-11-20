@@ -2340,10 +2340,16 @@
     - { name: Alan Kay, role: designer }
   status: extinct
   tags:
+    concurrency: [coroutines]
     paradigm: [object-oriented]
   summary: >
     The language Alan Kay "developed ... in the late 1960s while exploring ideas that would later evolve into the
     Smalltalk programming language".
+  relations:
+    - { type: influenced_by, to: euler, weight: strong, confidence: high, sources: [kay-flex-1968], note: "FLEX \"follows the traditions set by ALGOL 60 and several generations of EULER\"." }
+    - { type: influenced_by, to: algol-60, weight: moderate, confidence: high, sources: [kay-flex-1968] }
+    - { type: influenced_by, to: simula, aspects: [coroutines], weight: strong, confidence: high, sources: [kay-early-history-smalltalk], note: "\"The semantics of what was now called the FLEX language needed to be influenced more by Simula than by Algol or EULER\"; \"As in Simula, a coroutining control structure was used\"." }
+    - { type: influenced_by, to: joss, weight: weak, confidence: high, sources: [kay-early-history-smalltalk], note: "\"A language that looked a little like JOSS but had considerably more potential power was Wirth's EULER\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Flex_(programming_language)" }

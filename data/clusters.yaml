@@ -190,6 +190,8 @@
   name: ALGOL family
   summary: "ALGOL 58/60/68 and the languages defined by agreeing or disagreeing with them."
   research_status: draft
+  research_questions:
+    - "LYaPAS and NORD PL have no edge yet: their targets (Ural-1, Minsk-22, BESM-6, M-220; NORD-10) are not nodes, and NORD PL only \"resembles ALGOL\" per a secondary wiki. Action! is said to be \"largely a port of Micro-SPL concepts\" (Baker and Parker, Xerox Alto, 1979), which is not a node."
 - id: algol/systems
   name: Military, real-time and systems languages
   parent: algol
@@ -317,6 +319,8 @@
     - { name: "Mirah", hint: "Charles Oliver Nutter's Ruby-syntax JVM language, formerly Duby; infobox influences Ruby, Java, Boo; stable 0.2.1 (26 September 2016). Wikipedia gives no first-appeared year (wiki-mirah not yet added)." }
     - { name: "PortablE", hint: "No article (404); a section of the Amiga E article: Christopher Handley's self-hosting meta-compiler for Amiga E targeting C++ and E. No year." }
     - { name: "ACC", hint: "Wikipedia stub: \"a near-C compiler for the MS-DOS operating system\"; no year or authors (and a mismatched OpenACC reference)." }
+  research_questions:
+    - "Kaleidoscope adopts Cecil\u2019s multiple dispatch and optional static typing (Freeman-Benson and Borning, ECOOP 1992), but Kaleidoscope is dated 1990 and Cecil 1992; Cecil\u2019s earliest date needs settling before the edge can be stored. Lithe has no documented ancestor (POPL 1982 paper unreadable). ThingLab, META II and the Burroughs B5000 (FLEX) are not nodes."
 - id: oop/simula-smalltalk
   name: Simula, Smalltalk and their heirs
   parent: oop
@@ -464,6 +468,9 @@
     - { name: "SR", hint: "Synchronizing Resources; Andrews and Olsson's book; version 2.2 ports listed (Wikipedia stub). No year." }
     - { name: "MPD", hint: "\"implemented as a variant of the SR programming language\" for Andrews's book Foundations of Multithreaded, Parallel, and Distributed Programming (Wikipedia). No year." }
     - { name: "Averest", hint: "Synchronous language and toolbox from the Kaiserslautern Embedded Systems Group (Wikipedia). No year." }
+  research_questions:
+    - "Hermes descends from IBM NIL (Strom and Yemini, 1983; not the Lisp dialect nil-lisp), which is not a node. UNITY credits no ancestor language in Misra\u2019s writings; the Secure Operations Language papers (ENTCS 2002) could not be read, and a search snippet says SOL borrows events from SCR, which is not a node."
+    - "Missing nodes met while connecting concurrency languages: NIL (IBM), Seuss (from UNITY), Guarded Horn Clauses, Parlog and Flat Concurrent Prolog (Janus), ToonTalk (from Janus), SCR."
 - id: concurrency/plan9
   name: Bell Labs CSP line (Newsqueak to Go)
   parent: concurrency
@@ -646,6 +653,8 @@
   research_status: stub
   backlog:
     - { name: "JASS", hint: "JASS redirects to the Warcraft III: Reign of Chaos article (released July 3, 2002), whose text does not mention it; needs another source (e.g. the World Editor documentation) for a year and a description." }
+  research_questions:
+    - "GML is only likened to JavaScript and C by third parties; the GameMaker manual was not read. SCUMM: Wilmunder\u2019s memoir credits Chip Morningstar with creating the language \"in just a few short weeks\", while the node gives him only initial help; to be reconciled. LSL\u2019s Mono target was read only through a relayed fetch."
 - id: business/4gl
   name: xBase and 4GL languages
   parent: business

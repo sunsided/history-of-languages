@@ -1219,6 +1219,7 @@
     - { type: influenced_by, to: rocq, aspects: [dependent-types], weight: moderate, confidence: medium, sources: [wiki-agda], note: "Infobox; the article also notes the name's allusion to Coq." }
     - { type: influenced_by, to: haskell, weight: moderate, confidence: medium, sources: [wiki-agda], note: "Infobox." }
     - { type: implemented_in, to: haskell, weight: strong, confidence: high, sources: [wiki-agda] }
+    - { type: influenced_by, to: cayenne, aspects: [module-system], year: 2007, weight: weak, confidence: high, sources: [norell-thesis-2007], note: "Agda 2: \"Another source of inspiration was Cayenne, whose module system also aspired to separate itself from the type checker\"." }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Agda_(programming_language)" }
@@ -1522,6 +1523,8 @@
     Leslie Lamport's "formal specification language ... used for designing, modelling, documentation, and
     verification of programs", especially concurrent and distributed systems. Built on TLA, the Temporal Logic
     of Actions: a system is an initial-state predicate plus a next-state relation.
+  relations:
+    - { type: influenced_by, to: unity-cm, weight: moderate, confidence: high, sources: [lamport-writings], note: "Lamport: \"The first major step in getting beyond traditional programming languages to describe concurrent algorithms was Misra and Chandy's Unity ... The next step was TLA\"." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/TLA%2B", homepage: "https://lamport.azurewebsites.net/tla/tla.html" }
@@ -1676,6 +1679,8 @@
     The language of MOO servers, "a text-based online virtual reality system" shared by many users at once, whose
     objects are programmed with verbs such as player:tell(...). Stephen White wrote the first server "based on his
     experience from creating the programmable TinyMUCK system"; Pavel Curtis's LambdaMOO followed in October 1990.
+  relations:
+    - { type: influenced_by, to: c, weight: weak, confidence: high, sources: [lambdamoo-prog-manual-text], note: "Comments \"just like comments in the C programming language\"." }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/MOO_(programming_language)" }
@@ -3586,6 +3591,9 @@
   notes: >
     Creators are the authors of the cited papers (Lopez, Freeman-Benson, Borning); the article itself names no designer.
     Milestone years are read from the version names.
+  relations:
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: medium, sources: [lopez-kaleidoscope-oopsla94], note: "\"In the Smalltalk tradition, Kaleidoscope language and implementation components are represented as objects\"." }
+    - { type: implemented_in, to: common-lisp, weight: moderate, confidence: high, sources: [lopez-kaleidoscope-oopsla94], note: "\"All three are currently implemented using the Common Lisp Object System.\"" }
   research_status: stub
   confidence: low
   links: { wikipedia: "https://en.wikipedia.org/wiki/Kaleidoscope_(programming_language)" }
@@ -3886,6 +3894,10 @@
     Wikipedia page gives it only a bullet in Augustsson's biography.
   notes: >
     Nothing on the page states its relation to Haskell; add an edge when a primary source (the ICFP paper) is read.
+  relations:
+    - { type: influenced_by, to: haskell, weight: strong, confidence: high, sources: [augustsson-cayenne-1998], note: "\"Cayenne is a Haskell-like language. The main difference between Haskell and Cayenne is that Cayenne has dependent types\"." }
+    - { type: targets, to: lazy-ml, weight: moderate, confidence: high, sources: [augustsson-cayenne-1998], note: "\"The current implementation of Cayenne is written in Haskell and translates Cayenne to untyped LML.\"" }
+    - { type: implemented_in, to: haskell, weight: moderate, confidence: high, sources: [augustsson-cayenne-1998] }
   research_status: stub
   confidence: low
   links: { wikipedia: "https://en.wikipedia.org/wiki/Lennart_Augustsson" }
@@ -4641,6 +4653,8 @@
     "a concurrent constraint language without backtracking" whose bag channels share the actor model's unordered message
     arrival; mailboxes can be passed around, an ability "inherited in computer programming language ToonTalk, which is
     influenced by Janus".
+  relations:
+    - { type: influenced_by, to: strand, weight: moderate, confidence: medium, sources: [kahn-saraswat-actors-1990], note: "\"a concurrent constraint language which closely resembles concurrent logic programming languages such as Guarded Horn Clauses, Strand, Parlog and Flat Concurrent Prolog\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Janus_(concurrent_constraint_programming_language)" }

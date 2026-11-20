@@ -2669,6 +2669,14 @@
   notes: >
     When handlers (as opposed to row-polymorphic effect types) arrived in Koka is not sourced, so no milestone
     introduces effect-handlers yet. Perceus: technical report 2020-11-29.
+  relations:
+    - { type: influenced_by, to: haskell, aspects: [monads], weight: moderate, confidence: high, sources: [leijen-koka-effects-2013, leijen-koka-2012-overview], note: "\"This hierarchy is clearly inspired by Haskell's standard monads\"; \"Separation of pure vs side-effecting computation through an effect system (as in Haskell)\"." }
+    - { type: influenced_by, to: ml, weight: weak, confidence: high, sources: [leijen-koka-effects-2013], note: "\"Like ML, Koka has a strict semantics where arguments are evaluated before calling a function\"." }
+    - { type: influenced_by, to: javascript, weight: weak, confidence: high, sources: [leijen-koka-2012-overview], note: "\"Familiar JavaScript-like syntax\"." }
+    - { type: targets, to: c, weight: strong, confidence: high, sources: [koka-readme], note: "Koka compiles \"directly to C code without needing a garbage collector or runtime system\"." }
+    - { type: targets, to: javascript, weight: moderate, confidence: high, sources: [koka-readme] }
+    - { type: targets, to: webassembly, weight: weak, confidence: high, sources: [koka-readme] }
+    - { type: implemented_in, to: haskell, weight: moderate, confidence: high, sources: [koka-readme] }
   research_status: draft
   confidence: medium
   links: { homepage: "https://koka-lang.github.io" }
@@ -3425,6 +3433,7 @@
     - { name: Lennart Augustsson, role: designer }
   status: active
   tags:
+    features: [unification]
     paradigm: [functional, logic]
     domain: [game-scripting]
   summary: >
@@ -3435,6 +3444,9 @@
     The influence of Haskell (through its designers) is plausible but not yet sourced as a language influence. The
     Verse calculus paper (Augustsson et al., ICFP 2023) would be the primary source. No example yet: Epic's
     documentation renders client-side.
+  relations:
+    - { type: influenced_by, to: icon, weight: moderate, confidence: high, sources: [augustsson-verse-calculus-2023], note: "\"There are many obvious similarities between Verse and the Icon programming language\"; the calculus takes \"a different, more minimalist position, following the lead of Icon\"." }
+    - { type: influenced_by, to: haskell, weight: moderate, confidence: medium, sources: [peytonjones-verse-hx-2022], note: "Peyton Jones: \"Like Haskell Verse is declarative ... and higher order (lambdas are first class). But Verse goes well beyond Haskell\" (talk abstract, quoted second-hand)." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Unreal_Engine" }
@@ -4966,6 +4978,12 @@
     A language "for the development of web and mobile applications with security and assurance being number one
     priority": it "supports object capabilities, it is structurally typed", and lets several embedded languages be used
     safely in one program. It is a GPLv2 prototype.
+  relations:
+    - { type: influenced_by, to: smalltalk, weight: moderate, confidence: high, sources: [nistor-wyvern-2013], note: "\"Class methods and variables are inspired by the corresponding constructs in Smalltalk.\"" }
+    - { type: influenced_by, to: self, weight: moderate, confidence: high, sources: [nistor-wyvern-2013], note: "Delegation-based reuse \"with slightly simpler semantics compared to delegation in Self\"." }
+    - { type: influenced_by, to: newspeak, aspects: [modules], weight: weak, confidence: high, sources: [nistor-wyvern-2013], note: "\"modules can be treated as any other object, following Newspeak\"." }
+    - { type: targets, to: python, weight: weak, confidence: high, sources: [wyvern-homepage], note: "bin/wypy, a Wyvern-to-Python compiler." }
+    - { type: targets, to: scala, year: 2014, weight: weak, confidence: high, sources: [omar-tsl-2014], note: "The 2014 prototype included \"a simple compiler ... to Scala source code\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Wyvern_(programming_language)", homepage: "https://wyvernlang.github.io" }
@@ -5208,6 +5226,8 @@
     interactivity to objects" that residents build in the virtual world.
   notes: >
     The LSO bytecode and Mono (CIL) compilers come only from a summarised reference list; unverified.
+  relations:
+    - { type: targets, to: cil, year: 2008, weight: moderate, confidence: medium, sources: [sl-wiki-mono], note: "Switching to Mono \"requires a compiler that can turn LSL scripts into Mono bytecode\" (relayed, not checked locally)." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Second_Life" }
@@ -6859,6 +6879,10 @@
     "a domain-specific purely functional, text-based visual programming language for implementing signal processing
     algorithms", where "a FAUST program denotes a signal processor"; it "combines ... functional programming and algebraic
     block diagrams" and compiles to C++, Rust, WebAssembly and other targets.
+  relations:
+    - { type: targets, to: cpp, weight: strong, confidence: high, sources: [orlarey-faust-2009], note: "\"The FAUST compiler translates FAUST programs into equivalent C++ programs\"." }
+    - { type: implemented_in, to: cpp, weight: moderate, confidence: high, sources: [orlarey-faust-2004] }
+    - { type: influenced_by, to: c, weight: weak, confidence: high, sources: [orlarey-faust-2004], note: "\"The set B of Faust primitives follows as much as possible the set of C/C++ operators.\"" }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/FAUST_(programming_language)" }

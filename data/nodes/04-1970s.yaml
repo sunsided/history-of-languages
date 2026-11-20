@@ -149,6 +149,7 @@
     - { type: influenced_by, to: lisp, aspects: [late-binding, garbage-collection, reflection], weight: strong, confidence: high, note: "Kay called LISP 1.5's eval 'the Maxwell's equations of software'." }
     - { type: influenced_by, to: logo, weight: moderate, confidence: high, note: "Children as users; Kay visited Papert." }
     - { type: influenced_by, to: sketchpad, aspects: [objects], weight: moderate, confidence: high }
+    - { type: influenced_by, to: flex-kay, weight: strong, confidence: high, sources: [kay-early-history-smalltalk], note: "\"This Smalltalk language (today labeled -71) was very influenced by FLEX, PLANNER, LOGO, META II\"." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Smalltalk" }
@@ -3472,6 +3473,7 @@
     - { name: Norsk Data, role: developer }
   status: extinct
   tags:
+    features: [self-hosting]
     paradigm: [procedural, imperative]
     typing: [static-typing, strong-typing]
     domain: [operating-systems]

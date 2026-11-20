@@ -3162,6 +3162,8 @@
     A compiled procedural language with an integrated full-screen editor and debugger for the Atari 8-bit computers,
     written by Clinton Parker and sold by OSS. It "is largely a port of Micro-SPL concepts to the Atari", Micro-SPL
     being a systems language Parker and Henry Baker had written for the Xerox Alto. It has three numeric base types.
+  relations:
+    - { type: targets, to: mos-6502, weight: strong, confidence: medium, sources: [wiki-action], note: "\"Action! constructs were designed to map cleanly to 6502 opcodes\" (Wikipedia, citing Atariki)." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Action!_(programming_language)" }
@@ -3705,8 +3707,9 @@
     places: [{ institution: University of Wisconsin–Madison, country: US }]
   status: extinct
   tags:
+    typing: [structural-typing]
     paradigm: [concurrent]
-    concurrency: [message-passing]
+    concurrency: [message-passing, coroutines]
     domain: [distributed-systems]
   milestones:
     - { version: Chrysalis port, year: 1986, summary: "Ported at the University of Rochester to the BBN Butterfly." }
@@ -3714,6 +3717,10 @@
     "a programming language for large distributed networks, using remote procedure calls", written for the Charlotte
     multicomputer operating system and later ported to the BBN Butterfly. M. L. Scott's 1991 paper describes its
     motivation, design and experience.
+  relations:
+    - { type: influenced_by, to: modula-2, weight: moderate, confidence: high, sources: [scott-lynx-tr183], note: "\"The basic syntax and scope rules of LYNX are similar to those of Modula-2. Comments are defined as in Ada\"." }
+    - { type: influenced_by, to: modula, weight: moderate, confidence: high, sources: [scott-lynx-1984], note: "Lexical scope \"is defined as in Modula\"." }
+    - { type: influenced_by, to: ada, weight: weak, confidence: high, sources: [scott-lynx-tr183] }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Lynx_(programming_language)" }
@@ -4566,10 +4573,12 @@
   tags:
     paradigm: [procedural, object-oriented]
     typing: [strong-typing, dynamic-typing]
-    features: [modules]
+    features: [modules, self-hosting]
   summary: >
     An Icelandic-keyword language from the University of Iceland "based on the concept of representing programs as
     trees, and packages by substitutions on trees using algebraic operators", run on MS-DOS.
+  relations:
+    - { type: influenced_by, to: lisp, weight: weak, confidence: low, sources: [agnarsson-fjolnir-manual], note: "Manual (Icelandic): list processing \"svipuð og í öðrum listavinnslumálum svo sem LISP og LOGO\" (similar to LISP and LOGO); a comparison rather than a stated influence." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Fj%C3%B6lnir_(programming_language)" }
@@ -4640,6 +4649,8 @@
     "a reversible programming language" that "performs deterministic computations in both forward and backward
     directions", "a structured imperative programming language that operates on a global store without heap allocation".
     Loops have entry and exit assertions (from ... until) so they can run backwards.
+  relations:
+    - { type: influenced_by, to: c, year: 2007, weight: weak, confidence: high, sources: [yokoyama-gluck-janus-2007], note: "Formalisation: \"Some operators in the original letter were changed into C-like notation.\"" }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Janus_(reversible_computing_programming_language)" }
@@ -5148,6 +5159,8 @@
     A game engine and scripting language for Lucasfilm Games' graphic adventures that "falls somewhere between a game
     engine and a programming language", letting designers create rooms, items and dialogue; commands such as walk dr-fred
     to laboratory-door compile to compact bytecode. Humongous Entertainment used it into 2003; ScummVM runs its games today.
+  relations:
+    - { type: implemented_in, to: c, weight: moderate, confidence: high, sources: [wilmunder-scumm-diary], note: "\"The interpreter was written in very portable C code\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/SCUMM" }
@@ -5630,7 +5643,7 @@
   category: hardware
   cluster: hardware
   origin:
-    first_appeared: { year: 1983, precision: circa, note: "\"developed by John Birkner in the early 1980s\"; \"By 1983, MMI customers ran versions on the DEC PDP-11, Data General NOVA, Hewlett-Packard HP 2100, MDS800 and others\", so 1983 is the latest possible year." }
+    first_appeared: { year: 1981, precision: circa, note: "The 1981 MMI PAL Handbook (2nd edition) already prints PALASM source, so 1981 is the latest possible year; the Computer History Museum ties PALASM to the 1978 launch of the PAL devices." }
     places: [{ institution: Monolithic Memories, country: US }]
   creators:
     - { name: John Birkner, role: designer }
@@ -5643,6 +5656,8 @@
     many minicomputers and later MS-DOS. One of the PLD languages of the early 1980s with ABEL and CUPL.
   notes: >
     Not case-sensitive. A Windows front-end came later. No code on the Wikipedia page.
+  relations:
+    - { type: implemented_in, to: fortran, weight: moderate, confidence: high, sources: [mmi-pal-handbook-1981], note: "\"PALASM is a FORTRAN IV program which assembles the PAL Design Specification\"." }
   research_status: stub
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/PALASM" }
