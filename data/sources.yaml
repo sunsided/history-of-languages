@@ -6738,3 +6738,113 @@
   year: 2023
   doi: 10.1145/3591283
   url: https://arxiv.org/abs/2207.04034
+- id: hanrahan-1990-shading-language
+  type: paper
+  primary: true
+  authors: [Pat Hanrahan, Jim Lawson]
+  title: A Language for Shading and Lighting Calculations
+  venue: Computer Graphics 24(4) (SIGGRAPH '90), pp. 289-298
+  year: 1990
+  doi: 10.1145/97880.97911
+  url: https://people.csail.mit.edu/ericchan/bib/pdf/p289-hanrahan.pdf
+  checked: '2026-11-20'
+- id: pixar-2000-rispec-3-2
+  type: standard
+  primary: true
+  authors: [Pixar]
+  title: The RenderMan Interface, Version 3.2
+  year: 2000
+  url: https://web.archive.org/web/2010id_/https://renderman.pixar.com/products/rispec/rispec_pdf/RISpec3_2.pdf
+- id: proudfoot-2001-rtsl
+  type: paper
+  primary: true
+  authors: [Kekoa Proudfoot, William R. Mark, Svetoslav Tzvetkov, Pat Hanrahan]
+  title: A Real-Time Procedural Shading System for Programmable Graphics Hardware
+  venue: SIGGRAPH 2001, pp. 159-170
+  year: 2001
+  doi: 10.1145/383259.383275
+  url: https://graphics.stanford.edu/projects/shading/pubs/sig2001/rtsl.pdf
+  checked: '2026-11-20'
+- id: ms-2002-directx9-beta
+  type: web
+  primary: true
+  authors: [Microsoft]
+  title: Microsoft Releases Beta Version 1 of DirectX 9.0 to Partners, Beta Testers
+  year: 2002
+  url: https://news.microsoft.com/2002/05/30/microsoft-releases-beta-version-1-of-directx-9-0-to-partners-beta-testers/
+- id: ms-2003-hlsl
+  type: web
+  primary: true
+  authors: [Microsoft]
+  title: DirectX 9.0 Features Revolutionary High-Level Shader Language
+  year: 2003
+  url: https://news.microsoft.com/source/2003/01/22/directx-9-0-features-revolutionary-high-level-shader-language/
+- id: ms-hlsl-shader-models
+  type: manual
+  primary: true
+  authors: [Microsoft]
+  title: Shader models vs shader profiles (HLSL)
+  url: https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-models
+- id: ms-d3d11-compute-shader
+  type: manual
+  primary: true
+  authors: [Microsoft]
+  title: Compute Shader Overview (Direct3D 11)
+  url: https://learn.microsoft.com/en-us/windows/win32/direct3d11/direct3d-11-advanced-stages-compute-shader
+- id: ms-hlsl-writing-shaders-9
+  type: manual
+  primary: true
+  authors: [Microsoft]
+  title: Writing HLSL Shaders in Direct3D 9
+  url: https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-writing-shaders-9
+- id: ms-2017-dxc
+  type: web
+  primary: true
+  authors: [Chas Boyd]
+  title: New DirectX Shader Compiler based on Clang/LLVM now available as Open Source
+  year: 2017
+  url: https://devblogs.microsoft.com/directx/new-directx-shader-compiler-based-on-clangllvm-now-available-as-open-source/
+- id: ms-2021-hlsl-2021
+  type: web
+  primary: true
+  authors: [Chris Bieneman]
+  title: Announcing HLSL 2021
+  year: 2021
+  url: https://devblogs.microsoft.com/directx/announcing-hlsl-2021/
+- id: wiki-direct3d
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Direct3D"
+  url: https://en.wikipedia.org/wiki/Direct3D
+  checked: '2026-11-20'
+- id: mark-2003-cg
+  type: paper
+  primary: true
+  authors: [William R. Mark, R. Steven Glanville, Kurt Akeley, Mark J. Kilgard]
+  title: "Cg: A system for programming graphics hardware in a C-like language"
+  venue: ACM Transactions on Graphics 22(3) (SIGGRAPH 2003), pp. 896-907
+  year: 2003
+  doi: 10.1145/882262.882362
+  url: https://web.archive.org/web/2004id_/http://www.cs.utexas.edu/~billmark/papers/Cg/cgpaper.pdf
+  checked: '2026-11-20'
+- id: kilgard-2003-cg-two-pages
+  type: paper
+  primary: true
+  authors: [Mark J. Kilgard]
+  title: Cg in Two Pages
+  venue: arXiv cs/0302013
+  year: 2003
+  url: https://arxiv.org/abs/cs/0302013
+- id: nvidia-2002-cg
+  type: web
+  primary: true
+  authors: [NVIDIA]
+  title: NVIDIA Cg Compiler and Cg Language Universally Embraced by the Graphics Community
+  year: 2002
+  url: https://web.archive.org/web/2003id_/http://www.nvidia.com/object/IO_20020612_7133.html
+- id: nvidia-cg-toolkit
+  type: web
+  primary: true
+  authors: [NVIDIA]
+  title: Cg Toolkit
+  url: https://developer.nvidia.com/cg-toolkit

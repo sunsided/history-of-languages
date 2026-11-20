@@ -8711,3 +8711,149 @@
   confidence: high
   links: { homepage: "https://github.com/flux-rs/flux" }
   sources: [lehmann-2023-flux]
+
+- id: rtsl
+  name: Stanford Real-Time Shading Language
+  aliases: [RTSL]
+  kind: language
+  category: research
+  cluster: gpu
+  origin:
+    began: { year: 1999, date: "1999-06", precision: exact, note: "\"Our project started in June 1999\"; the first version used a Lisp-like language, later replaced by a C-like one." }
+    first_appeared: { year: 2001, date: "2001-08", precision: exact, note: "Proudfoot, Mark, Tzvetkov and Hanrahan, SIGGRAPH 2001." }
+    places: [{ institution: Stanford University, city: Stanford, country: US }]
+  creators:
+    - { name: Kekoa Proudfoot, role: designer }
+    - { name: William R. Mark, role: designer }
+    - { name: Svetoslav Tzvetkov, role: designer }
+    - { name: Pat Hanrahan, role: designer }
+  status: historical
+  tags:
+    paradigm: [imperative]
+    domain: [computer-graphics, parallel-hardware]
+  summary: >
+    A procedural shading language for the first programmable graphics hardware, compiled to multiple OpenGL rendering
+    passes. It is "based to a loose degree on RenderMan", but splits RenderMan's varying type into vertex and fragment
+    and infers the computation frequency (constant, primitive group, vertex, fragment) of each value. Its designers went
+    on to Cg at NVIDIA.
+  relations:
+    - { type: influenced_by, to: renderman-sl, weight: strong, confidence: high, sources: [proudfoot-2001-rtsl], note: "\"The language we implemented is based to a loose degree on RenderMan\"." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://graphics.stanford.edu/projects/shading/" }
+  sources: [proudfoot-2001-rtsl]
+
+- id: hlsl
+  name: HLSL
+  aliases: [High-Level Shading Language, High-Level Shader Language, DirectCompute]
+  kind: language
+  category: domain-specific
+  cluster: gpu
+  origin:
+    first_appeared: { year: 2002, date: "2002-05-30", precision: exact, note: "Announced in DirectX 9.0 Beta 1 (Microsoft press release, 30 May 2002); first public availability with the DirectX 9.0 release in December 2002." }
+    places: [{ institution: Microsoft, city: Redmond, country: US }]
+  creators:
+    - { name: Microsoft, role: developer }
+  status: active
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing]
+    concurrency: [data-parallelism]
+    domain: [computer-graphics, parallel-hardware]
+  milestones:
+    - { version: "Shader Model 4 (Direct3D 10)", year: 2007, summary: "\"A complete redesign\" with Windows Vista: unified shader model, geometry shaders.", sources: [ms-hlsl-shader-models, wiki-direct3d] }
+    - { version: "Shader Model 5 (Direct3D 11)", year: 2009, summary: "Compute shaders (\"also known as the DirectCompute technology\"), which take Direct3D \"beyond graphics programming\", plus hull and domain shaders for tessellation; shipped with Windows 7.", sources: [ms-d3d11-compute-shader, wiki-direct3d] }
+    - { version: "Shader Model 6 / DXC", year: 2017, date: "2017-01-23", summary: "New open-source compiler \"built on the Clang/LLVM framework\" emitting the DXIL binary format; wave intrinsics.", sources: [ms-2017-dxc] }
+    - { version: "HLSL 2021", year: 2021, date: "2021-12-08", introduces: [templates, operator-overloading], summary: "Template functions and types, overloadable operators for user-defined types, bitfields, strict casting and short-circuiting logical operators.", sources: [ms-2021-hlsl-2021] }
+  summary: >
+    Microsoft's shading language for Direct3D, introduced with DirectX 9: "HLSL is based on the C programming language".
+    It was designed together with NVIDIA, whose implementation of the same language is Cg. Shaders declare vector and
+    matrix types, semantics that bind inputs and outputs to the pipeline, and RenderMan-style uniform and varying
+    inputs. Direct3D 11 added compute shaders (DirectCompute), making HLSL a general GPU programming language on Windows.
+  notes: >
+    The Direct3D 10 and 11 years rest on Wikipedia's Direct3D article (shipping with Windows Vista and Windows 7); Microsoft's
+    shader-model page lists the stages but not the dates. In September 2024 Microsoft announced that Shader Model 7 will
+    use SPIR-V as DirectX's interchange format; not yet a milestone. No individual designers are named in Microsoft's
+    releases.
+  relations:
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [ms-2002-directx9-beta, ms-2003-hlsl], note: "\"HLSL is based on the C programming language\"." }
+    - { type: influenced_by, to: renderman-sl, weight: moderate, confidence: medium, sources: [mark-2003-cg], note: "Through the joint design with NVIDIA: the Cg paper credits RenderMan for the uniform/varying distinction." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/High-Level_Shader_Language", homepage: "https://learn.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl" }
+  sources: [ms-2002-directx9-beta, ms-2003-hlsl, ms-hlsl-shader-models, ms-d3d11-compute-shader, ms-2017-dxc, ms-2021-hlsl-2021, wiki-direct3d]
+  example:
+    title: A pixel shader with uniform and varying inputs
+    language: HLSL (Direct3D 9)
+    note: "Verbatim from Microsoft Learn, \"Writing HLSL Shaders in Direct3D 9\"."
+    code: |
+      float4 Light(float3 LightDir : TEXCOORD1,
+                   uniform float4 LightColor,
+                   float2 texcrd : TEXCOORD0,
+                   uniform sampler samp) : COLOR
+      {
+          float3 Normal = tex2D(samp,texcrd);
+
+          return dot((Normal*2 - 1), LightDir)*LightColor;
+      }
+    sources: [ms-hlsl-writing-shaders-9]
+
+- id: cg
+  name: Cg
+  aliases: [C for Graphics, Cg Toolkit]
+  kind: language
+  category: domain-specific
+  cluster: gpu
+  origin:
+    began: { year: 2001, precision: year, note: "\"by early 2001, when our group at NVIDIA began to experiment with programming languages for graphics hardware\"." }
+    first_appeared: { year: 2002, date: "2002-06-13", precision: exact, note: "Cg language and Cg Toolkit (compiler beta 1.0) unveiled by NVIDIA, 13 June 2002." }
+    places: [{ institution: NVIDIA, city: Santa Clara, country: US }]
+  creators:
+    - { name: William R. Mark, role: designer }
+    - { name: Steve Glanville, role: designer }
+    - { name: Kurt Akeley, role: designer }
+    - { name: Mark Kilgard, role: designer }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing]
+    domain: [computer-graphics, parallel-hardware]
+  milestones:
+    - { version: "3.1", year: 2012, date: "2012-04", summary: "Last release; the toolkit is now \"a legacy NVIDIA toolkit no longer under active development or support\", with GLSL or HLSL recommended instead.", sources: [nvidia-cg-toolkit] }
+  summary: >
+    NVIDIA's C-like language for programmable GPUs, "developed by NVIDIA in close collaboration with Microsoft": "NVIDIA's
+    Cg implementation and Microsoft's High Level Shading Language (HLSL) both implement the same language". It is "based
+    on both the syntax and the philosophy of C" and "selectively uses ideas from C++, Java, RenderMan, and RTSL", taking
+    RenderMan's uniform and varying inputs. Programs target hardware profiles for each pipeline stage, on both OpenGL
+    and Direct3D.
+  relations:
+    - { type: dialect_of, to: hlsl, weight: strong, confidence: high, sources: [mark-2003-cg, kilgard-2003-cg-two-pages], note: "Jointly designed with Microsoft: \"NVIDIA refers to its implementation of the language, and the system that supports it, as Cg\"." }
+    - { type: influenced_by, to: c, weight: strong, confidence: high, sources: [mark-2003-cg] }
+    - { type: influenced_by, to: renderman-sl, weight: moderate, confidence: high, sources: [mark-2003-cg], note: "\"We adapted RenderMan's terminology for the two kinds of inputs\" (uniform and varying)." }
+    - { type: influenced_by, to: rtsl, weight: moderate, confidence: high, sources: [mark-2003-cg], note: "\"Cg adopts RTSL's approach of representing textures\"; Bill Mark came from the Stanford project." }
+    - { type: influenced_by, to: cpp, weight: weak, confidence: high, sources: [mark-2003-cg] }
+    - { type: influenced_by, to: java, weight: weak, confidence: high, sources: [mark-2003-cg] }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://developer.nvidia.com/cg-toolkit" }
+  sources: [mark-2003-cg, kilgard-2003-cg-two-pages, nvidia-2002-cg, nvidia-cg-toolkit]
+  example:
+    title: A vertex program with semantics and uniforms
+    language: Cg
+    year: 2003
+    note: "Verbatim from Mark et al. 2003, Figure 5; column alignment rebuilt from the PDF."
+    code: |
+      void simpleTransform(float4 objectPosition : POSITION,
+                           float4 color          : COLOR,
+                           float4 decalCoord     : TEXCOORD0,
+                       out float4 clipPosition   : POSITION,
+                       out float4 oColor         : COLOR,
+                       out float4 oDecalCoord    : TEXCOORD0,
+                   uniform float brightness,
+                   uniform float4x4 modelViewProjection)
+      {
+          clipPosition = mul(modelViewProjection, objectPosition);
+          oColor = brightness * color;
+          oDecalCoord = decalCoord;
+      }
+    sources: [mark-2003-cg]

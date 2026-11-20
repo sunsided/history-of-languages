@@ -5242,3 +5242,49 @@
   confidence: high
   links: { homepage: "https://arxiv.org/abs/2211.02559" }
   sources: [knill-1996-quantum-pseudocode]
+
+- id: renderman-sl
+  name: RenderMan Shading Language
+  aliases: [RSL, RenderMan SL]
+  kind: language
+  category: domain-specific
+  cluster: gpu
+  origin:
+    began: { year: 1988, date: "1988-05", precision: exact, note: "RenderMan Interface Specification 3.0, published May 1988 (per the preface of RISpec 3.2); not read to confirm it already contained the shading language." }
+    first_appeared: { year: 1990, date: "1990-08", precision: exact, note: "Hanrahan and Lawson, \"A Language for Shading and Lighting Calculations\", SIGGRAPH '90." }
+    places: [{ institution: Pixar, country: US }, { institution: Princeton University, city: Princeton, country: US }]
+  creators:
+    - { name: Pat Hanrahan, role: designer }
+    - { name: Jim Lawson, role: designer }
+  status: legacy
+  tags:
+    paradigm: [imperative, procedural]
+    typing: [static-typing]
+    domain: [computer-graphics]
+  summary: >
+    Pixar's language for surface, light, displacement, volume and imager shaders in the RenderMan interface, "a new
+    shading language based on previous work of Cook and Perlin" (Cook's shade trees and Perlin's image synthesizer). It
+    is a "little" language "based on a simple subset of C", and its distinction between uniform and varying variables
+    was taken over by the real-time shading languages, Cg and HLSL among them.
+  relations:
+    - { type: influenced_by, to: c, weight: moderate, confidence: high, sources: [hanrahan-1990-shading-language], note: "\"based on a simple subset of C\"." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/RenderMan_Shading_Language" }
+  sources: [hanrahan-1990-shading-language, pixar-2000-rispec-3-2]
+  example:
+    title: A matte surface shader
+    language: RenderMan Shading Language (RI 3.2)
+    year: 2000
+    note: "Verbatim from the RenderMan Interface Specification 3.2, Appendix A.2.2. The normal type is 3.2 syntax."
+    code: |
+      surface
+      matte(
+            float Ka = 1;
+            float Kd = 1;)
+      {
+         normal Nf = faceforward(normalize(N), I);
+         Oi = Os;
+         Ci = Os * Cs * (Ka*ambient() + Kd*diffuse(Nf));
+      }
+    sources: [pixar-2000-rispec-3-2]
