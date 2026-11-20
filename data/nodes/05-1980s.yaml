@@ -4786,6 +4786,7 @@
     - { type: influenced_by, to: cobol, weight: weak, confidence: medium, sources: [wiki-informix-4gl] }
     - { type: influenced_by, to: c, weight: weak, confidence: medium, sources: [wiki-informix-4gl] }
     - { type: embeds, to: sql, weight: strong, confidence: high, sources: [hcl-4gl-concepts], note: "\"4GL includes all SQL statements supported by Informix as native statements of the language\"; it \"approximates a superset of the Informix implementation (Version 4.1) of the industry-standard SQL language\"." }
+    - { type: targets, to: informix-esql-c, weight: strong, confidence: high, sources: [hcl-4gl-concepts], note: "\"The C Compiler, which uses a preprocessor to generate INFORMIX-ESQL/C source code. This code is preprocessed in turn to produce C source code\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Informix-4GL" }
@@ -5787,3 +5788,60 @@
         O <= I1 and I2;
       end architecture RTL;
     sources: [wiki-vhdl]
+
+- id: informix-esql-c
+  name: INFORMIX-ESQL/C
+  aliases: [ESQL/C, Embedded SQL for C, Informix ESQL/C]
+  kind: language
+  category: business
+  cluster: business/4gl
+  origin:
+    first_appeared: { year: 1985, precision: circa, note: "Roger Sippl: \"Embedded SQL for C was our first relational programmatic interface into our database engine\", after the move to SQL in \"1983 I believe\"; no dated 1.x release was found. A release note or manual would confirm it." }
+    places: [{ institution: Relational Database Systems, country: US }]
+  creators:
+    - { name: Relational Database Systems, role: developer (Informix from 1986) }
+  status: maintained
+  tags:
+    paradigm: [imperative, procedural]
+    features: [preprocessor]
+    domain: [databases, business-data-processing]
+  milestones:
+    - { version: "4.0", year: 1989, date: "1989-12", summary: "\"Version 4.0 conforms to the ANSI standard for ESQL (X3.168-1989)\"; accepts both the house $ syntax and EXEC SQL.", sources: [informix-1989-esqlc-v4] }
+  summary: >
+    Informix's "Embedded SQL and Tools for C": "preprocessors, C libraries, and header files" that let C programs
+    "Embed Structured Query Language (SQL) statements". Statements are marked with $ (later also ANSI EXEC SQL) and
+    host variables with $ or a colon. Informix-4GL's C compiler generates ESQL/C, which is preprocessed again into C.
+  relations:
+    - { type: embeds, to: sql, weight: strong, confidence: high, sources: [informix-1989-esqlc-v4], note: "\"Embed Structured Query Language (SQL) statements in C programs and routines\"." }
+    - { type: extension_of, to: c, weight: strong, confidence: high, sources: [informix-1989-esqlc-v4], note: "A preprocessor over C: ordinary C code stays valid." }
+  research_status: draft
+  confidence: medium
+  sources: [informix-1989-esqlc-v4, chm-2007-rdbms-informix]
+  example:
+    title: A cursor over a table
+    language: INFORMIX-ESQL/C 4.0
+    year: 1989
+    note: "Trimmed from demo1.ec in the Version 4.0 manual (chapter 2); obvious OCR errors corrected, banner messages and TRANS blocks left out."
+    code: |
+      #include <stdio.h>
+      $include sqlca;
+      $define FNAME_LEN 15;
+      $define LNAME_LEN 15;
+      main( )
+      {
+      $char fname[ FNAME_LEN + 1 ];
+      $char lname[ LNAME_LEN + 1 ];
+      $database stores;
+      $declare democursor cursor for
+          select fname, lname into $fname, $lname
+          from customer where lname > "C";
+      $open democursor;
+      for (;;)
+          {
+          $fetch democursor;
+          if (sqlca.sqlcode != 0) break;
+          printf("%s %s\n", fname, lname);
+          }
+      $close democursor;
+      }
+    sources: [informix-1989-esqlc-v4]

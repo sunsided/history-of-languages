@@ -5338,3 +5338,62 @@
          Ci = Os * Cs * (Ka*ambient() + Kd*diffuse(Nf));
       }
     sources: [pixar-2000-rispec-3-2]
+
+- id: otcl
+  name: OTcl
+  aliases: [Object Tcl, MIT Object Tcl]
+  kind: language
+  category: scripting
+  cluster: oop
+  origin:
+    began: { year: 1993, precision: circa, note: "\"A version embedded in the VuSystem has been in use for two years\" (May 1995)." }
+    first_appeared: { year: 1995, date: "1995-07", precision: exact, note: "Wetherall and Lindblad, Third Annual Tcl/Tk Workshop, Toronto, July 1995." }
+    places: [{ institution: MIT Laboratory for Computer Science, city: Cambridge, country: US }]
+  creators:
+    - { name: David Wetherall, role: designer }
+    - { name: Christopher J. Lindblad, role: co-author }
+  status: legacy
+  tags:
+    paradigm: [object-oriented, scripting]
+    typing: [dynamic-typing]
+    features: [multiple-inheritance, mixins, metaclasses, metaobject-protocol, reflection]
+  summary: >
+    "An extension to the Tool Command Language (Tcl) for the management of complicated data types and dynamic
+    object-oriented programming": "a compact, dynamic, and introspective language modeled after Flavors rather than
+    C++", with CLOS-style class linearisation, method combination through next, per-object specialisation "seen in
+    languages such as Self", and classes that are objects. Created for MIT's VuSystem, it lives on as the scripting
+    front end of the ns-2 network simulator, and XOTcl extended it.
+  relations:
+    - { type: extension_of, to: tcl, weight: strong, confidence: high, sources: [wetherall-1995-otcl], note: "\"an object-oriented extension to the Tool command Language (Tcl)\"." }
+    - { type: influenced_by, to: flavors, weight: strong, confidence: high, sources: [wetherall-1995-otcl], note: "\"modeled after Flavors rather than C++\"." }
+    - { type: influenced_by, to: common-lisp, aspects: [multiple-inheritance, metaobject-protocol], weight: moderate, confidence: high, sources: [wetherall-1995-otcl], note: "CLOS: \"As in CLOS, Object Tcl automatically determines the global order from the local superclass relations.\"" }
+    - { type: influenced_by, to: self, aspects: [prototype-based], weight: moderate, confidence: high, sources: [wetherall-1995-otcl], note: "\"Object Tcl allows each object to be specialized, a capability seen in languages such as Self.\"" }
+    - { type: influenced_by, to: smalltalk, weight: weak, confidence: medium, sources: [otcl-sourceforge], note: "Maintainers: \"draws on CLOS, Smalltalk, and Self\"." }
+    - { type: reacts_against, to: cpp, aspects: [multiple-inheritance], weight: weak, confidence: high, sources: [wetherall-1995-otcl], note: "\"both C++ and [incr Tcl] require that the next most shadowed method be named explicitly. We believe that this is a major weakness of their multiple inheritance model.\"" }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://otcl-tclcl.sourceforge.net/otcl/" }
+  sources: [wetherall-1995-otcl, otcl-sourceforge]
+  example:
+    title: A stack object with its own methods
+    language: OTcl
+    year: 1995
+    note: "Verbatim from Wetherall and Lindblad 1995, Figure 1; ==> marks the results."
+    code: |
+      Object astack
+      astack set things {}
+      astack proc put {thing} {
+        $self instvar things
+        set things [concat [list $thing] $things]
+        return $thing
+      }
+      astack proc get {} {
+        $self instvar things
+        set top [lindex $things 0]
+        set things [lrange $things 1 end]
+        return $top
+      }
+      astack put toast    ==> toast
+      astack get          ==> toast
+      astack destroy      ==> {}
+    sources: [wetherall-1995-otcl]

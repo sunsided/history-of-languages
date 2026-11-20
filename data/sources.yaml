@@ -7444,3 +7444,109 @@
   authors: [Thalia Archibald]
   title: The Whitespace Corpus
   url: https://github.com/wspace/corpus
+- id: perlis-1964-formula-algol
+  type: paper
+  primary: true
+  authors: [Alan J. Perlis, Renato Iturriaga]
+  title: An extension to ALGOL for manipulating formulae
+  venue: Communications of the ACM 7(2), pp. 127-130
+  year: 1964
+  doi: 10.1145/363921.363943
+  url: https://doi.org/10.1145/363921.363943
+- id: perlis-1966-definition-formula-algol
+  type: report
+  primary: true
+  authors: [Alan J. Perlis, Renato Iturriaga, Thomas A. Standish]
+  title: A Definition of Formula Algol
+  venue: Carnegie Institute of Technology (ACM Symposium on Symbolic and Algebraic Manipulation)
+  year: 1966
+  url: https://archive.org/details/bitsavers_cmuformulaionofFormulaAlgolMar66_3054231
+  checked: '2026-11-20'
+- id: brinch-hansen-1978-dp
+  type: paper
+  primary: true
+  authors: [Per Brinch Hansen]
+  title: "Distributed Processes: A Concurrent Programming Concept"
+  venue: Communications of the ACM 21(11), pp. 934-941
+  year: 1978
+  doi: 10.1145/359642.359651
+  url: http://brinch-hansen.net/papers/1978a.pdf
+  checked: '2026-11-20'
+- id: informix-1989-esqlc-v4
+  type: manual
+  primary: true
+  authors: [Informix Software]
+  title: INFORMIX-ESQL/C Embedded SQL and Tools for C, Programmer's Manual, Version 4.0
+  year: 1989
+  url: https://archive.org/details/h42_Informix_Informix-ESQL_C_Programmers_Manual_V4.00
+  checked: '2026-11-20'
+- id: chm-2007-rdbms-informix
+  type: interview
+  primary: true
+  authors: [Roger Sippl, Roy Harrington, Luanne Johnson]
+  title: "RDBMS Workshop: Informix"
+  venue: Computer History Museum, X4069.2007
+  year: 2007
+  url: https://archive.computerhistory.org/resources/access/text/2013/05/102702566-05-01-acc.pdf
+- id: wetherall-1995-otcl
+  type: paper
+  primary: true
+  authors: [David Wetherall, Christopher J. Lindblad]
+  title: Extending Tcl for Dynamic Object-Oriented Programming
+  venue: Third Annual Tcl/Tk Workshop, Toronto (USENIX)
+  year: 1995
+  url: https://www.usenix.org/legacy/publications/library/proceedings/tcl95/full_papers/wetherall.txt
+  checked: '2026-11-20'
+- id: otcl-sourceforge
+  type: web
+  primary: true
+  authors: [OTcl maintainers]
+  title: OTcl
+  url: https://otcl-tclcl.sourceforge.net/otcl/
+- id: pipes-2007-introducing
+  type: web
+  primary: true
+  authors: [Yahoo! Pipes team]
+  title: Introducing Pipes
+  venue: Pipes blog
+  year: 2007
+  url: https://web.archive.org/web/20070226230400/http://blog.pipes.yahoo.com:80/2007/02/07/introducing-pipes/
+  checked: '2026-11-20'
+- id: pipes-docs-overview
+  type: manual
+  primary: true
+  authors: [Yahoo!]
+  title: Pipes Help, Overview
+  year: 2007
+  url: https://web.archive.org/web/20070311205544/http://pipes.yahoo.com/pipes/docs?doc=overview
+- id: pipes-2015-eol
+  type: web
+  primary: true
+  authors: [Yahoo!]
+  title: Pipes End-of-life Announcement
+  year: 2015
+  url: https://web.archive.org/web/20150604181928/http://pipes.yqlblog.net/post/120705592639/pipes-end-of-life-announcement
+- id: tf-2019-mlir
+  type: web
+  primary: true
+  authors: [TensorFlow MLIR Team]
+  title: "MLIR: A new intermediate representation and compiler framework"
+  year: 2019
+  url: https://blog.tensorflow.org/2019/04/mlir-new-intermediate-representation.html
+  checked: '2026-11-20'
+- id: lattner-2019-mlir-llvm
+  type: web
+  primary: true
+  authors: [Chris Lattner, Tim Davis]
+  title: "MLIR: accelerating AI with open-source infrastructure"
+  year: 2019
+  url: https://blog.google/technology/ai/mlir-accelerating-ai-open-source-infrastructure/
+- id: lattner-2021-mlir
+  type: paper
+  primary: true
+  authors: [Chris Lattner, Mehdi Amini, Uday Bondhugula, Albert Cohen, Andy Davis, Jacques Pienaar, River Riddle, Tatiana Shpeisman, Nicolas Vasilache, Oleksandr Zinenko]
+  title: "MLIR: Scaling Compiler Infrastructure for Domain Specific Computation"
+  venue: CGO 2021, pp. 2-14
+  year: 2021
+  doi: 10.1109/CGO51591.2021.9370308
+  url: https://arxiv.org/abs/2002.11054

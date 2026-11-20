@@ -2988,3 +2988,64 @@
                 %6 = OpTypeFloat 32                         ; 32-bit float
                 %7 = OpTypeVector %6 4                      ; vec4
     sources: [khronos-spirv-spec]
+
+- id: mlir
+  name: MLIR
+  aliases: [Multi-Level Intermediate Representation]
+  kind: assembly
+  category: domain-specific
+  cluster: assembly/virtual
+  origin:
+    first_appeared: { year: 2019, date: "2019-04-08", precision: exact, note: "Open-sourced by Google's TensorFlow team, 8 April 2019; contributed to the LLVM Foundation in September 2019." }
+    places: [{ institution: Google, country: US }]
+  creators:
+    - { name: Chris Lattner, role: designer }
+    - { name: Mehdi Amini, role: co-designer }
+    - { name: River Riddle, role: co-designer }
+    - { name: Nicolas Vasilache, role: co-designer }
+    - { name: Tatiana Shpeisman, role: co-designer }
+  status: active
+  tags:
+    paradigm: [imperative]
+    typing: [static-typing]
+    features: [intermediate-code, optimizing-compiler]
+    domain: [artificial-intelligence, hpc]
+  milestones:
+    - { version: "LLVM project", year: 2019, date: "2019-09-09", summary: "Contributed to the nonprofit LLVM Foundation.", sources: [lattner-2019-mlir-llvm] }
+    - { version: "CGO paper", year: 2021, summary: "\"MLIR: Scaling Compiler Infrastructure for Domain Specific Computation\", CGO 2021.", sources: [lattner-2021-mlir] }
+  summary: >
+    "A compiler infrastructure akin to LLVM" whose IR has no fixed set of operations: dialects define their own ops,
+    kept "in SSA form", at many levels from tensor graphs to loops to machine code. "MLIR is highly influenced by LLVM
+    and unabashedly reuses many great ideas from it", and its LLVM dialect maps down to LLVM IR. Mojo is "built purely
+    on top of MLIR Core".
+  relations:
+    - { type: influenced_by, to: llvm-ir, weight: strong, confidence: high, sources: [tf-2019-mlir], note: "\"MLIR is highly influenced by LLVM and unabashedly reuses many great ideas from it.\"" }
+    - { type: targets, to: llvm-ir, weight: strong, confidence: high, sources: [lattner-2021-mlir], note: "\"the LLVM dialect, which maps LLVM IR into MLIR\" and lets MLIR emit CPU and GPU code through LLVM." }
+  research_status: draft
+  confidence: high
+  links: { homepage: "https://mlir.llvm.org/" }
+  sources: [tf-2019-mlir, lattner-2019-mlir-llvm, lattner-2021-mlir]
+  example:
+    title: Affine loops as operations with regions
+    language: MLIR (affine dialect, 2020)
+    year: 2020
+    note: "Verbatim from Lattner et al., arXiv:2002.11054v2, Figure 8; mulf and addf later moved to the arith dialect."
+    code: |
+      // Affine loops are Ops with regions.
+      affine.for %arg0 = 0 to %N {
+        // Only loop-invariant values, loop iterators, and affine functions of
+        // those are allowed.
+        affine.for %arg1 = 0 to %N {
+          // Body of affine for loops obey SSA.
+          %0 = affine.load %A[%arg0] : memref<? x f32>
+          // Structured memory reference (memref) type can have
+          // affine layout maps.
+          %1 = affine.load %B[%arg1] : memref<? x f32, (d0)[s0] -> (d0 + s0)>
+          %2 = mulf %0, %1 : f32
+          // Affine load/store can have affine expressions as subscripts.
+          %3 = affine.load %C[%arg0 + %arg1] : memref<? x f32>
+          %4 = addf %3, %2 : f32
+          affine.store %4, %C[%arg0 + %arg1] : memref<? x f32>
+        }
+      }
+    sources: [lattner-2021-mlir]

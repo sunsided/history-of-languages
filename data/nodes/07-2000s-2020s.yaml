@@ -1977,6 +1977,7 @@
     - { type: influenced_by, to: zig, weight: weak, confidence: high, sources: [mojo-vision], note: "\"It draws on lessons from languages like Swift, C++, Rust, and Zig\"." }
     - { type: influenced_by, to: cuda, weight: moderate, confidence: high, sources: [mojo-vision], note: "\"We took inspiration from kernel programming systems (CUDA, CUTLASS, DSLs, etc.)\"." }
     - { type: reacts_against, to: cpp, weight: weak, confidence: high, sources: [mojo-vision], note: "\"The complexity of some languages (notably C++) has spiraled out of control\"." }
+    - { type: targets, to: mlir, weight: strong, confidence: high, sources: [mojo-vision], note: "\"Mojo is built purely on top of MLIR Core\" and \"acts as syntactic sugar for MLIR\"." }
   research_status: draft
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Mojo_(programming_language)", homepage: "https://mojolang.org" }
@@ -3888,6 +3889,7 @@
   relations:
     - { type: extension_of, to: tcl, weight: strong, confidence: high, sources: [neumann-2000-xotcl, wiki-xotcl], note: "\"XOTcl is a standard Tcl extension which can be dynamically loaded into every Tcl compliant tool\"; a derivative of MIT OTcl." }
     - { type: influenced_by, to: common-lisp, weight: moderate, confidence: medium, sources: [wiki-xotcl], note: "Its object system has \"metaclasses influenced by CLOS\"." }
+    - { type: influenced_by, to: otcl, weight: strong, confidence: high, sources: [neumann-2000-xotcl], note: "\"XOTcl (Extended OTcl), which is a value added replacement of OTcl ... XOTcl includes the functionality of OTcl\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/XOTcl" }
@@ -5492,6 +5494,7 @@
     Yahoo retired the service on January 3, 2019.
   relations:
     - { type: influenced_by, to: sql, weight: strong, confidence: high, sources: [trevor-2008-yql, wiki-yql], note: "\"Exposes a SQL-like SELECT syntax that is both familiar to developers and expressive enough ... YQL operates on hierarchical documents, not relational tuples\": the syntax, not the relational semantics." }
+    - { type: influenced_by, to: yahoo-pipes, weight: strong, confidence: high, sources: [trevor-2008-yql], note: "YQL is \"Like Pipes but with a simple textual language\"; a slide reads \"Finally: Pipes without the GUI editor\"." }
   research_status: stub
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Yahoo_Query_Language" }
@@ -9132,3 +9135,34 @@
       g.V().has("name","marko").
         out("knows").values("age").max()
     sources: [rodriguez-2015-gremlin]
+
+- id: yahoo-pipes
+  name: Yahoo! Pipes
+  aliases: [Yahoo Pipes, Pipes]
+  kind: language
+  category: domain-specific
+  cluster: data
+  origin:
+    first_appeared: { year: 2007, date: "2007-02-07", precision: exact, note: "\"Introducing Pipes\", Pipes blog, 7 February 2007." }
+    places: [{ institution: Yahoo!, country: US }]
+  creators:
+    - { name: Yahoo!, role: developer }
+  status: extinct
+  tags:
+    paradigm: [visual-programming, dataflow-programming]
+    features: [pipes]
+    domain: [web]
+  milestones:
+    - { version: "end of life", year: 2015, summary: "Announced 4 June 2015: no new Pipes after 30 August, read-only until 30 September 2015.", sources: [pipes-2015-eol] }
+  summary: >
+    "A hosted service that lets you remix feeds and create new data mashups in a visual programming environment":
+    modules dragged onto a canvas and wired together, emitting RSS, Atom or JSON. "The name of the service pays tribute
+    to Unix pipes", and its team later built YQL as "Pipes without the GUI editor".
+  notes: >
+    Wikipedia names Pasha Sadri, Ed Ho, Jonathan Trevor, Ido Green and Daniel Raffel as creators; not confirmed from a
+    primary source.
+  relations:
+    - { type: influenced_by, to: thompson-shell, aspects: [pipes], weight: moderate, confidence: high, sources: [pipes-2007-introducing], note: "\"pays tribute to Unix pipes, which let programmers do astonishingly clever things by making it easy to chain simple utilities together\"." }
+  research_status: draft
+  confidence: high
+  sources: [pipes-2007-introducing, pipes-docs-overview, pipes-2015-eol, trevor-2008-yql]

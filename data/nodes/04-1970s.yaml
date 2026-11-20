@@ -850,6 +850,7 @@
     - { type: influenced_by, to: simula, weight: weak, confidence: medium }
     - { type: influenced_by, to: csp, aspects: [synchronous-rendezvous], weight: moderate, confidence: medium }
     - { type: influenced_by, to: lis, weight: moderate, confidence: medium, sources: [wiki-lis], note: "LIS, by Ada's designer Jean Ichbiah, \"has contributed to the definition of Ada\"." }
+    - { type: influenced_by, to: distributed-processes, aspects: [rendezvous], weight: moderate, confidence: medium, sources: [brinch-hansen-1993-monitors], note: "Brinch Hansen quoting Roubine (1980): his proposal was \"a source of inspiration in the design of the Ada tasking facilities\"; Roubine and Heliard 1980 would confirm it at first hand." }
   research_status: draft
   confidence: high
   links: { wikipedia: "https://en.wikipedia.org/wiki/Ada_(programming_language)" }
@@ -3979,3 +3980,55 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Hardware_description_language#History" }
   sources: [wiki-hardware-description-language]
+
+- id: distributed-processes
+  name: Distributed Processes
+  aliases: [DP]
+  kind: language
+  category: research
+  cluster: concurrency
+  origin:
+    first_appeared: { year: 1978, date: "1978-11", precision: exact, note: "Brinch Hansen, \"Distributed Processes: A Concurrent Programming Concept\", CACM 21(11), November 1978." }
+    places: [{ institution: University of Southern California, city: Los Angeles, country: US }]
+  creators:
+    - { name: Per Brinch Hansen, role: designer }
+  status: historical
+  tags:
+    paradigm: [concurrent, imperative]
+    concurrency: [processes, monitors]
+    features: [guarded-commands, nondeterminism]
+    domain: [distributed-systems]
+  summary: >
+    "A language concept for concurrent processes without common variables": processes "communicate and synchronize
+    by means of procedure calls and guarded regions", which Brinch Hansen later noted "is also known as remote
+    procedure calls". Proposed for microcomputer networks with distributed storage, it unifies "the monitor and process
+    concepts" of Concurrent Pascal; Ada's rendezvous combined it with Hoare's CSP. An experimental implementation was
+    Charles Hayden's on an LSI-11 (USC, 1979).
+  notes: >
+    CSP (Hoare, 1978) is a contemporary, not an ancestor: "Both proposals attack the problem of concurrency without
+    shared variables".
+  relations:
+    - { type: influenced_by, to: concurrent-pascal, aspects: [monitors, processes], weight: strong, confidence: high, sources: [brinch-hansen-1978-dp], note: "\"It may well be possible to modify Concurrent Pascal ... The ideas proposed here are more attractive, however, because they unify the monitor and process concepts\"." }
+    - { type: influenced_by, to: dijkstra-guarded-commands, aspects: [guarded-commands, nondeterminism], weight: moderate, confidence: high, sources: [brinch-hansen-1978-dp], note: "\"A guarded command (Dijkstra 1975) enables a process to make an arbitrary choice\"." }
+    - { type: influenced_by, to: modula, weight: weak, confidence: high, sources: [brinch-hansen-1978-dp], note: "Named alongside Concurrent Pascal as coming close to the requirements." }
+  research_status: draft
+  confidence: high
+  sources: [brinch-hansen-1978-dp, brinch-hansen-1993-monitors]
+  example:
+    title: A semaphore and a buffer as processes
+    language: Distributed Processes
+    year: 1978
+    note: "From Brinch Hansen 1978; other processes call them as call sem.wait or call buffer.send(x)."
+    code: |
+      process sem
+      s: int
+      proc wait when s > 0: s := s - 1 end
+      proc signal; s := s + 1
+      s := 0
+
+      process buffer
+      s: seq[n]char
+      proc send(c: char) when not s.full: s.put(c) end
+      proc rec(#v: char) when not s.empty: s.get(v) end
+      s := [ ]
+    sources: [brinch-hansen-1978-dp]

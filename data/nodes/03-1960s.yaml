@@ -2508,3 +2508,37 @@
   confidence: medium
   links: { wikipedia: "https://en.wikipedia.org/wiki/Euler_(programming_language)" }
   sources: [wiki-euler]
+
+- id: formula-algol
+  name: Formula Algol
+  aliases: [FORMULA ALGOL]
+  kind: language
+  category: scientific
+  cluster: algol
+  origin:
+    began: { year: 1963, date: "1963-01", precision: exact, note: "\"under development at Carnegie Institute of Technology for three years since January 1963\" (1966 definition)." }
+    first_appeared: { year: 1963, date: "1963-08", precision: exact, note: "\"In August, 1963, an interpretive version was running and was reported at the Working Conference on Mechanical Language Structures in Princeton\"; published in CACM 7(2), February 1964." }
+    places: [{ institution: Carnegie Institute of Technology, city: Pittsburgh, country: US }]
+  creators:
+    - { name: Alan Perlis, role: designer }
+    - { name: Renato Iturriaga, role: designer }
+    - { name: Thomas A. Standish, role: co-author of the 1966 definition }
+  status: extinct
+  tags:
+    paradigm: [imperative, procedural]
+    features: [pattern-matching, generators, linked-lists]
+    domain: [computer-algebra]
+  milestones:
+    - { version: "1966 compiler", year: 1966, summary: "Compiler for the CDC G-21, written with Feldman's Formal Semantic Language (FSL); the definition was presented at the ACM Symposium on Symbolic and Algebraic Manipulation, March 1966.", sources: [perlis-1966-definition-formula-algol] }
+  summary: >
+    "An extension to ALGOL 60 incorporating formula manipulation and list processing": two new data types, formulae
+    and list structures, while "the control structure of ALGOL 60 is inherited without change". Formulae are rewritten
+    "by sets of algebraic or logical rules in a form akin to Markov algorithms", list patterns use "the mechanisms
+    found in COMIT", and new for statements act as generators. Thomas Standish, a co-author, went on to design PPL.
+  relations:
+    - { type: superset_of, to: algol-60, weight: strong, confidence: high, sources: [perlis-1966-definition-formula-algol], note: "\"Formula Algol is a strict extension of Algol 60 with regard to values and types.\"" }
+    - { type: influenced_by, to: markov-algorithm, aspects: [pattern-matching], weight: moderate, confidence: high, sources: [perlis-1966-definition-formula-algol], note: "Rules applied \"in a form akin to Markov algorithms\"." }
+    - { type: influenced_by, to: comit, aspects: [pattern-matching], weight: moderate, confidence: high, sources: [perlis-1966-definition-formula-algol], note: "\"List patterns use the mechanisms found in COMIT\"." }
+  research_status: draft
+  confidence: high
+  sources: [perlis-1964-formula-algol, perlis-1966-definition-formula-algol]
