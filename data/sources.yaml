@@ -8095,3 +8095,27 @@
   title: The PACT I coding system papers (RAND publication record EP19561001)
   year: 1956
   url: https://www.rand.org/pubs/external_publications/EP19561001.html
+- id: green-2016-property-graph-standard
+  type: report
+  primary: true
+  authors: [Alastair Green]
+  title: Creating an Open Industry Standard for a Declarative Property Graph Query Language
+  venue: Neo Technology (circulated 12 July 2016; ANSI INCITS DM32.2 2018-00144)
+  year: 2016
+  url: https://s3.amazonaws.com/artifacts.opencypher.org/website/materials/DM32.2/DM32.2-2018-00144.Creating+an+Open+Industry+Standard+for+a+Declarative+Property+Graph+Query+Language.pdf
+  checked: '2026-11-20'
+- id: green-2018-gql-nwip
+  type: report
+  primary: true
+  authors: [Alastair Green]
+  title: Working towards a New Work Item for GQL, to complement SQL PGQ
+  venue: ANSI INCITS DM32.2 2018-00128r1
+  year: 2018
+  url: https://s3.amazonaws.com/artifacts.opencypher.org/website/materials/DM32.2/DM32.2-2018-00128r1.Working+towards+a+GQL+NWIP.pdf
+  checked: '2026-11-20'
+- id: wiki-gql
+  type: encyclopedia
+  primary: false
+  title: "Wikipedia: Graph Query Language"
+  url: https://en.wikipedia.org/wiki/Graph_Query_Language
+  checked: '2026-11-20'

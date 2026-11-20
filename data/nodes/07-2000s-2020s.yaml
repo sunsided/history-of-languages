@@ -2761,17 +2761,12 @@
     paradigm: [declarative, query]
     features: [pattern-matching]
     domain: [databases]
-  milestones:
-    - { version: GQL, year: 2024, introduces: [standardization], summary: "Cypher was \"a significant input\" to ISO/IEC 39075:2024 GQL, published April 2024." }
   summary: >
     Neo4j's declarative query language for property graphs, whose patterns are drawn as "ASCII art" such as
     (a)-[r]->(b). It "is at a syntactic and feature level inspired by SQL, and also incorporates concepts from
     functional programming, Python and SPARQL", and its queries are a linear flow of clauses (MATCH, WITH, RETURN)
     rather than SQL's nested subqueries, which its designers relate to Gremlin. Opened as openCypher in 2015, it is
     implemented beyond Neo4j and was a main input to the ISO GQL standard.
-  notes: >
-    GQL is recorded as a milestone rather than a node for now; it may deserve its own node as a separate standard
-    language.
   relations:
     - { type: influenced_by, to: sql, weight: strong, confidence: high, sources: [francis-2018-cypher, wiki-cypher], note: "\"at a syntactic and feature level inspired by SQL\"." }
     - { type: influenced_by, to: sparql, aspects: [pattern-matching], weight: moderate, confidence: high, sources: [francis-2018-cypher], note: "\"Cypher's functionality was influenced by XPath and SPARQL\"." }
@@ -9214,3 +9209,40 @@
   research_status: draft
   confidence: high
   sources: [pipes-2007-introducing, pipes-docs-overview, pipes-2015-eol, trevor-2008-yql]
+
+- id: gql
+  name: GQL
+  aliases: [Graph Query Language, ISO/IEC 39075]
+  kind: language
+  category: query
+  cluster: data
+  origin:
+    began: { year: 2016, date: "2016-07-12", precision: exact, note: "Neo Technology's proposal for an open property-graph query language standard, circulated to Oracle, SAP and Microsoft on 12 July 2016; the ISO/IEC project was approved on 10 September 2019." }
+    first_appeared: { year: 2024, date: "2024-04", precision: exact, note: "ISO/IEC 39075:2024 published in April 2024 (11 April per opencypher.org, 12 April per Wikipedia)." }
+    places: [{ institution: ISO/IEC JTC 1/SC 32/WG 3 }]
+  creators:
+    - { name: Stefan Plantikow, role: co-editor }
+    - { name: Stephen Cannan, role: co-editor }
+  status: active
+  tags:
+    paradigm: [declarative, query]
+    features: [pattern-matching, standardization]
+    domain: [databases]
+  summary: >
+    The ISO standard query language for property graphs, ISO/IEC 39075, developed by the same working group as SQL
+    (WG 3) to fill the gap that "a common, standardized query language for property graphs (like SQL for relational
+    database systems) is missing". It grew out of Neo4j's 2016 proposal, which named "Neo's Cypher, Oracle's PGQL,
+    and other proposals" as inputs and said "Cypher's syntax and semantics will form the core"; openCypher now evolves
+    by adding GQL features. Its graph-pattern sub-language is shared with SQL/PGQ (SQL:2023).
+  notes: >
+    Oracle's PGQL, the academic G-CORE and TigerGraph's GSQL are named inputs or influences but are not nodes; Wikipedia's
+    infobox lists SQL, Cypher and GSQL. The ISO page could not be read (bot protection); the editors are named from
+    Wikipedia, citing the early working drafts.
+  relations:
+    - { type: influenced_by, to: cypher, aspects: [pattern-matching], weight: strong, confidence: high, sources: [green-2016-property-graph-standard, iso-39075-gql], note: "Neo4j's 2016 proposal: \"Cypher's syntax and semantics will form the core of the standard graph query language\"." }
+    - { type: influenced_by, to: opencypher, weight: moderate, confidence: high, sources: [opencypher-site], note: "\"openCypher was a key inspiration for the ISO/IEC 39075 GQL project\"." }
+    - { type: influenced_by, to: sql, weight: moderate, confidence: medium, sources: [wiki-gql, green-2018-gql-nwip], note: "Developed by WG3, which maintains SQL, as a complement to SQL/PGQ; Wikipedia lists SQL as an influence." }
+  research_status: draft
+  confidence: high
+  links: { wikipedia: "https://en.wikipedia.org/wiki/Graph_Query_Language", homepage: "https://www.gqlstandards.org/" }
+  sources: [iso-39075-gql, green-2016-property-graph-standard, green-2018-gql-nwip, opencypher-site, wiki-gql]
